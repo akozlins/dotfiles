@@ -1,0 +1,15 @@
+
+GV.infoVerbose: Errors
+GV.scale: 0
+GV.scaleBase: 1
+GV.fallbackOrientation: Portrait
+GV.orientation: Automatic
+GV.fallbackPageMedia: A4
+GV.pageMedia: Automatic
+GV.swapLandscape: False
+GV.autoResize: True
+GV.antialias: False
+GV.watchFile: False
+GV.ignoreEOF: True
+GV.respectDSC: True
+GV.version: gv 3.6.7.90
