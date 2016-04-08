@@ -1,0 +1,13 @@
+[user]
+	email = akozlins@gmail.com
+	name = Alexandr Kozlinskiy
+[core]
+	editor = nano
+	autocrlf = input
+	whitespace = trailing-space,space-before-tab
+[push]
+	default = simple
+[diff]
+	tool = meld
+[status]
+	submoduleSummary = true
