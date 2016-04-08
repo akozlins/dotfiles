@@ -1,0 +1,32 @@
+timeout: 0:30:00
+cycle:   0:00:00
+lock: True
+lockTimeout:   0:01:00
+passwdTimeout: 0:00:30
+visualID: default
+verbose: False
+timestamp: True
+splash: False
+nice: 10
+fade: True
+unfade: False
+fadeSeconds: 0:00:01
+fadeTicks: 10
+captureStderr: False
+font: *-medium-r-*-140-*-m-*
+dpmsEnabled:  True
+dpmsQuickOff: True
+dpmsStandby: 0:30:00
+dpmsSuspend: 0:30:00
+dpmsOff:     0:30:00
+
+mode: blank
+selected: 0
+
+textMode: date
+textLiteral: XScreenSaver
+textFile:
+textProgram:
+textURL:
+
+programs:
