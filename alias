@@ -34,5 +34,5 @@ alias root='root -l'
 
 for file in ~/.alias.d/*
 do
-  source $file
+  [ -f $file ] && source $file
 done

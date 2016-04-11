@@ -5,10 +5,12 @@ declare -a files=(bashrc bash_profile bash_logout inputrc \
                   alias.d alias
                   xinitrc xscreensaver xsession dmrc \
                   Xdefaults \
-                  conkyrc emacs gitconfig gmrunrc gv nethackrc rootrc)
+                  root rootrc \
+                  conkyrc yaourtrc gv gitconfig \
+                  emacs gmrunrc nethackrc)
 
 for file in ${files[@]} ; do
   if [[ -f $file || -d $file ]] ; then
-    ln -sfv ~/.dotfiles/$file ~/.$file
+    ln -sfv -T ~/.dotfiles/$file ~/.$file
   fi
 done
