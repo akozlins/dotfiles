@@ -64,4 +64,6 @@ void rootlogon() {
   TGaxis::SetMaxDigits(3);
 
   set_plot_style();
+
+  gROOT->ForceStyle();
 }

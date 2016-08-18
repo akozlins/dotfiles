@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu -o pipefail
 
-declare -a files=(bashrc bash_profile bash_logout inputrc \
+declare -a files=(zshrc \
                   alias.d alias
                   xinitrc xscreensaver xsession dmrc \
                   Xdefaults \
