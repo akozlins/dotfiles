@@ -33,7 +33,7 @@ alias make='make -j'
 alias root='root -l'
 alias make='make -j4'
 
-for file in ~/.alias.d/*
+for file in ~/.dotfiles/alias.d/*
 do
   [ -f $file ] && source $file
 done

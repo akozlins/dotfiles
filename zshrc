@@ -1,5 +1,6 @@
 
 export ZSH=~/.dotfiles/oh-my-zsh
+export ZDOTDIR=~/.dotfiles
 
 ZSH_THEME="gentoo"
 

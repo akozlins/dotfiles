@@ -11,7 +11,7 @@ export EDITOR=nano
 
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=65536
-export HISTIGNORE="ls:cd:pwd:reset:reboot:* --help"
+export HISTIGNORE="ls:cd:pwd:reboot"
 export HISTSIZE=4096
 
 export LESSHISTFILE=/dev/null
