@@ -3,12 +3,12 @@ set -eu -o pipefail
 
 declare -a files=(zshrc \
                   alias
-                  xinitrc xscreensaver xsession dmrc \
-                  Xdefaults \
+                  Xdefaults xinitrc xscreensaver xsession dmrc \
                   root rootrc \
-                  conkyrc yaourtrc gv gitconfig \
-                  gmrunrc nethackrc
-                  emacs.d)
+                  conkyrc yaourtrc iftoprc gv gitconfig \
+                  gmrunrc nethackrc \
+                  emacs.d \
+                  mime.types)
 
 for file in ${files[@]} ; do
   if [[ -f $file || -d $file ]] ; then

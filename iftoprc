@@ -1,0 +1,8 @@
+dns-resolution: no
+port-resolution: no
+show-bars: yes
+port-display: off
+sort: 10s
+line-display: one-line-both
+show-totals: yes
+log-scale: yes
