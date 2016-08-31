@@ -29,7 +29,6 @@ alias rm='rm -v'
 
 alias ls='ls --color=auto --group-directories-first --classify'
 alias diff='colordiff'
-alias make='make -j'
 alias root='root -l'
 alias make='make -j4'
 

@@ -4,7 +4,7 @@ set -eu -o pipefail
 declare -a files=(zshrc \
                   alias
                   Xdefaults xinitrc xscreensaver xsession dmrc \
-                  root rootrc \
+                  rootrc \
                   conkyrc yaourtrc iftoprc gv gitconfig \
                   gmrunrc nethackrc \
                   emacs.d \
