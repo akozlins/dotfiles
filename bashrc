@@ -24,7 +24,8 @@ source /usr/local/bin/geant4.sh
 export PATH=/usr/lib/colorgcc/bin:$PATH
 export PATH=~/bin:$PATH
 #export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib/root:/home/akozlins/MU3E/software/install/lib
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib/root
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/MU3E/software/install/lib
 
 # remove gedit warning
 export NO_AT_BRIDGE=1

@@ -2,7 +2,6 @@
 export ZSH=~/.dotfiles/oh-my-zsh
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump
 export ZSH_UPDATE=$ZSH/cache/.zsh-update
-#export ZDOTDIR=$ZSH/cache
 
 ZSH_THEME="gentoo"
 
@@ -27,7 +26,7 @@ export HISTORY_IGNORE="(reboot|rm *|reset|cd|cd ..|ls|make|git add -p *)"
 
 
 
-[[ -f $HOME/.alias ]] && source $HOME/.alias
+[[ -f $HOME/.dotfiles/alias ]] && source $HOME/.dotfiles/alias
 
 export EDITOR='nano'
 export LESSHISTFILE=/dev/null
