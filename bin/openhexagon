@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu -o pipefail
+
+/usr/bin/openhexagon \
+&> /dev/null &

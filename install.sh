@@ -15,3 +15,5 @@ for file in ${files[@]} ; do
     ln -sfv -T ~/.dotfiles/$file ~/.$file
   fi
 done
+
+ln -sfv -T ~/.dotfiles/bin ~/bin

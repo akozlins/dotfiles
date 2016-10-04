@@ -1,0 +1,14 @@
+#!/bin/sh
+set -eu -o pipefail
+
+export WINEARCH=win32
+
+if [ $# -ge 1 ]; then
+  wine.sh far "$@"
+  exit 0
+fi
+
+wine.sh far \
+explorer /desktop=winplex,1024x768 \
+"C:/Program Files/WinPlex/supaplex.exe"
+#"C:/Program Files/Megaplex0961/Megaplex.exe"

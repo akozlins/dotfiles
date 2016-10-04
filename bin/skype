@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu -o pipefail
+
+#PULSE_LATENCY_MSEC=60
+xhost +local:
+sudo -u skype /usr/bin/skype \
+&> /dev/null &

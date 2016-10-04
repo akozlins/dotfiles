@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu -o pipefail
+
+#AE_SINK=ALSA
+/usr/bin/kodi \
+&> /dev/null &

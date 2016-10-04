@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu -o pipefail
+
+/usr/bin/gedit "$@" \
+&> /dev/null &

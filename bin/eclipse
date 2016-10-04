@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu -o pipefail
+
+export SWT_GTK3=0
+/usr/bin/eclipse --launcher.GTK_version 2 \
+&> /dev/null &
