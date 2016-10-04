@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="system-menu" label="System">
+  <item label="Openbox Configuration Manager">
+    <action name="Execute">
+      <command>obconf</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Manage Cups Printers">
+    <action name="Execute">
+      <command>xdg-open http://localhost:631/</command>
+      <startupnotify><enabled>no</enabled><icon>cups</icon></startupnotify>
+    </action>
+  </item>
+
+  <separator/>
+
+  <item label="Reconfigure Openbox"><action name="Reconfigure"/></item>
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="Applications"/>
+
+  <item label="uxterm"><action name="Execute"><command>uxterm</command></action></item>
+  <item label="Far"><action name="Execute"><command>~/bin/far.sh</command></action></item>
+  <item label="firefox"><action name="Execute"><execute>~/bin/firefox</execute></action></item>
+  <item label="eclipse"><action name="Execute"><execute>~/bin/eclipse</execute></action></item>
+
+  <separator label="System"/>
+
+  <menu id="system-menu"/>
+
+  <separator/>
+
+  <item label="Log Out"><action name="Exit"><prompt>yes</prompt></action></item>
+</menu>
+
+</openbox_menu>

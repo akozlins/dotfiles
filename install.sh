@@ -8,7 +8,10 @@ declare -a files=(zshrc \
                   conkyrc yaourtrc iftoprc gv gitconfig \
                   gmrunrc nethackrc \
                   emacs.d \
-                  mime.types)
+                  mime.types
+                  config/fbpanel config/firejail config/openbox config/pulse
+                  config/pavucontrol.ini config/qxkb.cfg config/user-dirs.dirs
+                  )
 
 for file in ${files[@]} ; do
   if [[ -f $file || -d $file ]] ; then

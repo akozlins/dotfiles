@@ -1,7 +1,8 @@
 
 export ZSH=~/.dotfiles/oh-my-zsh
-export ZDOTDIR=$ZSH/cache
-#export ZSH_UPDATE=$ZSH/cache/.zsh-update
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump
+export ZSH_UPDATE=$ZSH/cache/.zsh-update
+#export ZDOTDIR=$ZSH/cache
 
 ZSH_THEME="gentoo"
 
@@ -31,11 +32,11 @@ export HISTORY_IGNORE="(reboot|rm *|reset|cd|cd ..|ls|make|git add -p *)"
 export EDITOR='nano'
 export LESSHISTFILE=/dev/null
 
-source ~/bin/geant4.sh
-
 export PATH=~/bin:$PATH
 #export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/lib:~/MU3E/software/install/lib
+
+source ~/bin/geant4.sh
 
 export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 

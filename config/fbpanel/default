@@ -1,0 +1,182 @@
+
+Global {
+  edge = bottom
+  allign = center
+  margin = 0
+  widthtype = percent
+  width = 100
+  height = 30
+  transparent = true
+  tintcolor = white
+  alpha = 63
+  setdocktype = true
+  setpartialstrut = true
+  autohide = false
+  heightWhenHidden = 2
+  roundcorners = false
+  roundcornersradius = 1
+  layer = none
+  MaxElemHeight = 30
+}
+
+Plugin {
+  type = space
+  config {
+    size = 2
+  }
+}
+
+Plugin {
+  type = menu
+  config {
+    IconSize = 22
+    #icon = start-here
+    icon = logo
+    systemmenu {
+    }
+    separator {
+    }
+    menu {
+      name = Computer
+      icon = computer
+
+      item {
+        name = Terminal
+        icon = terminal
+        action = uxterm
+      }
+      item {
+        name = Lock Display
+        icon = gnome-lockscreen
+        action = /usr/bin/xscreensaver-command -lock
+      }
+      separator {
+      }
+      item {
+        name = Reboot
+        icon = gnome-session-reboot
+        action = sudo reboot
+      }
+      item {
+        name = Shutdown
+        icon = gnome-session-halt
+        action = sudo shutdown -h now
+      }
+      item {
+        name = Logout
+        icon = gnome-session-logout
+        action = /usr/lib/fbpanel/xlogout
+      }
+    }
+  }
+}
+
+Plugin {
+  type = space
+  config {
+    size = 16
+  }
+}
+
+Plugin {
+  type = launchbar
+  config {
+    button {
+      icon = file-manager
+      tooltip = thunar
+      action = thunar
+    }
+    button {
+      icon = terminal
+      tooltip = uxterm
+      action = uxterm
+    }
+    button {
+      icon = web-browser
+      tooltip = firefox
+      action = firefox
+    }
+  }
+}
+
+Plugin {
+  type = space
+  config {
+    size = 16
+  }
+}
+
+Plugin {
+  type = wincmd
+  config {
+    icon = gnome-fs-desktop
+    tooltip = Left click to iconify all windows. Middle click to shade them.
+  }
+}
+
+Plugin {
+  type = space
+  config {
+    size = 16
+  }
+}
+
+Plugin {
+  type = taskbar
+  expand = true
+  config {
+    ShowIconified = true
+    ShowMapped    = true
+    ShowAllDesks  = false
+    tooltips = true
+    IconsOnly = false
+    MaxTaskWidth = 150
+  }
+}
+
+Plugin {
+  type = space
+  config {
+    size = 16
+  }
+}
+
+plugin {
+  type = genmon
+  config {
+    Command = if [ -d /sys/class/power_supply/BAT0 ]; then echo $(acpi --battery | cut -d, -f2); else echo "-"; fi
+    PollingTime = 5
+    TextSize = small
+    TextColor = red
+  }
+}
+
+Plugin {
+  type = tray
+}
+
+Plugin {
+  type = space
+  config {
+    size = 16
+  }
+}
+
+# Digital Clock
+Plugin {
+  type = dclock
+  config {
+    ShowSeconds = false
+    HoursView = 24
+    TooltipFmt = %A %x
+    #Action = xmessage Please define some command &
+  }
+}
+
+Plugin {
+  type = space
+  config {
+    size = 2
+  }
+}
+
