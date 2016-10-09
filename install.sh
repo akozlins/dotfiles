@@ -7,8 +7,8 @@ declare -a files=(zshrc \
                   conkyrc yaourtrc iftoprc gv gitconfig \
                   gmrunrc nethackrc \
                   emacs.d vim \
-                  mime.types
-                  config/fbpanel config/firejail config/openbox config/pulse
+                  mime.types tkpacman
+                  config/fbpanel config/firejail config/openbox config/pulse/client.conf config/systemd
                   config/pavucontrol.ini config/qxkb.cfg config/user-dirs.dirs
                   )
 

@@ -32,10 +32,9 @@ export EDITOR='nano'
 export LESSHISTFILE=/dev/null
 
 export PATH=~/bin:$PATH
-#export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/usr/local/lib:~/MU3E/software/install/lib
 
 source ~/bin/geant4.sh
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/MU3E/software/install/lib
 
 export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 

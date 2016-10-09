@@ -1,5 +1,5 @@
 #!/bin/sh
 set -eu -o pipefail
 
-firejail -- /usr/bin/qbittorrent "$@" \
+/usr/bin/qbittorrent "$@" \
 &> /dev/null &
