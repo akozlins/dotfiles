@@ -21,8 +21,9 @@ source $ZSH/oh-my-zsh.sh
 
 source $ZSH/lib/history.zsh
 setopt no_share_history
-setopt hist_ignore_space
-export HISTORY_IGNORE="(reboot|rm *|reset|cd|cd ..|ls|make|git add -p *)"
+setopt hist_ignore_all_dups
+export HISTORY_IGNORE="(reboot|rm *|sudo rm *|reset|cd|cd ..|ls|make|git add *)"
+
 
 
 

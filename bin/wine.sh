@@ -9,7 +9,6 @@ if [ ! -d "$WINE_ROOT" ]; then
 fi
 
 export WINEPREFIX=$WINE_ROOT/$1
-#export WINEARCH=win32
 export WINEDEBUG=-all
 
 echo WINEPREFIX = WINEPREFIX

@@ -9,5 +9,5 @@ if [ $# -ge 1 ]; then
 fi
 
 primusrun wine.sh eve \
-explorer /desktop=steam,1280x1024 \
+explorer /desktop=eve,1280x1024 \
 "C:/Program Files (x86)/CCP/EVE/eve.exe"

@@ -10,5 +10,5 @@ if [ $# -ge 1 ]; then
 fi
 
 primusrun wine.sh tera \
-explorer /desktop=steam,1280x1024 \
+explorer /desktop=tera,1280x1024 \
 "C:/users/Public/Games/En Masse Entertainment/TERA/TERA-Launcher.exe"
