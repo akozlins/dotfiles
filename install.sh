@@ -8,7 +8,9 @@ declare -a files=(zshrc
                   gmrunrc nethackrc
                   emacs.d vim nanorc
                   mime.types tkpacman
-                  config/fbpanel config/firejail config/openbox config/pulse/client.conf config/systemd
+                  config/fbpanel config/firejail config/openbox config/systemd
+                  config/pulse/client.conf
+                  config/htop
                   config/pavucontrol.ini config/qxkb.cfg config/user-dirs.dirs
                   )
 
