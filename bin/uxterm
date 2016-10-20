@@ -1,4 +1,0 @@
-#!/bin/sh
-set -eu -o pipefail
-
-/usr/bin/uxterm "$@"

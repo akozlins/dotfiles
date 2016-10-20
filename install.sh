@@ -1,8 +1,10 @@
 #!/bin/sh
 set -eu -o pipefail
 
+cd $(dirname `readlink -f $0`)
+
 declare -a files=(zshrc
-                  Xdefaults xinitrc xscreensaver xsession dmrc
+                  Xresources xinitrc xscreensaver xsession dmrc
                   rootrc
                   conkyrc yaourtrc iftoprc gv gitconfig
                   gmrunrc nethackrc

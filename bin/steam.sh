@@ -12,6 +12,6 @@ fi
 #winetricks corefonts
 #exit 0
 
-primusrun wine.sh steam32 \
+primusrun ~/bin/wine.sh steam32 \
 explorer /desktop=steam,1280x1024 \
 "C:/Program Files/Steam/Steam.exe" -no-dwrite

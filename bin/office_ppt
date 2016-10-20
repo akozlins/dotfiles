@@ -10,6 +10,6 @@ fi
 
 EXE=POWERPNT.EXE
 
-wine.sh office \
+~/bin/wine.sh office \
 explorer /desktop=office,1562x1387 \
 "C:/Program Files/Microsoft Office/Office12/$EXE"

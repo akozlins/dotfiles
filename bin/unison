@@ -1,5 +1,5 @@
 #!/bin/sh
 set -eu -o pipefail
 
-/bin/unison-gtk2 -watch=false -logfile ~/.unison/unison.log "$@" \
+/usr/bin/unison-gtk2 -watch=false -logfile ~/.unison/unison.log "$@" \
 &> /dev/null &

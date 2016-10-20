@@ -1,5 +1,5 @@
 #!/bin/sh
 set -eu -o pipefail
 
-firejail -- /usr/bin/chromium "$@" \
+/usr/bin/firejail -- /usr/bin/chromium "$@" \
 &> /dev/null &

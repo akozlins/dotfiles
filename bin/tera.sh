@@ -9,6 +9,6 @@ if [ $# -ge 1 ]; then
   exit 0
 fi
 
-primusrun wine.sh tera \
+primusrun ~/bin/wine.sh tera \
 explorer /desktop=tera,1280x1024 \
 "C:/users/Public/Games/En Masse Entertainment/TERA/TERA-Launcher.exe"

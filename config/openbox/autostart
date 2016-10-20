@@ -1,13 +1,13 @@
-( hsetroot -solid "#000000" ) &
+( /usr/bin/hsetroot -solid "#000000" &> /dev/null & ) &
 
-( sleep 1s; fbpanel &> /dev/null ) &
-( sleep 1s; uxterm ) &
+( sleep 1s; /usr/bin/fbpanel &> /dev/null & ) &
+( sleep 1s; /usr/bin/uxterm &> /dev/null & ) &
 
-( sleep 5s; qxkb &> /dev/null ) &
-( sleep 5s; xset r rate 250 25 ) &
+( sleep 2s; /usr/bin/qxkb &> /dev/null &) &
+( sleep 2s; /usr/bin/xset r rate 250 25 &> /dev/null & ) &
 
-( sleep 5s; xscreensaver -no-splash ) &
-( sleep 5s; xss-lock -- xscreensaver-command -lock ) &
+( sleep 5s; /usr/bin/xscreensaver -no-splash &> /dev/null & ) &
+( sleep 5s; /usr/bin/xss-lock -- xscreensaver-command -lock &> /dev/null & ) &
 
-( sleep 5s; conky &> /dev/null ) &
-( sleep 5s; pasystray &> /dev/null ) &
+( sleep 3s; /usr/bin/conky &> /dev/null & ) &
+( sleep 3s; /usr/bin/pasystray &> /dev/null & ) &

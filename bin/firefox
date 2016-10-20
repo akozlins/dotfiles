@@ -1,5 +1,5 @@
 #!/bin/sh
 set -eu -o pipefail
 
-firejail -- /usr/bin/firefox "$@" \
+/usr/bin/firejail -- /usr/bin/firefox "$@" \
 &> /dev/null &

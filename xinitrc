@@ -15,4 +15,5 @@ if [ -f /usr/bin/syndaemon ]; then
   /usr/bin/syndaemon -t -k -i 1 -d &
 fi
 
-exec openbox-session
+#exec openbox-session
+exec openbox

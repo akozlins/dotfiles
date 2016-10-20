@@ -8,6 +8,6 @@ if [ $# -ge 1 ]; then
   exit 0
 fi
 
-primusrun wine.sh eve \
+primusrun ~/bin/wine.sh eve \
 explorer /desktop=eve,1280x1024 \
 "C:/Program Files (x86)/CCP/EVE/eve.exe"

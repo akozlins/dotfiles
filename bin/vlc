@@ -1,5 +1,5 @@
 #!/bin/sh
 set -eu -o pipefail
 
-firejail -- /usr/bin/vlc "$@" \
+/usr/bin/firejail -- /usr/bin/vlc "$@" \
 &> /dev/null &

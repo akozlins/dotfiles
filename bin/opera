@@ -1,5 +1,5 @@
 #!/bin/sh
 set -eu -o pipefail
 
-firejail -- /usr/bin/opera -nomail -nomaillinks -nolirc "$@" \
+/usr/bin/firejail -- /usr/bin/opera -nomail -nomaillinks -nolirc "$@" \
 &> /dev/null &

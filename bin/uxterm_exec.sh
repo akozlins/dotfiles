@@ -8,7 +8,7 @@ fi
 
 tmp="/tmp/test_$$_$RANDOM"
 
-uxterm -geometry $2 -e "echo "" > $tmp; $1" &
+/usr/bin/uxterm -geometry $2 -e "echo ok > $tmp; $1" &> /dev/null &
 
 printf "wait for '$tmp' "
 while [ ! -s $tmp ]
