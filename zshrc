@@ -7,7 +7,7 @@ ZSH_THEME="gentoo"
 
 #CASE_SENSITIVE="true"
 
-#DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 export UPDATE_ZSH_DAYS=7
 
 HIST_STAMPS="yyyy-mm-dd"

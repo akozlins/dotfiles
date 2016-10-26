@@ -261,7 +261,7 @@
     <!-- Keybindings for running applications -->
     <keybind key="W-A-b">
       <action name="Execute">
-        <command>~/bin/uxterm</command>
+        <command>uxterm</command>
       </action>
     </keybind>
     <keybind key="W-A-f">

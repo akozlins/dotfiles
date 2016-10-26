@@ -8,7 +8,7 @@ verbose: False
 timestamp: True
 splash: False
 nice: 10
-fade: False
+fade: True
 unfade: False
 fadeSeconds: 0:00:01
 fadeTicks: 10
