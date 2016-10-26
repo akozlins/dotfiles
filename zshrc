@@ -14,9 +14,6 @@ HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(gitfast)
 
-export PATH="/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin"
-#export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
 
 source $ZSH/lib/history.zsh
@@ -29,7 +26,7 @@ export HISTORY_IGNORE="(reboot|rm *|sudo rm *|reset|cd|cd ..|ls|make|git add *)"
 
 [[ -f $HOME/.dotfiles/alias ]] && source $HOME/.dotfiles/alias
 
-export EDITOR='nano'
+export EDITOR=nano
 export LESSHISTFILE=/dev/null
 
 export PATH=~/bin:$PATH
@@ -45,14 +42,11 @@ bindkey "\e[A" history-search-backward
 bindkey "\e[B" history-search-forward
 
 bindkey "^d" kill-whole-line
-
 bindkey "^i" expand-or-complete-prefix
 
 
 
-setopt NO_HUP
-
-
+setopt no_hup
 
 setopt no_auto_menu
 setopt no_auto_remove_slash
@@ -62,7 +56,5 @@ setopt no_auto_remove_slash
 if [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]] ; then
   source /usr/share/doc/pkgfile/command-not-found.zsh
 fi
-
-
 
 #export QT_SELECT=4
