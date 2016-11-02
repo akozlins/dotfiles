@@ -11,3 +11,5 @@
 	tool = meld
 [status]
 	submoduleSummary = true
+[merge]
+	commit = no
