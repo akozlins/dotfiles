@@ -9,9 +9,6 @@ if [ $# -ge 1 ]; then
   exit 0
 fi
 
-#winetricks corefonts
-#exit 0
-
 primusrun ~/bin/wine.sh steam32 \
-explorer /desktop=steam,1280x1024 \
+explorer /desktop=steam32,1280x1024 \
 "C:/Program Files/Steam/Steam.exe" -no-dwrite
