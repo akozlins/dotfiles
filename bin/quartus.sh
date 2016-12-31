@@ -7,7 +7,7 @@ ROOT=/usr/local/intelFPGA/16.1
 export QUARTUS_ROOTDIR=$ROOT/quartus
 export PATH=$PATH:$QUARTUS_ROOTDIR/bin
 export PATH=$PATH:$QUARTUS_ROOTDIR/sopc_builder/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$QUARTUS_ROOTDIR/linux64
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:$QUARTUS_ROOTDIR/linux64
 
 #export QSYS_ROOTDIR=$QUARTUS_ROOTDIR/sopc_builder/bin
 

@@ -1,4 +1,4 @@
-( /usr/bin/hsetroot -solid "#000000" &> /dev/null & ) &
+( /usr/bin/xsetroot -solid black &> /dev/null & ) &
 
 ( sleep 1s; /usr/bin/fbpanel &> /dev/null & ) &
 ( sleep 1s; /usr/bin/uxterm &> /dev/null & ) &

@@ -29,10 +29,16 @@ export HISTORY_IGNORE="(reboot|rm *|sudo rm *|reset|cd|cd ..|ls|make|git add *)"
 export EDITOR=nano
 export LESSHISTFILE=/dev/null
 
+
+
 export PATH=~/bin:$PATH
 
+# GEANT4
 source ~/bin/geant4.sh
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/MU3E/software/install/lib
+
+# QUARTUS
+source ~/bin/quartus.sh
 
 export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 
