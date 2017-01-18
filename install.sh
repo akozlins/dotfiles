@@ -14,6 +14,7 @@ declare -a files=(zshrc
                   config/pulse/client.conf
                   config/htop
                   config/pavucontrol.ini config/qxkb.cfg config/user-dirs.dirs
+                  config/far2l
                   )
 
 git submodule init
