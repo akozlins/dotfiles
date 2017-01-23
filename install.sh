@@ -3,19 +3,21 @@ set -eu -o pipefail
 
 cd $(dirname `readlink -f $0`)
 
-declare -a files=(zshrc
-                  Xresources xinitrc xscreensaver xsession dmrc
-                  rootrc
-                  conkyrc yaourtrc iftoprc gv gitconfig
-                  gmrunrc nethackrc
-                  emacs.d vim nanorc
-                  mime.types tkpacman
-                  config/fbpanel config/firejail config/openbox config/systemd
-                  config/pulse/client.conf
-                  config/htop
-                  config/pavucontrol.ini config/qxkb.cfg config/user-dirs.dirs
-                  config/far2l
-                  )
+declare -a files=(
+  zshrc
+  tmux.conf
+  Xresources xinitrc xscreensaver xsession dmrc
+  rootrc
+  conkyrc yaourtrc iftoprc gv gitconfig
+  gmrunrc nethackrc
+  emacs.d vim nanorc
+  mime.types tkpacman
+  config/fbpanel config/firejail config/openbox config/systemd
+  config/pulse/client.conf
+  config/htop
+  config/pavucontrol.ini config/qxkb.cfg config/user-dirs.dirs
+  config/far2l
+)
 
 git submodule init
 git submodule update
