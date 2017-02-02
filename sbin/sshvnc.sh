@@ -10,7 +10,7 @@ while [ 1 ] ; do
 done
 echo "PORT = $PORT"
 
-set -eu -o pipefail
+set -euf -o pipefail
 
 X11VNC_CMD="x11vnc -nopw -display :0 -localhost -once -timeout 5 -scale 2/3"
 

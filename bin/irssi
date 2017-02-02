@@ -1,0 +1,4 @@
+#!/bin/sh
+set -euf -o pipefail
+
+/usr/bin/irssi --home=$XDG_CONFIG_HOME/irssi "$@"

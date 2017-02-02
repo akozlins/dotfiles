@@ -1,0 +1,36 @@
+# global environment variables
+
+export DOTFILES=$HOME/.dotfiles
+
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+
+export PATH=$DOTFILES/bin:$PATH
+
+
+
+# WINE
+export WINEDLLOVERRIDES="winemenubuilder.exe=d"
+
+# QUARTUS
+source $DOTFILES/bin/quartus.sh
+
+# GEANT4
+source $DOTFILES/bin/geant4.sh
+
+
+
+export ANDROID_HOME=/opt/android-sdk
+export GRADLE_USER_HOME=$XDG_CACHE_HOME/gradle
+
+export ASPELL_CONF="home-dir $XDG_CONFIG_HOME/aspell;"
+export GNUPGHOME=$XDG_CONFIG_HOME/gnupg
+export IPELATEXDIR=$XDG_CACHE_HOME/ipe/latexrun
+export KDEHOME=$XDG_CONFIG_HOME/kde4
+export LESSHISTFILE=/dev/null
+export UNISON=$XDG_CONFIG_HOME/unison
+export VIM=$DOTFILES/vim
+
+export RANDFILE=$XDG_CONFIG_HOME/.rnd
+
+#export XAUTHORITY=$XDG_CONFIG_HOME/.Xauthority

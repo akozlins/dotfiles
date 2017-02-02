@@ -1,0 +1,5 @@
+#!/bin/sh
+set -euf -o pipefail
+
+sudo \
+/usr/bin/iftop -c $DOTFILES/iftoprc "$@"

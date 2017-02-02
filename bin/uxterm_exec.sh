@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu -o pipefail
+set -euf -o pipefail
 
 if [ "$#" -ne 2 ] ; then
   echo "usage: $0 command geometry"

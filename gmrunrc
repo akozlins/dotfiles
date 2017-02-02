@@ -1,11 +1,7 @@
-# gmrun configuration file
-# gmrun is (C) Mihai Bazon, <mishoo@infoiasi.ro>
-# GPL v2.0 applies
-
 # Set terminal
 Terminal = uxterm
 TermExec = ${Terminal} -e
-AlwaysInTerm = ssh telnet mc vi vim pine perldoc man top htop
+AlwaysInTerm = ssh telnet mc vi vim man top htop
 
 # Set window geometry (except height)
 Width = 480
@@ -45,5 +41,5 @@ URL_sh = sh -c '%s'
 # extension handlers
 EXT:doc,rtf = AbiWord %s
 EXT:txt,cc,cpp,h,java,html,htm,epl,tex,latex,js,css,xml,xsl,am = gedit %s
-EXT:ps = gv %s
+EXT:ps = evince %s
 EXT:pdf = evince %s

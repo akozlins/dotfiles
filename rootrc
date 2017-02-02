@@ -1,3 +1,5 @@
 
-Rint.Logon:~/.dotfiles/root/rootlogon.c
+Rint.Logon: $(HOME)/.dotfiles/root/rootlogon.c
 Rint.WelcomeLite: yes
+
+Rint.History: $(HOME)/.dotfiles/root/.root_hist

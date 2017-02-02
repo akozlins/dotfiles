@@ -1,46 +1,37 @@
 
-export ZSH=~/.dotfiles/oh-my-zsh
+source .dotfiles/envrc
+
+export ZSH=$DOTFILES/oh-my-zsh
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump
 export ZSH_UPDATE=$ZSH/cache/.zsh-update
 
 ZSH_THEME="gentoo"
-
-#CASE_SENSITIVE="true"
-
-DISABLE_AUTO_UPDATE="true"
-export UPDATE_ZSH_DAYS=7
-
-HIST_STAMPS="yyyy-mm-dd"
-
 plugins=(gitfast)
+DISABLE_AUTO_UPDATE="true"
+UPDATE_ZSH_DAYS=7
+#CASE_SENSITIVE="true"
 
 source $ZSH/oh-my-zsh.sh
 
+HIST_STAMPS="yyyy-mm-dd"
+
 source $ZSH/lib/history.zsh
+
 setopt no_share_history
 setopt hist_ignore_all_dups
 export HISTORY_IGNORE="(reboot|rm *|sudo rm *|reset|cd|cd ..|ls|make|git add *)"
 
 
 
+[[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
-[[ -f $HOME/.dotfiles/alias ]] && source $HOME/.dotfiles/alias
+[[ -f $DOTFILES/alias ]] && source $DOTFILES/alias
 
 export EDITOR=nano
-export LESSHISTFILE=/dev/null
 
 
 
-export PATH=~/bin:$PATH
-
-# GEANT4
-source ~/bin/geant4.sh
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/MU3E/software/install/lib
-
-# QUARTUS
-source ~/bin/quartus.sh
-
-export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 
 
 
@@ -58,9 +49,5 @@ setopt no_auto_menu
 setopt no_auto_remove_slash
 
 
-
-if [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]] ; then
-  source /usr/share/doc/pkgfile/command-not-found.zsh
-fi
 
 #export QT_SELECT=4

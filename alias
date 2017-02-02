@@ -32,7 +32,7 @@ alias diff='colordiff'
 alias root='root -l'
 alias make='make -j4'
 
-for file in ~/.dotfiles/alias.d/*
+for file in $DOTFILES/alias.d/*
 do
   [ -f $file ] && source $file
 done
