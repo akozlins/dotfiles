@@ -4,26 +4,37 @@ cd $(dirname `readlink -f $0`)
 
 set -x
 
-DOTFILES=`readlink -f $0`
+DOTFILES=$(dirname `readlink -f $0`)
 
 declare -a files=(
-  zshrc
-  tmux.conf
-  Xresources xinitrc xscreensaver xsession dmrc
-  rootrc
-  gv
+  emacs.d
+  Xresources
+  dmrc
   gmrunrc
-  emacs.d nanorc
+  gv
   mime.types
-  config/fbpanel config/firejail config/openbox config/systemd
-  config/pulse/client.conf
-  config/htop
-  config/pavucontrol.ini config/qxkb.cfg config/user-dirs.dirs
-  config/far2l
+  nanorc
+  rootrc
+  tmux.conf
+  xinitrc
+  xscreensaver
+  xsession
+  zshrc
+
   config/aspell
-  config/yaourt
   config/conky
+  config/far2l
+  config/fbpanel
+  config/firejail
   config/git
+  config/htop
+  config/openbox
+  config/pulse/client.conf
+  config/systemd
+  config/yaourt
+  config/pavucontrol.ini
+  config/qxkb.cfg
+  config/user-dirs.dirs
 )
 
 git submodule init

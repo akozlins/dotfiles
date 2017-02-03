@@ -1,5 +1,5 @@
 
-source .dotfiles/envrc
+. .dotfiles/envrc
 
 export ZSH=$DOTFILES/oh-my-zsh
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump
@@ -11,11 +11,11 @@ DISABLE_AUTO_UPDATE="true"
 UPDATE_ZSH_DAYS=7
 #CASE_SENSITIVE="true"
 
-source $ZSH/oh-my-zsh.sh
+. $ZSH/oh-my-zsh.sh
 
 HIST_STAMPS="yyyy-mm-dd"
 
-source $ZSH/lib/history.zsh
+. $ZSH/lib/history.zsh
 
 setopt no_share_history
 setopt hist_ignore_all_dups
@@ -23,9 +23,9 @@ export HISTORY_IGNORE="(reboot|rm *|sudo rm *|reset|cd|cd ..|ls|make|git add *)"
 
 
 
-[[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
+[[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]] && . /usr/share/doc/pkgfile/command-not-found.zsh
 
-[[ -f $DOTFILES/alias ]] && source $DOTFILES/alias
+[[ -f $DOTFILES/alias ]] && . $DOTFILES/alias
 
 export EDITOR=nano
 
