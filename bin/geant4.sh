@@ -1,5 +1,4 @@
 #!/bin/sh
-#set -eu -o pipefail
 
 if [[ -f /usr/local/bin/geant4.sh ]] ; then
   cd /usr/local/bin

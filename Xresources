@@ -19,3 +19,12 @@ rxvt*geometry: 100x30
 xterm*geometry: 110x35
 rxvt*geometry: 110x35
 #endif
+
+xscreensaver*lock: true
+xscreensaver*mode: blank
+xscreensaver*timeout: 0:30:00
+xscreensaver*splash: false
+xscreensaver*fade: false
+xscreensaver*captureStderr: false
+xscreensaver*dpmsEnabled: true
+xscreensaver*dpmsQuickOff: true

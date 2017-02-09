@@ -1,7 +1,6 @@
 set nonewlines
 set nowrap
 
-#include "/usr/share/nano/*.nanorc"
 include "/usr/share/nano/asm.nanorc"
 include "/usr/share/nano/c.nanorc"
 include "/usr/share/nano/html.nanorc"

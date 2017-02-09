@@ -8,16 +8,12 @@ DOTFILES=$(dirname `readlink -f $0`)
 
 declare -a files=(
   emacs.d
-  Xresources
   dmrc
   gmrunrc
-  gv
-  mime.types
   nanorc
   rootrc
   tmux.conf
   xinitrc
-  xscreensaver
   xsession
   zshrc
 
@@ -32,6 +28,7 @@ declare -a files=(
   config/pulse/client.conf
   config/systemd
   config/yaourt
+  config/mimeapps.list
   config/pavucontrol.ini
   config/qxkb.cfg
   config/user-dirs.dirs
@@ -49,8 +46,8 @@ for file in ${files[@]} ; do
   fi
 done
 
+#ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list
+
 ln -sfv -T $DOTFILES/bin ~/bin
 
 curl -LSso vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-#ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list

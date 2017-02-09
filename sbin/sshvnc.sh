@@ -1,5 +1,4 @@
 #!/bin/sh
-#set -v
 
 while [ 1 ] ; do
   PORT="$RANDOM"
