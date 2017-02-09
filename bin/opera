@@ -1,5 +1,15 @@
 #!/bin/sh
 set -euf -o pipefail
 
-/usr/bin/firejail -- /usr/bin/opera -nomail -nomaillinks -nolirc "$@" \
-&> /dev/null &
+set -x
+
+CMD="/usr/bin/opera -nomail -nomaillinks -nolirc"
+
+[[ -x /usr/bin/firejail ]] && CMD="/usr/bin/firejail -- $CMD"
+CMD="exec $CMD $@"
+
+if [[ $# -eq 0 ]] ; then
+  $CMD &> /dev/null &
+else
+  $CMD
+fi

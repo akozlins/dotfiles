@@ -25,6 +25,7 @@ declare -a files=(
   config/git
   config/htop
   config/openbox
+  config/pacman
   config/pulse/client.conf
   config/systemd
   config/yaourt

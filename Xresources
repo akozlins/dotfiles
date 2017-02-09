@@ -28,3 +28,7 @@ xscreensaver*fade: false
 xscreensaver*captureStderr: false
 xscreensaver*dpmsEnabled: true
 xscreensaver*dpmsQuickOff: true
+
+xscreensaver*dpmsStandby: 0:30:00
+xscreensaver*dpmsSuspend: 0:30:00
+xscreensaver*dpmsOff:     0:30:00

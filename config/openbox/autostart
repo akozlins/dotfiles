@@ -1,13 +1,24 @@
-( /usr/bin/xsetroot -solid black &> /dev/null & ) &
+#!/bin/sh
 
-( sleep 1s; /usr/bin/fbpanel &> /dev/null & ) &
-( sleep 1s; /usr/bin/uxterm &> /dev/null & ) &
+run() {
+  if [ $# -eq 1 ] ; then
+    ( $1 &> /dev/null ) &
+  fi
+  if [ $# -eq 2 ] ; then
+    ( sleep $2 ; [[ -z `pidof $1` ]] && $1 &> /dev/null ) &
+  fi
+}
 
-( sleep 2s; /usr/bin/qxkb &> /dev/null &) &
-( sleep 2s; /usr/bin/xset r rate 250 25 &> /dev/null & ) &
+/usr/bin/xsetroot -solid black
+/usr/bin/xset r rate 250 25
 
-( sleep 5s; /usr/bin/xscreensaver -no-splash &> /dev/null & ) &
-( sleep 5s; /usr/bin/xss-lock -- xscreensaver-command -lock &> /dev/null & ) &
+run "/usr/bin/fbpanel" 1s
+run "/usr/bin/uxterm" 1s
 
-( sleep 3s; /usr/bin/conky &> /dev/null & ) &
-( sleep 3s; /usr/bin/pasystray &> /dev/null & ) &
+run "/usr/bin/qxkb" 2s
+
+run "/usr/bin/xscreensaver" 5s
+run "/usr/bin/xss-lock -- xscreensaver-command -lock" 5s
+
+run "/usr/bin/conky" 5s
+run "/usr/bin/pasystray" 5s
