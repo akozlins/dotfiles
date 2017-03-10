@@ -49,6 +49,4 @@ done
 
 #ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list
 
-ln -sfv -T $DOTFILES/bin ~/bin
-
 curl -LSso vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim

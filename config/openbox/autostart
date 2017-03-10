@@ -9,16 +9,16 @@ run() {
   fi
 }
 
-/usr/bin/xsetroot -solid black
 /usr/bin/xset r rate 250 25
+/usr/bin/xsetroot -solid black
 
 run "/usr/bin/fbpanel" 1s
 run "/usr/bin/uxterm" 1s
 
 run "/usr/bin/qxkb" 2s
 
-run "/usr/bin/xscreensaver" 5s
-run "/usr/bin/xss-lock -- xscreensaver-command -lock" 5s
-
-run "/usr/bin/conky" 5s
 run "/usr/bin/pasystray" 5s
+run "/usr/bin/xscreensaver" 5s
+
+( sleep 5s ; [[ -z `pidof /usr/bin/conky` ]] && /usr/bin/conky --config=$XDG_CONFIG_HOME/conky/conky.conf &> /dev/null ) &
+( sleep 5s ; [[ -z `pidof /usr/bin/xss-lock` ]] && /usr/bin/xss-lock -- xscreensaver-command -lock &> /dev/null ) &
