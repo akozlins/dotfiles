@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu -o pipefail
+set -euf -o pipefail
 
 #PULSE_LATENCY_MSEC=60
 xhost +local:

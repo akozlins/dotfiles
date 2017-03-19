@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu -o pipefail
+set -euf -o pipefail
 
 export WINE_ROOT=/run/media/akozlins/4677801d-12d7-40d4-808b-f152e6273ba2/akozlins/wine
 

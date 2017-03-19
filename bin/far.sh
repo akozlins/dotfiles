@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu -o pipefail
+set -euf -o pipefail
 
 export WINE="wineconsole --backend=user"
 export WINEARCH=win32

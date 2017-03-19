@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu -o pipefail
+set -euf -o pipefail
 
 /usr/bin/emacs "$@" \
 &> /dev/null &

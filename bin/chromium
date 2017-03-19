@@ -1,5 +1,13 @@
 #!/bin/sh
 set -euf -o pipefail
 
-/usr/bin/firejail -- /usr/bin/chromium "$@" \
-&> /dev/null &
+CMD=/usr/bin/chromium
+
+[[ -x /usr/bin/firejail ]] && CMD="/usr/bin/firejail -- $CMD"
+CMD="exec $CMD $@"
+
+if [[ $# -eq 0 ]] ; then
+  $CMD &> /dev/null &
+else
+  $CMD
+fi
