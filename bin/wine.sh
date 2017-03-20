@@ -9,14 +9,16 @@ if [ ! -d "$WINE_ROOT" ]; then
 fi
 
 export WINEPREFIX=$WINE_ROOT/$1
-export WINEDEBUG=-all
+shift
+#echo WINEPREFIX = WINEPREFIX
 
-echo WINEPREFIX = WINEPREFIX
-echo WINEARCH = ${WINEARCH:-}
-echo WINEDEBUG = WINEDEBUG
+#echo WINEARCH = ${WINEARCH:-}
+
+export WINEDEBUG=-all
+#echo WINEDEBUG = WINEDEBUG
 
 export WINEDLLOVERRIDES=winemenubuilder.exe=d
 
-shift
+exec \
 ${WINE:-wine} "$@" \
 &> /dev/null &

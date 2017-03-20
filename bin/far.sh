@@ -9,5 +9,6 @@ if [ $# -ge 1 ]; then
   exit 0
 fi
 
+exec \
 ~/bin/wine.sh far \
 "C:/Program Files/Far/Far.exe"
