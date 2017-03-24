@@ -1,0 +1,15 @@
+#!/bin/sh
+set -euf -o pipefail
+
+UNISON=~/.config/unison
+
+CMD="/usr/bin/unison-gtk2 -logfile $UNISON/unison.log -watch=false"
+#-servercmd ~/bin/unison
+
+CMD="exec $CMD $@"
+
+if [[ $# -eq 0 ]] ; then
+  $CMD &> /dev/null &
+else
+  $CMD
+fi
