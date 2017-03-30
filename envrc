@@ -29,7 +29,7 @@ export MPLAYER_HOME="$XDG_CONFIG_HOME/mplayer"
 export OPERA_PERSONALDIR="$XDG_CONFIG_HOME/opera"
 export PROXYCHAINS_CONF_FILE="$XDG_CONFIG_HOME/proxychains.conf"
 export UNISON="$XDG_CONFIG_HOME/unison"
-export VIM="$DOTFILES/vim"
+export VIMINIT=":so $DOTFILES/vim/vimrc"
 
 export RANDFILE="$XDG_CONFIG_HOME/.rnd"
 
