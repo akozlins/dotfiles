@@ -10,5 +10,5 @@ if [ $# -ge 1 ]; then
 fi
 
 exec \
-~/bin/wine.sh far \
+$DOTFILES/bin/wine.sh far \
 "C:/Program Files/Far/Far.exe"
