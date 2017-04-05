@@ -9,6 +9,7 @@ if [ $# -ge 1 ]; then
   exit 0
 fi
 
+exec \
 primusrun $DOTFILES/bin/wine.sh battle.net.win32 \
 explorer /desktop=battle_net_win32,1280x1024 \
 "C:/Program Files/Battle.net/Battle.net.exe"

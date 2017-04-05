@@ -1,5 +1,6 @@
 #!/bin/sh
 set -euf -o pipefail
 
+exec \
 /usr/bin/texmaker "$@" \
 &> /dev/null &

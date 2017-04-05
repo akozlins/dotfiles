@@ -8,6 +8,7 @@ if [ $# -ge 1 ]; then
   exit 0
 fi
 
+exec \
 $DOTFILES/bin/wine.sh far \
 explorer /desktop=winplex,1024x768 \
 "C:/Program Files/WinPlex/supaplex.exe"

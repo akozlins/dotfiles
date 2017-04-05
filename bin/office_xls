@@ -10,6 +10,7 @@ fi
 
 EXE=EXCEL.EXE
 
+exec \
 $DOTFILES/bin/wine.sh office \
 explorer /desktop=office,1562x1387 \
 "C:/Program Files/Microsoft Office/Office12/$EXE"

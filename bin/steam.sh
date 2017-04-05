@@ -9,6 +9,7 @@ if [ $# -ge 1 ]; then
   exit 0
 fi
 
+exec \
 primusrun $DOTFILES/bin/wine.sh steam32 \
 explorer /desktop=steam32,1280x1024 \
 "C:/Program Files/Steam/Steam.exe" -no-dwrite

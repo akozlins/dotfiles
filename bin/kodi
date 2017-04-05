@@ -2,5 +2,6 @@
 set -euf -o pipefail
 
 #AE_SINK=ALSA
+exec \
 /usr/bin/kodi \
 &> /dev/null &
