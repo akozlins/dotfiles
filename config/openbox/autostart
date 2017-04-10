@@ -2,10 +2,10 @@
 
 run() {
   if [ $# -eq 1 ] ; then
-    ( $1 &> /dev/null ) &
+    ( exec $1 &> /dev/null ) &
   fi
   if [ $# -eq 2 ] ; then
-    ( sleep $2 ; [[ -z `pidof $1` ]] && $1 &> /dev/null ) &
+    ( sleep $2 ; [[ -z `pidof $1` ]] && exec $1 &> /dev/null ) &
   fi
 }
 
@@ -20,5 +20,5 @@ run "/usr/bin/qxkb" 2s
 run "/usr/bin/pasystray" 5s
 run "/usr/bin/xscreensaver" 5s
 
-( sleep 5s ; [[ -z `pidof /usr/bin/conky` ]] && /usr/bin/conky --config=$XDG_CONFIG_HOME/conky/conky.conf &> /dev/null ) &
-( sleep 5s ; [[ -z `pidof /usr/bin/xss-lock` ]] && /usr/bin/xss-lock -- xscreensaver-command -lock &> /dev/null ) &
+( sleep 5s ; [[ -z `pidof /usr/bin/conky` ]] && exec /usr/bin/conky --config=$XDG_CONFIG_HOME/conky/conky.conf &> /dev/null ) &
+( sleep 5s ; [[ -z `pidof /usr/bin/xss-lock` ]] && exec /usr/bin/xss-lock -- xscreensaver-command -lock &> /dev/null ) &

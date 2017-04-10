@@ -37,6 +37,11 @@ done
 
 
 
+# remove warning "Couldn't connect to accessibility bus: ..."
+export NO_AT_BRIDGE=1
+
+
+
 # QUARTUS
 source $DOTFILES/bin/quartus.sh
 

@@ -1,0 +1,12 @@
+#!/bin/sh
+set -euf -o pipefail
+
+far2l="$DOTFILES/far2l/build/install/far2l"
+
+if [ ! -x "$far2l" ] ; then
+    echo "ERROR: '$far2l' not found"
+fi
+
+exec \
+$far2l \
+&> /dev/null &
