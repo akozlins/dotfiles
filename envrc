@@ -7,10 +7,18 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 
 
+#LANG="en_US.UTF-8"
+
 export EDITOR=nano
 
 # WINE
 export WINEDLLOVERRIDES="winemenubuilder.exe=d"
+#export WINEDLLOVERRIDES="winemenubuilder.exe=d;winedevice.exe=d"
+
+#export PULSE_LATENCY_MSEC=60
+
+# suppress logs "Couldn't connect to accessibility bus: ..."
+export NO_AT_BRIDGE=1
 
 #export XUSERFILESEARCHPATH=
 

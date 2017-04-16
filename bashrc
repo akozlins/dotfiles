@@ -1,44 +1,37 @@
 #
-# ~/.bashrc
-#
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-[[ -f $HOME/.alias ]] && source $HOME/.alias
 
-export EDITOR=nano
+
+source ~/.dotfiles/envrc
+export PATH=$DOTFILES/bin:$PATH
+
+
 
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=65536
-export HISTIGNORE="ls:cd:pwd:reboot"
+export HISTIGNORE="reboot:reset:cd:cd ..:ls:make:pwd"
 export HISTSIZE=4096
 
-export LESSHISTFILE=/dev/null
 #export PROMPT_COMMAND='history -a; history -n'
-export MAKEFLAGS='-j'
 
-#source /usr/local/bin/thisroot.sh
-source /usr/local/bin/geant4.sh
 
-export PATH=/usr/lib/colorgcc/bin:$PATH
-export PATH=~/bin:$PATH
-#export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib/root
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/MU3E/software/install/lib
 
-# remove gedit warning
-export NO_AT_BRIDGE=1
+source $DOTFILES/etc/bash.bashrc
 
-#LANG="en_US.UTF-8"
 
-# wine
-export WINEDLLOVERRIDES="winemenubuilder.exe=d"
-#export WINEDLLOVERRIDES="winemenubuilder.exe=d;winedevice.exe=d"
 
-#export TERM=xterm-256color
+for file in $DOTFILES/conf.d/* ; do
+  [ -f $file ] && source $file
+done
 
-#export PULSE_LATENCY_MSEC=60
+
+
+bind -f $DOTFILES/inputrc
+
+
 
 # Mathematica fonts
 #xset fp+ /usr/local/Wolfram/Mathematica/10.1/SystemFiles/Fonts/Type1

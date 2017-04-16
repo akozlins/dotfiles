@@ -1,10 +1,9 @@
 #
 
 source ~/.dotfiles/envrc
-
 export PATH=$DOTFILES/bin:$PATH
 
-export HISTORY_IGNORE="(reboot|rm *|sudo rm *|reset|cd|cd ..|ls|make|git add *)"
+export HISTORY_IGNORE="(reboot|rm *|sudo rm *|reset|cd|cd ..|ls|make|pwd|git add *)"
 
 
 
@@ -21,35 +20,23 @@ plugins=(gitfast command-not-found)
 
 source $ZSH/oh-my-zsh.sh
 
+# job control
 setopt no_hup
 
+# completion
 setopt no_auto_menu
 setopt no_auto_remove_slash
+setopt no_menu_complete
 
-setopt no_share_history
+# history
 setopt hist_ignore_all_dups
+setopt no_share_history
 
 
 
-for file in $DOTFILES/alias.d/* ; do
+for file in $DOTFILES/conf.d/* ; do
   [ -f $file ] && source $file
 done
-
-
-
-# remove warning "Couldn't connect to accessibility bus: ..."
-export NO_AT_BRIDGE=1
-
-
-
-# QUARTUS
-source $DOTFILES/bin/quartus.sh
-
-# GEANT4
-source $DOTFILES/bin/geant4.sh
-
-# MU3E
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/MU3E/software/install/lib
 
 
 
