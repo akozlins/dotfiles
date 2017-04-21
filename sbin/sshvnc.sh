@@ -11,10 +11,10 @@ echo "PORT = $PORT"
 
 set -euf -o pipefail
 
-X11VNC_CMD="x11vnc -nopw -display :0 -localhost -once -timeout 5 -scale 2/3"
+X11VNC_CMD="x11vnc -nopw -display :0 -localhost -once -timeout 5 -cursor none -scale 2/3"
 
 ssh -S none -f -L "$PORT":localhost:5900 -o ExitOnForwardFailure=yes "$@" "$X11VNC_CMD"
 nc -z localhost "$PORT"
-sleep 2.5; vncviewer localhost:"$PORT"
+sleep 2.5; vncviewer DotWhenNoCursor=1 localhost:"$PORT"
 
 ssh "$@" -O cancel -L "$PORT":localhost:5900
