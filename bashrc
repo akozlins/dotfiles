@@ -3,10 +3,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
-
 source ~/.dotfiles/envrc
 export PATH=$DOTFILES/bin:$PATH
+
+for file in $DOTFILES/conf.d/* ; do
+  [ -f $file ] && source $file
+done
 
 
 
@@ -20,14 +22,6 @@ export HISTSIZE=4096
 
 
 source $DOTFILES/etc/bash.bashrc
-
-
-
-for file in $DOTFILES/conf.d/* ; do
-  [ -f $file ] && source $file
-done
-
-
 
 bind -f $DOTFILES/inputrc
 

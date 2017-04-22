@@ -3,7 +3,15 @@
 source ~/.dotfiles/envrc
 export PATH=$DOTFILES/bin:$PATH
 
+for file in $DOTFILES/conf.d/* ; do
+  [ -f $file ] && source $file
+done
+
+
+
 export HISTORY_IGNORE="(reboot|rm *|sudo rm *|reset|cd|cd ..|ls|make|pwd|git add *)"
+export ZLE_REMOVE_SUFFIX_CHARS=""
+export ZLE_SPACE_SUFFIX_CHARS=""
 
 
 
@@ -20,9 +28,6 @@ plugins=(gitfast command-not-found)
 
 source $ZSH/oh-my-zsh.sh
 
-# job control
-setopt no_hup
-
 # completion
 setopt no_auto_menu
 setopt no_auto_remove_slash
@@ -30,13 +35,16 @@ setopt no_menu_complete
 
 # history
 setopt hist_ignore_all_dups
+setopt hist_lex_words
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
 setopt no_share_history
 
+# job control
+setopt no_hup
 
-
-for file in $DOTFILES/conf.d/* ; do
-  [ -f $file ] && source $file
-done
+# zle
+setopt no_beep
 
 
 
