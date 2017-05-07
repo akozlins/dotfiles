@@ -6,10 +6,6 @@
 source ~/.dotfiles/envrc
 export PATH=$DOTFILES/bin:$PATH
 
-for file in $DOTFILES/conf.d/* ; do
-  [ -f $file ] && source $file
-done
-
 
 
 export HISTCONTROL=ignoreboth:erasedups
@@ -33,3 +29,9 @@ bind -f $DOTFILES/inputrc
 shopt -s cmdhist
 shopt -s expand_aliases
 shopt -s histappend
+
+
+
+for file in $DOTFILES/conf.d/* ; do
+  [ -f $file ] && source $file
+done

@@ -2,4 +2,4 @@
 set -euf -o pipefail
 
 exec \
-/usr/bin/irssi --home=$XDG_CONFIG_HOME/irssi "$@"
+/usr/bin/irssi --config="$XDG_CONFIG_HOME"/irssi/config --home="$XDG_DATA_HOME"/irssi "$@"

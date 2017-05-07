@@ -3,7 +3,7 @@ set -euf -o pipefail
 
 CMD=/usr/bin/qbittorrent
 
-[[ -x /usr/bin/firejail ]] && CMD="/usr/bin/firejail -- $CMD"
+#[[ -x /usr/bin/firejail ]] && CMD="/usr/bin/firejail -- $CMD"
 CMD="exec $CMD $@"
 
 if [[ $# -eq 0 ]] ; then

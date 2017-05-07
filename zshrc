@@ -3,10 +3,6 @@
 source ~/.dotfiles/envrc
 export PATH=$DOTFILES/bin:$PATH
 
-for file in $DOTFILES/conf.d/* ; do
-  [ -f $file ] && source $file
-done
-
 
 
 export HISTORY_IGNORE="(reboot|rm *|sudo rm *|reset|cd|cd ..|ls|make|pwd|git add *)"
@@ -53,3 +49,9 @@ bindkey "\e[B" history-search-forward
 
 bindkey "^d" kill-whole-line
 bindkey "^i" expand-or-complete-prefix
+
+
+
+for file in $DOTFILES/conf.d/* ; do
+  [ -f $file ] && source $file
+done

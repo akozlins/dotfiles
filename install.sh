@@ -24,6 +24,7 @@ declare -a files=(
   config/firejail
   config/git
   config/htop
+  config/npm
   config/openbox
   config/pacman
   config/pulse/client.conf
