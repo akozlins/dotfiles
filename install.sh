@@ -13,6 +13,7 @@ declare -a files=(
   nanorc
   rootrc
   tmux.conf
+  unison
   xinitrc
   xsession
   zshrc
