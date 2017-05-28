@@ -8,8 +8,10 @@ if [ $# -ge 1 ]; then
   exit 0
 fi
 
+EXE="C:/Program Files/WinPlex/supaplex.exe"
+#EXE="C:/Program Files/Megaplex0961/Megaplex.exe"
+
 exec \
 $DOTFILES/bin/wine.sh far \
 explorer /desktop=winplex,1024x768 \
-"C:/Program Files/WinPlex/supaplex.exe"
-#"C:/Program Files/Megaplex0961/Megaplex.exe"
+"$EXE"
