@@ -11,5 +11,5 @@
 	submoduleSummary = true
 [merge]
 	commit = no
-[rerere]
-	enabled = true
+#[rerere]
+#	enabled = true
