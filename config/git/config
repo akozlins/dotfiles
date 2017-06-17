@@ -13,3 +13,5 @@
 	commit = no
 #[rerere]
 #	enabled = true
+[oh-my-zsh]
+	hide-dirty = 1

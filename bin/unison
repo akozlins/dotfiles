@@ -1,7 +1,7 @@
 #!/bin/sh
 set -euf -o pipefail
 
-UNISON=~/.config/unison
+UNISON="$DOTFILES/unison"
 
 exec \
 /usr/bin/unison -logfile $UNISON/unison.log

@@ -1,0 +1,6 @@
+#!/bin/sh
+set -euf -o pipefail
+
+exec \
+/usr/bin/qtcreator "$@" \
+&> /dev/null &
