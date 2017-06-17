@@ -1,0 +1,7 @@
+#!/bin/sh
+set -euf -o pipefail
+
+export IDEA_PROPERTIES=$DOTFILES/jetbrains/idea.properties
+exec \
+/usr/bin/idea.sh \
+&> /dev/null &
