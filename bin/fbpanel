@@ -1,0 +1,11 @@
+#!/bin/sh
+set -euf -o pipefail
+
+fbpanel="$HOME/.local/bin/fbpanel"
+
+if [ ! -x "$fbpanel" ] ; then
+    fbpanel=/usr/bin/fbpanel
+fi
+
+exec \
+"$fbpanel" "$@"

@@ -1,6 +1,8 @@
 #!/bin/sh
 set -euf -o pipefail
 
+export DVT_LICENSE_FILE=
+
 export SWT_GTK3=0
 exec \
 /usr/bin/eclipse --launcher.GTK_version 2 \

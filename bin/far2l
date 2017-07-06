@@ -8,5 +8,5 @@ if [ ! -x "$far2l" ] ; then
 fi
 
 exec \
-$far2l \
+"$far2l" "$@" \
 &> /dev/null &

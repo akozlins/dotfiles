@@ -1,0 +1,24 @@
+--- a/panel/panel.c
++++ b/panel/panel.c
+@@ -936,6 +936,9 @@
+     exit(1);
+ }
+ 
++void
++configure(xconf *xc);
++
+ int
+ main(int argc, char *argv[])
+ {
+--- a/plugins/battery/os_linux.c
++++ b/plugins/battery/os_linux.c
+@@ -119,6 +119,9 @@
+     RET(ret);
+ }
+ 
++power_supply*
++power_supply_parse(power_supply* ps);
++
+ static gboolean
+ battery_update_os_sys(battery_priv *c)
+ {
