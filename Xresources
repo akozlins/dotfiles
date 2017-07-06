@@ -12,6 +12,8 @@ rxvt*saveLines: 4096
 rxvt*selectToClipboard: yes
 rxvt*title: rxvt
 
+
+
 #if WIDTH <= 1920
 xterm*geometry: 100x30
 rxvt*geometry: 100x30
@@ -19,6 +21,8 @@ rxvt*geometry: 100x30
 xterm*geometry: 110x35
 rxvt*geometry: 110x35
 #endif
+
+
 
 xscreensaver*lock: true
 xscreensaver*mode: blank

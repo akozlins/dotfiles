@@ -1,1 +1,4 @@
-far2l
+*.orig
+
+/far2l
+/fbpanel

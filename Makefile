@@ -5,7 +5,7 @@ install:
 .PHONY: far2l fbpanel
 
 far2l:
-	make_far2l.sh
+	./make_far2l.sh
 
 fbpanel:
-	make_fbpanel.sh
+	./make_fbpanel.sh
