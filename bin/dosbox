@@ -1,0 +1,7 @@
+#!/bin/sh
+set -euf -o pipefail
+
+exec \
+/usr/bin/dosbox \
+-conf "$XDG_CONFIG_HOME/dosbox-0.74.conf" \
+"$@"

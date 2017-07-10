@@ -21,6 +21,8 @@ void set_plot_style()
 }
 
 void rootlogon() {
+//    gSystem->Load("libCLHEP");
+
     gStyle->SetCanvasDefW(480+4);
     gStyle->SetCanvasDefH(480+28);
     gStyle->SetCanvasDefX(0);
