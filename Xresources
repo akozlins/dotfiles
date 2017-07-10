@@ -36,3 +36,14 @@ xscreensaver*dpmsQuickOff: true
 xscreensaver*dpmsStandby: 0:30:00
 xscreensaver*dpmsSuspend: 0:30:00
 xscreensaver*dpmsOff:     0:30:00
+
+
+
+!Xft.dpi: 96
+!Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+!Xft.hintstyle: hintslight
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
