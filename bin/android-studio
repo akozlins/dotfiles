@@ -2,6 +2,7 @@
 set -euf -o pipefail
 
 export STUDIO_PROPERTIES=$DOTFILES/jetbrains/studio.properties
+
 exec \
 /usr/bin/android-studio \
 &> /dev/null &

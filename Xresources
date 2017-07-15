@@ -1,15 +1,20 @@
 xterm*background: grey25
 xterm*foreground: white
-xterm*font: 9x15
+xterm*vt100.font: 9x15
 xterm*saveLines: 4096
-xterm*selectToClipboard: yes
+xterm*selectToClipboard: true
 xterm*title: xterm
+
+XTerm*scrollBar: false
+XTerm*vt100.toolBar: false
+
+
 
 rxvt*background: grey25
 rxvt*foreground: white
 rxvt*font: 9x15
 rxvt*saveLines: 4096
-rxvt*selectToClipboard: yes
+rxvt*selectToClipboard: true
 rxvt*title: rxvt
 
 

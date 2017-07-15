@@ -5,7 +5,6 @@
 # ConfigProperties:
 
 RcFileLocale = C
-ToolTips = Yes
 DisplayStatusBar = Yes
 SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No

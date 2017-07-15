@@ -1,7 +1,9 @@
 #!/bin/sh
 set -euf -o pipefail
 
+#export IDEA_VM_OPTIONS=$DOTFILES/jetbrains/idea.vmoptions
 export IDEA_PROPERTIES=$DOTFILES/jetbrains/idea.properties
+
 exec \
 /usr/bin/idea.sh \
 &> /dev/null &

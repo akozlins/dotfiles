@@ -24,6 +24,7 @@ declare -a files=(
   config/fbpanel
   config/firejail
   config/git
+  config/gtk-3.0
   config/htop
   config/mc
   config/npm

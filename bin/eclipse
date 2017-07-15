@@ -6,9 +6,9 @@ export DVT_LICENSE_FILE=
 export SWT_GTK3=0
 
 exec \
-"$HOME/downloads/eclipse/eclipse" \
--configuration "$XDG_CONFIG_HOME/eclipse/config" \
+"/usr/bin/eclipse" \
+-configuration "$XDG_CACHE_HOME/eclipse/config" \
 -data "$XDG_CONFIG_HOME/eclipse/data" \
 --launcher.GTK_version 2 \
--vmargs -Duser.home=$XDG_CONFIG_HOME/eclipse \
+-vmargs -Duser.home=$XDG_CACHE_HOME/eclipse \
 &> /dev/null &
