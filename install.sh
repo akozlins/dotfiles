@@ -32,7 +32,9 @@ declare -a files=(
   config/pacman
   config/pulse/client.conf
   config/systemd
+  config/vlc
   config/yaourt
+
   config/mimeapps.list
   config/pavucontrol.ini
   config/qxkb.cfg

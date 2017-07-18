@@ -24,9 +24,9 @@
   <separator label="Applications"/>
 
   <item label="uxterm"><action name="Execute"><command>uxterm</command></action></item>
-  <item label="Far"><action name="Execute"><command>~/bin/far.sh</command></action></item>
-  <item label="firefox"><action name="Execute"><execute>~/bin/firefox</execute></action></item>
-  <item label="eclipse"><action name="Execute"><execute>~/bin/eclipse</execute></action></item>
+  <item label="Far"><action name="Execute"><command>~/.dotfiles/bin/far.sh</command></action></item>
+  <item label="firefox"><action name="Execute"><execute>~/.dotfiles/bin/firefox</execute></action></item>
+  <item label="eclipse"><action name="Execute"><execute>~/.dotfiles/bin/eclipse</execute></action></item>
 
   <separator label="System"/>
 
