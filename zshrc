@@ -19,7 +19,11 @@ export ZSH_UPDATE=$ZSH/cache/.zsh-update
 DISABLE_AUTO_UPDATE="true"
 
 ZSH_THEME="gentoo"
-plugins=(gitfast command-not-found)
+plugins=(
+  gitfast
+  command-not-found
+  dotenv
+)
 #CASE_SENSITIVE="true"
 
 source $ZSH/oh-my-zsh.sh

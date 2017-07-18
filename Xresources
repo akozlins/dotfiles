@@ -1,12 +1,12 @@
-XTerm*background: grey25
-XTerm*foreground: white
-XTerm*vt100.font: 9x15
-XTerm*saveLines: 4096
-XTerm*selectToClipboard: true
-XTerm*title: xterm
+xterm*background: grey25
+xterm*foreground: white
+xterm*font: 9x15
+xterm*saveLines: 4096
+xterm*selectToClipboard: true
+xterm*title: xterm
 
-XTerm*scrollBar: false
-XTerm*vt100.toolBar: false
+xterm*scrollBar: false
+xterm*vt100.toolBar: false
 
 
 
@@ -20,10 +20,10 @@ rxvt*title: rxvt
 
 
 #if WIDTH <= 1920
-XTerm*vt100.geometry: 100x30
+xterm*vt100.geometry: 100x30
 rxvt*geometry: 100x30
 #else
-XTerm*vt100.geometry: 110x35
+xterm*vt100.geometry: 110x35
 rxvt*geometry: 110x35
 #endif
 
