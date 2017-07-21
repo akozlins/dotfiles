@@ -1,10 +1,19 @@
 
+user_pref("browser.bookmarks.showMobileBookmarks", false);
+user_pref("browser.bookmarks.showRecentlyBookmarked", false);
+
 user_pref("browser.ctrlTab.previews", true);
+
+user_pref("browser.download.animateNotifications", false);
 user_pref("browser.download.dir", "/home/akozlins/downloads");
-user_pref("browser.download.lastDir", "/home/akozlins/downloads");
-user_pref("browser.open.lastDir", "/home/akozlins/downloads");
 
 user_pref("browser.fullscreen.animate", false);
+
+user_pref("browser.search.defaultenginename", "DuckDuckGo");
+user_pref("browser.search.hiddenOneOffs", "Yahoo,Bing,Amazon.com,eBay,Twitter");
+
+user_pref("browser.sessionstore.max_tabs_undo", 16);
+user_pref("browser.sessionstore.restore_on_demand", false);
 
 user_pref("browser.startup.page", 3);
 
@@ -14,14 +23,13 @@ user_pref("browser.tabs.tabMaxWidth", 120);
 user_pref("browser.tabs.tabMinWidth", 120);
 user_pref("browser.tabs.warnOnClose", false);
 
-user_pref("browser.sessionstore.restore_on_demand", false);
-
-user_pref("browser.search.defaultenginename", "DuckDuckGo");
-user_pref("browser.search.hiddenOneOffs", "Yahoo,Bing,Amazon.com,eBay,Twitter");
-
 //user_pref("font.name.monospace.x-western", "Courier New");
 //user_pref("font.name.sans-serif.x-western", "Arial");
 //user_pref("font.name.serif.x-western", "Times New Roman");
+
+//user_pref("font.name.monospace.x-western", "DejaVu Sans Mono");
+//user_pref("font.name.sans-serif.x-western", "DejaVu Sans");
+//user_pref("font.name.serif.x-western", "DejaVu Serif");
 
 user_pref("general.smoothScroll", false);
 user_pref("general.warnOnAboutConfig", false);
@@ -38,16 +46,7 @@ user_pref("ui.key.menuAccessKeyFocuses", false);
 
 user_pref("extensions.cleanlinks.enabled", false);
 
-user_pref("extensions.classicthemerestorer.aboutprefs", "category-security");
-user_pref("extensions.classicthemerestorer.aboutprefsInd", 3);
-user_pref("extensions.classicthemerestorer.bfurlbarfix", true);
-user_pref("extensions.classicthemerestorer.bmanimation", false);
-user_pref("extensions.classicthemerestorer.ctrreset", false);
-user_pref("extensions.classicthemerestorer.fsaduration", false);
-user_pref("extensions.classicthemerestorer.pananimation", false);
-user_pref("extensions.classicthemerestorer.pref_actindx", 4);
 user_pref("extensions.classicthemerestorer.smallnavbut", true);
-user_pref("extensions.classicthemerestorer.tabsontop", "true");
 
 user_pref("extensions.firegestures.keypressgesture", false);
 user_pref("extensions.firegestures.mousetrail", false);
@@ -58,14 +57,10 @@ user_pref("extensions.firegestures.wheelgesture", false);
 
 user_pref("extensions.greasemonkey.enabled", true);
 
-user_pref("extensions.tabmix.appearance.selectedTabIndex", 1);
-user_pref("extensions.tabmix.events.selectedTabIndex", 3);
 user_pref("extensions.tabmix.lasttab.tabPreviews", false);
 user_pref("extensions.tabmix.sessions.crashRecovery", false);
-user_pref("extensions.tabmix.sessions.crashed", true);
 user_pref("extensions.tabmix.sessions.manager", false);
 user_pref("extensions.tabmix.tabBarMode", 2);
-user_pref("extensions.tabmix.tabs.warnOnClose", false);
 user_pref("extensions.tabmix.unloadedTab", false);
 user_pref("extensions.tabmix.unreadTab", false);
 
