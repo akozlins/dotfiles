@@ -1,19 +1,20 @@
 
-user_pref("general.smoothScroll", false);
-user_pref("general.warnOnAboutConfig", false);
-
+user_pref("browser.ctrlTab.previews", true);
 user_pref("browser.download.dir", "/home/akozlins/downloads");
 user_pref("browser.download.lastDir", "/home/akozlins/downloads");
 user_pref("browser.open.lastDir", "/home/akozlins/downloads");
-user_pref("browser.ctrlTab.previews", true);
 
 user_pref("browser.fullscreen.animate", false);
+
+user_pref("browser.startup.page", 3);
 
 user_pref("browser.tabs.animate", false);
 user_pref("browser.tabs.closeWindowWithLastTab", false);
 user_pref("browser.tabs.tabMaxWidth", 120);
 user_pref("browser.tabs.tabMinWidth", 120);
 user_pref("browser.tabs.warnOnClose", false);
+
+user_pref("browser.sessionstore.restore_on_demand", false);
 
 user_pref("browser.search.defaultenginename", "DuckDuckGo");
 user_pref("browser.search.hiddenOneOffs", "Yahoo,Bing,Amazon.com,eBay,Twitter");
@@ -22,11 +23,18 @@ user_pref("browser.search.hiddenOneOffs", "Yahoo,Bing,Amazon.com,eBay,Twitter");
 //user_pref("font.name.sans-serif.x-western", "Arial");
 //user_pref("font.name.serif.x-western", "Times New Roman");
 
+user_pref("general.smoothScroll", false);
+user_pref("general.warnOnAboutConfig", false);
+
 user_pref("pdfjs.defaultZoomValue", "page-width");
 
 user_pref("print.print_resolution", 600);
 user_pref("print.print_paper_name", "iso_a4");
 user_pref("print.print_orientation", 0);
+
+user_pref("ui.key.menuAccessKeyFocuses", false);
+
+// Extensions
 
 user_pref("extensions.cleanlinks.enabled", false);
 
@@ -57,6 +65,7 @@ user_pref("extensions.tabmix.sessions.crashRecovery", false);
 user_pref("extensions.tabmix.sessions.crashed", true);
 user_pref("extensions.tabmix.sessions.manager", false);
 user_pref("extensions.tabmix.tabBarMode", 2);
+user_pref("extensions.tabmix.tabs.warnOnClose", false);
 user_pref("extensions.tabmix.unloadedTab", false);
 user_pref("extensions.tabmix.unreadTab", false);
 

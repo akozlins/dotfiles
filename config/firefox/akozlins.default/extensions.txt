@@ -1,0 +1,7 @@
+Clasic Theme Restorer
+Decentraleyes
+FireGestures
+No Resource URI Leak
+Tab Mix Plus
+uBlock Origin
+uMatrix
