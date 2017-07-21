@@ -11,5 +11,5 @@ git pull
 
 mkdir -p build
 cd build
-cmake ..
-make
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make -j4

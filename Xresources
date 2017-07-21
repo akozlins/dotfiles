@@ -1,30 +1,39 @@
+! xterm
 xterm*background: grey25
 xterm*foreground: white
 xterm*font: 9x15
 xterm*saveLines: 4096
 xterm*selectToClipboard: true
 xterm*title: xterm
-
 xterm*scrollBar: false
+
 xterm*vt100.toolBar: false
 
 
 
-rxvt*background: grey25
-rxvt*foreground: white
-rxvt*font: 9x15
-rxvt*saveLines: 4096
-rxvt*selectToClipboard: true
-rxvt*title: rxvt
+! rxvt-unicode
+urxvt*background: grey25
+urxvt*foreground: white
+urxvt*font: 9x15
+urxvt*saveLines: 4096
+urxvt*selectToClipboard: true
+urxvt*scrollBar: false
+
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+
+URxvt.perl-ext:
+URxvt.perl-ext-common:
 
 
 
 #if WIDTH <= 1920
 xterm*vt100.geometry: 100x30
-rxvt*geometry: 100x30
+urxvt*geometry: 100x30
 #else
 xterm*vt100.geometry: 110x35
-rxvt*geometry: 110x35
+urxvt*geometry: 110x35
 #endif
 
 
