@@ -22,6 +22,7 @@ declare -a files=(
   config/conky
   config/far2l
   config/fbpanel
+  config/firefox
   config/firejail
   config/git
   config/gtk-3.0

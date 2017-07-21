@@ -1,7 +1,14 @@
 #!/bin/sh
 set -euf -o pipefail
 
-CMD=/usr/bin/firefox
+profile="$XDG_CONFIG_HOME/firefox/akozlins.default"
+
+if [ ! -f "$profile" ] ; then
+    echo "Profile '$profile' not found!"
+    exit 1
+fi
+
+CMD="/usr/bin/firefox -profile $profile"
 
 [[ -x /usr/bin/firejail ]] && CMD="/usr/bin/firejail -- $CMD"
 CMD="exec $CMD $@"
