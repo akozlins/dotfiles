@@ -2,8 +2,9 @@
 set -euf -o pipefail
 cd $(dirname `readlink -f $0`)
 
-if [[ ! -d far2l ]] ; then
+if [[ ! -d "far2l/.git" ]] ; then
     git clone --depth 1 https://github.com/elfmz/far2l
+    patch -p1 < far2l.patch
 fi
 
 cd far2l

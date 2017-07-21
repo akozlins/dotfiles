@@ -1,0 +1,43 @@
+--- a/far2l/WinPort/src/CallInMain.h
++++ b/far2l/WinPort/src/CallInMain.h
+@@ -1,6 +1,7 @@
+ #pragma once
+ #include <mutex>
+ #include <condition_variable>
++#include <functional>
+ 
+ template<class RV, class FN>
+ 	class InMainCaller
+--- a/far2l/far2l/bootstrap/roots.sh
++++ b/far2l/far2l/bootstrap/roots.sh
+@@ -43,5 +43,6 @@
+ fi
+ 
++dfout="#"
+ dfout+=$eol
+ if [ -f ~/.config/far2l/favorites ]; then
+ 	dfout+=`grep "^[^#]" ~/.config/far2l/favorites`
+@@ -57,6 +58,7 @@
+ root=""
+ profile=""
+ lines=()
++mylines=()
+ 
+ while :
+ do
+@@ -77,6 +79,7 @@
+ 			else
+ 				lines=( "${lines[@]}" "$line" )
+ 			fi
++			mylines=( "${mylines[@]}" "$line" )
+ 		else
+ 			allow=1
+ 		fi
+@@ -98,6 +101,7 @@
+ fi
+ 
+ lines=("$profile" "$root" "${lines[@]}")
++lines=("${mylines[@]}")
+ 
+ if [ ! -z "$another" ]; then
+ 	lines=("$another$tab&-" "${lines[@]}")
