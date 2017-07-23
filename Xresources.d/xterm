@@ -1,0 +1,31 @@
+
+xterm*font: 9x15
+xterm*saveLines: 4096
+xterm*selectToClipboard: true
+xterm*scrollBar: false
+
+xterm.vt100.toolBar: false
+
+#if WIDTH <= 1920
+xterm.vt100.geometry: 100x30
+#else
+xterm.vt100.geometry: 110x35
+#endif
+
+xterm.termName: xterm
+xterm.vt100.background:         grey25
+xterm.vt100.foreground:         white
+
+xterm.vt100.color0:             black
+xterm.vt100.color1:             red
+xterm.vt100.color2:             green
+xterm.vt100.color3:             yellow
+xterm.vt100.color4:             CornflowerBlue
+xterm.vt100.color5:             magenta
+xterm.vt100.color6:             cyan
+xterm.vt100.color7:             white
+xterm.vt100.colorBD:            white
+xterm.vt100.colorBDMode:        true
+xterm.vt100.colorUL:            yellow
+xterm.vt100.colorULMode:        true
+xterm.vt100.cursorColor:        red

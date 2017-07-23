@@ -1,0 +1,21 @@
+
+urxvt*font: 9x15
+urxvt*saveLines: 4096
+urxvt*selectToClipboard: true
+urxvt*scrollBar: false
+
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+
+#if WIDTH <= 1920
+urxvt*geometry: 100x30
+#else
+urxvt*geometry: 110x35
+#endif
+
+urxvt*background: grey25
+urxvt*foreground: white
