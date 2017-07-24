@@ -1,5 +1,5 @@
-source $DOTFILES/vim/autoload/pathogen.vim
-execute pathogen#infect('$DOTFILES/vim/bundle/{}')
+source ~/.dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect("~/.dotfiles/vim/bundle/{}")
 syntax on
 filetype plugin indent on
 
@@ -15,7 +15,9 @@ set listchars=tab:→\-,trail:·,nbsp:·
 set list
 
 set cindent
-set shiftwidth=2
+set shiftwidth=4
 set expandtab
 
 set viminfo=
+
+set directory^=~/.dotfiles/vim/tmp//

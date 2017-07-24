@@ -42,8 +42,7 @@ declare -a files=(
   config/user-dirs.dirs
 )
 
-git submodule init
-git submodule update
+git submodule update --init --recursive
 
 mkdir -p ~/.config/pulse
 mkdir -p ~/.cache/ipe
@@ -55,5 +54,3 @@ for file in ${files[@]} ; do
 done
 
 #ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list
-
-curl -LSso vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
