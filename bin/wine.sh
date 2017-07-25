@@ -1,7 +1,7 @@
 #!/bin/sh
 set -euf -o pipefail
 
-: ${WINE_ROOT="/home/akozlins/wine"}
+: ${WINE_ROOT="$HOME/wine"}
 
 if [ ! -d "$WINE_ROOT" ]; then
   echo ERROR: wine root "$WINE_ROOT" not found

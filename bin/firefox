@@ -1,7 +1,7 @@
 #!/bin/sh
 set -euf -o pipefail
 
-profile="$XDG_CONFIG_HOME/firefox/akozlins.default"
+profile="$XDG_CONFIG_HOME/firefox/$USER.default"
 
 if [ ! -f "$profile/prefs.js" ] ; then
     echo "Profile '$profile' not found!"
