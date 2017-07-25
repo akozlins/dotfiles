@@ -280,7 +280,7 @@ user_pref("media.video_stats.enabled", false);
 //user_pref("general.buildID.override", "20100101");
 
 // PREF: Prevent font fingerprinting
-user_pref("browser.display.use_document_fonts", 0);
+//user_pref("browser.display.use_document_fonts", 0);
 
 // PREF: Enable only whitelisted URL protocol handlers
 // NOTICE: Disabling nonessential protocols breaks all interaction with custom protocols such as mailto:, irc:, magnet: ... and breaks opening third-party mail/messaging/torrent/... clients when clicking on links with these protocols
@@ -604,7 +604,7 @@ user_pref("network.IDN_show_punycode", true);
 //user_pref("browser.urlbar.autoFill.typed", false);
 
 // PREF: Disable CSS :visited selectors
-user_pref("layout.css.visited_links_enabled", false);
+//user_pref("layout.css.visited_links_enabled", false);
 
 // PREF: Disable URL bar autocomplete and history/bookmarks suggestions dropdown
 //user_pref("browser.urlbar.autocomplete.enabled", false);

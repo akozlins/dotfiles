@@ -33,6 +33,7 @@ export ANDROID_SDK_HOME="$XDG_DATA_HOME/android-sdk"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 
 export ASPELL_CONF="home-dir $XDG_CONFIG_HOME/aspell;"
+export ATOM_HOME="$XDG_CONFIG_HOME/atom"
 export GMVAULT_DIR="$XDG_CONFIG_HOME/gmvault"
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 export IPELATEXDIR="$XDG_CACHE_HOME/ipe/latexrun"

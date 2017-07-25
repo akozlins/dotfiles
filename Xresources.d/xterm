@@ -20,7 +20,7 @@ xterm.vt100.color0:             black
 xterm.vt100.color1:             red
 xterm.vt100.color2:             green
 xterm.vt100.color3:             yellow
-xterm.vt100.color4:             CornflowerBlue
+xterm.vt100.color4:             blue
 xterm.vt100.color5:             magenta
 xterm.vt100.color6:             cyan
 xterm.vt100.color7:             white
