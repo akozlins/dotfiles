@@ -40,6 +40,8 @@ user_pref("print.print_resolution", 600);
 user_pref("print.print_paper_name", "iso_a4");
 user_pref("print.print_orientation", 0);
 
+user_pref("network.proxy.type", 2);
+
 user_pref("ui.key.menuAccessKeyFocuses", false);
 
 // Extensions

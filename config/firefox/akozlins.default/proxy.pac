@@ -1,0 +1,18 @@
+"use strict";
+
+let patterns = new Array(
+    "example.com"
+);
+
+let socks5 = "SOCKS5 localhost:9050";
+
+function FindProxyForURL(url, host) {
+    for(let i = 0; i < patterns.length; i++) {
+        let p = patterns[i];
+        if(shExpMatch(host, p) || shExpMatch(host, "*." + p)) {
+            return socks5;
+        }
+    }
+
+    return "DIRECT";
+}
