@@ -253,7 +253,7 @@
   </keybind>
   <keybind key="W-A-f">
     <action name="Execute">
-      <command>~/.dotfiles/bin/far.sh</command>
+      <command>~/.dotfiles/bin/far2l</command>
     </action>
   </keybind>
   <keybind key="W-l">
