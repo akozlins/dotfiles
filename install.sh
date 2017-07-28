@@ -8,6 +8,8 @@ DOTFILES=$(dirname `readlink -f $0`)
 
 declare -a files=(
   emacs.d
+  wicd
+
   dmrc
   gmrunrc
   nanorc
