@@ -18,6 +18,7 @@ export HISTSIZE=4096
 
 
 source $DOTFILES/etc/bash.bashrc
+eval `dircolors -b "$DOTFILES/etc/DIR_COLORS"`
 
 bind -f $DOTFILES/inputrc
 
