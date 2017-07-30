@@ -1,0 +1,14 @@
+#!/bin/sh
+set -euf -o pipefail
+
+CMD=/usr/bin/ghb
+PROFILE="$XDG_CONFIG_HOME/firejail/handbrake.profile"
+
+[[ -x /usr/bin/firejail ]] && CMD="/usr/bin/firejail --profile=$PROFILE -- $CMD"
+CMD="exec $CMD $@"
+
+if [[ $# -eq 0 ]] ; then
+  $CMD &> /dev/null &
+else
+  $CMD
+fi
