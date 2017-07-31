@@ -1,11 +1,7 @@
 #!/bin/sh
 set -euf -o pipefail
 
-UNISON="$DOTFILES/unison"
-
 CMD="/usr/bin/unison-gtk2 -logfile $UNISON/unison.log -watch=false"
-#-servercmd ~/bin/unison
-
 CMD="exec $CMD $@"
 
 if [[ $# -eq 0 ]] ; then

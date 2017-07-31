@@ -41,13 +41,13 @@ Plugin {
       icon = computer
 
       item {
-        name = Terminal
-        icon = terminal
+        name = uxterm
+        icon = utilities-terminal
         action = uxterm
       }
       item {
-        name = Lock Display
-        icon = gnome-lockscreen
+        name = Lock Screen
+        icon = system-lock-screen
         action = /usr/bin/xscreensaver-command -lock
       }
       separator {
@@ -64,7 +64,7 @@ Plugin {
       }
       item {
         name = Logout
-        icon = gnome-session-logout
+        icon = gnome-logout
         action = /usr/lib/fbpanel/xlogout
       }
     }
@@ -72,7 +72,8 @@ Plugin {
 }
 
 Plugin {
-  type = space
+  type = separator
+  padding = 8
   config {
     size = 16
   }
@@ -82,40 +83,26 @@ Plugin {
   type = launchbar
   config {
     button {
-      icon = file-manager
-      tooltip = thunar
       action = thunar
+      tooltip = thunar
+      icon = Thunar
     }
     button {
-      icon = terminal
-      tooltip = uxterm
       action = uxterm
+      tooltip = uxterm
+      icon = utilities-terminal
     }
     button {
-      icon = web-browser
-      tooltip = firefox
       action = firefox
+      tooltip = firefox
+      icon = firefox
     }
   }
 }
 
 Plugin {
-  type = space
-  config {
-    size = 16
-  }
-}
-
-Plugin {
-  type = wincmd
-  config {
-    icon = gnome-fs-desktop
-    tooltip = Left click to iconify all windows. Middle click to shade them.
-  }
-}
-
-Plugin {
-  type = space
+  type = separator
+  padding = 8
   config {
     size = 16
   }
