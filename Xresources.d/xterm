@@ -1,5 +1,4 @@
 
-xterm*font: 9x15
 xterm*saveLines: 4096
 xterm*selectToClipboard: true
 xterm*scrollBar: false
@@ -7,12 +6,12 @@ xterm*scrollBar: false
 xterm.vt100.toolBar: false
 
 #if WIDTH <= 1920
-xterm.vt100.geometry: 100x30
+xterm*vt100.geometry: 100x30
 #else
-xterm.vt100.geometry: 110x35
+xterm*vt100.geometry: 110x35
 #endif
 
-xterm.termName: xterm
+xterm*font: 9x15
 xterm.vt100.background:         grey25
 xterm.vt100.foreground:         white
 

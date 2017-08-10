@@ -12,9 +12,9 @@ URxvt.perl-ext:
 URxvt.perl-ext-common:
 
 #if WIDTH <= 1920
-urxvt*geometry: 100x30
+URxvt*geometry: 100x30
 #else
-urxvt*geometry: 110x35
+URxvt*geometry: 110x35
 #endif
 
 urxvt*background: grey25
