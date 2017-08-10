@@ -1,5 +1,4 @@
 #!/bin/sh
-set -x
 set -euf -o pipefail
 
 exec \
