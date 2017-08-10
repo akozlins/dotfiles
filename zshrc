@@ -28,6 +28,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# directories
+unsetopt auto_cd
+
 # completion
 setopt no_auto_menu
 setopt no_auto_remove_slash
