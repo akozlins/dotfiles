@@ -25,6 +25,7 @@ declare -a files=(
   config/fbpanel
   config/firefox
   config/firejail
+  config/fontconfig
   config/git
   config/gtk-3.0
   config/htop
