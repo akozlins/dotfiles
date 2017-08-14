@@ -18,7 +18,6 @@ git clone https://github.com/akozlins/dotfiles .dotfiles
  - `.wicd`
 
  - `.dmrc`
- - `.gmrunrc`
  - `.nanorc`
  - `.rootrc`
  - `.Xauthority` * (use `$XDG_RUNTIME_DIR`)

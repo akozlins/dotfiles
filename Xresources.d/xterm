@@ -5,6 +5,11 @@ xterm*scrollBar: false
 
 xterm.vt100.toolBar: false
 
+xterm.termName: xterm-256color
+xterm.vt100.metaSendsEscape: true
+xterm.vt100.backarrowKey: false
+xterm.ttyModes: erase ^?
+
 #if WIDTH <= 1920
 xterm*vt100.geometry: 100x30
 #else
@@ -12,8 +17,8 @@ xterm*vt100.geometry: 110x35
 #endif
 
 xterm*font: 9x15
-xterm.vt100.background:         grey25
-xterm.vt100.foreground:         white
+xterm*vt100.background:         grey25
+xterm*vt100.foreground:         white
 
 xterm.vt100.color0:             black
 xterm.vt100.color1:             red

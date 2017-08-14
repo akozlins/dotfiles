@@ -1,6 +1,6 @@
 "use strict";
 
-let patterns = new Array(
+let patterns = [
     "example.com"
 );
 
@@ -13,6 +13,11 @@ function FindProxyForURL(url, host) {
             return socks5;
         }
     }
+
+//    if(shExpMatch(host, "example.com") || shExpMatch(host, "*.example.com")
+//    ) {
+//        return socks5;
+//    }
 
     return "DIRECT";
 }

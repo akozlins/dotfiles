@@ -10,7 +10,6 @@ declare -a files=(
   emacs.d
 
   dmrc
-  gmrunrc
   nanorc
   rootrc
   unison

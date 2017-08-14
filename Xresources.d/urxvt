@@ -1,5 +1,4 @@
 
-urxvt*font: 9x15
 urxvt*saveLines: 4096
 urxvt*selectToClipboard: true
 urxvt*scrollBar: false
@@ -7,6 +6,8 @@ urxvt*scrollBar: false
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
 
 URxvt.perl-ext:
 URxvt.perl-ext-common:
@@ -17,5 +18,6 @@ URxvt*geometry: 100x30
 URxvt*geometry: 110x35
 #endif
 
+urxvt*font: 9x15
 urxvt*background: grey25
 urxvt*foreground: white
