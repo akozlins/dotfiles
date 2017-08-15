@@ -1,4 +1,4 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
-echo on | sudo tee /sys/bus/usb/devices/$1/power/control
+echo on | sudo tee "/sys/bus/usb/devices/$1/power/control"

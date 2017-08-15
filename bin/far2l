@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
 far2l="$DOTFILES/far2l/build/install/far2l"
 
@@ -9,4 +9,4 @@ fi
 
 exec \
 "$far2l" "$@" \
-&> /dev/null &
+> /dev/null 2>&1 &

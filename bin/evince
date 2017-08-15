@@ -1,13 +1,12 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
 CMD=/usr/bin/evince
 
-[[ -x /usr/bin/firejail ]] && CMD="/usr/bin/firejail -- $CMD"
-CMD="exec $CMD $@"
+[ -x /usr/bin/firejail ] && CMD="/usr/bin/firejail -- $CMD"
 
-if [[ $# -eq 1 ]] && [[ -f "$1" ]] ; then
-  $CMD &> /dev/null &
+if [ $# -eq 1 ] && [ -f "$1" ] ; then
+  exec $CMD "$@" > /dev/null 2>&1 &
 else
-  $CMD
+  exec $CMD "$@"
 fi

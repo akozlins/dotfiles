@@ -1,11 +1,10 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
 CMD="/usr/bin/unison-gtk2 -logfile $UNISON/unison.log -watch=false"
-CMD="exec $CMD $@"
 
-if [[ $# -eq 0 ]] ; then
-  $CMD &> /dev/null &
+if [ $# -eq 0 ] ; then
+  exec $CMD "$@" > /dev/null 2>&1 &
 else
-  $CMD
+  exec $CMD "$@"
 fi

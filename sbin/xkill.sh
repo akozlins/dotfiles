@@ -1,8 +1,8 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
 window=$(xdotool getwindowfocus)
-pid=$(xprop -id $window | grep PID)
+pid=$(xprop -id "$window" | grep PID)
 
 exec \
-kill -9 $pid
+kill -9 "$pid"

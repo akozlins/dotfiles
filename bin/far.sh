@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
 export WINE="wineconsole --backend=user"
 export WINEARCH=win32
@@ -10,5 +10,5 @@ if [ $# -ge 1 ]; then
 fi
 
 exec \
-$DOTFILES/bin/wine.sh far \
+"$DOTFILES/bin/wine.sh" far \
 "C:/Program Files/Far/Far.exe"

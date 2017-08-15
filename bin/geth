@@ -1,4 +1,4 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
 exec /usr/bin/geth --datadir "$XDG_CONFIG_HOME/ethereum" "$@"

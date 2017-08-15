@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
 export WINE_ROOT="$DISK_46A2/wine"
 
@@ -9,6 +9,6 @@ if [ $# -ge 1 ]; then
 fi
 
 exec \
-primusrun $DOTFILES/bin/wine.sh battle.net \
+primusrun "$DOTFILES/bin/wine.sh" battle.net \
 explorer /desktop=battle_net,1280x1024 \
 "C:/Program Files (x86)/Battle.net/Battle.net.exe"

@@ -1,15 +1,13 @@
 #!/bin/sh
+set -euf
 
-while [ 1 ] ; do
-  PORT="$RANDOM"
+while true ; do
+  PORT=$(hexdump -n 2 -e '/2 "%u"' /dev/urandom)
   if [ "$PORT" -lt 1024 ] ; then continue; fi;
-  nc -z localhost "$PORT"
-  if [ "$?" -eq 0 ] ; then continue; fi
+  if nc -z localhost "$PORT" ; then continue; fi
   break
 done
 echo "PORT = $PORT"
-
-set -euf -o pipefail
 
 X11VNC_CMD="x11vnc -nopw -display :0 -localhost -once -timeout 5 -cursor none -scale 2/3"
 

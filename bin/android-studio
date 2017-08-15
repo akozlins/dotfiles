@@ -1,8 +1,8 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
 export STUDIO_PROPERTIES=$DOTFILES/jetbrains/studio.properties
 
 exec \
 /usr/bin/android-studio \
-&> /dev/null &
+> /dev/null 2>&1 &

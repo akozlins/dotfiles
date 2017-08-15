@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
 export WINEARCH=win32
 
@@ -12,6 +12,6 @@ EXE="C:/Program Files/WinPlex/supaplex.exe"
 #EXE="C:/Program Files/Megaplex0961/Megaplex.exe"
 
 exec \
-$DOTFILES/bin/wine.sh far \
+"$DOTFILES/bin/wine.sh" far \
 explorer /desktop=winplex,1024x768 \
 "$EXE"

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source ~/.dotfiles/envrc
+. ~/.dotfiles/envrc
 
 
 
@@ -43,7 +43,7 @@ if [ -f /usr/bin/syndaemon ] ; then
 #  /usr/bin/syndaemon -t -k -i 1 -d &
 fi
 
-if [[ -f /usr/bin/nvidia-settings ]] ; then
+if [ -f /usr/bin/nvidia-settings ] ; then
   echo "load nvidia-settings-rc"
 #  /usr/bin/nvidia-settings --load-config-only --config=$DOTFILES/nvidia-settings-rc
 fi

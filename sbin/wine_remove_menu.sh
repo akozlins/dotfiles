@@ -1,5 +1,5 @@
-#!/bin/sh
-set -eu -o pipefail
+#!/bin/bash
+set -eu
 
 rm -vf ~/.local/share/mime/packages/x-wine*
 rm -vf ~/.local/share/applications/wine-extension*

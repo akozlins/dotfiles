@@ -6,4 +6,4 @@
 # Executed by xdm/gdm/kdm at login
 #
 
-source ~/.xinitrc
+. ~/.xinitrc

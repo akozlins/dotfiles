@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
 profile="$XDG_CONFIG_HOME/firefox/$USER.default"
 
@@ -10,11 +10,10 @@ fi
 
 CMD="/usr/bin/firefox -profile $profile"
 
-[[ -x /usr/bin/firejail ]] && CMD="/usr/bin/firejail -- $CMD"
-CMD="exec $CMD $@"
+[ -x /usr/bin/firejail ] && CMD="/usr/bin/firejail -- $CMD"
 
-if [[ $# -eq 0 ]] ; then
-  $CMD &> /dev/null &
+if [ $# -eq 0 ] ; then
+  exec $CMD "$@" > /dev/null 2>&1 &
 else
-  $CMD
+  exec $CMD "$@"
 fi

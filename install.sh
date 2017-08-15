@@ -1,12 +1,13 @@
 #!/bin/sh
-set -euf -o pipefail
-cd $(dirname `readlink -f $0`)
+set -euf
+unset CDPATH
+cd "$(dirname -- "$(readlink -f -- "$0")")"
 
 set -x
 
-DOTFILES=$(dirname `readlink -f $0`)
+DOTFILES="$(dirname -- "$(readlink -f -- "$0")")"
 
-declare -a files=(
+files="
   emacs.d
 
   dmrc
@@ -41,16 +42,16 @@ declare -a files=(
   config/pavucontrol.ini
   config/qxkb.cfg
   config/user-dirs.dirs
-)
+"
 
 git submodule update --init --recursive
 
-mkdir -p ~/.config/pulse
-mkdir -p ~/.cache/ipe
+mkdir -p "$HOME/.config/pulse"
+mkdir -p "$HOME/.cache/ipe"
 
-for file in ${files[@]} ; do
-  if [[ -f $file || -d $file ]] ; then
-    ln -sfv -T $DOTFILES/$file ~/.$file
+for file in $files ; do
+  if [ -f "$file" ] || [ -d "$file" ] ; then
+    ln -sfv -T "$DOTFILES/$file" "$HOME/.$file"
   fi
 done
 

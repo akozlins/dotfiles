@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
 : ${WINE_ROOT="$HOME/wine"}
 
@@ -21,4 +21,4 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d
 
 exec \
 ${WINE:-wine} "$@" \
-&> /dev/null &
+> /dev/null 2>&1 &

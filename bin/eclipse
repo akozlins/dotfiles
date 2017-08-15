@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu -o pipefail
+set -eu
 
 export DVT_LICENSE_FILE=
 
@@ -21,6 +21,6 @@ exec \
 -configuration "$XDG_CACHE_HOME/eclipse/config" \
 -data "$XDG_CONFIG_HOME/eclipse/data" \
 --launcher.GTK_version 2 \
--vmargs -Duser.home=$XDG_CACHE_HOME/eclipse \
+-vmargs -Duser.home="$XDG_CACHE_HOME/eclipse" \
 $DVT_VMARGS \
-&> /dev/null &
+> /dev/null 2>&1 &

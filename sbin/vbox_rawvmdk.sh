@@ -1,8 +1,8 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
 exec \
 vboxmanage \
 internalcommands createrawvmdk \
--filename $1 \
--rawdisk $2
+-filename "$1" \
+-rawdisk "$2"

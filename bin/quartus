@@ -1,5 +1,6 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
-$QUARTUS_ROOTDIR/bin/quartus \
-&> /dev/null &
+exec \
+"$QUARTUS_ROOTDIR/bin/quartus" \
+> /dev/null 2>&1 &

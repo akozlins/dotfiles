@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euf -o pipefail
+set -euf
 
 exec \
-/usr/bin/nvidia-settings --config=$DOTFILES/nvidia-settings-rc
+/usr/bin/nvidia-settings --config="$DOTFILES/nvidia-settings-rc"
