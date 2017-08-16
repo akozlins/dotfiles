@@ -1,14 +1,14 @@
 #!/bin/sh
 set -euf
 
-profile="$XDG_CONFIG_HOME/firefox/$USER.default"
+profile="$XDG_CONFIG_HOME/firefox/default"
 
 if [ ! -f "$profile/prefs.js" ] ; then
     echo "Profile '$profile' not found!"
     exit 1
 fi
 
-CMD="/usr/bin/firefox -profile $profile"
+CMD="/usr/bin/firefox --profile $profile"
 
 [ -x /usr/bin/firejail ] && CMD="/usr/bin/firejail -- $CMD"
 
