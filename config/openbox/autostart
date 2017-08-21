@@ -1,11 +1,20 @@
 #!/bin/sh
+set -euf
 
 run() {
-  if [ $# -eq 1 ] ; then
-    ( exec $1 &> /dev/null ) &
+  cmd="$1"
+  shift
+
+  sleep=
+  if [ $# -ge 1 ] ; then
+    sleep=$1
+    shift
   fi
-  if [ $# -eq 2 ] ; then
-    ( sleep $2 ; [[ -z `pidof $1` ]] && exec $1 &> /dev/null ) &
+
+  if [ -z "$sleep" ] ; then
+    ( exec "$cmd" "$@" > /dev/null 2>&1 ) &
+  else
+    ( sleep "$sleep" ; [ -z "$(pidof "$cmd")" ] && exec "$cmd" "$@" > /dev/null 2>&1 ) &
   fi
 }
 
@@ -14,12 +23,11 @@ run() {
 
 run "/usr/bin/uxterm" 1s
 
-run "/usr/bin/qxkb" 2s
-
-run "$HOME/.dotfiles/bin/fbpanel" 3s
+run "$HOME/.dotfiles/bin/fbpanel" 2s
 run "$HOME/.dotfiles/bin/conky" 3s
 
+run "/usr/bin/qxkb" 4s
 run "/usr/bin/pasystray" 4s
-run "/usr/bin/xscreensaver" 4s
 
-( sleep 5s ; [[ -z `pidof /usr/bin/xss-lock` ]] && exec /usr/bin/xss-lock -- xscreensaver-command -lock &> /dev/null ) &
+run "/usr/bin/xscreensaver" 4s
+run "/usr/bin/xss-lock" 5s -- xscreensaver-command -lock

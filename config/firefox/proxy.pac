@@ -2,7 +2,7 @@
 
 let patterns = [
     "example.com"
-);
+];
 
 let socks5 = "SOCKS5 localhost:9050";
 

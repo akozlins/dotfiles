@@ -17,15 +17,15 @@
 #  $3: a file (e.g. /boot/grub/grub.cfg)
 #
 add_template() {
-  [[ "x$2" != "x" ]] && ! command -v "$2" &>/dev/null && return
-  [[ "x$3" != "x" ]] && [ ! -e "$3" ] && return
+  [ ! "x$2" = "x" ] && ! command -v "$2" > /dev/null 2>&1 && return
+  [ ! "x$3" = "x" ] && [ ! -e "$3" ] && return
   alias "t-$1"="_$1"
 }
 
 _pacman-diff-file() {
-    if [[ "$1" == "" ]]; then
+    if [ "$1" = "" ]; then
         echo "Usage: qkkdiff-file <file>"
-    elif [[ -f "$1" ]]; then
+    elif [ -f "$1" ]; then
         pkg="$(pacman -Qo $1 | awk '//{printf "%s-%s", $(NF-1), $NF;}')"
         bsdtar -xOf "/var/cache/pacman/pkg/${pkg}-$(uname -m).pkg.tar.xz" "${1/\//}" | diff - "$1"
         return 0
