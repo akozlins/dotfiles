@@ -7,6 +7,9 @@
 [submodule "vim/bundle/vim-sensible"]
 	path = vim/bundle/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
+[submodule "vim/bundle/vimwiki"]
+	path = vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
