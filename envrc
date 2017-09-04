@@ -14,7 +14,8 @@ export DISK_46A2="/run/media/akozlins/4677801d-12d7-40d4-808b-f152e6273ba2/akozl
 
 #LANG="en_US.UTF-8"
 
-export EDITOR=nano
+export EDITOR="nano -c"
+export BROWSER="firefox"
 
 # WINE
 export WINEDLLOVERRIDES="winemenubuilder.exe=d"

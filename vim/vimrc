@@ -21,3 +21,5 @@ set expandtab
 set viminfo=
 
 set directory^=~/.dotfiles/vim/tmp//
+
+let g:vimwiki_list = [ { 'path' : '~/private/vimwiki' } ]
