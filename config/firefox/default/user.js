@@ -12,6 +12,7 @@ user_pref("browser.fullscreen.animate", false);
 user_pref("browser.search.defaultenginename", "DuckDuckGo");
 user_pref("browser.search.hiddenOneOffs", "Yahoo,Bing,Amazon.com,eBay,Twitter");
 
+user_pref("browser.sessionstore.interval", 300000);
 user_pref("browser.sessionstore.max_tabs_undo", 16);
 user_pref("browser.sessionstore.restore_on_demand", false);
 

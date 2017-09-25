@@ -10,8 +10,8 @@ git clone https://github.com/akozlins/dotfiles .dotfiles
 ## TODO
 
  - `.emacs.d` * (use cmd options)
- - `.java`
- - `.mozilla` (empty, crash reports)
+ - `.java` (fonts)
+ - `.mozilla` * (empty, use firejail)
  - `.pki`
  - `.unison` (ssh sync)
  - `.vnc` (empty)
@@ -23,5 +23,4 @@ git clone https://github.com/akozlins/dotfiles .dotfiles
  - `.Xauthority` * (use `$XDG_RUNTIME_DIR`)
  - `.xinitrc` (?)
  - `.xsession`
- - `.windows-serial`
  - `.xsession-errors`
