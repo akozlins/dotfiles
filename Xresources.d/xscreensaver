@@ -1,12 +1,15 @@
+
 xscreensaver*lock: true
 xscreensaver*mode: blank
-xscreensaver*timeout: 0:30:00
+xscreensaver*timeout: 00:30:00
 xscreensaver*splash: false
-xscreensaver*fade: false
 xscreensaver*captureStderr: false
+
+xscreensaver*fade: true
+xscreensaver*fadeSeconds: 00:00:01
+
 xscreensaver*dpmsEnabled: true
 xscreensaver*dpmsQuickOff: true
-
-xscreensaver*dpmsStandby: 0:30:00
-xscreensaver*dpmsSuspend: 0:30:00
-xscreensaver*dpmsOff:     0:30:00
+xscreensaver*dpmsStandby: 00:30:00
+xscreensaver*dpmsSuspend: 00:30:00
+xscreensaver*dpmsOff:     00:30:00

@@ -2,10 +2,13 @@ lock: True
 mode: blank
 timeout: 0:30:00
 splash: False
-fade: False
 captureStderr: False
+
+fade: True
+fadeSeconds: 00:00:01
+
 dpmsEnabled:  True
 dpmsQuickOff: True
-dpmsStandby: 0:30:00
-dpmsSuspend: 0:30:00
-dpmsOff:     0:30:00
+dpmsStandby: 00:30:00
+dpmsSuspend: 00:30:00
+dpmsOff:     00:30:00

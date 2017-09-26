@@ -5,7 +5,7 @@ export PATH=$DOTFILES/bin:$PATH
 
 
 
-export HISTORY_IGNORE="(reboot|rm *|sudo rm *|reset|cd|cd ..|ls|make|pwd|git add *)"
+export HISTORY_IGNORE="(reboot|reset|rm *|sudo rm *|cp *|mv *|cd *|ls *|la *|git *|gitk *)"
 export ZLE_REMOVE_SUFFIX_CHARS=""
 export ZLE_SPACE_SUFFIX_CHARS=""
 
