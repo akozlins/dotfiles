@@ -8,9 +8,10 @@ if [ ! -f "$profile/prefs.js" ] ; then
     exit 1
 fi
 
-CMD="/usr/bin/firefox --profile $profile"
+FJ="/usr/bin/firejail"
+CMD="/usr/bin/firefox-esr --profile $profile"
 
-[ -x /usr/bin/firejail ] && CMD="/usr/bin/firejail -- $CMD"
+[ -x "$FJ" ] && CMD="$FJ --profile=$XDG_CONFIG_HOME/firejail/firefox.profile -- $CMD"
 
 if [ $# -eq 0 ] ; then
   exec $CMD "$@" > /dev/null 2>&1 &
