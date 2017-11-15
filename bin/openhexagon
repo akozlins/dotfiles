@@ -1,6 +1,0 @@
-#!/bin/sh
-set -euf
-
-exec \
-/usr/bin/openhexagon \
-> /dev/null 2>&1 &

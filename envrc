@@ -8,7 +8,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 
 
 
-export DISK_46A2="/run/media/akozlins/4677801d-12d7-40d4-808b-f152e6273ba2/akozlins"
+export DISK_46A2="/run/media/$USER/4677801d-12d7-40d4-808b-f152e6273ba2/$USER"
 
 
 

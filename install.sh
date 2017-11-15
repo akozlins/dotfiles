@@ -10,7 +10,9 @@ DOTFILES="$(dirname -- "$(readlink -f -- "$0")")"
 files="
   emacs.d
 
+  bin
   dmrc
+  eltclshrc
   nanorc
   rootrc
   unison
