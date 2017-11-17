@@ -1,0 +1,7 @@
+#!/bin/sh
+set -euf
+
+set -x 
+exec \
+/usr/bin/easystroke --config-dir "$XDG_CONFIG_HOME/easystroke" "$@" \
+> /dev/null 2>&1 &

@@ -23,6 +23,7 @@ files="
 
   config/aspell
   config/conky
+  config/easystroke
   config/far2l
   config/fbpanel
   config/firefox

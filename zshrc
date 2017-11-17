@@ -59,6 +59,6 @@ bindkey "^i" expand-or-complete-prefix
 
 
 
-for file in $DOTFILES/conf.d/* ; do
+for file in $DOTFILES/rc.d/* ; do
   [ -f $file ] && source $file
 done

@@ -4,6 +4,11 @@ set -euf
 #export IDEA_VM_OPTIONS=$DOTFILES/jetbrains/idea.vmoptions
 export IDEA_PROPERTIES=$DOTFILES/jetbrains/idea.properties
 
+if [ "$#" -eq 1 ] && [ "$1" = "--reset" ] ; then
+    rm -rf "$HOME/.cache/intellij-idea"
+    exit 0
+fi
+
 exec \
-/usr/bin/idea.sh \
+/usr/bin/idea.sh "$@" \
 > /dev/null 2>&1 &

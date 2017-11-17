@@ -474,16 +474,15 @@
 </menu>
 
 <applications>
-  <application class="Vlc">
+  <application class="Vlc" title="VLC media player">
     <position force="yes"><x>0</x><y>0</y></position>
     <size><width>40%</width><height>55%</height></size>
   </application>
-  <application class="Firefox">
+  <application class="Firefox" title="Mozilla Firefox">
     <position force="yes"><x>-0</x><y>0</y></position>
-    <size><width>70%</width></size>
     <maximized>Vertical</maximized>
   </application>
-  <application class="Evince">
+  <application class="Evince" title="Document Viewer">
     <position force="yes"><x>center</x><y>center</y></position>
     <size><width>70%</width><height>80%</height></size>
   </application>

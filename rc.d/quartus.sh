@@ -2,7 +2,7 @@
 
 export LM_LICENSE_FILE=
 
-ROOT=/usr/local/intelFPGA/16.1
+ROOT=/usr/local/intelFPGA/17.1
 
 export QUARTUS_ROOTDIR=$ROOT/quartus
 export PATH=$PATH:$QUARTUS_ROOTDIR/bin
