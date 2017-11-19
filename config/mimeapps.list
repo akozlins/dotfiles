@@ -1,25 +1,43 @@
 [Added Associations]
 application/pdf=evince.desktop
 application/postscript=evince.desktop
-application/x-bittorrent=qBittorrent.desktop;
-image/bmp=geeqie.desktop;
-image/jpeg=geeqie.desktop;
-image/png=geeqie.desktop;
+application/x-bittorrent=qBittorrent.desktop
+image/bmp=geeqie.desktop
+image/gif=geeqie.desktop
+image/jpeg=geeqie.desktop
+image/png=geeqie.desktop
+image/tiff=geeqie.desktop
 audio/mpeg=vlc.desktop
+audio/x-wav=vlc.desktop
 video/mp4=vlc.desktop
-video/quicktime=vlc.desktop;
-video/x-matroska=vlc.desktop;
+video/quicktime=vlc.desktop
+video/x-matroska=vlc.desktop
+video/x-m4v=vlc.desktop
+text/plain=org.gnome.gedit.desktop
+text/xml=org.gnome.gedit.desktop
+text/x-c=org.gnome.gedit.desktop
+text/x-x++=org.gnome.gedit.desktop
+text/x-java=org.gnome.gedit.desktop
 
 [Removed Associations]
 
 [Default Applications]
-application/pdf=evince.desktop;
+application/pdf=evince.desktop
 application/postscript=evince.desktop
-application/x-bittorrent=qBittorrent.desktop;
-image/bmp=geeqie.desktop;
-image/jpeg=geeqie.desktop;
-image/png=geeqie.desktop;
+application/x-bittorrent=qBittorrent.desktop
+image/bmp=geeqie.desktop
+image/gif=geeqie.desktop
+image/jpeg=geeqie.desktop
+image/png=geeqie.desktop
+image/tiff=geeqie.desktop
 audio/mpeg=vlc.desktop
-video/mp4=vlc.desktop;
-video/quicktime=vlc.desktop;
-video/x-matroska=vlc.desktop;
+audio/x-wav=vlc.desktop
+video/mp4=vlc.desktop
+video/quicktime=vlc.desktop
+video/x-matroska=vlc.desktop
+video/x-m4v=vlc.desktop
+text/plain=org.gnome.gedit.desktop
+text/xml=org.gnome.gedit.desktop
+text/x-c=org.gnome.gedit.desktop
+text/x-x++=org.gnome.gedit.desktop
+text/x-java=org.gnome.gedit.desktop
