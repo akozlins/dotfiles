@@ -1,7 +1,38 @@
-﻿
+﻿###
+
+[vdpau_chroma] # VDPAU surface conversions
+
 [freetype] # Freetype2 font renderer
 
 freetype-font=DejaVu Sans
+
+[svg] # svg
+
+[mux_ogg] # Ogg/OGM muxer
+
+[mux_ts] # TS muxer (libdvbpsi)
+
+[mux_mp4] # MP4/MOV muxer
+
+[mux_asf] # ASF muxer
+
+[mux_ps] # PS muxer
+
+[mux_avi] # AVI muxer
+
+[sap] # Network streams (SAP)
+
+[podcast] # Podcasts
+
+[motion] # motion control interface
+
+[gestures] # Mouse gestures control interface
+
+[lirc] # Infrared remote control interface
+
+[netsync] # Network synchronization
+
+[oldrc] # Remote control interface
 
 [alsa] # ALSA audio output
 
@@ -9,15 +40,331 @@ alsa-audio-device=sysdefault:CARD=PCH
 
 alsa-gain=0.250000
 
+[afile] # File audio output
+
+[amem] # Audio memory output
+
 [jack] # JACK audio output
 
 jack-gain=0.125000
+
+[dash] # Dynamic Adaptive Streaming over HTTP
+
+[swscale] # Video scaling filter
+
+[stream_out_es] # Elementary stream output
+
+[stream_out_rtp] # RTP stream output
+
+[stream_out_display] # Display stream output
+
+[stream_out_mosaic_bridge] # Mosaic bridge stream output
+
+[stream_out_stats] # Writes statistic info about stream
+
+[stream_out_standard] # Standard stream output
+
+[stream_out_bridge] # Bridge stream output
+
+[stream_out_setid] # Change the id of an elementary stream
+
+[stream_out_langfromtelx] # Dynamic language setting from teletext
+
+[stream_out_record] # Record stream output
+
+[stream_out_raop] # Remote Audio Output Protocol stream output
+
+[stream_out_smem] # Stream output to memory buffer
+
+[stream_out_transcode] # Transcode stream output
+
+[stream_out_delay] # Delay a stream
+
+[folder] # Folder meta data
+
+[libbluray] # Blu-ray Disc support (libbluray)
+
+[ftp] # FTP input
+
+[timecode] # Time code subpicture elementary stream generator
+
+[v4l2] # Video4Linux input
+
+[avio] # libavformat AVIO access
+
+[shm] # Shared memory framebuffer
+
+[linsys_hdsdi] # HD-SDI Input
+
+[smb] # SMB input
+
+[access_jack] # JACK audio input
+
+[filesystem] # File input
+
+[rtp] # Real-Time Protocol (RTP) input
+
+[xcb_screen] # Screen capture (with X11/XCB)
+
+[cdda] # Audio CD input
+
+[imem] # Memory input
+
+[access_alsa] # ALSA audio capture
+
+[sftp] # SFTP input
+
+[udp] # UDP input
+
+[dtv] # Digital Television and Radio
+
+[dvb] # DVB input with v4l2 support
+
+[linsys_sdi] # SDI Input
+
+[live555] # RTP/RTSP/SDP demuxer (using Live555)
+
+[dvdnav] # DVDnav Input
+
+[vdr] # VDR recordings
+
+[access_mms] # Microsoft Media Server (MMS) input
+
+[http] # HTTP input
+
+[dvdread] # DVDRead Input (no menu support)
+
+[lua] # Lua interpreter
+
+[ddummy] # Dummy decoder
+
+[theora] # Theora video decoder
+
+[svgdec] # SVG video decoder
 
 [x264] # H.264/MPEG-4 Part 10/AVC encoder (x264)
 
 sout-x264-preset=ultrafast
 
 sout-x264-tune=film
+
+[telx] # Teletext subtitles decoder
+
+[spudec] # DVD subtitles decoder
+
+[subsdec] # Text subtitle decoder
+
+[schroedinger] # Dirac video decoder using libschroedinger
+
+[svcdsub] # Philips OGT (SVCD subtitle) decoder
+
+[avcodec] # FFmpeg audio/video decoder
+
+[kate] # Kate overlay decoder
+
+[vorbis] # Vorbis audio decoder
+
+[speex] # Speex audio decoder
+
+[zvbi] # VBI and Teletext decoder
+
+[gstdecode] # GStreamer Based Decoder
+
+[jpeg] # JPEG image decoder
+
+[dvbsub] # DVB subtitles decoder
+
+[vmem] # Video memory output
+
+[vdummy] # Dummy video output
+
+[xcb_window] # X11 video window (XCB)
+
+[xcb_xv] # XVideo output (XCB)
+
+[gl] # OpenGL video output (experimental)
+
+[fb] # GNU/Linux framebuffer video output
+
+[vout_sdl] # Simple DirectMedia Layer video output
+
+[yuv] # YUV video output
+
+[xcb_x11] # X11 video output (XCB)
+
+[vod_rtsp] # Legacy RTSP VoD server
+
+[logger] # File logging
+
+[audioscrobbler] # Submission of played songs to last.fm
+
+[gnutls] # GNU TLS transport layer security
+
+[access_output_livehttp] # HTTP Live streaming output
+
+[access_output_http] # HTTP stream output
+
+[udp] # UDP stream output
+
+[access_output_file] # File stream output
+
+[access_output_shout] # IceCAST output
+
+[mosaic] # Mosaic video sub source
+
+[gaussianblur] # Gaussian blur video filter
+
+[alphamask] # Alpha mask video filter
+
+[grain] # Grain video filter
+
+[croppadd] # Video cropping filter
+
+[gradfun] # Gradfun video filter
+
+[atmo] # AtmoLight Filter
+
+[logo] # Logo sub source
+
+[posterize] # Posterize video filter
+
+[rss] # RSS and Atom feed display
+
+[scene] # Scene video filter
+
+[transform] # Video transformation filter
+
+[anaglyph] # Convert 3D picture to anaglyph image video filter
+
+[remoteosd] # Remote-OSD over VNC
+
+[audiobargraph_v] # Audio Bar Graph Video sub source
+
+[puzzle] # Puzzle interactive game video filter
+
+[marq] # Marquee display
+
+[bluescreen] # Bluescreen video filter
+
+[deinterlace] # Deinterlacing video filter
+
+[sharpen] # Sharpen video filter
+
+[extract] # Extract RGB component video filter
+
+[subsdelay] # Subtitle delay
+
+[motionblur] # Motion blur filter
+
+[hqdn3d] # High Quality 3D Denoiser filter
+
+[colorthres] # Color threshold filter
+
+[ball] # Ball video filter
+
+[gradient] # Gradient video filter
+
+[antiflicker] # antiflicker video filter
+
+[erase] # Erase video filter
+
+[sepia] # Sepia video filter
+
+[blendbench] # Blending benchmark filter
+
+[mirror] # Mirror video filter
+
+[dynamicoverlay] # Dynamic video overlay
+
+[rotate] # Rotate video filter
+
+[canvas] # Canvas video filter
+
+[postproc] # Video post processing filter
+
+[adjust] # Image properties filter
+
+saturation=1
+
+gamma=1.5
+
+[rawaud] # Raw audio demuxer
+
+[rawdv] # DV (Digital Video) demuxer
+
+[rawvid] # Raw video demuxer
+
+[demuxdump] # File dumper
+
+[image] # Image demuxer
+
+[ts] # MPEG Transport Stream demuxer
+
+[h264] # H264 video demuxer
+
+[subtitle] # Text subtitle parser
+
+[ps] # MPEG-PS demuxer
+
+[vc1] # VC1 video demuxer
+
+[es] # MPEG-I/II/4 / A52 / DTS / MLP audio
+
+[mod] # MOD demuxer (libmodplug)
+
+[mkv] # Matroska stream demuxer
+
+[hevc] # HEVC/H.265 video demuxer
+
+[diracsys] # Dirac video demuxer
+
+[mjpeg] # M-JPEG camera demuxer
+
+[avi] # AVI demuxer
+
+[avformat] # Avformat demuxer
+
+[playlist] # Playlist
+
+[packetizer_mpegvideo] # MPEG-I/II video packetizer
+
+[spatializer] # Audio Spatializer
+
+[speex_resampler] # Speex resampler
+
+[dtstofloat32] # DTS Coherent Acoustics audio decoder
+
+[remap] # Audio channel remapper
+
+[audiobargraph_a] # Audio part of the BarGraph function
+
+[compressor] # Dynamic range compressor
+
+[gain] # Gain control filter
+
+[chorus_flanger] # Sound Delay
+
+[param_eq] # Parametric Equalizer
+
+[a52tofloat32] # ATSC A/52 (AC-3) audio decoder
+
+[headphone_channel_mixer] # Headphone virtual spatialization effect
+
+[equalizer] # Equalizer with 10 bands
+
+[stereo_widen] # Simple stereo widening effect
+
+[scaletempo] # Audio tempo scaler synched with rate
+
+[mono] # Stereo to mono downmixer
+
+[samplerate] # Secret Rabbit Code (libsamplerate) resampler
+
+[normvol] # Volume normalizer
+
+[skins2] # Skinnable Interface
+
+[ncurses] # Ncurses interface
 
 [qt4] # Qt interface
 
@@ -28,6 +375,18 @@ qt-video-autoresize=0
 qt-recentplay=0
 
 qt-privacy-ask=0
+
+[wall] # Wall video filter
+
+[panoramix] # Panoramix: wall with overlap video filter
+
+[clone] # Clone video filter
+
+[notify] # LibNotify Notification Plugin
+
+[visual] # Visualizer filter
+
+[glspectrum] # 3D OpenGL spectrum visualization
 
 [core] # core program
 
@@ -44,6 +403,8 @@ video-title-position=4
 video-deco=0
 
 vout=any
+
+video-filter=adjust:postproc
 
 audio-language=Japanese,jap
 
