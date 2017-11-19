@@ -21,3 +21,7 @@ URxvt*geometry: 110x35
 urxvt*font: 9x15
 urxvt*background: grey25
 urxvt*foreground: white
+
+! bright-blue + bright-purple
+urxvt*color12: #5555ff
+urxvt*color13: #ff55ff
