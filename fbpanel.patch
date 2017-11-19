@@ -1,37 +1,37 @@
---- a/fbpanel/.config/help
-+++ b/fbpanel/.config/help
+--- fbpanel/.config/help
++++ fbpanel/.config/help
 @@ -1,4 +1,4 @@
 -#!/usr/bin/python
 +#!/usr/bin/python2
  
  import re, os, sys, textwrap
  # Formats help message
---- a/fbpanel/.config/repl.py
-+++ b/fbpanel/.config/repl.py
+--- fbpanel/.config/repl.py
++++ fbpanel/.config/repl.py
 @@ -1,4 +1,4 @@
 -#!/usr/bin/python
 +#!/usr/bin/python2
  
  import re, sys
  
---- a/fbpanel/.config/tar.py
-+++ b/fbpanel/.config/tar.py
+--- fbpanel/.config/tar.py
++++ fbpanel/.config/tar.py
 @@ -1,4 +1,4 @@
 -#!/usr/bin/python
 +#!/usr/bin/python2
  
  import subprocess as sp
  import re, tempfile
---- a/fbpanel/configure
-+++ b/fbpanel/configure
+--- fbpanel/configure
++++ fbpanel/configure
 @@ -1,4 +1,4 @@
 -#!/usr/bin/python
 +#!/usr/bin/python2
  
  import sys
  if sys.version_info < (2, 7):
---- a/fbpanel/panel/panel.c
-+++ b/fbpanel/panel/panel.c
+--- fbpanel/panel/panel.c
++++ fbpanel/panel/panel.c
 @@ -936,6 +936,9 @@
      exit(1);
  }
@@ -42,8 +42,8 @@
  int
  main(int argc, char *argv[])
  {
---- a/fbpanel/plugins/battery/os_linux.c
-+++ b/fbpanel/plugins/battery/os_linux.c
+--- fbpanel/plugins/battery/os_linux.c
++++ fbpanel/plugins/battery/os_linux.c
 @@ -119,6 +119,9 @@
      RET(ret);
  }

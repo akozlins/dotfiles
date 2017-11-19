@@ -1,15 +1,5 @@
---- a/far2l/WinPort/src/CallInMain.h
-+++ b/far2l/WinPort/src/CallInMain.h
-@@ -1,6 +1,7 @@
- #pragma once
- #include <mutex>
- #include <condition_variable>
-+#include <functional>
- 
- template<class RV, class FN>
- 	class InMainCaller
---- a/far2l/far2l/bootstrap/roots.sh
-+++ b/far2l/far2l/bootstrap/roots.sh
+--- far2l/far2l/bootstrap/roots.sh
++++ far2l/far2l/bootstrap/roots.sh
 @@ -43,5 +43,6 @@
  fi
  
