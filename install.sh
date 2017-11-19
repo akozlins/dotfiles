@@ -32,6 +32,7 @@ files="
   config/git
   config/gtk-3.0
   config/htop
+  config/intellij-idea
   config/mc
   config/npm
   config/openbox
@@ -47,8 +48,6 @@ files="
   config/user-dirs.dirs
 "
 
-git submodule update --init --recursive
-
 mkdir -p "$HOME/.config/pulse"
 mkdir -p "$HOME/.cache/ipe"
 
@@ -59,3 +58,7 @@ for file in $files ; do
 done
 
 #ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list
+
+# submodules
+
+git submodule update --init --recursive
