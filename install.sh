@@ -34,6 +34,7 @@ files="
   config/htop
   config/intellij-idea
   config/mc
+  config/micro
   config/npm
   config/openbox
   config/pacman
