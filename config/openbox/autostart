@@ -18,8 +18,9 @@ run() {
   fi
 }
 
-/usr/bin/xset r rate 250 25
 /usr/bin/xsetroot -solid black
+/usr/bin/xset r rate 250 25
+/usr/bin/xset b off
 
 run "/usr/bin/uxterm" 1s
 
