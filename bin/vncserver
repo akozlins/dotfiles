@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+
+HOME="$DOTFILES"
+
+exec \
+/usr/bin/vncserver "$@"
