@@ -12,7 +12,7 @@ run() {
   fi
 
   if [ -z "$sleep" ] ; then
-    ( exec "$cmd" "$@" > /dev/null 2>&1 ) &
+    ( [ -z "$(pidof "$cmd")" ] && exec "$cmd" "$@" > /dev/null 2>&1 ) &
   else
     ( sleep "$sleep" ; [ -z "$(pidof "$cmd")" ] && exec "$cmd" "$@" > /dev/null 2>&1 ) &
   fi

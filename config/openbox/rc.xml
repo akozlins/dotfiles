@@ -452,26 +452,26 @@
 </menu>
 
 <applications>
-  <application class="Vlc" title="VLC media player">
+  <application type="normal" class="Vlc" title="VLC media player">
     <position force="yes"><x>0</x><y>0</y></position>
     <size><width>40%</width><height>55%</height></size>
   </application>
-  <application class="Firefox" title="Mozilla Firefox">
+  <application type="normal" class="Firefox" title="Mozilla Firefox">
     <position force="yes"><x>-0</x><y>0</y></position>
     <maximized>Vertical</maximized>
   </application>
-  <application class="Evince" title="Document Viewer">
+  <application type="normal" class="Evince" title="Document Viewer">
     <position force="yes"><x>center</x><y>center</y></position>
     <size><width>70%</width><height>80%</height></size>
   </application>
-  <application class="Meld" type="normal">
+  <application type="normal" class="Meld">
     <position force="yes"><x>center</x><y>center</y></position>
     <size><width>70%</width><height>80%</height></size>
   </application>
-  <application class="Gitk">
+  <application type="normal" class="Gitk">
     <position force="yes"><x>0</x><y>-0</y></position>
   </application>
-  <application class="Thunar">
+  <application type="normal" class="Thunar">
     <position force="yes"><x>0</x><y>-0</y></position>
   </application>
 </applications>
