@@ -3,6 +3,15 @@
 install:
 	./install.sh
 
+oh-my-zsh/.git:
+	git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh
+
+.PHONY: oh-my-zsh
+oh-my-zsh: oh-my-zsh/.git
+	git -C oh-my-zsh stash
+	git -C oh-my-zsh pull
+	patch -p0 < oh-my-zsh.patch
+
 far2l/.git:
 	git clone --depth 1 https://github.com/elfmz/far2l
 
