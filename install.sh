@@ -8,9 +8,10 @@ set -x
 DOTFILES="$(dirname -- "$(readlink -f -- "$0")")"
 
 files="
+  bin
+
   emacs.d
 
-  bin
   dmrc
   eltclshrc
   nanorc
