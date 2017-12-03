@@ -1,8 +1,6 @@
 #!/bin/sh
 set -euf
 
-set -x
-
 CMD="/usr/bin/opera -nomail -nomaillinks -nolirc"
 
 [ -x /usr/bin/firejail ] && CMD="/usr/bin/firejail -- $CMD"
