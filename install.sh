@@ -36,10 +36,12 @@ files="
   config/intellij-idea
   config/mc
   config/micro
+  config/mplayer
   config/npm
   config/openbox
   config/pacman
   config/pulse/client.conf
+  config/root
   config/systemd
   config/vlc
   config/yaourt
