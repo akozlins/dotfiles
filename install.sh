@@ -10,17 +10,17 @@ DOTFILES="$(dirname -- "$(readlink -f -- "$0")")"
 files="
   bin
 
-  emacs.d
+  .emacs.d
 
-  dmrc
-  eltclshrc
-  nanorc
-  rootrc
-  unison
-  wicd
-  xinitrc
-  xsession
-  zshrc
+  .dmrc
+  .eltclshrc
+  .nanorc
+  .rootrc
+  .unison
+  .wicd
+  .xinitrc
+  .xsession
+  .zshrc
 
   config/aspell
   config/conky
@@ -55,7 +55,10 @@ mkdir -p "$HOME/.cache/ipe"
 
 for file in $files ; do
   if [ -f "$file" ] || [ -d "$file" ] ; then
-    ln -sfv -T "$DOTFILES/$file" "$HOME/.$file"
+    case "$file" in
+      .*) ln -sfv -T "$DOTFILES/$file" "$HOME/$file" ;;
+      *) ln -sfv -T "$DOTFILES/$file" "$HOME/.$file" ;;
+    esac
   fi
 done
 

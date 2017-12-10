@@ -4,8 +4,8 @@
 
 
 
-userresources=$DOTFILES/Xresources
-usermodmap=$DOTFILES/Xmodmap
+userresources=$DOTFILES/.Xresources
+usermodmap=$DOTFILES/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
