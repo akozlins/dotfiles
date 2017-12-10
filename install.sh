@@ -22,34 +22,34 @@ files="
   .xsession
   .zshrc
 
-  config/aspell
-  config/conky
-  config/easystroke
-  config/far2l
-  config/fbpanel
-  config/firefox
-  config/firejail
-  config/fontconfig
-  config/git
-  config/gtk-3.0
-  config/htop
-  config/intellij-idea
-  config/mc
-  config/micro
-  config/mplayer
-  config/npm
-  config/openbox
-  config/pacman
-  config/pulse/client.conf
-  config/root
-  config/systemd
-  config/vlc
-  config/yaourt
+  .config/aspell
+  .config/conky
+  .config/easystroke
+  .config/far2l
+  .config/fbpanel
+  .config/firefox
+  .config/firejail
+  .config/fontconfig
+  .config/git
+  .config/gtk-3.0
+  .config/htop
+  .config/intellij-idea
+  .config/mc
+  .config/micro
+  .config/mplayer
+  .config/npm
+  .config/openbox
+  .config/pacman
+  .config/pulse/client.conf
+  .config/root
+  .config/systemd
+  .config/vlc
+  .config/yaourt
 
-  config/mimeapps.list
-  config/pavucontrol.ini
-  config/qxkb.cfg
-  config/user-dirs.dirs
+  .config/mimeapps.list
+  .config/pavucontrol.ini
+  .config/qxkb.cfg
+  .config/user-dirs.dirs
 "
 
 mkdir -p "$HOME/.config/pulse"
@@ -57,10 +57,7 @@ mkdir -p "$HOME/.cache/ipe"
 
 for file in $files ; do
   if [ -f "$file" ] || [ -d "$file" ] ; then
-    case "$file" in
-      .*) ln -sfv -T "$DOTFILES/$file" "$HOME/$file" ;;
-      *) ln -sfv -T "$DOTFILES/$file" "$HOME/.$file" ;;
-    esac
+    ln -sfv -T "$DOTFILES/$file" "$HOME/$file"
   fi
 done
 
