@@ -1,0 +1,6 @@
+#!/bin/sh
+set -euf
+
+exec \
+/usr/bin/steam "$@" \
+> "$XDG_CACHE_HOME/steam.log" 2>&1 &

@@ -22,8 +22,6 @@ export BROWSER="firefox"
 export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 #export WINEDLLOVERRIDES="winemenubuilder.exe=d;winedevice.exe=d"
 
-#export PULSE_LATENCY_MSEC=60
-
 # suppress logs "Couldn't connect to accessibility bus: ..."
 export NO_AT_BRIDGE=1
 
@@ -38,10 +36,14 @@ export ANDROID_HOME="/opt/android-sdk"
 export ANDROID_SDK_HOME="$XDG_DATA_HOME/android-sdk"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 
+# go
+export GOPATH="$XDG_DATA_HOME/go"
+
 export ASPELL_CONF="home-dir $XDG_CONFIG_HOME/aspell;"
 export ATOM_HOME="$XDG_CONFIG_HOME/atom"
 export GMVAULT_DIR="$XDG_CONFIG_HOME/gmvault"
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
+export INPUTRC="$DOTFILES/.inputrc"
 export IPELATEXDIR="$XDG_CACHE_HOME/ipe/latexrun"
 export KDEHOME="$XDG_CONFIG_HOME/kde4"
 export LESSHISTFILE=-
@@ -51,6 +53,7 @@ export OPERA_PERSONALDIR="$XDG_CONFIG_HOME/opera"
 export PROXYCHAINS_CONF_FILE="$XDG_CONFIG_HOME/proxychains.conf"
 export UNISON="$DOTFILES/.unison"
 export VIMINIT=":so $DOTFILES/vim/vimrc"
+export WGETRC="$XDG_CONFIG_HOME/.wgetrc"
 
 export RANDFILE="$XDG_CONFIG_HOME/.rnd"
 

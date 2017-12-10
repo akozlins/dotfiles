@@ -456,10 +456,10 @@
     <position force="yes"><x>0</x><y>0</y></position>
     <size><width>40%</width><height>55%</height></size>
   </application>
-  <application type="normal" class="Firefox" title="Mozilla Firefox">
+  <!--application type="normal" class="Firefox" title="Mozilla Firefox">
     <position force="yes"><x>-0</x><y>0</y></position>
     <maximized>Vertical</maximized>
-  </application>
+  </application-->
   <application type="normal" class="Evince" title="Document Viewer">
     <position force="yes"><x>center</x><y>center</y></position>
     <size><width>70%</width><height>80%</height></size>

@@ -66,3 +66,5 @@ done
 # submodules
 
 git submodule update --init --recursive
+
+make -C opt oh-my-zsh
