@@ -11,7 +11,7 @@ export ZLE_SPACE_SUFFIX_CHARS=""
 
 
 
-export ZSH=$DOTFILES/oh-my-zsh
+export ZSH=$DOTFILES/opt/oh-my-zsh
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump
 
 # ZSH update

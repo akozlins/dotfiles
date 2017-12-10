@@ -1,7 +1,7 @@
 #!/bin/sh
 set -euf
 
-far2l="$DOTFILES/far2l/build/install/far2l"
+far2l="$DOTFILES/opt/far2l/build/install/far2l"
 
 if [ ! -x "$far2l" ] ; then
     echo "ERROR: '$far2l' not found"
