@@ -52,8 +52,8 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export OPERA_PERSONALDIR="$XDG_CONFIG_HOME/opera"
 export PROXYCHAINS_CONF_FILE="$XDG_CONFIG_HOME/proxychains.conf"
 export UNISON="$DOTFILES/.unison"
-export VIMINIT=":so $DOTFILES/vim/vimrc"
-export WGETRC="$XDG_CONFIG_HOME/.wgetrc"
+export VIMINIT=":so $XDG_CONFIG_HOME/vim/vimrc"
+export WGETRC="$DOTFILES/.wgetrc"
 
 export RANDFILE="$XDG_CONFIG_HOME/.rnd"
 

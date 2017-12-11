@@ -1,5 +1,5 @@
-source $DOTFILES/vim/bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect('$DOTFILES/vim/bundle/{}')
+source $XDG_CONFIG_HOME/vim/bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect('$XDG_CONFIG_HOME/vim/bundle/{}')
 syntax on
 filetype plugin indent on
 
@@ -20,6 +20,6 @@ set expandtab
 
 set viminfo=
 
-set directory^=$DOTFILES/vim/tmp//
+set directory^=$XDG_CONFIG_HOME/vim/tmp//
 
 let g:vimwiki_list = [ { 'path' : '$PRIVATE/vimwiki' } ]

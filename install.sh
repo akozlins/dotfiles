@@ -41,8 +41,11 @@ files="
   .config/openbox
   .config/pacman
   .config/pulse/client.conf
+  .config/pulse/default.pa
   .config/root
   .config/systemd
+  .config/tmux
+  .config/vim
   .config/vlc
   .config/yaourt
 

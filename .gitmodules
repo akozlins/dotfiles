@@ -1,15 +1,15 @@
 [submodule "tmux/plugins/tpm"]
-	path = tmux/plugins/tpm
+	path = .config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "vim/bundle/vim-pathogen"]
-	path = vim/bundle/vim-pathogen
+	path = .config/vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
 [submodule "vim/bundle/vim-sensible"]
-	path = vim/bundle/vim-sensible
+	path = .config/vim/bundle/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
 [submodule "vim/bundle/vim-gitgutter"]
-	path = vim/bundle/vim-gitgutter
+	path = .config/vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
 [submodule "vim/bundle/vimwiki"]
-	path = vim/bundle/vimwiki
+	path = .config/vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
