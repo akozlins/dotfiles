@@ -1,8 +1,0 @@
-#!/bin/sh
-set -euf
-
-export STUDIO_PROPERTIES=$DOTFILES/jetbrains/studio.properties
-
-exec \
-/usr/bin/android-studio \
-> /dev/null 2>&1 &

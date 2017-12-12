@@ -1,11 +1,11 @@
 #!/bin/sh
 set -euf
 
-#export IDEA_VM_OPTIONS=$DOTFILES/jetbrains/idea.vmoptions
-export IDEA_PROPERTIES=$DOTFILES/jetbrains/idea.properties
+#export IDEA_VM_OPTIONS="$XDG_CONFIG_HOME/intellij-idea/vmoptions"
+export IDEA_PROPERTIES="$XDG_CONFIG_HOME/intellij-idea/properties"
 
 if [ "$#" -eq 1 ] && [ "$1" = "--reset" ] ; then
-    rm -rf "$HOME/.cache/intellij-idea"
+    rm -rf "$XDG_CACHE_HOME/intellij-idea"
     exit 0
 fi
 
