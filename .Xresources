@@ -1,4 +1,4 @@
-#include "Xresources.d/urxvt"
-#include "Xresources.d/xft"
-#include "Xresources.d/xscreensaver"
-#include "Xresources.d/xterm"
+#include ".config/Xresources.d/urxvt"
+#include ".config/Xresources.d/xft"
+#include ".config/Xresources.d/xscreensaver"
+#include ".config/Xresources.d/xterm"
