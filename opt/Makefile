@@ -32,6 +32,6 @@ fbpanel: fbpanel/.git
 	git -C fbpanel stash
 	git -C fbpanel pull
 	patch -p0 < fbpanel.patch
-	( cd fbpanel && ./configure --prefix="$HOME/.local" )
+	( cd fbpanel && ./configure --prefix="$(HOME)/.local" )
 	$(MAKE) -C fbpanel
 	$(MAKE) -C fbpanel install
