@@ -17,15 +17,12 @@ export HISTSIZE=4096
 
 
 
-source $DOTFILES/etc/bash.bashrc
-eval `dircolors -b "$DOTFILES/etc/DIR_COLORS"`
+source "$DOTFILES/etc/bash.bashrc"
+[ -x "/bin/dircolors" ] && eval $(/bin/dircolors -b "$DOTFILES/etc/DIR_COLORS")
 
-bind -f $DOTFILES/.inputrc
+bind -f "$DOTFILES/.inputrc"
 
 
-
-# Mathematica fonts
-#xset fp+ /usr/local/Wolfram/Mathematica/10.1/SystemFiles/Fonts/Type1
 
 shopt -s cmdhist
 shopt -s expand_aliases
@@ -33,6 +30,6 @@ shopt -s histappend
 
 
 
-for file in $DOTFILES/rc.d/* ; do
-  [ -f $file ] && source $file
+for f in $DOTFILES/rc.d/?* ; do
+    [ -f "$f" ] && source "$f"
 done

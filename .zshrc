@@ -20,9 +20,9 @@ DISABLE_AUTO_UPDATE="true"
 
 ZSH_THEME="gentoo"
 plugins=(
-  gitfast
-  command-not-found
-  dotenv
+    gitfast
+    command-not-found
+    dotenv
 )
 #CASE_SENSITIVE="true"
 
@@ -59,6 +59,6 @@ bindkey "^i" expand-or-complete-prefix
 
 
 
-for file in $DOTFILES/rc.d/* ; do
-  [ -f $file ] && source $file
+for f in $DOTFILES/rc.d/?* ; do
+    [ -f "$f" ] && source "$f"
 done
