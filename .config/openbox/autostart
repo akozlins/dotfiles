@@ -32,3 +32,5 @@ run "/usr/bin/pasystray" 4s
 
 run "/usr/bin/xscreensaver" 4s
 run "/usr/bin/xss-lock" 5s -- xscreensaver-command -lock
+
+run "$HOME/.dotfiles/bin/easystroke" 5s
