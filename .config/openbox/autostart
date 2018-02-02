@@ -2,20 +2,20 @@
 set -euf
 
 run() {
-  cmd="$1"
-  shift
-
-  sleep=
-  if [ $# -ge 1 ] ; then
-    sleep=$1
+    cmd="$1"
     shift
-  fi
 
-  if [ -z "$sleep" ] ; then
-    ( [ -z "$(pidof "$cmd")" ] && exec "$cmd" "$@" > /dev/null 2>&1 ) &
-  else
-    ( sleep "$sleep" ; [ -z "$(pidof "$cmd")" ] && exec "$cmd" "$@" > /dev/null 2>&1 ) &
-  fi
+    sleep=
+    if [ $# -ge 1 ] ; then
+        sleep=$1
+        shift
+    fi
+
+    if [ -z "$sleep" ] ; then
+        ( [ -z "$(pidof "$cmd")" ] && exec "$cmd" "$@" > /dev/null 2>&1 ) &
+    else
+        ( sleep "$sleep" ; [ -z "$(pidof "$cmd")" ] && exec "$cmd" "$@" > /dev/null 2>&1 ) &
+    fi
 }
 
 /usr/bin/xsetroot -solid black

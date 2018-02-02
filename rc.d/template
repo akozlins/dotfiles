@@ -17,9 +17,9 @@
 #  $3: a file (e.g. /boot/grub/grub.cfg)
 #
 add_template() {
-  [ ! "x$2" = "x" ] && ! command -v "$2" > /dev/null 2>&1 && return
-  [ ! "x$3" = "x" ] && [ ! -e "$3" ] && return
-  alias "t-$1"="_$1"
+    [ ! "x$2" = "x" ] && ! command -v "$2" > /dev/null 2>&1 && return
+    [ ! "x$3" = "x" ] && [ ! -e "$3" ] && return
+    alias "t-$1"="_$1"
 }
 
 _pacman-diff-file() {
