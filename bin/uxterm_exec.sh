@@ -18,5 +18,5 @@ while [ ! -s "$tmp" ]
   printf "."
   sleep 0.01
 done
-printf " [ok]\n"
+printf " [ok]\\n"
 rm -v "$tmp"

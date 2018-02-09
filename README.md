@@ -14,7 +14,6 @@ git clone https://github.com/akozlins/dotfiles .dotfiles
  - `.mozilla` * (empty, use firejail)
  - `.pki`
  - `.unison` (ssh sync)
- - `.vnc` (empty)
  - `.wicd`
 
  - `.dmrc`

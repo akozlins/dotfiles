@@ -17,6 +17,7 @@ far2l/.git:
 
 .PHONY: far2l
 far2l: far2l/.git
+	# install cmake, wxgtk2 (wxWidgets)
 	git -C far2l stash
 	git -C far2l pull
 	patch -p0 < far2l.patch
@@ -29,6 +30,7 @@ fbpanel/.git:
 
 .PHONY: fbpanel
 fbpanel: fbpanel/.git
+	# install python2 and gtk2
 	git -C fbpanel stash
 	git -C fbpanel pull
 	patch -p0 < fbpanel.patch
