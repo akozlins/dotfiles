@@ -1,6 +1,10 @@
 #!/bin/sh
 set -euf
 
-exec \
-/usr/bin/emacs "$@" \
-> /dev/null 2>&1 &
+CMD="/usr/bin/emacs"
+
+if [ $# -eq 0 ] ; then
+  exec $CMD "$@" > /dev/null 2>&1 &
+else
+  exec $CMD "$@"
+fi
