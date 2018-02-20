@@ -11,6 +11,7 @@ user_pref("browser.fullscreen.animate", false);
 
 user_pref("browser.search.defaultenginename", "DuckDuckGo");
 user_pref("browser.search.hiddenOneOffs", "Yahoo,Bing,Amazon.com,eBay,Twitter");
+user_pref("browser.search.widget.inNavBar", false);
 
 user_pref("browser.sessionstore.interval", 300000);
 user_pref("browser.sessionstore.max_tabs_undo", 16);
@@ -46,7 +47,21 @@ user_pref("network.proxy.autoconfig_url", "file:///home/akozlins/.config/firefox
 
 user_pref("ui.key.menuAccessKeyFocuses", false);
 
+user_pref("media.default_volume", "0.2");
+
+// Handle middle-clicks normally
+user_pref("middlemouse.contentLoadURL", false);
+
+//
 // Extensions
+//
+
+//user_pref("plugin.state.flash", 0);
+user_pref("plugin.state.java", 0);
+
+user_pref("extensions.ui.dictionary.hidden", true);
+user_pref("extensions.ui.experiment.hidden", true);
+user_pref("extensions.ui.locale.hidden", true);
 
 user_pref("extensions.cleanlinks.enabled", false);
 
