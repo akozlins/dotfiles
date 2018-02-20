@@ -1,0 +1,7 @@
+#!/bin/sh
+set -euf
+
+HOME="$DOTFILES"
+
+exec \
+/usr/bin/vncviewer "$@"
