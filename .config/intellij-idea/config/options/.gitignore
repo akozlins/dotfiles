@@ -2,6 +2,7 @@ dimensions.xml
 options.xml
 path.macros.xml
 recentProjects.xml
+stubIndex.xml
 window.manager.xml
 
 *.statistics.xml

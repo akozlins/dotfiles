@@ -1,7 +1,5 @@
-/eval
-/extensions
-/javascript
-/plugins
-/tasks
-/port
-/port.lock
+plugins/*
+tasks/*
+
+port
+port.lock
