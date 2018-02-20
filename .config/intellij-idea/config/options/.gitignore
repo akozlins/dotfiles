@@ -1,2 +1,8 @@
+dimensions.xml
+options.xml
+path.macros.xml
+recentProjects.xml
+window.manager.xml
+
 *.statistics.xml
 statistics.*.xml
