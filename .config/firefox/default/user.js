@@ -639,3 +639,7 @@ user_pref("security.password_lifetime", 1);
 
 // PREF: Display a notification bar when websites offer data for offline use
 user_pref("browser.offline-apps.notify", true);
+
+//
+// END
+//

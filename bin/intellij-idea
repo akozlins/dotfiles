@@ -5,6 +5,7 @@ set -euf
 export IDEA_PROPERTIES="$XDG_CONFIG_HOME/intellij-idea/properties"
 
 if [ "$#" -eq 1 ] && [ "$1" = "--reset" ] ; then
+    rm -rf "$HOME/.java"
     rm -rf "$XDG_CACHE_HOME/intellij-idea"
     exit 0
 fi
