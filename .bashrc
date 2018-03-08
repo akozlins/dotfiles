@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -18,7 +18,7 @@ export HISTSIZE=4096
 
 
 source "$DOTFILES/etc/bash.bashrc"
-[ -x "/bin/dircolors" ] && eval $(/bin/dircolors -b "$DOTFILES/etc/DIR_COLORS")
+[ -x "/bin/dircolors" ] && eval "$(/bin/dircolors -b "$DOTFILES/etc/DIR_COLORS")"
 
 bind -f "$DOTFILES/.inputrc"
 

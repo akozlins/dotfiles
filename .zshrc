@@ -1,4 +1,4 @@
-#
+#!/bin/sh
 
 source ~/.dotfiles/envrc
 export PATH=$DOTFILES/bin:$PATH

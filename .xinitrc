@@ -4,19 +4,19 @@
 
 
 
-userresources=$DOTFILES/.Xresources
-usermodmap=$DOTFILES/.Xmodmap
-sysresources=/etc/X11/xinit/.Xresources
-sysmodmap=/etc/X11/xinit/.Xmodmap
+sysresources="/etc/X11/xinit/.Xresources"
+sysmodmap="/etc/X11/xinit/.Xmodmap"
+userresources="$DOTFILES/.Xresources"
+usermodmap="$DOTFILES/.Xmodmap"
 
 # merge in defaults and keymaps
 
-if [ -f $sysresources ]; then
-    xrdb -merge $sysresources
+if [ -f "$sysresources" ]; then
+    xrdb -merge "$sysresources"
 fi
 
-if [ -f $sysmodmap ]; then
-    xmodmap $sysmodmap
+if [ -f "$sysmodmap" ]; then
+    xmodmap "$sysmodmap"
 fi
 
 if [ -f "$userresources" ]; then
@@ -39,12 +39,12 @@ fi
 
 
 if [ -f /usr/bin/syndaemon ] ; then
-    echo "start /usr/bin/syndaemon"
+#    echo "start /usr/bin/syndaemon"
 #    /usr/bin/syndaemon -t -k -i 1 -d &
 fi
 
 if [ -f /usr/bin/nvidia-settings ] ; then
-    echo "load nvidia-settings-rc"
+#    echo "load nvidia-settings-rc"
 #    /usr/bin/nvidia-settings --load-config-only --config=$DOTFILES/nvidia-settings-rc
 fi
 
