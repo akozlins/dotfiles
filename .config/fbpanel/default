@@ -131,7 +131,7 @@ Plugin {
 plugin {
   type = genmon
   config {
-    Command = if [ -d /sys/class/power_supply/BAT0 ]; then echo $(acpi --battery | cut -d, -f2); else echo "-"; fi
+    Command = ~/.config/fbpanel/BAT.sh
     PollingTime = 5
     TextSize = small
     TextColor = red
