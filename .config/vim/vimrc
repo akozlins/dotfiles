@@ -20,6 +20,6 @@ set expandtab
 
 set viminfo=
 
-set directory^=$XDG_CONFIG_HOME/vim/tmp//
+set directory^=$XDG_CONFIG_HOME/vim/swap//
 
 let g:vimwiki_list = [ { 'path' : '$PRIVATE/vimwiki' } ]
