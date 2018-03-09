@@ -1,8 +1,12 @@
+debugger.xml
 dimensions.xml
+jdk.table.xml
 options.xml
 path.macros.xml
 recentProjects.xml
 stubIndex.xml
+updates.xml
+usageView.xml
 window.manager.xml
 
 *.statistics.xml
