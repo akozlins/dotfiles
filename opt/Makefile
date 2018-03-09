@@ -40,5 +40,5 @@ fbpanel: fbpanel/.git
 
 .PHONY: direnv
 direnv: direnv/.git
-	( cd direnv && ln -s vendor src; )
+	( cd direnv && ln -s vendor src )
 	GOPATH=$(pwd) $(MAKE) -C direnv

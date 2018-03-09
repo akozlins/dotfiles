@@ -4,7 +4,7 @@ set -euf
 export WINE="wineconsole --backend=user"
 export WINEARCH=win32
 
-if [ $# -ge 1 ]; then
+if [ $# -ge 1 ] ; then
   wine.sh far "$@"
   exit 0
 fi

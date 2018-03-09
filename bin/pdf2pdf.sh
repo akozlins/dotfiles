@@ -8,7 +8,7 @@ elif [ "$#" -eq 1 ] ; then
     input="$1~"
     output="$1"
     if [ -f "$input" ] ; then
-        exit 1;
+        exit 1
     fi
     mv "$output" "$input"
 else

@@ -3,7 +3,7 @@ set -euf
 
 : ${WINE_ROOT="$HOME/wine"}
 
-if [ ! -d "$WINE_ROOT" ]; then
+if [ ! -d "$WINE_ROOT" ] ; then
   echo ERROR: wine root "$WINE_ROOT" not found
   exit 1
 fi

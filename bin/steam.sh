@@ -4,7 +4,7 @@ set -euf
 export WINE_ROOT="$DISK_46A2/wine"
 export WINEARCH=win32
 
-if [ $# -ge 1 ]; then
+if [ $# -ge 1 ] ; then
   wine.sh steam32 "$@"
   exit 0
 fi

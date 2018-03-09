@@ -2,8 +2,9 @@
 set -euf
 
 CMD="/usr/bin/opera -nomail -nomaillinks -nolirc"
+FJ="/usr/bin/firejail"
 
-[ -x /usr/bin/firejail ] && CMD="/usr/bin/firejail -- $CMD"
+[ -x "$FJ" ] && CMD="$FJ -- $CMD"
 
 if [ $# -eq 0 ] ; then
   exec $CMD "$@" > /dev/null 2>&1 &

@@ -2,4 +2,4 @@
 set -euf
 
 exec \
-grep -P "[^\x00-\x7F]" "$@"
+grep -P "[^\\x00-\\x7F]" "$@"

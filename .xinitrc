@@ -11,19 +11,19 @@ usermodmap="$DOTFILES/.Xmodmap"
 
 # merge in defaults and keymaps
 
-if [ -f "$sysresources" ]; then
+if [ -f "$sysresources" ] ; then
     xrdb -merge "$sysresources"
 fi
 
-if [ -f "$sysmodmap" ]; then
+if [ -f "$sysmodmap" ] ; then
     xmodmap "$sysmodmap"
 fi
 
-if [ -f "$userresources" ]; then
+if [ -f "$userresources" ] ; then
     xrdb -merge "$userresources"
 fi
 
-if [ -f "$usermodmap" ]; then
+if [ -f "$usermodmap" ] ; then
     xmodmap "$usermodmap"
 fi
 

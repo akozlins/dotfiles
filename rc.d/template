@@ -23,9 +23,9 @@ add_template() {
 }
 
 _pacman-diff-file() {
-    if [ "$1" = "" ]; then
-        echo "Usage: qkkdiff-file <file>"
-    elif [ -f "$1" ]; then
+    if [ "x$1" = "x" ] ; then
+        echo "Usage: t-pacman-diff-file <file>"
+    elif [ -f "$1" ] ; then
         pkg="$(pacman -Qo "$1" | awk '//{printf "%s-%s", $(NF-1), $NF;}')"
         bsdtar -xOf "/var/cache/pacman/pkg/${pkg}-$(uname -m).pkg.tar.xz" "${1/\//}" | diff - "$1"
         return 0
