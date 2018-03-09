@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -eu
 
 tmp=${TMPDIR-/tmp}/pacman-disowned-$UID-$$

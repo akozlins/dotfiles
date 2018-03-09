@@ -1,6 +1,7 @@
 #!/bin/sh
 
-. ~/.dotfiles/envrc
+export DOTFILES="$(dirname -- "$(readlink -e -- "$HOME/.xinitrc")")"
+. $DOTFILES/envrc
 
 
 

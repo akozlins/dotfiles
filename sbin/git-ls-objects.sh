@@ -1,8 +1,8 @@
 #!/bin/sh
 set -euf
-unset CDPATH
 
 DIR="$(git rev-parse --git-path objects)"
+unset CDPATH
 cd "$DIR" || exit 1
 
 # packs

@@ -1,11 +1,11 @@
 #!/bin/sh
 set -euf
-unset CDPATH
-cd "$(dirname -- "$(readlink -f -- "$0")")"
 
 set -x
 
-DOTFILES="$(dirname -- "$(readlink -f -- "$0")")"
+DOTFILES="$(dirname -- "$(readlink -e -- "$0")")"
+unset CDPATH
+cd "$DOTFILES" || exit 1
 
 files="
     bin

@@ -1,6 +1,8 @@
+#!/bin/sh
+
 # global env vars
 
-export DOTFILES="$HOME/.dotfiles"
+# TODO: check DOTFILES env
 
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"

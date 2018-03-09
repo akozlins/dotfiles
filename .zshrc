@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/zsh
 
-source ~/.dotfiles/envrc
+export DOTFILES="$(dirname -- "$(readlink -e -- "$HOME/.zshrc")")"
+. "$DOTFILES/envrc"
 export PATH=$DOTFILES/bin:$PATH
 
 

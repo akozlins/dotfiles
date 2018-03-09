@@ -3,8 +3,8 @@
 ## Install
 
 ```sh
-git clone https://github.com/akozlins/dotfiles .dotfiles
-.dotfiles/install.sh
+git clone https://github.com/akozlins/dotfiles ~/.dotfiles
+~/.dotfiles/install.sh
 ```
 
 ## TODO

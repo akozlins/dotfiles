@@ -1,7 +1,8 @@
 #!/bin/sh
 set -euf
+
 unset CDPATH
-cd "$(dirname -- "$(readlink -f -- "$0")")"
+cd "$(dirname -- "$(readlink -e -- "$0")")" || exit 1
 
 profile="$1"
 if [ ! -d "$profile" ] ; then

@@ -24,8 +24,8 @@ run() {
 
 run "/usr/bin/uxterm" 1s
 
-run "$HOME/.dotfiles/bin/fbpanel" 2s
-run "$HOME/.dotfiles/bin/conky" 3s
+run "$HOME/bin/fbpanel" 2s
+run "$HOME/bin/conky" 3s
 
 run "/usr/bin/qxkb" 4s
 run "/usr/bin/pasystray" 4s
@@ -33,4 +33,4 @@ run "/usr/bin/pasystray" 4s
 run "/usr/bin/xscreensaver" 4s
 run "/usr/bin/xss-lock" 5s -- xscreensaver-command -lock
 
-run "$HOME/.dotfiles/bin/easystroke" 5s
+run "$HOME/bin/easystroke" 5s
