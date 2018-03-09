@@ -2,8 +2,8 @@
 
 objects=$(git rev-list --all --objects)
 
-git cat-file --batch-all-objects --batch-check | sort -k3nr \
+git cat-file --batch-all-objects --batch-check | grep blob | sort -k3nr \
 | while read -r sha1 type size ; do
-    object=$(echo "$objects" | grep "$sha1")
-    echo "$object $size"
+    name=$(echo "$objects" | grep "$sha1" | awk '{print $2}')
+    echo "$sha1 $size $name"
 done
