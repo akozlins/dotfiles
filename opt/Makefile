@@ -37,3 +37,8 @@ fbpanel: fbpanel/.git
 	( cd fbpanel && ./configure --prefix="$(HOME)/.local" )
 	$(MAKE) -C fbpanel
 	$(MAKE) -C fbpanel install
+
+.PHONY: direnv
+direnv: direnv/.git
+	( cd direnv && ln -s vendor src; )
+	GOPATH=$(pwd) $(MAKE) -C direnv
