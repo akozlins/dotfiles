@@ -20,5 +20,5 @@ exec \
 gs \
 -sDEVICE=pdfwrite \
 -dPDFSETTINGS=/prepress \
--dCompatibilityLevel=1.4 \
+-dCompatibilityLevel=1.5 \
 -o "$output" "$input"
