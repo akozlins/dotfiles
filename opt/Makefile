@@ -8,8 +8,7 @@ oh-my-zsh/.git:
 
 .PHONY: oh-my-zsh
 oh-my-zsh: oh-my-zsh/.git
-	git -C oh-my-zsh stash
-	git -C oh-my-zsh pull
+	( cd oh-my-zsh && git stash && git pull )
 	patch -p0 < oh-my-zsh.patch
 
 far2l/.git:
@@ -18,8 +17,7 @@ far2l/.git:
 .PHONY: far2l
 far2l: far2l/.git
 	# install cmake, wxgtk2 (wxWidgets)
-	git -C far2l stash
-	git -C far2l pull
+	( cd far2l && git stash && git pull )
 	patch -p0 < far2l.patch
 	mkdir -p far2l/build
 	( cd far2l/build && cmake -DCMAKE_BUILD_TYPE=Release .. )
@@ -31,8 +29,7 @@ fbpanel/.git:
 .PHONY: fbpanel
 fbpanel: fbpanel/.git
 	# install python2 and gtk2
-	git -C fbpanel stash
-	git -C fbpanel pull
+	( cd fbpanel && git stash && git pull )
 	patch -p0 < fbpanel.patch
 	( cd fbpanel && ./configure --prefix="$(HOME)/.local" )
 	$(MAKE) -C fbpanel

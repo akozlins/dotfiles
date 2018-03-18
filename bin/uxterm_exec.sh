@@ -1,7 +1,7 @@
 #!/bin/sh
 set -euf
 
-if [ "$#" -ne 2 ] ; then
+if [ $# -ne 2 ] ; then
   echo "usage: $0 command geometry"
   exit 1
 fi

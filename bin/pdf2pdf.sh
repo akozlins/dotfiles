@@ -1,10 +1,10 @@
 #!/bin/sh
 set -euf
 
-if [ "$#" -eq 2 ] ; then
+if [ $# -eq 2 ] ; then
     input="$1"
     output="$2"
-elif [ "$#" -eq 1 ] ; then
+elif [ $# -eq 1 ] ; then
     input="$1~"
     output="$1"
     if [ -f "$input" ] ; then

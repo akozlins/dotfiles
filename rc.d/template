@@ -23,7 +23,7 @@ add_template() {
 }
 
 _pacman-diff-file() {
-    if [ "x$1" = "x" ] ; then
+    if [ -z ${1:+x} ] ; then
         echo "Usage: t-pacman-diff-file <file>"
     elif [ -f "$1" ] ; then
         pkg="$(pacman -Qo "$1" | awk '//{printf "%s-%s", $(NF-1), $NF;}')"

@@ -3,6 +3,8 @@ set -euf
 
 # reload wifi modules
 
-rmmod iwldvm iwlwifi
+rmmod iwldvm
+rmmod iwlwifi
 sleep 1
-modprobe iwldvm iwlwifi
+modprobe iwlwifi
+modprobe iwldvm

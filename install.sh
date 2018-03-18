@@ -59,7 +59,7 @@ mkdir -p "$HOME/.config/pulse"
 mkdir -p "$HOME/.cache/ipe"
 
 for file in $files ; do
-    if [ -f "$DOTFILES/$file" ] || [ -d "$DOTFILES/$file" ] ; then
+    if [ -e "$DOTFILES/$file" ] ; then
         if [ -f "$DOTFILES/$file" ] ; then
             mkdir -p "$(dirname "$HOME/$file")"
         fi

@@ -1,7 +1,7 @@
 #!/bin/sh
 set -euf
 
-if [ "$#" -lt 2 ] ; then
+if [ $# -lt 2 ] ; then
     echo "Usage crypt.sh <password> <salt>"
     exit 1
 fi
