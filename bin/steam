@@ -1,6 +1,8 @@
 #!/bin/sh
 set -euf
 
+HOME="$DOTFILES"
+
 exec \
 /usr/bin/steam "$@" \
-> "$XDG_CACHE_HOME/steam.log" 2>&1 &
+> "$HOME/.steam/steam.log" 2>&1 &
