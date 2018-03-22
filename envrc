@@ -2,7 +2,10 @@
 
 # global env vars
 
-# TODO: check DOTFILES env
+if [ -z ${DOTFILES:+x} ] ; then
+    # TODO: error
+    echo "WARN: DOTFILES is not defined"
+fi
 
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"

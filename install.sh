@@ -1,8 +1,6 @@
 #!/bin/sh
 set -euf
 
-set -x
-
 DOTFILES="$(dirname -- "$(readlink -e -- "$0")")"
 unset CDPATH
 cd "$DOTFILES" || exit 1
@@ -55,16 +53,24 @@ files="
     .config/user-dirs.dirs
 "
 
-mkdir -p "$HOME/.config/pulse"
 mkdir -p "$HOME/.cache/ipe"
 
 for file in $files ; do
-    if [ -e "$DOTFILES/$file" ] ; then
-        if [ -f "$DOTFILES/$file" ] ; then
-            mkdir -p "$(dirname "$HOME/$file")"
-        fi
-        ln -sfv -T "$DOTFILES/$file" "$HOME/$file"
+    if [ ! -e "$DOTFILES/$file" ] ; then
+        # TODO: error
+        echo "WARN: source '$DOTFILES/$file' does not exist"
+        continue
     fi
+
+    if [ -e "$HOME/$file" ] ; then
+        # TODO: replace or continue
+        echo "WARN: destination '$HOME/$file' already exists"
+    fi
+
+    if [ -f "$DOTFILES/$file" ] ; then
+        mkdir -p "$(dirname "$HOME/$file")"
+    fi
+    ln -sfv -T "$DOTFILES/$file" "$HOME/$file"
 done
 
 #ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list
