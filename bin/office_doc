@@ -12,5 +12,5 @@ EXE=WINWORD.EXE
 
 exec \
 "$DOTFILES/bin/wine.sh" office \
-explorer /desktop=office,1562x1387 \
+explorer /desktop=office,1280x1024 \
 "C:/Program Files/Microsoft Office/Office12/$EXE"
