@@ -1,0 +1,10 @@
+#!/bin/sh
+set -euf
+
+HOME="$DOTFILES"
+
+mkdir -p "$HOME/.cache/vivado"
+cd "$HOME/.cache/vivado" || exit 1
+
+exec \
+"$XILINX_VIVADO/bin/vivado"
