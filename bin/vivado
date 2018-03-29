@@ -3,8 +3,13 @@ set -euf
 
 HOME="$DOTFILES"
 
-mkdir -p "$HOME/.cache/vivado"
-cd "$HOME/.cache/vivado" || exit 1
+VIVADO_CACHE="$HOME/.cache/vivado"
+
+if [ $# -eq 1 ] ; then
+    mkdir -p "$VIVADO_CACHE"
+    unset CDPATH
+    cd "$VIVADO_CACHE" || exit 1
+fi
 
 exec \
-"$XILINX_VIVADO/bin/vivado"
+"$XILINX_VIVADO/bin/vivado" "$@"
