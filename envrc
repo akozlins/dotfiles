@@ -27,17 +27,32 @@ export BROWSER="firefox"
 export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 #export WINEDLLOVERRIDES="winemenubuilder.exe=d;winedevice.exe=d"
 
-# suppress logs "Couldn't connect to accessibility bus: ..."
+# Delay initialization of the ATK Bridge
+# https://wiki.gnome.org/Accessibility/Documentation/GNOME2/Mechanics
+# * remove warning "Couldn't connect to accessibility bus: ..."
 export NO_AT_BRIDGE=1
 
+# High DPI Support in Qt
+# http://doc.qt.io/qt-5/highdpi.html
+# * disable automatic scaling
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
-# JVM default options
-_JAVA_OPTIONS=" \
+# Java Usage Tracker
+# https://docs.oracle.com/javacomponents/usage-tracker/overview/toc.htm
+# * disable last usage time tracking
+JAVA_NO_USAGE=" \
 -Dcom.oracle.usagetracker.config.file=$DOTFILES/.java/usagetracker.properties \
 -Djdk.disableLastUsageTracking=true \
 "
-export _JAVA_OPTIONS
+# Java Font Anti-Aliasing
+# https://wiki.archlinux.org/index.php/java
+JAVA_FONT_AA=" \
+-Dawt.useSystemAAFontSettings=on \
+-Dswing.aatext=true \
+"
+# Java options
+# https://docs.oracle.com/javase/8/docs/platform/jvmti/jvmti.html
+export JAVA_TOOL_OPTIONS="$JAVA_NO_USAGE $JAVA_FONT_AA"
 
 #export XUSERFILESEARCHPATH=
 
