@@ -11,10 +11,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-
-
 export MEDIA="/run/media/$USER"
-export DISK_46A2="$MEDIA/4677801d-12d7-40d4-808b-f152e6273ba2/$USER"
 
 
 
@@ -90,9 +87,3 @@ export XAUTHORITY="$HOME/.Xauthority"
 # nvidia
 export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/nv"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
-
-
-
-# private
-export PRIVATE="$HOME/private"
-export PASSWORD_STORE_DIR="$PRIVATE/.pass"
