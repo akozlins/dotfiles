@@ -1,13 +1,10 @@
 
-.PHONY: install
-install:
-	./install.sh
-
 oh-my-zsh/.git:
 	git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh
 
 .PHONY: oh-my-zsh
 oh-my-zsh: oh-my-zsh/.git
+	touch oh-my-zsh/.borgexclude
 	( cd oh-my-zsh && git stash && git pull )
 	patch -p0 < oh-my-zsh.patch
 
@@ -16,6 +13,7 @@ far2l/.git:
 
 .PHONY: far2l
 far2l: far2l/.git
+	touch far2l/.borgexclude
 	# install cmake, wxgtk2 (wxWidgets)
 	( cd far2l && git stash && git pull )
 	patch -p0 < far2l.patch
@@ -28,14 +26,18 @@ fbpanel/.git:
 
 .PHONY: fbpanel
 fbpanel: fbpanel/.git
+	touch $@/.borgexclude
 	# install python2 and gtk2
-	( cd fbpanel && git stash && git pull )
+	( cd $@ && git stash && git pull )
 	patch -p0 < fbpanel.patch
-	( cd fbpanel && ./configure --prefix="$(HOME)/.local" )
-	$(MAKE) -C fbpanel
-	$(MAKE) -C fbpanel install
+	( cd $@ && ./configure --prefix="$(HOME)/.local" && $(MAKE) install )
+
+direnv/.git:
+	git clone --depth 1 https://github.com/direnv/direnv
+	( cd direnv && ln -s vendor src )
 
 .PHONY: direnv
 direnv: direnv/.git
-	( cd direnv && ln -s vendor src )
-	GOPATH=$(pwd) $(MAKE) -C direnv
+	touch $@/.borgexclude
+	( cd $@ && git submodule update --init --recursive )
+	( cd $@ && GOPATH=$(shell pwd)/$@ $(MAKE) )
