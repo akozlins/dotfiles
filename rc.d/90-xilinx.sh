@@ -2,4 +2,4 @@
 
 export XILINXD_LICENSE_FILE=
 
-export XILINX_VIVADO=/opt/Xilinx/Vivado/2017.4
+export XILINX_VIVADO=/opt/Xilinx/Vivado/2018.1

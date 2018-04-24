@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export LM_LICENSE_FILE=
+export ALTERAD_LICENSE_FILE=
 
 ROOT=/usr/local/intelFPGA/17.1
 
