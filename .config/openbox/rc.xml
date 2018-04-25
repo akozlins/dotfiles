@@ -89,7 +89,7 @@
 </theme>
 
 <desktops>
-  <number>4</number>
+  <number>8</number>
   <firstdesk>1</firstdesk>
   <popupTime>500</popupTime>
 </desktops>
@@ -452,7 +452,7 @@
 </menu>
 
 <applications>
-  <application type="normal" class="Vlc" title="VLC media player">
+  <application type="normal" title="VLC media player">
     <position force="yes"><x>0</x><y>0</y></position>
     <size><width>40%</width><height>55%</height></size>
   </application>
