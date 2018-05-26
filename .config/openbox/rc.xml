@@ -91,7 +91,7 @@
 <desktops>
   <number>8</number>
   <firstdesk>1</firstdesk>
-  <popupTime>500</popupTime>
+  <popupTime>875</popupTime>
 </desktops>
 
 <resize>
@@ -140,11 +140,23 @@
   <keybind key="C-A-Right">
     <action name="GoToDesktop"><to>right</to><wrap>no</wrap></action>
   </keybind>
+  <keybind key="C-A-Up">
+    <action name="GoToDesktop"><to>up</to><wrap>no</wrap></action>
+  </keybind>
+  <keybind key="C-A-Down">
+    <action name="GoToDesktop"><to>down</to><wrap>no</wrap></action>
+  </keybind>
   <keybind key="S-A-Left">
     <action name="SendToDesktop"><to>left</to><wrap>no</wrap></action>
   </keybind>
   <keybind key="S-A-Right">
     <action name="SendToDesktop"><to>right</to><wrap>no</wrap></action>
+  </keybind>
+  <keybind key="S-A-Up">
+    <action name="SendToDesktop"><to>up</to><wrap>no</wrap></action>
+  </keybind>
+  <keybind key="S-A-Down">
+    <action name="SendToDesktop"><to>down</to><wrap>no</wrap></action>
   </keybind>
 
   <!-- Keybindings for windows -->
@@ -217,7 +229,7 @@
 <mouse>
   <dragThreshold>1</dragThreshold>
   <doubleClickTime>500</doubleClickTime>
-  <screenEdgeWarpTime>500</screenEdgeWarpTime>
+  <screenEdgeWarpTime>400</screenEdgeWarpTime>
   <screenEdgeWarpMouse>false</screenEdgeWarpMouse>
 
   <context name="Titlebar">
@@ -306,11 +318,6 @@
       <action name="Unshade"/>
       <action name="ShowMenu"><menu>client-menu</menu></action>
     </mousebind>
-    <mousebind button="Right" action="Press">
-      <action name="Focus"/>
-      <action name="Raise"/>
-      <action name="ShowMenu"><menu>client-menu</menu></action>
-    </mousebind>
   </context>
 
   <context name="AllDesktops">
@@ -350,24 +357,8 @@
       <action name="Raise"/>
       <action name="Unshade"/>
     </mousebind>
-    <mousebind button="Middle" action="Press">
-      <action name="Focus"/>
-      <action name="Raise"/>
-      <action name="Unshade"/>
-    </mousebind>
-    <mousebind button="Right" action="Press">
-      <action name="Focus"/>
-      <action name="Raise"/>
-      <action name="Unshade"/>
-    </mousebind>
     <mousebind button="Left" action="Click">
       <action name="ToggleMaximize"/>
-    </mousebind>
-    <mousebind button="Middle" action="Click">
-      <action name="ToggleMaximize"><direction>vertical</direction></action>
-    </mousebind>
-    <mousebind button="Right" action="Click">
-      <action name="ToggleMaximize"><direction>horizontal</direction></action>
     </mousebind>
   </context>
 
@@ -399,16 +390,16 @@
       <action name="Raise"/>
     </mousebind>
 
-    <mousebind button="C-Up" action="Click">
+    <!--mousebind button="C-Up" action="Click">
       <action name="Execute">
         <command>amixer -D pulse set Master 655+</command>
       </action>
-    </mousebind>
-    <mousebind button="C-Down" action="Click">
+    </mousebind-->
+    <!--mousebind button="C-Down" action="Click">
       <action name="Execute">
         <command>amixer -D pulse set Master 655-</command>
       </action>
-    </mousebind>
+    </mousebind-->
   </context>
 
   <context name="Root">

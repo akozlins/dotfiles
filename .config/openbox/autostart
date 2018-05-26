@@ -32,3 +32,5 @@ run "/usr/bin/xscreensaver" 4s
 run "/usr/bin/xss-lock" 5s -- xscreensaver-command -lock
 
 run "$HOME/bin/easystroke" 5s
+
+[ -x "$DOTFILES/opt/setlayout/setlayout" ] && "$DOTFILES/opt/setlayout/setlayout" 0 4 2 0
