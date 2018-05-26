@@ -1,0 +1,15 @@
+
+:root {
+  --tab_min_width: 120px !important;
+  --tab_max_width: 120px !important;
+
+  --tab_min_width_mlt: 120px !important;
+  --tab_max_width_mlt: 120px !important;
+
+  --classic_squared_tabs_tab_height: 28px !important;
+  --classic_squared_tabs_other_tabs: linear-gradient(to top,#cccccc,#cccccc,#cccccc) !important;
+
+  --tabs-lines: 6 !important;
+
+  --general_ui_font_size: 12pt !important;
+}

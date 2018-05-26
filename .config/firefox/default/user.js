@@ -84,6 +84,62 @@ user_pref("extensions.tabmix.unloadedTab", false);
 user_pref("extensions.tabmix.unreadTab", false);
 
 /******************************************************************************
+ * FF 57 *
+ ******************************************************************************/
+
+user_pref("browser.download.autohideButton", false);
+
+user_pref("browser.newtabpage.activity-stream.enabled", false);
+user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
+user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+user_pref("browser.newtabpage.activity-stream.migrationExpired", true);
+user_pref("browser.newtabpage.activity-stream.prerender", false);
+user_pref("browser.newtabpage.activity-stream.showSearch", false);
+user_pref("browser.newtabpage.activity-stream.showTopSites", false);
+user_pref("browser.newtabpage.activity-stream.telemetry", false);
+
+user_pref("browser.onboarding.enabled", false);
+user_pref("browser.onboarding.notification.finished", true);
+user_pref("browser.onboarding.notification.tour-ids-queue", "");
+user_pref("browser.onboarding.state", "watermark");
+user_pref("browser.onboarding.tour.onboarding-tour-addons.completed", true);
+user_pref("browser.onboarding.tour.onboarding-tour-customize.completed", true);
+user_pref("browser.onboarding.tour.onboarding-tour-default-browser.completed", true);
+user_pref("browser.onboarding.tour.onboarding-tour-performance.completed", true);
+user_pref("browser.onboarding.tour.onboarding-tour-private-browsing.completed", true);
+user_pref("browser.onboarding.tour.onboarding-tour-screenshots.completed", true);
+
+user_pref("extensions.getAddons.showPane", false);
+user_pref("extensions.screenshots.disabled", true);
+user_pref("privacy.userContext.enabled", true);
+
+user_pref("browser.ping-centre.telemetry", false);
+user_pref("toolkit.telemetry.archive.enabled", false);
+user_pref("toolkit.telemetry.bhrPing.enabled", false);
+user_pref("toolkit.telemetry.enabled", false);
+user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
+user_pref("toolkit.telemetry.newProfilePing.enabled", false);
+user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
+user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
+user_pref("toolkit.telemetry.unified", false);
+user_pref("toolkit.telemetry.updatePing.enabled", false);
+user_pref("experiments.enabled", false);
+user_pref("experiments.activeExperiment", false);
+user_pref("experiments.supported", false);
+user_pref("datareporting.healthreport.uploadEnabled", false);
+user_pref("nsITelemetry.canRecordBase", false);
+user_pref("nsITelemetry.canRecordExtended", false);
+user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+user_pref("browser.newtabpage.activity-stream.telemetry", false);
+user_pref("extensions.screenshots.upload-disabled", "disable");
+
+user_pref("browser.tabs.insertRelatedAfterCurrent", false);
+
+user_pref("reader.parse-on-load.enabled", false);
+
+/******************************************************************************
  * user.js                                                                    *
  * https://github.com/pyllyukko/user.js                                       *
  ******************************************************************************/

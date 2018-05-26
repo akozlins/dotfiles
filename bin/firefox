@@ -1,10 +1,13 @@
 #!/bin/sh
 set -euf
 
+unset CDPATH
+cd "$HOME" || exit 1
+
 profile="$XDG_CONFIG_HOME/firefox/default"
 
 if [ ! -f "$profile/prefs.js" ] ; then
-    echo "Profile '$profile' not found!"
+    echo "ERROR: profile '$profile' not found"
     exit 1
 fi
 
