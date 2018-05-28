@@ -1,18 +1,18 @@
-#!/bin/sh
+#!/bin/bash
 set -eu
 
 export DVT_LICENSE_FILE=
 
-DVT_VMARGS="\
--XX:CompileCommand=exclude,org/eclipse/core/internal/dtree/DataTreeNode,forwardDeltaWith \
--XX:CompileCommand=exclude,ro/amiq/edt/ui/editor/rules/ECommentTaskRule,evaluate \
--XX:CompileCommand=exclude,ro/amiq/edt/ui/editor/rules/EMethodRule,evaluate \
--XX:CompileCommand=exclude,ro/amiq/vhdldt/ui/editor/rules/VhdlCommentTaskRule,evaluate \
--XX:CompileCommand=exclude,ro/amiq/vlogdt/ui/editor/rules/VlogCombinedWordRule,evaluate \
--XX:CompileCommand=exclude,ro/amiq/vlogdt/ui/editor/rules/VlogCommentTaskRule,evaluate \
--XX:CompileCommand=exclude,ro/amiq/vlogdt/parser/VlogParser,class_declaration \
--XX:CompileCommand=exclude,ro/amiq/edt/model/reflection/Determinant,contains \
-"
+DVT_VMARGS=(
+"-XX:CompileCommand=exclude,org/eclipse/core/internal/dtree/DataTreeNode,forwardDeltaWith"
+"-XX:CompileCommand=exclude,ro/amiq/edt/ui/editor/rules/ECommentTaskRule,evaluate"
+"-XX:CompileCommand=exclude,ro/amiq/edt/ui/editor/rules/EMethodRule,evaluate"
+"-XX:CompileCommand=exclude,ro/amiq/vhdldt/ui/editor/rules/VhdlCommentTaskRule,evaluate"
+"-XX:CompileCommand=exclude,ro/amiq/vlogdt/ui/editor/rules/VlogCombinedWordRule,evaluate"
+"-XX:CompileCommand=exclude,ro/amiq/vlogdt/ui/editor/rules/VlogCommentTaskRule,evaluate"
+"-XX:CompileCommand=exclude,ro/amiq/vlogdt/parser/VlogParser,class_declaration"
+"-XX:CompileCommand=exclude,ro/amiq/edt/model/reflection/Determinant,contains"
+)
 
 export SWT_GTK3=0
 
@@ -22,5 +22,5 @@ exec \
 -data "$XDG_CONFIG_HOME/eclipse/data" \
 --launcher.GTK_version 2 \
 -vmargs -Duser.home="$XDG_CACHE_HOME/eclipse" \
-$DVT_VMARGS \
+"${DVT_VMARGS[@]}" \
 > /dev/null 2>&1 &

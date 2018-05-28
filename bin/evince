@@ -1,12 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
-CMD=/usr/bin/evince
+CMD=(/usr/bin/evince "$@")
 
-[ -x /usr/bin/firejail ] && CMD="/usr/bin/firejail -- $CMD"
+FJ="/usr/bin/firejail"
+[ -x "$FJ" ] && CMD=("$FJ" -- "${CMD[@]}")
 
 if [ $# -eq 1 ] && [ -f "$1" ] ; then
-  exec $CMD "$@" > /dev/null 2>&1 &
+  exec "${CMD[@]}" > /dev/null 2>&1 &
 else
-  exec $CMD "$@"
+  exec "${CMD[@]}"
 fi

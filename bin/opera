@@ -1,13 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
-CMD="/usr/bin/opera -nomail -nomaillinks -nolirc"
-FJ="/usr/bin/firejail"
+export HOME="$DOTFILES"
 
-[ -x "$FJ" ] && CMD="$FJ -- $CMD"
+CMD=("/usr/bin/opera" -nomail -nomaillinks -nolirc "$@")
+
+FJ="/usr/bin/firejail"
+[ -x "$FJ" ] && CMD=("$FJ" -- "${CMD[@]}")
 
 if [ $# -eq 0 ] ; then
-  exec $CMD "$@" > /dev/null 2>&1 &
+  exec "${CMD[@]}" > /dev/null 2>&1 &
 else
-  exec $CMD "$@"
+  exec "${CMD[@]}"
 fi

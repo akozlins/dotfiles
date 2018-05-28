@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 objects=$(git rev-list --all --objects)
 

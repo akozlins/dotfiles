@@ -1,6 +1,7 @@
 #!/bin/sh
 
-export DOTFILES="$(dirname -- "$(readlink -e -- "$HOME/.xinitrc")")"
+DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.xinitrc")")
+export DOTFILES
 . $DOTFILES/envrc
 
 sysresources="/etc/X11/xinit/.Xresources"

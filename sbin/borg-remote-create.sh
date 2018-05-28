@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -eu
 
 if [ $# -lt 2 ] ; then
@@ -14,14 +14,14 @@ if [ ! -d "$REPO" ] ; then
     exit 1
 fi
 
-PATTERNS=""
+PATTERNS=()
 if [ $# -ge 3 ] ; then
     if [ ! -f "$3" ] ; then
         echo "ERROR: '$3' not found"
         exit 1
     fi
     while IFS='' read -r line || [ -n "$line" ] ; do
-        [ ! -z "$line" ] && PATTERNS="$PATTERNS --pattern='$line'"
+        [ ! -z "$line" ] && PATTERNS=("${PATTERNS[@]}" "--pattern='$line'")
     done < "$3"
 fi
 
@@ -45,7 +45,7 @@ borg create \
     --filter AME \
     --stats \
     --exclude-if-present .borgexclude --keep-exclude-tags \
-    $PATTERNS \
+    "${PATTERNS[@]}" \
     "ssh://$HOST/$REPO::$PREFIX-{now:%Y%m%dT%H%M%S}"
 
 ssh "$HOST" -O cancel -R "$PORT:localhost:$PORT" || true

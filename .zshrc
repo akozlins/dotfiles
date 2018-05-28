@@ -1,8 +1,9 @@
 #!/bin/zsh
 
-export DOTFILES="$(dirname -- "$(readlink -e -- "$HOME/.zshrc")")"
+DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.zshrc")")
+export DOTFILES
 . "$DOTFILES/envrc"
-export PATH=$DOTFILES/bin:$PATH
+export PATH="$DOTFILES/bin:$PATH"
 
 
 
@@ -12,11 +13,11 @@ export ZLE_SPACE_SUFFIX_CHARS=""
 
 
 
-export ZSH=$DOTFILES/opt/oh-my-zsh
-export ZSH_COMPDUMP=$ZSH/cache/.zcompdump
+export ZSH="$DOTFILES/opt/oh-my-zsh"
+export ZSH_COMPDUMP="$ZSH/cache/.zcompdump"
 
 # ZSH update
-export ZSH_UPDATE=$ZSH/cache/.zsh-update
+export ZSH_UPDATE="$ZSH/cache/.zsh-update"
 DISABLE_AUTO_UPDATE="true"
 
 ZSH_THEME="gentoo"

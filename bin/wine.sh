@@ -1,7 +1,10 @@
 #!/bin/sh
 set -euf
 
-: ${WINE_ROOT="$HOME/wine"}
+if [ -z ${WINE_ROOT:+x} ] ; then
+    WINE_ROOT="$HOME/wine"
+fi
+export WINE_ROOT
 
 if [ ! -d "$WINE_ROOT" ] ; then
   echo ERROR: wine root "$WINE_ROOT" not found

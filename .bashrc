@@ -3,9 +3,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export DOTFILES="$(dirname -- "$(readlink -e -- "$HOME/.bashrc")")"
+DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.bashrc")")
+export DOTFILES
 . "$DOTFILES/envrc"
-export PATH=$DOTFILES/bin:$PATH
+export PATH="$DOTFILES/bin:$PATH"
 
 
 

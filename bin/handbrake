@@ -1,13 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
-CMD=/usr/bin/ghb
-PROFILE="$XDG_CONFIG_HOME/firejail/handbrake.profile"
+CMD=("/usr/bin/ghb" "$@")
 
-[ -x /usr/bin/firejail ] && CMD="/usr/bin/firejail --profile=$PROFILE -- $CMD"
+FJ="/usr/bin/firejail"
+[ -x "$FJ" ] && CMD=("$FJ" "--profile=$XDG_CONFIG_HOME/firejail/handbrake.profile" -- "${CMD[@]}")
 
 if [ $# -eq 0 ] ; then
-  exec $CMD "$@" > /dev/null 2>&1 &
+  exec "${CMD[@]}" > /dev/null 2>&1 &
 else
-  exec $CMD "$@"
+  exec "${CMD[@]}"
 fi

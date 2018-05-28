@@ -37,7 +37,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 # Java Usage Tracker
 # https://docs.oracle.com/javacomponents/usage-tracker/overview/toc.htm
 # * disable last usage time tracking
-JAVA_NO_USAGE=" \
+JAVA_USAGE_TRACKER=" \
 -Dcom.oracle.usagetracker.config.file=$DOTFILES/.java/usagetracker.properties \
 -Djdk.disableLastUsageTracking=true \
 "
@@ -49,7 +49,7 @@ JAVA_FONT_AA=" \
 "
 # Java options
 # https://docs.oracle.com/javase/8/docs/platform/jvmti/jvmti.html
-export JAVA_TOOL_OPTIONS="$JAVA_NO_USAGE $JAVA_FONT_AA"
+export JAVA_TOOL_OPTIONS="$JAVA_USAGE_TRACKER $JAVA_FONT_AA"
 
 #export XUSERFILESEARCHPATH=
 

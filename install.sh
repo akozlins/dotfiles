@@ -1,7 +1,7 @@
 #!/bin/sh
 set -euf
 
-DOTFILES="$(dirname -- "$(readlink -e -- "$0")")"
+DOTFILES=$(dirname -- "$(readlink -e -- "$0")")
 unset CDPATH
 cd "$DOTFILES" || exit 1
 

@@ -1,12 +1,10 @@
 #!/bin/sh
 set -euf
 
-while true ; do
-  PORT=$(hexdump -n 2 -e '/2 "%u"' /dev/urandom)
-  if [ "$PORT" -lt 1024 ] ; then continue; fi
-  if nc -z localhost "$PORT" ; then continue; fi
-  break
-done
+while
+    PORT=$(hexdump -n 2 -e '/2 "%u"' /dev/urandom)
+    [ "$PORT" -lt 16384 ] || nc -z localhost "$PORT"
+do continue ; done
 echo "PORT = $PORT"
 
 RPORT=5900

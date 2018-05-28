@@ -11,5 +11,7 @@ if [ $# -eq 1 ] ; then
     cd "$VIVADO_CACHE" || exit 1
 fi
 
+VIVADO_OPTS="-jvm Xmx2048m"
+
 exec \
 "$XILINX_VIVADO/bin/vivado" "$@"

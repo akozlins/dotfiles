@@ -1,7 +1,7 @@
 #!/bin/sh
 set -euf
 
-DIR="$(git rev-parse --git-path objects)"
+DIR=$(git rev-parse --git-path objects)
 unset CDPATH
 cd "$DIR" || exit 1
 
