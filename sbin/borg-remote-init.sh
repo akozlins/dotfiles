@@ -19,6 +19,8 @@ while
     [ "$PORT" -lt 16384 ] || nc -z localhost "$PORT"
 do continue ; done
 
+borg --version
+
 socat -d TCP4-LISTEN:"$PORT,bind=localhost" \
     "EXEC:borg serve --append-only --restrict-to-path $REPO" &
 
@@ -32,3 +34,5 @@ borg init \
 
 ssh "$HOST" -O cancel -R "$PORT:localhost:$PORT" || true
 kill "$SOCAT_PID" || true
+
+sync
