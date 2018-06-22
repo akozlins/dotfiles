@@ -5,7 +5,6 @@ xterm*scrollBar: false
 
 xterm.vt100.toolBar: false
 
-xterm.termName: xterm-256color
 xterm.vt100.metaSendsEscape: true
 xterm.vt100.backarrowKey: false
 xterm.ttyModes: erase ^?

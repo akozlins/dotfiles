@@ -43,6 +43,7 @@ JAVA_USAGE_TRACKER=" \
 "
 # Java Font Anti-Aliasing
 # https://wiki.archlinux.org/index.php/java
+# https://docs.oracle.com/javase/8/docs/technotes/guides/2d/flags.html
 JAVA_FONT_AA=" \
 -Dawt.useSystemAAFontSettings=on \
 -Dswing.aatext=true \
@@ -69,6 +70,7 @@ export GMVAULT_DIR="$XDG_CONFIG_HOME/gmvault"
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 export INPUTRC="$DOTFILES/.inputrc"
 export IPELATEXDIR="$XDG_CACHE_HOME/ipe/latexrun"
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export KDEHOME="$XDG_CONFIG_HOME/kde4"
 export LESSHISTFILE=-
 export MPLAYER_HOME="$XDG_CONFIG_HOME/mplayer"

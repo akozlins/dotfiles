@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
 DOTFILES=$(dirname -- "$(readlink -e -- "$0")")
 unset CDPATH
 cd "$DOTFILES" || exit 1
 
-files="
+files=(
     bin
 
     .emacs.d
@@ -51,11 +51,11 @@ files="
     .config/pavucontrol.ini
     .config/qxkb.cfg
     .config/user-dirs.dirs
-"
+)
 
 mkdir -p "$HOME/.cache/ipe"
 
-for file in $files ; do
+for file in "${files[@]}" ; do
     if [ ! -e "$DOTFILES/$file" ] ; then
         # TODO: error
         echo "WARN: source '$DOTFILES/$file' does not exist"

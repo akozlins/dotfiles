@@ -10,6 +10,10 @@ if [ $# -eq 1 ] && [ "$1" = "--reset" ] ; then
     exit 0
 fi
 
-exec \
-/usr/bin/idea.sh "$@" \
-> /dev/null 2>&1 &
+CMD=("/usr/bin/idea.sh" "$@")
+
+if [ $# -eq 0 ] ; then
+  exec "${CMD[@]}" > /dev/null 2>&1 &
+else
+  exec "${CMD[@]}"
+fi
