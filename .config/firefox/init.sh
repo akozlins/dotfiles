@@ -23,3 +23,5 @@ for db in $dbs ; do
         echo "already exists: $profile/$db.sqlite"
     fi
 done
+
+#sqlite3 places.sqlite "VACUUM;"

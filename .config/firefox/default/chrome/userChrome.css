@@ -1,0 +1,7 @@
+
+@import url(./vars.css);
+
+@import url(./css/tabs/classic_squared_tabs.css);
+@import url(./css/tabs/tab_close_always_visible.css);
+@import url(./css/tabs/tab_maxwidth.css);
+@import url(./css/tabs/tabs_multiple_lines.css);

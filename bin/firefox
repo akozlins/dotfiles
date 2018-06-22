@@ -11,7 +11,7 @@ if [ ! -f "$profile/prefs.js" ] ; then
     exit 1
 fi
 
-CMD=("/usr/bin/firefox-esr" --profile "$profile" "$@")
+CMD=("/usr/bin/firefox" --profile "$profile" "$@")
 
 FJ="/usr/bin/firejail"
 [ -x "$FJ" ] && CMD=("$FJ" "--profile=$XDG_CONFIG_HOME/firejail/firefox.profile" -- "${CMD[@]}")
