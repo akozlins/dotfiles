@@ -97,6 +97,11 @@ Plugin {
       tooltip = firefox
       icon = firefox
     }
+    button {
+      action = xscreensaver-command -lock
+      tooltip = lock screen
+      icon = system-lock-screen
+    }
   }
 }
 
