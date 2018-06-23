@@ -3,12 +3,11 @@ set -euf
 
 export WINE_ROOT="$DISK_46A2/wine"
 
-if [ $# -ge 1 ] ; then
-  wine.sh battle.net "$@"
-  exit 0
+if [ $# -eq 0 ] ; then
+    set -- "C:/Program Files (x86)/Battle.net/Battle.net.exe"
 fi
 
-exec \
-primusrun "$DOTFILES/bin/wine.sh" battle.net \
+exec primusrun \
+"$DOTFILES/bin/wine.sh" battle.net \
 explorer /desktop=battle_net,1280x1024 \
-"C:/Program Files (x86)/Battle.net/Battle.net.exe"
+"$@"

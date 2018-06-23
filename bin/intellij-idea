@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
 #export IDEA_VM_OPTIONS="$XDG_CONFIG_HOME/intellij-idea/vmoptions"
@@ -13,7 +13,7 @@ fi
 CMD=("/usr/bin/idea.sh" "$@")
 
 if [ $# -eq 0 ] ; then
-  exec "${CMD[@]}" > /dev/null 2>&1 &
+    exec "${CMD[@]}" > /dev/null 2>&1 &
 else
-  exec "${CMD[@]}"
+    exec "${CMD[@]}"
 fi

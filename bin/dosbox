@@ -1,7 +1,7 @@
 #!/bin/sh
 set -euf
 
+CONF="$XDG_CONFIG_HOME/dosbox-0.74.conf"
+
 exec \
-/usr/bin/dosbox \
--conf "$XDG_CONFIG_HOME/dosbox-0.74.conf" \
-"$@"
+/usr/bin/dosbox -conf "$CONF" "$@"

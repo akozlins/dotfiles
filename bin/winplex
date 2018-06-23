@@ -3,15 +3,12 @@ set -euf
 
 export WINEARCH=win32
 
-if [ $# -ge 1 ] ; then
-  wine.sh far "$@"
-  exit 0
+if [ $# -eq 0 ] ; then
+    # "C:/Program Files/Megaplex0961/Megaplex.exe"
+    set -- "C:/Program Files/WinPlex/supaplex.exe"
 fi
-
-EXE="C:/Program Files/WinPlex/supaplex.exe"
-#EXE="C:/Program Files/Megaplex0961/Megaplex.exe"
 
 exec \
 "$DOTFILES/bin/wine.sh" far \
 explorer /desktop=winplex,1024x768 \
-"$EXE"
+"$@"

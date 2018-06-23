@@ -3,14 +3,12 @@ set -euf
 
 export WINEARCH=win32
 
-if [ $# -ge 1 ] ; then
-  wine.sh office "$@"
-  exit 0
-fi
-
 EXE=POWERPNT.EXE
+if [ $# -eq 0 ] ; then
+    set -- "C:/Program Files/Microsoft Office/Office12/$EXE"
+fi
 
 exec \
 "$DOTFILES/bin/wine.sh" office \
 explorer /desktop=office,1280x1024 \
-"C:/Program Files/Microsoft Office/Office12/$EXE"
+"$@"

@@ -17,7 +17,7 @@ FJ="/usr/bin/firejail"
 [ -x "$FJ" ] && CMD=("$FJ" "--profile=$XDG_CONFIG_HOME/firejail/firefox.profile" -- "${CMD[@]}")
 
 if [ $# -eq 0 ] ; then
-  exec "${CMD[@]}" > /dev/null 2>&1 &
+    exec "${CMD[@]}" > /dev/null 2>&1 &
 else
-  exec "${CMD[@]}"
+    exec "${CMD[@]}"
 fi

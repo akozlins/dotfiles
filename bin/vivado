@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
 HOME="$DOTFILES"
@@ -11,7 +11,7 @@ if [ $# -eq 1 ] ; then
     cd "$VIVADO_CACHE" || exit 1
 fi
 
-VIVADO_OPTS="-jvm Xmx2048m"
+VIVADO_OPTS=(-jvm Xmx2048m)
 
 exec \
-"$XILINX_VIVADO/bin/vivado" "$@"
+"$XILINX_VIVADO/bin/vivado" "${VIVADO_OPTS[@]}" "$@"

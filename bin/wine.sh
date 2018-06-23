@@ -7,11 +7,11 @@ fi
 export WINE_ROOT
 
 if [ ! -d "$WINE_ROOT" ] ; then
-  echo ERROR: wine root "$WINE_ROOT" not found
-  exit 1
+    echo ERROR: wine root "$WINE_ROOT" not found
+    exit 1
 fi
 
-export WINEPREFIX=$WINE_ROOT/$1
+export WINEPREFIX="$WINE_ROOT/$1"
 shift
 #echo WINEPREFIX = WINEPREFIX
 

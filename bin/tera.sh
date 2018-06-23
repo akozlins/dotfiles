@@ -4,12 +4,11 @@ set -euf
 export WINE_ROOT="$DISK_46A2/wine"
 export WINEARCH=win32
 
-if [ $# -ge 1 ] ; then
-  wine.sh tera "$@"
-  exit 0
+if [ $# -eq 0 ] ; then
+    set -- "C:/users/Public/Games/En Masse Entertainment/TERA/TERA-Launcher.exe"
 fi
 
-exec \
-primusrun "$DOTFILES/bin/wine.sh" tera \
+exec primusrun \
+"$DOTFILES/bin/wine.sh" tera \
 explorer /desktop=tera,1280x1024 \
-"C:/users/Public/Games/En Masse Entertainment/TERA/TERA-Launcher.exe"
+"$@"

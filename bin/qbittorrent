@@ -4,7 +4,7 @@ set -euf
 CMD=("/usr/bin/qbittorrent" "$@")
 
 if [ $# -eq 0 ] ; then
-  exec "${CMD[@]}" > /dev/null 2>&1 &
+    exec "${CMD[@]}" > /dev/null 2>&1 &
 else
-  exec "${CMD[@]}"
+    exec "${CMD[@]}"
 fi

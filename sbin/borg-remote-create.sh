@@ -45,6 +45,7 @@ borg create \
     --verbose \
     --list --filter AME \
     --stats \
+    --exclude-caches \
     --exclude-if-present .borgexclude --keep-exclude-tags \
     "${PATTERNS[@]}" \
     "ssh://$HOST/$REPO::$PREFIX-{utcnow:%Y%m%dT%H%M%S}"
@@ -56,8 +57,8 @@ borg prune \
     --verbose \
     --list \
     --stats \
-    --keep-daily=7 \
-    --keep-weekly=4 \
+    --keep-daily=6 \
+    --keep-weekly=3 \
     --keep-monthly=6 \
     --prefix="$PREFIX-" \
     "$REPO"
