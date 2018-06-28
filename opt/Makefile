@@ -6,7 +6,6 @@ oh-my-zsh/.git:
 oh-my-zsh: oh-my-zsh/.git
 	touch oh-my-zsh/.borgexclude
 	( cd oh-my-zsh && git stash && git pull )
-	patch -p0 < oh-my-zsh.patch
 
 far2l/.git:
 	git clone --depth 1 https://github.com/elfmz/far2l
