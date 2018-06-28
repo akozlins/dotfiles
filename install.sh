@@ -91,8 +91,4 @@ done
 
 #ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list
 
-# submodules
-
-git submodule update --init --recursive
-
 [ -d "opt/oh-my-zsh" ] && make -C opt oh-my-zsh
