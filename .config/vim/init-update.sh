@@ -13,10 +13,13 @@ repos=(
     "https://github.com/vimwiki/vimwiki"
 )
 
-cd bundle
+cd bundle || exit 1
 
 for repo in "${repos[@]}" ; do
     name=$(basename "$repo")
-    [ -e "$name/.git" ] || git clone "$repo"
-    ( cd "$name" ; git fetch --verbose --prune ; git gc --prune="0 days" )
+    if [ ! -d "$name/.git" ] ; then
+        rm -rf -- "$name"
+        git clone "$repo"
+    fi
+    ( cd "$name" ; git fetch --verbose --prune )
 done

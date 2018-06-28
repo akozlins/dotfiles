@@ -8,7 +8,7 @@ elif [ "$#" -eq 1 ] ; then
     input="$1"
     output="$1.png"
 else
-    echo "usage: $0 <input> [output]"
+    echo "usage: $0 input [output]"
     exit 1
 fi
 

@@ -6,7 +6,7 @@ db=$tmp/db
 fs=$tmp/fs
 
 mkdir "$tmp"
-trap 'rm -rf "$tmp"' EXIT
+trap 'rm -rf -- "$tmp"' EXIT
 
 pacman -Qlq | sort -u > "$db"
 

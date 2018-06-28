@@ -20,7 +20,7 @@ shift
 export WINEDEBUG=-all
 #echo WINEDEBUG = WINEDEBUG
 
-export WINEDLLOVERRIDES=winemenubuilder.exe=d
+export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 
 exec \
 ${WINE:-wine} "$@" \

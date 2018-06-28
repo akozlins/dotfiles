@@ -7,11 +7,9 @@
 	whitespace = trailing-space,space-before-tab
 [diff]
 	tool = meld
-[status]
-	submoduleSummary = true
 [merge]
 	commit = no
-#[rerere]
-#	enabled = true
+[status]
+	submoduleSummary = true
 [oh-my-zsh]
 	hide-dirty = 1

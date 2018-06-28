@@ -82,7 +82,7 @@ for file in "${files[@]}" ; do
         esac
     fi
 
-    dstdir=$(dirname "$dst")
+    dstdir=$(dirname -- "$dst")
     if [ -f "$dst" ] && [ ! -d "$dstdir" ] ; then
         mkdir -pv "$dstdir"
     fi

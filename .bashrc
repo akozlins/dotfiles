@@ -10,12 +10,12 @@ export PATH="$DOTFILES/bin:$PATH"
 
 
 
-export HISTCONTROL=ignoreboth:erasedups
+export HISTCONTROL="ignoreboth:erasedups"
 export HISTFILESIZE=65536
 export HISTIGNORE="reboot:reset:cd:cd ..:ls:make:pwd"
 export HISTSIZE=4096
 
-#export PROMPT_COMMAND='history -a; history -n'
+#export PROMPT_COMMAND="history -a; history -n"
 
 
 

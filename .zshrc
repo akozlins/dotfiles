@@ -17,7 +17,6 @@ export ZSH="$DOTFILES/opt/oh-my-zsh"
 export ZSH_COMPDUMP="$ZSH/cache/.zcompdump"
 
 # ZSH update
-export ZSH_UPDATE="$ZSH/cache/.zsh-update"
 DISABLE_AUTO_UPDATE="true"
 
 ZSH_THEME="gentoo"
@@ -28,7 +27,7 @@ plugins=(
 )
 #CASE_SENSITIVE="true"
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # directories
 unsetopt auto_cd

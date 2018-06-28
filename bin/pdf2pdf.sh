@@ -12,7 +12,7 @@ elif [ $# -eq 1 ] ; then
     fi
     mv "$output" "$input"
 else
-    echo "usage: $0 <input> [output]"
+    echo "usage: $0 input [output]"
     exit 1
 fi
 

@@ -1,19 +1,18 @@
 #!/bin/sh
 set -euf
 
-if [ $# -lt 2 ] ; then
-  echo "usage: $0 geometry program [arguments...]"
+if [ $# -ne 2 ] ; then
+  echo "usage: $0 geometry program"
   exit 1
 fi
 
 tmp=$(mktemp)
-trap "{ rm -f $tmp ; exit 1 }" EXIT
+trap "{ rm -f -- '$tmp' ; exit 1 ; }" EXIT
 
 geometry=$1
-shift
-program="rm -f $tmp ; $@"
+program="rm -f -- '$tmp' ; $2"
 
-/usr/bin/uxterm -geometry "$geometry" -e "$program" > /dev/null 2>&1 &
+/usr/bin/uxterm -geometry "$geometry" -e "sh -c '$program'" > /dev/null 2>&1 &
 
 printf "wait for '%s' " "$tmp"
 while [ -f "$tmp" ] ; do
