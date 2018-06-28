@@ -2,6 +2,7 @@
 set -euf
 
 DOTFILES=$(dirname -- "$(readlink -e -- "$0")")
+echo "DOTFILES = '$DOTFILES'"
 unset CDPATH
 cd "$DOTFILES" || exit 1
 
@@ -10,6 +11,8 @@ files=(
 
     .emacs.d
 
+    .bashrc
+    .bash_profile
     .dmrc
     .eltclshrc
     .nanorc
@@ -53,24 +56,37 @@ files=(
     .config/user-dirs.dirs
 )
 
-mkdir -p "$HOME/.cache/ipe"
+mkdir -pv "$HOME/.cache/ipe"
 
 for file in "${files[@]}" ; do
-    if [ ! -e "$DOTFILES/$file" ] ; then
-        # TODO: error
-        echo "WARN: source '$DOTFILES/$file' does not exist"
-        continue
+    src="$DOTFILES/$file"
+    dst="$HOME/$file"
+
+    if [ ! -e "$src" ] ; then
+        echo "ERROR: source '$src' does not exist"
+        exit 1
     fi
 
-    if [ -e "$HOME/$file" ] ; then
-        # TODO: replace or continue
-        echo "WARN: destination '$HOME/$file' already exists"
+    if [ -e "$dst" ] && [ "$(readlink -e -- "$dst")" = "$(readlink -e -- "$src")" ] ; then
+        echo "INFO: '$dst' OK"
+        continue;
     fi
 
-    if [ -f "$DOTFILES/$file" ] ; then
-        mkdir -p "$(dirname "$HOME/$file")"
+    if [ -e "$dst" ] ; then
+        echo "WARN: destination '$dst' exists"
+        read -r -p "Continue? [y/N] " yn
+        echo # new line
+        case "$yn"
+            in [yY]) ;;
+            *) exit 1 ;;
+        esac
     fi
-    ln -sfv -T "$DOTFILES/$file" "$HOME/$file"
+
+    dstdir=$(dirname "$dst")
+    if [ -f "$dst" ] && [ ! -d "$dstdir" ] ; then
+        mkdir -pv "$dstdir"
+    fi
+    ln -sv -T "$src" "$dst"
 done
 
 #ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list
@@ -79,4 +95,4 @@ done
 
 git submodule update --init --recursive
 
-make -C opt oh-my-zsh
+[ -d "opt/oh-my-zsh" ] && make -C opt oh-my-zsh
