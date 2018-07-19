@@ -21,7 +21,7 @@ if [ $# -ge 3 ] ; then
         exit 1
     fi
     while IFS='' read -r line || [ -n "$line" ] ; do
-        [ ! -z "$line" ] && PATTERNS=("${PATTERNS[@]}" "--pattern='$line'")
+        [ ! -z "$line" ] && PATTERNS+=("--pattern='$line'")
     done < "$3"
 fi
 

@@ -19,7 +19,7 @@
  			else
  				lines=( "${lines[@]}" "$line" )
  			fi
-+			mylines=( "${mylines[@]}" "$line" )
++			mylines+=("$line")
  		else
  			allow=1
  		fi
