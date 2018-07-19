@@ -59,7 +59,7 @@ borg prune \
     --stats \
     --keep-daily=6 \
     --keep-weekly=3 \
-    --keep-monthly=6 \
+    --keep-monthly=-1 \
     --prefix="$PREFIX-" \
     "$REPO"
 
