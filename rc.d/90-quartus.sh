@@ -2,7 +2,14 @@
 
 export ALTERAD_LICENSE_FILE=
 
-ROOT=/usr/local/intelFPGA/17.1
+ROOT="/opt/altera/18.0"
+
+if [ "$(uname -m)" = "x86_64" ] ; then
+    QUARTUS_64BIT='1'
+else
+    QUARTUS_64BIT='0'
+fi
+export QUARTUS_64BIT
 
 export QUARTUS_ROOTDIR="$ROOT/quartus"
 export PATH="$PATH:$QUARTUS_ROOTDIR/bin"
@@ -12,6 +19,9 @@ export SOPC_KIT_NIOS2="$ROOT/nios2eds"
 export PATH="$PATH:$SOPC_KIT_NIOS2/bin"
 export PATH="$PATH:$SOPC_KIT_NIOS2/sdk2/bin"
 export PATH="$PATH:$SOPC_KIT_NIOS2/bin/gnu/H-x86_64-pc-linux-gnu/bin"
+
+#export MODELSIM_INSTALLDIR="$ROOT/modelsim_ase"
+#export PATH="$PATH:$MODELSIM_INSTALLDIR/bin"
 
 # Intel FPGA Download Cable II
 # /etc/udev/rules.d/51-usbblaster.rules
