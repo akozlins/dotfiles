@@ -4,7 +4,7 @@ set -euf
 name=$1
 url=$2
 
-cat << EOF | sudo tee -a /etc/pacman.conf
+cat << EOF | tee -a /etc/pacman.conf
 [$name]
 Server = $url
 EOF
