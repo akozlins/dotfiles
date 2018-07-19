@@ -16,7 +16,7 @@ repos=(
 cd bundle || exit 1
 
 for repo in "${repos[@]}" ; do
-    name=$(basename "$repo")
+    name=$(basename -- "$repo")
     if [ ! -d "$name/.git" ] ; then
         rm -rf -- "$name"
         git clone "$repo"
