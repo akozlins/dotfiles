@@ -2,3 +2,5 @@
 "\e[B": history-search-forward
 
 "\C-d": kill-whole-line
+
+set enable-bracketed-paste on
