@@ -1,5 +1,7 @@
 #!/bin/sh
 
+alias man="LC_ALL=C man"
+
 alias df='df -h'
 alias du='du -h'
 
