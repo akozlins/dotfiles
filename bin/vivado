@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euf
 
-HOME="$DOTFILES"
+export HOME="$DOTFILES"
 
 VIVADO_CACHE="$HOME/.cache/vivado"
 
@@ -14,4 +14,4 @@ fi
 VIVADO_OPTS=(-jvm Xmx2048m)
 
 exec \
-"$XILINX_VIVADO/bin/vivado" "${VIVADO_OPTS[@]}" "$@"
+"$VIVADO_ROOTDIR/bin/vivado" "${VIVADO_OPTS[@]}" "$@"
