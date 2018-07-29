@@ -3,11 +3,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.bashrc")")
-export DOTFILES
-. "$DOTFILES/envrc"
-export PATH="$DOTFILES/bin:$PATH"
-
 
 
 export HISTCONTROL="ignoreboth:erasedups"
