@@ -4,7 +4,7 @@
 
 if [ -z ${DOTFILES:+x} ] ; then
     # TODO: error
-    echo "WARN: DOTFILES is not defined"
+    >&2 echo "WARN: DOTFILES is not defined"
 fi
 
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -15,10 +15,12 @@ export MEDIA="/run/media/$USER"
 
 
 
-#LANG="en_US.UTF-8"
+#export LANG="en_US.UTF-8"
 
 export EDITOR="nano -c"
 export BROWSER="firefox"
+
+export MAN_POSIXLY_CORRECT=1
 
 # WINE
 export WINEDLLOVERRIDES="winemenubuilder.exe=d"
