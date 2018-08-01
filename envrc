@@ -75,6 +75,7 @@ export IPELATEXDIR="$XDG_CACHE_HOME/ipe/latexrun"
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export KDEHOME="$XDG_CONFIG_HOME/kde4"
 export LESSHISTFILE=-
+export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME/Mathematica"
 export MPLAYER_HOME="$XDG_CONFIG_HOME/mplayer"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export OPERA_PERSONALDIR="$XDG_CONFIG_HOME/opera"
@@ -91,3 +92,9 @@ export XAUTHORITY="$HOME/.Xauthority"
 # nvidia
 export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/nv"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
+
+
+
+for f in $DOTFILES/envrc.d/?*.sh ; do
+    [ -f "$f" ] && source "$f"
+done

@@ -3,23 +3,18 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
-
-export HISTCONTROL="ignoreboth:erasedups"
-export HISTFILESIZE=65536
-export HISTIGNORE="reboot:reset:cd:cd ..:ls:make:pwd"
-export HISTSIZE=4096
-
-#export PROMPT_COMMAND="history -a; history -n"
-
-
-
 source "$DOTFILES/etc/bash.bashrc"
-[ -x "/bin/dircolors" ] && eval "$(/bin/dircolors -b "$DOTFILES/etc/DIR_COLORS")"
 
 bind -f "$DOTFILES/.inputrc"
 
 
+
+export HISTCONTROL="ignoreboth:erasedups"
+export HISTFILESIZE=65536
+export HISTIGNORE="reboot:reset:rm *:sudo rm *:mv *:sudo mv *:cp *:sudo cp *:ls *:la *"
+export HISTSIZE=4096
+
+#export PROMPT_COMMAND="history -a; history -n"
 
 shopt -s cmdhist
 shopt -s expand_aliases
