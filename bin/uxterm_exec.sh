@@ -7,7 +7,12 @@ if [ $# -ne 2 ] ; then
 fi
 
 tmp=$(mktemp)
-trap "{ rm -f -- '$tmp' ; exit 1 ; }" EXIT
+cleanup() {
+    rv=$?
+    rm -rf -- "$tmp"
+    exit $rv
+}
+trap "cleanup" EXIT
 
 geometry=$1
 program="rm -f -- '$tmp' ; $2"
