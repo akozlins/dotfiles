@@ -3,6 +3,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.bashrc")")
+export DOTFILES
+. "$DOTFILES/envrc"
+export PATH="$DOTFILES/bin:$PATH"
+
+
+
 source "$DOTFILES/etc/bash.bashrc"
 
 bind -f "$DOTFILES/.inputrc"
