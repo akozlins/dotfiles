@@ -83,7 +83,7 @@ for file in "${files[@]}" ; do
     fi
 
     dstdir=$(dirname -- "$dst")
-    if [ -f "$dst" ] && [ ! -d "$dstdir" ] ; then
+    if [ -f "$src" ] && [ ! -d "$dstdir" ] ; then
         mkdir -pv "$dstdir"
     fi
     ln -sv -T "$src" "$dst"
