@@ -11,7 +11,10 @@ set smartcase
 set hlsearch
 nmap \q :nohlsearch<CR>
 
-set listchars=tab:>-,space:·,nbsp:␣,trail:·,eol:¶,precedes:«,extends:»
+set listchars=tab:>-,nbsp:~,trail:·,eol:¶,precedes:«,extends:»
+if has("patch-7.4.710")
+    set listchars+=space:·
+endif
 set list
 
 set cindent
