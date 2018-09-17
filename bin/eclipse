@@ -3,7 +3,9 @@ set -eu
 
 export DVT_LICENSE_FILE=
 
-DVT_VMARGS=(
+VMARGS=(
+"-Duser.home=$XDG_CACHE_HOME/eclipse"
+# DVT
 "-XX:CompileCommand=exclude,org/eclipse/core/internal/dtree/DataTreeNode,forwardDeltaWith"
 "-XX:CompileCommand=exclude,ro/amiq/edt/ui/editor/rules/ECommentTaskRule,evaluate"
 "-XX:CompileCommand=exclude,ro/amiq/edt/ui/editor/rules/EMethodRule,evaluate"
@@ -21,6 +23,5 @@ exec \
 -configuration "$XDG_CACHE_HOME/eclipse/config" \
 -data "$XDG_CONFIG_HOME/eclipse/data" \
 --launcher.GTK_version 2 \
--vmargs -Duser.home="$XDG_CACHE_HOME/eclipse" \
-"${DVT_VMARGS[@]}" \
+-vmargs "${VMARGS[@]}" \
 > /dev/null 2>&1 &
