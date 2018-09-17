@@ -2,4 +2,4 @@
 set -euf
 
 exec \
-locate -r '/core\.[0-9]\+$'
+locate --existing --regexp '/core\.[0-9]\+$'
