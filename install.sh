@@ -41,6 +41,7 @@ files=(
     .config/npm
     .config/openbox
     .config/pacman
+    .config/parallel
     .config/pulse/client.conf
     .config/pulse/default.pa
     .config/root
