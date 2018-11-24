@@ -1,6 +1,0 @@
-#!/bin/sh
-set -euf
-
-exec \
-primusrun \
-"$HOME/downloads/games/heli-x6/runHELI-X.sh"

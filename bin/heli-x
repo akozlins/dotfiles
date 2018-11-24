@@ -1,0 +1,5 @@
+#!/bin/sh
+set -euf
+
+exec \
+"$HOME/.local/share/HELI-X7/runHELI-X.sh"
