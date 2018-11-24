@@ -3,6 +3,8 @@ set -euf
 
 export LC_ALL=C
 
+SCALE=2/3
+
 while
     PORT=$(hexdump -n 2 -e '/2 "%u"' /dev/urandom)
     [ "$PORT" -lt 16384 ] || nc -z localhost "$PORT"
@@ -17,7 +19,7 @@ X11VNC_CMD=(x11vnc
     -passwd "$PASSWD"
     -localhost -once -timeout 5
     -display :0
-    -cursor none -scale 2/3
+    -cursor none -scale "$SCALE"
 )
 
 LFWD="$PORT:localhost:$RPORT"
