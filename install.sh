@@ -75,16 +75,26 @@ for file in "${files[@]}" ; do
 
     if [ -e "$dst" ] ; then
         echo "WARN: destination '$dst' exists"
-        read -r -p "Continue? [y/N] " yn
-        echo # new line
-        case "$yn"
-            in [yY]) ;;
-            *) exit 1 ;;
+        read -r -p "Overwrite? [y,n,q,?] " sel
+        case "$sel" in
+            y)
+                rm -v "$dst"
+                ;;
+            n)
+                continue
+                ;;
+            q)
+                exit 1
+                ;;
+            *)
+                echo "TODO"
+                exit 1
+                ;;
         esac
     fi
 
     dstdir=$(dirname -- "$dst")
-    if [ -f "$src" ] && [ ! -d "$dstdir" ] ; then
+    if [ -e "$src" ] && [ ! -d "$dstdir" ] ; then
         mkdir -pv "$dstdir"
     fi
     ln -sv -T "$src" "$dst"
