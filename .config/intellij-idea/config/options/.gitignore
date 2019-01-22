@@ -1,12 +1,13 @@
 debugger.xml
 dimensions.xml
+filetypes.xml
 jdk.table.xml
-options.xml
+other.xml
 path.macros.xml
 recentProjects.xml
+runner.layout.xml
 stubIndex.xml
 updates.xml
-usageView.xml
 window.manager.xml
 
 *.statistics.xml
