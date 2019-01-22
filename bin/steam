@@ -3,6 +3,8 @@ set -euf
 
 export HOME="$DOTFILES"
 
+mkdir -p "$HOME/.steam"
+
 exec \
 /usr/bin/steam "$@" \
 > "$HOME/.steam/steam.log" 2>&1 &
