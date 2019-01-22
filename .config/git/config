@@ -1,6 +1,3 @@
-[user]
-	email = akozlins@gmail.com
-	name = Alexandr Kozlinskiy
 [core]
 	editor = nano
 	autocrlf = input
