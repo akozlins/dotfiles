@@ -73,25 +73,6 @@ if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
     # Use this other PS1 string if you want \W for root and \w for all other users:
     # PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h\[\033[01;34m\] \W'; else echo '\[\033[01;32m\]\u@\h\[\033[01;34m\] \w'; fi) \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\\$\[\033[00m\] "
 
-    alias ls="ls --color=auto"
-    alias dir="dir --color=auto"
-    alias grep="grep --color=auto"
-    alias dmesg='dmesg --color'
-    man() {
-        env LESS_TERMCAP_mb=$'\E[01;31m' \
-        LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-        LESS_TERMCAP_me=$'\E[0m' \
-        LESS_TERMCAP_se=$'\E[0m' \
-        LESS_TERMCAP_so=$'\E[38;5;246m' \
-        LESS_TERMCAP_ue=$'\E[0m' \
-        LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-        man "$@"
-    }
-
-    # Uncomment the "Color" line in /etc/pacman.conf instead of uncommenting the following line...!
-
-    # alias pacman="pacman --color=auto"
-
 else
 
     # show root@ when we do not have colors
