@@ -1,4 +1,7 @@
 
+// PREF: Set Firefox locale to en-US
+user_pref("general.useragent.locale", "en-US");
+
 user_pref("browser.bookmarks.showMobileBookmarks", false);
 user_pref("browser.bookmarks.showRecentlyBookmarked", false);
 
@@ -51,6 +54,9 @@ user_pref("media.default_volume", "0.2");
 
 // Handle middle-clicks normally
 user_pref("middlemouse.contentLoadURL", false);
+
+// Disable reading installed plugins
+user_pref("plugins.enumerable_names", "");
 
 //
 // Extensions
@@ -116,7 +122,6 @@ user_pref("extensions.screenshots.disabled", true);
 user_pref("privacy.userContext.enabled", true);
 
 user_pref("browser.ping-centre.telemetry", false);
-user_pref("toolkit.telemetry.archive.enabled", false);
 user_pref("toolkit.telemetry.bhrPing.enabled", false);
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
@@ -157,15 +162,9 @@ user_pref("reader.parse-on-load.enabled", false);
 // CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
 //user_pref("dom.serviceWorkers.enabled", false);
 
-// PREF: Disable Web Workers
-// https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
-// https://www.w3schools.com/html/html5_webworkers.asp
-// NOTICE: Disabling Web Workers breaks "Download as ZIP" functionality on https://mega.nz/, WhatsApp Web and probably others
-//user_pref("dom.workers.enabled", false);
-
 // PREF: Disable web notifications
-// https://support.mozilla.org/t5/Firefox/I-can-t-find-Firefox-menu-I-m-trying-to-opt-out-of-Web-Push-and/m-p/1317495#M1006501
-//user_pref("dom.webnotifications.enabled", false);
+// https://support.mozilla.org/en-US/questions/1140439
+user_pref("dom.webnotifications.enabled", false);
 
 // PREF: Disable DOM timing API
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
@@ -337,18 +336,18 @@ user_pref("webgl.enable-debug-renderer-info", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1360039
 user_pref("dom.maxHardwareConcurrency", 2);
 
+// PREF: Disable WebAssembly
+// https://webassembly.org/
+// https://en.wikipedia.org/wiki/WebAssembly
+// https://trac.torproject.org/projects/tor/ticket/21549
+//user_pref("javascript.options.wasm", false);
+
 /******************************************************************************
  * SECTION: Misc                                                              *
  ******************************************************************************/
 
 // PREF: Disable face detection
 user_pref("camera.control.face_detection.enabled", false);
-
-// PREF: Set the default search engine to DuckDuckGo (disabled)
-// https://support.mozilla.org/en-US/questions/948134
-//user_pref("browser.search.defaultenginename", "DuckDuckGo");
-//user_pref("browser.search.order.1", "DuckDuckGo");
-//user_pref("keyword.URL", "https://duckduckgo.com/html/?q=!+");
 
 // PREF: Disable GeoIP lookup on your address to set default search engine region
 // https://trac.torproject.org/projects/tor/ticket/16254
@@ -359,10 +358,7 @@ user_pref("browser.search.geoip.url", "");
 
 // PREF: Set Accept-Language HTTP header to en-US regardless of Firefox localization
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language
-user_pref("intl.accept_languages", "en-us, en");
-
-// PREF: Set Firefox locale to en-US
-user_pref("general.useragent.locale", "en-US");
+user_pref("intl.accept_languages", "en-US, en");
 
 // PREF: Don't use OS values to determine locale, force using Firefox locale setting
 // http://kb.mozillazine.org/Intl.locale.matchOS
@@ -445,8 +441,8 @@ user_pref("browser.urlbar.filter.javascript", true);
 // https://github.com/iSECPartners/publications/tree/master/reports/Tor%20Browser%20Bundle
 //user_pref("gfx.font_rendering.opentype_svg.enabled", false);
 
-// PREF: Disable in-content SVG rendering (Firefox >= 53)
-// NOTICE: Disabling SVG support breaks many UI elements on many sites
+// PREF: Disable in-content SVG rendering (Firefox >= 53) (disabled)
+// NOTICE-DISABLED: Disabling SVG support breaks many UI elements on many sites
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1216893
 // https://github.com/iSECPartners/publications/raw/master/reports/Tor%20Browser%20Bundle/Tor%20Browser%20Bundle%20-%20iSEC%20Deliverable%201.3.pdf#16
 //user_pref("svg.disabled", true);
@@ -576,11 +572,23 @@ user_pref("services.blocklist.update_enabled", true);
 
 // PREF: Decrease system information leakage to Mozilla blocklist update servers
 // https://trac.torproject.org/projects/tor/ticket/16931
-//user_pref("extensions.blocklist.url", "https://blocklist.addons.mozilla.org/blocklist/3/%APP_ID%/%APP_VERSION%/");
+user_pref("extensions.blocklist.url", "https://blocklist.addons.mozilla.org/blocklist/3/%APP_ID%/%APP_VERSION%/");
+
+// PREF: Disable system add-on updates (hidden & always-enabled add-ons from Mozilla)
+// https://firefox-source-docs.mozilla.org/toolkit/mozapps/extensions/addon-manager/SystemAddons.html
+// https://blog.mozilla.org/data/2018/08/20/effectively-measuring-search-in-firefox/
+// https://github.com/pyllyukko/user.js/issues/419
+// https://dxr.mozilla.org/mozilla-central/source/toolkit/mozapps/extensions/AddonManager.jsm#1248-1257
+// NOTICE: Disabling system add-on updates prevents Mozilla from "hotfixing" your browser to patch critical problems (one possible use case from the documentation)
+user_pref("extensions.systemAddon.update.enabled", false);
 
 /******************************************************************************
  * SECTION: Firefox (anti-)features / components                              *
  ******************************************************************************/
+
+// PREF: Trusted Recursive Resolver (DNS-over-HTTPS) (disabled)
+// https://wiki.mozilla.org/Trusted_Recursive_Resolver
+//user_pref("network.trr.mode", 0);
 
 // PREF: Disable WebIDE
 // https://trac.torproject.org/projects/tor/ticket/16222
@@ -605,8 +613,10 @@ user_pref("devtools.debugger.force-local", true);
 // https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
 // https://gecko.readthedocs.io/en/latest/browser/experiments/experiments/manifest.html
 // https://wiki.mozilla.org/Telemetry/Experiments
+// https://support.mozilla.org/en-US/questions/1197144
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.unified", false);
+user_pref("toolkit.telemetry.archive.enabled", false);
 user_pref("experiments.supported", false);
 user_pref("experiments.enabled", false);
 user_pref("experiments.manifest.uri", "");
@@ -724,8 +734,8 @@ user_pref("extensions.pocket.enabled", false);
 // PREF: Disable SHIELD
 // https://support.mozilla.org/en-US/kb/shield
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1370801
-//user_pref("extensions.shield-recipe-client.enabled", false);
-//user_pref("app.shield.optoutstudies.enabled", false);
+user_pref("extensions.shield-recipe-client.enabled", false);
+user_pref("app.shield.optoutstudies.enabled", false);
 
 // PREF: Disable "Recommended by Pocket" in Firefox Quantum
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
@@ -733,6 +743,12 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 /******************************************************************************
  * SECTION: Automatic connections                                             *
  ******************************************************************************/
+
+// PREF: Limit the connection keep-alive timeout to 15 seconds (disabled)
+// https://github.com/pyllyukko/user.js/issues/387
+// http://kb.mozillazine.org/Network.http.keep-alive.timeout
+// https://httpd.apache.org/docs/current/mod/core.html#keepalivetimeout
+//user_pref("network.http.keep-alive.timeout", 15);
 
 // PREF: Disable prefetching of <link rel="next"> URLs
 // http://kb.mozillazine.org/Network.prefetch-next
@@ -846,6 +862,8 @@ user_pref("security.csp.experimentalEnabled", true);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1299996
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1260931
 // https://wiki.mozilla.org/Security/FirstPartyIsolation
+// NOTICE: First-party isolation breaks Microsoft Teams
+// NOTICE: First-party isolation causes HTTP basic auth to ask for credentials for every new tab (see #425)
 //user_pref("privacy.firstparty.isolate", true);
 
 // PREF: Make sure that third-party cookies (if enabled) never persist beyond the session.
@@ -1139,6 +1157,8 @@ user_pref("security.ssl.disable_session_identifiers", true);
 // http://kb.mozillazine.org/Security.tls.version.*
 // 1 = TLS 1.0 is the minimum required / maximum supported encryption protocol. (This is the current default for the maximum supported version.)
 // 2 = TLS 1.1 is the minimum required / maximum supported encryption protocol.
+// 3 = TLS 1.2 is the minimum required / maximum supported encryption protocol.
+// 4 = TLS 1.3 is the minimum required / maximum supported encryption protocol.
 user_pref("security.tls.version.min", 1);
 user_pref("security.tls.version.max", 4);
 
