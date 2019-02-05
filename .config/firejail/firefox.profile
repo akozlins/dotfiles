@@ -9,40 +9,18 @@ whitelist ~/.config/qBittorrent
 whitelist ~/.local/share/data/qBittorrent
 
 whitelist ~/downloads
-whitelist ~/test
 
 # ===============================
 # '/etc/firejail/firefox.profile'
 # ===============================
 
-noblacklist ~/.cache/mozilla
-noblacklist ~/.pki
+noblacklist ${HOME}/.cache/mozilla
 
-include /etc/firejail/disable-common.inc
-include /etc/firejail/disable-devel.inc
-include /etc/firejail/disable-programs.inc
+mkdir ${HOME}/.cache/mozilla/firefox
+whitelist ${HOME}/.cache/mozilla/firefox
 
-mkdir ~/.cache/mozilla/firefox
-whitelist ~/.cache/mozilla/firefox
-mkdir ~/.pki
-whitelist ~/.pki
+include /etc/firejail/firefox-common.profile
 
-include /etc/firejail/whitelist-common.inc
 
-caps.drop all
-netfilter
-nodvd
-nogroups
-nonewprivs
-noroot
-notv
-protocol unix,inet,inet6,netlink
-seccomp
-shell none
-tracelog
 
-private-dev
-private-tmp
-
-noexec ${HOME}
-noexec /tmp
+read-write ~/.dotfiles/.config/firefox

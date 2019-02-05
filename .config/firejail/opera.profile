@@ -7,23 +7,12 @@ whitelist ~/test
 # '/etc/firejail/opera.profile'
 # =============================
 
-noblacklist ~/.cache/opera
-noblacklist ~/.config/opera
-noblacklist ~/.pki
+noblacklist ${HOME}/.cache/opera
+noblacklist ${HOME}/.config/opera
 
-include /etc/firejail/disable-common.inc
-include /etc/firejail/disable-programs.inc
-include /etc/firejail/disable-devel.inc
+mkdir ${HOME}/.cache/opera
+mkdir ${HOME}/.config/opera
+whitelist ${HOME}/.cache/opera
+whitelist ${HOME}/.config/opera
 
-mkdir ~/.cache/opera
-whitelist ~/.cache/opera
-mkdir ~/.config/opera
-whitelist ~/.config/opera
-mkdir ~/.pki
-whitelist ~/.pki
-
-include /etc/firejail/whitelist-common.inc
-
-netfilter
-nodvd
-notv
+include /etc/firejail/chromium-common.profile
