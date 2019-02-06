@@ -15,7 +15,6 @@ files=(
     .bash_profile
     .dmrc
     .eltclshrc
-    .nanorc
     .rootrc
     .unison
     .wicd
@@ -38,6 +37,7 @@ files=(
     .config/mc
     .config/micro
     .config/mplayer
+    .config/nano
     .config/npm
     .config/openbox
     .config/pacman
