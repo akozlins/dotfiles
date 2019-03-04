@@ -58,11 +58,17 @@ user_pref("middlemouse.contentLoadURL", false);
 // Disable reading installed plugins
 user_pref("plugins.enumerable_names", "");
 
+// disable autoplay
+user_pref("media.autoplay.default", 1);
+
+// default permissions
+user_pref("permissions.default.desktop-notification", 2);
+user_pref("permissions.default.geo", 2);
+
 //
 // Extensions
 //
 
-//user_pref("plugin.state.flash", 0);
 user_pref("plugin.state.java", 0);
 
 user_pref("extensions.ui.dictionary.hidden", true);
@@ -95,16 +101,12 @@ user_pref("extensions.tabmix.unreadTab", false);
 
 user_pref("browser.download.autohideButton", false);
 
-user_pref("browser.newtabpage.activity-stream.enabled", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
-user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
-user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 user_pref("browser.newtabpage.activity-stream.migrationExpired", true);
 user_pref("browser.newtabpage.activity-stream.prerender", false);
 user_pref("browser.newtabpage.activity-stream.showSearch", false);
 user_pref("browser.newtabpage.activity-stream.showTopSites", false);
-user_pref("browser.newtabpage.activity-stream.telemetry", false);
 
 user_pref("browser.onboarding.enabled", false);
 user_pref("browser.onboarding.notification.finished", true);
@@ -123,17 +125,12 @@ user_pref("privacy.userContext.enabled", true);
 
 user_pref("browser.ping-centre.telemetry", false);
 user_pref("toolkit.telemetry.bhrPing.enabled", false);
-user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
 user_pref("toolkit.telemetry.newProfilePing.enabled", false);
 user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
 user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
-user_pref("toolkit.telemetry.unified", false);
 user_pref("toolkit.telemetry.updatePing.enabled", false);
-user_pref("experiments.enabled", false);
 user_pref("experiments.activeExperiment", false);
-user_pref("experiments.supported", false);
-user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("nsITelemetry.canRecordBase", false);
 user_pref("nsITelemetry.canRecordExtended", false);
 user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
@@ -586,6 +583,10 @@ user_pref("extensions.systemAddon.update.enabled", false);
  * SECTION: Firefox (anti-)features / components                              *
  ******************************************************************************/
 
+// PREF: Disable Extension recommendations (Firefox >= 65)
+// https://support.mozilla.org/en-US/kb/extension-recommendations
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr", false);
+
 // PREF: Trusted Recursive Resolver (DNS-over-HTTPS) (disabled)
 // https://wiki.mozilla.org/Trusted_Recursive_Resolver
 //user_pref("network.trr.mode", 0);
@@ -663,10 +664,12 @@ user_pref("privacy.trackingprotection.pbmode.enabled", true);
 // https://wiki.mozilla.org/Security/Contextual_Identity_Project/Containers
 //user_pref("privacy.userContext.enabled", true);
 
-// PREF: Enable hardening against various fingerprinting vectors (Tor Uplift project)
+// PREF: Enable Firefox's anti-fingerprinting mode ("resist fingerprinting" or RFP) (Tor Uplift project)
 // https://wiki.mozilla.org/Security/Tor_Uplift/Tracking
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1333933
-//user_pref("privacy.resistFingerprinting", true);
+// https://wiki.mozilla.org/Security/Fingerprinting
+// NOTICE: RFP breaks some keyboard shortcuts used in certain websites (see #443)
+user_pref("privacy.resistFingerprinting", true);
 
 // PREF: Disable the built-in PDF viewer
 // https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2743
@@ -680,6 +683,8 @@ user_pref("privacy.trackingprotection.pbmode.enabled", true);
 user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("datareporting.healthreport.service.enabled", false);
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
+// "Allow Firefox to make personalized extension recommendations"
+user_pref("browser.discovery.enabled", false);
 
 // PREF: Disable Heartbeat (Mozilla user rating telemetry)
 // https://wiki.mozilla.org/Advocacy/heartbeat
