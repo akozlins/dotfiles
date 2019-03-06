@@ -1,7 +1,9 @@
 #!/bin/bash
 set -euf
 
+unset CDPATH
 export HOME="$DOTFILES"
+cd "$HOME" || exit 1
 
 CMD=("/usr/bin/opera" -nomail -nomaillinks -nolirc "$@")
 
