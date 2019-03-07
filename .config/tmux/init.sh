@@ -3,6 +3,11 @@ set -euf
 unset CDPATH
 cd "$(dirname -- "$(readlink -e -- "$0")")" || exit 1
 
+mkdir -vp ~/.cache/tmux/plugins
+ln -vsf ~/.cache/tmux/plugins
+mkdir -vp ~/.cache/tmux/resurrect
+ln -vsf ~/.cache/tmux/resurrect
+
 # TODO: add version
 repos=(
     "https://github.com/tmux-plugins/tpm"
@@ -16,5 +21,5 @@ for repo in "${repos[@]}" ; do
         rm -rf -- "$name"
         git clone "$repo"
     fi
-    ( cd "$name" ; git fetch --verbose --prune )
+    ( cd "$name" ; git fetch --verbose )
 done
