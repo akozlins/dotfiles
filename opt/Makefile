@@ -20,16 +20,15 @@ far2l: far2l/.git
 	( cd far2l/build && cmake -DCMAKE_BUILD_TYPE=Release .. )
 	$(MAKE) -C far2l/build
 
-fbpanel/.git:
-	git clone --depth 1 https://github.com/aanatoly/fbpanel
-	echo "Signature: 8a477f597d28d172789f06886806bc55" > "fbpanel/CACHEDIR.TAG"
+fbpanel/.git :
+	( cd ../.cache && git clone https://github.com/aanatoly/fbpanel )
 
-.PHONY: fbpanel
-fbpanel: fbpanel/.git
+.PHONY : fbpanel
+fbpanel : fbpanel/.git
 	# install python2 and gtk2
-	( cd $@ && git stash && git pull )
-	patch -p0 < fbpanel.patch
-	( cd fbpanel && ./configure --prefix="$(HOME)/.local" && $(MAKE) install )
+	( cd fbpanel && git stash && git pull )
+	patch -d fbpanel -p1 < fbpanel.patch
+	( cd fbpanel && ./configure --prefix="$(HOME)/.local" && $(MAKE) && $(MAKE) install )
 
 direnv/.git:
 	git clone --depth 1 https://github.com/direnv/direnv
