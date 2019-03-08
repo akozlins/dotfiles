@@ -7,18 +7,24 @@ oh-my-zsh/.git:
 oh-my-zsh: oh-my-zsh/.git
 	( cd oh-my-zsh && git stash && git pull )
 
-far2l/.git:
-	git clone --depth 1 https://github.com/elfmz/far2l
-	echo "Signature: 8a477f597d28d172789f06886806bc55" > "far2l/CACHEDIR.TAG"
+far2l/.git :
+	( cd ~/.cache && git clone https://github.com/elfmz/far2l )
 
-.PHONY: far2l
-far2l: far2l/.git
+far2l/history :
+	mkdir -vp far2l/history/k-Editor/k-LastPositions
+	mkdir -vp far2l/history/k-SavedDialogHistory
+	mkdir -vp far2l/history/k-SavedFolderHistory
+	mkdir -vp far2l/history/k-SavedHistory
+	mkdir -vp far2l/history/k-SavedViewHistory
+	mkdir -vp far2l/history/k-Viewer/k-LastPositions
+
+.PHONY : far2l
+far2l : far2l/.git far2l/history
 	# install cmake, wxgtk2 (wxWidgets)
 	( cd far2l && git stash && git pull )
-	patch -p0 < far2l.patch
+	patch -d far2l -p1 < far2l.patch
 	mkdir -p far2l/build
-	( cd far2l/build && cmake -DCMAKE_BUILD_TYPE=Release .. )
-	$(MAKE) -C far2l/build
+	( cd far2l/build && cmake -DCMAKE_BUILD_TYPE=Release .. && $(MAKE) )
 
 fbpanel/.git :
 	( cd ../.cache && git clone https://github.com/aanatoly/fbpanel )
