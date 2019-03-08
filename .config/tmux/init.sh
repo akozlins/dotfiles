@@ -3,10 +3,8 @@ set -euf
 unset CDPATH
 cd "$(dirname -- "$(readlink -e -- "$0")")" || exit 1
 
-mkdir -vp ~/.cache/tmux/plugins
-ln -vsf ~/.cache/tmux/plugins
-mkdir -vp ~/.cache/tmux/resurrect
-ln -vsf ~/.cache/tmux/resurrect
+[ -e plugins ] || mkdir -vp "$(readlink -- plugins)"
+[ -e resurrect ] || mkdir -vp "$(readlink -- resurrect)"
 
 # TODO: add version
 repos=(
