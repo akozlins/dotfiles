@@ -3,6 +3,10 @@ set -euf
 unset CDPATH
 cd "$(dirname -- "$(readlink -e -- "$0")")" || exit 1
 
+[ -e bundle ] || mkdir -vp "$(readlink -- bundle)"
+
+# TODO: use vim plug
+
 # TODO: add version
 repos=(
     "https://github.com/airblade/vim-gitgutter"
