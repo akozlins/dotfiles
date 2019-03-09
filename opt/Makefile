@@ -1,14 +1,13 @@
 
-oh-my-zsh/.git:
-	git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh
-	echo "Signature: 8a477f597d28d172789f06886806bc55" > "oh-my-zsh/CACHEDIR.TAG"
+oh-my-zsh/.git :
+	( cd ../.cache && git clone https://github.com/robbyrussell/oh-my-zsh )
 
-.PHONY: oh-my-zsh
-oh-my-zsh: oh-my-zsh/.git
+.PHONY : oh-my-zsh
+oh-my-zsh : oh-my-zsh/.git
 	( cd oh-my-zsh && git stash && git pull )
 
 far2l/.git :
-	( cd ~/.cache && git clone https://github.com/elfmz/far2l )
+	( cd ../.cache && git clone https://github.com/elfmz/far2l )
 
 far2l/history :
 	mkdir -vp far2l/history/k-Editor/k-LastPositions
