@@ -1,11 +1,5 @@
-Clasic Theme Restorer
 Clean Links
 Decentraleyes
-Disable Ctrl-Q Shortcut
-FireGestures
-Greasemonkey
 No Resource URI Leak
-Stylish
-Tab Mix Plus
 uBlock Origin
 uMatrix

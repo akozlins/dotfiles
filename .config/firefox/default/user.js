@@ -669,7 +669,7 @@ user_pref("privacy.trackingprotection.pbmode.enabled", true);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1333933
 // https://wiki.mozilla.org/Security/Fingerprinting
 // NOTICE: RFP breaks some keyboard shortcuts used in certain websites (see #443)
-user_pref("privacy.resistFingerprinting", true);
+//user_pref("privacy.resistFingerprinting", true);
 
 // PREF: Disable the built-in PDF viewer
 // https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2743
