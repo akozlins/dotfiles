@@ -4,9 +4,8 @@ set -euf
 #export IDEA_VM_OPTIONS="$XDG_CONFIG_HOME/intellij-idea/vmoptions"
 export IDEA_PROPERTIES="$XDG_CONFIG_HOME/intellij-idea/properties"
 
-if [ $# -eq 1 ] && [ "$1" = "--reset" ] ; then
-    rm -rf -- "$HOME/.java"
-    rm -rf -- "$XDG_CACHE_HOME/intellij-idea"
+if [ $# -eq 1 ] && [ "$1" = "--clean" ] ; then
+    "$XDG_CONFIG_HOME/intellij-idea/clean.sh"
     exit 0
 fi
 

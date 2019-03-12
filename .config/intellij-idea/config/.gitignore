@@ -2,5 +2,7 @@ eval/*
 plugins/*
 tasks/*
 
+disabled_update.txt
+
 port
 port.lock

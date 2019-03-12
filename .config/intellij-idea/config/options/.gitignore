@@ -9,6 +9,7 @@ runner.layout.xml
 stubIndex.xml
 updates.xml
 window.manager.xml
+window.state.xml
 
 *.statistics.xml
 statistics.*.xml
