@@ -35,12 +35,11 @@ fbpanel : fbpanel/.git
 	patch -d fbpanel -p1 < fbpanel.patch
 	( cd fbpanel && ./configure --prefix="$(HOME)/.local" && $(MAKE) && $(MAKE) install )
 
-direnv/.git:
-	git clone --depth 1 https://github.com/direnv/direnv
+direnv/.git :
+	( cd ../.cache && git clone https://github.com/direnv/direnv )
 	( cd direnv && ln -s vendor src )
-	echo "Signature: 8a477f597d28d172789f06886806bc55" > "direnv/CACHEDIR.TAG"
 
-.PHONY: direnv
-direnv: direnv/.git
-	( cd $@ && git pull && git submodule update --init --recursive )
-	( cd $@ && GOPATH=$(shell pwd)/$@ $(MAKE) )
+.PHONY : direnv
+direnv : direnv/.git
+	( cd direnv && git pull && git submodule update --init --recursive )
+	( cd direnv && GOPATH=$(shell pwd)/$@ $(MAKE) )
