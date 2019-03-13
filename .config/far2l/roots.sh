@@ -1,12 +1,14 @@
 #!/bin/bash
 
+# TODO: max length
+
 paste <(cat << EOF
 $2
 $HOME
 /run/media/$USER
 /
 EOF
-) <(cat << EOF | column -t -s '\t' -R 1
+) <(cat << EOF | column -t -s $'\t' -R 1
 $2
 $HOME
 /run/media/$USER

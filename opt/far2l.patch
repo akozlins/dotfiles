@@ -33,5 +33,5 @@
 @@ -1,2 +1,4 @@
  #!/bin/bash
 +
-+[ -x ~/.config/far2l/roots.sh ] && exec ~/.config/far2l/roots.sh
++[ -x ~/.config/far2l/roots.sh ] && exec ~/.config/far2l/roots.sh "$@"
  
