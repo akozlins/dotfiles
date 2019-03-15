@@ -48,7 +48,7 @@ Plugin {
       item {
         name = Lock Screen
         icon = system-lock-screen
-        action = /usr/bin/xscreensaver-command -lock
+        action = ~/bin/lock.sh
       }
       separator {
       }
@@ -98,9 +98,9 @@ Plugin {
       icon = firefox
     }
     button {
-      action = xscreensaver-command -lock
-      tooltip = lock screen
+      tooltip = Lock Screen
       icon = system-lock-screen
+      action = ~/bin/lock.sh
     }
   }
 }

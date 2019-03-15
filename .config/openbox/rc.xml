@@ -213,7 +213,7 @@
   </keybind>
   <keybind key="W-l">
     <action name="Execute">
-      <command>xscreensaver-command -lock</command>
+      <command>~/bin/lock.sh</command>
     </action>
   </keybind>
   <keybind key="W-e">
