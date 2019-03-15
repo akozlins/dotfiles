@@ -53,7 +53,7 @@
  
 --- a/.config/rules.mk
 +++ b/.config/rules.mk
-@@ -157,7 +157,7 @@ deprecated g_type_class_add_private
+@@ -157,7 +157,7 @@ error: 'g_type_class_add_private' is deprecated
  ifeq ($(origin CFLAGS),undefined)
  ifeq ($(origin DEBUG),undefined)
 -CFLAGS = -O2 -Wall -Werror

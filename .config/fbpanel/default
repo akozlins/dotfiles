@@ -160,8 +160,7 @@ Plugin {
   config {
     ShowSeconds = false
     HoursView = 24
-    TooltipFmt = %A %x
-    #Action = xmessage Please define some command &
+    TooltipFmt = %F %A
   }
 }
 
