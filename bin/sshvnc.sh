@@ -3,7 +3,22 @@ set -euf
 
 export LC_ALL=C
 
-SCALE=2/3
+SCALE=1/1
+while [ $# -gt 0 ] ; do
+    case $1 in
+        --scale)
+            if [ $# -lt 2 ] ; then
+                printf '%s\n' "ERROR: ..." >&2
+                exit 1
+            fi
+            SCALE=$2
+            shift
+            ;;
+        *)
+            break
+    esac
+    shift
+done
 
 while
     PORT=$(hexdump -n 2 -e '/2 "%u"' /dev/urandom)
