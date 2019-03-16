@@ -2,7 +2,7 @@
 
 DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.xinitrc")")
 export DOTFILES
-. $DOTFILES/envrc
+. "$DOTFILES/envrc"
 
 sysresources="/etc/X11/xinit/.Xresources"
 sysmodmap="/etc/X11/xinit/.Xmodmap"

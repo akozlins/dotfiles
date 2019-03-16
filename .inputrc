@@ -3,4 +3,5 @@
 
 "\C-d": kill-whole-line
 
+set bell-style none
 set enable-bracketed-paste on

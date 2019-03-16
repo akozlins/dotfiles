@@ -4,6 +4,7 @@
 	whitespace = trailing-space,space-before-tab
 [diff]
 	tool = meld
+[commit]
 [merge]
 	commit = no
 [status]

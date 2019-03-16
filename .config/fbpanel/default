@@ -12,9 +12,7 @@ Global {
   setdocktype = true
   setpartialstrut = true
   autohide = false
-  heightWhenHidden = 2
   roundcorners = false
-  roundcornersradius = 1
   layer = none
   MaxElemHeight = 30
 }
@@ -83,19 +81,19 @@ Plugin {
   type = launchbar
   config {
     button {
-      action = thunar
-      tooltip = thunar
+      tooltip = Thunar
       icon = Thunar
+      action = thunar
     }
     button {
-      action = uxterm
       tooltip = uxterm
       icon = utilities-terminal
+      action = uxterm
     }
     button {
-      action = firefox
       tooltip = firefox
       icon = firefox
+      action = firefox
     }
     button {
       tooltip = Lock Screen
