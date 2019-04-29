@@ -3,7 +3,7 @@ set -euf
 
 export HOME="$DOTFILES"
 
-VIVADO_CACHE="$HOME/.cache/vivado"
+VIVADO_CACHE="$XDG_CACHE_HOME/vivado"
 
 if [ $# -eq 1 ] ; then
     mkdir -p "$VIVADO_CACHE"
