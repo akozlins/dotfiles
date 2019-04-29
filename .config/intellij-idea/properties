@@ -2,5 +2,5 @@
 
 idea.config.path=${user.home}/.config/intellij-idea/config
 idea.system.path=${user.home}/.cache/intellij-idea/system
-idea.plugins.path=${idea.config.path}/plugins
+idea.plugins.path=${idea.system.path}/plugins
 idea.log.path=${idea.system.path}/log
