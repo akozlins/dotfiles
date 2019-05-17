@@ -69,8 +69,6 @@ user_pref("permissions.default.geo", 2);
 // Extensions
 //
 
-user_pref("plugin.state.java", 0);
-
 user_pref("extensions.ui.dictionary.hidden", true);
 user_pref("extensions.ui.experiment.hidden", true);
 user_pref("extensions.ui.locale.hidden", true);
@@ -210,7 +208,7 @@ user_pref("dom.netinfo.enabled", false);
 // PREF: Disable network API (Firefox < 32)
 // https://developer.mozilla.org/en-US/docs/Web/API/Connection/onchange
 // https://www.torproject.org/projects/torbrowser/design/#fingerprinting-defenses
-//user_pref("dom.network.enabled", false);
+user_pref("dom.network.enabled", false);
 
 // PREF: Disable WebRTC entirely to prevent leaking internal IP addresses (Firefox < 42)
 // NOTICE: Disabling WebRTC breaks peer-to-peer file sharing tools (reep.io ...)
@@ -521,10 +519,10 @@ user_pref("lightweightThemes.update.enabled", false);
 
 // PREF: Disable Flash Player NPAPI plugin
 // http://kb.mozillazine.org/Flash_plugin
-//user_pref("plugin.state.flash", 0);
+user_pref("plugin.state.flash", 0);
 
 // PREF: Disable Java NPAPI plugin
-//user_pref("plugin.state.java", 0);
+user_pref("plugin.state.java", 0);
 
 // PREF: Disable sending Flash Player crash reports
 user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
@@ -539,7 +537,7 @@ user_pref("browser.safebrowsing.blockedURIs.enabled", true);
 
 // PREF: Disable Shumway (Mozilla Flash renderer)
 // https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Shumway
-//user_pref("shumway.disabled", true);
+user_pref("shumway.disabled", true);
 
 // PREF: Disable Gnome Shell Integration NPAPI plugin
 user_pref("plugin.state.libgnome-shell-browser-plugin", 0);
@@ -551,11 +549,11 @@ user_pref("plugin.state.libgnome-shell-browser-plugin", 0);
 // PREF: Enable plugins click-to-play
 // https://wiki.mozilla.org/Firefox/Click_To_Play
 // https://blog.mozilla.org/security/2012/10/11/click-to-play-plugins-blocklist-style/
-//user_pref("plugins.click_to_play", true);
+user_pref("plugins.click_to_play", true);
 
 // PREF: Updates addons automatically
 // https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/
-//user_pref("extensions.update.enabled", true);
+user_pref("extensions.update.enabled", true);
 
 // PREF: Enable add-on and certificate blocklists (OneCRL) from Mozilla
 // https://wiki.mozilla.org/Blocklisting
@@ -780,7 +778,7 @@ user_pref("network.dns.blockDotOnion", true);
 user_pref("browser.search.suggest.enabled", false);
 
 // PREF: Disable "Show search suggestions in location bar results"
-//user_pref("browser.urlbar.suggest.searches", false);
+user_pref("browser.urlbar.suggest.searches", false);
 // PREF: When using the location bar, don't suggest URLs from browsing history
 //user_pref("browser.urlbar.suggest.history", false);
 
@@ -967,11 +965,11 @@ user_pref("browser.cache.disk.enable", false);
 
 // PREF: Disable formless login capture
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1166947
-//user_pref("signon.formlessCapture.enabled", false);
+user_pref("signon.formlessCapture.enabled", false);
 
 // PREF: When username/password autofill is enabled, still disable it on non-HTTPS sites
 // https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317
-//user_pref("signon.autofillForms.http", false);
+user_pref("signon.autofillForms.http", false);
 
 // PREF: Show in-content login form warning UI for insecure login fields
 // https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317
@@ -1023,7 +1021,7 @@ user_pref("browser.shell.shortcutFavicons", false);
 user_pref("security.insecure_password.ui.enabled", true);
 
 // PREF: Disable right-click menu manipulation via JavaScript (disabled)
-//user_pref("dom.event.contextmenu.enabled", false);
+user_pref("dom.event.contextmenu.enabled", false);
 
 // PREF: Disable "Are you sure you want to leave this page?" popups on page close
 // https://support.mozilla.org/en-US/questions/1043508
@@ -1172,7 +1170,7 @@ user_pref("security.tls.version.max", 4);
 // https://github.com/pyllyukko/user.js/pull/206#issuecomment-280229645
 user_pref("security.tls.version.fallback-limit", 3);
 
-// PREF: Enfore Public Key Pinning
+// PREF: Enforce Public Key Pinning
 // https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning
 // https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning
 // "2. Strict. Pinning is always enforced."
