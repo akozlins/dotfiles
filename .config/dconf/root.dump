@@ -1,0 +1,60 @@
+[org/gnome/evince/default]
+continuous=true
+dual-page=false
+fullscreen=false
+show-sidebar=false
+sizing-mode='fit-width'
+
+[org/gnome/gedit/preferences/editor]
+auto-indent=true
+create-backup-copy=false
+display-line-numbers=true
+display-right-margin=true
+editor-font='Monospace 12'
+ensure-trailing-newline=false
+highlight-current-line=true
+insert-spaces=true
+tabs-size=uint32 4
+use-default-font=false
+wrap-mode='none'
+
+[org/gnome/gedit/preferences/ui]
+notebook-show-tabs-mode='always'
+show-tabs-mode='auto'
+statusbar-visible=true
+
+[org/gnome/gedit/plugins/drawspaces]
+draw-spaces=['space', 'tab', 'leading', 'text', 'trailing']
+
+[org/gnome/gedit/plugins]
+active-plugins=['modelines', 'filebrowser', 'drawspaces', 'spell']
+
+[org/gnome/meld]
+draw-spaces=['space', 'tab', 'newline', 'nbsp', 'leading', 'text', 'trailing']
+highlight-syntax=true
+ignore-blank-lines=false
+insert-spaces-instead-of-tabs=true
+indent-width=4
+show-line-numbers=false
+vc-commit-margin=80
+vc-merge-file-order='local-merge-remote'
+wrap-mode='none'
+
+[org/gnome/terminal/legacy]
+default-show-menubar=false
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+audible-bell=false
+default-size-columns=110
+default-size-rows=30
+font='Misc Fixed Bold 12'
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+visible-name='default'
+
+[org/gtk/settings/file-chooser]
+show-hidden=true
+show-size-column=true
+sort-column='name'
+sort-directories-first=true
