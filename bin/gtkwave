@@ -1,0 +1,7 @@
+#!/bin/sh
+set -euf
+
+exec \
+/usr/bin/gtkwave \
+    --rcfile="$DOTFILES/.gtkwaverc" \
+    "$@"
