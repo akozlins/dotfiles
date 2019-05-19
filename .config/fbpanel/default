@@ -96,6 +96,11 @@ Plugin {
       action = firefox
     }
     button {
+      tooltip = VPN
+      icon = network-vpn
+      action = ~/bin/vpn.sh
+    }
+    button {
       tooltip = Lock Screen
       icon = system-lock-screen
       action = ~/bin/lock.sh
