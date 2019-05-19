@@ -10,7 +10,6 @@ git clone https://github.com/akozlins/dotfiles ~/.dotfiles
 ## TODO
 
  - `.emacs.d` * (use cmd options)
- - `.java` (fonts)
  - `.mozilla` * (empty, use firejail)
  - `.pki`
  - `.unison` (ssh sync)

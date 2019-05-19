@@ -4,7 +4,5 @@ IFS="$(printf '\n\t')"
 unset CDPATH
 cd "$(dirname -- "$(readlink -e -- "$0")")" || exit 1
 
-export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Duser.home=$DOTFILES"
-
 exec \
 /usr/bin/arduino

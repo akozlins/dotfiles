@@ -53,6 +53,8 @@ JAVA_FONT_AA=" \
 # Java options
 # https://docs.oracle.com/javase/8/docs/platform/jvmti/jvmti.html
 export JAVA_TOOL_OPTIONS="$JAVA_USAGE_TRACKER $JAVA_FONT_AA"
+# user home directory
+export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Duser.home=$DOTFILES"
 
 #export XUSERFILESEARCHPATH=
 
