@@ -1,7 +1,9 @@
 #!/bin/bash
 set -eu
 
-export DVT_LICENSE_FILE=
+if [ -z ${DVT_LICENSE_FILE:+x} ] ; then
+    export DVT_LICENSE_FILE=
+fi
 
 VMARGS=(
 "-Duser.home=$XDG_CACHE_HOME/eclipse"

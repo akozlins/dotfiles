@@ -1,6 +1,8 @@
 #!/bin/sh
 
-export ALTERAD_LICENSE_FILE=
+if [ -z ${ALTERAD_LICENSE_FILE:+x} ] ; then
+    export ALTERAD_LICENSE_FILE=
+fi
 
 export QUARTUS_ROOTDIR="/opt/altera/18.0/quartus"
 [ -d "$QUARTUS_ROOTDIR" ] || return
