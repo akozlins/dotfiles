@@ -13,3 +13,5 @@ xscreensaver*dpmsQuickOff: true
 xscreensaver*dpmsStandby: 00:30:00
 xscreensaver*dpmsSuspend: 00:30:00
 xscreensaver*dpmsOff:     00:30:00
+
+xscreensaver.newLoginCommand: dm-tool switch-to-greeter
