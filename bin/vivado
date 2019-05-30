@@ -14,4 +14,8 @@ fi
 VIVADO_OPTS=(-jvm Xmx2048m)
 
 exec \
-"$VIVADO_ROOTDIR/bin/vivado" "${VIVADO_OPTS[@]}" "$@"
+"$VIVADO_ROOTDIR/bin/vivado" \
+    "${VIVADO_OPTS[@]}" \
+    -nojournal -nolog \
+    -tempDir "$VIVADO_CACHE" \
+    "$@"
