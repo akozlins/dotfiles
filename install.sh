@@ -15,8 +15,8 @@ files=(
     .bash_profile
     .dmrc
     .eltclshrc
+    .pam_environment
     .rootrc
-    .unison
     .wicd
     .xinitrc
     .xsession
@@ -47,6 +47,7 @@ files=(
     .config/root
     .config/systemd
     .config/tmux
+    .config/unison
     .config/vim
     .config/vlc
     .config/yaourt
