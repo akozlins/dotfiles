@@ -30,10 +30,10 @@ fbpanel/.git :
 
 .PHONY : fbpanel
 fbpanel : fbpanel/.git
-	# install python2 and gtk2
+	# install gcc, patch, gtk2 and python2
 	( cd fbpanel && git stash && git pull )
 	patch -d fbpanel -p1 < fbpanel.patch
-	( cd fbpanel && ./configure --prefix="$(HOME)/.local" && $(MAKE) && $(MAKE) install )
+	( cd fbpanel && ./configure --prefix="$(HOME)/.local" && $(MAKE) V=1 && $(MAKE) install )
 
 direnv/.git :
 	( cd ../.cache && git clone https://github.com/direnv/direnv )
