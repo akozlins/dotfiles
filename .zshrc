@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+export TEST_ZSHRC="$TEST_ZSHRC:$(date --iso-8601=ns)"
+
 [[ -o interactive ]] || return
 
 . "$HOME/.profile"

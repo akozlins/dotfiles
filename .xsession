@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export TEST_XSESSION="$TEST_XSESSION:$(date --iso-8601=ns)"
+
 . "$HOME/.profile"
 
 xrdb -merge "$DOTFILES/.Xresources"

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export TEST_PROFILE="$TEST_PROFILE:$(date --iso-8601=ns)"
+
 DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.profile")")
 export DOTFILES
 export PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"

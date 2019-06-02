@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export TEST_BASHRC="$TEST_BASHRC:$(date --iso-8601=ns)"
+
 [[ $- == *i* ]] || return
 
 . "$HOME/.profile"
