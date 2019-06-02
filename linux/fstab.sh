@@ -1,7 +1,9 @@
 #!/bin/sh
 set -euf
 
-boot=$(blkid -s PARTUUID -o value "$1")
+dev=$1
+
+boot=$(blkid -s PARTUUID -o value "${dev}1")
 
 cat << EOF
 /dev/mapper/root / ext4 rw,noatime,data=ordered 0 1
