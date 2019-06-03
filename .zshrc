@@ -1,9 +1,10 @@
 #!/bin/zsh
 
+[[ -o interactive ]] || return
+
 DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.zshrc")")
 export DOTFILES
 . "$DOTFILES/.profile"
-export PATH="$DOTFILES/bin:$PATH"
 
 
 

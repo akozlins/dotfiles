@@ -1,11 +1,10 @@
 #!/bin/sh
 
-# global env vars
-
 if [ -z ${DOTFILES:+x} ] ; then
     # TODO: error
     >&2 echo "WARN: DOTFILES is not defined"
 fi
+export PATH="$DOTFILES/bin:$PATH"
 
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"

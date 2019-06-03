@@ -1,12 +1,10 @@
 #!/bin/bash
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+[[ $- == *i* ]] || return
 
 DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.bashrc")")
 export DOTFILES
 . "$DOTFILES/.profile"
-export PATH="$DOTFILES/bin:$PATH"
 
 
 

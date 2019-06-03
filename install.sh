@@ -12,10 +12,10 @@ files=(
     .emacs.d
 
     .bashrc
-    .bash_profile
     .dmrc
     .eltclshrc
     .pam_environment
+    .profile
     .rootrc
     .wicd
     .xinitrc
