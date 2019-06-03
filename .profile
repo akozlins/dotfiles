@@ -101,6 +101,6 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 
 
 
-for f in "$DOTFILES"/envrc.d/?*.sh ; do
+for f in "$DOTFILES"/profile.d/?*.sh ; do
     [ -f "$f" ] && . "$f"
 done

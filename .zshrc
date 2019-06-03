@@ -2,7 +2,7 @@
 
 DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.zshrc")")
 export DOTFILES
-. "$DOTFILES/envrc"
+. "$DOTFILES/.profile"
 export PATH="$DOTFILES/bin:$PATH"
 
 

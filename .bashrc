@@ -5,7 +5,7 @@
 
 DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.bashrc")")
 export DOTFILES
-. "$DOTFILES/envrc"
+. "$DOTFILES/.profile"
 export PATH="$DOTFILES/bin:$PATH"
 
 
