@@ -16,10 +16,11 @@ bind -f "$DOTFILES/.inputrc"
 
 
 
-export HISTCONTROL="ignoreboth:erasedups"
+export HISTFILE="$XDG_CACHE_HOME/.bash_history"
 export HISTFILESIZE=65536
-export HISTIGNORE="reboot:reset:rm *:sudo rm *:mv *:sudo mv *:cp *:sudo cp *:ls *:la *"
 export HISTSIZE=4096
+export HISTCONTROL="ignoreboth:erasedups"
+export HISTIGNORE="reboot:reset:rm *:sudo rm *:mv *:sudo mv *:cp *:sudo cp *:ls *:la *"
 
 #export PROMPT_COMMAND="history -a; history -n"
 
