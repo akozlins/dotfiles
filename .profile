@@ -91,8 +91,7 @@ export WGETRC="$DOTFILES/.wgetrc"
 
 export RANDFILE="$XDG_CONFIG_HOME/.rnd"
 
-export XAUTHORITY="$HOME/.Xauthority"
-#export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+#export XAUTHORITY="$XDG_RUNTIME_DIR/.Xauthority"
 
 # nvidia
 export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/nv"

@@ -16,6 +16,5 @@ git clone https://github.com/akozlins/dotfiles ~/.dotfiles
 
  - `.dmrc`
  - `.rootrc`
- - `.Xauthority` * (use `$XDG_RUNTIME_DIR`)
  - `.xsession`
  - `.xsession-errors`
