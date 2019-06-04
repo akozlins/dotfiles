@@ -9,7 +9,7 @@ oh-my-zsh : oh-my-zsh/.git
 far2l/.git :
 	( cd ../.cache && git clone https://github.com/elfmz/far2l )
 
-far2l/history :
+far2l/history : far2l/.git
 	mkdir -vp far2l/history/k-Editor/k-LastPositions
 	mkdir -vp far2l/history/k-SavedDialogHistory
 	mkdir -vp far2l/history/k-SavedFolderHistory
