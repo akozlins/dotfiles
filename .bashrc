@@ -2,9 +2,7 @@
 
 [[ $- == *i* ]] || return
 
-DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.bashrc")")
-export DOTFILES
-. "$DOTFILES/.profile"
+. "$HOME/.profile"
 
 
 

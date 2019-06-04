@@ -2,9 +2,7 @@
 
 [[ -o interactive ]] || return
 
-DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.zshrc")")
-export DOTFILES
-. "$DOTFILES/.profile"
+. "$HOME/.profile"
 
 
 

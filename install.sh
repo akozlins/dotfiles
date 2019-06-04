@@ -18,7 +18,6 @@ files=(
     .profile
     .rootrc
     .wicd
-    .xinitrc
     .xsession
     .zshrc
 
