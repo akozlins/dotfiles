@@ -5,7 +5,7 @@ export LC_ALL=C
 
 SCALE=1/1
 while [ $# -gt 0 ] ; do
-    case $1 in
+    case "$1" in
         --scale)
             if [ $# -lt 2 ] ; then
                 printf '%s\n' "ERROR: ..." >&2
@@ -37,11 +37,15 @@ X11VNC_CMD=(x11vnc
     -cursor none -scale "$SCALE"
 )
 
-LFWD="$PORT:localhost:$RPORT"
+ARGS=(-L "$PORT:localhost:$RPORT" "$@")
+ssh -S none -f -o ExitOnForwardFailure=yes "${ARGS[@]}" -- "$(printf '%q ' "${X11VNC_CMD[@]}")"
+cleanup() {
+    rv=$?
+    ssh -O cancel "${ARGS[@]}"
+    exit $rv
+}
+trap cleanup EXIT
 
-ssh -S none -f -L "$LFWD" -o ExitOnForwardFailure=yes "$@" -- "$(printf '%q ' "${X11VNC_CMD[@]}")"
 nc -z localhost "$PORT"
 sleep 2.5
 vncviewer DotWhenNoCursor=1 localhost:"$PORT" -passwd <(vncpasswd -f <<< "$PASSWD")
-
-ssh -O cancel -L "$LFWD" "$@"
