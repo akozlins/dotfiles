@@ -1,25 +1,23 @@
 # Firefox browser profile
 
+include globals.local
+include qbittorrent.local
+
 noblacklist ~/.config/firefox
-noblacklist ~/.config/qBittorrent
-noblacklist ~/.local/share/data/qBittorrent
-
 whitelist ~/.config/firefox
-whitelist ~/.config/qBittorrent
-whitelist ~/.local/share/data/qBittorrent
 
-whitelist ~/downloads
+whitelist ~/develop/firefox
 
 # ===============================
 # '/etc/firejail/firefox.profile'
 # ===============================
 
 noblacklist ${HOME}/.cache/mozilla
-
 mkdir ${HOME}/.cache/mozilla/firefox
 whitelist ${HOME}/.cache/mozilla/firefox
 
-include /etc/firejail/firefox-common.profile
+nowhitelist ${HOME}/.mozilla
+include ${CFG}/firefox-common.profile
 
 
 

@@ -1,5 +1,4 @@
 
-noblacklist ${HOME}/downloads
-whitelist ${HOME}/downloads
+include globals.local
 
-include /etc/firejail/default.profile
+include ${CFG}/default.profile

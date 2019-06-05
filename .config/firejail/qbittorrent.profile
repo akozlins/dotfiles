@@ -1,2 +1,4 @@
 
-include /etc/firejail/qbittorrent.profile
+include globals.local
+
+include ${CFG}/qbittorrent.profile
