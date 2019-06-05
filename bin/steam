@@ -3,8 +3,14 @@ set -euf
 
 export HOME="$DOTFILES"
 
-mkdir -p "$HOME/.steam"
+STEAM_HOME="$HOME/.steam"
 
-exec \
-/usr/bin/steam "$@" \
-> "$HOME/.steam/steam.log" 2>&1 &
+mkdir -p "$STEAM_HOME"
+
+CMD=("/usr/bin/steam" "$@")
+
+if [ $# -eq 0 ] ; then
+    exec "${CMD[@]}" > "$STEAM_HOME/steam.log" 2>&1 &
+else
+    exec "${CMD[@]}"
+fi
