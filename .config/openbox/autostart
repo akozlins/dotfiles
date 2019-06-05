@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euf
+set -uf
 
 run() {
     cmd="$1"
@@ -11,8 +11,8 @@ run() {
     fi
 
     (
-        [ ! -z ${sleep:+x} ] && sleep "$sleep"
-        [ -z "$(pidof "$cmd")" ] && exec "$cmd" "$@" > /dev/null 2>&1
+        [ -n "${sleep:+x}" ] && sleep "$sleep"
+        [ -n "$(pidof "$cmd")" ] || exec "$cmd" "$@" > /dev/null 2>&1
     ) &
 }
 
