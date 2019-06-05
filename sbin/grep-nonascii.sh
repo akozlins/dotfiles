@@ -2,4 +2,4 @@
 set -euf
 
 exec \
-grep -P "[^\\x00-\\x7F]" "$@"
+grep --line-number -P "[^\\x00-\\x7F]" "$@"
