@@ -61,8 +61,8 @@ export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Duser.home=$DOTFILES"
 
 # android
 export ANDROID_HOME="/opt/android-sdk"
-export ANDROID_SDK_HOME="$XDG_DATA_HOME/android-sdk"
-export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+export ANDROID_SDK_HOME="$XDG_DATA_HOME/android"
+export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
 
 # go
 export GOPATH="$XDG_DATA_HOME/go"
