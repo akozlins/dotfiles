@@ -1,7 +1,10 @@
 
+user_pref("user.js.line", "2");
+
 // PREF: Set Firefox locale to en-US
 user_pref("general.useragent.locale", "en-US");
 
+user_pref("browser.bookmarks.restore_default_bookmarks", false);
 user_pref("browser.bookmarks.showMobileBookmarks", false);
 user_pref("browser.bookmarks.showRecentlyBookmarked", false);
 
@@ -60,10 +63,26 @@ user_pref("plugins.enumerable_names", "");
 
 // disable autoplay
 user_pref("media.autoplay.default", 1);
+user_pref("media.autoplay.allow-muted", false);
+user_pref("media.autoplay.enabled.user-gestures-needed", false);
 
 // default permissions
 user_pref("permissions.default.desktop-notification", 2);
 user_pref("permissions.default.geo", 2);
+
+// Only blocks known trackers in Private Windows
+user_pref("browser.contentblocking.category", "standard");
+// Prevent accessibility services from accessing your browser
+user_pref("accessibility.force_disabled", 1);
+
+user_pref("app.normandy.enabled", false);
+user_pref("browser.startup.homepage", "about:blank");
+user_pref("browser.urlbar.suggest.openpage", false);
+user_pref("media.autoplay.enabled", false);
+user_pref("media.av1.enabled", true);
+user_pref("mousewheel.with_control.action", 0);
+
+user_pref("user.js.line", "85");
 
 //
 // Extensions
@@ -93,6 +112,8 @@ user_pref("extensions.tabmix.tabBarMode", 2);
 user_pref("extensions.tabmix.unloadedTab", false);
 user_pref("extensions.tabmix.unreadTab", false);
 
+user_pref("user.js.line", "115");
+
 /******************************************************************************
  * FF 57 *
  ******************************************************************************/
@@ -101,10 +122,17 @@ user_pref("browser.download.autohideButton", false);
 
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
+user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
 user_pref("browser.newtabpage.activity-stream.migrationExpired", true);
 user_pref("browser.newtabpage.activity-stream.prerender", false);
 user_pref("browser.newtabpage.activity-stream.showSearch", false);
+user_pref("browser.newtabpage.activity-stream.showSponsored", false);
 user_pref("browser.newtabpage.activity-stream.showTopSites", false);
+
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeDownloads", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
 
 user_pref("browser.onboarding.enabled", false);
 user_pref("browser.onboarding.notification.finished", true);
@@ -138,6 +166,8 @@ user_pref("extensions.screenshots.upload-disabled", "disable");
 user_pref("browser.tabs.insertRelatedAfterCurrent", false);
 
 user_pref("reader.parse-on-load.enabled", false);
+
+user_pref("user.js.line", "170");
 
 /******************************************************************************
  * user.js                                                                    *
@@ -1301,6 +1331,9 @@ user_pref("security.ssl3.dhe_dss_camellia_256_sha", false);
 // PREF: Fallbacks due compatibility reasons
 user_pref("security.ssl3.rsa_aes_256_sha", true); // 0x35
 user_pref("security.ssl3.rsa_aes_128_sha", true); // 0x2f
+
 //
 // END
 //
+
+user_pref("user.js.line", "1339");
