@@ -2,7 +2,7 @@
 set -euf
 
 unset CDPATH
-export HOME="$DOTFILES"
+#export HOME="$DOTFILES"
 cd "$HOME" || exit 1
 
 CMD=("/usr/bin/opera" -nomail -nomaillinks -nolirc "$@")
