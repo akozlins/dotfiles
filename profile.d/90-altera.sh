@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -z ${ALTERAD_LICENSE_FILE:+x} ] ; then
+if [ -z "${ALTERAD_LICENSE_FILE:+x}" ] ; then
     export ALTERAD_LICENSE_FILE=
 fi
 

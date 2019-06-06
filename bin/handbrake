@@ -4,7 +4,7 @@ set -euf
 CMD=("/usr/bin/ghb" "$@")
 
 FJ="/usr/bin/firejail"
-[ -x "$FJ" ] && CMD=("$FJ" "--profile=$XDG_CONFIG_HOME/firejail/handbrake.profile" -- "${CMD[@]}")
+[ -x "$FJ" ] && CMD=("$FJ" --profile="$XDG_CONFIG_HOME/firejail/handbrake.profile" -- "${CMD[@]}")
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &

@@ -5,7 +5,7 @@ if [ $# -ge 1 ] ; then
     HOST=$1
 fi
 
-if [ -z ${HOST:+x} ] ; then
+if [ -z "${HOST:+x}" ] ; then
     HOST=$(hostname)
 fi
 

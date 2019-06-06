@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-if [ -z ${DVT_LICENSE_FILE:+x} ] ; then
+if [ -z "${DVT_LICENSE_FILE:+x}" ] ; then
     export DVT_LICENSE_FILE=
 fi
 

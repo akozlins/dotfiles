@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -z ${XILINXD_LICENSE_FILE:+x} ] ; then
+if [ -z "${XILINXD_LICENSE_FILE:+x}" ] ; then
     export XILINXD_LICENSE_FILE=
 fi
 
