@@ -17,6 +17,7 @@ Current list of _allowed_ `.` files:
 
 TODO (to remove):
 
+ - `.Xauthority`
  - `.xsession-errors`
  - `.emacs.d` (use cmd opts, set $HOME)
  - `.android` (adb)
