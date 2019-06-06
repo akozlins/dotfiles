@@ -19,15 +19,18 @@ export ZSH_COMPDUMP="$ZSH/cache/.zcompdump"
 # ZSH update
 DISABLE_AUTO_UPDATE="true"
 
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
 ZSH_THEME="gentoo"
 plugins=(
-    gitfast
+#    gitfast
     command-not-found
     dotenv
 )
-#CASE_SENSITIVE="true"
 
 source "$ZSH/oh-my-zsh.sh"
+
+
 
 # directories
 unsetopt auto_cd
