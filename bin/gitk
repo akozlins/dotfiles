@@ -1,0 +1,10 @@
+#!/bin/sh
+set -euf
+
+CMD=("/usr/bin/gitk" "$@")
+
+if [ $# -eq 0 ] ; then
+    exec "${CMD[@]}" > /dev/null 2>&1 &
+else
+    exec "${CMD[@]}"
+fi
