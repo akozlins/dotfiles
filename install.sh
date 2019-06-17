@@ -33,6 +33,7 @@ files=(
     .config/gtk-3.0
     .config/htop
     .config/intellij-idea
+    .config/ipe
     .config/mc
     .config/micro
     .config/mplayer
