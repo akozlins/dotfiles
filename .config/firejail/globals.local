@@ -1,4 +1,3 @@
 #
 
-noblacklist ${HOME}/downloads
-whitelist ${HOME}/downloads
+#noblacklist ${HOME}/downloads

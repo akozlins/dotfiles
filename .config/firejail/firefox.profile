@@ -1,12 +1,12 @@
-# Firefox browser profile
+#
 
 include globals.local
 include qbittorrent.local
 
-noblacklist ~/.config/firefox
-whitelist ~/.config/firefox
+noblacklist ${HOME}/.config/firefox
+whitelist ${HOME}/.config/firefox
 
-whitelist ~/develop/firefox
+whitelist ${HOME}/develop/firefox
 
 # ===============================
 # '/etc/firejail/firefox.profile'
@@ -21,4 +21,4 @@ include ${CFG}/firefox-common.profile
 
 
 
-read-write ~/.dotfiles/.config/firefox
+read-write ${HOME}/.dotfiles/.config/firefox

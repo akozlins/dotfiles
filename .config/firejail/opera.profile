@@ -1,4 +1,4 @@
-# Opera browser profile
+#
 
 include globals.local
 
