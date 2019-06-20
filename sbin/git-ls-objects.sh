@@ -1,5 +1,6 @@
 #!/bin/sh
 set -euf
+export LC_ALL=C
 
 DIR=$(git rev-parse --git-path objects)
 unset CDPATH
