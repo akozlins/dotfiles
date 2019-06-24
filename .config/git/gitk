@@ -1,7 +1,7 @@
 set mainfont {{DejaVu Sans} 10}
 set textfont {{DejaVu Sans Mono} 10}
 set uifont {{DejaVu Sans} 10 bold}
-set tabstop 8
+set tabstop 4
 set findmergefiles 0
 set maxgraphpct 50
 set maxwidth 16

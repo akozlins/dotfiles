@@ -101,6 +101,6 @@ for file in "${files[@]}" ; do
     ln -sv -T "$src" "$dst"
 done
 
-#ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list
+#ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
 
 [ -d "opt/oh-my-zsh" ] && make -C opt oh-my-zsh
