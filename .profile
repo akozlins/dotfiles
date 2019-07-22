@@ -2,7 +2,7 @@
 
 DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.profile")")
 export DOTFILES
-export PATH="$DOTFILES/bin:$PATH"
+export PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"
 
 
 
