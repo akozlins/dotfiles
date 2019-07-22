@@ -3,7 +3,7 @@ set -euf
 unset CDPATH
 cd "$(dirname -- "$(readlink -e -- "$0")")" || exit 1
 
-[ -e bundle ] || mkdir -vp "$(readlink -- bundle)"
+[ -e bundle ] || mkdir -pv "$(readlink -- bundle)"
 
 # TODO: use vim plug
 
@@ -22,7 +22,7 @@ cd bundle || exit 1
 for repo in "${repos[@]}" ; do
     name=$(basename -- "$repo")
     if [ ! -d "$name/.git" ] ; then
-        rm -rf -- "$name"
+        rm -rfv -- "$name"
         git clone "$repo"
     fi
     ( cd "$name" ; git fetch --verbose --prune )

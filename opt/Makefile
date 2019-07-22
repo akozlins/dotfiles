@@ -10,19 +10,19 @@ far2l/.git :
 	( cd ../.cache && git clone https://github.com/elfmz/far2l )
 
 far2l/history : far2l/.git
-	mkdir -vp far2l/history/k-Editor/k-LastPositions
-	mkdir -vp far2l/history/k-SavedDialogHistory
-	mkdir -vp far2l/history/k-SavedFolderHistory
-	mkdir -vp far2l/history/k-SavedHistory
-	mkdir -vp far2l/history/k-SavedViewHistory
-	mkdir -vp far2l/history/k-Viewer/k-LastPositions
+	mkdir -pv far2l/history/k-Editor/k-LastPositions
+	mkdir -pv far2l/history/k-SavedDialogHistory
+	mkdir -pv far2l/history/k-SavedFolderHistory
+	mkdir -pv far2l/history/k-SavedHistory
+	mkdir -pv far2l/history/k-SavedViewHistory
+	mkdir -pv far2l/history/k-Viewer/k-LastPositions
 
 .PHONY : far2l
 far2l : far2l/.git far2l/history
 	( cd $@ && git stash && git pull )
 	# install cmake, wxgtk2 (wxWidgets)
 	patch -d far2l -p1 < far2l.patch
-	mkdir -p far2l/build
+	mkdir -pv far2l/build
 	( cd far2l/build && cmake -DCMAKE_BUILD_TYPE=Release .. && $(MAKE) )
 
 fbpanel/.git :
@@ -37,7 +37,7 @@ fbpanel : fbpanel/.git
 
 direnv/.git :
 	( cd ../.cache && git clone https://github.com/direnv/direnv )
-	( cd direnv && ln -s vendor src )
+	( cd direnv && ln -snv vendor src )
 
 .PHONY : direnv
 direnv : direnv/.git

@@ -6,7 +6,7 @@ export HOME="$DOTFILES"
 VIVADO_CACHE="$XDG_CACHE_HOME/vivado"
 
 if [ $# -eq 1 ] ; then
-    mkdir -p "$VIVADO_CACHE"
+    mkdir -pv "$VIVADO_CACHE"
     unset CDPATH
     cd "$VIVADO_CACHE" || exit 1
 fi

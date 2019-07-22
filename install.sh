@@ -98,7 +98,7 @@ for file in "${files[@]}" ; do
     if [ -e "$src" ] && [ ! -d "$dstdir" ] ; then
         mkdir -pv "$dstdir"
     fi
-    ln -sv -T "$src" "$dst"
+    ln -snv -T "$src" "$dst"
 done
 
 #ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list

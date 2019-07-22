@@ -9,7 +9,7 @@ pacstrap $mnt base
 
 # Time zone
 
-ln -s /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
+ln -sfnv /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 
 # Locale
 
@@ -43,6 +43,6 @@ mkswap /swap
 
 # ssh
 
-mkdir ~/.ssh
+mkdir -pv ~/.ssh
 chmod go-rwx ~/.ssh
 nano ~/.ssh/authorized_keys

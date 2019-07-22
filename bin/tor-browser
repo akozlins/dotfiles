@@ -4,7 +4,7 @@ set -euf
 CMD=("/usr/bin/tor-browser" "$@")
 
 private="$XDG_CACHE_HOME/tor-browser"
-mkdir -p "$private"
+mkdir -pv "$private"
 
 FJ="/usr/bin/firejail"
 [ -x "$FJ" ] && CMD=("$FJ" --private="$private" -- "${CMD[@]}")

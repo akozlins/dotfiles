@@ -5,7 +5,7 @@ tmp=${TMPDIR-/tmp}/pacman-disowned-$UID-$$
 db=$tmp/db
 fs=$tmp/fs
 
-mkdir "$tmp"
+mkdir -pv "$tmp"
 trap 'rm -rf -- "$tmp"' EXIT
 
 pacman -Qlq | sort -u > "$db"

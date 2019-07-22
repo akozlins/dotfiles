@@ -8,4 +8,4 @@ set -x
 git clean -Xdf -- .
 
 ( cd "$DOTFILES/.java" || exit 1 ; git clean -Xdf -- . )
-rm -rf -- "$XDG_CACHE_HOME/intellij-idea"
+rm -rfv -- "$XDG_CACHE_HOME/intellij-idea"
