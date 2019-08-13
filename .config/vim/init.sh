@@ -12,9 +12,7 @@ repos=(
     "https://github.com/airblade/vim-gitgutter"
     "https://github.com/pangloss/vim-javascript"
     "https://github.com/jceb/vim-orgmode"
-    "https://github.com/tpope/vim-pathogen"
     "https://github.com/tpope/vim-sensible"
-    "https://github.com/vimwiki/vimwiki"
 )
 
 cd bundle || exit 1

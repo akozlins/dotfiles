@@ -1,5 +1,16 @@
-source $XDG_CONFIG_HOME/vim/bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect('$XDG_CONFIG_HOME/vim/bundle/{}')
+
+scriptencoding utf-8
+set encoding=utf-8
+
+set nocompatible
+
+let $MYVIMDIR=expand("<sfile>:h")
+source $MYVIMDIR/xdg.vim
+
+set packpath=$MYVIMDIR
+
+
+
 syntax on
 filetype plugin indent on
 
@@ -20,9 +31,3 @@ set list
 set cindent
 set shiftwidth=4
 set expandtab
-
-set viminfo=
-
-set directory^=$XDG_CONFIG_HOME/vim/swap//
-
-let g:vimwiki_list = [ { 'path' : '$VIMWIKI_PATH' } ]

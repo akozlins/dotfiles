@@ -87,7 +87,7 @@ export PARALLEL_HOME="$XDG_CONFIG_HOME/parallel"
 export PROXYCHAINS_CONF_FILE="$XDG_CONFIG_HOME/proxychains.conf"
 export STACK_ROOT="$XDG_CACHE_HOME/stack"
 #export UNISON="$XDG_CONFIG_HOME/unison"
-export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export WGETRC="$DOTFILES/.wgetrc"
 
 export RANDFILE="$XDG_CONFIG_HOME/.rnd"
