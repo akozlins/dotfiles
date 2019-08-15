@@ -1,1 +1,3 @@
 do_initial_zoom_fit 1
+fill_waveform 1
+highlight_wavewindow 1
