@@ -25,7 +25,7 @@ run "/usr/bin/uxterm" 1s
 run "$HOME/bin/fbpanel" 2s
 run "$HOME/bin/conky" 3s
 
-run "/usr/bin/qxkb" 4s
+run "/usr/bin/gxkb" 4s
 run "/usr/bin/pasystray" 4s
 
 run "/usr/bin/xscreensaver" 4s

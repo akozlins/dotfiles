@@ -31,6 +31,7 @@ files=(
     .config/fontconfig
     .config/git
     .config/gtk-3.0
+    .config/gxkb
     .config/htop
     .config/intellij-idea
     .config/ipe
@@ -54,7 +55,6 @@ files=(
 
     .config/mimeapps.list
     .config/pavucontrol.ini
-    .config/qxkb.cfg
     .config/user-dirs.dirs
 )
 
