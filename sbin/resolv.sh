@@ -16,7 +16,7 @@ fi
 
 RESOLV=/etc/resolv.conf
 
-backup() {
+backup () {
     while [ -e "$RESOLV.bak" ] ; do
         printf '\n'
         printf '\033[0;31m'
@@ -36,6 +36,12 @@ backup() {
     done
 
     cp -v "$RESOLV" "$RESOLV.bak"
+}
+
+update () {
+    chattr -i "$RESOLV"
+    cat - > "$RESOLV"
+    chattr +i "$RESOLV"
 }
 
 while true ; do
@@ -67,48 +73,39 @@ while true ; do
         continue
         ;;
     [r]* )
-        chattr -i "$RESOLV"
-        mv -v "$RESOLV.bak" "$RESOLV"
-        chattr +i "$RESOLV"
+        cat "$RESOLV.bak" | update
+        rm -vf "$RESOLV.bak"
         continue
         ;;
     [L]* )
         backup || continue
-        chattr -i "$RESOLV"
-        cat << EOF > "$RESOLV"
+        update << EOF
 nameserver 127.0.0.1
 EOF
-        chattr +i "$RESOLV"
         continue
         ;;
     [G]* )
         backup || continue
-        chattr -i "$RESOLV"
-        cat << EOF > "$RESOLV"
+        update << EOF
 nameserver 8.8.8.8
 nameserver 8.8.4.4
 EOF
-        chattr +i "$RESOLV"
         continue
         ;;
     [O]* )
         backup || continue
-        chattr -i "$RESOLV"
-        cat << EOF > "$RESOLV"
+        update << EOF
 nameserver 208.67.222.222
 nameserver 208.67.220.220
 EOF
-        chattr +i "$RESOLV"
         continue
         ;;
     [C]* )
         backup || continue
-        chattr -i "$RESOLV"
-        cat << EOF > "$RESOLV"
+        update << EOF
 nameserver 1.1.1.1
 nameserver 1.0.0.1
 EOF
-        chattr +i "$RESOLV"
         continue
         ;;
     [qQ]* )
