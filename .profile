@@ -19,9 +19,11 @@ export MEDIA="/run/media/$USER"
 export EDITOR="nano -c"
 export BROWSER="firefox"
 
+# display first page if several man pages are available
 export MAN_POSIXLY_CORRECT=1
 
 # WINE
+export WINEPREFIX="$XDG_DATA_HOME/wine/default"
 export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 #export WINEDLLOVERRIDES="winemenubuilder.exe=d;winedevice.exe=d"
 
@@ -80,6 +82,7 @@ export KDEHOME="$XDG_CONFIG_HOME/kde4"
 export LESSHISTFILE=-
 export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME/Mathematica"
 export MPLAYER_HOME="$XDG_CONFIG_HOME/mplayer"
+export MYSQL_HISTFILE="$XDG_CACHE_HOME/.mysql_history"
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/.node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export OPERA_PERSONALDIR="$XDG_CONFIG_HOME/opera"
@@ -89,6 +92,7 @@ export STACK_ROOT="$XDG_CACHE_HOME/stack"
 #export UNISON="$XDG_CONFIG_HOME/unison"
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export WGETRC="$DOTFILES/.wgetrc"
+export XINITRC="$DOTFILES/.xinitrc"
 
 export RANDFILE="$XDG_CONFIG_HOME/.rnd"
 
