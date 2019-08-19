@@ -8,26 +8,3 @@ let $MYVIMDIR=expand("<sfile>:h")
 source $MYVIMDIR/xdg.vim
 
 set packpath=$MYVIMDIR
-
-
-
-syntax on
-filetype plugin indent on
-
-nmap \l :setlocal number!<CR>
-
-set incsearch
-set ignorecase
-set smartcase
-set hlsearch
-nmap \q :nohlsearch<CR>
-
-set listchars=tab:>-,nbsp:~,trail:·,eol:¶,precedes:«,extends:»
-if has("patch-7.4.710")
-    set listchars+=space:·
-endif
-set list
-
-set cindent
-set shiftwidth=4
-set expandtab
