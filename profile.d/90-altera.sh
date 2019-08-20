@@ -15,12 +15,16 @@ fi
 export QUARTUS_64BIT
 
 export PATH="$PATH:$QUARTUS_ROOTDIR/bin"
-export PATH="$PATH:$QUARTUS_ROOTDIR/sopc_builder/bin"
+
+export QSYS_ROOTDIR="$QUARTUS_ROOTDIR/sopc_builder/bin"
+export PATH="$PATH:$QSYS_ROOTDIR"
 
 export SOPC_KIT_NIOS2="$QUARTUS_ROOTDIR/../nios2eds"
 export PATH="$PATH:$SOPC_KIT_NIOS2/bin"
 export PATH="$PATH:$SOPC_KIT_NIOS2/sdk2/bin"
 export PATH="$PATH:$SOPC_KIT_NIOS2/bin/gnu/H-x86_64-pc-linux-gnu/bin"
+
+export INTELFPGAOCLSDKROOT="$QUARTUS_ROOTDIR/../hld"
 
 #export MODELSIM_INSTALLDIR="$QUARTUS_ROOTDIR/../modelsim_ase"
 #export PATH="$PATH:$MODELSIM_INSTALLDIR/bin"
