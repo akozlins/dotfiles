@@ -17,12 +17,18 @@ endif
 if !isdirectory($XDG_CACHE_HOME . "/vim/backup")
     call mkdir($XDG_CACHE_HOME . "/vim/backup", "p")
 endif
-set backupdir=$XDG_CACHE_HOME/vim/backup//
+if has("patch-8.1.0251")
+    set backupdir=$XDG_CACHE_HOME/vim/backup//
+endif
+set writebackup
+set nobackup
+set backupcopy=auto
 
 if !isdirectory($XDG_CACHE_HOME . "/vim/swap")
     call mkdir($XDG_CACHE_HOME . "/vim/swap", "p")
 endif
 set directory=$XDG_CACHE_HOME/vim/swap//
+set swapfile
 
 if !isdirectory($XDG_CACHE_HOME . "/vim/undo")
     call mkdir($XDG_CACHE_HOME . "/vim/undo", "p")
