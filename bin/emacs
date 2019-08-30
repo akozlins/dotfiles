@@ -1,7 +1,14 @@
 #!/bin/bash
 set -euf
 
-CMD=("/usr/bin/emacs" "$@")
+CMD="/usr/bin/emacs"
+if [ -x "CMD" ] ; then
+    "$CMD"
+    exit 1
+fi
+
+export HOME="$DOTFILES"
+CMD=("/usr/bin/emacs" --no-init-file --load="$DOTFILES/.emacs.d/init.el" "$@")
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &
