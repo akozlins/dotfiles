@@ -9,7 +9,7 @@ alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -v'
 
-alias ls='ls --color=auto --group-directories-first -h --file-type'
+alias ls='ls --color=auto --group-directories-first -h --file-type --time-style=long-iso'
 alias la='ls -lAF'
 alias root='root -l'
 alias make='LC_ALL=C make -j4'
