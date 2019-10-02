@@ -7,6 +7,7 @@
 
 (load (concat emacs.config "/gui"))
 (load (concat emacs.config "/edit"))
+(load (concat emacs.config "/key"))
 
 ;; backup/autosave
 (setq make-backup-files nil) ; no backup~
