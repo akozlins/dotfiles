@@ -9,8 +9,6 @@ cd "$DOTFILES" || exit 1
 files=(
     bin
 
-    .emacs.d
-
     .bashrc
     .dmrc
     .eltclshrc

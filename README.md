@@ -19,7 +19,6 @@ TODO (to remove):
 
  - `.Xauthority`
  - `.xsession-errors`
- - `.emacs.d` (use cmd opts, set $HOME)
  - `.android` (adb)
  - `.pki` (nssdb, use firejail)
  - `.wicd`
