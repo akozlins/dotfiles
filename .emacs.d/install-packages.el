@@ -1,12 +1,15 @@
 ;
 
 (require 'package)
+(setq package-user-dir (concat emacs.cache "/elpa"))
 (add-to-list
     'package-archives
     '("melpa-stable" . "https://stable.melpa.org/packages/")
     t
 )
 (package-initialize)
+
+(setq package-gnupghome-dir (concat emacs.cache "/elpa/gnupg"))
 
 (defun install-packages (&rest packages)
     "install packages"

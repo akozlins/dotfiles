@@ -2,8 +2,11 @@
 
 (setq debug-on-error t)
 
-(load "~/.emacs.d/gui")
-(load "~/.emacs.d/edit")
+(setq emacs.config (concat (getenv "DOTFILES") "/.emacs.d"))
+(setq emacs.cache (concat (getenv "XDG_CACHE_HOME") "/emacs"))
+
+(load (concat emacs.config "/gui"))
+(load (concat emacs.config "/edit"))
 
 ;; backup/autosave
 (setq make-backup-files nil) ; no backup~
@@ -11,7 +14,7 @@
 
 
 
-(load "~/.emacs.d/install-packages")
+(load (concat emacs.config "/install-packages"))
 (install-packages
     'use-package
     'whitespace
@@ -26,4 +29,4 @@
     :init (setq markdown-command "multimarkdown")
 )
 
-(load "~/.emacs.d/whitespace")
+(load (concat emacs.config "/whitespace"))
