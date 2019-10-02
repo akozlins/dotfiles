@@ -15,6 +15,10 @@ user_pref("browser.download.dir", "/home/akozlins/downloads");
 
 user_pref("browser.fullscreen.animate", false);
 
+user_pref("browser.link.open_newwindow", 3);
+user_pref("browser.link.open_newwindow.override.external", 3);
+user_pref("browser.link.open_newwindow.restriction", 0);
+
 user_pref("browser.search.defaultenginename", "DuckDuckGo");
 user_pref("browser.search.hiddenOneOffs", "Yahoo,Bing,Amazon.com,eBay,Twitter");
 user_pref("browser.search.widget.inNavBar", false);
