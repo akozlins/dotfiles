@@ -66,7 +66,8 @@ user_pref("middlemouse.contentLoadURL", false);
 user_pref("plugins.enumerable_names", "");
 
 // disable autoplay
-user_pref("media.autoplay.default", 1);
+user_pref("media.autoplay.default", 5);
+user_pref("media.autoplay.enabled", false);
 user_pref("media.autoplay.allow-muted", false);
 user_pref("media.autoplay.enabled.user-gestures-needed", false);
 
@@ -82,7 +83,6 @@ user_pref("accessibility.force_disabled", 1);
 user_pref("app.normandy.enabled", false);
 user_pref("browser.startup.homepage", "about:blank");
 user_pref("browser.urlbar.suggest.openpage", false);
-user_pref("media.autoplay.enabled", false);
 user_pref("media.av1.enabled", true);
 user_pref("mousewheel.with_control.action", 0);
 
@@ -901,7 +901,7 @@ user_pref("security.csp.experimentalEnabled", true);
 // https://wiki.mozilla.org/Security/FirstPartyIsolation
 // NOTICE: First-party isolation breaks Microsoft Teams
 // NOTICE: First-party isolation causes HTTP basic auth to ask for credentials for every new tab (see #425)
-//user_pref("privacy.firstparty.isolate", true);
+user_pref("privacy.firstparty.isolate", true);
 
 // PREF: Make sure that third-party cookies (if enabled) never persist beyond the session.
 // https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/
