@@ -88,6 +88,8 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export OPERA_PERSONALDIR="$XDG_CONFIG_HOME/opera"
 export PARALLEL_HOME="$XDG_CONFIG_HOME/parallel"
 export PROXYCHAINS_CONF_FILE="$XDG_CONFIG_HOME/proxychains.conf"
+export PSQL_HISTORY="$XDG_CACHE_HOME/.psql_history"
+export SQLITE_HISTORY="$XDG_CACHE_HOME/.sqlite_history"
 export STACK_ROOT="$XDG_CACHE_HOME/stack"
 #export UNISON="$XDG_CONFIG_HOME/unison"
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
