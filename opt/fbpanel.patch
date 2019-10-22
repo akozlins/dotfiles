@@ -42,14 +42,6 @@
  static gboolean
  battery_update_os_sys(battery_priv *c)
  {
---- a/plugins/dclock/dclock.c
-+++ b/plugins/dclock/dclock.c
-@@ -83,4 +83,5 @@
-     gtk_calendar_display_options(
-         GTK_CALENDAR(calendar),
-+        GTK_CALENDAR_WEEK_START_MONDAY |
-         GTK_CALENDAR_SHOW_WEEK_NUMBERS | GTK_CALENDAR_SHOW_DAY_NAMES
-         | GTK_CALENDAR_SHOW_HEADING);
 --- a/plugins/deskno/deskno.c
 +++ b/plugins/deskno/deskno.c
 @@ -53,5 +53,5 @@

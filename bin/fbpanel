@@ -7,5 +7,9 @@ if [ ! -x "$fbpanel" ] ; then
     fbpanel=/usr/bin/fbpanel
 fi
 
+if locale -a | grep -q en_GB ; then
+    export LC_TIME=en_GB
+fi
+
 exec \
 "$fbpanel" "$@"
