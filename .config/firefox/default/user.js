@@ -86,7 +86,7 @@ user_pref("browser.urlbar.suggest.openpage", false);
 user_pref("media.av1.enabled", true);
 user_pref("mousewheel.with_control.action", 0);
 
-user_pref("user.js.line", "85");
+user_pref("user.js.line", "89");
 
 //
 // Extensions
@@ -116,7 +116,7 @@ user_pref("extensions.tabmix.tabBarMode", 2);
 user_pref("extensions.tabmix.unloadedTab", false);
 user_pref("extensions.tabmix.unreadTab", false);
 
-user_pref("user.js.line", "115");
+user_pref("user.js.line", "119");
 
 /******************************************************************************
  * FF 57 *
@@ -171,7 +171,7 @@ user_pref("browser.tabs.insertRelatedAfterCurrent", false);
 
 user_pref("reader.parse-on-load.enabled", false);
 
-user_pref("user.js.line", "170");
+user_pref("user.js.line", "174");
 
 /******************************************************************************
  * user.js                                                                    *
@@ -647,6 +647,7 @@ user_pref("devtools.debugger.force-local", true);
 // https://gecko.readthedocs.io/en/latest/browser/experiments/experiments/manifest.html
 // https://wiki.mozilla.org/Telemetry/Experiments
 // https://support.mozilla.org/en-US/questions/1197144
+// https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/telemetry/internals/preferences.html#id1
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.unified", false);
 user_pref("toolkit.telemetry.archive.enabled", false);
@@ -1340,4 +1341,4 @@ user_pref("security.ssl3.rsa_aes_128_sha", true); // 0x2f
 // END
 //
 
-user_pref("user.js.line", "1339");
+user_pref("user.js.line", "1344");
