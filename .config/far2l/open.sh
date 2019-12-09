@@ -17,6 +17,7 @@ case "$mime" in
         exec vlc "$1"
         ;;
     text/*)
+        [[ "$1" == *.md ]] && command -pv okular &> /dev/null && exec okular "$1"
         exec gedit "$1"
         ;;
     *)
