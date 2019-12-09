@@ -1,3 +1,4 @@
+#
 
 Global {
   edge = bottom
@@ -81,9 +82,9 @@ Plugin {
   type = launchbar
   config {
     button {
-      tooltip = Thunar
-      icon = Thunar
-      action = thunar
+      tooltip = pcmanfm
+      icon = system-file-manager
+      action = pcmanfm
     }
     button {
       tooltip = uxterm
@@ -173,4 +174,3 @@ Plugin {
     size = 2
   }
 }
-

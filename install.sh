@@ -41,6 +41,7 @@ files=(
     .config/openbox
     .config/pacman
     .config/parallel
+    .config/pcmanfm
     .config/pulse/client.conf
     .config/pulse/default.pa
     .config/root

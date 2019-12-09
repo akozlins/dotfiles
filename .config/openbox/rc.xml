@@ -218,7 +218,7 @@
   </keybind>
   <keybind key="W-e">
     <action name="Execute">
-      <command>thunar</command>
+      <command>pcmanfm</command>
     </action>
   </keybind>
 
@@ -463,6 +463,9 @@
     <position force="yes"><x>0</x><y>-0</y></position>
   </application>
   <application type="normal" class="Thunar">
+    <position force="yes"><x>0</x><y>-0</y></position>
+  </application>
+  <application type="normal" class="Pcmanfm">
     <position force="yes"><x>0</x><y>-0</y></position>
   </application>
 </applications>
