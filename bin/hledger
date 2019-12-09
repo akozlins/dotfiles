@@ -5,4 +5,4 @@ unset CDPATH
 cd "$(dirname "$LEDGER_FILE")" || exit 1
 
 exec \
-~/.local/bin/hledger-web "$@"
+~/.local/bin/hledger "$@"
