@@ -25,13 +25,13 @@ backup () {
         echo "c - continue"
         printf '\033[0m'
 
-        printf "Backup '$RESOLV.bak' exists. Command [wqc]? "
+        printf "Backup '$RESOLV.bak' exists. Command [w,q,c]: "
         read -r cmd
 
         case "$cmd" in
-        [wW]* ) break ;;
-        [qQ]* ) return 1 ;;
-        [cC]* ) return 0 ;;
+        [w]* ) break ;;
+        [q]* ) return 1 ;;
+        [c]* ) return 0 ;;
         esac
     done
 
@@ -64,7 +64,7 @@ while true ; do
     echo "q - quit"
     printf '\033[0m'
 
-    printf 'Command [p,b,r,l,g,o,c,q]? '
+    printf 'Command [p,b,r,L,G,O,C,q]: '
     read -r cmd
 
     case "$cmd" in
@@ -108,7 +108,7 @@ nameserver 1.0.0.1
 EOF
         continue
         ;;
-    [qQ]* )
+    [q]* )
         exit
         ;;
     esac
