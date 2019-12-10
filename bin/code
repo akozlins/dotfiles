@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euf
+
+CMD=$(basename "$0")
+CMD=$(command -pv "$CMD")
+
+export HOME="$DOTFILES"
+
+exec \
+"$CMD" "$@"
