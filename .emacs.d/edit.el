@@ -5,4 +5,4 @@
 (set-language-environment   'utf-8)
 (prefer-coding-system 'utf-8)
 
-(setq tab-width 4)
+(setq-default tab-width 4)

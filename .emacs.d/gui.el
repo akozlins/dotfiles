@@ -2,7 +2,9 @@
 
 (set-default-font "DejaVu Sans Mono 16")
 
-(when window-system (set-frame-size (selected-frame) 120 35))
+(when window-system
+    (set-frame-size (selected-frame) 120 35)
+)
 
 (tool-bar-mode -1)
 (setq inhibit-startup-message t)
@@ -17,3 +19,7 @@
 (setq mouse-wheel-progressive-speed nil)
 
 (fset 'yes-or-no-p 'y-or-n-p)
+
+(global-set-key "\M-+" 'text-scale-increase)
+(global-set-key "\M--" 'text-scale-decrease)
+(global-set-key "\M-=" (lambda () (interactive) (text-scale-set 0)))
