@@ -21,17 +21,16 @@ backup () {
         printf '\n'
         printf '\033[0;31m'
         echo "w - overwrite"
-        echo "q - quit/cancel"
-        echo "c - continue"
+        echo "q - quit"
         printf '\033[0m'
 
-        printf "Backup '$RESOLV.bak' exists. Command [w,q,c]: "
-        read -r cmd
+        printf "Backup '$RESOLV.bak' exists. Command [w,q]: "
+        read -r -n 1
+        printf '\n'
 
-        case "$cmd" in
+        case "$REPLY" in
         [w]* ) break ;;
-        [q]* ) return 1 ;;
-        [c]* ) return 0 ;;
+        [q]* ) return 0 ;;
         esac
     done
 
@@ -39,22 +38,28 @@ backup () {
 }
 
 update () {
-    chattr -i "$RESOLV"
+#    chattr -i "$RESOLV"
     cat - > "$RESOLV"
-    chattr +i "$RESOLV"
+#    chattr +i "$RESOLV"
 }
 
 while true ; do
-    printf '\n'
-    printf '\033[0;31m%s\033[0m\n' "$RESOLV"
-    cat "$RESOLV"
     if [ -e "$RESOLV.bak" ] ; then
-        printf '\033[0;31m%s\033[0m\n' "$RESOLV.bak"
+        printf '\n'
+        printf '\033[0;31m'
+        printf 'BACKUP: %s\n' "$RESOLV.bak"
+        printf '\033[0m'
         cat "$RESOLV.bak"
     fi
+    printf '\n'
+    printf '\033[0;31m'
+    lsattr "$RESOLV"
+    printf '\033[0m'
+    cat "$RESOLV"
 
     printf '\n'
     printf '\033[0;31m'
+    echo "i - toggle immutable attribute"
     echo "b - backup"
     echo "r - restore"
     echo "L - localhost (127.0.0.1)"
@@ -65,9 +70,18 @@ while true ; do
     printf '\033[0m'
 
     printf 'Command [p,b,r,L,G,O,C,q]: '
-    read -r cmd
+    read -r -n 1
+    printf '\n'
 
-    case "$cmd" in
+    case "$REPLY" in
+    [i]* )
+        # toogle immutable attribute
+        if lsattr "$RESOLV" | cut -d' ' -f1 | grep -q i ; then
+            chattr -i "$RESOLV"
+        else
+            chattr +i "$RESOLV"
+        fi
+        ;;
     [b]* )
         backup
         continue
