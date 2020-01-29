@@ -101,9 +101,9 @@ export RANDFILE="$XDG_CONFIG_HOME/.rnd"
 #export XAUTHORITY="$XDG_RUNTIME_DIR/.Xauthority"
 
 # nvidia
-[ -e "$XDG_CACHE_HOME/nv" ] || mkdir -p "$XDG_CACHE_HOME/nv"
-export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/nv"
-export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
+[ -e "$XDG_CACHE_HOME/.nv" ] || mkdir -p "$XDG_CACHE_HOME/.nv"
+export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/.nv"
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME/.nv"
 
 
 
