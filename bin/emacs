@@ -8,7 +8,7 @@ if [ -x "CMD" ] ; then
 fi
 
 export HOME="$DOTFILES"
-CMD=("/usr/bin/emacs" --no-init-file --load="$DOTFILES/.emacs.d/init.el" "$@")
+CMD=("/usr/bin/emacs" --no-init-file "--load=$DOTFILES/.emacs.d/init.el" "$@")
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &

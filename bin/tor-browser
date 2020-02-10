@@ -7,7 +7,7 @@ private="$XDG_CACHE_HOME/tor-browser"
 mkdir -pv "$private"
 
 FJ="/usr/bin/firejail"
-[ -x "$FJ" ] && CMD=("$FJ" --private="$private" -- "${CMD[@]}")
+[ -x "$FJ" ] && CMD=("$FJ" "--private=$private" -- "${CMD[@]}")
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &

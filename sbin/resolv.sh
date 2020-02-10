@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
 if [ "$(id -u)" -ne 0 ] ; then
@@ -24,7 +24,7 @@ backup () {
         echo "q - quit"
         printf '\033[0m'
 
-        printf "Backup '$RESOLV.bak' exists. Command [w,q]: "
+        printf "Backup '%s' exists. Command [w,q]: " "$RESOLV.bak"
         read -r -n 1
         printf '\n'
 
@@ -87,7 +87,7 @@ while true ; do
         continue
         ;;
     [r]* )
-        cat "$RESOLV.bak" | update
+        update < "$RESOLV.bak"
         rm -vf "$RESOLV.bak"
         continue
         ;;

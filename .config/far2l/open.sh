@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
 mime=$(xdg-mime query filetype "$1")
