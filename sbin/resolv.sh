@@ -16,6 +16,8 @@ fi
 
 RESOLV=/etc/resolv.conf
 
+VPN=openvpn-client@$(hostname)
+
 backup () {
     while [ -e "$RESOLV.bak" ] ; do
         printf '\n'
@@ -38,9 +40,51 @@ backup () {
 }
 
 update () {
-#    chattr -i "$RESOLV"
+    chattr -i "$RESOLV"
     cat - > "$RESOLV"
-#    chattr +i "$RESOLV"
+    chattr +i "$RESOLV"
+}
+
+wicd () {
+    while true ; do
+        printf '\n'
+        printf '\033[0;31m'
+        echo "    [s] scan"
+        echo "    [l] list"
+        echo "    [0-9] connect"
+        echo "    [k] reload iwl drivers"
+        echo "    [q] quit"
+        printf '\033[0m'
+
+        printf 'Command [s,l,k,q]: '
+        read -r -n 1
+        printf '\n'
+
+        case "$REPLY" in
+        [s]* )
+            wicd-cli --wireless --scan
+            wicd-cli --wireless -l
+            continue
+            ;;
+        [l]* )
+            wicd-cli --wireless -l
+            continue
+            ;;
+        [0-9]* )
+            wicd-cli --wireless --connect -n "$REPLY"
+            continue
+            ;;
+        [k]* )
+            rmmod iwldvm
+            rmmod iwlwifi
+            sleep 1
+            modprobe iwlwifi
+            modprobe iwldvm
+            continue
+            ;;
+        [q]* ) return 0 ;;
+        esac
+    done
 }
 
 while true ; do
@@ -120,6 +164,16 @@ EOF
 nameserver 1.1.1.1
 nameserver 1.0.0.1
 EOF
+        continue
+        ;;
+    [v]* )
+        systemctl -q is-active "$VPN" && systemctl stop "$VPN"
+        ping -c 1 hz11
+        [ $? -eq 0 ] && systemctl start "$VPN"
+        continue;
+        ;;
+    [w]* )
+        wicd
         continue
         ;;
     [q]* )
