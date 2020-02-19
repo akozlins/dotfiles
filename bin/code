@@ -7,4 +7,7 @@ CMD=$(command -pv "$CMD")
 export HOME="$DOTFILES"
 
 exec \
-"$CMD" "$@"
+"$CMD" \
+    --user-data-dir $XDG_CONFIG_HOME/code \
+    --extensions-dir $XDG_DATA_HOME/code/extensions \
+    "$@"
