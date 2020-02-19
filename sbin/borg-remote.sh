@@ -23,14 +23,20 @@ do continue ; done
 
 borg --version
 
-socat -d TCP4-LISTEN:"$PORT,bind=localhost" \
+socat -d \
+    "TCP4-LISTEN:$PORT,bind=localhost" \
     "EXEC:borg serve --append-only --restrict-to-path $REPO" &
 
 SOCAT_PID=$!
+cleanup() {
+    rc=$?
+    kill "$SOCAT_PID" || true
+    exit $rc
+}
+trap cleanup EXIT
 
 ssh "$HOST" -R "$PORT:localhost:$PORT" \
     BORG_RSH="'sh -c \"exec socat STDIO TCP4-CONNECT:localhost:$PORT\"'" \
-borg "$@"
+    borg "$@"
 
 ssh "$HOST" -O cancel -R "$PORT:localhost:$PORT" || true
-kill "$SOCAT_PID" || true
