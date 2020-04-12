@@ -74,36 +74,6 @@ user_pref("mousewheel.with_control.action", 0);
 
 
 
-//
-// Extensions
-//
-
-user_pref("extensions.ui.dictionary.hidden", true);
-user_pref("extensions.ui.experiment.hidden", true);
-user_pref("extensions.ui.locale.hidden", true);
-
-user_pref("extensions.cleanlinks.enabled", false);
-
-user_pref("extensions.classicthemerestorer.smallnavbut", true);
-
-user_pref("extensions.firegestures.keypressgesture", false);
-user_pref("extensions.firegestures.mousetrail", false);
-user_pref("extensions.firegestures.rockergesture", true);
-user_pref("extensions.firegestures.status_display", 0);
-user_pref("extensions.firegestures.swipegesture", false);
-user_pref("extensions.firegestures.wheelgesture", false);
-
-user_pref("extensions.greasemonkey.enabled", true);
-
-user_pref("extensions.tabmix.lasttab.tabPreviews", false);
-user_pref("extensions.tabmix.sessions.crashRecovery", false);
-user_pref("extensions.tabmix.sessions.manager", false);
-user_pref("extensions.tabmix.tabBarMode", 2);
-user_pref("extensions.tabmix.unloadedTab", false);
-user_pref("extensions.tabmix.unreadTab", false);
-
-
-
 /******************************************************************************
 ******************************************************************************/
 

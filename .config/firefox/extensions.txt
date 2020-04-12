@@ -1,5 +1,5 @@
 Clean Links
 Decentraleyes
-No Resource URI Leak
+Enhancer for YouTube
 uBlock Origin
 uMatrix

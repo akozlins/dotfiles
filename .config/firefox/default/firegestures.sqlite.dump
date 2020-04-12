@@ -1,8 +1,0 @@
-PRAGMA foreign_keys=OFF;
-BEGIN TRANSACTION;
-CREATE TABLE gesture_mappings (type INTEGER, name TEXT, command TEXT, direction TEXT);
-INSERT INTO gesture_mappings VALUES(1,'','cmd_newNavigatorTab','D');
-INSERT INTO gesture_mappings VALUES(1,'','cmd_close','DR');
-INSERT INTO gesture_mappings VALUES(1,'','Browser:Back','rocker-left');
-INSERT INTO gesture_mappings VALUES(1,'','Browser:Forward','rocker-right');
-COMMIT;
