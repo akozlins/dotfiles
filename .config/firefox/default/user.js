@@ -198,7 +198,7 @@ user_pref("dom.webnotifications.enabled", false);
 // PREF: Disable DOM timing API
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
 // https://www.w3.org/TR/navigation-timing/#privacy
-user_pref("dom.enable_performance", false);
+//user_pref("dom.enable_performance", false);
 
 // PREF: Make sure the User Timing API does not provide a new high resolution timestamp
 // https://trac.torproject.org/projects/tor/ticket/16336
@@ -207,7 +207,7 @@ user_pref("dom.enable_user_timing", false);
 
 // PREF: Disable Web Audio API
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1288359
-user_pref("dom.webaudio.enabled", false);
+//user_pref("dom.webaudio.enabled", false);
 
 // PREF: Disable Location-Aware Browsing (geolocation)
 // https://www.mozilla.org/en-US/firefox/geolocation/
@@ -902,7 +902,7 @@ user_pref("security.csp.experimentalEnabled", true);
 // https://wiki.mozilla.org/Security/FirstPartyIsolation
 // NOTICE: First-party isolation breaks Microsoft Teams
 // NOTICE: First-party isolation causes HTTP basic auth to ask for credentials for every new tab (see #425)
-user_pref("privacy.firstparty.isolate", true);
+//user_pref("privacy.firstparty.isolate", true);
 
 // PREF: Make sure that third-party cookies (if enabled) never persist beyond the session.
 // https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/
