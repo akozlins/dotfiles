@@ -8,6 +8,6 @@ export HOME="$DOTFILES"
 
 exec \
 "$CMD" \
-    --user-data-dir $XDG_CONFIG_HOME/code \
-    --extensions-dir $XDG_DATA_HOME/code/extensions \
+    --user-data-dir "$XDG_CONFIG_HOME/code" \
+    --extensions-dir "$XDG_DATA_HOME/code/extensions" \
     "$@"

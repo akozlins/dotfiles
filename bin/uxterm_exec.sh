@@ -9,9 +9,9 @@ fi
 umask 077
 tmp=$(mktemp)
 cleanup() {
-    rv=$?
+    rc=$?
     rm -f -- "$tmp"
-    exit $rv
+    exit $rc
 }
 trap cleanup EXIT
 

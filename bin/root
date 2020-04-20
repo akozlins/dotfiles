@@ -1,7 +1,8 @@
 #!/bin/sh
 set -euf
 
-export PATH="$(getconf PATH)"
+PATH="$(getconf PATH)"
+export PATH
 
 export HOME="$DOTFILES"
 

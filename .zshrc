@@ -8,22 +8,23 @@
 
 export HISTFILE="$XDG_DATA_HOME/.zsh_history"
 export HISTORY_IGNORE="(reboot|reset|rm *|sudo rm *|mv *|sudo mv *|cp *|sudo cp *|ls *|la *)"
+
 export ZLE_REMOVE_SUFFIX_CHARS=""
 export ZLE_SPACE_SUFFIX_CHARS=""
+
+export ZSH_COMPDUMP="$ZSH/cache/.zcompdump"
 
 
 
 export ZSH="$DOTFILES/opt/oh-my-zsh"
-export ZSH_COMPDUMP="$ZSH/cache/.zcompdump"
 
-# ZSH update
+ZSH_THEME="gentoo"
+
 DISABLE_AUTO_UPDATE="true"
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-ZSH_THEME="gentoo"
 plugins=(
-#    gitfast
     command-not-found
     dotenv
 )

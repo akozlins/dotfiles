@@ -1,13 +1,20 @@
+#
+
 [core]
 	editor = nano
 	autocrlf = input
 	whitespace = trailing-space,space-before-tab
+
 [diff]
 	tool = meld
+
 [commit]
+
 [merge]
 	commit = no
+
 [status]
 	submoduleSummary = true
+
 [oh-my-zsh]
 	hide-dirty = 1
