@@ -2,8 +2,6 @@
 +++ b/CMakeLists.txt
 @@ -67,16 +67,16 @@
  
--add_subdirectory (farftp)
-+#add_subdirectory (farftp)
  add_subdirectory (colorer)
  add_subdirectory (multiarc)
  add_subdirectory (tmppanel)
@@ -27,6 +25,7 @@
 +#add_subdirectory (editorcomp)
 +#add_subdirectory (inside)
 +#add_subdirectory (incsrch)
+ add_subdirectory (NetRocks)
  
 --- a/far2l/bootstrap/roots.sh
 +++ b/far2l/bootstrap/roots.sh
