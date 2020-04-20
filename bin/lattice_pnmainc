@@ -1,0 +1,10 @@
+#!/bin/bash
+set -ef
+
+export LM_LICENSE_FILE="$HOME/.config/lattice/license.dat"
+
+bindir=/usr/local/diamond/3.11_x64/bin/lin64
+source "${bindir}/diamond_env"
+
+exec \
+"$bindir/pnmainc" "$@"
