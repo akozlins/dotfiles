@@ -1,7 +1,13 @@
 #!/bin/sh
 set -euf
 
-#PULSE_LATENCY_MSEC=60
-xhost +local:
-sudo -u skype /usr/bin/skype \
-> /dev/null 2>&1 &
+CMD=("/usr/bin/skypeforlinux" "$@")
+
+FJ="/usr/bin/firejail"
+[ -x "$FJ" ] && CMD=("$FJ" -- "${CMD[@]}")
+
+if [ $# -eq 0 ] ; then
+    exec "${CMD[@]}" > /dev/null 2>&1 &
+else
+    exec "${CMD[@]}"
+fi
