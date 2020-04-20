@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=gxkb
+Icon=gxkb
+Exec=gxkb
+Terminal=false
+Type=Application

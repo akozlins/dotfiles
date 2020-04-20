@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=uxterm
+Exec=sh -c 'uxterm'
+Type=Application

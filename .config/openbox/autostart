@@ -20,13 +20,8 @@ run() {
 /usr/bin/xset r rate 250 25
 /usr/bin/xset b off
 
-run "/usr/bin/uxterm" 1s
-
 run "$HOME/bin/fbpanel" 2s
 run "$HOME/bin/conky" 3s
-
-run "/usr/bin/gxkb" 4s
-run "/usr/bin/pasystray" 4s
 
 run "/usr/bin/xscreensaver" 4s
 run "/usr/bin/xss-lock" 5s -l -- ~/bin/lock.sh
