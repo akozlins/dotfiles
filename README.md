@@ -22,7 +22,6 @@ TODO (to remove):
  - `.android` (adb)
  - `.pki` (nssdb, use firejail)
  - `.wicd`
- - `.rootrc` (root.cern.ch)
 
 ## Install
 

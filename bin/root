@@ -1,0 +1,9 @@
+#!/bin/sh
+set -euf
+
+export PATH="$(getconf PATH)"
+
+export HOME="$DOTFILES"
+
+exec \
+root -l "$@"

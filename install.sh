@@ -13,7 +13,6 @@ files=(
     .dmrc
     .pam_environment
     .profile
-    .rootrc
     .wicd
     .xsession
     .zshrc
