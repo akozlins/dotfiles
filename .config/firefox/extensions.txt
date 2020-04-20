@@ -1,5 +1,0 @@
-Clean Links
-Decentraleyes
-Enhancer for YouTube
-uBlock Origin
-uMatrix
