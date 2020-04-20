@@ -1,0 +1,10 @@
+#!/bin/sh
+set -euf
+
+PATH="$(getconf PATH)"
+export PATH
+
+export HOME="$DOTFILES"
+
+exec \
+epspdf "$@"
