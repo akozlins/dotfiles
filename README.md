@@ -23,7 +23,6 @@ TODO (to remove):
  - `.pki` (nssdb, use firejail)
  - `.wicd`
  - `.rootrc` (root.cern.ch)
- - `.eltclshrc`
 
 ## Install
 

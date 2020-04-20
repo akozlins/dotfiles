@@ -11,7 +11,6 @@ files=(
 
     .bashrc
     .dmrc
-    .eltclshrc
     .pam_environment
     .profile
     .rootrc

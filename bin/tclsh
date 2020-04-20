@@ -1,6 +1,7 @@
 #!/bin/sh
 set -euf
 
+export HOME="$DOTFILES"
+
 exec \
-eltclsh \
-    "$@"
+eltclsh "$@"
