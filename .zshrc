@@ -6,7 +6,7 @@
 
 
 
-export HISTFILE="$XDG_CACHE_HOME/.zsh_history"
+export HISTFILE="$XDG_DATA_HOME/.zsh_history"
 export HISTORY_IGNORE="(reboot|reset|rm *|sudo rm *|mv *|sudo mv *|cp *|sudo cp *|ls *|la *)"
 export ZLE_REMOVE_SUFFIX_CHARS=""
 export ZLE_SPACE_SUFFIX_CHARS=""

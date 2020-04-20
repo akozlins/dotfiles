@@ -12,7 +12,7 @@ bind -f "$DOTFILES/.inputrc"
 
 
 
-export HISTFILE="$XDG_CACHE_HOME/.bash_history"
+export HISTFILE="$XDG_DATA_HOME/.bash_history"
 export HISTFILESIZE=65536
 export HISTSIZE=4096
 export HISTCONTROL="ignoreboth:erasedups"
