@@ -29,7 +29,7 @@ run "/usr/bin/gxkb" 4s
 run "/usr/bin/pasystray" 4s
 
 run "/usr/bin/xscreensaver" 4s
-run "/usr/bin/xss-lock" 5s -- ~/bin/lock.sh
+run "/usr/bin/xss-lock" 5s -l -- ~/bin/lock.sh
 
 run "$HOME/bin/easystroke" 5s
 

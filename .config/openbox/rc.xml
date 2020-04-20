@@ -213,7 +213,7 @@
   </keybind>
   <keybind key="W-l">
     <action name="Execute">
-      <command>~/bin/lock.sh</command>
+      <command>xset s activate</command>
     </action>
   </keybind>
   <keybind key="W-e">
