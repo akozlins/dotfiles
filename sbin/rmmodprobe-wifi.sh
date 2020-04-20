@@ -1,10 +1,11 @@
 #!/bin/sh
 set -euf
 
+if [ "$(id -u)" -ne 0 ] ; then
+    exec sudo "$0" "$@"
+fi
+
 # reload wifi modules
 
-rmmod iwldvm
-rmmod iwlwifi
-sleep 1
-modprobe iwlwifi
-modprobe iwldvm
+modprobe -v -r iwldvm
+modprobe -v iwlwifi
