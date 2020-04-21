@@ -2,16 +2,13 @@
 set -uf
 
 run() {
+    delay="$1"
+    shift
     cmd="$1"
     shift
 
-    if [ $# -ge 1 ] ; then
-        sleep=$1
-        shift
-    fi
-
     (
-        [ -n "${sleep:+x}" ] && sleep "$sleep"
+        sleep "$delay"
         [ -n "$(pidof "$cmd")" ] || exec "$cmd" "$@" > /dev/null 2>&1
     ) &
 }
@@ -20,12 +17,12 @@ run() {
 /usr/bin/xset r rate 250 25
 /usr/bin/xset b off
 
-run "$HOME/bin/fbpanel" 2s
-run "$HOME/bin/conky" 3s
+run 2s "$HOME/bin/fbpanel"
+run 3s "$HOME/bin/conky"
 
-run "/usr/bin/xscreensaver" 4s
-run "/usr/bin/xss-lock" 5s -l -- ~/bin/lock.sh
+run 4s "/usr/bin/xscreensaver"
+run 5s "/usr/bin/xss-lock" -l -- ~/bin/lock.sh
 
-run "$HOME/bin/easystroke" 5s
+run 5s "$HOME/bin/easystroke"
 
 #[ -x "$DOTFILES/opt/setlayout/setlayout" ] && "$DOTFILES/opt/setlayout/setlayout" 0 4 2 0
