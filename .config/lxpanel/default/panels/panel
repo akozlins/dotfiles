@@ -1,0 +1,183 @@
+# lxpanel <profile> config file. Manually editing is not recommended.
+# Use preference dialog in lxpanel to adjust config when you can.
+
+Global {
+  edge=bottom
+  allign=left
+  margin=0
+  widthtype=percent
+  width=100
+  height=30
+  transparent=0
+  tintcolor=#000000
+  alpha=0
+  setdocktype=1
+  setpartialstrut=1
+  usefontcolor=0
+  fontcolor=#ffffff
+  usefontsize=1
+  fontsize=12
+  background=0
+  backgroundfile=/usr/share/lxpanel/images/background.png
+  align=center
+  iconsize=30
+}
+Plugin {
+  type=menu
+  Config {
+    image=/usr/share/lxpanel/images/my-computer.png
+    system {
+    }
+    separator {
+    }
+    item {
+      command=run
+    }
+    separator {
+    }
+    item {
+      image=gnome-logout
+      command=logout
+    }
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=8
+  }
+}
+Plugin {
+  type=separator
+  Config {
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=8
+  }
+}
+Plugin {
+  type=launchbar
+  Config {
+    Button {
+      id=uxterm.desktop
+    }
+    Button {
+      id=pcmanfm.desktop
+    }
+    Button {
+      id=firefox.desktop
+    }
+    Button {
+      id=vpn.desktop
+    }
+    Button {
+      id=lock.desktop
+    }
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=8
+  }
+}
+Plugin {
+  type=separator
+  Config {
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=8
+  }
+}
+Plugin {
+  type=taskbar
+  expand=1
+  Config {
+    tooltips=1
+    IconsOnly=0
+    AcceptSkipPager=1
+    ShowIconified=1
+    ShowMapped=1
+    ShowAllDesks=0
+    UseMouseWheel=0
+    UseUrgencyHint=-1
+    FlatButton=0
+    MaxTaskWidth=150
+    spacing=1
+    SameMonitorOnly=0
+    DisableUpscale=0
+    UseSmallerIcons=-1
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=8
+  }
+}
+Plugin {
+  type=separator
+  Config {
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=8
+  }
+}
+Plugin {
+  type=tray
+  Config {
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=8
+  }
+}
+Plugin {
+  type=separator
+  Config {
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=8
+  }
+}
+Plugin {
+  type=batt
+  Config {
+    BackgroundColor=black
+    ChargingColor1=#28f200
+    ChargingColor2=#22cc00
+    DischargingColor1=#ffee00
+    DischargingColor2=#d9ca00
+    HideIfNoBattery=1
+    AlarmCommand=notify-send "Battery low" --icon=battery-caution
+    AlarmTime=5
+    BorderWidth=2
+    Size=16
+    ShowExtendedInformation=0
+    BatteryNumber=0
+  }
+}
+Plugin {
+  type=dclock
+  Config {
+    ClockFmt=%R
+    TooltipFmt=%F %A
+    BoldFont=1
+    IconOnly=0
+    CenterText=0
+  }
+}

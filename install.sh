@@ -31,6 +31,7 @@ files=(
     .config/htop
     .config/intellij-idea
     .config/ipe
+    .config/lxpanel
     .config/mc
     .config/micro
     .config/mplayer
