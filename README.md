@@ -21,7 +21,6 @@ TODO (to remove):
  - `.xsession-errors`
  - `.android` (adb)
  - `.pki` (nssdb, use firejail)
- - `.wicd`
 
 ## Install
 
