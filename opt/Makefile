@@ -1,13 +1,13 @@
 
 oh-my-zsh/.git :
-	( cd ../.cache && git clone https://github.com/robbyrussell/oh-my-zsh )
+	( cd ../.local/share && git clone https://github.com/robbyrussell/oh-my-zsh )
 
 .PHONY : oh-my-zsh
 oh-my-zsh : oh-my-zsh/.git
 	( cd $@ && git stash && git pull )
 
 far2l/.git :
-	( cd ../.cache && git clone https://github.com/elfmz/far2l )
+	( cd ../.local/share && git clone https://github.com/elfmz/far2l )
 
 far2l/history : far2l/.git
 	mkdir -pv far2l/history/k-Editor/k-LastPositions
@@ -26,7 +26,7 @@ far2l : far2l/.git far2l/history
 	( cd far2l/build && cmake -DCMAKE_BUILD_TYPE=Release .. && $(MAKE) )
 
 fbpanel/.git :
-	( cd ../.cache && git clone https://github.com/aanatoly/fbpanel )
+	( cd ../.local/share && git clone https://github.com/aanatoly/fbpanel )
 
 .PHONY : fbpanel
 fbpanel : fbpanel/.git
@@ -36,7 +36,7 @@ fbpanel : fbpanel/.git
 	( cd fbpanel && ./configure --prefix="$(HOME)/.local" && $(MAKE) V=1 && $(MAKE) install )
 
 direnv/.git :
-	( cd ../.cache && git clone https://github.com/direnv/direnv )
+	( cd ../.local/share && git clone https://github.com/direnv/direnv )
 	( cd direnv && ln -snv vendor src )
 
 .PHONY : direnv
