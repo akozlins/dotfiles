@@ -3,6 +3,8 @@ set -euf
 
 export HOME="$DOTFILES"
 
+mkdir -pv "$XDG_CACHE_HOME/ipe"
+
 exec \
 /usr/bin/ipe "$@" \
 > /dev/null 2>&1 &

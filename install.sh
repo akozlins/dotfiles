@@ -55,8 +55,6 @@ files=(
     .config/user-dirs.dirs
 )
 
-mkdir -pv "$HOME/.cache/ipe"
-
 for file in "${files[@]}" ; do
     src="$DOTFILES/$file"
     dst="$HOME/$file"
