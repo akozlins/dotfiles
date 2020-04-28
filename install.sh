@@ -38,7 +38,7 @@ for file in "${files[@]}" ; do
         read -r -p "Overwrite? [y,n,q,?] " sel
         case "$sel" in
             y)
-                rm -v "$dst"
+                rm -rv "$dst"
                 ;;
             n)
                 continue
