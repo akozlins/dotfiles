@@ -9,50 +9,14 @@ cd "$DOTFILES" || exit 1
 files=(
     bin
 
+    .config
+
     .bashrc
     .dmrc
     .pam_environment
     .profile
     .xsession
     .zshrc
-
-    .config/aspell
-    .config/conky
-    .config/easystroke
-    .config/far2l
-    .config/fbpanel
-    .config/firefox
-    .config/firejail
-    .config/fontconfig
-    .config/git
-    .config/gtk-3.0
-    .config/gxkb
-    .config/htop
-    .config/intellij-idea
-    .config/ipe
-    .config/lxpanel
-    .config/mc
-    .config/micro
-    .config/mplayer
-    .config/nano
-    .config/npm
-    .config/openbox
-    .config/pacman
-    .config/parallel
-    .config/pcmanfm
-    .config/pulse/client.conf
-    .config/pulse/default.pa
-    .config/root
-    .config/systemd
-    .config/tmux
-    .config/unison
-    .config/vim
-    .config/vlc
-    .config/yaourt
-
-    .config/mimeapps.list
-    .config/pavucontrol.ini
-    .config/user-dirs.dirs
 )
 
 for file in "${files[@]}" ; do
