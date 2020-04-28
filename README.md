@@ -20,7 +20,6 @@ TODO (to remove):
  - `.Xauthority`
  - `.xsession-errors`
  - `.android` (adb)
- - `.pki` (nssdb, use firejail)
 
 ## Install
 

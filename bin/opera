@@ -2,13 +2,13 @@
 set -euf
 
 unset CDPATH
-#export HOME="$DOTFILES"
+export HOME="$DOTFILES"
 cd "$HOME" || exit 1
 
 CMD=("/usr/bin/opera" -nomail -nomaillinks -nolirc "$@")
 
 FJ="/usr/bin/firejail"
-[ -x "$FJ" ] && CMD=("$FJ" -- "${CMD[@]}")
+#[ -x "$FJ" ] && CMD=("$FJ" -- "${CMD[@]}")
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &
