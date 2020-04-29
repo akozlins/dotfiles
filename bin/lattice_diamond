@@ -1,12 +1,10 @@
 #!/bin/sh
 set -euf
 
-export LM_LICENSE_FILE="$HOME/.config/lattice/license.dat"
+export LM_LICENSE_FILE="$LATTICE_LICENSE_FILE"
 
 export HOME="$DOTFILES"
 
-bindir=/usr/local/diamond/3.11_x64/bin/lin64
-
 exec \
-"$bindir"/diamond "$@" \
+"$LATTICE_DIAMOND_HOME/bin/lin64/diamond" "$@" \
 > /dev/null 2>&1 &
