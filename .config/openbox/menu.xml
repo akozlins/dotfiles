@@ -25,10 +25,8 @@
   <separator label="Applications"/>
 
   <item label="uxterm"><action name="Execute"><command>uxterm</command></action></item>
-  <item label="far"><action name="Execute"><command>~/bin/far.sh</command></action></item>
   <item label="far2l"><action name="Execute"><command>~/bin/far2l</command></action></item>
   <item label="firefox"><action name="Execute"><execute>~/bin/firefox</execute></action></item>
-  <item label="eclipse"><action name="Execute"><execute>~/bin/eclipse</execute></action></item>
 
   <separator label="System"/>
 
