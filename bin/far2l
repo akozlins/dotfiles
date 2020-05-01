@@ -1,12 +1,16 @@
 #!/bin/sh
 set -euf
 
-far2l="$DOTFILES/opt/far2l/build/install/far2l"
+far2l="$HOME/.local/bin/far2l"
 
 if [ ! -x "$far2l" ] ; then
     echo "ERROR: '$far2l' not found"
     exit 1
 fi
+
+mkdir -pv "$XDG_CACHE_HOME/far2l/cache"
+mkdir -pv "$XDG_CACHE_HOME/far2l/history"
+mkdir -pv "$XDG_CACHE_HOME/far2l/sr"
 
 exec \
 "$far2l" "$@" \
