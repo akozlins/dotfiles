@@ -7,7 +7,7 @@ oh-my-zsh : oh-my-zsh/.git
 	( cd $@ && git stash && git pull )
 
 far2l/.git :
-	( cd ../.local/share && git clone https://github.com/elfmz/far2l )
+	( cd ../.cache && git clone https://github.com/elfmz/far2l )
 
 far2l/history : far2l/.git
 	mkdir -pv far2l/history/k-Editor/k-LastPositions
@@ -23,10 +23,10 @@ far2l : far2l/.git far2l/history
 	# install cmake, wxgtk2 (wxWidgets)
 	patch -d far2l -p1 < far2l.patch
 	mkdir -pv far2l/build
-	( cd far2l/build && cmake -DCMAKE_BUILD_TYPE=Release .. && $(MAKE) )
+	( cd far2l/build && cmake -DCMAKE_INSTALL_PREFIX="$(HOME)/.local" -DCMAKE_BUILD_TYPE=Release .. && $(MAKE) && $(MAKE) install )
 
 fbpanel/.git :
-	( cd ../.local/share && git clone https://github.com/aanatoly/fbpanel )
+	( cd ../.cache && git clone https://github.com/aanatoly/fbpanel )
 
 .PHONY : fbpanel
 fbpanel : fbpanel/.git
