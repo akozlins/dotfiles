@@ -3,8 +3,11 @@ set -euf
 
 CMD=("/usr/bin/skypeforlinux" "$@")
 
+private="$XDG_CACHE_HOME/skype"
+mkdir -pv "$private"
+
 FJ="/usr/bin/firejail"
-[ -x "$FJ" ] && CMD=("$FJ" -- "${CMD[@]}")
+[ -x "$FJ" ] && CMD=("$FJ" "--private=$private" -- "${CMD[@]}")
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &
