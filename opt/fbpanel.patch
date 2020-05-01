@@ -1,17 +1,5 @@
---- a/.config/help
-+++ b/.config/help
-@@ -1,2 +1,2 @@
--#!/usr/bin/python
-+#!/usr/bin/python2
- 
 --- a/.config/repl.py
 +++ b/.config/repl.py
-@@ -1,2 +1,2 @@
--#!/usr/bin/python
-+#!/usr/bin/python2
- 
---- a/.config/tar.py
-+++ b/.config/tar.py
 @@ -1,2 +1,2 @@
 -#!/usr/bin/python
 +#!/usr/bin/python2
@@ -21,6 +9,13 @@
 @@ -1,2 +1,2 @@
 -#!/usr/bin/python
 +#!/usr/bin/python2
+ 
+--- a/panel/plugin.h
++++ b/panel/plugin.h
+@@ -11,3 +11,3 @@
+ 
+-struct _plugin_instance *stam;
++struct _plugin_instance;
  
 --- a/panel/panel.c
 +++ b/panel/panel.c
