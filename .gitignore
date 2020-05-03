@@ -1,5 +1,6 @@
-/.altera.quartus
-/.epspdf
-/.pki
-/.steam*
-/.Xilinx
+.altera.quartus/*
+.epspdf/*
+.mozilla/*
+.pki/*
+.steam/*
+.Xilinx/*
