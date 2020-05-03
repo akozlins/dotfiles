@@ -2,4 +2,4 @@
 Rint.Logon: $(HOME)/.config/root/rootlogon.c
 Rint.WelcomeLite: yes
 
-Rint.History: $(HOME)/.config/root/.root_hist
+Rint.History: $(HOME)/.cache/.root_hist
