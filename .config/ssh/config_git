@@ -1,0 +1,19 @@
+
+Host github.com
+    HostName github.com
+    CheckHostIP no
+    User git
+    IdentityFile ~/.ssh/id_github_com
+
+Host bitbucket.org
+    HostName bitbucket.org
+    CheckHostIP no
+    User git
+    IdentityFile ~/.ssh/id_bitbucket_org
+    ControlMaster no
+
+Host gitlab.rlp.net
+    HostName gitlab.rlp.net
+    CheckHostIP no
+    User git
+    IdentityFile ~/.ssh/id_gitlab_rlp_net

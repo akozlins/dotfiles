@@ -1,0 +1,6 @@
+
+Match all
+
+Include ~/.config/ssh/config_git
+
+Include ~/.config/ssh/config_host
