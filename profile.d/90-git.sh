@@ -1,7 +1,6 @@
 #!/bin/sh
 
 if [ -z "${GIT_AUTHOR_NAME:+x}" ] ; then
-    >&2 echo "WARN: GIT_AUTHOR_NAME is not defined"
     export GIT_AUTHOR_NAME="$USER"
 fi
 
