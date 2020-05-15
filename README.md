@@ -13,7 +13,7 @@ Current list of _allowed_ `.` files:
  - `.bashrc`
  - `.zshrc`
  - `.dmrc`
- - `.xsession`
+ - `.xprofile`
 
 TODO (to remove):
 

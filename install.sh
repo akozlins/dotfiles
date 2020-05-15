@@ -15,7 +15,7 @@ files=(
     .dmrc
     .pam_environment
     .profile
-    .xsession
+    .xprofile
     .zshrc
 )
 
