@@ -6,13 +6,14 @@ echo "DOTFILES = '$DOTFILES'"
 unset CDPATH
 cd "$DOTFILES" || exit 1
 
+mkdir -p "$HOME/downloads"
+
 files=(
     bin
 
     .config
 
     .bashrc
-    .dmrc
     .pam_environment
     .profile
     .xprofile
