@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export MY_XPROFILE_DATE="$MY_XPROFILE_DATE:$(date +%s.%3N)"
+
 if [ -z "${DOTFILES:+x}" ] ; then
     . "$HOME/.profile"
 fi

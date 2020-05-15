@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export MY_PROFILE_DATE="$MY_PROFILE_DATE:$(date +%s.%3N)"
+
 DOTFILES=$(dirname -- "$(readlink -e -- "$HOME/.profile")")
 export DOTFILES
 export PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"
