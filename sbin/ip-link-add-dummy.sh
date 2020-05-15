@@ -12,12 +12,12 @@ while [[ $# -gt 0 ]] ; do
     case $1 in
     --name)
         shift
-        MYNAME=$2
+        MYNAME=$1
         shift
         ;;
     --mac)
         shift
-        MYMAC=$2
+        MYMAC=$1
         shift
         ;;
     --delete)
