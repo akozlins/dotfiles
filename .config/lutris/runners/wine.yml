@@ -1,7 +1,5 @@
 system: {}
 wine:
   Desktop: true
-  ShowCrashDialog: true
   WineDesktop: 1920x1080
   dxvk: true
-  esync: true

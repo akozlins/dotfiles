@@ -6,7 +6,7 @@ Minimize number of `.` files in `$HOME` directory.
 
 Current list of _allowed_ `.` files:
 
- - XDG : `.cache/`, `.config/` and `.local/`
+ - `XDG` : `.cache/`, `.config/` and `.local/`
  - `.ssh/`
  - `.pam_environment`
  - `.profile`
