@@ -15,7 +15,7 @@ xterm*vt100.geometry: 100x30
 xterm*vt100.geometry: 110x35
 #endif
 
-xterm*font: 9x15
+xterm*font: -*-fixed-*-*-*-*-15-*-*-*-*-*-iso8859-*
 xterm*vt100.background:         grey25
 xterm*vt100.foreground:         white
 
