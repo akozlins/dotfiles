@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euf
 
-CMD=("/usr/bin/unison-gtk2" -logfile "$UNISON/unison.log" "-watch=false" "$@")
+CMD=("/usr/bin/unison-gtk2" -logfile "$HOME/.cache/unison.log" "-watch=false" "$@")
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &

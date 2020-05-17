@@ -7,11 +7,6 @@ cd "$HOME" || exit 1
 
 profile="$XDG_CONFIG_HOME/firefox/default"
 
-if [ ! -f "$profile/prefs.js" ] ; then
-    echo "ERROR: profile '$profile' not found"
-    exit 1
-fi
-
 CMD=("/usr/bin/firefox" --profile "$profile" "$@")
 
 FJ="/usr/bin/firejail"

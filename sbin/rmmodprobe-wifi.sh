@@ -6,6 +6,5 @@ if [ "$(id -u)" -ne 0 ] ; then
 fi
 
 # reload wifi modules
-
 modprobe -v -r iwldvm
 modprobe -v iwlwifi

@@ -3,3 +3,5 @@ wine:
   Desktop: true
   WineDesktop: 1920x1080
   dxvk: true
+  overrides:
+    winemenubuilder.exe: d

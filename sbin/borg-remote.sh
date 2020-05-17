@@ -21,6 +21,7 @@ while
     [ "$PORT" -lt 16384 ] || nc -z localhost "$PORT"
 do continue ; done
 
+date --iso-8601=seconds
 borg --version
 
 socat -d \

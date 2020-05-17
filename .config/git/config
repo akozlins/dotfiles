@@ -1,5 +1,7 @@
 #
 
+[commit]
+
 [core]
 	editor = nano
 	autocrlf = input
@@ -7,8 +9,6 @@
 
 [diff]
 	tool = meld
-
-[commit]
 
 [merge]
 	commit = no
