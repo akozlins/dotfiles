@@ -4,16 +4,10 @@ if [ -z "${ALTERAD_LICENSE_FILE:+x}" ] ; then
     export ALTERAD_LICENSE_FILE=
 fi
 
-export QUARTUS_ROOTDIR="/opt/altera/18.0/quartus"
-[ -d "$QUARTUS_ROOTDIR" ] || return
-QUARTUS_ROOTDIR_PARENT=$(readlink -f -- "$QUARTUS_ROOTDIR/..")
+QUARTUS_ROOTDIR_PARENT="/opt/intelFPGA/18.1"
+export QUARTUS_ROOTDIR="$QUARTUS_ROOTDIR_PARENT/quartus"
 
-if [ "$(uname -m)" = "x86_64" ] ; then
-    QUARTUS_64BIT='1'
-else
-    QUARTUS_64BIT='0'
-fi
-export QUARTUS_64BIT
+export QUARTUS_64BIT=1
 
 export PATH="$PATH:$QUARTUS_ROOTDIR/bin"
 
