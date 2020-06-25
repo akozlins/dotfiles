@@ -1,0 +1,9 @@
+{
+    "editor.renderWhitespace": "all",
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.dragAndDrop": false,
+    "files.enableTrash": false,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false
+}
