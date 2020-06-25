@@ -6,14 +6,11 @@ Minimize number of `.` files in `$HOME` directory.
 
 Current list of _allowed_ `.` files:
 
- - `XDG` : `.cache/`, `.config/` and `.local/`
+ - `.cache/`, `.config/`, `.local/`
  - `.ssh/`
  - `.pam_environment`
- - `.profile`
- - `.bashrc`
- - `.zshrc`
- - `.dmrc`
- - `.xprofile`
+ - `.profile`, `.xprofile`
+ - `.bashrc`, `.zshrc`
 
 TODO (to remove):
 
