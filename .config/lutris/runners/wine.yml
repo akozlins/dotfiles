@@ -1,4 +1,5 @@
-system: {}
+system:
+  game_path: ''
 wine:
   Desktop: true
   WineDesktop: 1920x1080
