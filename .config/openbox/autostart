@@ -14,7 +14,7 @@ run() {
 }
 
 /usr/bin/xsetroot -solid black
-/usr/bin/xset r rate 250 25
+/usr/bin/xset r rate 200 40
 /usr/bin/xset b off
 
 run 2s "$HOME/bin/fbpanel"
