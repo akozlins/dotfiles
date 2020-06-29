@@ -17,3 +17,18 @@ geant4 : geant4/.git
 	    -DGEANT4_USE_OPENGL_X11=ON \
 	    ..
 	$(MAKE)
+	#$(MAKE) install
+
+root/.git :
+	cd ../.cache
+	git clone https://github.com/root-project/root
+
+.PHONY : root
+root : root/.git
+	mkdir -p root/build
+	cd root/build
+	cmake \
+	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local" \
+	    ..
+	$(MAKE)
+	#$(MAKE) install
