@@ -1,5 +1,7 @@
-*-sink
-*-source
-*.tdb
+#
 
-cookie
+/*-sink
+/*-source
+/*.tdb
+
+/cookie

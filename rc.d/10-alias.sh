@@ -14,3 +14,4 @@ alias la='ls -lAF'
 alias make='LC_ALL=C make'
 
 alias ag="ag --hidden"
+alias rg="rg --hidden"

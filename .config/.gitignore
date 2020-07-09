@@ -1,2 +1,12 @@
+#
+
+/chromium/
+/geeqie/
+/gnupg/
+/unity3d
+/LatticeSemi/
+/VirtualBox/
+
+/Trolltech.conf
+
 accels
-Trolltech.conf
