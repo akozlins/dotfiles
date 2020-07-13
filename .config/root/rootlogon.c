@@ -23,6 +23,11 @@ void set_plot_style()
 void rootlogon() {
     gSystem->Load("libCLHEP");
 
+    // <https://root.cern.ch/doc/master/classTAttText.html>
+    int fontNumber = 4, // helvetica-medium-r-normal - "Arial"
+        fontPrecision = 2, // scalable and rotatable hardware fonts
+        fontCode = 10 * fontNumber + fontPrecision;
+
     gStyle->SetCanvasDefW(480+4);
     gStyle->SetCanvasDefH(480+28);
     gStyle->SetCanvasDefX(0);
@@ -35,12 +40,12 @@ void rootlogon() {
         gStyle->SetCanvasDefY(556);
     }
 
-    gStyle->SetTitleFont(132, "_");
-    gStyle->SetTitleFont(132, "xyz");
-    gStyle->SetLabelFont(132, "xyz");
+    gStyle->SetTitleFont(fontCode, "_");
+    gStyle->SetTitleFont(fontCode, "xyz");
+    gStyle->SetLabelFont(fontCode, "xyz");
     gStyle->SetLabelSize(0.035, "xyz");
 
-    gStyle->SetStatFont(132);
+    gStyle->SetStatFont(fontCode);
     gStyle->SetStatX(0.99);
     gStyle->SetStatY(0.99);
     gStyle->SetStatW(0.2);
@@ -51,8 +56,8 @@ void rootlogon() {
     gStyle->SetFrameLineWidth(2);
 
 //    gStyle->SetFillColor(0);
-    gStyle->SetTextFont(132);
-    gStyle->SetLegendFont(132);
+    gStyle->SetTextFont(fontCode);
+    gStyle->SetLegendFont(fontCode);
 
     gStyle->SetPadTopMargin(0.10);
     gStyle->SetPadBottomMargin(0.12);
