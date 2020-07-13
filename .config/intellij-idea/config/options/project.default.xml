@@ -1,7 +1,6 @@
 <application>
   <component name="ProjectManager">
     <defaultProject>
-      <component name="Encoding" addBOMForNewFiles="with NO BOM" />
       <component name="PropertiesComponent">
         <property name="android.sdk.path" value="/opt/android-sdk" />
       </component>
