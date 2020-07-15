@@ -13,9 +13,12 @@ run() {
     ) &
 }
 
-/usr/bin/xsetroot -solid black
-/usr/bin/xset r rate 200 40
+# disable bell
 /usr/bin/xset b off
+# set autorepeat (delay 200 ms, rate 40)
+/usr/bin/xset r rate 200 40
+# set black background
+/usr/bin/xsetroot -solid black
 
 run 2s "$HOME/bin/fbpanel"
 run 3s "$HOME/bin/conky"
