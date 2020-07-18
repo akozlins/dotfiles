@@ -4,7 +4,7 @@ set -euf
 
 IFS="$(printf '\n\t')"
 unset CDPATH
-cd "$(dirname -- "$(readlink -e -- "$0")")" || exit 1
+cd "$(dirname -- "$(readlink -f -- "$0")")" || exit 1
 
 PATH="$(getconf PATH)"
 export PATH

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euf
 
-DOTFILES=$(dirname -- "$(readlink -e -- "$0")")
+DOTFILES=$(dirname -- "$(readlink -f -- "$0")")
 echo "DOTFILES = '$DOTFILES'"
 unset CDPATH
 cd "$DOTFILES" || exit 1
@@ -29,7 +29,7 @@ for file in "${files[@]}" ; do
         exit 1
     fi
 
-    if [ -e "$dst" ] && [ "$(readlink -e -- "$dst")" = "$(readlink -e -- "$src")" ] ; then
+    if [ -e "$dst" ] && [ "$(readlink -f -- "$dst")" = "$(readlink -f -- "$src")" ] ; then
         echo "INFO: '$dst' OK"
         continue;
     fi

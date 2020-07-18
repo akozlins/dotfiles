@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euf
 unset CDPATH
-cd "$(dirname -- "$(readlink -e -- "$0")")" || exit 1
+cd "$(dirname -- "$(readlink -f -- "$0")")" || exit 1
 
 [ -e bundle ] || mkdir -pv "$(readlink -- bundle)"
 

@@ -19,7 +19,7 @@ fi
 
 PREFIX="$HOST"
 
-dir="$(dirname -- "$(readlink -e -- "$0")")"
+dir="$(dirname -- "$(readlink -f -- "$0")")"
 "$dir/borg-remote.sh" "$HOST" "$REPO" \
     create \
     --verbose \

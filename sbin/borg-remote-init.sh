@@ -10,7 +10,7 @@ fi
 HOST="$1"
 REPO="$2"
 
-dir="$(dirname -- "$(readlink -e -- "$0")")"
+dir="$(dirname -- "$(readlink -f -- "$0")")"
 "$dir/borg-remote.sh" "$HOST" "$REPO" \
     init \
     -e none \
