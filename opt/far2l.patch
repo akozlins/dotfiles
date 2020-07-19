@@ -1,7 +1,6 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -67,16 +67,16 @@
- 
+@@ -172,16 +172,6 @@
  add_subdirectory (colorer)
  add_subdirectory (multiarc)
  add_subdirectory (tmppanel)
@@ -15,22 +14,16 @@
 -add_subdirectory (editorcomp)
 -add_subdirectory (inside)
 -add_subdirectory (incsrch)
-+#add_subdirectory (SimpleIndent)
-+#add_subdirectory (editcase)
-+#add_subdirectory (compare)
-+#add_subdirectory (filecase)
-+#add_subdirectory (align)
-+#add_subdirectory (autowrap)
-+#add_subdirectory (drawline)
-+#add_subdirectory (editorcomp)
-+#add_subdirectory (inside)
-+#add_subdirectory (incsrch)
  add_subdirectory (NetRocks)
  
+ if(PYTHON)
 --- a/far2l/bootstrap/roots.sh
 +++ b/far2l/bootstrap/roots.sh
-@@ -1,2 +1,4 @@
+@@ -1,5 +1,7 @@
  #!/bin/bash
-+
-+[ -x ~/.config/far2l/roots.sh ] && exec ~/.config/far2l/roots.sh "$@"
  
++[ -x ~/.config/far2l/roots.sh ] && exec ~/.config/far2l/roots.sh "$@"
++
+ ##########################################################
+ #This script used during FAR's Alt+F1/Alt+F2 menu building
+ #---------------------------------------------------------
