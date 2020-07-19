@@ -1,0 +1,6 @@
+#
+
+idea.config.path=${user.home}/.config/android-studio/config
+idea.system.path=${user.home}/.cache/android-studio/system
+idea.plugins.path=${user.home}/.cache/android-studio/plugins
+idea.log.path=${user.home}/.cache/android-studio/log

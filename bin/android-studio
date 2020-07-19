@@ -1,0 +1,12 @@
+#!/bin/bash
+set -euf
+
+export STUDIO_PROPERTIES="$XDG_CONFIG_HOME/android-studio/properties"
+
+CMD=("/usr/bin/android-studio" "$@")
+
+if [ $# -eq 0 ] ; then
+    exec "${CMD[@]}" > /dev/null 2>&1 &
+else
+    exec "${CMD[@]}"
+fi
