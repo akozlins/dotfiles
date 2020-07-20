@@ -13,6 +13,9 @@
 [merge]
 	commit = no
 
+[pull]
+	ff = only
+
 [status]
 	submoduleSummary = true
 

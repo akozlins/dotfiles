@@ -30,6 +30,7 @@ dir="$(dirname -- "$(readlink -f -- "$0")")"
     "${PATTERNS[@]}" \
     "ssh://$HOST/$REPO::$PREFIX-{utcnow:%Y%m%dT%H%M%S}"
 
+BORG_RELOCATED_REPO_ACCESS_IS_OK=y \
 borg prune \
     --verbose \
     --list \

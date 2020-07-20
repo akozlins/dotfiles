@@ -2,7 +2,7 @@
 set -euf
 
 if [ -z ${WINE_ROOT:+x} ] ; then
-    WINE_ROOT="$HOME/wine"
+    WINE_ROOT="$XDG_DATA_HOME/wine"
 fi
 export WINE_ROOT
 

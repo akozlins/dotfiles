@@ -1,5 +1,5 @@
 #!/bin/sh
-
+set -euf
 
 if [ -n "$(pidof lightdm)" ] ; then
     exec dm-tool switch-to-greeter

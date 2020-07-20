@@ -1,6 +1,6 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -172,16 +172,6 @@
+@@ -172,17 +172,6 @@
  add_subdirectory (colorer)
  add_subdirectory (multiarc)
  add_subdirectory (tmppanel)
@@ -14,9 +14,10 @@
 -add_subdirectory (editorcomp)
 -add_subdirectory (inside)
 -add_subdirectory (incsrch)
- add_subdirectory (NetRocks)
+-add_subdirectory (NetRocks)
  
  if(PYTHON)
+ 	find_package(PythonLibs 3.0)
 --- a/far2l/bootstrap/roots.sh
 +++ b/far2l/bootstrap/roots.sh
 @@ -1,5 +1,7 @@

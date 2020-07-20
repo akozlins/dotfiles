@@ -14,7 +14,7 @@ export HISTORY_IGNORE="(reboot|reset|rm *|sudo rm *|mv *|sudo mv *|cp *|sudo cp 
 export ZLE_REMOVE_SUFFIX_CHARS=""
 export ZLE_SPACE_SUFFIX_CHARS=""
 
-export ZSH_COMPDUMP="$HOME/.cache/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+export ZSH_COMPDUMP="$XDG_CACHE_HOME/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 
 
 
