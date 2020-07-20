@@ -10,7 +10,6 @@ user_pref("browser.bookmarks.showRecentlyBookmarked", false);
 user_pref("browser.ctrlTab.previews", true);
 
 user_pref("browser.download.animateNotifications", false);
-user_pref("browser.download.dir", "/home/akozlins/downloads");
 
 user_pref("browser.fullscreen.animate", false);
 
