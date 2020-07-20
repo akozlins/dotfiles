@@ -2,6 +2,8 @@
 
 [[ $- == *i* ]] || return
 
+export MY_BASHRC_DATE="$MY_BASHRC_DATE:$(date +%s.%3N)"
+
 . "$HOME/.profile"
 
 

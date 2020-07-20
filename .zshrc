@@ -2,6 +2,8 @@
 
 [[ -o interactive ]] || return
 
+export MY_ZSHRC_DATE="$MY_ZSHRC_DATE:$(date +%s.%3N)"
+
 . "$HOME/.profile"
 
 
