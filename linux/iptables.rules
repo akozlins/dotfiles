@@ -15,6 +15,9 @@
 -A INPUT -p icmp -m icmp --icmp-type 8 -m conntrack --ctstate NEW -j ACCEPT
 -A INPUT -p icmp -m icmp --icmp-type 11 -m conntrack --ctstate NEW -j ACCEPT
 
+# allow GRE (Generic Routing Encapsulation) to enable PPTP
+-A INPUT -p gre -j ACCEPT
+
 # UDP
 -A INPUT -p udp -m conntrack --ctstate NEW -j UDP
 
