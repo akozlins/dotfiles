@@ -28,22 +28,15 @@ void rootlogon() {
         fontPrecision = 2, // scalable and rotatable hardware fonts
         fontCode = 10 * fontNumber + fontPrecision;
 
-    gStyle->SetCanvasDefW(480+4);
-    gStyle->SetCanvasDefH(480+28);
-    gStyle->SetCanvasDefX(0);
-    gStyle->SetCanvasDefY(479);
-
-    if(0 == strcmp(gSystem->HostName(), "gpu16")) {
-        gStyle->SetCanvasDefW(640+4);
-        gStyle->SetCanvasDefH(640+28);
-        gStyle->SetCanvasDefX(0);
-        gStyle->SetCanvasDefY(556);
-    }
+    gStyle->SetCanvasDefW(640+4);
+    gStyle->SetCanvasDefH(640+28);
+//    gStyle->SetCanvasDefX(0);
+//    gStyle->SetCanvasDefY(0);
 
     gStyle->SetTitleFont(fontCode, "_");
     gStyle->SetTitleFont(fontCode, "xyz");
     gStyle->SetLabelFont(fontCode, "xyz");
-    gStyle->SetLabelSize(0.035, "xyz");
+    gStyle->SetLabelSize(0.045, "xyz");
 
     gStyle->SetStatFont(fontCode);
     gStyle->SetStatX(0.99);
@@ -61,8 +54,8 @@ void rootlogon() {
 
     gStyle->SetPadTopMargin(0.10);
     gStyle->SetPadBottomMargin(0.12);
-    gStyle->SetPadRightMargin(0.12);
-    gStyle->SetPadLeftMargin(0.12);
+    gStyle->SetPadRightMargin(0.13);
+    gStyle->SetPadLeftMargin(0.13);
     gStyle->SetTitleXOffset(1.05);
     gStyle->SetTitleYOffset(1.15);
     gStyle->SetTitleXSize(0.05);
@@ -71,6 +64,7 @@ void rootlogon() {
     TGaxis::SetMaxDigits(3);
 
     set_plot_style();
+//    gStyle->SetPalette(kViridis);
 
     gROOT->ForceStyle();
 }
