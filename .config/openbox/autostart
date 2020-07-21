@@ -23,8 +23,13 @@ run() {
 run 2s "$HOME/bin/fbpanel"
 run 3s "$HOME/bin/conky"
 
-run 4s "/usr/bin/xscreensaver"
-run 5s "/usr/bin/xss-lock" -l -- ~/bin/lock.sh
+run 1s "/usr/bin/xss-lock" -l -- ~/bin/lock.sh
+
+if [ -x "/usr/bin/xsecurelock" ] ; then
+    true
+elif [ -x "/usr/bin/xscreensaver" ] ; then
+    run 1s "/usr/bin/xscreensaver"
+fi
 
 run 5s "$HOME/bin/easystroke"
 
