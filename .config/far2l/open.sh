@@ -4,6 +4,8 @@ set -euf
 mime=$(xdg-mime query filetype "$1")
 
 case "$mime" in
+    inode/*)
+        ;;
     application/pdf)
         exec evince "$1"
         ;;
