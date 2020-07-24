@@ -1,0 +1,19 @@
+#!/bin/sh
+set -euf
+
+restart_wifi() {
+    logger "$0" "modprobe -v -r iwldvm"
+    modprobe -v -r iwldvm
+    logger "$0" "modprobe -v iwlwifi"
+    modprobe -v iwlwifi
+#    logger "$0" "systemctl restart NetworkManager.service"
+#    systemctl restart NetworkManager.service
+}
+
+case $1 in
+    pre)
+        ;;
+    post)
+        restart_wifi
+        ;;
+esac

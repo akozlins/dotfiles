@@ -1,0 +1,4 @@
+[NetDev]
+Name=bond0
+Kind=dummy
+MACAddress=00:00:00:00:00:00
