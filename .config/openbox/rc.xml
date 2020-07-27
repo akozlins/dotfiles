@@ -222,6 +222,12 @@
     </action>
   </keybind>
 
+  <keybind key="C-q">
+    <action name="Execute">
+      <command>~/.config/openbox/filterkey.tcl Firefox ctrl+q</command>
+    </action>
+  </keybind>
+
   <keybind key="W-d"><action name="ToggleShowDesktop"/></keybind>
   <keybind key="W-r"><action name="Execute"><command>gmrun</command></action></keybind>
 </keyboard>
