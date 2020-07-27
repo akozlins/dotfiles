@@ -3,10 +3,14 @@
 /chromium/
 /geeqie/
 /gnupg/
-/unity3d
+/libreoffice/
+/solaar/
+/unity3d/
 /LatticeSemi/
 /VirtualBox/
 
+/kactivitymanagerdrc
+/kglobalshortcutsrc
 /QtProject.conf
 /Trolltech.conf
 
