@@ -375,10 +375,10 @@
 
   <context name="Desktop">
     <mousebind button="Up" action="Click">
-      <action name="GoToDesktop"><to>previous</to></action>
+      <action name="GoToDesktop"><to>previous</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="Down" action="Click">
-      <action name="GoToDesktop"><to>next</to></action>
+      <action name="GoToDesktop"><to>next</to><wrap>no</wrap></action>
     </mousebind>
 
     <mousebind button="Left" action="Press">
