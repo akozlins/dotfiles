@@ -14,23 +14,23 @@ run() {
 }
 
 # disable bell
-/usr/bin/xset b off
+xset b off
 # set autorepeat (delay 200 ms, rate 40)
-/usr/bin/xset r rate 200 40
+xset r rate 200 40
 # set black background
-/usr/bin/xsetroot -solid black
+xsetroot -solid black
 
-run 2s "$HOME/bin/fbpanel"
-run 3s "$HOME/bin/conky"
+run 2s fbpanel
+run 3s conky
 
-run 1s "/usr/bin/xss-lock" -l -- ~/bin/lock.sh
+run 1s xss-lock -l -- "~/bin/lock.sh"
 
-if [ -x "/usr/bin/xsecurelock" ] ; then
+if command -v xsecurelock &> /dev/null ; then
     true
-elif [ -x "/usr/bin/xscreensaver" ] ; then
-    run 1s "/usr/bin/xscreensaver"
+elif command -v xscreensaver &> /dev/null ; then
+    run 1s xscreensaver
 fi
 
-run 5s "$HOME/bin/easystroke"
+run 5s easystroke
 
 #[ -x "$DOTFILES/opt/setlayout/setlayout" ] && "$DOTFILES/opt/setlayout/setlayout" 0 4 2 0
