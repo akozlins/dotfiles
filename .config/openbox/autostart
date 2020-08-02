@@ -20,10 +20,7 @@ xset r rate 200 40
 # set black background
 xsetroot -solid black
 
-run 2s fbpanel
-run 3s conky
-
-run 1s xss-lock -l -- "~/bin/lock.sh"
+run 1s xss-lock -l -- "$DOTFILES/bin/lock.sh"
 
 if command -v xsecurelock &> /dev/null ; then
     true
@@ -31,6 +28,6 @@ elif command -v xscreensaver &> /dev/null ; then
     run 1s xscreensaver
 fi
 
-run 5s easystroke
-
-#[ -x "$DOTFILES/opt/setlayout/setlayout" ] && "$DOTFILES/opt/setlayout/setlayout" 0 4 2 0
+run 2s fbpanel
+run 4s conky
+run 4s easystroke
