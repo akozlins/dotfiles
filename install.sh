@@ -21,25 +21,25 @@ files=(
 )
 
 for file in "${files[@]}" ; do
-    src="$DOTFILES/$file"
-    dst="$HOME/$file"
+    target="$DOTFILES/$file"
+    link="$HOME/$file"
 
-    if [ ! -e "$src" ] ; then
-        echo "ERROR: source '$src' does not exist"
+    if [ ! -e "$target" ] ; then
+        echo "ERROR: target '$target' does not exist"
         exit 1
     fi
 
-    if [ -e "$dst" ] && [ "$(readlink -f -- "$dst")" = "$(readlink -f -- "$src")" ] ; then
-        echo "INFO: '$dst' OK"
+    if [ -e "$link" ] && [ "$(readlink -f -- "$link")" = "$(readlink -f -- "$target")" ] ; then
+        echo "INFO: link '$link' is OK"
         continue;
     fi
 
-    if [ -e "$dst" ] ; then
-        echo "WARN: destination '$dst' exists"
+    if [ -e "$link" ] ; then
+        echo "WARN: link '$link' exists"
         read -r -p "Overwrite? [y,n,q,?] " sel
         case "$sel" in
             y)
-                rm -rv "$dst"
+                rm -rv "$link"
                 ;;
             n)
                 continue
@@ -54,11 +54,11 @@ for file in "${files[@]}" ; do
         esac
     fi
 
-    dstdir=$(dirname -- "$dst")
-    if [ -e "$src" ] && [ ! -d "$dstdir" ] ; then
-        mkdir -pv "$dstdir"
+    link_dir=$(dirname -- "$link")
+    if [ -e "$target" ] && [ ! -d "$link_dir" ] ; then
+        mkdir -pv "$link_dir"
     fi
-    ln -snv -T "$src" "$dst"
+    ln -snv -T "$target" "$link"
 done
 
 #ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
