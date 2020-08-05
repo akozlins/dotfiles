@@ -4,7 +4,6 @@ export MY_PROFILE_DATE="$MY_PROFILE_DATE:$(date +%s.%3N)"
 
 DOTFILES=$(dirname -- "$(readlink -f -- "$HOME/.profile")")
 export DOTFILES
-export PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"
 
 
 
@@ -115,3 +114,7 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME/.nv"
 for f in "$DOTFILES"/profile.d/?*.sh ; do
     [ -f "$f" ] && . "$f"
 done
+
+
+
+export PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"
