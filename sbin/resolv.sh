@@ -168,8 +168,7 @@ EOF
         ;;
     [v]* )
         systemctl -q is-active "$VPN" && systemctl stop "$VPN"
-        ping -c 1 hz11
-        [ $? -eq 0 ] && systemctl start "$VPN"
+        ping -c 1 hz11 && systemctl start "$VPN"
         continue;
         ;;
     [w]* )

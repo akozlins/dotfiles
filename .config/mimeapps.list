@@ -1,6 +1,6 @@
 [Added Associations]
-application/pdf=evince.desktop
-application/postscript=evince.desktop
+application/pdf=org.gnome.Evince.desktop;
+application/postscript=org.gnome.Evince.desktop;
 application/x-bittorrent=qBittorrent.desktop
 image/bmp=geeqie.desktop
 image/gif=geeqie.desktop
@@ -13,11 +13,13 @@ video/mp4=vlc.desktop
 video/quicktime=vlc.desktop
 video/x-matroska=vlc.desktop
 video/x-m4v=vlc.desktop
-text/plain=org.gnome.gedit.desktop
-text/xml=org.gnome.gedit.desktop
-text/x-c=org.gnome.gedit.desktop
-text/x-x++=org.gnome.gedit.desktop
-text/x-java=org.gnome.gedit.desktop
+text/plain=org.gnome.gedit.desktop;
+text/xml=org.gnome.gedit.desktop;
+text/x-c=org.gnome.gedit.desktop;
+text/x-c++=org.gnome.gedit.desktop;
+text/x-java=org.gnome.gedit.desktop;
+application/x-theme=org.gnome.gedit.desktop;
+application/x-shellscript=org.gnome.gedit.desktop;
 
 [Removed Associations]
 

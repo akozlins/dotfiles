@@ -7,7 +7,7 @@ cd "$HOME" || exit 1
 
 CMD=("/usr/bin/firefox" "$@")
 
-if [[ ! " $@ " =~ " --profile " ]] ; then
+if [[ ! " $* " =~ " --profile " ]] ; then
     CMD=("${CMD[@]}" --profile "$XDG_CONFIG_HOME/firefox/default")
 fi
 

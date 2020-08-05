@@ -6,7 +6,7 @@ echo "DOTFILES = '$DOTFILES'"
 unset CDPATH
 cd "$DOTFILES" || exit 1
 
-mkdir -p "$HOME/downloads"
+mkdir -pv "$HOME/downloads"
 
 files=(
     bin
