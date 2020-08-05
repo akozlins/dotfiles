@@ -1,1 +1,8 @@
+#
+
+# https://docs.npmjs.com/files/npmrc
+# https://docs.npmjs.com/misc/config
+
 cache=${XDG_CACHE_HOME}/npm
+tmp=${XDG_RUNTIME_DIR}/npm
+init-module=${XDG_CONFIG_HOME}/npm/init.js
