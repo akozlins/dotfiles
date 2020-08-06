@@ -2,7 +2,7 @@
 set -euf
 
 unset CDPATH
-cd "$(dirname "$LEDGER_FILE")" || exit 1
+cd "$(dirname -- "$LEDGER_FILE")" || exit 1
 
 exec \
 ~/.local/bin/hledger "$@"

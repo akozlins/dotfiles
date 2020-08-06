@@ -2,7 +2,7 @@ system:
   game_path: ''
 wine:
   Desktop: true
-  WineDesktop: 1920x1080
+  WineDesktop: 1600x900
   dxvk: true
   overrides:
     winemenubuilder.exe: d

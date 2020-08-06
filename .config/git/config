@@ -8,7 +8,6 @@
 	whitespace = trailing-space,space-before-tab
 
 [diff]
-	tool = meld
 
 [merge]
 	commit = no

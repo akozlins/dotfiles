@@ -29,7 +29,7 @@ root : root/.git
 	cd root/build
 	cmake \
 	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local" \
-            -DCMAKE_CXX_STANDARD=14 \
+	    -DCMAKE_CXX_STANDARD=14 \
 	    ..
 	$(MAKE)
 	#$(MAKE) install
