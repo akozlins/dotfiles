@@ -1,6 +1,6 @@
 {
     "type": "script",
-    "description": "ctrl+q",
+    "description": "ctrlq",
     "store": {},
     "modes": [
         3
