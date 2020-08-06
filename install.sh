@@ -55,10 +55,16 @@ for file in "${files[@]}" ; do
     fi
 
     link_dir=$(dirname -- "$link")
-    if [ -e "$target" ] && [ ! -d "$link_dir" ] ; then
+    if [ ! -d "$link_dir" ] ; then
         mkdir -pv "$link_dir"
     fi
-    ln -snv -T "$target" "$link"
+
+    if command -v realpath &> /dev/null ; then
+        target=$(realpath -s --relative-to="$link_dir" "$target")
+        ln -snv --relative -T "$target" "$link"
+    else
+        ln -snv -T "$target" "$link"
+    fi
 done
 
 #ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
