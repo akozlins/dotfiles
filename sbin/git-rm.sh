@@ -1,0 +1,13 @@
+#!/bin/sh
+set -euf
+
+# delete file from git repository
+
+file=$1
+shift
+
+exec \
+git filter-branch \
+    --index-filter \
+    "git rm -rf --cached --ignore-unmatch $file" \
+    "$@"
