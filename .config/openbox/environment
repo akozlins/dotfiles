@@ -1,0 +1,7 @@
+#!/bin/sh
+
+export MY_OPENBOX_ENVIRONMENT_DATE="$MY_OPENBOX_ENVIRONMENT_DATE:$(date +%s.%3N)"
+
+if [ -z "${DOTFILES:+x}" ] ; then
+    . "$HOME/.profile"
+fi
