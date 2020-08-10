@@ -12,6 +12,7 @@ files=(
     bin
 
     .config
+    .pki
 
     .bashrc
     .pam_environment
