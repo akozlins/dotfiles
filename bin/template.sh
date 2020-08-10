@@ -6,7 +6,7 @@ IFS="$(printf '\n\t')"
 unset CDPATH
 cd "$(dirname -- "$(readlink -f -- "$0")")" || exit 1
 
-PATH="$(getconf PATH)"
+PATH="$(command -p getconf PATH)"
 export PATH
 
 #export HOME="$DOTFILES"
