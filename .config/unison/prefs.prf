@@ -1,3 +1,9 @@
 #
 
-ignore = Regex .*/\.cache/.*
+ignore = Name .cache
+
+# ssh
+ignore = Name .ssh/authorized_keys
+ignore = Name .ssh/id_rsa*
+ignore = Name .ssh/known_hosts
+ignore = Name .ssh/socket-*
