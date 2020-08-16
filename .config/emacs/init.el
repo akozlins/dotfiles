@@ -19,15 +19,21 @@
 (install-packages
     'use-package
     'whitespace
+    'org
 )
 
 (require 'use-package)
 (use-package markdown-mode
     :ensure t
     :mode (
-        ("\\.md\\'" . markdown-mode)
+        ("\\.md$'" . markdown-mode)
     )
     :init (setq markdown-command "multimarkdown")
+)
+(use-package org
+    :mode(
+        ("\\.org$" . org-mode)
+    )
 )
 
 (load (concat emacs.config "/whitespace"))

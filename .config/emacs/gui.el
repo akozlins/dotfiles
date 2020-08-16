@@ -1,6 +1,6 @@
 ;
 
-(set-default-font "DejaVu Sans Mono 16")
+(set-face-attribute 'default nil :height 160)
 
 (when window-system
     (set-frame-size (selected-frame) 120 35)
