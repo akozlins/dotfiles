@@ -1,4 +1,4 @@
-#
+#!/bin/sh
 
 export LATTICE_LICENSE_FILE="$XDG_CONFIG_HOME/LatticeSemi/license.dat"
 export LATTICE_DIAMOND_HOME="/usr/local/diamond/3.11_x64"
