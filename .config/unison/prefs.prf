@@ -1,9 +1,17 @@
 #
 
+diff = diff -u CURRENT2 CURRENT1 | perl -pe 's/^\+/>/; s/^\-/</'
+
 ignore = Name .cache
+
+# dotfiles
+#path = .dotfiles
 
 # ssh
 ignore = Name .ssh/authorized_keys
 ignore = Name .ssh/id_rsa*
 ignore = Name .ssh/known_hosts
 ignore = Name .ssh/socket-*
+
+# qbittorrent
+ignore = Name *.!qB
