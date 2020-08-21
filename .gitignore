@@ -1,18 +1,23 @@
 #
 
-/.altera.quartus/
 /.epspdf/
 /.mono/
 /.mozilla/
-/.pki/
-/.steam/
 /.texlive/
+/.vscode-oss/
+
+# altera, xilinx, lattice
+/.config/LatticeSemi/
+/.altera.quartus/
 /.Synplicity/
 /.Xilinx/
-
 /.flexlmrc
+/.synplify_pro_history
+
+# steam
+/.config/cef_user_data/
+/.steam/
 /.steampath
 /.steampid
-/.synplify_pro_history
 
 *.orig
