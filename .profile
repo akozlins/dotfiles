@@ -75,6 +75,7 @@ export GOPATH="$XDG_DATA_HOME/go"
 
 export ASPELL_CONF="home-dir $XDG_CONFIG_HOME/aspell;"
 export ATOM_HOME="$XDG_CONFIG_HOME/atom"
+export CARGO_HOME="$XDG_CACHE_HOME/cargo"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export ELINKS_CONFDIR="$XDG_CONFIG_HOME/elinks"
 export GMVAULT_DIR="$XDG_CONFIG_HOME/gmvault"
