@@ -36,4 +36,13 @@ endif
 set undodir=$XDG_CACHE_HOME/vim/undo//
 set undofile
 
-set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+
+
+" <https://vimhelp.org/options.txt.html#'viminfo'>
+" The string should be a comma separated list of parameters,
+" each consisting of a single character identifying the particular parameter,
+" followed by a number or string which specifies the value of that parameter.
+set viminfo+='100,n$XDG_CACHE_HOME/vim/viminfo
+"            |     |
+"            |     +- Name of the viminfo file
+"            +- Maximum number of previously edited files for which the marks are remembered.
