@@ -47,7 +47,7 @@ Plugin {
       item {
         name = Lock Screen
         icon = system-lock-screen
-        action = ~/bin/lock.sh
+        action = /bin/sh -c "$DOTFILES/bin/lock.sh"
       }
       separator {
       }
@@ -99,12 +99,12 @@ Plugin {
     button {
       tooltip = VPN
       icon = network-vpn
-      action = ~/bin/vpn.sh
+      action = /bin/sh -c "$DOTFILES/bin/vpn.sh"
     }
     button {
       tooltip = Lock Screen
       icon = system-lock-screen
-      action = ~/bin/lock.sh
+      action = /bin/sh -c "$DOTFILES/bin/lock.sh"
     }
   }
 }
