@@ -1,14 +1,19 @@
 #
 
+/actionSummary.xml
+/colors.scheme.xml
+/databaseDrivers.xml
 /debugger.xml
 /dimensions.xml
 /filetypes.xml
 /jdk.table.xml
 /other.xml
 /path.macros.xml
+/profilerRunConfigurations.xml
 /recentProjects.xml
 /runner.layout.xml
 /stubIndex.xml
+/textmate_os.xml
 /updates.xml
 /window.manager.xml
 /window.state.xml
