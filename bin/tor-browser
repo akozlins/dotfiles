@@ -1,13 +1,15 @@
 #!/bin/bash
 set -euf
 
-CMD=("/usr/bin/tor-browser" "$@")
+PATH="$(command -p getconf PATH)"
+export PATH
+
+CMD=(tor-browser "$@")
 
 private="$XDG_CACHE_HOME/tor-browser"
 mkdir -pv "$private"
 
-FJ="/usr/bin/firejail"
-[ -x "$FJ" ] && CMD=("$FJ" "--private=$private" -- "${CMD[@]}")
+CMD=(firejail "--private=$private" -- "${CMD[@]}")
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &
