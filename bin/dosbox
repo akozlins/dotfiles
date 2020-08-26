@@ -1,7 +1,9 @@
 #!/bin/sh
 set -euf
 
-CONF="$XDG_CONFIG_HOME/dosbox-0.74.conf"
+HOME="$DOTFILES"
+
+CONF="$XDG_CONFIG_HOME/dosbox/dosbox.conf"
 
 exec \
 /usr/bin/dosbox -conf "$CONF" "$@"
