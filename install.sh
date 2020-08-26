@@ -8,7 +8,8 @@ cd "$DOTFILES" || exit 1
 
 mkdir -pv "$HOME/downloads"
 
-files=(
+# TODO: rename to targets
+targets=(
     bin
 
     .config
@@ -21,9 +22,9 @@ files=(
     .zshrc
 )
 
-for file in "${files[@]}" ; do
-    target="$DOTFILES/$file"
-    link="$HOME/$file"
+for target in "${targets[@]}" ; do
+    target="$DOTFILES/$target"
+    link="$HOME/$target"
 
     if [ ! -e "$target" ] ; then
         echo "ERROR: target '$target' does not exist"
