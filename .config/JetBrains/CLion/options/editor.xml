@@ -1,4 +1,11 @@
 <application>
+  <component name="CodeInsightSettings">
+    <option name="SMART_BACKSPACE" value="0" />
+    <option name="INSERT_BRACE_ON_ENTER" value="false" />
+    <option name="AUTOINSERT_PAIR_BRACKET" value="false" />
+    <option name="AUTOINSERT_PAIR_QUOTE" value="false" />
+    <option name="REFORMAT_BLOCK_ON_RBRACE" value="false" />
+  </component>
   <component name="DefaultFont">
     <option name="FONT_SIZE" value="16" />
     <option name="FONT_FAMILY" value="Source Code Pro" />
