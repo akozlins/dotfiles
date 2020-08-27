@@ -1,0 +1,10 @@
+#
+
+/eval/
+/plugins/
+/ssl/
+/tasks/
+/workspace/
+
+/port
+/port.lock
