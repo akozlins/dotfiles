@@ -1,6 +1,0 @@
-# https://www.jetbrains.com/help/idea/2017.1/file-idea-properties.html
-
-idea.config.path=${user.home}/.config/intellij-idea/config
-idea.system.path=${user.home}/.cache/intellij-idea/system
-idea.plugins.path=${user.home}/.cache/intellij-idea/plugins
-idea.log.path=${user.home}/.cache/intellij-idea/log

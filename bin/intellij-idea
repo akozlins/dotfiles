@@ -1,11 +1,11 @@
 #!/bin/bash
 set -euf
 
-#export IDEA_VM_OPTIONS="$XDG_CONFIG_HOME/intellij-idea/vmoptions"
-export IDEA_PROPERTIES="$XDG_CONFIG_HOME/intellij-idea/properties"
+#export IDEA_VM_OPTIONS="$XDG_CONFIG_HOME/JetBrains/IntelliJIdea/vmoptions"
+export IDEA_PROPERTIES="$XDG_CONFIG_HOME/JetBrains/IntelliJIdea/properties"
 
 if [ $# -eq 1 ] && [ "$1" = "--clean" ] ; then
-    "$XDG_CONFIG_HOME/intellij-idea/clean.sh"
+    "$XDG_CONFIG_HOME/JetBrains/clean.sh"
     exit 0
 fi
 
