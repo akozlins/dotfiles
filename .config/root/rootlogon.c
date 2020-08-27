@@ -1,25 +1,4 @@
 
-void set_plot_style()
-{
-/*    const Int_t NRGBs = 5;
-    const Int_t NCont = 99;
-
-    Double_t stops[NRGBs] = { 0.00, 0.34, 0.61, 0.84, 1.00 };
-    Double_t red[NRGBs]   = { 0.00, 0.00, 0.87, 1.00, 0.51 };
-    Double_t green[NRGBs] = { 0.00, 0.81, 1.00, 0.20, 0.00 };
-    Double_t blue[NRGBs]  = { 0.51, 1.00, 0.12, 0.00, 0.00 };
-    TColor::CreateGradientColorTable(NRGBs, stops, red, green, blue, NCont);
-    gStyle->SetNumberContours(NCont);*/
-
-    const int NRGBs = 7, NCont = 999;
-    gStyle->SetNumberContours(NCont);
-    Double_t stops[NRGBs] = { 0.00, 0.10, 0.25, 0.45, 0.60, 0.75, 1.00 };
-    Double_t red[NRGBs]   = { 1.00, 0.00, 0.00, 0.00, 0.97, 0.97, 0.10 };
-    Double_t green[NRGBs] = { 1.00, 0.97, 0.30, 0.40, 0.97, 0.00, 0.00 };
-    Double_t blue[NRGBs]  = { 1.00, 0.97, 0.97, 0.00, 0.00, 0.00, 0.00 };
-    TColor::CreateGradientColorTable(NRGBs, stops, red, green, blue, NCont);
-}
-
 void rootlogon() {
     gSystem->Load("libCLHEP");
 
@@ -63,8 +42,7 @@ void rootlogon() {
     gStyle->SetTitleStyle(0);
     TGaxis::SetMaxDigits(3);
 
-    set_plot_style();
-//    gStyle->SetPalette(kViridis);
+    gStyle->SetPalette(kViridis);
 
     gROOT->ForceStyle();
 }
