@@ -16,6 +16,7 @@
 
 # steam
 /.config/cef_user_data/
+/.renpy/
 /.steam/
 /.steampath
 /.steampid
