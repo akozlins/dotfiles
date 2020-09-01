@@ -5,7 +5,11 @@ unset CDPATH
 export HOME="$DOTFILES"
 cd "$HOME" || exit 1
 
-CMD=("/usr/bin/chromium" "$@")
+CMD=("/usr/bin/chromium"
+    # ...
+    --disable-background-networking
+    "$@"
+)
 
 FJ="/usr/bin/firejail"
 #[ -x "$FJ" ] && CMD=("$FJ" -- "${CMD[@]}")
