@@ -4,6 +4,9 @@ set -euf
 mime=$(xdg-mime query filetype "$1")
 
 case "$mime" in
+    inode/x-empty)
+        exec gedit "$1"
+        ;;
     inode/*)
         ;;
     application/pdf)
