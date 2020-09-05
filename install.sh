@@ -23,8 +23,8 @@ targets=(
 )
 
 for target in "${targets[@]}" ; do
-    target="$DOTFILES/$target"
     link="$HOME/$target"
+    target="$DOTFILES/$target"
 
     if [ ! -e "$target" ] ; then
         echo "ERROR: target '$target' does not exist"
