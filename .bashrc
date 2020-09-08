@@ -14,7 +14,7 @@ bind -f "$DOTFILES/.inputrc"
 
 
 
-export HISTFILE="$XDG_DATA_HOME/.bash_history"
+#export HISTFILE="$HOME/.bash_history"
 export HISTFILESIZE=65536
 export HISTSIZE=4096
 export HISTCONTROL="ignoreboth:erasedups"
