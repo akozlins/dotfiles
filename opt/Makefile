@@ -1,13 +1,13 @@
 
 oh-my-zsh/.git :
-	( cd ../.local/share && git clone https://github.com/robbyrussell/oh-my-zsh )
+	git clone https://github.com/robbyrussell/oh-my-zsh "$$(readlink -- oh-my-zsh)"
 
 .PHONY : oh-my-zsh
 oh-my-zsh : oh-my-zsh/.git
 	( cd $@ && git stash && git pull )
 
 far2l/.git :
-	( cd ../.cache && git clone https://github.com/elfmz/far2l )
+	git clone https://github.com/elfmz/far2l "$$(readlink -- far2l)"
 
 far2l/history : far2l/.git
 	mkdir -pv far2l/history/k-Editor/k-LastPositions
@@ -30,7 +30,7 @@ far2l : far2l/.git far2l/history
 	( cd far2l/build && cmake -DCMAKE_INSTALL_PREFIX="$(HOME)/.local" -DCMAKE_BUILD_TYPE=Release .. && $(MAKE) && $(MAKE) install )
 
 fbpanel/.git :
-	( cd ../.cache && git clone https://github.com/aanatoly/fbpanel )
+	git clone https://github.com/aanatoly/fbpanel "$$(readlink -- fbpanel)"
 
 .PHONY : fbpanel
 fbpanel : fbpanel/.git
@@ -42,7 +42,7 @@ fbpanel : fbpanel/.git
 	( cd fbpanel && ./configure --prefix="$(HOME)/.local" && $(MAKE) V=1 && $(MAKE) install )
 
 direnv/.git :
-	( cd ../.local/share && git clone https://github.com/direnv/direnv )
+	git clone https://github.com/direnv/direnv "$$(readlink -- direnv)"
 	( cd direnv && ln -snv vendor src )
 
 .PHONY : direnv
