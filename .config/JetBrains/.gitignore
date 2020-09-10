@@ -6,16 +6,18 @@
 /*/jdbc-drivers/
 /*/ssl/
 /*/tasks/
+/*/terminal/history/
 /*/workspace/
 
-/*/disabled_update.txt
-
+/*/disabled_plugins.txt
+/*/*.key
 /*/port
 /*/port.lock
 
 
 
 /*/options/actionSummary.xml
+/*/options/cachedDictionary.xml
 /*/options/colors.scheme.xml
 /*/options/databaseDrivers.xml
 /*/options/debugger.xml
