@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
+LEDGER_DIR=$(dirname -- "$LEDGER_FILE")
 unset CDPATH
-cd "$(dirname -- "$LEDGER_FILE")" || exit 1
+cd "$LEDGER_DIR" || exit 1
 
-exec \
-~/.local/bin/hledger "$@"
+source "$DOTFILES/sbin/exec.sh"
