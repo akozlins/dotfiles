@@ -1,5 +1,10 @@
 
+.DEFAULT_GOAL := all
+
 all : CustomCSSforFx ghacks-users.js
+
+default/user.js : user.js/my.js user.js/ghacks.js ghacks-user.js/user.js
+	./user.js/make.sh
 
 CustomCSSforFx/.git :
 	git clone https://github.com/Aris-t2/CustomCSSforFx

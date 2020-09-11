@@ -42,7 +42,7 @@ user_pref("print.print_paper_name", "iso_a4");
 user_pref("print.print_orientation", 0);
 
 user_pref("network.proxy.type", 2);
-user_pref("network.proxy.autoconfig_url", "file:///home/akozlins/.config/firefox/proxy.pac");
+user_pref("network.proxy.autoconfig_url", "file://" + path.normalize(__dirname + "/../proxy.pac"));
 
 user_pref("ui.key.menuAccessKeyFocuses", false);
 

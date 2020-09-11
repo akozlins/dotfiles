@@ -2,7 +2,8 @@
 
 "use strict";
 
-let fs = require("fs");
+const fs = require("fs");
+const path = require("path");
 
 let prefs = new Map();
 let user_pref = function (key, value) {
