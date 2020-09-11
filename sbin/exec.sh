@@ -1,5 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
+
+if [ "$0" = "$BASH_SOURCE" ] ; then
+    >&2 echo "ERROR"
+    exit 1
+fi
 
 program_path=$(readlink -f -- "$0")
 program_name=$(basename -- "$program_path")
