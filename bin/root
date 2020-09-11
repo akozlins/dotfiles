@@ -4,4 +4,4 @@ set -euf
 HOME="$DOTFILES"
 
 set -- -l "$@"
-source $DOTFILES/sbin/exec.sh
+source "$DOTFILES/sbin/exec.sh"

@@ -6,8 +6,6 @@ echo "DOTFILES = '$DOTFILES'"
 unset CDPATH
 cd "$DOTFILES" || exit 1
 
-mkdir -pv "$HOME/downloads"
-
 # TODO: rename to targets
 targets=(
     bin
@@ -41,7 +39,7 @@ for target in "${targets[@]}" ; do
         read -r -p "Overwrite? [y,n,q,?] " sel
         case "$sel" in
             y)
-                rm -rv "$link"
+                rm -rv -- "$link"
                 ;;
             n)
                 continue
@@ -72,3 +70,6 @@ done
 #ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
 
 [ -d "opt/oh-my-zsh" ] && make -C opt oh-my-zsh
+
+mkdir -pv -- "$HOME/downloads"
+mkdir -pv -- "$HOME/.cache/ipe"
