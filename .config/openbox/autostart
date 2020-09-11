@@ -24,6 +24,8 @@ xset s 3600
 # enable DPMS off mode
 xset dpms 0 0 3600
 
+xrdb -merge "$DOTFILES/.Xresources"
+
 run 1s xss-lock -l -- "$DOTFILES/bin/lock.sh"
 
 if command -v xsecurelock &> /dev/null ; then
