@@ -1,0 +1,10 @@
+#!/bin/sh
+set -euf
+
+LD_BIND_NOW=y
+
+exec \
+valgrind --tool=callgrind \
+    --dump-instr=yes \
+    --collect-jumps=yes \
+    "$@"

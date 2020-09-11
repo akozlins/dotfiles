@@ -1,0 +1,14 @@
+#!/bin/sh
+set -euf
+
+LD_BIND_NOW=y
+
+if [ -n "${ROOTSYS:+x}" ] ; then
+    set -- "--suppressions=$ROOTSYS/etc/valgrind-root.supp" "$@"
+fi
+
+exec \
+valgrind \
+    --leak-check=full \
+    --demangle=yes \
+    "$@"
