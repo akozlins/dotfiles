@@ -16,7 +16,6 @@ targets=(
     .bashrc
     .pam_environment
     .profile
-    .xprofile
     .zshrc
 )
 

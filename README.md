@@ -9,12 +9,12 @@ Current list of _allowed_ `.` files:
  - `.cache/`, `.config/`, `.local/`
  - `.ssh/`
  - `.pam_environment`
- - `.profile`, `.xprofile`
+ - `.profile`
  - `.bashrc`, `.zshrc`
+ - `.bash_history`, `.zsh_history`
 
 TODO (to remove):
 
- - `.Xauthority`
  - `.xsession-errors`
  - `.android` (adb)
 
