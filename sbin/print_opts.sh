@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu
+set -euf
 
 for i in "$@" ; do
     echo "$i"

@@ -17,6 +17,7 @@ TODO (to remove):
 
  - `.xsession-errors`
  - `.android` (adb)
+ - `.rootrc`
 
 ## Install
 

@@ -13,10 +13,11 @@ targets=(
     .config
     .pki
 
-    .bashrc
+    .bashrc .zshrc
     .pam_environment
     .profile
-    .zshrc
+
+    .rootrc
 )
 
 for target in "${targets[@]}" ; do
@@ -24,7 +25,7 @@ for target in "${targets[@]}" ; do
     target="$DOTFILES/$target"
 
     if [ ! -e "$target" ] ; then
-        echo "ERROR: target '$target' does not exist"
+        >&2 echo "E [$0] target '$target' does not exist"
         exit 1
     fi
 

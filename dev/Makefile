@@ -7,6 +7,7 @@ geant4/.git :
 
 .PHONY : geant4
 geant4 : geant4/.git
+	# centos: expat-devel, libXmu-devel
 	mkdir -p geant4/cmake-build
 	cd geant4/cmake-build
 	cmake \
