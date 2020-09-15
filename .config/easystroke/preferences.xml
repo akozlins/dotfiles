@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="17">
+<PrefDB class_id="0" tracking_level="0" version="18">
+	<exceptions class_id="1" tracking_level="0" version="0">
+		<count>0</count>
+		<item_version>0</item_version>
+	</exceptions>
+	<button class_id="2" tracking_level="1" version="4" object_id="_0">
+		<button>3</button>
+		<state>0</state>
+		<instant>0</instant>
+		<click_hold>0</click_hold>
+	</button>
+	<trace>0</trace>
+	<advanced_ignore>0</advanced_ignore>
+	<radius>16</radius>
+	<ignore_grab>0</ignore_grab>
+	<timing_workaround>0</timing_workaround>
+	<show_clicks>0</show_clicks>
+	<pressure_abort>0</pressure_abort>
+	<pressure_threshold>192</pressure_threshold>
+	<proximity>0</proximity>
+	<feedback>0</feedback>
+	<left_handed>0</left_handed>
+	<init_timeout>250</init_timeout>
+	<final_timeout>250</final_timeout>
+	<timeout_profile>1</timeout_profile>
+	<timeout_gestures>0</timeout_gestures>
+	<tray_icon>1</tray_icon>
+	<excluded_devices class_id="3" tracking_level="0" version="0">
+		<count>0</count>
+		<item_version>0</item_version>
+	</excluded_devices>
+	<color class_id="4" tracking_level="0" version="0">
+		<r>32767</r>
+		<g>0</g>
+		<b>0</b>
+		<alpha>65535</alpha>
+	</color>
+	<trace_width>3</trace_width>
+	<extra_buttons class_id="5" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>4</item_version>
+		<item object_id="_1">
+			<button>1</button>
+			<state>0</state>
+			<instant>0</instant>
+			<click_hold>1</click_hold>
+		</item>
+	</extra_buttons>
+	<advanced_popups>0</advanced_popups>
+	<scroll_invert>0</scroll_invert>
+	<scroll_speed>2.0</scroll_speed>
+	<tray_feedback>0</tray_feedback>
+	<show_osd>0</show_osd>
+	<move_back>0</move_back>
+	<device_timeout class_id="6" tracking_level="0" version="0">
+		<count>0</count>
+		<item_version>0</item_version>
+	</device_timeout>
+	<whitelist>1</whitelist>
+</PrefDB>
+</boost_serialization>
+
