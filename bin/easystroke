@@ -1,6 +1,5 @@
 #!/bin/sh
 set -euf
 
-exec \
-/usr/bin/easystroke --config-dir "$XDG_CONFIG_HOME/easystroke" "$@" \
-> /dev/null 2>&1 &
+set -- --config-dir "$XDG_CONFIG_HOME/easystroke" "$@"
+source "$DOTFILES/sbin/exec.sh"
