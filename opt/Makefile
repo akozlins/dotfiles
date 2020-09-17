@@ -30,16 +30,16 @@ far2l : far2l/.git far2l/history
 	( cd far2l/build && cmake -DCMAKE_INSTALL_PREFIX="$(HOME)/.local" -DCMAKE_BUILD_TYPE=Release .. && $(MAKE) && $(MAKE) install )
 
 fbpanel/.git :
-	git clone https://github.com/aanatoly/fbpanel "$$(readlink -- fbpanel)"
+	git clone https://github.com/akozlins/fbpanel "$$(readlink -- fbpanel)"
 
 .PHONY : fbpanel
 fbpanel : fbpanel/.git
 	( cd $@ && git stash && git pull )
-	# install gcc, patch, gtk2 and python2
+	# install gcc, cmake, gtk2
 	# - Debian: libgtk2.0-dev, libglib2.0-dev
 	# - CentOS: gtk2-devel
-	patch -d fbpanel -p1 < fbpanel.patch
-	( cd fbpanel && ./configure --prefix="$(HOME)/.local" && $(MAKE) V=1 && $(MAKE) install )
+	mkdir fbpanel/build
+	( cd fbpanel/build && cmake -DCMAKE_INSTALL_PREFIX=$HOME/.local -DCMAKE_BUILD_TYPE=Release .. && $(MAKE) install )
 
 direnv/.git :
 	git clone https://github.com/direnv/direnv "$$(readlink -- direnv)"
