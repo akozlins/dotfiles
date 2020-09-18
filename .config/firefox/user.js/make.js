@@ -6,7 +6,7 @@ const fs = require("fs");
 const path = require("path");
 
 let prefs = new Map();
-let user_pref = function (key, value) {
+let user_pref = function(key, value) {
     prefs.set(key, value);
 }
 let del_pref = function(key) {
@@ -16,17 +16,23 @@ let del_pref = function(key) {
     prefs.delete(key);
 }
 
-eval("" + fs.readFileSync(__dirname + "/ghacks.js"));
-eval("" + fs.readFileSync(__dirname + "/my.js"));
+let eval_file = function(f) {
+    eval("" + fs.readFileSync(f));
+}
+
+const FIREFOX_HOME = path.normalize(__dirname + "/..");
+
+eval_file(FIREFOX_HOME + "/user.js/ghacks.js");
+eval_file(FIREFOX_HOME + "/user.js/my.js");
 
 prefs.forEach((value, key) => {
     switch(typeof(value)) {
     case "boolean" :
     case "number" :
-        console.log(`user_pref("${key}", ${value})`);
+        console.log(`user_pref("${key}", ${value});`);
         break;
     case "string" :
-        console.log(`user_pref("${key}", "${value}")`);
+        console.log(`user_pref("${key}", "${value}");`);
         break;
     default :
         throw `unknown type: ${typeof(value)}`;

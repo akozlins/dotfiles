@@ -1,5 +1,5 @@
 
-eval("" + fs.readFileSync(__dirname + "/../ghacks-user.js/user.js"));
+eval_file(FIREFOX_HOME + "/ghacks-user.js/user.js");
 
 del_pref("browser.startup.page");
 del_pref("layout.css.visited_links_enabled");
