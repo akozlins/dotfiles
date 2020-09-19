@@ -5,17 +5,21 @@ unset CDPATH
 export HOME="$DOTFILES"
 cd "$HOME" || exit 1
 
+USER_DATA_DIR="$XDG_CACHE_HOME/chromium"
+
 CMD=("/usr/bin/chromium"
+    --user-data-dir="$USER_DATA_DIR"
     # ...
     --disable-background-networking
     "$@"
 )
 
-FJ="/usr/bin/firejail"
-#[ -x "$FJ" ] && CMD=("$FJ" -- "${CMD[@]}")
-
 if [ $# -eq 0 ] ; then
-    exec "${CMD[@]}" > /dev/null 2>&1 &
+    (
+        "${CMD[@]}"
+    ) > /dev/null 2>&1 &
 else
-    exec "${CMD[@]}"
+    (
+        "${CMD[@]}"
+    )
 fi
