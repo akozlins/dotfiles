@@ -10,9 +10,11 @@ def diff(new, old) :
 
     out = type(new)()
 
-    for k in old :
-        if not ( k in new ) : continue
-        out[k] = diff(new[k], old[k])
+    for k in new :
+        if k in old :
+            out[k] = diff(new[k], old[k])
+        else :
+            out[k] = new[k]
         if out[k] == None : out.pop(k)
 
     return out
