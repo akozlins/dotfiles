@@ -1,12 +1,15 @@
 #!/bin/python
 
-import sys;
-import yaml, json;
+import argparse, sys, json, yaml;
 
-if len(sys.argv) > 1 :
-    json_stream = open(sys.argv[1], "r", encoding = "utf-8")
-else :
+parser = argparse.ArgumentParser()
+parser.add_argument("input", metavar="input.json", nargs="?", type=str)
+args = parser.parse_args()
+
+if not args.input or args.input == "-" :
     json_stream = sys.stdin
+else :
+    json_stream = open(args.input, "r", encoding = "utf-8")
 
 json_data = json.load(json_stream)
 

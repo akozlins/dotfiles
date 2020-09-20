@@ -1,7 +1,11 @@
 #!/bin/python
 
-import sys, json;
-from collections import OrderedDict;
+import argparse, sys, json;
+
+parser = argparse.ArgumentParser()
+parser.add_argument("new", metavar="new.json", type=str)
+parser.add_argument("old", metavar="old.json", type=str)
+args = parser.parse_args()
 
 def diff(new, old) :
     if new == old : return None
@@ -19,8 +23,9 @@ def diff(new, old) :
 
     return out
 
-new = json.load(open(sys.argv[1], "r", encoding = "utf-8"), object_pairs_hook = OrderedDict)
-old = json.load(open(sys.argv[2], "r", encoding = "utf-8"), object_pairs_hook = OrderedDict)
+from collections import OrderedDict;
+new = json.load(open(args.new, "r", encoding = "utf-8"), object_pairs_hook = OrderedDict)
+old = json.load(open(args.old, "r", encoding = "utf-8"), object_pairs_hook = OrderedDict)
 
 out = diff(new, old)
 
