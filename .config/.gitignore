@@ -4,12 +4,14 @@
 /geeqie/
 /gnupg/
 /libreoffice/
+/qBittorrent/
 /solaar/
 /unity3d/
 /VirtualBox/
 
 /kactivitymanagerdrc
 /kglobalshortcutsrc
+/okularrc
 /QtProject.conf
 /Trolltech.conf
 
