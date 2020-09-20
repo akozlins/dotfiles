@@ -4,28 +4,27 @@ set -euf
 mime=$(xdg-mime query filetype "$1")
 
 case "$mime" in
-    inode/x-empty)
+    text/*|application/json|inode/x-empty)
         exec gedit "$1"
-        ;;
-    inode/*)
-        ;;
-    application/pdf)
-        exec evince "$1"
-        ;;
-    audio/*)
-        exec vlc "$1"
         ;;
     image/*)
         exec geeqie "$1"
         ;;
-    video/*)
+    audio/*|video/*)
         exec vlc "$1"
         ;;
-    text/*)
-        [[ "$1" == *.md ]] && command -pv okular &> /dev/null && exec okular "$1"
-        exec gedit "$1"
+    application/pdf)
+        exec evince "$1"
+        ;;
+    application/octet-stream)
+        exec zenity --info --title="$0" --text="MIME type: '$mime'"
+        ;;
+    application/*)
+        exec xdg-open "$1"
+        ;;
+    inode/*)
         ;;
     *)
-        exec zenity --error --text="unknown mime type: '$mime'"
+        exec zenity --error --title="$0" --text="unknown MIME type: '$mime'"
         ;;
 esac
