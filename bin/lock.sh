@@ -7,11 +7,11 @@ if [ -x "/usr/bin/xsecurelock" ] ; then
     exec /usr/bin/xsecurelock
 fi
 
-if [ -n "$(pidof /usr/bin/xscreensaver)" ] ; then
+if [ -n "$(pidof xscreensaver)" ] ; then
     exec xscreensaver-command -lock
 fi
 
-if [ -n "$(pidof /usr/bin/light-locker)" ] ; then
+if [ -n "$(pidof light-locker)" ] ; then
     exec light-locker-command -l
 fi
 
