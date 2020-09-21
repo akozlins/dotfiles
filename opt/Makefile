@@ -1,4 +1,7 @@
 
+PREFIX := $(HOME)/.local
+CMAKE_OPTS := -DCMAKE_INSTALL_PREFIX=$(PREFIX) -DCMAKE_BUILD_TYPE=Release
+
 oh-my-zsh/.git :
 	git clone https://github.com/robbyrussell/oh-my-zsh "$$(readlink -- oh-my-zsh)"
 
@@ -27,7 +30,7 @@ far2l : far2l/.git far2l/history
 	# - Ubuntu: libwxgtk3.0-gtk3-dev, libglib2.0-dev
 	patch -d far2l -p1 < far2l.patch
 	mkdir -pv far2l/build
-	( cd far2l/build && cmake -DCMAKE_INSTALL_PREFIX="$(HOME)/.local" -DCMAKE_BUILD_TYPE=Release .. && $(MAKE) && $(MAKE) install )
+	( cd far2l/build && cmake $(CMAKE_OPTS) .. && $(MAKE) && $(MAKE) install )
 
 fbpanel/.git :
 	git clone https://github.com/akozlins/fbpanel "$$(readlink -- fbpanel)"
@@ -39,7 +42,7 @@ fbpanel : fbpanel/.git
 	# - Debian: libgtk2.0-dev, libglib2.0-dev
 	# - CentOS: gtk2-devel
 	mkdir fbpanel/build
-	( cd fbpanel/build && cmake -DCMAKE_INSTALL_PREFIX=$HOME/.local -DCMAKE_BUILD_TYPE=Release .. && $(MAKE) install )
+	( cd fbpanel/build && cmake $(CMAKE_OPTS) .. && $(MAKE) install )
 
 direnv/.git :
 	git clone https://github.com/direnv/direnv "$$(readlink -- direnv)"
