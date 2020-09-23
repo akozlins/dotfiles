@@ -1,176 +1,173 @@
 #
 
 Global {
-  edge = bottom
-  allign = center
-  margin = 0
-  widthtype = percent
-  width = 100
-  height = 30
-  transparent = true
-  tintcolor = white
-  alpha = 15
-  setdocktype = true
-  setpartialstrut = true
-  autohide = false
-  roundcorners = false
-  layer = none
-  MaxElemHeight = 30
+    edge = bottom
+    allign = center
+    margin = 0
+    widthtype = percent
+    width = 100
+    height = 30
+    transparent = true
+    tintcolor = white
+    alpha = 15
+    setdocktype = true
+    setpartialstrut = true
+    autohide = false
+    roundcorners = false
+    layer = none
+    MaxElemHeight = 30
 }
 
 Plugin {
-  type = space
-  config {
-    size = 2
-  }
+    type = space
+    config {
+        size = 2
+    }
 }
 
 Plugin {
-  type = menu
-  config {
-    IconSize = 22
-    #icon = start-here
-    icon = logo
-    systemmenu {
+    type = menu
+    config {
+        IconSize = 22
+        icon = logo
+        systemmenu {
+        }
+        separator {
+        }
+        menu {
+            name = Computer
+            icon = computer
+            item {
+                name = uxterm
+                icon = utilities-terminal
+                action = uxterm
+            }
+            item {
+                name = Lock Screen
+                icon = system-lock-screen
+                action = /bin/sh -c "$DOTFILES/bin/lock.sh"
+            }
+            separator {
+            }
+            item {
+                name = Reboot
+                icon = gnome-session-reboot
+                action = sudo reboot
+            }
+            item {
+                name = Shutdown
+                icon = gnome-session-halt
+                action = sudo shutdown -h now
+            }
+            item {
+                name = Logout
+                icon = gnome-logout
+                action = /usr/lib/fbpanel/xlogout
+            }
+        }
     }
-    separator {
-    }
-    menu {
-      name = Computer
-      icon = computer
-
-      item {
-        name = uxterm
-        icon = utilities-terminal
-        action = uxterm
-      }
-      item {
-        name = Lock Screen
-        icon = system-lock-screen
-        action = /bin/sh -c "$DOTFILES/bin/lock.sh"
-      }
-      separator {
-      }
-      item {
-        name = Reboot
-        icon = gnome-session-reboot
-        action = sudo reboot
-      }
-      item {
-        name = Shutdown
-        icon = gnome-session-halt
-        action = sudo shutdown -h now
-      }
-      item {
-        name = Logout
-        icon = gnome-logout
-        action = /usr/lib/fbpanel/xlogout
-      }
-    }
-  }
 }
 
 Plugin {
-  type = separator
-  padding = 8
-  config {
-    size = 16
-  }
+    type = separator
+    padding = 8
+    config {
+        size = 16
+    }
 }
 
 Plugin {
-  type = launchbar
-  config {
-    button {
-      tooltip = pcmanfm
-      icon = system-file-manager
-      action = pcmanfm
+    type = launchbar
+    config {
+        button {
+            tooltip = pcmanfm
+            icon = system-file-manager
+            action = pcmanfm
+        }
+        button {
+            tooltip = uxterm
+            icon = utilities-terminal
+            action = uxterm
+        }
+        button {
+            tooltip = firefox
+            icon = firefox
+            action = firefox
+        }
+        button {
+            tooltip = VPN
+            icon = network-vpn
+            action = /bin/sh -c "$DOTFILES/bin/vpn.sh"
+        }
+        button {
+            tooltip = Lock Screen
+            icon = system-lock-screen
+            action = /bin/sh -c "$DOTFILES/bin/lock.sh"
+        }
     }
-    button {
-      tooltip = uxterm
-      icon = utilities-terminal
-      action = uxterm
-    }
-    button {
-      tooltip = firefox
-      icon = firefox
-      action = firefox
-    }
-    button {
-      tooltip = VPN
-      icon = network-vpn
-      action = /bin/sh -c "$DOTFILES/bin/vpn.sh"
-    }
-    button {
-      tooltip = Lock Screen
-      icon = system-lock-screen
-      action = /bin/sh -c "$DOTFILES/bin/lock.sh"
-    }
-  }
 }
 
 Plugin {
-  type = separator
-  padding = 8
-  config {
-    size = 16
-  }
+    type = separator
+    padding = 8
+    config {
+        size = 16
+    }
 }
 
 Plugin {
-  type = taskbar
-  expand = true
-  config {
-    ShowIconified = true
-    ShowMapped    = true
-    ShowAllDesks  = false
-    tooltips = true
-    IconsOnly = false
-    MaxTaskWidth = 150
-  }
+    type = taskbar
+    expand = true
+    config {
+        ShowIconified = true
+        ShowMapped = true
+        ShowAllDesks = false
+        tooltips = true
+        IconsOnly = false
+        MaxTaskWidth = 150
+    }
 }
 
 Plugin {
-  type = space
-  config {
-    size = 16
-  }
+    type = space
+    config {
+        size = 16
+    }
 }
 
 plugin {
-  type = genmon
-  config {
-    Command = ~/.config/fbpanel/BAT.sh
-    PollingTime = 5
-    TextSize = small
-    TextColor = red
-  }
+    type = genmon
+    config {
+        Command = ~/.config/fbpanel/BAT.sh
+        PollingTime = 5
+        TextSize = small
+        TextColor = red
+    }
 }
 
 Plugin {
-  type = tray
+    type = tray
 }
 
 Plugin {
-  type = space
-  config {
-    size = 16
-  }
-}
-
-# Digital Clock
-Plugin {
-  type = dclock
-  config {
-    ShowSeconds = false
-    HoursView = 24
-    TooltipFmt = %F %A
-  }
+    type = space
+    config {
+        size = 16
+    }
 }
 
 Plugin {
-  type = space
-  config {
-    size = 2
-  }
+    type = dclock
+    config {
+        ShowSeconds = false
+        HoursView = 24
+        TooltipFmt = %F %A
+    }
+}
+
+Plugin {
+    type = space
+    config {
+        size = 2
+    }
 }
