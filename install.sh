@@ -67,9 +67,13 @@ for target in "${targets[@]}" ; do
     fi
 done
 
-#ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
-
-[ -d "opt/oh-my-zsh" ] && make -C opt oh-my-zsh
+mkdir -pv -- "$HOME/.local/share"
 
 mkdir -pv -- "$HOME/downloads"
 mkdir -pv -- "$HOME/.cache/ipe"
+
+# Media/MIME Types
+ln -s "$HOME/.config/mimeapps.list" "$HOME/.local/share/applications/mimeapps.list"
+
+# ZSH
+[ -d "opt/oh-my-zsh" ] && make -C opt oh-my-zsh
