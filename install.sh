@@ -73,7 +73,7 @@ mkdir -pv -- "$HOME/downloads"
 mkdir -pv -- "$HOME/.cache/ipe"
 
 # Media/MIME Types
-ln -s "$HOME/.config/mimeapps.list" "$HOME/.local/share/applications/mimeapps.list"
+ln -snv -T "$HOME/.config/applications" "$HOME/.local/share/applications"
 
 # ZSH
 [ -d "opt/oh-my-zsh" ] && make -C opt oh-my-zsh
