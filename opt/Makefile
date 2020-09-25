@@ -60,3 +60,8 @@ direnv :
 xss-lock :
 	$(call clone_pull,https://bitbucket.org/raymonad/xss-lock,$@)
 	$(call cmake_make_install,$@)
+
+.PHONY : easystroke
+easystroke :
+	$(call clone_pull,https://github.com/akozlins/easystroke,$@)
+	$(call cmake_make_install,$@)
