@@ -9,6 +9,14 @@ define clone_pull
 	git -C $(2) pull
 endef
 
+# generate cmake build system and do make/install
+define cmake_make_install
+	# dependencies: cmake, pkg-config
+	cmake -S $(1) -B $(1)/build $(CMAKE_OPTS)
+	$(MAKE) -C $(1)/build
+	$(MAKE) -C $(1)/build install
+endef
+
 .PHONY : oh-my-zsh
 oh-my-zsh :
 	$(call clone_pull,https://github.com/robbyrussell/oh-my-zsh,$@)
@@ -30,8 +38,7 @@ far2l : far2l/history
 	# - Debian: libwxgtk3-dev
 	# - Ubuntu: libwxgtk3.0-gtk3-dev, libglib2.0-dev
 	patch -d far2l -p1 < far2l.patch
-	mkdir -pv far2l/build
-	( cd far2l/build && cmake $(CMAKE_OPTS) .. && $(MAKE) && $(MAKE) install )
+	$(call cmake_make_install,$@)
 
 .PHONY : fbpanel
 fbpanel :
@@ -39,8 +46,7 @@ fbpanel :
 	# install gcc, cmake, gtk2
 	# - Debian: libgtk2.0-dev, libglib2.0-dev
 	# - CentOS: gtk2-devel
-	mkdir fbpanel/build
-	( cd fbpanel/build && cmake $(CMAKE_OPTS) .. && $(MAKE) install )
+	$(call cmake_make_install,$@)
 
 .PHONY : direnv
 direnv :
@@ -52,6 +58,4 @@ direnv :
 .PHONY : xss-lock
 xss-lock :
 	$(call clone_pull,https://bitbucket.org/raymonad/xss-lock,$@)
-	cmake -S $@ -B $@/build $(CMAKE_OPTS)
-	cmake --build $@/build
-	cmake --install $@/build
+	$(call cmake_make_install,$@)
