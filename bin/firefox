@@ -5,11 +5,11 @@ unset CDPATH
 export HOME="$DOTFILES"
 cd "$HOME" || exit 1
 
-CMD=("/usr/bin/firefox" "$@")
-
 if [[ ! " $* " =~ " --profile " ]] ; then
-    CMD=("${CMD[@]}" --profile "$XDG_CONFIG_HOME/firefox/default")
+    set -- --profile "$XDG_CONFIG_HOME/firefox/default" "$@"
 fi
+
+CMD=("/usr/bin/firefox" "$@")
 
 FJ="/usr/bin/firejail"
 #[ -x "$FJ" ] && CMD=("$FJ" -- "${CMD[@]}")
