@@ -52,3 +52,14 @@ direnv/.git :
 direnv : direnv/.git
 	( cd $@ && git stash && git pull && git submodule update --init --recursive )
 	( cd direnv && GOPATH=$(shell pwd)/$@ $(MAKE) )
+
+xss-lock/.git :
+	git clone https://bitbucket.org/raymonad/xss-lock "$$(readlink -- xss-lock)"
+
+.PHONY : xss-lock
+xss-lock : xss-lock/.git
+	git -C $@ stash
+	git -C $@ pull
+	cmake -S $@ -B $@/build $(CMAKE_OPTS)
+	cmake --build $@/build
+	cmake --install $@/build
