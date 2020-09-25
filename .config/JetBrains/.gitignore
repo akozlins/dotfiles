@@ -1,9 +1,10 @@
 #
 
 /*/eval/
-/*/plugins/
 /*/javascript/
 /*/jdbc-drivers/
+/*/mdn/
+/*/plugins/
 /*/ssl/
 /*/tasks/
 /*/terminal/history/
