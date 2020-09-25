@@ -7,6 +7,7 @@ define clone_pull
 	[ -e $(2)/.git ] || git clone -- $(1) $$(readlink -- $(2))
 	git -C $(2) stash
 	git -C $(2) pull
+	git -C $(2) submodule update --init --recursive
 endef
 
 # generate cmake build system and do make/install
@@ -21,7 +22,7 @@ endef
 oh-my-zsh :
 	$(call clone_pull,https://github.com/robbyrussell/oh-my-zsh,$@)
 
-far2l/history : far2l/.git
+far2l/history :
 	mkdir -pv far2l/history/k-Editor/k-LastPositions
 	mkdir -pv far2l/history/k-SavedDialogHistory
 	mkdir -pv far2l/history/k-SavedFolderHistory
@@ -30,8 +31,9 @@ far2l/history : far2l/.git
 	mkdir -pv far2l/history/k-Viewer/k-LastPositions
 
 .PHONY : far2l
-far2l : far2l/history
-	$(call clone_pull,https://github.com/elfmz/far2l,$@)
+far2l :
+	$(call clone_pull,https://github.com/elfmz/far2l,far2l)
+	make far2l/history
 	# install g++, cmake, patch, m4, pkg-config, gawk
 	# - Arch: wxgtk2
 	# - Fedora, CentOS: wxGTK3-devel
@@ -46,14 +48,13 @@ fbpanel :
 	# install gcc, cmake, gtk2
 	# - Debian: libgtk2.0-dev, libglib2.0-dev
 	# - CentOS: gtk2-devel
+	# - Ubuntu: libgtk2.0-dev
 	$(call cmake_make_install,$@)
 
 .PHONY : direnv
 direnv :
 	$(call clone_pull,https://github.com/direnv/direnv,$@)
-	git -C $@ submodule update --init --recursive
-	[ -e $@/src ] || ln -snv vendor $@/src
-	( cd direnv && GOPATH=$(shell pwd)/$@ $(MAKE) )
+	$(MAKE) -C $@ DESTDIR=$(PREFIX) install
 
 .PHONY : xss-lock
 xss-lock :
