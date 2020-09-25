@@ -2,15 +2,16 @@
 PREFIX := $(HOME)/.local
 CMAKE_OPTS := -DCMAKE_INSTALL_PREFIX=$(PREFIX) -DCMAKE_BUILD_TYPE=Release
 
-oh-my-zsh/.git :
-	git clone https://github.com/robbyrussell/oh-my-zsh "$$(readlink -- oh-my-zsh)"
+# clone git project and do stash/pull
+define clone_pull
+	[ -e $(2)/.git ] || git clone -- $(1) $$(readlink -- $(2))
+	git -C $(2) stash
+	git -C $(2) pull
+endef
 
 .PHONY : oh-my-zsh
-oh-my-zsh : oh-my-zsh/.git
-	( cd $@ && git stash && git pull )
-
-far2l/.git :
-	git clone https://github.com/elfmz/far2l "$$(readlink -- far2l)"
+oh-my-zsh :
+	$(call clone_pull,https://github.com/robbyrussell/oh-my-zsh,$@)
 
 far2l/history : far2l/.git
 	mkdir -pv far2l/history/k-Editor/k-LastPositions
@@ -21,8 +22,8 @@ far2l/history : far2l/.git
 	mkdir -pv far2l/history/k-Viewer/k-LastPositions
 
 .PHONY : far2l
-far2l : far2l/.git far2l/history
-	( cd $@ && git stash && git pull )
+far2l : far2l/history
+	$(call clone_pull,https://github.com/elfmz/far2l,$@)
 	# install g++, cmake, patch, m4, pkg-config, gawk
 	# - Arch: wxgtk2
 	# - Fedora, CentOS: wxGTK3-devel
@@ -32,34 +33,25 @@ far2l : far2l/.git far2l/history
 	mkdir -pv far2l/build
 	( cd far2l/build && cmake $(CMAKE_OPTS) .. && $(MAKE) && $(MAKE) install )
 
-fbpanel/.git :
-	git clone https://github.com/akozlins/fbpanel "$$(readlink -- fbpanel)"
-
 .PHONY : fbpanel
-fbpanel : fbpanel/.git
-	( cd $@ && git stash && git pull )
+fbpanel :
+	$(call clone_pull,https://github.com/akozlins/fbpanel,$@)
 	# install gcc, cmake, gtk2
 	# - Debian: libgtk2.0-dev, libglib2.0-dev
 	# - CentOS: gtk2-devel
 	mkdir fbpanel/build
 	( cd fbpanel/build && cmake $(CMAKE_OPTS) .. && $(MAKE) install )
 
-direnv/.git :
-	git clone https://github.com/direnv/direnv "$$(readlink -- direnv)"
-	( cd direnv && ln -snv vendor src )
-
 .PHONY : direnv
-direnv : direnv/.git
-	( cd $@ && git stash && git pull && git submodule update --init --recursive )
+direnv :
+	$(call clone_pull,https://github.com/direnv/direnv,$@)
+	git -C $@ submodule update --init --recursive
+	[ -e $@/src ] || ln -snv vendor $@/src
 	( cd direnv && GOPATH=$(shell pwd)/$@ $(MAKE) )
 
-xss-lock/.git :
-	git clone https://bitbucket.org/raymonad/xss-lock "$$(readlink -- xss-lock)"
-
 .PHONY : xss-lock
-xss-lock : xss-lock/.git
-	git -C $@ stash
-	git -C $@ pull
+xss-lock :
+	$(call clone_pull,https://bitbucket.org/raymonad/xss-lock,$@)
 	cmake -S $@ -B $@/build $(CMAKE_OPTS)
 	cmake --build $@/build
 	cmake --install $@/build
