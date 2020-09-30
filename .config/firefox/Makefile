@@ -1,6 +1,9 @@
 
 .DEFAULT_GOAL := all
 
+SHELL := bash
+.SHELLFLAGS := -euf -c
+
 all : CustomCSSforFx ghacks-users.js
 
 default/user.js : user.js/my.js user.js/ghacks.js ghacks-user.js/user.js
@@ -21,3 +24,10 @@ ghacks-user.js/.git :
 ghacks-user.js : ghacks-user.js/.git
 	echo "Signature: 8a477f597d28d172789f06886806bc55" > "$@/CACHEDIR.TAG"
 	( cd $@ && git stash && git pull )
+
+.PHONY : default
+default :
+	if [ -e "$@/user.js" ] && ! diff -- "$@/user.js" <(./user.js/make.py) ; then \
+	    cp -v -- "$@/user.js" "$@/user.$$(date +%FT%T).js"; \
+	    ./user.js/generate.py > "$@/user.js"; \
+	fi
