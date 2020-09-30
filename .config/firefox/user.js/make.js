@@ -1,23 +1,21 @@
 #!/bin/node
-
 "use strict";
 
 const fs = require("fs");
 const path = require("path");
 
-let prefs = new Map();
-let user_pref = function(key, value) {
-    prefs.set(key, value);
-}
-
-let eval_file = function(f) {
+const read_prefs = function(prefs, f) {
+    const user_pref = function(key, value) {
+        prefs.set(key, value);
+    };
     eval("" + fs.readFileSync(f));
-}
+};
 
 const FIREFOX_HOME = path.normalize(__dirname + "/..");
 
-eval_file(FIREFOX_HOME + "/user.js/ghacks.js");
-eval_file(FIREFOX_HOME + "/user.js/my.js");
+const prefs = new Map();
+read_prefs(prefs, FIREFOX_HOME + "/user.js/ghacks.js");
+read_prefs(prefs, FIREFOX_HOME + "/user.js/my.js");
 
 prefs.forEach((value, key) => {
     if(value === null) return;

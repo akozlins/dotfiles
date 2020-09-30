@@ -1,5 +1,5 @@
 
-eval_file(FIREFOX_HOME + "/ghacks-user.js/user.js");
+read_prefs(prefs, FIREFOX_HOME + "/ghacks-user.js/user.js");
 
 user_pref("browser.startup.page", null);
 user_pref("layout.css.visited_links_enabled", null);
