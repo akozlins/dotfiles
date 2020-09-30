@@ -9,12 +9,6 @@ let prefs = new Map();
 let user_pref = function(key, value) {
     prefs.set(key, value);
 }
-let del_pref = function(key) {
-    if(prefs.get(key) === undefined) {
-        throw `no such key: '${key}'`;
-    }
-    prefs.delete(key);
-}
 
 let eval_file = function(f) {
     eval("" + fs.readFileSync(f));
@@ -26,6 +20,7 @@ eval_file(FIREFOX_HOME + "/user.js/ghacks.js");
 eval_file(FIREFOX_HOME + "/user.js/my.js");
 
 prefs.forEach((value, key) => {
+    if(value === null) return;
     switch(typeof(value)) {
     case "boolean" :
     case "number" :
