@@ -10,7 +10,7 @@
 /*/terminal/history/
 /*/workspace/
 
-/*/disabled_plugins.txt
+/*/disabled_*.txt
 /*/*.key
 /*/port
 /*/port.lock
