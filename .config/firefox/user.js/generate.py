@@ -23,16 +23,16 @@ read_prefs(prefs, FIREFOX_HOME + "/user.js/my.js");
 for key, value in prefs.items() :
     if ( value == None ) : continue;
     value_type = type(value);
-    if value_type == bool and value == False :
-        print(f'user_pref("{key}", false);');
-        continue;
-    if value_type == bool and value == True :
-        print(f'user_pref("{key}", true);');
-        continue;
-    if value_type == int :
-        print(f'user_pref("{key}", {value});');
-        continue;
-    if value_type == str :
-        print(f'user_pref("{key}", "{value}");');
-        continue;
-    raise Exception(f'unknown type: {value_type}')
+
+    if ( value_type == bool and value == False ) :
+        value = "false";
+    elif ( value_type == bool and value == True ) :
+        value = "true";
+    elif ( value_type == int ) :
+        value = value;
+    elif ( value_type == str ) :
+        value = '"' + value + '"';
+    else :
+        raise Exception(f'unknown type: {value_type}')
+
+    print(f'user_pref("{key}", {value});');

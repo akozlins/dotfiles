@@ -18,16 +18,19 @@ read_prefs(prefs, FIREFOX_HOME + "/user.js/ghacks.js");
 read_prefs(prefs, FIREFOX_HOME + "/user.js/my.js");
 
 prefs.forEach((value, key) => {
-    if(value === null) return;
-    switch(typeof(value)) {
-    case "boolean" :
-    case "number" :
-        console.log(`user_pref("${key}", ${value});`);
-        break;
-    case "string" :
-        console.log(`user_pref("${key}", "${value}");`);
-        break;
-    default :
-        throw `unknown type: ${typeof(value)}`;
-    }
+    if ( value === null ) return;
+    const value_type = typeof(value);
+
+    if ( value_type === "boolean" && value === false )
+        value = "false";
+    else if ( value_type === "boolean" && value === true )
+        value = "true";
+    else if ( value_type === "number" )
+        value = value;
+    else if ( value_type === "string" )
+        value = '"' + value + '"';
+    else
+        throw `unknown type: ${value_type}`;
+
+    console.log(`user_pref("${key}", ${value});`);
 });
