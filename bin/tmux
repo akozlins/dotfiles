@@ -2,4 +2,6 @@
 set -euf
 
 exec \
-/usr/bin/tmux -f "$DOTFILES/.tmux.conf" "$@"
+/usr/bin/tmux \
+    -f "$XDG_CONFIG_HOME/tmux/tmux.conf" \
+    "$@"
