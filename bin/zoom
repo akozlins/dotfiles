@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euf
+
+CMD=("/usr/bin/zoom" "$@")
+
+private="$XDG_CACHE_HOME/zoom"
+mkdir -pv "$private"
+
+FJ="/usr/bin/firejail"
+[ -x "$FJ" ] && CMD=("$FJ" "--private=$private" -- "${CMD[@]}")
+
+if [ $# -eq 0 ] ; then
+    exec "${CMD[@]}" > /dev/null 2>&1 &
+else
+    exec "${CMD[@]}"
+fi
