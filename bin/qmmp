@@ -1,0 +1,8 @@
+#!/bin/sh
+set -euf
+
+HOME="$DOTFILES"
+
+exec \
+/usr/bin/qmmp "$@" \
+> /dev/null 2>&1 &
