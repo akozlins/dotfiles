@@ -12,9 +12,6 @@ endef
 
 all : CustomCSSforFx ghacks-users.js
 
-default/user.js : user.js/my.js user.js/ghacks.js ghacks-user.js/user.js
-	./user.js/make.sh
-
 .PHONY : CustomCSSforFx
 CustomCSSforFx :
 	$(call clone_pull,https://github.com/Aris-t2/CustomCSSforFx,$@)
@@ -26,7 +23,7 @@ ghacks-user.js :
 # update default profile
 .PHONY : default
 default :
-	if [ -e "$@/user.js" ] && ! diff -- "$@/user.js" <(./user.js/make.py) ; then \
+	if [ -e "$@/user.js" ] && ! diff -- "$@/user.js" <(./user.js/generate.py) ; then \
 	    cp -v -- "$@/user.js" "$@/user.$$(date +%FT%T).js"; \
 	    ./user.js/generate.py > "$@/user.js"; \
 	fi
