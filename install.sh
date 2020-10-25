@@ -29,9 +29,8 @@ for target in "${targets[@]}" ; do
         exit 1
     fi
 
-    if [ -e "$link" ] && [ "$(readlink -f -- "$link")" = "$(readlink -f -- "$target")" ] ; then
-        echo "INFO: link '$link' is OK"
-        continue;
+    if [ -L "$link" ] && [ "$(readlink -f -- "$link")" = "$(readlink -f -- "$target")" ] ; then
+        rm -v -- "$link"
     fi
 
     if [ -e "$link" ] ; then
