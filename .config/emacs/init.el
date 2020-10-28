@@ -20,6 +20,7 @@
     'use-package
     'whitespace
     'org
+    'undo-tree
 )
 
 (require 'use-package)
@@ -37,3 +38,17 @@
 )
 
 (load (concat emacs.config "/whitespace"))
+
+
+
+; https://www.emacswiki.org/emacs/IbufferMode
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+; https://elpa.gnu.org/packages/undo-tree.html
+; C-/ - undo
+; C-? - redo
+; C-x u - show undo tree
+(require `undo-tree)
+(global-undo-tree-mode)
+
+;
