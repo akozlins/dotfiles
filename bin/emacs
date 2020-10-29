@@ -2,13 +2,16 @@
 set -euf
 
 CMD="/usr/bin/emacs"
-if [ -x "CMD" ] ; then
+if [ ! -x "$CMD" ] ; then
     "$CMD"
     exit 1
 fi
 
-export HOME="$DOTFILES"
-CMD=("/usr/bin/emacs" --no-init-file "--load=$DOTFILES/.emacs.d/init.el" "$@")
+EMACSDIR="$XDG_CONFIG_HOME/emacs"
+
+INIT_EL="$EMACSDIR/init.el"
+
+CMD=("/usr/bin/emacs" --no-init-file "--load=$INIT_EL" "$@")
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &

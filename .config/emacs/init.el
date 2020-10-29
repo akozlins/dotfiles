@@ -2,7 +2,10 @@
 
 (setq debug-on-error t)
 
-(setq emacs.config (concat (getenv "DOTFILES") "/.emacs.d"))
+(setq user-init-file (or load-file-name (buffer-file-name)))
+(setq user-emacs-directory (file-name-directory user-init-file))
+
+(setq emacs.config (concat (getenv "XDG_CONFIG_HOME") "/emacs"))
 (setq emacs.cache (concat (getenv "XDG_CACHE_HOME") "/emacs"))
 
 (load (concat emacs.config "/gui"))
