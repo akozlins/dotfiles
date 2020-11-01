@@ -3,6 +3,8 @@ PREFIX := $(HOME)/.local
 CMAKE_OPTS := -DCMAKE_INSTALL_PREFIX=$(PREFIX) -DCMAKE_BUILD_TYPE=Release
 
 # clone git project and do stash/pull
+# $(1) - git url
+# $(2) - link
 define clone_pull
 	[ -e $(2)/.git ] || git clone -- $(1) $$(readlink -- $(2))
 	git -C $(2) stash

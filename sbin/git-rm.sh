@@ -9,5 +9,5 @@ shift
 exec \
 git filter-branch \
     --index-filter \
-    "git rm -rf --cached --ignore-unmatch $file" \
+    "git rm -rf --cached --ignore-unmatch -- $file" \
     "$@"

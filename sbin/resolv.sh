@@ -132,7 +132,7 @@ while true ; do
         ;;
     [r]* )
         update < "$RESOLV.bak"
-        rm -vf "$RESOLV.bak"
+        rm -vf -- "$RESOLV.bak"
         continue
         ;;
     [L]* )

@@ -6,7 +6,6 @@ echo "DOTFILES = '$DOTFILES'"
 unset CDPATH
 cd "$DOTFILES" || exit 1
 
-# TODO: rename to targets
 targets=(
     bin
 
