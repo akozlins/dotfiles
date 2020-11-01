@@ -1,34 +1,32 @@
 #
 
-Global {
+global {
     edge = bottom
-    allign = center
+    align = center
     margin = 0
-    widthtype = percent
+    widthType = percent
     width = 100
     height = 30
     transparent = true
-    tintcolor = white
+    tintColor = white
     alpha = 15
-    setdocktype = true
-    setpartialstrut = true
+    setDockType = true
+    setPartialStrut = true
     autohide = false
-    roundcorners = false
-    layer = none
-    MaxElemHeight = 30
+    roundCorners = false
+    layer = above
+    maxElemHeight = 30
 }
-
-Plugin {
+plugin {
     type = space
     config {
         size = 2
     }
 }
-
-Plugin {
+plugin {
     type = menu
     config {
-        IconSize = 22
+        iconSize = 22
         icon = logo
         systemmenu {
         }
@@ -67,16 +65,14 @@ Plugin {
         }
     }
 }
-
-Plugin {
+plugin {
     type = separator
     padding = 8
     config {
         size = 16
     }
 }
-
-Plugin {
+plugin {
     type = launchbar
     config {
         button {
@@ -106,66 +102,58 @@ Plugin {
         }
     }
 }
-
-Plugin {
+plugin {
     type = separator
     padding = 8
     config {
         size = 16
     }
 }
-
-Plugin {
+plugin {
     type = taskbar
     expand = true
     config {
-        ShowIconified = true
-        ShowMapped = true
-        ShowAllDesks = false
+        showIconified = true
+        showMapped = true
+        showAllDesks = false
         tooltips = true
-        IconsOnly = false
-        MaxTaskWidth = 150
+        iconsOnly = false
+        maxTaskWidth = 150
     }
 }
-
-Plugin {
+plugin {
     type = space
     config {
         size = 16
     }
 }
-
 plugin {
     type = genmon
     config {
-        Command = ~/.config/fbpanel/BAT.sh
-        PollingTime = 5
-        TextSize = small
-        TextColor = red
+        command = ~/.config/fbpanel/BAT.sh
+        pollingTime = 5
+        textSize = small
+        textColor = red
     }
 }
-
-Plugin {
+plugin {
     type = tray
 }
-
-Plugin {
+plugin {
     type = space
     config {
         size = 16
     }
 }
-
-Plugin {
+plugin {
     type = dclock
     config {
-        ShowSeconds = false
-        HoursView = 24
-        TooltipFmt = %F %A
+        showSeconds = false
+        hoursView = 24
+        tooltipFmt = %F %A
     }
 }
-
-Plugin {
+plugin {
     type = space
     config {
         size = 2
