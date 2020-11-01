@@ -1,34 +1,36 @@
 
 .ONESHELL :
-#.SHELLFLAGS = -e
+.SHELLFLAGS := -e -c
 
-geant4/.git :
-	git clone https://github.com/Geant4/geant4 "$$(readlink -- geant4)"
+# clone git project and do stash/pull
+# $(1) - git url
+# $(2) - link
+define clone_pull
+	[ -e $(2)/.git ] || git clone -- $(1) $$(readlink -- $(2))
+	git -C $(2) stash
+	git -C $(2) pull
+	git -C $(2) submodule update --init --recursive
+endef
 
 .PHONY : geant4
-geant4 : geant4/.git
+geant4 :
+	$(call clone_pull,https://github.com/Geant4/geant4,$@)
 	# centos: expat-devel, libXmu-devel
-	mkdir -p geant4/cmake-build
-	cd geant4/cmake-build
 	cmake \
 	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local/geant4.cern.ch" \
 	    -DGEANT4_INSTALL_DATA=ON \
 	    -DGEANT4_USE_QT=ON \
 	    -DGEANT4_USE_OPENGL_X11=ON \
-	    ..
-	$(MAKE)
-	#$(MAKE) install
-
-root/.git :
-	git clone https://github.com/root-project/root "$$(readlink -- root)"
+	    -S $@ -B $@/cmake-build
+	$(MAKE) -C $@/cmake-build
+	#$(MAKE) -C $@/cmake-build install
 
 .PHONY : root
-root : root/.git
-	mkdir -p root/cmake-build
-	cd root/cmake-build
+root :
+	$(call clone_pull,https://github.com/root-project/root,$@)
 	cmake \
 	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local/root.cern.ch" \
 	    -DCMAKE_CXX_STANDARD=14 \
-	    ..
-	$(MAKE)
-	#$(MAKE) install
+	    -S $@ -B $@/cmake-build
+	$(MAKE) -C $@/cmake-build
+	#$(MAKE) -C $@/cmake-build install
