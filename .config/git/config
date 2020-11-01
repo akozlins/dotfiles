@@ -10,13 +10,21 @@
 [diff]
 
 [merge]
-	commit = no
 
 [pull]
 	ff = only
 
+[stash]
+	showPatch = true
+
 [status]
 	submoduleSummary = true
+
+[url "git@bitbucket.org:"]
+	pushInsteadOf = https://bitbucket.org/
+
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
 
 [oh-my-zsh]
 	hide-dirty = 1
