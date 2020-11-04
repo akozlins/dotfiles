@@ -1,8 +1,11 @@
 {
+    "editor.fontSize": 16,
     "editor.renderWhitespace": "all",
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingQuotes": "never",
     "editor.dragAndDrop": false,
+    "editor.padding.top": 2,
+    "editor.padding.bottom": 2,
     "files.enableTrash": false,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false

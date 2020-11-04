@@ -16,6 +16,6 @@ unset -v MY_GEANT4_SH
 
 if [ -x "$HOME/.local/root.cern.ch/bin/root" ] ; then
     ROOTSYS="$HOME/.local/root.cern.ch"
-    export ROOTSYS
+#    export ROOTSYS
     PATH="$ROOTSYS/bin:$PATH"
 fi

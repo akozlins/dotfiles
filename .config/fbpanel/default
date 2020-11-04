@@ -16,6 +16,11 @@ global {
     roundCorners = false
     layer = above
     maxElemHeight = 30
+    xmargin = 0
+    ymargin = 0
+    setLayer = false
+    roundCornersRadius = 0
+    heightWhenHidden = 0
 }
 plugin {
     type = space

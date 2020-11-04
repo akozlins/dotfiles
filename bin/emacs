@@ -7,11 +7,11 @@ if [ ! -x "$CMD" ] ; then
     exit 1
 fi
 
-EMACSDIR="$XDG_CONFIG_HOME/emacs"
+USER_EMACS_DIRECTORY="$XDG_CONFIG_HOME/emacs"
 
-INIT_EL="$EMACSDIR/init.el"
+USER_INIT_FILE="$USER_EMACS_DIRECTORY/init.el"
 
-CMD=("/usr/bin/emacs" --no-init-file "--load=$INIT_EL" "$@")
+CMD=("/usr/bin/emacs" --no-init-file "--load=$USER_INIT_FILE" "$@")
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &

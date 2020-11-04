@@ -14,6 +14,7 @@ alias la='ls -lAF'
 alias make='LC_ALL=C make'
 
 alias ag="ag --hidden"
+alias fd="fd --hidden"
 alias rg="rg --hidden"
 
 alias grep-nonascii="grep --line-number --color --perl-regexp --regexp='[^\\x00-\\x7F]'"
