@@ -18,7 +18,7 @@ CustomCSSforFx :
 
 .PHONY : ghacks-user.js
 ghacks-user.js :
-	$(call clone_pull,https://github.com/ghacksuserjs/ghacks-user.js,$@)
+	$(call clone_pull,https://github.com/arkenfox/user.js,$@)
 
 # update default profile
 .PHONY : default
