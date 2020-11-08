@@ -11,7 +11,7 @@ def read_prefs(prefs, f) :
     null = None;
     stream = open(f);
     # run gcc preprocessor (remove comments, etc.)
-    output = subprocess.check_output("gcc -E -P -", stdin=stream, shell=True);
+    output = subprocess.check_output("/bin/gcc -E -P -", stdin=stream, shell=True);
     exec(output);
 
 FIREFOX_HOME = os.path.normpath(os.path.dirname(os.path.realpath(__file__)) + "/..");

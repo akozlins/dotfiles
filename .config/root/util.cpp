@@ -81,7 +81,7 @@ public:
         double miny = f->GetMinimum(), maxy = f->GetMaximum();
 
         char text[128];
-        sprintf(text, str, val, err);
+        snprintf(text, sizeof(text), str, val, err);
         lat.DrawLatex(minx + 0.04 * (maxx - minx), miny + (0.93 - 0.08 * n) * (maxy - miny), text);
 
         return true;

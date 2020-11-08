@@ -4,7 +4,7 @@ set -euf
 dev=$1
 mnt=$2
 
-read -p "Partition disk? y/[n]" -n 1 yn
+read -r -p "Partition disk? y/[n]" -n 1 yn
 case $yn in
     [Yy]* )
         ./gdisk.sh "$dev"
@@ -28,7 +28,7 @@ mount "${dev}1" "$mnt/boot"
 
 
 
-read -p "Install packages? y/[n]" -n 1 yn
+read -r -p "Install packages? y/[n]" -n 1 yn
 case $yn in
     [Yy]* )
         pacstrap "$mnt" base
