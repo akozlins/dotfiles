@@ -1,16 +1,20 @@
 #!/bin/python
 
-import argparse, sys, json, yaml;
+import argparse;
 
-parser = argparse.ArgumentParser()
-parser.add_argument("input", metavar="input.json", nargs="?", type=str)
-args = parser.parse_args()
+parser = argparse.ArgumentParser();
+parser.add_argument("fin", nargs="?", default="-");
+args = parser.parse_args();
 
-if not args.input or args.input == "-" :
-    json_stream = sys.stdin
+import sys;
+
+if args.fin == "-" :
+    fin = sys.stdin;
 else :
-    json_stream = open(args.input, "r", encoding = "utf-8")
+    fin = open(args.fin, "r", encoding = "utf-8");
 
-json_data = json.load(json_stream)
+fout = sys.stdout;
 
-yaml.safe_dump(json_data, sys.stdout, default_flow_style = False)
+import json, yaml;
+
+yaml.dump(json.load(fin), fout);
