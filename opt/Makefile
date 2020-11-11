@@ -24,18 +24,9 @@ endef
 oh-my-zsh :
 	$(call clone_pull,https://github.com/robbyrussell/oh-my-zsh,$@)
 
-far2l/history :
-	mkdir -pv far2l/history/k-Editor/k-LastPositions
-	mkdir -pv far2l/history/k-SavedDialogHistory
-	mkdir -pv far2l/history/k-SavedFolderHistory
-	mkdir -pv far2l/history/k-SavedHistory
-	mkdir -pv far2l/history/k-SavedViewHistory
-	mkdir -pv far2l/history/k-Viewer/k-LastPositions
-
 .PHONY : far2l
 far2l :
 	$(call clone_pull,https://github.com/elfmz/far2l,far2l)
-	make far2l/history
 	# install g++, cmake, patch, m4, pkg-config, gawk
 	# - Arch: wxgtk2
 	# - Fedora, CentOS: wxGTK3-devel
@@ -43,6 +34,7 @@ far2l :
 	# - Ubuntu: libwxgtk3.0-gtk3-dev, libglib2.0-dev
 	patch -d far2l -p1 < far2l.patch
 	$(call cmake_make_install,$@)
+	$(XDG_CONFIG_HOME)/far2l/init.sh
 
 .PHONY : fbpanel
 fbpanel :

@@ -1,6 +1,6 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -172,17 +172,6 @@
+@@ -199,18 +199,7 @@
  add_subdirectory (colorer)
  add_subdirectory (multiarc)
  add_subdirectory (tmppanel)
@@ -15,6 +15,7 @@
 -add_subdirectory (inside)
 -add_subdirectory (incsrch)
 -add_subdirectory (NetRocks)
+ add_subdirectory (packaging)
  
  if(PYTHON)
  	find_package(PythonLibs 3.0)
