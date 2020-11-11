@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Skype
+Exec=$DOTFILES/bin/skype
+Icon=skypeforlinux
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/skype

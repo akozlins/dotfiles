@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=far2l
+Icon=far2l
+TryExec=$DOTFILES/bin/far2l
+Exec=$DOTFILES/bin/far2l
+Terminal=false
+Type=Application

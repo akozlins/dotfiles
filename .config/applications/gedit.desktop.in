@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=gedit
+Exec=gedit -- %u
+Terminal=false
+Type=Application
+MimeType=application/csv

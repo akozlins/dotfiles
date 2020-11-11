@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=firefox
 Icon=firefox
-Exec=sh -c "\\$HOME/.dotfiles/bin/firefox \"\\$@\""
+Exec=$DOTFILES/bin/firefox -- %u
 Terminal=false
 Type=Application
