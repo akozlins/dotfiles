@@ -1,0 +1,13 @@
+#!/bin/sh
+set -euf
+
+export EMACSDIR="$XDG_DATA_HOME/doom-emacs"
+export DOOMLOCALDIR="$EMACSDIR/.local"
+export DOOMDIR="$XDG_CONFIG_HOME/emacs/doom"
+
+if [ ! -d "$EMACSDIR" ] ; then
+    git clone https://github.com/hlissner/doom-emacs "$EMACSDIR"
+fi
+
+exec \
+"$EMACSDIR/bin/doom" "$@"

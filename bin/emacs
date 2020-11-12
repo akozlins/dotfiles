@@ -9,6 +9,13 @@ fi
 
 USER_EMACS_DIRECTORY="$XDG_CONFIG_HOME/emacs"
 
+if [[ " $* " =~ " --doom " ]] ; then
+    export EMACSDIR="$XDG_DATA_HOME/doom-emacs"
+    export DOOMLOCALDIR="$EMACSDIR/.local"
+    export DOOMDIR="$XDG_CONFIG_HOME/emacs/doom"
+    USER_EMACS_DIRECTORY="$EMACSDIR"
+fi
+
 USER_INIT_FILE="$USER_EMACS_DIRECTORY/init.el"
 
 CMD=("/usr/bin/emacs" --no-init-file "--load=$USER_INIT_FILE" "$@")
