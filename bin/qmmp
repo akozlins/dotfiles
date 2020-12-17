@@ -3,6 +3,13 @@ set -euf
 
 HOME="$DOTFILES"
 
-exec \
-/usr/bin/qmmp "$@" \
-> /dev/null 2>&1 &
+CMD=(
+    /usr/bin/qmmp
+    "$@"
+)
+
+if [ $# -eq 0 ] ; then
+    exec "${CMD[@]}" > /dev/null 2>&1 &
+else
+    exec "${CMD[@]}"
+fi

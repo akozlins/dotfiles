@@ -1,6 +1,6 @@
 #
 
 noblacklist ${HOME}/.config/qBittorrent
-noblacklist ${HOME}/.local/share/data/qBittorrent
+noblacklist ${HOME}/.local/share/qBittorrent
 whitelist ${HOME}/.config/qBittorrent
-whitelist ${HOME}/.local/share/data/qBittorrent
+whitelist ${HOME}/.local/share/qBittorrent
