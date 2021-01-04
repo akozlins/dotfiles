@@ -8,7 +8,6 @@ Current list of _allowed_ `.` files:
 
  - `.cache/`, `.config/`, `.local/`
  - `.ssh/`
- - `.pam_environment`
  - `.profile`
  - `.bashrc`, `.zshrc`
  - `.bash_history`, `.zsh_history`

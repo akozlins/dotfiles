@@ -13,7 +13,6 @@ targets=(
     .pki
 
     .bashrc .zshrc
-    .pam_environment
     .profile
 
     .rootrc

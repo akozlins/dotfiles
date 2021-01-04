@@ -1,2 +1,0 @@
-UNISON DEFAULT=@{HOME}/.config/unison
-XAUTHORITY DEFAULT=${XDG_RUNTIME_DIR}/.Xauthority
