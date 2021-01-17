@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euf
 
+export UNISON="$HOME/.config/unison"
+
 CMD=("/usr/bin/unison-gtk2" -logfile "$HOME/.cache/unison.log" "-watch=false" "$@")
 
 if [ $# -eq 0 ] ; then

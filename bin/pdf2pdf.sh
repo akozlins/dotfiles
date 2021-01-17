@@ -10,7 +10,7 @@ elif [ $# -eq 1 ] ; then
     if [ -f "$input" ] ; then
         exit 1
     fi
-    mv "$output" "$input"
+    mv --no-clobber -- "$output" "$input"
 else
     echo "usage: $0 input [output]"
     exit 1
