@@ -1,0 +1,14 @@
+#!/bin/sh
+set -euf
+
+confno=$1
+uname=$ZOOM_UNAME
+
+if [ $# -eq 1 ] ; then
+    exec \
+    zoom "zoommtg://zoom.us/join?action=join&confno=$confno&uname=$uname"
+else
+    pwd=$2
+    exec \
+    zoom "zoommtg://zoom.us/join?action=join&confno=$confno&uname=$uname&pwd=$pwd"
+fi
