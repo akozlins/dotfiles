@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Redshift
+Icon=redshift
+Exec=redshift-gtk -l 50:8
+Terminal=false
