@@ -6,7 +6,7 @@ CMD=("/usr/bin/zoom" "$@")
 QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 private="$XDG_CACHE_HOME/zoom"
-mkdir -pv "$private"
+mkdir -pv -- "$private"
 
 FJ="/usr/bin/firejail"
 [ -x "$FJ" ] && CMD=("$FJ" "--private=$private" -- "${CMD[@]}")

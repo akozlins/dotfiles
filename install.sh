@@ -53,7 +53,7 @@ for target in "${targets[@]}" ; do
 
     link_dir=$(dirname -- "$link")
     if [ ! -d "$link_dir" ] ; then
-        mkdir -pv "$link_dir"
+        mkdir -pv -- "$link_dir"
     fi
 
     if command -v realpath &> /dev/null ; then

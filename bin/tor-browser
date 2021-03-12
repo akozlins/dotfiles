@@ -7,7 +7,7 @@ export PATH
 CMD=(tor-browser "$@")
 
 private="$XDG_CACHE_HOME/tor-browser"
-mkdir -pv "$private"
+mkdir -pv -- "$private"
 
 CMD=(firejail "--private=$private" -- "${CMD[@]}")
 

@@ -8,9 +8,9 @@ if [ ! -x "$far2l" ] ; then
     exit 1
 fi
 
-mkdir -pv "$XDG_CACHE_HOME/far2l/cache"
-mkdir -pv "$XDG_CACHE_HOME/far2l/history"
-mkdir -pv "$XDG_CACHE_HOME/far2l/sr"
+mkdir -pv -- "$XDG_CACHE_HOME/far2l/cache"
+mkdir -pv -- "$XDG_CACHE_HOME/far2l/history"
+mkdir -pv -- "$XDG_CACHE_HOME/far2l/sr"
 
 exec \
 "$far2l" "$@" \

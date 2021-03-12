@@ -3,7 +3,7 @@ set -euf
 unset CDPATH
 cd "$(dirname -- "$(readlink -f -- "$0")")" || exit 1
 
-[ -e bundle ] || mkdir -pv "$(readlink -- bundle)"
+[ -e bundle ] || mkdir -pv -- "$(readlink -- bundle)"
 
 # TODO: use vim plug
 

@@ -5,7 +5,7 @@ export HOME="$DOTFILES"
 
 STEAM_HOME="$HOME/.steam"
 
-mkdir -pv "$STEAM_HOME"
+mkdir -pv -- "$STEAM_HOME"
 
 CMD=("/usr/bin/steam" "$@")
 

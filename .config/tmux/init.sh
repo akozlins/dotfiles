@@ -3,8 +3,8 @@ set -euf
 unset CDPATH
 cd "$(dirname -- "$(readlink -f -- "$0")")" || exit 1
 
-[ -e plugins ] || mkdir -pv "$(readlink -- plugins)"
-[ -e resurrect ] || mkdir -pv "$(readlink -- resurrect)"
+[ -e plugins ] || mkdir -pv -- "$(readlink -- plugins)"
+[ -e resurrect ] || mkdir -pv -- "$(readlink -- resurrect)"
 
 # TODO: add version
 repos=(

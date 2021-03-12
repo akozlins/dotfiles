@@ -23,7 +23,7 @@ cleanup() {
     exit $rv
 }
 trap cleanup EXIT
-mkdir -p "$mnt/boot"
+mkdir -pv -- "$mnt/boot"
 mount "${dev}1" "$mnt/boot"
 
 

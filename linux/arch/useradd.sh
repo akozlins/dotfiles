@@ -9,6 +9,6 @@ cat > /etc/sudoers.d/$user << EOF
 $user ALL=(ALL) ALL
 EOF
 
-mkdir "$HOME/.ssh"
+mkdir -pv -- "$HOME/.ssh"
 touch "$HOME/.ssh/authorized_keys"
 chmod -R go-rwx "$HOME/.ssh"

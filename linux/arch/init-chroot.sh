@@ -45,7 +45,7 @@ fi
 
 # ssh
 
-mkdir "$HOME/.ssh"
+mkdir -pv -- "$HOME/.ssh"
 touch "$HOME/.ssh/authorized_keys"
 chmod go-rwx "$HOME/.ssh"
 
