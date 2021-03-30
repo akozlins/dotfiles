@@ -28,7 +28,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(
     command-not-found
-    dotenv
 )
 
 source "$ZSH/oh-my-zsh.sh"
