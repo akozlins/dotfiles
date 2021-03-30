@@ -15,7 +15,7 @@ void rootlogon() {
     gStyle->SetTitleFont(fontCode, "_");
     gStyle->SetTitleFont(fontCode, "xyz");
     gStyle->SetLabelFont(fontCode, "xyz");
-    gStyle->SetLabelSize(0.045, "xyz");
+    gStyle->SetLabelSize(0.035, "xyz");
 
     gStyle->SetStatFont(fontCode);
     gStyle->SetStatX(0.99);
@@ -35,12 +35,12 @@ void rootlogon() {
     gStyle->SetPadBottomMargin(0.12);
     gStyle->SetPadRightMargin(0.13);
     gStyle->SetPadLeftMargin(0.13);
-    gStyle->SetTitleXOffset(1.05);
-    gStyle->SetTitleYOffset(1.15);
-    gStyle->SetTitleXSize(0.05);
-    gStyle->SetTitleYSize(0.05);
+    gStyle->SetTitleXOffset(1.10);
+    gStyle->SetTitleYOffset(1.20);
+    gStyle->SetTitleXSize(0.040);
+    gStyle->SetTitleYSize(0.040);
     gStyle->SetTitleStyle(0);
-    TGaxis::SetMaxDigits(3);
+    TGaxis::SetMaxDigits(4);
 
     gStyle->SetPalette(kViridis);
 
