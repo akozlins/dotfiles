@@ -1,4 +1,8 @@
 
+.ONESHELL :
+SHELL := bash
+.SHELLFLAGS := -euf -c
+
 PREFIX := $(HOME)/.local
 CMAKE_OPTS := -DCMAKE_INSTALL_PREFIX=$(PREFIX) -DCMAKE_BUILD_TYPE=Release
 

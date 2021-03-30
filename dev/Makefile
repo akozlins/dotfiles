@@ -1,6 +1,7 @@
 
 .ONESHELL :
-.SHELLFLAGS := -e -c
+SHELL := bash
+.SHELLFLAGS := -euf -c
 
 # clone git project and do stash/pull
 # $(1) - git url
@@ -30,7 +31,7 @@ root :
 	$(call clone_pull,https://github.com/root-project/root,$@)
 	cmake \
 	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local/root.cern.ch" \
-	    -DCMAKE_CXX_STANDARD=14 \
+	    -DCMAKE_CXX_STANDARD=17 \
 	    -S $@ -B $@/cmake-build
 	$(MAKE) -C $@/cmake-build
 	#$(MAKE) -C $@/cmake-build install
