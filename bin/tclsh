@@ -3,5 +3,10 @@ set -euf
 
 export HOME="$DOTFILES"
 
-exec \
-eltclsh "$@"
+if [ -x /usr/bin/eltclsh ] ; then
+    exec \
+    /usr/bin/eltclsh "$@"
+else
+    exec \
+    /usr/bin/tclsh "$@"
+fi
