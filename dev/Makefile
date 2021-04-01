@@ -1,6 +1,6 @@
 
 .ONESHELL :
-SHELL := bash
+SHELL := /bin/bash
 .SHELLFLAGS := -euf -c
 
 # clone git project and do stash/pull

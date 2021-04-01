@@ -10,13 +10,13 @@ umask 077
 tmp=$(mktemp)
 cleanup() {
     rc=$?
-    rm -f -- "$tmp"
+    rm -fv -- "$tmp"
     exit $rc
 }
 trap cleanup EXIT
 
 geometry=$1
-command="rm -f -- '$tmp' ; $2"
+command="rm -fv -- '$tmp' ; $2"
 
 /usr/bin/uxterm -geometry "$geometry" -e /bin/sh -c "$command" > /dev/null 2>&1 &
 

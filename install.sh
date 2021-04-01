@@ -28,7 +28,7 @@ for target in "${targets[@]}" ; do
     fi
 
     if [ -L "$link" ] && [ "$(readlink -f -- "$link")" = "$(readlink -f -- "$target")" ] ; then
-        rm -v -- "$link"
+        rm -fv -- "$link"
     fi
 
     if [ -e "$link" ] ; then
@@ -36,7 +36,7 @@ for target in "${targets[@]}" ; do
         read -r -p "Overwrite? [y,n,q,?] " sel
         case "$sel" in
             y)
-                rm -rv -- "$link"
+                rm -rfv -- "$link"
                 ;;
             n)
                 continue

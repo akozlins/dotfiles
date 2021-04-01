@@ -132,13 +132,14 @@ while true ; do
         ;;
     [r]* )
         update < "$RESOLV.bak"
-        rm -vf -- "$RESOLV.bak"
+        rm -fv -- "$RESOLV.bak"
         continue
         ;;
     [L]* )
         backup || continue
         update << EOF
 nameserver 127.0.0.1
+option trust-ad
 EOF
         continue
         ;;

@@ -1,4 +1,6 @@
 
+.DEFAULT_GOAL := all
+
 .ONESHELL :
 SHELL := bash
 .SHELLFLAGS := -euf -c
@@ -23,6 +25,8 @@ define cmake_make_install
 	$(MAKE) -C $(1)/build
 	$(MAKE) -C $(1)/build install
 endef
+
+all :
 
 .PHONY : oh-my-zsh
 oh-my-zsh :

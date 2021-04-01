@@ -35,6 +35,7 @@ X11VNC_CMD=(x11vnc
     -localhost -once -timeout 5
     -display :0
     -cursor none -scale "$SCALE"
+#    -auth ~/.Xauthority
 )
 
 ARGS=(-L "$PORT:localhost:$RPORT" "$@")
