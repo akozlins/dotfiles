@@ -17,4 +17,8 @@ fout = sys.stdout;
 
 import json, yaml;
 
-yaml.dump(json.load(fin), fout);
+yaml.dump(json.load(fin), fout,
+    sort_keys=False,
+    encoding=("utf-8"),
+    allow_unicode=True,
+);
