@@ -8,6 +8,7 @@ windows = [];
 for window in session["windows"] :
     tabs = [];
     for tab in window["tabs"] :
+        if not tab["entries"] : continue
         entry = tab["entries"][-1];
         tabs.append({
             "entries" : [{
