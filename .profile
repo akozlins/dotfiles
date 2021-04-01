@@ -115,12 +115,8 @@ export RANDFILE="$XDG_CONFIG_HOME/.rnd"
 export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/.nv"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/.nv"
 
-
-
 for f in "$DOTFILES"/profile.d/?*.sh ; do
     [ -f "$f" ] && . "$f"
 done
-
-
 
 export PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"

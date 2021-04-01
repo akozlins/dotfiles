@@ -5,7 +5,7 @@ set -euf
 
 # time
 
-ln -vsf /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
+ln -sfv /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 
 
 

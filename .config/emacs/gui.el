@@ -3,7 +3,7 @@
 (set-face-attribute 'default nil :height 160)
 
 (when window-system
-    (set-frame-size (selected-frame) 120 35)
+    (set-frame-size (selected-frame) 105 35)
 )
 
 (tool-bar-mode -1)

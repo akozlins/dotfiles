@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
 HOME="$DOTFILES"
 
 CMD=(
-    /usr/bin/qmmp
+    "/usr/bin/qmmp"
     "$@"
 )
 

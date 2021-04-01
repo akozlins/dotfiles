@@ -4,7 +4,7 @@
 
 - uBlock Origin
 - Enhancer for YouTube
-- Containerise
 - ClearURLs
+- Containerise
 
 ## TODO
