@@ -32,6 +32,9 @@ plugins=(
 
 source "$ZSH/oh-my-zsh.sh"
 
+# fix gentoo theme
+PROMPT='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) ${vcs_info_msg_0_}%(!.#.$)%{$reset_color%} '
+
 
 
 # directories
