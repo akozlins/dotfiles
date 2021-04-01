@@ -1,5 +1,5 @@
 #!/bin/sh
 set -euf
 
-SINK=$(pacmd list-sinks | awk 'match($0, "^[ ]+index: ([0-9])+", m) { print m[1] }')
-pacmd set-default-sink $SINK
+SINK=$(pactl list short sinks | grep -v RUNNING | awk '{print $1}')
+pactl set-default-sink $SINK
