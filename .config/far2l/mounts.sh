@@ -1,5 +1,10 @@
+#/bin/sh
+set -euf
+
+exec \
 cat << EOF
-$HOME	&H:
+/	&/
 /run/media/$USER	&M:
+$HOME	&H:
 /	&Z:
 EOF
