@@ -32,6 +32,7 @@ all :
 oh-my-zsh :
 	$(call clone_pull,https://github.com/robbyrussell/oh-my-zsh,$@)
 
+far2l : CMAKE_OPTS += -DALIGN=0 -DAUTOWRAP=0 -DCALC=0 -DCOMPARE=0 -DDRAWLINE=0 -DEDITCASE=0 -DEDITORCOMP=0 -DFILECASE=0 -DINCSRCH=0 -DINSIDE=0 -DNETROCKS=0 -DSIMPLEINDENT=0
 .PHONY : far2l
 far2l :
 	$(call clone_pull,https://github.com/elfmz/far2l,far2l)
