@@ -1,0 +1,17 @@
+#!/bin/python
+
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("url", type=str)
+args = parser.parse_args()
+
+import urllib.parse, os
+
+url = urllib.parse.urlparse(args.url)
+confno = os.path.basename(url.path)
+pwd = urllib.parse.parse_qs(url.query)["pwd"][0]
+
+import subprocess
+
+subprocess.call([ "zoom-join", confno, pwd ])
