@@ -76,8 +76,6 @@ user_pref("mousewheel.with_control.action", 0);
 
 user_pref("browser.download.autohideButton", false);
 
-user_pref("browser.onboarding.enabled", false);
-
 user_pref("extensions.getAddons.showPane", false);
 user_pref("extensions.screenshots.disabled", true);
 
@@ -89,3 +87,8 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 user_pref("browser.urlbar.update1", false);
 user_pref("browser.urlbar.openViewOnFocus", false);
+
+user_pref("dom.security.https_only_mode", false);
+
+// disable Ctrl+q
+user_pref("browser.quitShortcut.disabled", true);
