@@ -2,6 +2,7 @@
 
 diff = diff -u CURRENT2 CURRENT1 | perl -pe 's/^\+/>/; s/^\-/</'
 
+ignore = Name mnt
 ignore = Name .cache
 ignore = Name node_modules
 ignore = Name cmake-build*
@@ -11,7 +12,7 @@ ignore = Name cmake-build*
 
 # ssh
 ignore = Name .ssh/authorized_keys
-ignore = Name .ssh/id_rsa*
+ignore = Name .ssh/id_rsa
 ignore = Name .ssh/known_hosts*
 ignore = Name .ssh/socket-*
 

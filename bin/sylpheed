@@ -1,8 +1,11 @@
 #!/bin/sh
 set -euf
 
+PATH="$(command -p getconf PATH)"
+export PATH
+
 export HOME="$DOTFILES"
 
 exec \
-/usr/bin/sylpheed "$@" \
+sylpheed "$@" \
 > /dev/null 2>&1 &
