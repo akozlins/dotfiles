@@ -17,7 +17,11 @@ cleanup() {
 trap cleanup EXIT
 
 while [ true ] ; do
-    curl "$URL" | html2text --decode-errors=ignore > "$NEW"
+    if [ -x /bin/lynx ] ; then
+        /bin/lynx --dump "$URL" > "$NEW"
+    elif [ -x /bin/html2text ] ; then
+        curl "$URL" | /bin/html2text --decode-errors=ignore > "$NEW"
+    fi
 
     if [ -s "$OLD" ] ; then
         diff -u "$OLD" "$NEW" > "$DIFF"
