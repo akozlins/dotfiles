@@ -11,6 +11,7 @@ targets=(
 
     .config
     .pki
+    .var
 
     .bashrc .zshrc
     .profile
