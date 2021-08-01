@@ -92,3 +92,5 @@ user_pref("dom.security.https_only_mode", false);
 
 // disable Ctrl+q
 user_pref("browser.quitShortcut.disabled", true);
+
+user_pref("browser.proton.enabled", false);
