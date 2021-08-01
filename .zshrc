@@ -8,17 +8,16 @@ export MY_ZSHRC_DATE="$MY_ZSHRC_DATE:$(date +%s.%3N)"
 
 
 
-#export HISTFILE="$HOME/.zsh_history"
-export HISTORY_IGNORE="(reboot|reset|rm *|sudo rm *|mv *|sudo mv *|cp *|sudo cp *|la *|ls *)"
+#HISTFILE="$HOME/.zsh_history"
+HISTORY_IGNORE="(poweroff|reboot|reset|rm *|sudo rm *|mv *|sudo mv *|cp *|sudo cp *|la *|ls *)"
 
-export ZLE_REMOVE_SUFFIX_CHARS=""
-export ZLE_SPACE_SUFFIX_CHARS=""
-
-export ZSH_COMPDUMP="$XDG_CACHE_HOME/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+ZLE_REMOVE_SUFFIX_CHARS=""
+ZLE_SPACE_SUFFIX_CHARS=""
 
 
 
-export ZSH="$DOTFILES/opt/oh-my-zsh"
+ZDOTDIR="$DOTFILES"
+ZSH="$DOTFILES/opt/oh-my-zsh"
 
 ZSH_THEME="gentoo"
 
@@ -31,9 +30,6 @@ plugins=(
 )
 
 source "$ZSH/oh-my-zsh.sh"
-
-# fix gentoo theme
-PROMPT='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) ${vcs_info_msg_0_}%(!.#.$)%{$reset_color%} '
 
 
 
