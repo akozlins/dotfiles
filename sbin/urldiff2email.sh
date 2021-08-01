@@ -2,8 +2,8 @@
 set -euf
 
 URL="$1"
-DELAY="$2"
-EMAIL="$3"
+DELAY="${2:-1h}"
+EMAIL="${3:-}"
 
 NEW="$(mktemp)"
 OLD="$(mktemp)"
@@ -24,7 +24,7 @@ while [ true ] ; do
     fi
 
     if [ -s "$OLD" ] ; then
-        diff -u "$OLD" "$NEW" > "$DIFF"
+        diff -u "$OLD" "$NEW" > "$DIFF" || true
         if [ -s "$DIFF" ]; then
             cat "$DIFF"
             if [ -n "$EMAIL" ] ; then
@@ -32,7 +32,7 @@ while [ true ] ; do
             fi
         fi
     fi
-
     cp -- "$NEW" "$OLD"
+
     sleep "$DELAY"
 done
