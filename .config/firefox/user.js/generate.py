@@ -1,9 +1,14 @@
 #!/bin/python
 
-import os, subprocess;
+import os, subprocess, sys;
 
-def read_prefs(prefs, f) :
+def read_prefs(prefs, f, warn = True) :
+    print(f"DEBUG: read_prefs(\"{f}\")", file = sys.stderr);
     def user_pref(key, value) :
+        if ( warn and not key in prefs and value == None ) :
+            print(f"WARN: 'user_pref(\"{key}\", null)'", file = sys.stderr);
+        if ( warn and key in prefs and value != None ) :
+            print(f"WARN: user_pref(\"{key}\", {prefs[key]} -> {value})", file = sys.stderr);
         prefs[key] = value;
     # js uses false/true and null
     false = False;
@@ -17,6 +22,7 @@ def read_prefs(prefs, f) :
 FIREFOX_HOME = os.path.normpath(os.path.dirname(os.path.realpath(__file__)) + "/..");
 
 prefs = dict();
+read_prefs(prefs, FIREFOX_HOME + "/ghacks-user.js/user.js", warn = False);
 read_prefs(prefs, FIREFOX_HOME + "/user.js/ghacks.js");
 read_prefs(prefs, FIREFOX_HOME + "/user.js/my.js");
 
