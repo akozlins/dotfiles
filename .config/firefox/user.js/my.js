@@ -93,4 +93,11 @@ user_pref("dom.security.https_only_mode", false);
 // disable Ctrl+q
 user_pref("browser.quitShortcut.disabled", true);
 
+// disable proton interface
 user_pref("browser.proton.enabled", false);
+
+// Ctrl+Tab cycles through tabs in recently used order
+user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
+
+// compact mode
+user_pref("browser.uidensity", 1);
