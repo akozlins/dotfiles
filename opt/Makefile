@@ -43,7 +43,6 @@ far2l :
 	# - Ubuntu: libwxgtk3.0-gtk3-dev, libglib2.0-dev
 	patch -d far2l -p1 < far2l.patch
 	$(call cmake_make_install,$@)
-	$(XDG_CONFIG_HOME)/far2l/init.sh
 
 .PHONY : fbpanel
 fbpanel :
