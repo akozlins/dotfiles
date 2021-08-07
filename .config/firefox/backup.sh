@@ -1,12 +1,8 @@
 #!/bin/bash
 set -euf
 
-IFS="$(printf '\n\t')"
-unset CDPATH
-cd "$(dirname -- "$(readlink -f -- "$0")")" || exit 1
-
 FIREFOX="$XDG_CONFIG_HOME/firefox"
-PROFILE="$XDG_CONFIG_HOME/firefox/default"
+PROFILE="$XDG_CACHE_HOME/firefox/default"
 
 
 
