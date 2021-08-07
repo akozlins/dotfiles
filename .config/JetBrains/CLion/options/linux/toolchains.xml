@@ -1,5 +1,5 @@
 <application>
-  <component name="CPPToolchains" version="4">
+  <component name="CPPToolchains" version="6">
     <toolchains detectedVersion="5">
       <toolchain name="Default" toolSetKind="SYSTEM_UNIX_TOOLSET" customCMakePath="/usr/bin/cmake" debuggerKind="CUSTOM_GDB" customGDBPath="/usr/bin/gdb" />
     </toolchains>
