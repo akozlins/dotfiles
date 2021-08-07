@@ -18,3 +18,5 @@ user_pref("privacy.sanitize.sanitizeOnShutdown", null);
 user_pref("privacy.firstparty.isolate", null);
 user_pref("privacy.resistFingerprinting", null);
 user_pref("privacy.resistFingerprinting.letterboxing", null);
+
+user_pref("_user.js.parrot", null);

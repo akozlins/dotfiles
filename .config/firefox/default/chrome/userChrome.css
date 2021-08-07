@@ -1,10 +1,10 @@
 
 @import url(./vars.css);
 
-@import url(./css/tabs/classic_squared_tabs.css);
-@import url(./css/tabs/tab_close_always_visible.css);
-@import url(./css/tabs/tab_maxwidth.css);
-@import url(./css/tabs/tabs_multiple_lines_fx81.css);
+@import url(./CustomCSSforFx/classic/css/tabs/classic_squared_tabs.css);
+@import url(./CustomCSSforFx/classic/css/tabs/tab_close_always_visible.css);
+@import url(./CustomCSSforFx/classic/css/tabs/tab_maxwidth.css);
+@import url(./CustomCSSforFx/classic/css/tabs/tabs_multiple_lines.css);
 
 #pageActionButton {
     display : none;
