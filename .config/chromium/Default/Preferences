@@ -1,0 +1,188 @@
+{
+  "alternate_error_pages": {
+    "backup": true
+  },
+  "autofill": {
+    "orphan_rows_removed": true
+  },
+  "browser": {
+    "custom_chrome_frame": false,
+    "has_seen_welcome_page": false,
+    "window_placement": {
+      "maximized": false,
+      "work_area_bottom": 0,
+      "work_area_left": 0,
+      "work_area_right": 0,
+      "work_area_top": 0
+    }
+  },
+  "default_apps_install_state": 3,
+  "default_search_provider": {
+    "synced_guid": "485bf7d3-0215-45af-87dc-538868000092"
+  },
+  "default_search_provider_data": {
+    "template_url_data": {
+      "id": "5",
+      "input_encodings": [
+        "UTF-8"
+      ],
+      "keyword": "g",
+      "new_tab_url": "https://duckduckgo.com/chrome_newtab",
+      "safe_for_autoreplace": false,
+      "short_name": "DuckDuckGo",
+      "suggestions_url": "https://duckduckgo.com/ac/?q={searchTerms}&type=list",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000092",
+      "url": "https://duckduckgo.com/?q={searchTerms}",
+      "usage_count": 0
+    }
+  },
+  "download": {
+    "directory_upgrade": true,
+    "prompt_for_download": false
+  },
+  "extensions": {
+    "pinned_extensions": [
+    ],
+    "settings": {
+    }
+  },
+  "intl": {
+    "accept_languages": "en-US,en,de",
+    "selected_languages": "en-US,en,de"
+  },
+  "net": {
+    "network_prediction_options": 2
+  },
+  "payments": {
+    "can_make_payment_enabled": false
+  },
+  "pinned_tabs": [],
+  "plugins": {
+    "plugins_list": []
+  },
+  "privacy_sandbox": {
+    "page_viewed": true,
+    "preferences_reconciled": true
+  },
+  "profile": {
+    "content_settings": {
+      "enable_quiet_permission_ui_enabling_method": {
+        "notifications": 1
+      },
+      "exceptions": {
+        "accessibility_events": {},
+        "app_banner": {},
+        "ar": {},
+        "auto_select_certificate": {},
+        "automatic_downloads": {},
+        "autoplay": {},
+        "background_sync": {},
+        "bluetooth_chooser_data": {},
+        "bluetooth_guard": {},
+        "bluetooth_scanning": {},
+        "camera_pan_tilt_zoom": {},
+        "client_hints": {},
+        "clipboard": {},
+        "cookies": {},
+        "durable_storage": {},
+        "file_handling": {},
+        "file_system_access_chooser_data": {},
+        "file_system_last_picked_directory": {},
+        "file_system_read_guard": {},
+        "file_system_write_guard": {},
+        "font_access": {},
+        "geolocation": {},
+        "hid_chooser_data": {},
+        "hid_guard": {},
+        "idle_detection": {},
+        "images": {},
+        "important_site_info": {},
+        "insecure_private_network": {},
+        "installed_web_app_metadata": {},
+        "intent_picker_auto_display": {},
+        "javascript": {},
+        "legacy_cookie_access": {},
+        "media_engagement": {
+        },
+        "media_stream_camera": {},
+        "media_stream_mic": {},
+        "midi_sysex": {},
+        "mixed_script": {},
+        "nfc": {},
+        "notifications": {},
+        "password_protection": {},
+        "payment_handler": {},
+        "permission_autoblocking_data": {},
+        "permission_autorevocation_data": {},
+        "popups": {},
+        "ppapi_broker": {},
+        "protocol_handler": {},
+        "safe_browsing_url_check_data": {},
+        "sensors": {},
+        "serial_chooser_data": {},
+        "serial_guard": {},
+        "site_engagement": {
+        },
+        "sound": {},
+        "ssl_cert_decisions": {},
+        "storage_access": {},
+        "subresource_filter": {},
+        "subresource_filter_data": {},
+        "usb_chooser_data": {},
+        "usb_guard": {},
+        "vr": {},
+        "webid_request": {},
+        "webid_share": {},
+        "window_placement": {}
+      },
+      "pref_version": 1
+    },
+    "default_content_setting_values": {
+      "geolocation": 2,
+      "notifications": 2
+    },
+    "exit_type": "Normal",
+    "managed_user_id": "",
+    "name": "",
+    "password_account_storage_exists": true,
+    "password_account_storage_settings": {}
+  },
+  "protection": {
+  },
+  "safebrowsing": {
+  },
+  "search": {
+    "suggest_enabled": false
+  },
+  "session": {
+    "restore_on_startup": 1
+  },
+  "sessions": {
+  },
+  "signin": {
+    "DiceMigrationComplete": true,
+    "allowed": false
+  },
+  "spellcheck": {
+    "dictionaries": [
+      "en-US"
+    ],
+    "dictionary": ""
+  },
+  "sync": {
+    "requested": false
+  },
+  "translate": {
+    "enabled": false
+  },
+  "translate_blocked_languages": [
+    "en",
+    "de"
+  ],
+  "translate_site_blacklist_with_time": {},
+  "translate_whitelists": {},
+  "unified_consent": {
+  },
+  "web_apps": {
+  }
+}
