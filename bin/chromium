@@ -13,11 +13,7 @@ CMD=("/usr/bin/chromium"
 )
 
 if [ $# -eq 0 ] ; then
-    (
-        "${CMD[@]}"
-    ) > /dev/null 2>&1 &
+    "${CMD[@]}" > /dev/null 2>&1 &
 else
-    (
-        "${CMD[@]}"
-    )
+    "${CMD[@]}"
 fi

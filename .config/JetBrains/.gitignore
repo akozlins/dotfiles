@@ -11,7 +11,9 @@
 /*/workspace/
 
 /*/disabled_*.txt
+/*/*.db
 /*/*.key
+/*/*.license
 /*/port
 /*/port.lock
 

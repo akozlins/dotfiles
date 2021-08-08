@@ -4,5 +4,5 @@ set -euf
 export HOME="$DOTFILES"
 
 exec \
-/bin/sylpheed "$@" \
+/bin/claws-mail "$@" \
 > /dev/null 2>&1 &

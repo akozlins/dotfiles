@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export MY_PROFILE_DATE="$MY_PROFILE_DATE:$(date +%s.%3N)"
+export MY_PROFILE_DATE="${MY_PROFILE_DATE:+$MY_PROFILE_DATE:}$(date +%s.%3N)"
 
 DOTFILES=$(dirname -- "$(readlink -f -- "$HOME/.profile")")
 export DOTFILES
@@ -60,6 +60,10 @@ JAVA_FONT_AA=" \
 export JAVA_TOOL_OPTIONS="$JAVA_USAGE_TRACKER $JAVA_FONT_AA"
 # user home directory
 export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Duser.home=$DOTFILES"
+# preferences API
+#export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Djava.util.prefs.userRoot=$XDG_CACHE_HOME/java/.userPrefs"
+# enable OpenGL-based pipeline
+#export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Dsun.java2d.opengl=true"
 
 #export XUSERFILESEARCHPATH=
 

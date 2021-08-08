@@ -6,6 +6,7 @@
 /.mozilla/
 /.texlive/
 /.vscode-oss/
+/.zcompdump*
 
 # altera, xilinx, lattice
 /.config/LatticeSemi/
