@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=zoom
+Exec=$DOTFILES/bin/zoom %U
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/zoommtg;x-scheme-handler/zoomus;x-scheme-handler/zoomphonecall;application/x-zoom

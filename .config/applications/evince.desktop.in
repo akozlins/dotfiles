@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=evince
+Icon=evince
+Exec=evince %f
+Terminal=false
+Type=Application
