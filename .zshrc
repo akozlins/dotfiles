@@ -30,6 +30,7 @@ plugins=(
 )
 
 source "$ZSH/oh-my-zsh.sh"
+gentoo_precmd() {}
 
 
 

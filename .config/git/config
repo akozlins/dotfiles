@@ -25,6 +25,3 @@
 
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/
-
-[oh-my-zsh]
-	hide-dirty = 1
