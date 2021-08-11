@@ -9,6 +9,8 @@ parser.add_argument("fin", nargs="?", default="-");
 parser.add_argument("fout", nargs="?", default="-");
 args = parser.parse_args();
 
+MAGIC = b"mozLz40\x00";
+
 if not ( args.compress ^ args.decompress ) :
     parser.print_help();
     sys.exit(0);
@@ -24,8 +26,6 @@ if args.compress :
     fin = sys.stdin if args.fin == "-" else open(args.fin, "r", encoding = "utf-8");
     # write binary
     fout = sys.stdout.buffer if args.fout == "-" else open(args.fout, "wb");
-
-MAGIC = b"mozLz40\x00";
 
 import lz4.block, json;
 

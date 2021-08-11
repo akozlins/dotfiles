@@ -4,7 +4,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const read_prefs = function(prefs, f) {
+const read_prefs = function(prefs, f, warn = true) {
     const user_pref = function(key, value) {
         prefs.set(key, value);
     };
@@ -14,6 +14,7 @@ const read_prefs = function(prefs, f) {
 const FIREFOX_HOME = path.normalize(__dirname + "/..");
 
 const prefs = new Map();
+read_prefs(prefs, FIREFOX_HOME + "/ghacks-user.js/user.js", warn = False);
 read_prefs(prefs, FIREFOX_HOME + "/user.js/ghacks.js");
 read_prefs(prefs, FIREFOX_HOME + "/user.js/my.js");
 

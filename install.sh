@@ -71,7 +71,7 @@ mkdir -pv -- "$HOME/downloads"
 mkdir -pv -- "$HOME/.cache/ipe"
 
 # Media/MIME Types
-ln -snv -T "$HOME/.config/applications" "$HOME/.local/share/applications"
+"$DOTFILES/.config/applications/init.sh"
 
 # ZSH
 [ -d "opt/oh-my-zsh" ] && make -C opt oh-my-zsh

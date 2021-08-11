@@ -2,4 +2,4 @@
 set -euf
 
 SINK=$(pactl list short sinks | grep -v RUNNING | awk '{print $1}')
-pactl set-default-sink $SINK
+pactl set-default-sink "$SINK"

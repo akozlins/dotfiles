@@ -3,8 +3,8 @@
 [commit]
 
 [core]
-	editor = nano
 	autocrlf = input
+	editor = nano
 	whitespace = trailing-space,space-before-tab
 
 [diff]

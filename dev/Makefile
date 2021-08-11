@@ -1,4 +1,6 @@
 
+.DEFAULT_GOAL := all
+
 .ONESHELL :
 SHELL := /bin/bash
 .SHELLFLAGS := -euf -c
@@ -12,6 +14,8 @@ define clone_pull
 	git -C $(2) pull
 	git -C $(2) submodule update --init --recursive
 endef
+
+all :
 
 .PHONY : geant4
 geant4 :

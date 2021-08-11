@@ -4,6 +4,7 @@
 /.epspdf/
 /.mono/
 /.mozilla/
+/.sylpheed-*/
 /.texlive/
 /.vscode-oss/
 /.zcompdump*
