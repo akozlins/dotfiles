@@ -124,4 +124,8 @@ for f in "$DOTFILES"/profile.d/?*.sh ; do
     [ -f "$f" ] && . "$f"
 done
 
-export PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"
+PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"
+if command -v awk &> /dev/null ; then
+    PATH=$(printf %s "$PATH" | awk -v RS=: '!a[$0]++ { if(n++) printf(":"); printf("%s", $0) }')
+fi
+export PATH
