@@ -14,20 +14,20 @@
 #define _NET_WM_BOTTOMRIGHT 2
 #define _NET_WM_BOTTOMLEFT  3
 
-int main(int argc, char* argv[]) {
+int main(int argc, const char* argv[]) {
     if (argc < 4) {
         printf(
-            "Usage: %s <layout> <nh> <nv> <corner>\n"
-            "  <layout>  0 is horizontal and 1 is vertical layout\n"
-            "  <nh>      number of desks horizontally\n"
-            "  <nv>      number of desks vertically\n"
-            "  <corner>  starting corner (0 = topleft, 1 = topright, 2 = bottomright, 3 = bottomleft)\n"
-          , argv[0]
+            "Usage: %s ORIENTATION COLUMNS ROWS CORNER\n"
+            "    <ORIENTATION>  0 = horizontal, 1 = vertical\n"
+            "    <COLUMNS>      number of columns\n"
+            "    <ROWS>         number of rows\n"
+            "    <CORNER>       starting corner (0 = topleft, 1 = topright, 2 = bottomright, 3 = bottomleft)\n",
+            argv[0]
         );
         return 1;
     }
 
-    long data[4];
+    int32_t data[4];
     data[0] = atol(argv[1]); //_NET_WM_ORIENTATION_HORZ;
     data[1] = atol(argv[2]);
     data[2] = atol(argv[3]);
@@ -37,9 +37,11 @@ int main(int argc, char* argv[]) {
     int screen = DefaultScreen(display);
     Window root = RootWindow(display, screen);
 
-    Atom atom = XInternAtom(display, "_NET_DESKTOP_LAYOUT", False);
-    XChangeProperty(display, root, atom,
-                    XA_CARDINAL, 32, PropModeReplace, (unsigned char*)&data, 4);
+    Atom property = XInternAtom(display, "_NET_DESKTOP_LAYOUT", False);
+    XChangeProperty(
+        display, root, property,
+        XA_CARDINAL, 32, PropModeReplace, (unsigned char*)data, 4
+    );
 
     XFlush(display);
     XCloseDisplay(display);

@@ -1,3 +1,4 @@
 
-all :
-	gcc -o setlayout setlayout.c -lX11
+LDLIBS := -lX11
+
+all : setlayout
