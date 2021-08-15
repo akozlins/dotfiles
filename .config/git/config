@@ -18,6 +18,7 @@
 	showPatch = true
 
 [status]
+	short = true
 	submoduleSummary = true
 
 [url "git@bitbucket.org:"]
