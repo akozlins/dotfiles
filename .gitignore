@@ -1,12 +1,14 @@
 #
 
-/.arduino15/
+/.arduino*/
 /.epspdf/
+/.fltk/
 /.mono/
 /.mozilla/
+/.qmmp/
 /.sylpheed-*/
 /.texlive/
-/.vscode-oss/
+/.vscode-*/
 /.zcompdump*
 
 # altera, xilinx, lattice
@@ -26,4 +28,6 @@
 
 .cache/
 
+# git
+.git/
 *.orig

@@ -1,10 +1,17 @@
 #
 
+/borg
+/enchant/
+/evince/
+/fonts
+/gedit/
 /geeqie/
-/gnupg/
+/gnupg
 /libreoffice/
 /qBittorrent/
 /solaar/
+/sqlitebrowser/
+/syncthing
 /unity3d/
 /VirtualBox/
 /wireshark/
