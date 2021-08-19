@@ -1,0 +1,12 @@
+#!/bin/sh
+set -euf
+
+EMAIL=$1
+shift
+
+exec \
+gmvault sync --resume \
+     --check-db no \
+     --db-dir "$GMVAULT_DIR/$EMAIL" \
+    "$EMAIL" \
+    "$@"
