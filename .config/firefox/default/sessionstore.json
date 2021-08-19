@@ -1,0 +1,15 @@
+{
+  "windows": [
+    {
+      "tabs": [
+        {
+          "entries": [
+            {
+              "url": "about:config"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
