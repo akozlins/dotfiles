@@ -1,0 +1,8 @@
+#!/bin/sh
+set -euf
+
+export HOME="$DOTFILES"
+
+exec \
+/usr/bin/thunderbird "$@" \
+> /dev/null 2>&1 &
