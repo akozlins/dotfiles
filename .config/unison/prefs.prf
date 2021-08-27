@@ -2,10 +2,12 @@
 
 diff = diff -u CURRENT2 CURRENT1 | perl -pe 's/^\+/>/; s/^\-/</'
 
-ignore = Name mnt
 ignore = Name .cache
-ignore = Name node_modules
 ignore = Name cmake-build*
+ignore = Name gnupg/random_seed
+ignore = Name mnt
+ignore = Name node_modules
+ignore = Regex .*/core\.[0-9]+
 
 # dotfiles
 #path = .dotfiles
