@@ -70,9 +70,11 @@ export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Duser.home=$DOTFILES"
 
 
 # android
-export ANDROID_HOME="/opt/android-sdk"
-export ANDROID_SDK_HOME="$XDG_DATA_HOME/android"
-[ -e "$ANDROID_SDK_HOME" ] || mkdir -p -- "$ANDROID_SDK_HOME"
+export ANDROID_PREFS_ROOT="$XDG_DATA_HOME/android"
+export ANDROID_SDK_ROOT="$XDG_DATA_HOME/android/sdk"
+[ -e "$ANDROID_SDK_ROOT" ] || mkdir -p -- "$ANDROID_SDK_ROOT"
+export ANDROID_EMULATOR_HOME="$ANDROID_PREFS_ROOT/emulator"
+
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
 
 # go
