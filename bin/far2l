@@ -8,6 +8,8 @@ if [ ! -x "$far2l" ] ; then
     exit 1
 fi
 
+mkdir -p -- "$XDG_CACHE_HOME/far2l/history"
+
 exec \
 "$far2l" "$@" \
 > /dev/null 2>&1 &
