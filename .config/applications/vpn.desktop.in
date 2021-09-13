@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=VPN
+Icon=network-vpn
+Exec=sh -c "$DOTFIELS/bin/vpn.sh"
+Terminal=false
+Type=Application
