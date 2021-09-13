@@ -35,6 +35,12 @@
   <separator/>
 
   <item label="Log Out"><action name="Exit"><prompt>yes</prompt></action></item>
+
+  <separator/>
+
+  <item label="Reboot"><action name="Execute"><prompt>yes</prompt><command>reboot</command></action></item>
+  <item label="Poweroff"><action name="Execute"><prompt>yes</prompt><command>poweroff</command></action></item>
+
 </menu>
 
 </openbox_menu>
