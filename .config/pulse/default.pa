@@ -4,3 +4,7 @@
 
 .nofail
 unload-module module-esound-protocol-unix
+
+ifexists module-bluetooth-policy.so
+load-module module-bluetooth-policy auto_switch=false
+.endif
