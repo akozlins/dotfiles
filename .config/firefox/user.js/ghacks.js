@@ -9,7 +9,6 @@ user_pref("media.eme.enabled", null); // Encryption Media Extension
 user_pref("media.peerconnection.enabled", null);
 user_pref("webgl.disabled", null);
 user_pref("dom.serviceWorkers.enabled", null);
-user_pref("javascript.options.asmjs", null);
 user_pref("pdfjs.disabled", null);
 user_pref("browser.download.useDownloadDir", null);
 user_pref("security.csp.enable", null);

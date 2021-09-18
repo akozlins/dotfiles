@@ -23,6 +23,7 @@ user_pref("browser.sessionstore.interval", 300000);
 user_pref("browser.sessionstore.max_tabs_undo", 16);
 user_pref("browser.sessionstore.restore_on_demand", false);
 
+// resume previous browser session
 user_pref("browser.startup.page", 3);
 
 user_pref("browser.tabs.animate", false);
@@ -48,10 +49,10 @@ user_pref("ui.key.menuAccessKeyFocuses", false);
 
 user_pref("media.default_volume", "0.2");
 
-// Handle middle-clicks normally
+// handle middle-clicks normally
 user_pref("middlemouse.contentLoadURL", false);
 
-// Disable reading installed plugins
+// disable reading installed plugins
 user_pref("plugins.enumerable_names", "");
 
 // disable autoplay
