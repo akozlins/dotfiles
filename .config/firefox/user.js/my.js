@@ -89,6 +89,8 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("browser.urlbar.update1", false);
 user_pref("browser.urlbar.openViewOnFocus", false);
 
+
+
 user_pref("dom.security.https_only_mode", false);
 
 // disable Ctrl+q

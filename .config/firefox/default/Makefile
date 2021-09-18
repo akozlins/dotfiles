@@ -5,9 +5,10 @@ SHELL := bash
 .SHELLFLAGS := -euf -c
 
 define clone_pull
-	[ -e $(2)/.git ] || git clone -- $(1) $(2)
+	[ -e $(2)/.git ] || git clone -- $(1) $$(readlink -- $(2))
 	git -C $(2) stash
 	git -C $(2) pull
+	git -C $(2) submodule update --init --recursive
 endef
 
 all : chrome/CustomCSSforFx user.js
