@@ -1,0 +1,10 @@
+[Unit]
+Description=BAT0
+
+[Service]
+Type=simple
+ExecStart=%h/.dotfiles/linux/BAT0.sh
+WorkingDirectory=%h
+
+[Install]
+WantedBy=default.target
