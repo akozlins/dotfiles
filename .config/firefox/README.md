@@ -3,9 +3,10 @@
 ## Extensions
 
 - uBlock Origin
+- uMatrix
 - Enhancer for YouTube
 - ClearURLs
-- Containerise
+- Containerise, Temporary Containers
 - CSS Exfil Protection
 
 ## Links
