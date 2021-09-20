@@ -14,8 +14,14 @@ done
 
 unset -v MY_GEANT4_SH
 
-if [ -x "$HOME/.local/root.cern.ch/bin/root" ] ; then
-    ROOTSYS="$HOME/.local/root.cern.ch"
-#    export ROOTSYS
-    PATH="$ROOTSYS/bin:$PATH"
-fi
+for MY_ROOTSYS in \
+    "$HOME/.local/root.cern.ch" \
+; do
+    if [ -x "$MY_ROOTSYS/bin/root" ] ; then
+        ROOTSYS="$MY_ROOTSYS"
+#        export ROOTSYS
+        PATH="$ROOTSYS/bin:$PATH"
+    fi
+done
+
+unset -v MY_ROOTSYS
