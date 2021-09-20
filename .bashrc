@@ -18,7 +18,7 @@ bind -f "$DOTFILES/.inputrc"
 export HISTFILESIZE=65536
 export HISTSIZE=4096
 export HISTCONTROL="ignoreboth:erasedups"
-export HISTIGNORE="reboot:reset:rm *:sudo rm *:mv *:sudo mv *:cp *:sudo cp *:ls *:la *"
+export HISTIGNORE="poweroff:reboot:reset"
 
 #export PROMPT_COMMAND="history -a; history -n"
 
