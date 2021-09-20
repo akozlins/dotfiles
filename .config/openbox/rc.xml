@@ -222,6 +222,12 @@
     </action>
   </keybind>
 
+  <keybind key="W-A-p">
+    <action name="Execute">
+      <command>~/.dotfiles/sbin/pa-sink-switch</command>
+    </action>
+  </keybind>
+
   <keybind key="W-d"><action name="ToggleShowDesktop"/></keybind>
   <keybind key="W-r"><action name="Execute"><command>gmrun</command></action></keybind>
 </keyboard>
