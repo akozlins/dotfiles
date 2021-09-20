@@ -3,7 +3,7 @@ set -euf
 
 export HOME="$DOTFILES"
 
-MY_LOG="$XDG_CACHE_HOME/logs/flatpak/$(echo "$*" | tr ' ' _).log"
+MY_LOG="$XDG_CACHE_HOME/flatpak/$(echo "$*" | tr ' ' _).log"
 mkdir -p -- "$(dirname "$MY_LOG")"
 
 exec \
