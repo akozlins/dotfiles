@@ -7,6 +7,8 @@ if [ ! -x "$CMD" ] ; then
     exit 1
 fi
 
+#--eval='(setq user-emacs-directory "$DOTFILES/.emacs.d")'
+
 USER_EMACS_DIRECTORY="$XDG_CONFIG_HOME/emacs"
 
 if [[ " $* " =~ " --doom " ]] ; then

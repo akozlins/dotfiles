@@ -1,6 +1,7 @@
 #
 
 [commit]
+#	gpgsign = true
 
 [core]
 	autocrlf = input

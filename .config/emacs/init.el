@@ -15,6 +15,8 @@
 ;; backup/autosave
 (setq make-backup-files nil) ; no backup~
 (setq auto-save-default nil) ; no #autosave#
+;; recent files
+(setq recentf-save-file (concat emacs.cache "/recentf"))
 
 
 

@@ -5,6 +5,7 @@ mime=$(xdg-mime query filetype "$1")
 
 case "$mime" in
     text/*|application/json|inode/x-empty)
+#        [[ "$1" == *.md ]] && command -pv okular &> /dev/null && exec okular "$1"
         exec gedit "$1"
         ;;
     image/*)
@@ -15,6 +16,9 @@ case "$mime" in
         ;;
     application/pdf)
         exec evince "$1"
+        ;;
+    application/postscript)
+        exec okular "$1"
         ;;
     application/octet-stream)
         exec zenity --info --title="$0" --text="MIME type: '$mime'"

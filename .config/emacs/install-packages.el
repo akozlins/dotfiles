@@ -5,6 +5,7 @@
 (add-to-list
     'package-archives
     '("melpa-stable" . "https://stable.melpa.org/packages/")
+;    '("org" . "https://orgmode.org/elpa/")
     t
 )
 (package-initialize)
