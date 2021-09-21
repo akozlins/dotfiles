@@ -12,8 +12,12 @@ args = parser.parse_args();
 MAGIC = b"mozLz40\x00";
 
 if not ( args.compress ^ args.decompress ) :
-    parser.print_help();
-    sys.exit(0);
+    fin = sys.stdin.buffer if args.fin == "-" else open(args.fin, "rb")
+    if ( fin.read(len(MAGIC)) == MAGIC ) :
+        args.decompress = True
+    else :
+        args.compress = True
+    fin.close()
 
 if args.decompress :
     # read binary
