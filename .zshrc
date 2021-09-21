@@ -29,6 +29,8 @@ plugins=(
     command-not-found
 )
 
+fpath+=("$DOTFILES/.config/zsh-completions")
+
 source "$ZSH/oh-my-zsh.sh"
 gentoo_precmd() {}
 

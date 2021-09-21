@@ -1,0 +1,8 @@
+#compdef _mypass mypass
+
+function _mypass {
+    _arguments \
+        "1: :($(/bin/ls -1 -- ~/.dotfiles/.config/mypass))"
+}
+
+_mypass
