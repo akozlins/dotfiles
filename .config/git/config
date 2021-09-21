@@ -27,3 +27,12 @@
 
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/
+
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	func = magenta bold
+	old = red bold
+	new = green bold
+	commit = yellow bold
+	whitespace = red reverse
