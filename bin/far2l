@@ -4,7 +4,7 @@ set -euf
 far2l="$HOME/.local/bin/far2l"
 
 if [ ! -x "$far2l" ] ; then
-    echo "ERROR: '$far2l' not found"
+    >&2 echo "E [$0] '$far2l' not found"
     exit 1
 fi
 

@@ -6,17 +6,17 @@ Minimize number of `.` files in `$HOME` directory.
 
 Current list of _allowed_ `.` files:
 
- - `.cache/`, `.config/`, `.local/`
- - `.ssh/`
- - `.profile`
- - `.bashrc`, `.zshrc`
- - `.bash_history`, `.zsh_history`
+- `.cache/`, `.config/`, `.local/`
+- `.ssh/`
+- `.profile`
+- `.bashrc`, `.zshrc`
+- `.bash_history`, `.zsh_history`
 
 TODO (to remove):
 
- - `.xsession-errors`
- - `.android` (adb)
- - `.rootrc`
+- `.xsession-errors`
+- `.android` (adb)
+- `.rootrc`
 
 ## Install
 

@@ -4,7 +4,7 @@ set -euf
 INPUT="input/js0"
 
 if [ ! -r "/dev/$INPUT" ] ; then
-    >&2 echo "ERROR"
+    >&2 echo "E [$0] input '$INPUT' not found"
     exit 1
 fi
 
@@ -20,7 +20,7 @@ case "$NAME" in
             "/dev/$INPUT"
         ;;
     *)
-        >&2 echo "ERROR"
+        >&2 echo "E [$0] device '$NAME' not known"
         exit 1
         ;;
 esac

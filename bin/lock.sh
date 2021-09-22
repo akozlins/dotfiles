@@ -15,4 +15,5 @@ if [ -n "$(pidof light-locker)" ] ; then
     exec light-locker-command -l
 fi
 
+>&2 echo "E [$0] no known locker found or running"
 exit 1

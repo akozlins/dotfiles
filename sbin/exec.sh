@@ -2,7 +2,7 @@
 set -euf
 
 if [ "$0" = "$BASH_SOURCE" ] ; then
-    >&2 echo "ERROR: script must be sourced"
+    >&2 echo "E [$0] this script must be sourced"
     exit 1
 fi
 

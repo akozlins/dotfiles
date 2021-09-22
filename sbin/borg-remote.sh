@@ -12,7 +12,7 @@ REPO="$2"
 shift 2
 
 if [ ! -d "$REPO" ] ; then
-    echo "ERROR: '$REPO' not found"
+    echo "E [$0] '$REPO' not found"
     exit 1
 fi
 

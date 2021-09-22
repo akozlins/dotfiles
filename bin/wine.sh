@@ -7,7 +7,7 @@ fi
 export WINE_ROOT
 
 if [ ! -d "$WINE_ROOT" ] ; then
-    echo "ERROR: wine root '$WINE_ROOT' not found"
+    >&2 echo "E [$0] wine root '$WINE_ROOT' not found"
     exit 1
 fi
 

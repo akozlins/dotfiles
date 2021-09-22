@@ -10,4 +10,4 @@ fi
 
 exec \
 "$DOTFILES/bin/wine.sh" far \
-"$@"
+    "$@"

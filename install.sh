@@ -33,7 +33,7 @@ for target in "${targets[@]}" ; do
     fi
 
     if [ -e "$link" ] ; then
-        echo "WARN: link '$link' exists"
+        >&2 echo "W [$0] link '$link' exists"
         read -r -p "Overwrite? [y,n,q,?] " sel
         case "$sel" in
             y)
