@@ -1,24 +1,24 @@
 #!/bin/python
 
-import argparse;
+import argparse
 
-parser = argparse.ArgumentParser();
-parser.add_argument("fin", nargs="?", default="-");
-args = parser.parse_args();
+parser = argparse.ArgumentParser()
+parser.add_argument("fin", nargs="?", default="-")
+args = parser.parse_args()
 
-import sys;
+import sys
 
 if args.fin == "-" :
-    fin = sys.stdin;
+    fin = sys.stdin
 else :
-    fin = open(args.fin, "r", encoding = "utf-8");
+    fin = open(args.fin, "r", encoding = "utf-8")
 
-fout = sys.stdout;
+fout = sys.stdout
 
-import json, yaml;
+import json, yaml
 
 yaml.dump(json.load(fin), fout,
     sort_keys=False,
     encoding=("utf-8"),
     allow_unicode=True,
-);
+)

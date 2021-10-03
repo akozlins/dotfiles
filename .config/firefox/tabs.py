@@ -1,20 +1,20 @@
 #!/bin/python
 
-import sys, json;
+import sys, json
 
-session = json.load(sys.stdin);
+session = json.load(sys.stdin)
 
-windows = [];
+windows = []
 for window in session["windows"] :
-    tabs = [];
+    tabs = []
     for tab in window["tabs"] :
         if not tab["entries"] : continue
-        entry = tab["entries"][-1];
+        entry = tab["entries"][-1]
         tabs.append({
             "entries" : [{
                 "url" : entry["url"],
             }],
-        });
-    windows.append({ "tabs" : tabs });
+        })
+    windows.append({ "tabs" : tabs })
 
-json.dump({ "windows" : windows }, sys.stdout);
+json.dump({ "windows" : windows }, sys.stdout)

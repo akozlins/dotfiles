@@ -1,6 +1,6 @@
 #!/bin/python
 
-import argparse, sys, json;
+import argparse, sys, json
 
 parser = argparse.ArgumentParser()
 parser.add_argument("new", metavar="new.json", type=str)
@@ -23,7 +23,7 @@ def diff(new, old) :
 
     return out
 
-from collections import OrderedDict;
+from collections import OrderedDict
 new = json.load(open(args.new, "r", encoding = "utf-8"), object_pairs_hook = OrderedDict)
 old = json.load(open(args.old, "r", encoding = "utf-8"), object_pairs_hook = OrderedDict)
 

@@ -7,7 +7,7 @@ parser.add_argument("-c", "--compress", action="store_true")
 parser.add_argument("-d", "--decompress", action="store_true")
 parser.add_argument("fin", nargs="?", default="-")
 parser.add_argument("fout", nargs="?", default="-")
-args = parser.parse_args();
+args = parser.parse_args()
 
 MAGIC = b"mozLz40\x00"
 
