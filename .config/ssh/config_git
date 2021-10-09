@@ -11,6 +11,7 @@ Host bitbucket.org
     User git
     IdentityFile ~/.ssh/id_bitbucket_org
     ControlMaster no
+    HostkeyAlgorithms +ssh-rsa
 
 Host gitlab.rlp.net
     HostName gitlab.rlp.net
