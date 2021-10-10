@@ -17,6 +17,7 @@
 /.altera.quartus/
 /.Synplicity/
 /.Xilinx/
+/.digilent_dvctbl.txt
 /.flexlmrc
 /.synplify_pro_history
 

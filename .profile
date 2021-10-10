@@ -93,6 +93,7 @@ export IPELETPATH="$XDG_CONFIG_HOME/ipe/ipelets"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export KDEHOME="$XDG_CONFIG_HOME/kde4"
+export LEDGER_FILE="$XDG_CONFIG_HOME/hledger/journal"
 export LESSHISTFILE=-
 export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME/Mathematica"
 export MINISIGN_CONFIG_DIR="$XDG_CONFIG_HOME/minisign"
