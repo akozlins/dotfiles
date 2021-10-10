@@ -12,6 +12,7 @@ ignore = Regex .*/unison/[0-9a-z]+
 
 # dotfiles
 #path = .dotfiles
+path = .dotfiles/.config/unison
 
 # ssh
 ignore = Name .ssh/authorized_keys
