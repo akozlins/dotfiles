@@ -9,7 +9,7 @@ export MY_ZSHRC_DATE="$MY_ZSHRC_DATE:$(date +%s.%3N)"
 
 
 #HISTFILE="$HOME/.zsh_history"
-HISTORY_IGNORE="(poweroff|reboot|reset)"
+HISTORY_IGNORE="(poweroff|reboot|reset|rm *|sudo rm *)"
 
 ZLE_REMOVE_SUFFIX_CHARS=""
 ZLE_SPACE_SUFFIX_CHARS=""
