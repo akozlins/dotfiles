@@ -34,6 +34,7 @@ X11VNC_CMD=(x11vnc
     -passwd "$PASSWD"
     -localhost -once -timeout 5
     -display :0
+    -noxdamage
     -cursor none -scale "$SCALE"
 #    -auth ~/.Xauthority
 )
@@ -49,4 +50,8 @@ trap cleanup EXIT
 
 nc -z localhost "$PORT"
 sleep 2.5
-vncviewer DotWhenNoCursor=1 localhost:"$PORT" -passwd <(vncpasswd -f <<< "$PASSWD")
+vncviewer \
+    DotWhenNoCursor=1 \
+    -Log *:stdout:100 \
+    -passwd <(vncpasswd -f <<< "$PASSWD") \
+    localhost:"$PORT"
