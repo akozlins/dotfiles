@@ -1,0 +1,4 @@
+#!/bin/sh
+set -euf
+
+flatpak-bg run com.skype.Client
