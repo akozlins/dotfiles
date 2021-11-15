@@ -1,7 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
-export HOME="$DOTFILES"
+DOTFILES="${DOTFILES:-~/.dotfiles}"
+test -d "$DOTFILES" && export HOME="$DOTFILES"
 
 if [ -x /usr/bin/eltclsh ] ; then
     exec \

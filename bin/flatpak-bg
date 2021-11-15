@@ -1,7 +1,8 @@
 #!/bin/sh
 set -euf
 
-export HOME="$DOTFILES"
+DOTFILES="${DOTFILES:-~/.dotfiles}"
+test -d "$DOTFILES" && export HOME="$DOTFILES"
 
 MY_LOG="$XDG_CACHE_HOME/flatpak/$(echo "$*" | tr ' ' _).log"
 mkdir -p -- "$(dirname "$MY_LOG")"
