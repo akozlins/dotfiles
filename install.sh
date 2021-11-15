@@ -74,4 +74,4 @@ mkdir -pv -- "$HOME/.cache/ipe"
 "$DOTFILES/.config/applications/init.sh"
 
 # ZSH
-[ -d "opt/oh-my-zsh" ] && make -C opt oh-my-zsh
+make -C opt oh-my-zsh
