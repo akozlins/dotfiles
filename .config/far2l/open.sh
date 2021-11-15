@@ -21,7 +21,8 @@ case "$mime" in
         exec okular "$1"
         ;;
     application/octet-stream)
-        exec zenity --info --title="$0" --text="MIME type: '$mime'"
+#        exec zenity --info --title="$0" --text="MIME type: '$mime'"
+        exec dunstify "MIME type: '$mime'"
         ;;
     application/*)
         exec xdg-open "$1"
