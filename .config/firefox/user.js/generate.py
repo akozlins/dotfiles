@@ -6,7 +6,10 @@ def read_prefs(prefs, f, warn = True) :
     print(f"DEBUG: read_prefs(\"{f}\")", file = sys.stderr)
     def user_pref(key, value) :
         if ( warn and not key in prefs and value == None ) :
-            print(f"WARN: 'user_pref(\"{key}\", null)'", file = sys.stderr)
+            print(f"WARN: user_pref(\"{key}\", null)", file = sys.stderr)
+        if ( warn and key in prefs and prefs[key] == value ) :
+            print(f"INFO: user_pref(\"{key}\", {prefs[key]} -> {value})", file = sys.stderr)
+            return;
         if ( warn and key in prefs and value != None ) :
             print(f"WARN: user_pref(\"{key}\", {prefs[key]} -> {value})", file = sys.stderr)
         prefs[key] = value
