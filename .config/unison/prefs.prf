@@ -22,3 +22,7 @@ ignore = Name .ssh/socket-*
 
 # qbittorrent
 ignore = Name *.!qB
+
+# quartus
+#ignore = Regex path/.*/(db|incremental_db|output_files|generated)
+#ignore = Regex path/.*\.(qsys|sopcinfo)
