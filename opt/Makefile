@@ -40,7 +40,8 @@ far2l :
 	# - Arch: wxgtk2
 	# - Fedora, CentOS: wxGTK3-devel
 	# - Debian: libwxgtk3-dev
-	# - Ubuntu: libwxgtk3.0-gtk3-dev, libglib2.0-dev
+	# - Ubuntu: libwxgtk3.0-gtk3-dev libglib2.0-dev
+	# - OpenSuse: m4 libuchardet-devel wxWidgets-3_0-devel spdlog-devel libxerces-c-devel
 	patch -d far2l -p1 < far2l.patch
 	$(call cmake_make_install,$@)
 
@@ -48,9 +49,10 @@ far2l :
 fbpanel :
 	$(call clone_pull,https://github.com/akozlins/fbpanel,$@)
 	# install gcc, cmake, gtk2
-	# - Debian: libgtk2.0-dev, libglib2.0-dev
+	# - Debian: libgtk2.0-dev libglib2.0-dev
 	# - CentOS: gtk2-devel
 	# - Ubuntu: libgtk2.0-dev
+	# - OpenSuse: gtk2-devel
 	$(call cmake_make_install,$@)
 
 .PHONY : direnv
@@ -60,10 +62,12 @@ direnv :
 
 .PHONY : xss-lock
 xss-lock :
+	# - OpenSuse: gtk2-devel xcb-util-devel xorg-x11-devel
 	$(call clone_pull,https://bitbucket.org/raymonad/xss-lock,$@)
 	$(call cmake_make_install,$@)
 
 .PHONY : easystroke
 easystroke :
+	# - OpenSuse: gtkmm3-devel dbus-1-glib-devel libboost_serialization1_75_0-devel libboost_filesystem1_75_0-devel vala xorg-x11-server-sdk
 	$(call clone_pull,https://github.com/akozlins/easystroke,$@)
 	$(call cmake_make_install,$@)
