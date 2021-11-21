@@ -22,6 +22,7 @@
 /*/options/actionSummary.xml
 /*/options/cachedDictionary.xml
 /*/options/colors.scheme.xml
+/*/options/Clang-Tidy.xml
 /*/options/databaseDrivers.xml
 /*/options/debugger.xml
 /*/options/dimensions.xml
