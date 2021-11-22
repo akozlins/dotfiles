@@ -2,3 +2,8 @@
 * {
     -moz-font-feature-settings : "liga" 0 !important;
 }
+
+html,body {
+    scrollbar-color: #444444 #AAAAAA !important;
+    scrollbar-width: auto;
+}
