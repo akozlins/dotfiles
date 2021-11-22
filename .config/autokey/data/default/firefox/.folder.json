@@ -17,7 +17,7 @@
         "hotKey": null
     },
     "filter": {
-        "regex": "Navigator.firefox",
-        "isRecursive": true
+        "regex": null,
+        "isRecursive": false
     }
 }

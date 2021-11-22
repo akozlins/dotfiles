@@ -1,13 +1,8 @@
 {
-    "type": "script",
-    "description": "ctrlq",
-    "store": {},
-    "modes": [
-        3
-    ],
-    "usageCount": 1,
-    "prompt": false,
-    "omitTrigger": false,
+    "type": "folder",
+    "title": "default",
+    "modes": [],
+    "usageCount": 0,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [],
@@ -18,10 +13,8 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [
-            "<ctrl>"
-        ],
-        "hotKey": "q"
+        "modifiers": [],
+        "hotKey": null
     },
     "filter": {
         "regex": null,
