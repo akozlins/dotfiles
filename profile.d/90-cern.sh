@@ -6,7 +6,7 @@ for MY_GEANT4 in \
     "/usr/local" \
 ; do
     if [ -f "$MY_GEANT4/bin/geant4.sh" ] && cd -- "$MY_GEANT4/bin" ; then
-        source geant4.sh
+        . ./geant4.sh
         cd - > /dev/null
         break
     fi
