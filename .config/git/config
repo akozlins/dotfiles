@@ -10,6 +10,10 @@
 
 [diff]
 
+[gc]
+	autoPackLimit = 8
+	bigPackThreshold = 1m
+
 [merge]
 
 [pull]
