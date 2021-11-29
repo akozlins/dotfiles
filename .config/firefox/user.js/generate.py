@@ -44,4 +44,4 @@ for key, value in prefs.items() :
     else :
         raise Exception(f'unknown type: {value_type}')
 
-    print(f'user_pref("{key}", {value})')
+    print(f'user_pref("{key}", {value});')
