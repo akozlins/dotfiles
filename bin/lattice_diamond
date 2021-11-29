@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
 export LM_LICENSE_FILE="$LATTICE_LICENSE_FILE"

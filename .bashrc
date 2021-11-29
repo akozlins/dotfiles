@@ -4,10 +4,12 @@
 
 export MY_BASHRC_DATE="$MY_BASHRC_DATE:$(date +%s.%3N)"
 
-. "$HOME/.profile"
+# shellcheck source=./.profile
+source "$HOME/.profile"
 
 
 
+#shellcheck source=./etc/bash.bashrc
 source "$DOTFILES/etc/bash.bashrc"
 
 bind -f "$DOTFILES/.inputrc"
@@ -29,5 +31,5 @@ shopt -s histappend
 
 
 for f in "$DOTFILES"/rc.d/?* ; do
-    [ -f "$f" ] && . "$f"
+    [ -f "$f" ] && source "$f"
 done

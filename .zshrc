@@ -32,7 +32,9 @@ plugins=(
 fpath+=("$DOTFILES/.config/zsh-completions")
 
 source "$ZSH/oh-my-zsh.sh"
-gentoo_precmd() {}
+gentoo_precmd() {
+    true
+}
 
 
 
@@ -68,5 +70,5 @@ bindkey "^i" expand-or-complete-prefix
 
 
 for f in "$DOTFILES"/rc.d/?* ; do
-    [ -f "$f" ] && . "$f"
+    [ -f "$f" ] && source "$f"
 done

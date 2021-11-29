@@ -26,6 +26,6 @@ while true ; do case "$1" in
     *) exit 1 ;;
 esac done
 
-echo h=$h
-echo v=$v
-echo o=$o
+echo "h=$h"
+echo "v=$v"
+echo "o=$o"

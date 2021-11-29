@@ -52,6 +52,6 @@ nc -z localhost "$PORT"
 sleep 2.5
 vncviewer \
     DotWhenNoCursor=1 \
-    -Log *:stdout:100 \
+    -Log "*:stdout:100" \
     -passwd <(vncpasswd -f <<< "$PASSWD") \
     localhost:"$PORT"

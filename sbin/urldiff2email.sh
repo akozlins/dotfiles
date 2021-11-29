@@ -16,7 +16,7 @@ cleanup() {
 }
 trap cleanup EXIT
 
-while [ true ] ; do
+while true ; do
     if [ -x /bin/lynx ] ; then
         /bin/lynx --dump "$URL" > "$NEW"
     elif [ -x /bin/html2text ] ; then

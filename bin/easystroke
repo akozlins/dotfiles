@@ -2,4 +2,5 @@
 set -euf
 
 set -- --config-dir "$XDG_CONFIG_HOME/easystroke" "$@"
+# shellcheck source=../sbin/exec.sh
 source "$DOTFILES/sbin/exec.sh"

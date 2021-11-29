@@ -5,4 +5,5 @@ LEDGER_DIR=$(dirname -- "$LEDGER_FILE")
 unset CDPATH
 cd "$LEDGER_DIR" || exit 1
 
+# shellcheck source=../sbin/exec.sh
 source "$DOTFILES/sbin/exec.sh"
