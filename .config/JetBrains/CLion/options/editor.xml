@@ -2,6 +2,7 @@
   <component name="CodeInsightSettings">
     <option name="SMART_BACKSPACE" value="0" />
     <option name="INSERT_BRACE_ON_ENTER" value="false" />
+    <option name="SURROUND_SELECTION_ON_QUOTE_TYPED" value="false" />
     <option name="AUTOINSERT_PAIR_BRACKET" value="false" />
     <option name="AUTOINSERT_PAIR_QUOTE" value="false" />
     <option name="REFORMAT_BLOCK_ON_RBRACE" value="false" />
@@ -14,6 +15,7 @@
     <option name="FONT_SCALE" value="1.25" />
   </component>
   <component name="EditorSettings">
+    <option name="SHOW_BREADCRUMBS" value="false" />
     <option name="IS_WHITESPACES_SHOWN" value="true" />
   </component>
 </application>
