@@ -1,0 +1,3 @@
+#
+
+xrdb -merge "$DOTFILES/.Xresources"
