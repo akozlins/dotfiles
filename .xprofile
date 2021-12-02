@@ -5,9 +5,3 @@ export MY_XPROFILE_DATE="$MY_XPROFILE_DATE:$(date +%s.%3N)"
 if [ -z "${DOTFILES:+x}" ] ; then
     . "$HOME/.profile"
 fi
-
-xrdb -merge "$DOTFILES/.Xresources"
-
-#if [ -f /usr/bin/nvidia-settings ] ; then
-#    /usr/bin/nvidia-settings --load-config-only --config="$DOTFILES/.nvidia-settings-rc"
-#fi
