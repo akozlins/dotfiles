@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=easystroke
+Exec=easystroke
+TryExec=easystroke
+Terminal=false

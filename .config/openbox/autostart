@@ -26,4 +26,3 @@ fi
 
 run 2s fbpanel
 run 4s conky
-run 4s easystroke
