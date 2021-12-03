@@ -1,4 +1,4 @@
-#
+#!/bin/sh
 
 # <https://doc.rust-lang.org/cargo/reference/environment-variables.html>
 

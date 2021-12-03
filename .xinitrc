@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export MY_XINITRC_DATE="${MY_XINITRC_DATE:+$MY_XINITRC_DATE:}$(date +%s.%3N)"
+
 . "$HOME/.profile"
 
 for f in "$DOTFILES"/.config/xinitrc.d/?*.sh ; do

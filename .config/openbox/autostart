@@ -1,6 +1,10 @@
 #!/bin/bash
 
-run() {
+for f in "$DOTFILES"/.config/xinitrc.d/?*.sh ; do
+    [ -f "$f" ] && . "$f"
+done
+
+my_run() {
     delay="$1"
     shift
     cmd="$1"
@@ -12,17 +16,13 @@ run() {
     ) &
 }
 
-for f in "$DOTFILES"/.config/xinitrc.d/?*.sh ; do
-    [ -f "$f" ] && . "$f"
-done
-
-run 1s xss-lock -l -- "$DOTFILES/bin/lock.sh"
+my_run 1s xss-lock -l -- "$DOTFILES/bin/lock.sh"
 
 if command -v xsecurelock &> /dev/null ; then
     true
 elif command -v xscreensaver &> /dev/null ; then
-    run 1s xscreensaver
+    my_run 1s xscreensaver
 fi
 
-run 2s fbpanel
-run 4s conky
+my_run 2s fbpanel
+my_run 4s conky
