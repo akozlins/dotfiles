@@ -26,6 +26,8 @@
     'whitespace
     'org
     'undo-tree
+    'helm
+    'counsel
 )
 
 (require 'use-package)
@@ -56,4 +58,12 @@
 (require `undo-tree)
 (global-undo-tree-mode)
 
-;
+; helm
+;(global-set-key (kbd "M-x") 'helm-M-x)
+;(global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+; <https://oremacs.com/swiper/> - `ivy`
+(setq ivy-use-virtual-buffers t)
+(setq ivy-count-format "(%d/%d) ")
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
