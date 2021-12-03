@@ -10,6 +10,7 @@
 /*/terminal/history/
 /*/workspace/
 
+/*/bundled_plugins.txt
 /*/disabled_*.txt
 /*/*.db
 /*/*.key
