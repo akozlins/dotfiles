@@ -21,7 +21,11 @@ GENERATE := $(XDG_CONFIG_HOME)/firefox/user.js/generate.py
 
 .PHONY : user.js
 user.js :
-	if [ -e "user.js" ] && ! diff -- "user.js" <($(GENERATE)) ; then \
+	make -C ..
+	if [ -e "user.js" ] && ! diff -- <(cat "user.js" | sort) <($(GENERATE) | sort) ; then \
 	    cp -v -- "user.js" "user.$$(date +%FT%T).js"; \
 	    $(GENERATE) > "user.js"; \
 	fi
+
+install :
+	cp -v user.js ~/.cache/firefox/default/
