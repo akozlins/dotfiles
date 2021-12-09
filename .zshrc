@@ -4,7 +4,8 @@
 
 export MY_ZSHRC_DATE="$MY_ZSHRC_DATE:$(date +%s.%3N)"
 
-. "$HOME/.profile"
+# shellcheck source=./.profile
+source "$HOME/.profile"
 
 
 

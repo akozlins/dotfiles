@@ -136,11 +136,11 @@ bindsym $mod+d exec --no-startup-id "rofi -show run"
 bindsym Mod1+Tab exec --no-startup-id "rofi -show"
 
 # mattermost
-for_window [class="Mattermost"] move container to workspace $ws2
+for_window [class="(?i)mattermost"] move container to workspace $ws2
 
 # skype
-for_window [class="Skype"] move container to workspace $ws2
+for_window [class="(?i)skype"] move container to workspace $ws2
 
 # zoom
-for_window [class="zoom"] move container to workspace $ws3
-for_window [class="zoom"] floating enable
+for_window [class="(?i)zoom"] move container to workspace $ws3
+for_window [class="(?i)zoom"] floating enable

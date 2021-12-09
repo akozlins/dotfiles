@@ -1,4 +1,4 @@
-#
+#!/bin/sh
 
 # disable bell
 xset b off
