@@ -13,6 +13,7 @@ repos=(
     "https://github.com/pangloss/vim-javascript"
     "https://github.com/jceb/vim-orgmode"
     "https://github.com/tpope/vim-sensible"
+    "https://github.com/scrooloose/syntastic"
 )
 
 cd bundle || exit 1
