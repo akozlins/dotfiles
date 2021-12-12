@@ -8,5 +8,20 @@ for f in "$DOTFILES"/.config/xinitrc.d/?*.sh ; do
     [ -f "$f" ] && . "$f"
 done
 
-# specifying openbox instead of openbox-session will prevent autostart in /etc/xdg/autostart
-exec openbox-session
+# openbox as default
+MY_SESSION="${1:-openbox}"
+echo "$@"
+
+case "$MY_SESSION" in
+i3|i3wm)
+    exec i3
+    ;;
+openbox)
+    # specifying openbox instead of openbox-session will prevent autostart in /etc/xdg/autostart
+    exec openbox-session
+    ;;
+*)
+    # unknown session, try to run it as command
+    exec "$@"
+    ;;
+esac
