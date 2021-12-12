@@ -4,3 +4,4 @@ Name=gxkb
 Exec=gxkb
 TryExec=gxkb
 Terminal=false
+Hidden=true
