@@ -144,3 +144,5 @@ for_window [class="(?i)skype"] move container to workspace $ws2
 # zoom
 for_window [class="(?i)zoom"] move container to workspace $ws3
 for_window [class="(?i)zoom"] floating enable
+
+for_window [class="(?i)far2l"] floating enable
