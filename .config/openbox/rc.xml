@@ -228,6 +228,12 @@
     </action>
   </keybind>
 
+  <keybind key="W-A-m">
+    <action name="Execute">
+      <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
+    </action>
+  </keybind>
+
   <keybind key="W-d"><action name="ToggleShowDesktop"/></keybind>
   <keybind key="W-r"><action name="Execute"><command>rofi -show run</command></action></keybind>
 </keyboard>
