@@ -1,8 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
 export HOME="$DOTFILES"
 
 exec \
-/bin/claws-mail "$@" \
+/bin/claws-mail \
+    --alternate-config-dir "$XDG_CONFIG_HOME/claws-mail" \
+    "$@" \
 > /dev/null 2>&1 &
