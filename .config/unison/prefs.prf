@@ -26,3 +26,16 @@ ignore = Name *.!qB
 # quartus
 #ignore = Regex path/.*/(db|incremental_db|output_files|generated)
 #ignore = Regex path/.*\.(qsys|sopcinfo)
+
+# sylpheed
+ignore = Name sylpheed/*.bak
+ignore = Name sylpheed/*.bak.*
+ignore = Name .sylpheed_cache
+ignore = Name .sylpheed_mark
+
+# claws-mail
+ignore = Name claws-mail/*.bak
+ignore = Name claws-mail/*.bak.*
+ignore = Name claws-mail/*.log
+ignore = Name .claws_cache
+ignore = Name .claws_mark
