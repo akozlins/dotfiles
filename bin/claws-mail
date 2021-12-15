@@ -3,6 +3,8 @@ set -euf
 
 export HOME="$DOTFILES"
 
+export GTK_THEME=claws-mail
+
 exec \
 /bin/claws-mail \
     --alternate-config-dir "$XDG_CONFIG_HOME/claws-mail" \
