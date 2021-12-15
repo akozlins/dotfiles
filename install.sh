@@ -70,6 +70,9 @@ mkdir -pv -- "$HOME/.local/share"
 mkdir -pv -- "$HOME/downloads"
 mkdir -pv -- "$HOME/.cache/ipe"
 
+mkdir -pv -- "$(readlink -f -- ./.arduino15)"
+mkdir -pv -- "$(readlink -f -- ./.var/app)"
+
 # Media/MIME Types
 "$DOTFILES/.config/applications/init.sh"
 
