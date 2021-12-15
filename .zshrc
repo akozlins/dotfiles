@@ -70,6 +70,6 @@ bindkey "^i" expand-or-complete-prefix
 
 
 
-for f in "$DOTFILES"/rc.d/?* ; do
+for f in "$DOTFILES"/rc.d/?*.sh "$DOTFILES"/rc.d/?*.zsh; do
     [ -f "$f" ] && source "$f"
 done

@@ -30,6 +30,6 @@ shopt -s histappend
 
 
 
-for f in "$DOTFILES"/rc.d/?* ; do
+for f in "$DOTFILES"/rc.d/?*.sh ; do
     [ -f "$f" ] && source "$f"
 done
