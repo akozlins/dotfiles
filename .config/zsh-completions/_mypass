@@ -2,7 +2,7 @@
 
 function _mypass {
     _arguments \
-        "1: :($(/bin/ls -1 -- ~/.dotfiles/.config/mypass))"
+        "1: :($(/bin/ls -1 -- $XDG_CONFIG_HOME/mypass))"
 }
 
 _mypass

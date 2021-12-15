@@ -30,6 +30,8 @@ ignore = Name *.!qB
 # sylpheed
 ignore = Name sylpheed/*.bak
 ignore = Name sylpheed/*.bak.*
+ignore = Name sylpheed/*.log
+ignore = Name sylpheed/mimetmp
 ignore = Name .sylpheed_cache
 ignore = Name .sylpheed_mark
 
@@ -37,5 +39,7 @@ ignore = Name .sylpheed_mark
 ignore = Name claws-mail/*.bak
 ignore = Name claws-mail/*.bak.*
 ignore = Name claws-mail/*.log
+ignore = Name claws-mail/mimetmp
+ignore = Name claws-mail/tagsdb
 ignore = Name .claws_cache
 ignore = Name .claws_mark

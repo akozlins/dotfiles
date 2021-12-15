@@ -1,6 +1,8 @@
 #
 
 /borg
+/claws-mail
+/Element/
 /enchant/
 /evince/
 /fonts
@@ -18,6 +20,7 @@
 /rclone
 /solaar/
 /sqlitebrowser/
+/sylpheed
 /syncthing
 /unity3d/
 /VirtualBox/
