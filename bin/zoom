@@ -1,15 +1,19 @@
 #!/bin/bash
 set -euf
 
-CMD=("/usr/bin/zoom" "$@")
-
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 private="$XDG_CACHE_HOME/zoom"
 mkdir -pv -- "$private"
 
-FJ="/usr/bin/firejail"
-[ -x "$FJ" ] && CMD=("$FJ" "--private=$private" -- "${CMD[@]}")
+CMD=(
+    /usr/bin/firejail
+    --private="$private"
+#    --x11=xephyr --xephyr-screen=1600x1000
+    --
+    /usr/bin/zoom
+    "$@"
+)
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &
