@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Lock Screen
+Icon=system-lock-screen
+Exec=sh -c "\\$HOME/bin/lock.sh"
+Terminal=false
+Type=Application

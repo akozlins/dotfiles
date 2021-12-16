@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=uxterm
+Icon=utilities-terminal
+Exec=uxterm
+Terminal=false
+Type=Application
