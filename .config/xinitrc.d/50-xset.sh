@@ -9,4 +9,4 @@ xsetroot -solid black
 # set screen saver timeout
 xset s 3600
 # enable DPMS off mode
-xset dpms 0 0 3600
+[ "$(xset q | grep 'DPMS is Enabled')" ] && xset dpms 0 0 3600
