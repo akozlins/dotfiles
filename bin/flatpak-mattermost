@@ -1,4 +1,5 @@
 #!/bin/sh
 set -euf
 
+exec \
 flatpak-bg run com.mattermost.Desktop

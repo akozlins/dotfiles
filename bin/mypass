@@ -1,6 +1,6 @@
 #!/bin/sh
 set -euf
 
-exec \
-head -n 1 -- "$DOTFILES/.config/mypass/$1"
-#awk '{ print $3 }'
+MY_FILE="$DOTFILES/.config/mypass/$1"
+
+head -n 1 -- "$MY_FILE"
