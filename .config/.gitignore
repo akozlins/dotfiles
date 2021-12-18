@@ -2,7 +2,6 @@
 
 /borg
 /claws-mail
-/Element/
 /enchant/
 /evince/
 /fonts
@@ -11,7 +10,6 @@
 /gnupg
 /hledger
 /kicad/
-/libreoffice/
 /minisign
 /offlineimap
 /password-store
@@ -22,7 +20,6 @@
 /sqlitebrowser/
 /sylpheed
 /syncthing
-/unity3d/
 /VirtualBox/
 /wireshark/
 

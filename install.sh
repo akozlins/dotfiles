@@ -74,10 +74,22 @@ dirs=(
     # base links
     .cache .local downloads
     # ...
+    .altera.quartus
     .arduino15
     .cache/ipe
-    .local/share
+    .config/Element
+    .config/far2l/history
+    .config/LatticeSemi
+    .config/tmux/plugins
+    .config/tmux/resurrect
+    .config/vim/bundle
+    .epspdf
+    .java
+    .mozilla/firefox
+    .pki
+    .renpy
     .var/app
+    .Xilinx
 )
 
 for dir in "${dirs[@]}" ; do
