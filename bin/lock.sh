@@ -4,6 +4,8 @@ set -euf
 if [ -x "/usr/bin/xsecurelock" ] ; then
 #    export XSECURELOCK_BLANK_DPMS_STATE=standby
     export XSECURELOCK_BLANK_TIMEOUT=1
+    export XSECURELOCK_DATETIME_FORMAT=%FT%T
+    export XSECURELOCK_SHOW_DATETIME=1
     exec /usr/bin/xsecurelock
 fi
 
