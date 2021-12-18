@@ -13,7 +13,7 @@
 #
 # Arguments:
 #  $1: template name
-#  $2: a program (e.g. vim or /usr/bin/vim)
+#  $2: a program (e.g. vim or /bin/vim)
 #  $3: a file (e.g. /boot/grub/grub.cfg)
 #
 add_template() {

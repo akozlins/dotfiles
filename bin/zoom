@@ -7,11 +7,11 @@ private="$XDG_CACHE_HOME/zoom"
 mkdir -pv -- "$private"
 
 CMD=(
-    /usr/bin/firejail
+    /bin/firejail
     --private="$private"
 #    --x11=xephyr --xephyr-screen=1600x1000
     --
-    /usr/bin/zoom
+    /bin/zoom
     "$@"
 )
 

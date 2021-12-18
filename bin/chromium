@@ -5,7 +5,7 @@ export HOME="$DOTFILES"
 
 USER_DATA_DIR="$XDG_CACHE_HOME/chromium"
 
-CMD=("/usr/bin/chromium"
+CMD=("/bin/chromium"
     "--user-data-dir=$USER_DATA_DIR"
     "--password-store=basic"
     # ...

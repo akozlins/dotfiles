@@ -10,4 +10,4 @@ prefs=(
 set -- "${prefs[@]}" "$@"
 
 exec \
-/usr/bin/arduino "$@"
+/bin/arduino "$@"

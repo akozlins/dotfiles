@@ -18,7 +18,7 @@ trap cleanup EXIT
 geometry=$1
 command="rm -fv -- '$tmp' ; $2"
 
-/usr/bin/uxterm -geometry "$geometry" -e /bin/sh -c "$command" > /dev/null 2>&1 &
+/bin/uxterm -geometry "$geometry" -e /bin/sh -c "$command" > /dev/null 2>&1 &
 
 printf "wait for '%s' " "$tmp"
 while [ -f "$tmp" ] ; do

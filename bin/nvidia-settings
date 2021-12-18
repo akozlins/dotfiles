@@ -2,4 +2,4 @@
 set -euf
 
 exec \
-/usr/bin/nvidia-settings --config="$DOTFILES/.nvidia-settings-rc"
+/bin/nvidia-settings --config="$DOTFILES/.nvidia-settings-rc"

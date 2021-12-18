@@ -2,6 +2,6 @@
 set -euf
 
 exec \
-/usr/bin/tmux \
+/bin/tmux \
     -f "$XDG_CONFIG_HOME/tmux/tmux.conf" \
     "$@"

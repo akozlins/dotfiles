@@ -4,4 +4,4 @@ set -euf
 export HOME="$DOTFILES"
 
 exec \
-/usr/bin/vncviewer "$@"
+/bin/vncviewer "$@"

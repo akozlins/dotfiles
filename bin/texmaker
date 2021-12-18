@@ -2,5 +2,5 @@
 set -euf
 
 exec \
-/usr/bin/texmaker "$@" \
+/bin/texmaker "$@" \
 > /dev/null 2>&1 &

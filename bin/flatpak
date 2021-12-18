@@ -5,4 +5,4 @@ DOTFILES="${DOTFILES:-~/.dotfiles}"
 test -d "$DOTFILES" && export HOME="$DOTFILES"
 
 exec \
-/usr/bin/flatpak "$@"
+/bin/flatpak "$@"

@@ -2,4 +2,4 @@
 set -euf
 
 exec \
-/usr/bin/mongo --norc --shell "$XDG_CONFIG_HOME/mongo/rc.js" "$@"
+/bin/mongo --norc --shell "$XDG_CONFIG_HOME/mongo/rc.js" "$@"

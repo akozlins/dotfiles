@@ -2,6 +2,6 @@
 set -euf
 
 exec \
-/usr/bin/wget \
+/bin/wget \
     --hsts-file="$XDG_CACHE_HOME/.wget-hsts" \
     "$@"

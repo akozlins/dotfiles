@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euf
 
-CMD="/usr/bin/emacs"
+CMD="/bin/emacs"
 if [ ! -x "$CMD" ] ; then
     "$CMD"
     exit 1
@@ -20,7 +20,7 @@ fi
 
 USER_INIT_FILE="$USER_EMACS_DIRECTORY/init.el"
 
-CMD=("/usr/bin/emacs" --no-init-file "--load=$USER_INIT_FILE" "$@")
+CMD=("/bin/emacs" --no-init-file "--load=$USER_INIT_FILE" "$@")
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &

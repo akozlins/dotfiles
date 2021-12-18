@@ -4,4 +4,4 @@ set -euf
 export UNISON="$HOME/.config/unison"
 
 exec \
-/usr/bin/unison -logfile "$HOME/.cache/unison.log" "$@"
+/bin/unison -logfile "$HOME/.cache/unison.log" "$@"

@@ -1,12 +1,12 @@
 #!/bin/sh
 set -euf
 
-if [ -x "/usr/bin/xsecurelock" ] ; then
+if [ -x "/bin/xsecurelock" ] ; then
 #    export XSECURELOCK_BLANK_DPMS_STATE=standby
     export XSECURELOCK_BLANK_TIMEOUT=1
     export XSECURELOCK_DATETIME_FORMAT=%FT%T
     export XSECURELOCK_SHOW_DATETIME=1
-    exec /usr/bin/xsecurelock
+    exec /bin/xsecurelock
 fi
 
 if [ -n "$(pidof xscreensaver)" ] ; then

@@ -2,4 +2,4 @@
 set -euf
 
 sudo \
-/usr/bin/iftop -c "$DOTFILES/.iftoprc" "$@"
+/bin/iftop -c "$DOTFILES/.iftoprc" "$@"

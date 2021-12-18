@@ -1,9 +1,9 @@
 #!/bin/bash
 set -euf
 
-CMD=("/usr/bin/ghb" "$@")
+CMD=("/bin/ghb" "$@")
 
-FJ="/usr/bin/firejail"
+FJ="/bin/firejail"
 [ -x "$FJ" ] && CMD=("$FJ" -- "${CMD[@]}")
 
 if [ $# -eq 0 ] ; then

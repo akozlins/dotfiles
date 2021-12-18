@@ -21,7 +21,7 @@ VMARGS=(
 export SWT_GTK3=0
 
 exec \
-"/usr/bin/eclipse" \
+"/bin/eclipse" \
 -configuration "$XDG_CACHE_HOME/eclipse/config" \
 -data "$XDG_CONFIG_HOME/eclipse/data" \
 --launcher.GTK_version 2 \

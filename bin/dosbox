@@ -6,4 +6,4 @@ HOME="$DOTFILES"
 CONF="$XDG_CONFIG_HOME/dosbox/dosbox.conf"
 
 exec \
-/usr/bin/dosbox -conf "$CONF" "$@"
+/bin/dosbox -conf "$CONF" "$@"

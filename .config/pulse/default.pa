@@ -1,4 +1,4 @@
-#!/usr/bin/pulseaudio -nF
+#!/bin/pulseaudio -nF
 
 .include /etc/pulse/default.pa
 

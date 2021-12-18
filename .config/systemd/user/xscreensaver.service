@@ -4,7 +4,7 @@ Before=sleep.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/xscreensaver-command -lock
+ExecStart=/bin/xscreensaver-command -lock
 
 [Install]
 WantedBy=sleep.target

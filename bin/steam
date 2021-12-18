@@ -8,7 +8,7 @@ STEAM_HOME="$HOME/.steam"
 mkdir -pv -- "$STEAM_HOME"
 
 CMD=(
-    "/usr/bin/steam"
+    "/bin/steam"
     "-console"
     "$@"
 )
