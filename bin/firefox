@@ -6,7 +6,7 @@ export HOME="$DOTFILES"
 CMD=(
     "/bin/firefox"
     "$@"
-    --profile "$XDG_CACHE_HOME/firefox/default"
+    --profile "$XDG_DATA_HOME/firefox/default"
 )
 
 if [ $# -eq 0 ] ; then
