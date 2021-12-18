@@ -65,13 +65,18 @@ for target in "${targets[@]}" ; do
     fi
 done
 
-mkdir -pv -- "$HOME/.local/share"
+dirs=(
+    .arduino15
+    .cache/ipe
+    .local/share
+    .var/app
+    downloads
+)
 
-mkdir -pv -- "$HOME/downloads"
-mkdir -pv -- "$HOME/.cache/ipe"
-
-mkdir -pv -- "$(readlink -f -- ./.arduino15)"
-mkdir -pv -- "$(readlink -f -- ./.var/app)"
+for dir in "${dirs[@]}" ; do
+    dir=$(readlink -f -- "$dir")
+    mkdir -pv -- "$dir"
+done
 
 # Media/MIME Types
 "$DOTFILES/.config/applications/init.sh"
