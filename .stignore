@@ -1,18 +1,1 @@
-//
-
-.cache
-cmake-build*
-core.[0-9]*
-mnt
-node_modules
-
-/.dotfiles
-/.local
-
-*.!qB
-
-// ssh
-.ssh/authorized_keys
-.ssh/id_*
-.ssh/known_hosts*
-.ssh/socket-*
+#include .stignore0
