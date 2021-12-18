@@ -45,7 +45,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 # https://docs.oracle.com/javacomponents/usage-tracker/overview/toc.htm
 # * disable last usage time tracking
 JAVA_USAGE_TRACKER=" \
--Dcom.oracle.usagetracker.config.file=$DOTFILES/.java/usagetracker.properties \
+-Dcom.oracle.usagetracker.config.file=$XDG_CONFIG_HOME/java/usagetracker.properties \
 -Djdk.disableLastUsageTracking=true \
 "
 # Java Font Anti-Aliasing
