@@ -6,6 +6,34 @@ echo "DOTFILES = '$DOTFILES'"
 unset CDPATH
 cd "$DOTFILES" || exit 1
 
+dirs=(
+    # base links
+    .cache .local downloads
+    # ...
+    .altera.quartus
+    .arduino15
+    .cache/ipe
+    .config/Element
+    .config/far2l/history
+    .config/LatticeSemi
+    .config/tmux/plugins
+    .config/tmux/resurrect
+    .config/vim/bundle
+    .epspdf
+    .java
+    .mozilla/firefox
+    .pki
+    .renpy
+    .var/app
+    .Xilinx
+)
+
+# make dirs for links
+for dir in "${dirs[@]}" ; do
+    dir=$(readlink -m -- "$dir")
+    mkdir -pv -- "$dir"
+done
+
 targets=(
     bin
 
@@ -19,8 +47,8 @@ targets=(
     .rootrc
 )
 
+# create links that point to targets
 for target in "${targets[@]}" ; do
-    # create link that points to target
     link="$HOME/$target"
     target="$DOTFILES/$target"
 
@@ -68,33 +96,6 @@ for target in "${targets[@]}" ; do
         # create normal link
         ln -snv -T "$target" "$link"
     fi
-done
-
-dirs=(
-    # base links
-    .cache .local downloads
-    # ...
-    .altera.quartus
-    .arduino15
-    .cache/ipe
-    .config/Element
-    .config/far2l/history
-    .config/LatticeSemi
-    .config/tmux/plugins
-    .config/tmux/resurrect
-    .config/vim/bundle
-    .epspdf
-    .java
-    .mozilla/firefox
-    .pki
-    .renpy
-    .var/app
-    .Xilinx
-)
-
-for dir in "${dirs[@]}" ; do
-    dir=$(readlink -f -- "$dir")
-    mkdir -pv -- "$dir"
 done
 
 # Media/MIME Types
