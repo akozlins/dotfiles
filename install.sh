@@ -9,15 +9,13 @@ cd "$DOTFILES" || exit 1
 links=(
     # base links
     .cache .local downloads
-    # .cache
-    .cache/ipe
     # .config
     .config/Element
     .config/far2l/history
     .config/kicad
     .config/LatticeSemi
     .config/libreoffice
-    .config/synthing
+    .config/syncthing
     .config/tmux/plugins
     .config/tmux/resurrect
     .config/unity3d
@@ -38,6 +36,10 @@ links=(
 
 # make dirs for links
 for link in "${links[@]}" ; do
+    if [ ! -L "$link" ] ; then
+        >&2 echo "E [$0] link '$link' does not exist"
+        exit 1
+    fi
     dir=$(readlink -m -- "$link")
     mkdir -pv -- "$dir"
 done
