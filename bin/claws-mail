@@ -3,10 +3,13 @@ set -euf
 
 export HOME="$DOTFILES"
 
+CLAWS_MAIL_DIR="${CLAWS_MAIL_DIR:-$XDG_CONFIG_HOME/claws-mail}"
+
+export GTK_DEBUG=1
 export GTK_THEME=claws-mail
 
 exec \
 /bin/claws-mail \
-    --alternate-config-dir "$XDG_CONFIG_HOME/claws-mail" \
+    --alternate-config-dir "$CLAWS_MAIL_DIR" \
     "$@" \
 > /dev/null 2>&1 &
