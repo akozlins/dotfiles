@@ -1,8 +1,9 @@
 #compdef _mypass mypass
 
 function _mypass {
+    MYPASS_DIR="${MYPASS_DIR:-$XDG_CONFIG_HOME/mypass}"
     _arguments \
-        "1: :($(/bin/ls -1 -- $XDG_CONFIG_HOME/mypass))"
+        "1: :($(/bin/ls -1 -- $MYPASS_DIR))"
 }
 
 _mypass

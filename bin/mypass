@@ -1,6 +1,13 @@
 #!/bin/sh
 set -euf
 
-MY_FILE="$DOTFILES/.config/mypass/$1"
+MYPASS_DIR="${MYPASS_DIR:-$XDG_CONFIG_HOME/mypass}"
 
-head -n 1 -- "$MY_FILE"
+MYPASS_FILE="$MYPASS_DIR/$1"
+
+if [ $# -ge 2 ] ; then
+    # TODO
+    exit 0
+fi
+
+head -n 1 -- "$MYPASS_FILE"
