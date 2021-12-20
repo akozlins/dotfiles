@@ -1,0 +1,12 @@
+[GENERAL]
+geometry: 1200x1000
+
+[LIBRARY]
+start_show_library: no
+expand_lib: no
+border_width: 1
+
+[EDIT]
+autosave_images: yes
+
+[ALIASES]
