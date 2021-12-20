@@ -8,6 +8,9 @@
 (setq emacs.config (concat (getenv "XDG_CONFIG_HOME") "/emacs"))
 (setq emacs.cache (concat (getenv "XDG_CACHE_HOME") "/emacs"))
 
+(setq custom-file (concat emacs.config "/custom.el"))
+(load (concat emacs.config "/custom.el"))
+
 (load (concat emacs.config "/gui"))
 (load (concat emacs.config "/edit"))
 (load (concat emacs.config "/key"))
