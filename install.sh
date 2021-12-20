@@ -6,31 +6,39 @@ echo "DOTFILES = '$DOTFILES'"
 unset CDPATH
 cd "$DOTFILES" || exit 1
 
-dirs=(
+links=(
     # base links
     .cache .local downloads
-    # ...
-    .altera.quartus
-    .arduino15
+    # .cache
     .cache/ipe
+    # .config
     .config/Element
     .config/far2l/history
+    .config/kicad
     .config/LatticeSemi
+    .config/libreoffice
+    .config/synthing
     .config/tmux/plugins
     .config/tmux/resurrect
+    .config/unity3d
     .config/vim/bundle
+    # ...
+    .altera.quartus
+    .android
+    .arduino15
     .epspdf
     .java
     .mozilla/firefox
     .pki
     .renpy
+    .steam
     .var/app
     .Xilinx
 )
 
 # make dirs for links
-for dir in "${dirs[@]}" ; do
-    dir=$(readlink -m -- "$dir")
+for link in "${links[@]}" ; do
+    dir=$(readlink -m -- "$link")
     mkdir -pv -- "$dir"
 done
 
