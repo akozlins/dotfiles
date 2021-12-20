@@ -1,4 +1,4 @@
 #
 
 idea.config.path=${user.home}/.config/JetBrains/AndroidStudio
-idea.system.path=${user.home}/.cache/JetBrains/AndroidStudio
+idea.plugins.path=${user.home}/.local/share/JetBrains/AndroidStudio/plugins

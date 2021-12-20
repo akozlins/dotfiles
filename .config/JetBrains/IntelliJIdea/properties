@@ -1,3 +1,4 @@
 #
 
 idea.config.path=${user.home}/.config/JetBrains/IntelliJIdea
+idea.plugins.path=${user.home}/.local/share/JetBrains/IntelliJIdea/plugins

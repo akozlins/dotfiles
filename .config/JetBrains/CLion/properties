@@ -1,3 +1,4 @@
 #
 
 idea.config.path=${user.home}/.config/JetBrains/CLion
+idea.plugins.path=${user.home}/.local/share/JetBrains/CLion/plugins
