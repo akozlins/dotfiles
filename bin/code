@@ -6,6 +6,10 @@ CMD=$(command -pv "$CMD")
 
 export HOME="$DOTFILES"
 
+if [ ! -f "$XDG_DATA_HOME/code/User/settings.json" ] ; then
+    ln -s "$XDG_CONFIG_HOME/code/User/settings.json" "$XDG_DATA_HOME/code/User/settings.json"
+fi
+
 exec \
 "$CMD" \
     --user-data-dir "$XDG_DATA_HOME/code" \

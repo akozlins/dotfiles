@@ -31,6 +31,7 @@ links=(
     .renpy
     .steam
     .var/app
+    .vscode-oss
     .Xilinx
 )
 
