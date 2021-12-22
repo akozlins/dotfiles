@@ -3,13 +3,18 @@ set -euf
 
 export HOME="$DOTFILES"
 
-USER_DATA_DIR="$XDG_CACHE_HOME/chromium"
+USER_DATA_DIR="$XDG_DATA_HOME/chromium"
 
-CMD=("/bin/chromium"
-    "--user-data-dir=$USER_DATA_DIR"
-    "--password-store=basic"
+if [ ! -d "$USER_DATA_DIR" ] ; then
+    cp -r "$XDG_CONFIG_HOME/chromium" "$USER_DATA_DIR"
+fi
+
+CMD=(
+    "/bin/chromium"
+    --user-data-dir="$USER_DATA_DIR"
+    --password-store=basic
     # ...
-    "--disable-background-networking"
+    --disable-background-networking
     "$@"
 )
 
