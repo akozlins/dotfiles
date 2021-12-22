@@ -20,3 +20,6 @@ text/x-c++=org.gnome.gedit.desktop;
 text/x-java=org.gnome.gedit.desktop;
 application/x-theme=org.gnome.gedit.desktop;
 application/x-shellscript=org.gnome.gedit.desktop;
+
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
