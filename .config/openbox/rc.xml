@@ -200,6 +200,10 @@
     </action>
   </keybind>
 
+  <keybind key="W-S-r">
+    <action name="Reconfigure"/>
+  </keybind>
+
   <!-- Keybindings for running applications -->
   <keybind key="W-A-b">
     <action name="Execute">
