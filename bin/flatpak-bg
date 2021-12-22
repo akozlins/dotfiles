@@ -9,7 +9,6 @@ MY_LOG="$XDG_CACHE_HOME/flatpak/$(echo "$*" | tr ' ' _).log"
 mkdir -p -- "$(dirname "$MY_LOG")"
 
 exec \
-unbuffer \
 /bin/flatpak "$@" \
 | ts '%Y-%m-%dT%H:%M:%S' \
 >> "$MY_LOG" &
