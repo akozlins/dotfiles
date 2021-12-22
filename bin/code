@@ -1,9 +1,6 @@
 #!/bin/bash
 set -euf
 
-CMD=$(basename "$0")
-CMD=$(command -pv "$CMD")
-
 export HOME="$DOTFILES"
 
 if [ ! -f "$XDG_DATA_HOME/code/User/settings.json" ] ; then
@@ -11,7 +8,7 @@ if [ ! -f "$XDG_DATA_HOME/code/User/settings.json" ] ; then
 fi
 
 exec \
-"$CMD" \
+/bin/code \
     --user-data-dir "$XDG_DATA_HOME/code" \
     --extensions-dir "$XDG_DATA_HOME/code/extensions" \
     "$@"
