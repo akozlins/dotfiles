@@ -1,4 +1,5 @@
 {
+    "cmake.configureOnOpen": true,
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingDelete": "never",
     "editor.autoClosingOvertype": "never",
@@ -11,6 +12,7 @@
     "editor.fontFamily": "'Source Code Pro', 'DejaVu Sans Mono', 'monospace', monospace",
     "editor.fontLigatures": false,
     "editor.fontSize": 16,
+    "editor.minimap.showSlider": "always",
     "editor.padding.bottom": 2,
     "editor.padding.top": 2,
     "editor.parameterHints.cycle": true,
@@ -21,5 +23,5 @@
     "files.enableTrash": false,
     "files.eol": "\n",
     "telemetry.telemetryLevel": "off",
-    "workbench.enableExperiments": false
+    "workbench.enableExperiments": false,
 }
