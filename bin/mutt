@@ -1,0 +1,12 @@
+#!/bin/sh
+set -euf
+
+DOTFILES="${DOTFILES:-~/.dotfiles}"
+test -d "$DOTFILES" && export HOME="$DOTFILES"
+
+MUTTRC="${MUTTRC:-$XDG_CONFIG_HOME/mutt/muttrc}"
+
+exec \
+mutt \
+    -F "$MUTTRC"
+    "$@"
