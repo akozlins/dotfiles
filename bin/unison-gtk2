@@ -3,7 +3,12 @@ set -euf
 
 export UNISON="$HOME/.config/unison"
 
-CMD=("/bin/unison-gtk2" -logfile "$HOME/.cache/unison.log" "-watch=false" "$@")
+CMD=(
+    "/bin/unison-gtk2"
+    -logfile "$HOME/.cache/unison.log"
+    -watch=false
+    "$@"
+)
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &

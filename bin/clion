@@ -3,7 +3,10 @@ set -euf
 
 export CLION_PROPERTIES="$XDG_CONFIG_HOME/JetBrains/CLion/properties"
 
-CMD=(/bin/clion "$@")
+CMD=(
+    "/bin/clion"
+    "$@"
+)
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &

@@ -7,12 +7,16 @@ private="$XDG_CACHE_HOME/zoom"
 mkdir -pv -- "$private"
 
 CMD=(
-    /bin/firejail
+    "/bin/zoom"
+    "$@"
+)
+
+CMD=(
+    "/bin/firejail"
     --private="$private"
 #    --x11=xephyr --xephyr-screen=1600x1000
     --
-    /bin/zoom
-    "$@"
+    "${CMD[@]}"
 )
 
 if [ $# -eq 0 ] ; then

@@ -4,18 +4,23 @@ set -euf
 export HOME="$DOTFILES"
 
 VIVADO_CACHE="$XDG_CACHE_HOME/vivado"
+mkdir -pv -- "$VIVADO_CACHE"
 
 if [ $# -eq 1 ] ; then
-    mkdir -pv -- "$VIVADO_CACHE"
     unset CDPATH
     cd "$VIVADO_CACHE" || exit 1
 fi
 
-VIVADO_OPTS=(-jvm Xmx2048m)
-
-exec \
-"$VIVADO_ROOTDIR/bin/vivado" \
-    "${VIVADO_OPTS[@]}" \
-    -nojournal -nolog \
-    -tempDir "$VIVADO_CACHE" \
+CMD=(
+    "$VIVADO_ROOTDIR/bin/vivado"
+    -jvm Xmx2048m
+    -nojournal -nolog
+    -tempDir "$VIVADO_CACHE"
     "$@"
+)
+
+if [ $# -eq 0 ] ; then
+    exec "${CMD[@]}" > /dev/null 2>&1 &
+else
+    exec "${CMD[@]}"
+fi

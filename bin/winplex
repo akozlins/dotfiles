@@ -4,7 +4,7 @@ set -euf
 export WINEARCH=win32
 
 if [ $# -eq 0 ] ; then
-    # "C:/Program Files/Megaplex0961/Megaplex.exe"
+#    set -- "C:/Program Files/Megaplex0961/Megaplex.exe"
     set -- "C:/Program Files/WinPlex/supaplex.exe"
 fi
 

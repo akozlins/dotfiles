@@ -7,8 +7,15 @@ if [ ! -f "$XDG_DATA_HOME/code/User/settings.json" ] ; then
     ln -s "$XDG_CONFIG_HOME/code/User/settings.json" "$XDG_DATA_HOME/code/User/settings.json"
 fi
 
-exec \
-/bin/code \
-    --user-data-dir "$XDG_DATA_HOME/code" \
-    --extensions-dir "$XDG_DATA_HOME/code/extensions" \
+CMD=(
+    "/bin/code"
+    --user-data-dir "$XDG_DATA_HOME/code"
+    --extensions-dir "$XDG_DATA_HOME/code/extensions"
     "$@"
+)
+
+if [ $# -eq 0 ] ; then
+    "${CMD[@]}" > /dev/null 2>&1 &
+else
+    "${CMD[@]}"
+fi

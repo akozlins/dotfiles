@@ -8,8 +8,14 @@ CLAWS_MAIL_DIR="${CLAWS_MAIL_DIR:-$XDG_CONFIG_HOME/claws-mail}"
 export GTK_DEBUG=1
 export GTK_THEME=claws-mail
 
-exec \
-/bin/claws-mail \
-    --alternate-config-dir "$CLAWS_MAIL_DIR" \
-    "$@" \
-> /dev/null 2>&1 &
+CMD=(
+    "/bin/claws-mail"
+    --alternate-config-dir "$CLAWS_MAIL_DIR"
+    "$@"
+)
+
+if [ $# -eq 0 ] ; then
+    "${CMD[@]}" > /dev/null 2>&1 &
+else
+    "${CMD[@]}"
+fi

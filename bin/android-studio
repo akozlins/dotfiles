@@ -3,7 +3,10 @@ set -euf
 
 export STUDIO_PROPERTIES="$XDG_CONFIG_HOME/JetBrains/AndroidStudio/properties"
 
-CMD=("/bin/android-studio" "$@")
+CMD=(
+    "/bin/android-studio"
+    "$@"
+)
 
 if [ $# -eq 0 ] ; then
     exec "${CMD[@]}" > /dev/null 2>&1 &

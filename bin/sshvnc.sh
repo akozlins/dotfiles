@@ -30,7 +30,8 @@ RPORT=5900
 
 PASSWD=$(tr -dc a-zA-Z0-9 < /dev/urandom | head -c16)
 
-X11VNC_CMD=(x11vnc
+X11VNC_CMD=(
+    /bin/x11vnc
     -passwd "$PASSWD"
     -localhost -once -timeout 5
     -display :0
