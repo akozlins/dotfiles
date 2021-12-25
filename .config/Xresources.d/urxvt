@@ -18,7 +18,7 @@ URxvt*geometry: 100x30
 URxvt*geometry: 110x35
 #endif
 
-urxvt*font: 9x15
+urxvt*font: -*-fixed-*-*-*-*-15-*-*-*-*-*-iso8859-*
 urxvt*background: grey25
 urxvt*foreground: white
 
