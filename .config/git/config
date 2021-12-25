@@ -14,6 +14,9 @@
 	autoPackLimit = 8
 	bigPackThreshold = 1m
 
+[init]
+	defaultBranch = master
+
 [merge]
 
 [pull]
