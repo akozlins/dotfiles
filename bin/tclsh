@@ -4,7 +4,7 @@ set -euf
 DOTFILES="${DOTFILES:-~/.dotfiles}"
 test -d "$DOTFILES" && export HOME="$DOTFILES"
 
-if [ -x /bin/eltclsh ] ; then
+if [ -x /bin/eltclsh ] && [ $# -eq 0 ] ; then
     exec \
     /bin/eltclsh "$@"
 else
