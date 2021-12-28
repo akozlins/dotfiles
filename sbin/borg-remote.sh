@@ -38,7 +38,7 @@ trap cleanup EXIT
 
 ssh "$HOST" -R "$PORT:localhost:$PORT" \
     BORG_RSH="'sh -c \"exec socat STDIO TCP4-CONNECT:localhost:$PORT\"'" \
-    BORG_RELOCATED_REPO_ACCESS_IS_OK=y  \
+    BORG_RELOCATED_REPO_ACCESS_IS_OK=y \
     borg "$@"
 
 ssh "$HOST" -O cancel -R "$PORT:localhost:$PORT" || true

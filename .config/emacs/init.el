@@ -8,6 +8,7 @@
 (setq emacs.config (concat (getenv "XDG_CONFIG_HOME") "/emacs"))
 (setq emacs.cache (concat (getenv "XDG_CACHE_HOME") "/emacs"))
 
+; https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html
 (setq custom-file (concat emacs.config "/custom.el"))
 (load (concat emacs.config "/custom.el"))
 
