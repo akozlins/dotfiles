@@ -19,13 +19,12 @@ chrome/CustomCSSforFx :
 
 GENERATE := $(XDG_CONFIG_HOME)/firefox/user.js/generate.py
 
+PROFILE := $(DOTFILES)/.mozilla/firefox/default
+
 .PHONY : user.js
 user.js :
 	make -C ..
-	if [ -e "user.js" ] && ! diff -- <(cat "user.js" | sort) <($(GENERATE) | sort) ; then \
-	    cp -v -- "user.js" "user.$$(date +%FT%T).js"; \
-	    $(GENERATE) > "user.js"; \
+	if [ -e "$(PROFILE)/user.js" ] && ! diff -- <(cat "$(PROFILE)/user.js" | sort) <($(GENERATE) | sort) ; then \
+	    cp -v -- "$(PROFILE)/user.js" "$(PROFILE)/user.$$(date +%FT%T).js"; \
+	    $(GENERATE) > "$(PROFILE)/user.js"; \
 	fi
-
-install :
-	cp -v user.js ~/.cache/firefox/default/
