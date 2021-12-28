@@ -1,12 +1,21 @@
 #!/bin/python
 
+import argparse
 import os
 import subprocess
 import sys
 
 FIREFOX_HOME = os.path.normpath(os.path.dirname(os.path.realpath(__file__)) + "/..")
 
-def read_prefs(prefs : dict[str,str], user_js_fname : str) :
+files = [
+    FIREFOX_HOME + "/ghacks-user.js/user.js",
+    FIREFOX_HOME + "/user.js/ghacks.js",
+    FIREFOX_HOME + "/user.js/my.js",
+]
+
+prefs : dict[str, str] = {}
+
+def read_prefs(user_js_fname : str) :
     print(f"DEBUG: read_prefs(\"{user_js_fname}\")", file = sys.stderr)
     def user_pref(key, value) :
         if ( key.startswith("_user.") ) :
@@ -29,7 +38,7 @@ def read_prefs(prefs : dict[str,str], user_js_fname : str) :
             "FIREFOX_HOME" : FIREFOX_HOME,
         })
 
-def emit_prefs(prefs : dict[str,str]) :
+def emit_prefs() :
     for key, value in prefs.items() :
         if ( value is None ) :
             continue
@@ -49,11 +58,7 @@ def emit_prefs(prefs : dict[str,str]) :
 
         print(f'user_pref("{key}", {value});')
 
-def main() :
-    prefs : dict[str,str] = {}
-    read_prefs(prefs, FIREFOX_HOME + "/ghacks-user.js/user.js")
-    read_prefs(prefs, FIREFOX_HOME + "/user.js/ghacks.js")
-    read_prefs(prefs, FIREFOX_HOME + "/user.js/my.js")
-    emit_prefs(prefs)
+for file in files :
+    read_prefs(file)
 
-main()
+emit_prefs()
