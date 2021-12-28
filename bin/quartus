@@ -3,6 +3,13 @@ set -euf
 
 export HOME="$DOTFILES"
 
-exec \
-"$QUARTUS_ROOTDIR/bin/quartus" \
-> /dev/null 2>&1 &
+CMD=(
+    "$QUARTUS_ROOTDIR/bin/quartus"
+    "$@"
+)
+
+if [ $# -eq 0 ] ; then
+    exec "${CMD[@]}" > /dev/null 2>&1 &
+else
+    exec "${CMD[@]}"
+fi

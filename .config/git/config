@@ -9,6 +9,7 @@
 	whitespace = trailing-space,space-before-tab
 
 [diff]
+	tool = meld
 
 [gc]
 	autoPackLimit = 8
@@ -18,6 +19,7 @@
 	defaultBranch = master
 
 [merge]
+	tool = meld
 
 [pull]
 	ff = only

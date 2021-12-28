@@ -8,6 +8,7 @@
 - ClearURLs
 - Containerise, Temporary Containers
 - CSS Exfil Protection
+- Cookie Quick Manager
 
 ## Links
 

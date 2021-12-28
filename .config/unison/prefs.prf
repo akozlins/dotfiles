@@ -36,10 +36,11 @@ ignore = Name .sylpheed_cache
 ignore = Name .sylpheed_mark
 
 # claws-mail
+ignore = Name claws-mail/folderlist.xml
+ignore = Name claws-mail/mimetmp
+ignore = Name claws-mail/tagsdb
 ignore = Name claws-mail/*.bak
 ignore = Name claws-mail/*.bak.*
 ignore = Name claws-mail/*.log
-ignore = Name claws-mail/mimetmp
-ignore = Name claws-mail/tagsdb
 ignore = Name .claws_cache
 ignore = Name .claws_mark

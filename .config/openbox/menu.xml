@@ -42,11 +42,6 @@
     <command>systemctl suspend</command>
   </action>
   </item>
-  <item label="Hibernate">
-    <action name="Execute">
-    <command>systemctl hibernate</command>
-  </action>
-  </item>
 </menu>
 
 <menu id="root-menu" label="Openbox 3">
