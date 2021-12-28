@@ -6,9 +6,7 @@ user_pref("security.OCSP.require", null);
 user_pref("network.http.referer.XOriginPolicy", 1);
 user_pref("network.http.referer.XOriginTrimmingPolicy", 1);
 user_pref("media.eme.enabled", null); // Encryption Media Extension
-user_pref("media.peerconnection.enabled", null);
 user_pref("webgl.disabled", null);
-user_pref("dom.serviceWorkers.enabled", null);
 user_pref("pdfjs.disabled", null);
 user_pref("browser.download.useDownloadDir", null);
 user_pref("security.csp.enable", null);
@@ -18,5 +16,3 @@ user_pref("privacy.firstparty.isolate", null);
 user_pref("privacy.resistFingerprinting", null);
 user_pref("privacy.resistFingerprinting.letterboxing", null);
 user_pref("network.cookie.lifetimePolicy", null);
-
-user_pref("_user.js.parrot", null);

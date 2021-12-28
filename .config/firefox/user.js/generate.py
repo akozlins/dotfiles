@@ -12,12 +12,10 @@ def read_prefs(prefs : dict[str,str], user_js_fname : str) :
         if ( key.startswith("_user.") ) :
             return
         if ( key not in prefs and value is None ) :
-            print(f"WARN: user_pref(\"{key}\", null)", file = sys.stderr)
-        if ( key in prefs and prefs[key] == value ) :
-            print(f"INFO: user_pref(\"{key}\", {prefs[key]} -> {value})", file = sys.stderr)
+            print(f"WARN: user_pref(\"{key}\", None -> {value})", file = sys.stderr)
             return
-        if ( key in prefs and value is not None ) :
-            print(f"WARN: user_pref(\"{key}\", {prefs[key]} -> {value})", file = sys.stderr)
+        if ( key in prefs ) :
+            print(f"INFO: user_pref(\"{key}\", {prefs[key]} -> {value})", file = sys.stderr)
         prefs[key] = value
     with open(user_js_fname, encoding = "UTF-8") as user_js :
         # run gcc preprocessor (remove comments, etc.)
