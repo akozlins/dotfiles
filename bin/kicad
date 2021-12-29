@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euf
+
+CMD=(
+    "/bin/kicad"
+    "$@"
+)
+
+if [ $# -eq 0 ] ; then
+    exec "${CMD[@]}" > /dev/null 2>&1 &
+else
+    exec "${CMD[@]}"
+fi
