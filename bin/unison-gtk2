@@ -6,7 +6,7 @@ export UNISON="$HOME/.config/unison"
 CMD=(
     "/bin/unison-gtk2"
     -logfile "$HOME/.cache/unison.log"
-    -watch=false
+    "-watch=false"
     "$@"
 )
 

@@ -15,7 +15,7 @@ CMD=(
 )
 
 if [ $# -eq 0 ] ; then
-    "${CMD[@]}" > /dev/null 2>&1 &
+    exec "${CMD[@]}" > /dev/null 2>&1 &
 else
-    "${CMD[@]}"
+    exec "${CMD[@]}"
 fi

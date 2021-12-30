@@ -1,10 +1,8 @@
 #!/bin/bash
 set -euf
 
-CMD="/bin/emacs"
-if [ ! -x "$CMD" ] ; then
-    "$CMD"
-    exit 1
+if [ ! -x "/bin/emacs" ] ; then
+    exec /bin/emacs
 fi
 
 #--eval='(setq user-emacs-directory "$DOTFILES/.emacs.d")'

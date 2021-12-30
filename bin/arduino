@@ -1,13 +1,12 @@
 #!/bin/bash
 set -euf
 
-prefs=(
+CMD=(
+    "/bin/arduino"
 #    --preferences-file "$DOTFILES/.config/arduino/preferences.txt"
-#    --pref sketchbook.path="$DOTFILES/.local/share/arduino"
-#    --pref update.check=false
+#    --pref "sketchbook.path=$DOTFILES/.local/share/arduino"
+#    --pref "update.check=false"
+    "$@"
 )
 
-set -- "${prefs[@]}" "$@"
-
-exec \
-/bin/arduino "$@"
+exec "${CMD[@]}"

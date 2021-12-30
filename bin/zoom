@@ -13,7 +13,7 @@ CMD=(
 
 CMD=(
     "/bin/firejail"
-    --private="$private"
+    "--private=$private"
 #    --x11=xephyr --xephyr-screen=1600x1000
     --
     "${CMD[@]}"
