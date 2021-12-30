@@ -1,13 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
 MYPASS_DIR="${MYPASS_DIR:-$XDG_CONFIG_HOME/mypass}"
+MYPASS_TAG="${MYPASS_TAG:--@}"
 
-MYPASS_FILE="$MYPASS_DIR/$1"
+if [[ "$1" == "$MYPASS_TAG"* ]] ; then
+    TAG="$1"
+    FILE="$MYPASS_DIR/$2"
 
-if [ $# -ge 2 ] ; then
-    # TODO
-    exit 0
+    grep -e "^$TAG " -- "$FILE"
+#    awk "/^$TAG/ { print \$2 }" "$MYPASS_FILE"
+else
+    FILE="$MYPASS_DIR/$1"
+    cat "$FILE"
 fi
-
-head -n 1 -- "$MYPASS_FILE"

@@ -1,9 +1,20 @@
-#compdef _mypass mypass
+#compdef mypass
 
 function _mypass {
     MYPASS_DIR="${MYPASS_DIR:-$XDG_CONFIG_HOME/mypass}"
+    MYPASS_TAG="${MYPASS_TAG:--@}"
+
+    local -a files tags args values
+    files=($(/bin/ls -1 -- "$MYPASS_DIR"))
+    tags=($(cd "$MYPASS_DIR" && grep -E -e "^${MYPASS_TAG}[^ ]+" -ho -- "${files[@]}"))
+    args=()
+    for tag in "${tags[@]}" ; do
+        values=($(cd "$MYPASS_DIR" && grep "^$tag" -l -- "${files[@]}" ))
+        args+=("$tag: :(${values[*]})")
+    done
     _arguments \
-        "1: :($(/bin/ls -1 -- $MYPASS_DIR))"
+        "${args[@]}" \
+        "*: :(${files[*]})"
 }
 
 _mypass
