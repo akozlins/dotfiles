@@ -1,9 +1,9 @@
 #!/bin/sh
 set -euf
 
-OLD_SINK="$(pactl get-default-sink)"
+OLD_SINK=$(pactl get-default-sink)
 echo "$OLD_SINK"
-NEW_SINK="$(pactl list short sinks | grep -v $OLD_SINK | awk '{ print $2 ; exit }')"
+NEW_SINK=$(pactl list short sinks | grep -v "$OLD_SINK" | awk '{ print $2 ; exit }')
 echo "$NEW_SINK"
 pactl set-default-sink "$NEW_SINK"
 

@@ -1,9 +1,12 @@
-#!/bin/sh
-set -euf
+#!/bin/bash
+set -eu
 
 if [ $# -eq 0 ] ; then
-    for i in $(ls -1 /dev/disk/by-uuid) ; do
-        echo "$i" $(lsblk --noheadings --output MOUNTPOINT -- "/dev/disk/by-uuid/$i")
+    disks=(/dev/disk/by-uuid/*)
+    for disk in "${disks[@]}" ; do
+        uuid=$(basename "$disk")
+        mount=$(lsblk --noheadings --output MOUNTPOINT -- "$disk")
+        echo "$uuid" "$mount"
     done
     exit 0
 fi
