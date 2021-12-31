@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# <https://github.com/rhasspy/larynx>
+
+args=()
+tag='latest'
+docker='docker'
+
+while [[ -n "$1" ]] ; do
+    if [[ "$1" == '--update' ]] ; then
+        # update docker image
+        update='1'
+    else
+        args+=("$1")
+    fi
+
+    shift 1
+done
+
+if [[ -n "${update}" ]] ; then
+    docker pull "rhasspy/larynx:${tag}"
+fi
+
+"${docker}" run \
+    -i \
+    -e "HOME=$HOME" \
+    -v "$HOME/.local/share/larynx:$HOME/.local/share/larynx" \
+    -v "/usr/share/ca-certificates:/usr/share/ca-certificates" \
+    -v "/etc/ssl/certs:/etc/ssl/certs" \
+    -w "$PWD" \
+    --device /dev/snd:/dev/snd \
+    --user "$(id -u):$(id -g)" \
+    --entrypoint '/home/larynx/app/.venv/bin/python3' \
+    "rhasspy/larynx:${tag}" \
+    -m larynx \
+    "${args[@]}"
