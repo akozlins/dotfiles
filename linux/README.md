@@ -70,3 +70,33 @@ HOOKS=(... netconf hetzner tinyssh encryptssh filesystems ...)
 
 ## mailu
 
+## android
+
+- <https://wiki.archlinux.org/index.php/Android>
+
+```
+yay -S android-studio
+yay -S android-sdk android-sdk-platform-tools android-platform android-emulator
+```
+
+```
+groupadd android-sdk
+gpasswd -a "$USER" android-sdk
+
+setfacl -R -m g:android-sdk:rwx /opt/android-sdk
+setfacl -d -m g:android-sdk:rwX /opt/android-sdk
+```
+
+```
+adb install "$APK"
+```
+
+## luks
+
+```
+# check block size
+blockdev --getpbsz /dev/sda1
+
+# luks with integrity
+sudo cryptsetup luksFormat --type luks2 --integrity hmac-sha256 --sector-size 4096 /dev/sda1
+```
