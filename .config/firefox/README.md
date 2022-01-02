@@ -3,11 +3,8 @@
 ## Extensions
 
 - uBlock Origin
-- uMatrix
 - Enhancer for YouTube
-- ClearURLs
-- Containerise, Temporary Containers
-- CSS Exfil Protection
+- Containerise
 - Cookie Quick Manager
 
 ## Links

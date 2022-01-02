@@ -104,5 +104,3 @@ user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 
 // compact mode
 user_pref("browser.uidensity", 1);
-
-user_pref("browser.contentblocking.category", "custom");
