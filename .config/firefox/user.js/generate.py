@@ -7,11 +7,13 @@ import sys
 
 FIREFOX_HOME = os.path.normpath(os.path.dirname(os.path.realpath(__file__)) + "/..")
 
-files = [
+parser = argparse.ArgumentParser()
+parser.add_argument("files", nargs="*", default=[
     FIREFOX_HOME + "/ghacks-user.js/user.js",
     FIREFOX_HOME + "/user.js/ghacks.js",
     FIREFOX_HOME + "/user.js/my.js",
-]
+])
+args = parser.parse_args()
 
 prefs : dict[str, str] = {}
 
@@ -58,7 +60,7 @@ def emit_prefs() :
 
         print(f'user_pref("{key}", {value});')
 
-for file in files :
+for file in args.files :
     read_prefs(file)
 
 emit_prefs()
