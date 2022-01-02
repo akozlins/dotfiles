@@ -129,6 +129,10 @@ for f in "$DOTFILES"/profile.d/?*.sh ; do
     [ -f "$f" ] && . "$f"
 done
 
+if [ -f "$DOTFILES/private/.profile" ] ; then
+    . "$DOTFILES/private/.profile"
+fi
+
 PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"
 if command -v awk 2>&1 > /dev/null ; then
     PATH=$(printf %s "$PATH" | awk -v RS=: '!a[$0]++ { if(n++) printf(":"); printf("%s", $0) }')
