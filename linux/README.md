@@ -17,12 +17,24 @@ pacman -Qe | awk '{print $1}' | xargs -n 1 pactree -r -d 1
 
 ## fonts
 
-- `xorg-fonts-misc`
-- `noto-fonts`, `noto-fonts-cjk`
-
 ```
+# terminal bitmap fonts
+pacman -S xorg-fonts-misc
+# ...
+pacman -S noto-fonts noto-fonts-cjk
+# reset xorg font cache
 xset fp default
 xset fp rehash
+```
+
+## `/etc/fstab`
+
+`PARTUUID=$(blkid -s PARTUUID -o value /dev/sda1)`
+
+```
+/dev/mapper/root / ext4 rw,noatime 0 1
+PARTUUID=$PARTUUID /boot vfat rw,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 2
+#/swap none swap defaults 0 0
 ```
 
 ## `/etc/systemd/journald.conf`
@@ -68,7 +80,19 @@ HOOKS=(... netconf hetzner tinyssh encryptssh filesystems ...)
 
 ## bind
 
+```
+nano /var/named/example.com.zone`
+```
+
 ## mailu
+
+## maddy
+
+```
+sudo setfacl -R -m u:maddy:rX /etc/letsencrypt/{live,archive}
+maddyctl creds create postmaster@example.com
+maddyctl imap-acct create postmaster@example.com
+```
 
 ## android
 
