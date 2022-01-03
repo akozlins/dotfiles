@@ -5,7 +5,8 @@ function _mypass {
     MYPASS_TAG="${MYPASS_TAG:--@}"
 
     local -a files tags args values
-    files=($(/bin/ls -1 -- "$MYPASS_DIR"))
+#    files=($(/bin/ls -1 -- "$MYPASS_DIR"))
+    files=($(/bin/git -C "$MYPASS_DIR" ls-files))
     tags=($(cd "$MYPASS_DIR" && grep -E -e "^${MYPASS_TAG}[^ ]+" -ho -- "${files[@]}"))
     args=()
     for tag in "${tags[@]}" ; do
