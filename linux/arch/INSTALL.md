@@ -73,9 +73,9 @@ mkinitcpio --allpresets
 cat > /etc/hostname << EOF
 arch
 EOF
-mkdir /root/.ssh
-touch /root/.ssh/authorized_keys
-chmod -R go-rwx /root/.ssh
+mkdir ~/.ssh
+touch ~/.ssh/authorized_keys
+chmod -R go-rwx ~/.ssh
 ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 cat > /etc/systemd/network/20-wired.network << EOF
 [Match]
@@ -99,10 +99,20 @@ AddressFamily inet
 EOF
 systemctl enable sshd
 
+# ssh luks unlock
+pacman -S --noconfirm mkinitcpio-netconf mkinitcpio-tinyssh mkinitcpio-utils
+sed 's/block encrypt filesystems/block netconf tinyssh encryptssh filesystems/' -i /etc/mkinitcpio.conf
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C "" -N ""
+ssh-keygen -y -f ~/.ssh/id_ed25519 > /etc/tinyssh/root_key
+mkinitcpio --allpresets
+
 # packages
-pacman -S --noconfirm bind htop mc mtr nginx sudo unbound
-pacman -S --noconfirm man-db man-pages pkgfile
+pacman -S --noconfirm htop mc nano sudo tmux vim
+pacman -S --noconfirm man-db man-pages
 pacman -S --noconfirm cmake gcc git make
+pacman -S --noconfirm bind nginx unbound
+pacman -S --noconfirm borg gnu-netcat iptstate mlocate mtr pkgfile ripgrep rsync
+
 ```
 
 ## gui
@@ -135,9 +145,13 @@ useradd --create-home --shell /bin/zsh akozlins
 cat > /etc/sudoers.d/akozlins << EOF
 akozlins ALL=(ALL) ALL
 EOF
-passwd akozlins
 
 su - akozlins
+passwd
+
+mkdir ~/.ssh
+touch ~/.ssh/authorized_keys
+chmod -R go-rwx ~/.ssh
 
 # dotfiles
 git clone https://github.com/akozlins/dotfiles .dotfiles
@@ -151,4 +165,3 @@ sudo pacman -S --noconfirm pkgconf gdk-pixbuf-xlib
 sudo pacman -S --noconfirm patch m4 uchardet wxgtk2 spdlog xerces-c
 ( cd .dotfiles/opt && make far2l )
 ```
-
