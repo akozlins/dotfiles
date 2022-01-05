@@ -49,3 +49,9 @@ virt-clone \
     --fileopenSUSE_Leap_15_3_clone.qcow2 \
     --original openSUSE_Leap_15_3
 ```
+
+## network
+
+```
+sudo virsh net-start default
+```

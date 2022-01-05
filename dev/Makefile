@@ -27,7 +27,7 @@ geant4 :
 	    -DGEANT4_USE_QT=ON \
 	    -DGEANT4_USE_OPENGL_X11=ON \
 	    -S $@ -B $@/cmake-build
-	$(MAKE) -C $@/cmake-build
+	$(MAKE) $(MAKEFLAGS) -C $@/cmake-build
 	#$(MAKE) -C $@/cmake-build install
 
 .PHONY : root
@@ -37,5 +37,5 @@ root :
 	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local/root.cern.ch" \
 	    -DCMAKE_CXX_STANDARD=17 \
 	    -S $@ -B $@/cmake-build
-	$(MAKE) -C $@/cmake-build
+	$(MAKE) $(MAKEFLAGS) -C $@/cmake-build
 	#$(MAKE) -C $@/cmake-build install
