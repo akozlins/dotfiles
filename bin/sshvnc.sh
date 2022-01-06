@@ -16,6 +16,7 @@ while [ $# -gt 0 ] ; do
             ;;
         *)
             break
+            ;;
     esac
     shift
 done
@@ -36,7 +37,8 @@ X11VNC_CMD=(
     -localhost -once -timeout 5
     -display :0
     -noxdamage
-    -cursor none -scale "$SCALE"
+    -cursor none
+    -scale "$SCALE"
 #    -auth ~/.Xauthority
 )
 
@@ -49,10 +51,13 @@ cleanup() {
 }
 trap cleanup EXIT
 
+VNCVIEWER_CMD=(
+    /bin/vncviewer
+    DotWhenNoCursor=1
+#    -Log "*:stdout:100"
+    "localhost:$PORT"
+)
+
 nc -z localhost "$PORT"
 sleep 2.5
-vncviewer \
-    DotWhenNoCursor=1 \
-    -Log "*:stdout:100" \
-    -passwd <(vncpasswd -f <<< "$PASSWD") \
-    localhost:"$PORT"
+VNC_PASSWORD="$PASSWD" "${VNCVIEWER_CMD[@]}"
