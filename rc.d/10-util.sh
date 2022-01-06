@@ -17,3 +17,11 @@ my_pacman_diff() {
     file=$(echo "$1" | sed 's|^/||')
     tar --extract --to-stdout --file="/var/cache/pacman/pkg/${pkg}-$(uname -m).pkg.tar.zst" "$file" | diff - "$1"
 }
+
+gitk-follow () {
+    files=()
+    while IFS='' read -r file ; do
+        files+=("$file")
+    done < <(git log --format="" --name-only --follow "$1")
+    gitk -- "${files[@]}"
+}
