@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=my_open_text
+Icon=my_open_text
+Exec=gedit %f
+Terminal=false
+Type=Application
