@@ -6,16 +6,19 @@ mime=$(xdg-mime query filetype "$1")
 case "$mime" in
     text/*|application/json|inode/x-empty)
 #        [[ "$1" == *.md ]] && command -pv okular &> /dev/null && exec okular "$1"
-        exec gedit "$1"
+#        exec gedit "$1"
+        exec xdg-open "$1"
         ;;
     image/*)
-        exec geeqie "$1"
+#        exec geeqie "$1"
+        exec xdg-open "$1"
         ;;
     audio/*|video/*)
         exec vlc "$1"
         ;;
     application/pdf)
-        exec evince "$1"
+#        exec evince "$1"
+        exec xdg-open "$1"
         ;;
     application/postscript)
         exec okular "$1"
