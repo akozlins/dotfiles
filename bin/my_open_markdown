@@ -1,0 +1,13 @@
+#!/bin/sh
+set -euf
+
+tmp=$(mktemp -u -- tmp.XXXXXXXXXX.pdf)
+cleanup() {
+    rc=$?
+    rm -fv -- "$tmp"
+    exit $rc
+}
+trap cleanup EXIT
+
+pandoc -f markdown -t pdf -o "$tmp" -- "$1"
+xdg-open "$tmp"
