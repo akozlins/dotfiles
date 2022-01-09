@@ -28,10 +28,10 @@ ignore = Name *.!qB
 #ignore = Regex path/.*\.(qsys|sopcinfo)
 
 # sylpheed
+ignore = Name .sylpheed/mimetmp
 ignore = Name sylpheed/*.bak
 ignore = Name sylpheed/*.bak.*
 ignore = Name sylpheed/*.log
-ignore = Name sylpheed/mimetmp
 ignore = Name .sylpheed_cache
 ignore = Name .sylpheed_mark
 
@@ -39,6 +39,7 @@ ignore = Name .sylpheed_mark
 ignore = Name claws-mail/folderlist.xml
 ignore = Name claws-mail/mimetmp
 ignore = Name claws-mail/tagsdb
+ignore = Name claws-mail/tmp
 ignore = Name claws-mail/*.bak
 ignore = Name claws-mail/*.bak.*
 ignore = Name claws-mail/*.log

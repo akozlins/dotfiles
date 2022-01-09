@@ -22,6 +22,6 @@ gitk-follow () {
     files=()
     while IFS='' read -r file ; do
         files+=("$file")
-    done < <(git log --format="" --name-only --follow "$1")
+    done < <(git log --format="" --name-only --follow -- "$1")
     gitk -- "${files[@]}"
 }

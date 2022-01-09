@@ -13,6 +13,5 @@ node_modules
 
 // ssh
 .ssh/authorized_keys
-.ssh/id_*
 .ssh/known_hosts*
 .ssh/socket-*
