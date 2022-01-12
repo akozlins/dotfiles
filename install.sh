@@ -101,7 +101,7 @@ for target in "${targets[@]}" ; do
 
     if command -v realpath &> /dev/null ; then
         # create relative link
-        target=$(realpath -s --relative-to="$link_dir" "$target")
+        target=$(realpath --relative-to="$link_dir" "$target")
         ln -snv --relative -T "$target" "$link"
     else
         # create normal link
