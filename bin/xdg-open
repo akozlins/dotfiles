@@ -1,0 +1,14 @@
+#!/bin/bash
+set -euf
+
+if [ $# -ge 1 ] && [ -r "$1" ] ; then
+    mime=$(xdg-mime query filetype "$1")
+    case "$mime" in
+        text/*|application/json|inode/x-empty)
+            exec gedit "$1"
+            ;;
+    esac
+fi
+
+exec \
+/bin/xdg-open "$@"
