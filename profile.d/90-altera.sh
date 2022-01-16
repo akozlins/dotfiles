@@ -4,12 +4,17 @@ if [ -z "${ALTERAD_LICENSE_FILE:+x}" ] ; then
     export ALTERAD_LICENSE_FILE=
 fi
 
-QUARTUS_ROOTDIR_PARENT="/opt/intelFPGA/18.0"
+# remove /opt/intelFPGA/* entries from PATH
+PATH=$(printf %s "$PATH" | awk -v RS=: '!/\/opt\/intelFPGA\// { if(n++) printf(":"); printf("%s", $0) }')
+
+export QUARTUS_VERSION=21.1
+QUARTUS_ROOTDIR_PARENT="/opt/intelFPGA/$QUARTUS_VERSION"
 export QUARTUS_ROOTDIR="$QUARTUS_ROOTDIR_PARENT/quartus"
 
 export QUARTUS_64BIT=1
 
 export PATH="$PATH:$QUARTUS_ROOTDIR/bin"
+#export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$QUARTUS_ROOTDIR/linux64"
 
 export QSYS_ROOTDIR="$QUARTUS_ROOTDIR/sopc_builder/bin"
 export PATH="$PATH:$QSYS_ROOTDIR"
