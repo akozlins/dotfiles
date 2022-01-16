@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euf
+
+files=()
+while IFS='' read -r file ; do
+    files+=("$file")
+done < <(git log --format="" --name-only --follow -- "$1")
+
+TOPLEVEL=$(git rev-parse --show-toplevel)
+cd -- "$TOPLEVEL" || exit 1
+
+exec \
+gitk -- "${files[@]}"
