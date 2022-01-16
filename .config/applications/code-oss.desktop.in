@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=code-oss
+Icon=com.visualstudio.code.oss
+Exec=$DOTFILES/bin/code --unity-launch %F
+Terminal=false
+Type=Application
+MimeType=text/plain;application/x-code-oss-workspace;
