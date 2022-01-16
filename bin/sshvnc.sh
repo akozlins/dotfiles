@@ -53,7 +53,7 @@ trap cleanup EXIT
 
 VNCVIEWER_CMD=(
     /bin/vncviewer
-    DotWhenNoCursor=1
+    "DotWhenNoCursor=1"
 #    -Log "*:stdout:100"
     "localhost:$PORT"
 )
