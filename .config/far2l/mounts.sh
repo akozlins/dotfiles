@@ -6,5 +6,4 @@ cat << EOF
 /	&/
 /run/media/$USER	&M:
 $HOME	&H:
-/	&Z:
 EOF
