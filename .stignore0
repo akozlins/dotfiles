@@ -6,7 +6,8 @@ core.[0-9]*
 mnt
 node_modules
 
-/.dotfiles
+.config/pulse/cookie
+
 /.local
 
 *.!qB

@@ -2,6 +2,7 @@
 set -euf
 
 export HOME="$DOTFILES"
+#export HTTPS_PROXY=localhost
 
 VIVADO_CACHE="$XDG_CACHE_HOME/vivado"
 mkdir -pv -- "$VIVADO_CACHE"
