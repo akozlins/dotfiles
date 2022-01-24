@@ -11,11 +11,7 @@ define clone_pull
 	git -C $(2) submodule update --init --recursive
 endef
 
-all : chrome/CustomCSSforFx user.js
-
-.PHONY : chrome/CustomCSSforFx
-chrome/CustomCSSforFx :
-	$(call clone_pull,https://github.com/Aris-t2/CustomCSSforFx,$@)
+all : user.js css
 
 GENERATE := $(XDG_CONFIG_HOME)/firefox/user.js/generate.py
 
@@ -28,3 +24,7 @@ user.js :
 	    cp -v -- "$(PROFILE)/user.js" "$(PROFILE)/user.$$(date +%FT%T).js"; \
 	    $(GENERATE) > "$(PROFILE)/user.js"; \
 	fi
+
+.PHONY : css
+css :
+	$(call clone_pull,https://github.com/Aris-t2/CustomCSSforFx,$(PROFILE)/chrome/CustomCSSforFx)
