@@ -124,3 +124,13 @@ blockdev --getpbsz /dev/sda1
 # luks with integrity
 sudo cryptsetup luksFormat --type luks2 --integrity hmac-sha256 --sector-size 4096 /dev/sda1
 ```
+
+## virtualbox
+
+```
+modprobe nbd
+qemu-nbd -c /dev/nbd0 disk.vdi
+mount /dev/nbd0p1 /mnt
+umount /mnt
+qemu-nbd -d /dev/nbd0
+```
