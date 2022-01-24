@@ -4,6 +4,11 @@ function _mypass {
     MYPASS_DIR="${MYPASS_DIR:-$XDG_CONFIG_HOME/mypass}"
     MYPASS_TAG="${MYPASS_TAG:--@}"
 
+    if [ ! -d "$MYPASS_DIR" ] ; then
+        _arguments
+        return
+    fi
+
     local -a files tags args values
 #    files=($(/bin/ls -1 -- "$MYPASS_DIR"))
     files=($(/bin/git -C "$MYPASS_DIR" ls-files))
