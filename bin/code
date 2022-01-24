@@ -4,6 +4,7 @@ set -euf
 export HOME="$DOTFILES"
 
 if [ ! -f "$XDG_DATA_HOME/code/User/settings.json" ] ; then
+    mkdir -- "$XDG_DATA_HOME/code/User"
     ln -s "$XDG_CONFIG_HOME/code/User/settings.json" "$XDG_DATA_HOME/code/User/settings.json"
 fi
 
