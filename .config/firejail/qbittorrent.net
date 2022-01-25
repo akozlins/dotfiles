@@ -1,0 +1,18 @@
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT DROP [0:0]
+
+-A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+
+# allow $PROXY:1080
+#-A OUTPUT -p tcp -d $PROXY --dport 1080 -j ACCEPT
+
+# allow 1080 port
+-A OUTPUT -p tcp --dport 1080 -j ACCEPT
+
+# allow DNS
+-A OUTPUT -p udp --dport 53 -j ACCEPT
+
+COMMIT

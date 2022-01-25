@@ -1,7 +1,19 @@
 #!/bin/bash
 set -euf
 
+DNS=8.8.8.8
+NET=$(ip route get "$DNS" | awk '{ print $5 }')
+FILTER="$XDG_CONFIG_HOME/firejail/qbittorrent.net"
+
 CMD=(
+    "/bin/firejail"
+    "--debug"
+    "--noprofile"
+    "--net=$NET"
+    "--dns=$DNS"
+    "--netfilter=$FILTER"
+    "--join-or-start=qbittorrent"
+    --
     "/bin/qbittorrent"
     "$@"
 )
