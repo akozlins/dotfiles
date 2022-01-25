@@ -4,7 +4,7 @@ let patterns = [
     "example.com"
 ];
 
-let socks5 = "SOCKS5 localhost:9050";
+let socks5 = "SOCKS5 localhost:1080";
 
 function FindProxyForURL(url, host) {
     for(let i = 0; i < patterns.length; i++) {

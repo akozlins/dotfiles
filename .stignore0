@@ -3,14 +3,15 @@
 .cache
 cmake-build*
 core.[0-9]*
-mnt
 node_modules
 
+*.!qB
+
+// ...
 .config/pulse/cookie
 
+// home
 /.local
-
-*.!qB
 
 // ssh
 .ssh/authorized_keys
