@@ -9,6 +9,9 @@
 	whitespace = trailing-space,space-before-tab
 
 [diff]
+	algorithm = histogram
+	colorMoved = blocks
+	colorMovedWS = allow-indentation-change
 	tool = meld
 
 [gc]
@@ -19,6 +22,7 @@
 	defaultBranch = master
 
 [merge]
+	conflictStyle = diff3
 	tool = meld
 
 [pull]
