@@ -108,3 +108,64 @@ mount /dev/nbd0p1 /mnt
 umount /mnt
 qemu-nbd -d /dev/nbd0
 ```
+
+## kubernetes
+
+```
+lxc profile set default security.secureboot=false
+lxc profile set default limits.cpu=2
+lxc profile set default limits.memory=2GB
+
+pacman -S edk2-ovmf
+
+lxc init images:archlinux arch0 --vm
+lxc start arch0
+lxc exec arch0 bash
+```
+
+```
+# https://wiki.archlinux.org/title/Kubernetes
+pacman -S kubernetes-control-plane
+pacman -S kubeadm kubectl containerd
+
+# install CRI
+# <https://kubernetes.io/docs/setup/production-environment/container-runtimes/>
+
+cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
+overlay
+br_netfilter
+EOF
+
+modprobe overlay
+modprobe br_netfilter
+
+cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+
+sysctl --system
+
+kubeadm init --pod-network-cidr=10.244.0.0/16
+
+mkdir -p /etc/containerd
+containerd config default | tee /etc/containerd/config.toml
+sed -i -e 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
+
+systemctl enable containerd
+systemctl start containerd
+
+kubeadm init --pod-network-cidr=10.244.0.0/16
+systemctl enable kubelet
+
+mkdir -p $HOME/.kube
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+
+kubectl get nodes
+kubectl taint nodes --all node-role.kubernetes.io/master-
+
+# https://github.com/flannel-io/flannel
+kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+kubectl get pods -A
+```
