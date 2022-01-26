@@ -27,16 +27,6 @@ xset fp default
 xset fp rehash
 ```
 
-## `/etc/fstab`
-
-`PARTUUID=$(blkid -s PARTUUID -o value /dev/sda1)`
-
-```
-/dev/mapper/root / ext4 rw,noatime 0 1
-PARTUUID=$PARTUUID /boot vfat rw,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 2
-#/swap none swap defaults 0 0
-```
-
 ## `/etc/systemd/journald.conf`
 
 ```
@@ -51,22 +41,6 @@ daily
 dateext
 minsize 1M
 rotate 4
-```
-
-## `/boot/syslinux/syslinux.cfg`
-
-```
-LABEL arch
-    MENU LABEL Arch Linux
-    LINUX ../vmlinuz-linux
-    APPEND ip=:::::eth0:dhcp cryptdevice=PARTUUID=<PARTUUID>:root:allow-discards root=/dev/mapper/root rw
-    INITRD ../initramfs-linux.img
-```
-
-## `mkinitcpio.conf`
-
-```
-HOOKS=(... netconf hetzner tinyssh encryptssh filesystems ...)
 ```
 
 ## iptables

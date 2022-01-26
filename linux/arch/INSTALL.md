@@ -59,6 +59,7 @@ EOF
 
 # systemd-boot
 bootctl install
+mkdir -p -- /boot/loader/entries
 cat > /boot/loader/entries/arch.conf << EOF
 title arch
 linux /vmlinuz-linux-lts
@@ -141,13 +142,13 @@ pacman -S --noconfirm adwaita-icon-theme
 
 ```
 pacman -S zsh-completions
-useradd --create-home --shell /bin/zsh akozlins
+useradd --create-home --shell /bin/zsh $USER
+passwd $USER
 cat > /etc/sudoers.d/akozlins << EOF
 akozlins ALL=(ALL) ALL
 EOF
 
-su - akozlins
-passwd
+su - $USER
 
 mkdir ~/.ssh
 touch ~/.ssh/authorized_keys
