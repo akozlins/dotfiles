@@ -23,5 +23,8 @@
     "files.enableTrash": false,
     "files.eol": "\n",
     "telemetry.telemetryLevel": "off",
+    "workbench.editor.enablePreview": false,
     "workbench.enableExperiments": false,
+    "workbench.list.openMode": "doubleClick",
+    "workbench.tree.expandMode": "doubleClick",
 }

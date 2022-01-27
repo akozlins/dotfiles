@@ -46,7 +46,7 @@ EOF
 # disk
 cat > /etc/fstab << EOF
 /dev/mapper/root / ext4 rw,noatime,discard 0 1
-UUID=$(findmnt --noheadings --output UUID --target /boot) /boot vfat rw,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro 0 2
+UUID=$(findmnt --noheadings --output=UUID --target=/boot) /boot vfat rw,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro 0 2
 #/swap none swap defaults 0 0
 EOF
 #dd if=/dev/zero of=/swap bs=1M count=512

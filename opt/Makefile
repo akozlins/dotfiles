@@ -36,8 +36,8 @@ far2l : CMAKE_OPTS += -DALIGN=0 -DAUTOWRAP=0 -DCALC=0 -DCOMPARE=0 -DDRAWLINE=0 -
 .PHONY : far2l
 far2l :
 	$(call clone_pull,https://github.com/elfmz/far2l,far2l)
-	# install g++, cmake, patch, m4, pkg-config, gawk
-	# - Arch: wxgtk2, spdlog
+	# install g++ cmake patch m4 pkg-config gawk
+	# - Arch: wxgtk2 spdlog xerces-c
 	# - Fedora, CentOS: wxGTK3-devel
 	# - Debian: libwxgtk3-dev
 	# - Ubuntu: libwxgtk3.0-gtk3-dev libglib2.0-dev

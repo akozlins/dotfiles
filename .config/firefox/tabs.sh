@@ -1,9 +1,7 @@
 #!/bin/bash
 set -euf
 
-DIR=$(readlink -f -- "$0")
-DIR=$(dirname -- "$DIR")
-jsonlz4="$DIR/default/sessionstore-backups/recovery.jsonlz4"
+jsonlz4="$DOTFILES/.mozilla/firefox/default/sessionstore-backups/recovery.jsonlz4"
 
 #jsonlz4.py -d "$jsonlz4" | jq ".windows[].tabs[].entries[-1].url"
 
