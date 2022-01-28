@@ -169,3 +169,12 @@ kubectl taint nodes --all node-role.kubernetes.io/master-
 kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 kubectl get pods -A
 ```
+
+## misc
+
+- `gpg -vvv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys $ID`
+    - dirmngr: use `--standard-resolver`
+
+- `echo 1 | sudo tee /sys/block/$SDA/device/delete` - "hot unplug"
+
+- `expac "%n %m" -l'\n' -Q $(pacman -Qq) | sort -nk 2 | column -t` - "list packages by size"

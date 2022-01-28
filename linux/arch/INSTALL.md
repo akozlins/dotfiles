@@ -18,7 +18,7 @@ mount /dev/sda1 /mnt/boot
 
 # install packages
 pacman -Sy --noconfirm archlinux-keyring
-pacstrap /mnt base linux-lts dosfstools efibootmgr dhcpcd openssh
+pacstrap /mnt base linux-lts dosfstools efibootmgr dhcpcd iptables-nft openssh
 ```
 
 ## configure
@@ -35,7 +35,7 @@ pacman -Sy --noconfirm archlinux-keyring
 ln -s /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 hwclock --systohc
 
-# localization
+# locale
 sed 's/^#en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen
 locale-gen
 cat > /etc/locale.conf << EOF
@@ -74,31 +74,56 @@ mkinitcpio --allpresets
 cat > /etc/hostname << EOF
 arch
 EOF
-mkdir ~/.ssh
-touch ~/.ssh/authorized_keys
-chmod -R go-rwx ~/.ssh
 ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 cat > /etc/systemd/network/20-wired.network << EOF
 [Match]
-Name=eth0
+Name=eth*
 [Network]
 DHCP=yes
 EOF
 systemctl enable systemd-networkd
+
+# iptables
 cat > /etc/iptables/iptables.rules << EOF
-# ...
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+:TCP - [0:0]
+-A INPUT -i lo -j ACCEPT
+-A INPUT -s 127.0.0.0/8 ! -i lo -j DROP
+-A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -m conntrack --ctstate INVALID -j DROP
+-A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j TCP
+-A TCP -p tcp --dport 22 -j ACCEPT
+COMMIT
 EOF
 systemctl enable iptables
 cat > /etc/iptables/ip6tables.rules << EOF
-# ...
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+COMMIT
 EOF
 systemctl enable ip6tables
+
+# ssh
 cat >> /etc/ssh/sshd_config << EOF
-Port 1022
+#
+Port 22
 AddressFamily inet
-#PermitRootLogin yes
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes256-ctr
+MACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,umac-128-etm@openssh.com
+ClientAliveInterval 15
 EOF
 systemctl enable sshd
+mkdir ~/.ssh
+touch ~/.ssh/authorized_keys
+chmod -R go-rwx ~/.ssh
 
 # ssh luks unlock
 pacman -S --noconfirm mkinitcpio-netconf mkinitcpio-tinyssh mkinitcpio-utils
@@ -107,13 +132,13 @@ ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C "" -N ""
 ssh-keygen -y -f ~/.ssh/id_ed25519 > /etc/tinyssh/root_key
 mkinitcpio --allpresets
 
-# packages
-pacman -S --noconfirm htop mc nano sudo tmux vim
-pacman -S --noconfirm man-db man-pages
-pacman -S --noconfirm cmake gcc git make
-pacman -S --noconfirm bind nginx unbound
-pacman -S --noconfirm borg gnu-netcat iptstate mlocate mtr pkgfile ripgrep rsync
-
+# add user
+pacman -S sudo zsh-completions
+useradd --create-home --shell /bin/zsh $USER
+passwd $USER
+cat > /etc/sudoers.d/$USER << EOF
+$USER ALL=(ALL) ALL
+EOF
 ```
 
 ## gui
@@ -124,8 +149,8 @@ pacman -S --noconfirm lxdm ttf-dejavu openbox
 systemctl enable lxdm
 
 # packages
-sudo pacman -S --noconfirm xorg-xrdb xorg-xset xorg-xsetroot
-sudo pacman -S --noconfirm xsecurelock xterm
+pacman -S --noconfirm xorg-xrdb xorg-xset xorg-xsetroot
+pacman -S --noconfirm xsecurelock xterm
 
 # fonts
 pacman -S --noconfirm xorg-fonts-misc
@@ -141,15 +166,6 @@ pacman -S --noconfirm adwaita-icon-theme
 ## user
 
 ```
-pacman -S zsh-completions
-useradd --create-home --shell /bin/zsh $USER
-passwd $USER
-cat > /etc/sudoers.d/akozlins << EOF
-akozlins ALL=(ALL) ALL
-EOF
-
-su - $USER
-
 mkdir ~/.ssh
 touch ~/.ssh/authorized_keys
 chmod -R go-rwx ~/.ssh
@@ -166,3 +182,19 @@ sudo pacman -S --noconfirm pkgconf gdk-pixbuf-xlib
 sudo pacman -S --noconfirm patch m4 uchardet wxgtk2 spdlog xerces-c
 ( cd .dotfiles/opt && make far2l )
 ```
+
+## packages
+
+```
+pacman -S --noconfirm htop mc nano tmux vim
+pacman -S --noconfirm man-db man-pages pkgfile
+pacman -S --noconfirm cmake gcc git make
+pacman -S --noconfirm bind nginx unbound
+pacman -S --noconfirm borg gnu-netcat iptstate mlocate mtr pkgfile ripgrep rsync socat
+```
+
+- `archlinux-keyring`
+- `dunst`
+- `gedit`, `gedit-plugins`, `libgit2-glib`
+- `ssh-audit`
+- `usbguard`
