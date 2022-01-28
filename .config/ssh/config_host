@@ -4,3 +4,16 @@ Host *
     ControlPath ~/.ssh/socket-%r@%h:%p
     ControlPersist 1h
     IdentitiesOnly yes
+
+Match all
+
+KeepAlive yes
+ServerAliveInterval 15
+
+# https://wiki.mozilla.org/Security/Guidelines/OpenSSH
+# Client:
+HostKeyAlgorithms ssh-ed25519,ssh-rsa,ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com
+# Server/Client:
+KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes256-ctr
+MACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,umac-128-etm@openssh.com
