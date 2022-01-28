@@ -9,7 +9,7 @@
     "editor.copyWithSyntaxHighlighting": false,
     "editor.dragAndDrop": false,
     "editor.emptySelectionClipboard": false,
-    "editor.fontFamily": "'Source Code Pro', 'DejaVu Sans Mono', 'monospace', monospace",
+    "editor.fontFamily": "'JetBrains Mono NL', 'DejaVu Sans Mono', 'monospace', monospace",
     "editor.fontLigatures": false,
     "editor.fontSize": 16,
     "editor.minimap.showSlider": "always",
@@ -22,7 +22,14 @@
     "files.autoSave": "onFocusChange",
     "files.enableTrash": false,
     "files.eol": "\n",
+    "files.exclude": {
+        "**/.cache": true
+    },
     "telemetry.telemetryLevel": "off",
+    "workbench.colorCustomizations": {
+        "tab.activeBorder": "#00CC00",
+        "tab.unfocusedActiveBorder": "#000000"
+    },
     "workbench.editor.enablePreview": false,
     "workbench.enableExperiments": false,
     "workbench.list.openMode": "doubleClick",
