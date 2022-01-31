@@ -14,7 +14,7 @@ while IFS='' read -r executable ; do
     [ "$program_path" = "$executable" ] && continue
     exec \
     "$executable" "$@"
-done < <("$DOTFILES/sbin/which" -- "$program_name")
+done < <("$DOTFILES/sbin/which" "$program_name")
 
 
 
