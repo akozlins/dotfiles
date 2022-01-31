@@ -1,0 +1,12 @@
+#!/bin/bash
+set -euf
+
+progname="$1"
+
+IFS=:
+for p in $PATH ; do
+    [ -z "$p" ] && continue
+    p=$(readlink -e -- "$p/$progname") || continue
+    [ -x "$p" ] || continue
+    printf "%s\n" "$p"
+done
