@@ -1,56 +1,5 @@
 *filter
-:INPUT DROP [0:0]
+:INPUT ACCEPT [0:0]
 :FORWARD DROP [0:0]
 :OUTPUT ACCEPT [0:0]
-:TCP - [0:0]
-:UDP - [0:0]
-
--A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
--A INPUT -i lo -j ACCEPT
--A INPUT -m conntrack --ctstate INVALID -j DROP
-
-# Permit needed ICMP packet types for IPv6 per RFC 4890.
--A INPUT              -p ipv6-icmp --icmpv6-type 1   -j ACCEPT
--A INPUT              -p ipv6-icmp --icmpv6-type 2   -j ACCEPT
--A INPUT              -p ipv6-icmp --icmpv6-type 3   -j ACCEPT
--A INPUT              -p ipv6-icmp --icmpv6-type 4   -j ACCEPT
--A INPUT              -p ipv6-icmp --icmpv6-type 133 -j ACCEPT
--A INPUT              -p ipv6-icmp --icmpv6-type 134 -j ACCEPT
--A INPUT              -p ipv6-icmp --icmpv6-type 135 -j ACCEPT
--A INPUT              -p ipv6-icmp --icmpv6-type 136 -j ACCEPT
--A INPUT              -p ipv6-icmp --icmpv6-type 137 -j ACCEPT
--A INPUT              -p ipv6-icmp --icmpv6-type 141 -j ACCEPT
--A INPUT              -p ipv6-icmp --icmpv6-type 142 -j ACCEPT
--A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 130 -j ACCEPT
--A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 131 -j ACCEPT
--A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 132 -j ACCEPT
--A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 143 -j ACCEPT
--A INPUT              -p ipv6-icmp --icmpv6-type 148 -j ACCEPT
--A INPUT              -p ipv6-icmp --icmpv6-type 149 -j ACCEPT
--A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 151 -j ACCEPT
--A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 152 -j ACCEPT
--A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 153 -j ACCEPT
-
--A INPUT              -p ipv6-icmp --icmpv6-type 128 -j ACCEPT
-
-# UDP
--A INPUT -p udp -m conntrack --ctstate NEW -j UDP
-
-# TCP
--A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j TCP
-
-# REJECT
--A INPUT -p udp -j REJECT --reject-with icmp6-port-unreachable
--A INPUT -p tcp -j REJECT --reject-with tcp-reset
--A INPUT -j REJECT
-
-# UDP chain
-#-A UDP -p udp --dport 67:68 --sport 67:68 -j ACCEPT
-
-# TCP chain
--A TCP -p tcp -m tcp --dport 80   -j ACCEPT
--A TCP -p tcp -m tcp --dport 443  -j ACCEPT
--A TCP -p tcp -m tcp --dport 1022 -j ACCEPT
--A TCP -p tcp -m tcp --dport 1194 -j ACCEPT
-
 COMMIT
