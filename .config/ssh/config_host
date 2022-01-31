@@ -7,6 +7,9 @@ Host *
 
 Match all
 
+#AddressFamily inet
+#Compression no
+HashKnownHosts no
 KeepAlive yes
 ServerAliveInterval 15
 

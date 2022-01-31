@@ -9,12 +9,12 @@ fi
 program_path=$(readlink -f -- "$0")
 program_name=$(basename -- "$program_path")
 
-for executable in $(which -a -- "$program_name") ; do
+while IFS='' read -r executable ; do
     executable=$(readlink -f -- "$executable")
     [ "$program_path" = "$executable" ] && continue
     exec \
     "$executable" "$@"
-done
+done < <("$DOTFILES/sbin/which" -- "$program_name")
 
 
 

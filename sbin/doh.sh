@@ -1,8 +1,8 @@
 #!/bin/sh
 set -euf
 
-SERVER="$1"
+REMOTE="$1"
 NAME="$2"
 
 exec \
-curl -s -H 'accept: application/dns+json' "https://$SERVER/dns?name=$NAME&type=A"
+curl -s -H 'accept: application/dns+json' "https://$REMOTE?name=$NAME&type=A"

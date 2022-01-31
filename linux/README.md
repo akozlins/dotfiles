@@ -101,6 +101,7 @@ sudo cryptsetup luksFormat --type luks2 --integrity hmac-sha256 --sector-size 40
 
 ## virtualbox
 
+- mount `.vdi` files
 ```
 modprobe nbd
 qemu-nbd -c /dev/nbd0 disk.vdi
