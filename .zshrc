@@ -27,6 +27,8 @@ DISABLE_AUTO_UPDATE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(
+    docker
+    lxd
     command-not-found
 )
 
