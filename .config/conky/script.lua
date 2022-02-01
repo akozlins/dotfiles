@@ -1,10 +1,12 @@
+--
 
 do
     function conky_ip()
         local r = ''
         local f = io.popen('ip -br link show')
         for line in f:lines() do
-            if not line:match('^[^ ]+ +UP') then
+            -- show links with state UP or UNKNOWN
+            if not line:match('^[^ ]+[ ]+U') then
                 goto continue
             end
 
