@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=qbittorrent
+Exec=$DOTFILES/bin/qbittorrent %U
+Terminal=false
+Type=Application
+MimeType=application/x-bittorrent;x-scheme-handler/magnet;
