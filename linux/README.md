@@ -110,6 +110,17 @@ umount /mnt
 qemu-nbd -d /dev/nbd0
 ```
 
+## docker
+
+- remove `systemd[1]: run-docker-runtime*.mount: Deactivated successfully.` entries in journal
+```
+mkdir -p -- /etc/systemd/system/run-docker-.mount.d/
+cat << EOF > /etc/systemd/system/run-docker-.mount.d/10-log.conf
+[Mount]
+LogLevelMax=notice
+EOF
+```
+
 ## kubernetes
 
 ```
@@ -179,3 +190,16 @@ kubectl get pods -A
 - `echo 1 | sudo tee /sys/block/$SDA/device/delete` - "hot unplug"
 
 - `expac "%n %m" -l'\n' -Q $(pacman -Qq) | sort -nk 2 | column -t` - "list packages by size"
+
+## `/etc/sysctl.d/99-sysctl.conf`
+
+```
+#
+
+net.ipv4.ip_forward = 1
+net.ipv6.conf.all.forwarding = 1
+
+net.ipv4.conf.all.rp_filter = 1
+
+net.ipv4.tcp_slow_start_after_idle=0
+```
