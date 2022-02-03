@@ -182,15 +182,6 @@ kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Doc
 kubectl get pods -A
 ```
 
-## misc
-
-- `gpg -vvv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys $ID`
-    - dirmngr: use `--standard-resolver`
-
-- `echo 1 | sudo tee /sys/block/$SDA/device/delete` - "hot unplug"
-
-- `expac "%n %m" -l'\n' -Q $(pacman -Qq) | sort -nk 2 | column -t` - "list packages by size"
-
 ## `/etc/sysctl.d/99-sysctl.conf`
 
 ```
@@ -203,3 +194,12 @@ net.ipv4.conf.all.rp_filter = 1
 
 net.ipv4.tcp_slow_start_after_idle=0
 ```
+
+## misc
+
+- `gpg -vvv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys $ID`
+    - dirmngr: use `--standard-resolver`
+
+- `echo 1 | sudo tee /sys/block/$SDA/device/delete` - "hot unplug"
+
+- `expac "%n %m" -l'\n' -Q $(pacman -Qq) | sort -nk 2 | column -t` - "list packages by size"

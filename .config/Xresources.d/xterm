@@ -1,5 +1,5 @@
 
-xterm*saveLines: 4096
+xterm*saveLines: 10000
 xterm*selectToClipboard: true
 xterm*scrollBar: false
 

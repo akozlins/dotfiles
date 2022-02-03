@@ -83,36 +83,33 @@ DHCP=yes
 EOF
 systemctl enable systemd-networkd
 
-# iptables
+# iptables & nftables
 cat > /etc/iptables/iptables.rules << EOF
 *filter
-:INPUT DROP [0:0]
+:INPUT ACCEPT [0:0]
 :FORWARD DROP [0:0]
 :OUTPUT ACCEPT [0:0]
-:TCP - [0:0]
--A INPUT -i lo -j ACCEPT
--A INPUT -s 127.0.0.0/8 ! -i lo -j DROP
--A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
--A INPUT -m conntrack --ctstate INVALID -j DROP
--A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j TCP
--A TCP -p tcp --dport 22 -j ACCEPT
 COMMIT
 EOF
 systemctl enable iptables
 cat > /etc/iptables/ip6tables.rules << EOF
 *filter
-:INPUT DROP [0:0]
+:INPUT ACCEPT [0:0]
 :FORWARD DROP [0:0]
 :OUTPUT ACCEPT [0:0]
 COMMIT
 EOF
 systemctl enable ip6tables
+cat > /etc/nftables.conf << EOF
+
+EOF
+systemctl enable nftables
 
 # ssh
 cat >> /etc/ssh/sshd_config << EOF
 #
 Port 22
-AddressFamily inet
+#AddressFamily inet
 HostKey /etc/ssh/ssh_host_rsa_key
 HostKey /etc/ssh/ssh_host_ed25519_key
 KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256
