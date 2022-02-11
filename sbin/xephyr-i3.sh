@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euf
 
+unset XDG_SEAT
+
 MY_W=1000
 MY_H=1000
 if [ -x "/bin/xprop" ] ; then
