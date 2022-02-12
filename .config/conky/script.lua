@@ -13,6 +13,7 @@ do
             local name = line:match('^[^ ]+')
             if not name
                or name == 'lo'
+               or string.match(name, '^br-')
                or string.match(name, '^veth')
             then
                 goto continue
