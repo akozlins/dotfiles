@@ -12,4 +12,6 @@ set -euf
 #cat /etc/unbound/unbound.log | awk '{ if($6=="A" && $10==0) print $1 " " $5 " " $9; }' | column -t
 
 # freq list
-cat /etc/unbound/unbound.log | awk '{ if($6=="A" && $10==0) print $5; }' | sort | uniq -c | sort -r -n | head -n 100
+tail -n 10000 /etc/unbound/unbound.log \
+| awk '{ n[$5] += 1; f[$5] += ($10==0); } END { for(k in n) print n[k],f[k],k }' \
+| sort -r -n | head -n 100 | column -t
