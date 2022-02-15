@@ -5,4 +5,4 @@ noblacklist ${HOME}/.cache/zoom
 
 ignore novideo
 
-include electron.profile
+#include electron.profile

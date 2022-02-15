@@ -2,9 +2,10 @@
 Description=BAT0
 
 [Timer]
+Unit=BAT0.service
 Persistent=false
 OnCalendar=*-*-* *:*:01
-Unit=BAT0.service
+#AccuracySec=1s
 
 [Install]
 WantedBy=timers.target
