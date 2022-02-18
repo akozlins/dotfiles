@@ -69,7 +69,7 @@ xss-lock :
 
 .PHONY : easystroke
 easystroke :
-	# - Arch: xorg-server-devel
+	# - Arch: gtkmm3 vala xorg-server-devel
 	# - OpenSuse: gtkmm3-devel dbus-1-glib-devel libboost_serialization1_75_0-devel libboost_filesystem1_75_0-devel vala xorg-x11-server-sdk
 	$(call clone_pull,https://github.com/akozlins/easystroke,$@)
 	$(call cmake_make_install,$@)

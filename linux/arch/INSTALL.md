@@ -18,7 +18,7 @@ mount /dev/sda1 /mnt/boot
 
 # install packages
 pacman -Sy --noconfirm archlinux-keyring
-pacstrap /mnt base linux-lts dosfstools efibootmgr dhcpcd iptables-nft openssh
+pacstrap /mnt base linux-lts nano dosfstools efibootmgr dhcpcd iptables-nft openssh
 ```
 
 ## configure
@@ -168,6 +168,7 @@ touch ~/.ssh/authorized_keys
 chmod -R go-rwx ~/.ssh
 
 # dotfiles
+sudo pacman -S --noconfirm git make
 git clone https://github.com/akozlins/dotfiles .dotfiles
 ( cd .dotfiles && ./install.sh )
 
@@ -178,20 +179,27 @@ sudo pacman -S --noconfirm pkgconf gdk-pixbuf-xlib
 # far2l
 sudo pacman -S --noconfirm patch m4 uchardet wxgtk2 spdlog xerces-c
 ( cd .dotfiles/opt && make far2l )
+
+sudo pacman -S --noconfirm fakeroot
+git clone https://aur.archlinux.org/yay.git
+( cd yay && makepkg -s )
 ```
 
 ## packages
 
 ```
-pacman -S --noconfirm htop mc nano tmux vim
+pacman -S --noconfirm htop mc tmux vim
 pacman -S --noconfirm man-db man-pages pkgfile
-pacman -S --noconfirm cmake gcc git make
+pacman -S --noconfirm cmake gcc
 pacman -S --noconfirm bind nginx unbound
-pacman -S --noconfirm borg gnu-netcat iptstate mlocate mtr pkgfile ripgrep rsync socat
+pacman -S --noconfirm borg gnu-netcat iptstate mlocate mtr ripgrep rsync socat
+```
+
+```
+pacman -S --noconfirm gedit gedit-plugins libgit2-glib
 ```
 
 - `archlinux-keyring`
 - `dunst`
-- `gedit`, `gedit-plugins`, `libgit2-glib`
 - `ssh-audit`
 - `usbguard`
