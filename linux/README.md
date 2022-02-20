@@ -197,9 +197,22 @@ net.ipv4.tcp_slow_start_after_idle=0
 
 ## misc
 
-- `gpg -vvv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys $ID`
-    - dirmngr: use `--standard-resolver`
+```
+# hot unplug
+echo 1 | sudo tee /sys/block/$SDA/device/delete
 
-- `echo 1 | sudo tee /sys/block/$SDA/device/delete` - "hot unplug"
+# dirmngr: use `--standard-resolver`
+gpg -vvv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys $ID
 
-- `expac "%n %m" -l'\n' -Q $(pacman -Qq) | sort -nk 2 | column -t` - "list packages by size"
+# list packages by size
+expac "%n %m" -l'\n' -Q $(pacman -Qq) | sort -nk 2 | column -t
+
+cat << EOF | pango-view --font="Nimbus Mono PS" /dev/stdin
+| worksheet |
+| buffering |
+| difficult |
+| finishing |
+| different |
+| efficient |
+EOF
+```

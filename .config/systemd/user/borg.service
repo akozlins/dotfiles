@@ -3,7 +3,7 @@ Description=borg
 
 [Service]
 Type=simple
-ExecStart=/bin/sh -c ./test.sh
+ExecStart=/bin/sh -c ./start.sh
 WorkingDirectory=%h/.config/borg
 
 [Install]
