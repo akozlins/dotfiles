@@ -3,12 +3,13 @@
 defaults
 auth on
 tls on
+tls_starttls off
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
 logfile ~/.cache/msmtp.log
 
 account default
 from user@example.com
 host mail.example.com
-port 587
+port 465
 user user@example.com
 password ********
