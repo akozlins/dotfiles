@@ -18,7 +18,7 @@ mount /dev/sda1 /mnt/boot
 
 # install packages
 pacman -Sy --noconfirm archlinux-keyring
-pacstrap /mnt base linux-lts nano dosfstools efibootmgr dhcpcd iptables-nft openssh
+pacstrap /mnt base dhcpcd dosfstools efibootmgr iptables-nft linux-lts nano openssh
 ```
 
 ## configure
@@ -192,7 +192,7 @@ pacman -S --noconfirm htop mc tmux vim
 pacman -S --noconfirm man-db man-pages pkgfile
 pacman -S --noconfirm cmake gcc
 pacman -S --noconfirm bind nginx unbound
-pacman -S --noconfirm borg gnu-netcat iptstate mlocate mtr ripgrep rsync socat
+pacman -S --noconfirm borg gnu-netcat mtr ripgrep rsync socat
 ```
 
 ```

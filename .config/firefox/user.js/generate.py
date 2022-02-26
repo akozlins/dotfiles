@@ -31,7 +31,7 @@ def read_prefs(user_js_fname : str) :
     with open(user_js_fname, encoding = "UTF-8") as user_js :
         # run gcc preprocessor (remove comments, etc.)
         output = subprocess.check_output("/bin/gcc -E -P -", stdin=user_js, shell=True)
-        exec(output, {}, {
+        exec(output, { "__builtins__" : None }, {
             # js uses false/true and null
             "false" : False,
             "true" : True,

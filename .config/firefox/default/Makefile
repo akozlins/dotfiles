@@ -20,10 +20,11 @@ PROFILE := $(DOTFILES)/.mozilla/firefox/default
 .PHONY : user.js
 user.js :
 	make -C ..
-	if [ -e "$(PROFILE)/user.js" ] && ! diff -- <(cat "$(PROFILE)/user.js" | sort) <($(GENERATE) | sort) ; then \
+	$(GENERATE) > "$(PROFILE)/user.js.new"
+	if [ -e "$(PROFILE)/user.js" ] && ! diff -- <(cat "$(PROFILE)/user.js" | sort) <(cat "$(PROFILE)/user.js.new" | sort) ; then \
 	    cp -v -- "$(PROFILE)/user.js" "$(PROFILE)/user.$$(date +%FT%T).js"; \
-	    $(GENERATE) > "$(PROFILE)/user.js"; \
 	fi
+	mv -v -- "$(PROFILE)/user.js.new" "$(PROFILE)/user.js"
 
 .PHONY : css
 css :

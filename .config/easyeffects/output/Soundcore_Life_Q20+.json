@@ -213,7 +213,7 @@
             "split-channels": false
         },
         "filter": {
-            "frequency": 200.0,
+            "frequency": 100.0,
             "inertia": 20.0,
             "input-gain": 0.0,
             "mode": "36dB/oct Highpass",

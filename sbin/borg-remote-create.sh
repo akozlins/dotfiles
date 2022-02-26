@@ -31,8 +31,8 @@ dir="$(dirname -- "$(readlink -f -- "$0")")"
     "ssh://$HOST/$REPO::$PREFIX-{utcnow:%Y%m%dT%H%M%S}"
 
 # https://borgbackup.readthedocs.io/en/stable/usage/general.html
-export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=yes
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=yes
+export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=yes
 
 borg prune \
     --verbose \
