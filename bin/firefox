@@ -3,14 +3,16 @@ set -euf
 
 export HOME="$DOTFILES"
 
+PROFILE="$XDG_DATA_HOME/firefox/default"
+
 CMD=(
     "/bin/firefox"
-    --profile "$XDG_DATA_HOME/firefox/default"
+    --profile "$PROFILE"
     "$@"
 )
 
-if [ $# -eq 0 ] ; then
-    exec "${CMD[@]}" > /dev/null 2>&1 &
-else
+if [ $# -gt 0 ] ; then
     exec "${CMD[@]}"
+else
+    exec "${CMD[@]}" > /dev/null 2>&1 &
 fi

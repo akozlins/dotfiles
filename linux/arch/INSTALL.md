@@ -199,7 +199,5 @@ pacman -S --noconfirm borg gnu-netcat iptstate mlocate mtr ripgrep rsync socat
 pacman -S --noconfirm gedit gedit-plugins libgit2-glib
 ```
 
-- `archlinux-keyring`
 - `dunst`
-- `ssh-audit`
-- `usbguard`
+- `usbguard ssh-audit earlyoom`
