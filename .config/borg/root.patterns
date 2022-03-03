@@ -1,0 +1,25 @@
+R /
+
+! /dev
+! /**/lost+found
+! /proc
+! /run
+! /sys
+! /tmp
+
+! /**/.cache
+- /**/gitk.cache
+! /**/node_modules
+
+- /boot/*.img
++ /boot
++ /etc
+! /home/*/.m2
++ /home
++ /opt
++ /root
+! /var/lib/docker
++ /var/lib
++ /var/log
+
+- /*

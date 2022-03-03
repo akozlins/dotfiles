@@ -1,0 +1,10 @@
+R /home/user
+
+- /home/*/.local
+
+- /home/*/downloads
+
+- /**/.cache
+- /**/gitk.cache
+- /**/node_modules
+- /**/cmake-build*
