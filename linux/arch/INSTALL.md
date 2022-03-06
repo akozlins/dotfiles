@@ -8,7 +8,7 @@ gdisk /dev/sda
 # 512M EF00
 mkfs.fat -F 32 /dev/sda1
 cryptsetup luksFormat --type luks2 /dev/sda2
-cryptsetup open /dev/sda2 root
+cryptsetup open --allow-discards /dev/sda2 root
 mkfs.ext4 /dev/mapper/root
 
 # mount
@@ -130,11 +130,12 @@ ssh-keygen -y -f ~/.ssh/id_ed25519 > /etc/tinyssh/root_key
 mkinitcpio --allpresets
 
 # add user
-pacman -S sudo zsh-completions
-useradd --create-home --shell /bin/zsh $USER
-passwd $USER
-cat > /etc/sudoers.d/$USER << EOF
-$USER ALL=(ALL) ALL
+pacman -S --noconfirm sudo zsh-completions
+USER1=user
+useradd --create-home --shell /bin/zsh $USER1
+passwd $USER1
+cat > /etc/sudoers.d/$USER1 << EOF
+$USER1 ALL=(ALL) ALL
 EOF
 ```
 
@@ -172,6 +173,8 @@ sudo pacman -S --noconfirm git make
 git clone https://github.com/akozlins/dotfiles .dotfiles
 ( cd .dotfiles && ./install.sh )
 
+sudo pacman -S --noconfirm cmake gcc
+
 # fbpanel
 sudo pacman -S --noconfirm pkgconf gdk-pixbuf-xlib
 ( cd .dotfiles/opt && make fbpanel )
@@ -190,8 +193,7 @@ git clone https://aur.archlinux.org/yay.git
 ```
 pacman -S --noconfirm htop mc tmux vim
 pacman -S --noconfirm man-db man-pages pkgfile
-pacman -S --noconfirm cmake gcc
-pacman -S --noconfirm bind nginx unbound
+pacman -S --noconfirm bind unbound
 pacman -S --noconfirm borg gnu-netcat mtr ripgrep rsync socat
 ```
 
