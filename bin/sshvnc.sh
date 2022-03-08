@@ -39,7 +39,7 @@ X11VNC_CMD=(
     -noxdamage
     -cursor none
     -scale "$SCALE"
-#    -auth ~/.Xauthority
+#    -auth "$HOME/.Xauthority"
 )
 
 ARGS=(-L "$PORT:localhost:$RPORT" "$@")

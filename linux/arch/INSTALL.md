@@ -118,15 +118,15 @@ MACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,umac-128-etm@op
 ClientAliveInterval 15
 EOF
 systemctl enable sshd
-mkdir ~/.ssh
-touch ~/.ssh/authorized_keys
-chmod -R go-rwx ~/.ssh
+mkdir -- "$HOME/.ssh"
+touch "$HOME/.ssh/authorized_keys"
+chmod -R go-rwx "$HOME/.ssh"
 
 # ssh luks unlock
 pacman -S --noconfirm mkinitcpio-netconf mkinitcpio-tinyssh mkinitcpio-utils
 sed 's/block encrypt filesystems/block netconf tinyssh encryptssh filesystems/' -i /etc/mkinitcpio.conf
-ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C "" -N ""
-ssh-keygen -y -f ~/.ssh/id_ed25519 > /etc/tinyssh/root_key
+ssh-keygen -t ed25519 -f "$HOME/.ssh/id_ed25519" -C "" -N ""
+ssh-keygen -y -f "$HOME/.ssh/id_ed25519" > /etc/tinyssh/root_key
 mkinitcpio --allpresets
 
 # add user
@@ -164,9 +164,9 @@ pacman -S --noconfirm adwaita-icon-theme
 ## user
 
 ```
-mkdir ~/.ssh
-touch ~/.ssh/authorized_keys
-chmod -R go-rwx ~/.ssh
+mkdir -- "$HOME/.ssh"
+touch "$HOME/.ssh/authorized_keys"
+chmod -R go-rwx "$HOME/.ssh"
 
 # dotfiles
 sudo pacman -S --noconfirm git make

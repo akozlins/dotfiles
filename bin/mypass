@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euf
 
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 MYPASS_DIR="${MYPASS_DIR:-$XDG_CONFIG_HOME/mypass}"
 MYPASS_TAG="${MYPASS_TAG:--@}"
 

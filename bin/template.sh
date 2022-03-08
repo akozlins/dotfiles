@@ -9,7 +9,7 @@ cd "$(dirname -- "$(readlink -f -- "$0")")" || exit 1
 PATH="$(command -p getconf PATH)"
 export PATH
 
-DOTFILES="${DOTFILES:-~/.dotfiles}"
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 test -d "$DOTFILES" && export HOME="$DOTFILES"
 
 exec \

@@ -3,6 +3,7 @@ set -euf
 
 export HOME="$DOTFILES"
 
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 CLAWS_MAIL_DIR="${CLAWS_MAIL_DIR:-$XDG_CONFIG_HOME/claws-mail}"
 
 export GTK_DEBUG=1

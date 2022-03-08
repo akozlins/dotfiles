@@ -8,9 +8,9 @@
 
 ## libvirt
 
-`sudo cp /etc/libvirt/libvirt.conf ~/.config/libvirt/`
+`sudo cp /etc/libvirt/libvirt.conf $HOME/.config/libvirt/`
 
-### `~/.config/libvirt/`
+### `$HOME/.config/libvirt/`
 
 ```
 uri_default = "qemu:///system"

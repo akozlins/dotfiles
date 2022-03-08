@@ -4,7 +4,7 @@ set -euf
 unset CDPATH
 cd "$(dirname -- "$(readlink -f -- "$0")")" || exit 1
 
-APPS_DIR="${XDG_DATA_HOME:-~/.local/share}/applications"
+APPS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/applications"
 mkdir -pv -- "$APPS_DIR"
 
 cp -v -- mimeapps.list "$APPS_DIR/"

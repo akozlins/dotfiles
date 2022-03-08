@@ -1,6 +1,6 @@
 #
 
-`~/.config/zoomus.conf`
+`$HOME/.config/zoomus.conf`
 
 ```
 [General]
