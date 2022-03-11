@@ -3,7 +3,7 @@ set -euf
 
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
-private="$XDG_CACHE_HOME/zoom"
+private="$XDG_DATA_HOME/zoom"
 mkdir -pv -- "$private"
 
 CMD=(
