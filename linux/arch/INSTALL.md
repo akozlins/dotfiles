@@ -17,23 +17,23 @@ mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 
 # install packages
-pacman -Sy --noconfirm archlinux-keyring
+#pacman -Sy --noconfirm archlinux-keyring
 pacstrap /mnt base dhcpcd dosfstools efibootmgr iptables-nft linux-lts nano openssh
 ```
 
 ## configure
 
 ```
-genfstab -t UUID /mnt >> /mnt/etc/fstab
+#genfstab -t UUID /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt
 
 passwd
-pacman -Sy --noconfirm archlinux-keyring
+#pacman -Sy --noconfirm archlinux-keyring
 
 # time zone
 ln -s /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
-hwclock --systohc
+#hwclock --systohc
 
 # locale
 sed 's/^#en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen
@@ -67,7 +67,7 @@ linux /vmlinuz-linux-lts
 initrd /initramfs-linux-lts.img
 options ip=:::::eth0:dhcp cryptdevice=UUID=$(lsblk --noheadings --inverse --output UUID /dev/mapper/root | sed --quiet 2p):root:allow-discards root=/dev/mapper/root rw
 EOF
-sed 's/block filesystems/block encrypt filesystems/' -i /etc/mkinitcpio.conf
+sed 's/block filesystems/keymap block encrypt filesystems/' -i /etc/mkinitcpio.conf
 mkinitcpio --allpresets
 
 # network
@@ -184,8 +184,8 @@ sudo pacman -S --noconfirm patch m4 uchardet wxgtk2 spdlog xerces-c
 ( cd .dotfiles/opt && make far2l )
 
 sudo pacman -S --noconfirm fakeroot
-git clone https://aur.archlinux.org/yay.git
-( cd yay && makepkg -s )
+git clone https://aur.archlinux.org/yay.git "$HOME/yay"
+( cd "$HOME/yay" && makepkg -s )
 ```
 
 ## packages
