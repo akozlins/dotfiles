@@ -1,0 +1,10 @@
+[Unit]
+Description=firefox
+
+[Service]
+Type=simple
+ExecStart=/bin/sh -c ./backup.sh
+WorkingDirectory=%h
+
+[Install]
+WantedBy=default.target
