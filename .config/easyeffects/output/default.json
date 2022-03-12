@@ -40,7 +40,7 @@
             "input-gain": 0.0,
             "middle-level": 0.0,
             "middle-panorama": 0.0,
-            "mode": "LR > L+R (Mono Sum L+R)",
+            "mode": "LR > LR (Stereo Default)",
             "mutel": false,
             "muter": false,
             "output-gain": 0.0,

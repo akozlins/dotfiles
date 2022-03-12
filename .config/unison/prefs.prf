@@ -4,11 +4,12 @@ diff = diff -u CURRENT2 CURRENT1 | perl -pe 's/^\+/>/; s/^\-/</'
 
 ignore = Name .cache
 ignore = Name cmake-build*
+ignore = Name gitk.cache
 ignore = Name gnupg/random_seed
-ignore = Name mnt
 ignore = Name node_modules
 ignore = Regex .*/core\.[0-9]+
 ignore = Regex .*/unison/[0-9a-z]+
+ignore = Name *~
 
 # dotfiles
 #path = .dotfiles
@@ -28,7 +29,7 @@ ignore = Name *.!qB
 #ignore = Regex path/.*\.(qsys|sopcinfo)
 
 # sylpheed
-ignore = Name .sylpheed/mimetmp
+ignore = Name sylpheed/mimetmp
 ignore = Name sylpheed/*.bak
 ignore = Name sylpheed/*.bak.*
 ignore = Name sylpheed/*.log

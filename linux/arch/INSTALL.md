@@ -199,6 +199,7 @@ pacman -S --noconfirm borg gnu-netcat mtr ripgrep rsync socat
 
 ```
 pacman -S --noconfirm gedit gedit-plugins libgit2-glib
+pacman -S --noconfirm pcmanfm gvfs
 ```
 
 - `dunst`

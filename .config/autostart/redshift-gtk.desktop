@@ -2,6 +2,6 @@
 Type=Application
 Name=Redshift
 Icon=redshift
-Exec=redshift-gtk -l 50:8
+Exec=redshift-gtk -l 50:8 -b 0.75:0.75
 TryExec=redshift-gtk
 Terminal=false
