@@ -1,0 +1,11 @@
+[Unit]
+Description=BAT
+
+[Timer]
+Unit=BAT.service
+Persistent=false
+OnCalendar=*-*-* *:00,05,10,15,20,25,30,35,40,45,50,55:00
+#AccuracySec=1s
+
+[Install]
+WantedBy=timers.target

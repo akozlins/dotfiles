@@ -1,9 +1,9 @@
 [Unit]
-Description=BAT0
+Description=BAT
 
 [Service]
 Type=simple
-ExecStart=%h/.dotfiles/linux/BAT0.sh
+ExecStart=%h/.config/systemd/user/BAT.sh
 WorkingDirectory=%h
 
 [Install]

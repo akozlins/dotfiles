@@ -4,7 +4,7 @@ Description=borg
 [Timer]
 Unit=borg.service
 Persistent=false
-OnCalendar=*-*-* *:05:00
+OnCalendar=*-*-* *:00:00
 
 [Install]
 WantedBy=timers.target
