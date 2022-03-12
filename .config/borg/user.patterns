@@ -1,10 +1,13 @@
-R /home/user
+#
+
+#R /home/$USER
 
 - /home/*/.local
-
 - /home/*/downloads
 
+- /**/*~
 - /**/.cache
 - /**/gitk.cache
-- /**/node_modules
 - /**/cmake-build*
+- /**/core.[0-9]*
+- /**/node_modules

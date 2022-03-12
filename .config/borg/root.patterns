@@ -1,14 +1,17 @@
 R /
 
-! /dev
 ! /**/lost+found
+! /dev
 ! /proc
 ! /run
 ! /sys
 ! /tmp
 
+- /**/*~
 ! /**/.cache
 - /**/gitk.cache
+! /**/cmake-build*
+- /**/core.[0-9]*
 ! /**/node_modules
 
 - /boot/*.img
