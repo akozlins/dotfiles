@@ -1,9 +1,7 @@
 #!/bin/bash
 set -euf
-unset CDPATH
-cd "$(dirname "$(readlink -f "$0")")" || exit 1
 
-source -- .env
+source -- ./.env
 [ -d "$BORG_REPO" ] || exit 1
 
 if true ; then

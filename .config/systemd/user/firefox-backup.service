@@ -1,0 +1,10 @@
+[Unit]
+Description=firefox-backup
+
+[Service]
+Type=simple
+ExecStart=/bin/sh -c %h/.config/systemd/user/firefox-backup.sh
+WorkingDirectory=%h
+
+[Install]
+WantedBy=default.target

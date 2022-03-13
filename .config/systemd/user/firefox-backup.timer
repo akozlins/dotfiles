@@ -1,8 +1,8 @@
 [Unit]
-Description=firefox
+Description=firefox-backup
 
 [Timer]
-Unit=firefox.service
+Unit=firefox-backup.service
 Persistent=false
 OnCalendar=*-*-* *:00,05,10,15,20,25,30,35,40,45,50,55:00
 
