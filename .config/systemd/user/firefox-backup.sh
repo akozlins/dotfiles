@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euf
+set -eu
 
 source ~/.profile
 FIREFOX="$DOTFILES/.config/firefox"
@@ -30,6 +30,6 @@ if [ -r "$bookmarks" ] ; then
 fi
 
 if [ -d ".git" ] && [ "$COMMIT" -gt 0 ] ; then
-    git commit --allow-empty-message -m "update" || true
-    git gc
+    git commit --quiet --allow-empty-message --message="update" || true
+    git gc --quiet
 fi

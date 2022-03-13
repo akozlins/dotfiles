@@ -125,14 +125,14 @@ export RANDFILE="$XDG_CONFIG_HOME/.rnd"
 export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/.nv"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/.nv"
 
-for f in "$DOTFILES"/profile.d/?*.sh ; do
-    [ -f "$f" ] && . "$f"
-done
-
 # source private/.profile
 if [ -f "$DOTFILES/private/.profile" ] && [ ! "$DOTFILES/private/.profile" -ef "$DOTFILES/.profile" ] ; then
     . "$DOTFILES/private/.profile"
 fi
+
+for f in "$DOTFILES"/profile.d/?*.sh ; do
+    [ -f "$f" ] && . "$f"
+done
 
 # remove duplicates from PATH
 PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"

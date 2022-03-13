@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euf
+set -eu
 
 source -- ./.env
 [ -d "$BORG_REPO" ] || exit 1
