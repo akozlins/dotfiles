@@ -2,8 +2,20 @@
 set -eu
 
 for BAT in /sys/class/power_supply/BAT* ; do
-    [ ! -e "$BAT" ] && echo "n/a" && exit 1
-    energy_now=$(cat "$BAT/energy_now")
-    energy_full=$(cat "$BAT/energy_full_design")
-    echo "$((100*energy_now/energy_full))%"
+    NAME=$(basename -- "$BAT")
+    if [ -r "$BAT/energy_now" ] ; then
+        now=$(cat "$BAT/energy_now")
+        design=$(cat "$BAT/energy_full_design")
+        OUT=$(printf "%s: %s\n%s\n" "$NAME" "energy_now/full = $now/$full" "$OUT")
+        printf "%d.%01d%% " $((100*now/design)) $((1000*now/design%10))
+        break
+    fi
+    if [ -r "$BAT/charge_now" ] ; then
+        now=$(cat "$BAT/charge_now")
+        full=$(cat "$BAT/charge_full")
+        design=$(cat "$BAT/charge_full_design")
+        vnow=$(cat "$BAT/voltage_now")
+        printf "%d.%01d%%/%d.%02dV " $((100*now/design)) $((1000*now/design%10)) $((vnow/1000000)) $((vnow/10000%100))
+        break
+    fi
 done
