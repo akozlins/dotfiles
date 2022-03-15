@@ -15,7 +15,7 @@ fi
 
 PATTERNS="./user.patterns"
 PREFIX="$USER@{hostname}"
-LOG="./.cache/$USER.log"
+LOG="./.cache/borg.log"
 
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=no
 export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=no
