@@ -11,15 +11,17 @@ for BAT in /sys/class/power_supply/BAT* ; do
 #    fi
     NAME=$(basename -- "$BAT")
     if [ -r "$BAT/energy_now" ] ; then
+        status=$(cat /sys/class/power_supply/BAT0/status)
         now=$(cat "$BAT/energy_now")
         full=$(cat "$BAT/energy_full_design")
-        OUT=$(printf "%s: %s\n%s" "$NAME" "energy_now/full = $now/$full" "$OUT")
+        OUT=$(printf "%s: %s, %s\n%s" "$NAME" "$status" "energy_now/full = $now/$full" "$OUT")
     fi
     if [ -r "$BAT/charge_now" ] ; then
+        status=$(cat /sys/class/power_supply/BAT0/status)
         now=$(cat "$BAT/charge_now")
         full=$(cat "$BAT/charge_full")
         design=$(cat "$BAT/charge_full_design")
-        OUT=$(printf "%s: %s\n%s" "$NAME" "charge_now/full/design = $now/$full/$design" "$OUT")
+        OUT=$(printf "%s: %s, %s\n%s" "$NAME" "$status" "charge_now/full/design = $now/$full/$design" "$OUT")
     fi
 done
 
