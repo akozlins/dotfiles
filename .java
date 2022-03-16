@@ -1,1 +1,1 @@
-.local/share/java
+.cache/java
