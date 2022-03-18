@@ -2,12 +2,17 @@
 set -euf
 
 # user
-MY_USER=$1
-MY_SHELL=/bin/zsh
+USER=$1
+HOME=/home/$USER
+SHELL=/bin/zsh
 
-useradd  --shell "$MY_SHELL" --create-home -- "$MY_USER"
+useradd  --shell "$SHELL" --create-home -- "$USER"
 passwd -- "$USER"
 
 cat > "/etc/sudoers.d/10-$USER" << EOF
 $USER ALL=(ALL) ALL
 EOF
+
+mkdir -pv -- "$HOME/.ssh"
+touch "$HOME/.ssh/authorized_keys"
+chmod -R go-rwx "$HOME/.ssh"
