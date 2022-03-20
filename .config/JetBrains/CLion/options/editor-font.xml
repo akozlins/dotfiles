@@ -5,6 +5,7 @@
     <option name="FONT_FAMILY" value="JetBrains Mono NL" />
     <option name="FONT_REGULAR_SUB_FAMILY" value="Regular" />
     <option name="FONT_BOLD_SUB_FAMILY" value="Bold" />
+    <option name="FONT_SCALE" value="1.0" />
     <option name="LINE_SPACING" value="1.1" />
   </component>
 </application>

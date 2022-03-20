@@ -11,7 +11,7 @@ program_name=$(basename -- "$program_path")
 
 for executable in $("$DOTFILES/sbin/which" "$program_name") ; do
     executable=$(readlink -f -- "$executable")
-    [ "$program_path" = "$executable" ] && continue
+    [ "$program_path" -ef "$executable" ] && continue
     exec "$executable" "$@"
 done
 
