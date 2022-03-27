@@ -10,7 +10,7 @@ PATH="$(command -p getconf PATH)"
 export PATH
 
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
-test -d "$DOTFILES" && export HOME="$DOTFILES"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 exec \
 true "$@"

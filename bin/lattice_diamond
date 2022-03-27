@@ -3,7 +3,8 @@ set -euf
 
 export LM_LICENSE_FILE="$LATTICE_LICENSE_FILE"
 
-export HOME="$DOTFILES"
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 exec \
 "$LATTICE_DIAMOND_HOME/bin/lin64/diamond" "$@" \

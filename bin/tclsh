@@ -2,7 +2,7 @@
 set -euf
 
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
-test -d "$DOTFILES" && export HOME="$DOTFILES"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 if [ -x /bin/eltclsh ] && [ $# -eq 0 ] ; then
     exec \

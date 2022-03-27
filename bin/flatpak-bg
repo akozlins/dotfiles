@@ -2,7 +2,7 @@
 set -euf
 
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
-test -d "$DOTFILES" && export HOME="$DOTFILES"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 MY_LOG="$XDG_CACHE_HOME/flatpak/$(echo "$*" | tr ' ' _).log"

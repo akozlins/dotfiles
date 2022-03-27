@@ -4,7 +4,8 @@ set -euf
 PATH="$(getconf PATH)"
 export PATH
 
-export HOME="$DOTFILES"
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 exec \
 pdflatex "$@"

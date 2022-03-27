@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euf
 
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 export HOME="$DOTFILES"
 #export HTTPS_PROXY=localhost
 

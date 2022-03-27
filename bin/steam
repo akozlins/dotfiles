@@ -1,7 +1,8 @@
 #!/bin/bash
 set -euf
 
-export HOME="$DOTFILES"
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 STEAM_HOME="$HOME/.steam"
 

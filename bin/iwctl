@@ -3,7 +3,8 @@ set -euf
 
 PATH="$(command -p getconf PATH)"
 
-HOME="$DOTFILES"
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 exec \
 iwctl "$@"

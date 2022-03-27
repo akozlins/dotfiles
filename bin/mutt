@@ -2,7 +2,7 @@
 set -euf
 
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
-test -d "$DOTFILES" && export HOME="$DOTFILES"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 MUTTRC="${MUTTRC:-$XDG_CONFIG_HOME/mutt/muttrc}"

@@ -1,7 +1,8 @@
 #!/bin/sh
 set -euf
 
-HOME="$DOTFILES"
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 CONF="$XDG_CONFIG_HOME/dosbox/dosbox.conf"
 

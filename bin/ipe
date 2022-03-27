@@ -1,7 +1,8 @@
 #!/bin/sh
 set -euf
 
-export HOME="$DOTFILES"
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 mkdir -pv -- "$XDG_CACHE_HOME/ipe"
 

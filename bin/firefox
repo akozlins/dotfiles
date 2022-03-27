@@ -1,8 +1,11 @@
 #!/bin/bash
 set -euf
 
-export HOME="$DOTFILES"
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 PROFILE="$XDG_DATA_HOME/firefox/default"
 
 CMD=(
