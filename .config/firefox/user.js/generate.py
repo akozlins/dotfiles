@@ -15,7 +15,7 @@ parser.add_argument("files", nargs="*", default=[
 ])
 args = parser.parse_args()
 
-prefs : dict[str, str] = {}
+prefs : dict = {}
 
 def read_prefs(user_js_fname : str) :
     print(f"DEBUG: read_prefs(\"{user_js_fname}\")", file = sys.stderr)

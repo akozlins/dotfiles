@@ -6,7 +6,15 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+
 PROFILE="$XDG_DATA_HOME/firefox/default"
+
+# init profile
+if [ ! -d "$PROFILE" ] ; then
+    cp -r -- "$XDG_CONFIG_HOME/firefox/default" "$PROFILE"
+    git clone "https://github.com/Aris-t2/CustomCSSforFx" "$PROFILE/chrome/CustomCSSforFx"
+    "$XDG_CONFIG_HOME/firefox/user.js/generate.py" > "$PROFILE/user.js"
+fi
 
 CMD=(
     /usr/bin/firefox
@@ -14,8 +22,5 @@ CMD=(
     "$@"
 )
 
-if [ $# -gt 0 ] ; then
-    exec "${CMD[@]}"
-else
-    exec "${CMD[@]}" > /dev/null 2>&1 &
-fi
+[ $# -gt 0 ] && exec "${CMD[@]}"
+exec "${CMD[@]}" &> /dev/null &
