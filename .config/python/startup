@@ -1,4 +1,4 @@
-#!/bin/python
+#!/bin/env python3
 
 # see <https://docs.python.org/3/library/readline.html?highlight=readline#example>
 

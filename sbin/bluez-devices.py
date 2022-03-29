@@ -1,4 +1,4 @@
-#!/bin/python
+#!/bin/env python3
 
 # https://git.kernel.org/pub/scm/bluetooth/bluez.git/tree/doc/device-api.txt
 
