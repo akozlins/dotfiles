@@ -1,5 +1,0 @@
-#!/bin/sh
-set -euf
-
-exec \
-/bin/geth --datadir "$XDG_CONFIG_HOME/ethereum" "$@"
