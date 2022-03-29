@@ -2,5 +2,5 @@
 set -euf
 
 exec \
-/bin/gedit "$@" \
+/usr/bin/gedit "$@" \
 > /dev/null 2>&1 &

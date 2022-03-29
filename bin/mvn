@@ -2,4 +2,4 @@
 set -euf
 
 exec \
-/bin/mvn -gs "$XDG_CONFIG_HOME/maven/settings.xml" "$@"
+/usr/bin/mvn -gs "$XDG_CONFIG_HOME/maven/settings.xml" "$@"

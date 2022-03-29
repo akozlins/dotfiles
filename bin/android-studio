@@ -4,7 +4,7 @@ set -euf
 export STUDIO_PROPERTIES="$XDG_CONFIG_HOME/JetBrains/AndroidStudio/properties"
 
 CMD=(
-    "/bin/android-studio"
+    /usr/bin/android-studio
     "$@"
 )
 

@@ -1,5 +1,5 @@
 #!/bin/sh
 
-#if [ -f /bin/nvidia-settings ] ; then
-#    /bin/nvidia-settings --load-config-only --config="$DOTFILES/.nvidia-settings-rc"
+#if command -v nvidia-settings &> /dev/null ; then
+#    nvidia-settings --load-config-only --config="$DOTFILES/.nvidia-settings-rc"
 #fi

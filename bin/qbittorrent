@@ -5,8 +5,13 @@ DNS=8.8.8.8
 NET=$(ip route get "$DNS" | awk '{ print $5 }')
 FILTER="$XDG_CONFIG_HOME/firejail/qbittorrent.net"
 
+CMD=(
+    /usr/bin/qbittorrent
+    "$@"
+)
+
 CMD1=(
-    "/bin/firejail"
+    firejail
     "--debug"
     "--noprofile"
     "--net=$NET"
@@ -14,13 +19,7 @@ CMD1=(
     "--netfilter=$FILTER"
     "--join-or-start=qbittorrent"
     --
-    "/bin/qbittorrent"
-    "$@"
-)
-
-CMD=(
-    "/bin/qbittorrent"
-    "$@"
+    "${CMD[@]"
 )
 
 if [ $# -eq 0 ] ; then

@@ -4,4 +4,4 @@ set -euf
 config="$XDG_CONFIG_HOME/conky/conky.conf"
 
 exec \
-/bin/conky --config="$config" "$@"
+/usr/bin/conky --config="$config" "$@"

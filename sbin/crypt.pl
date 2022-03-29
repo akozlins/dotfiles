@@ -1,4 +1,4 @@
-#!/bin/perl -w
+#!/usr/bin/perl -w
 
 if ( $#ARGV + 1 != 2 ) {
     print "Usage $0 <password> <salt>\n";

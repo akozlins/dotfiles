@@ -10,7 +10,7 @@ if [ ! -f "$XDG_DATA_HOME/code/User/settings.json" ] ; then
 fi
 
 CMD=(
-    "/bin/code"
+    /usr/bin/code
     --user-data-dir "$XDG_DATA_HOME/code"
     --extensions-dir "$XDG_DATA_HOME/code/extensions"
     "$@"

@@ -3,5 +3,5 @@ set -euf
 
 #AE_SINK=ALSA
 exec \
-/bin/kodi \
+/usr/bin/kodi \
 > /dev/null 2>&1 &

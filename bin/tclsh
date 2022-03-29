@@ -4,10 +4,10 @@ set -euf
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 [ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
-if [ -x /bin/eltclsh ] && [ $# -eq 0 ] ; then
+if [ -x /usr/bin/eltclsh ] && [ $# -eq 0 ] ; then
     exec \
-    /bin/eltclsh "$@"
+    /usr/bin/eltclsh "$@"
 else
     exec \
-    /bin/tclsh "$@"
+    /usr/bin/tclsh "$@"
 fi

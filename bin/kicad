@@ -2,7 +2,7 @@
 set -euf
 
 CMD=(
-    "/bin/kicad"
+    /usr/bin/kicad
     "$@"
 )
 

@@ -5,4 +5,4 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 export HOME="$DOTFILES"
 
 exec \
-/bin/vncviewer "$@"
+/usr/bin/vncviewer "$@"

@@ -2,7 +2,7 @@
 # \
 exec tclsh "$0" "$@"
 
-exec "/bin/stty" "raw" <@stdin
+exec stty "raw" <@stdin
 
 while 1 {
     puts "menu:"
@@ -13,4 +13,4 @@ while 1 {
     if { [ string equal $c "q" ] } break
 }
 
-exec "/bin/stty" "-raw" <@stdin
+exec stty "-raw" <@stdin

@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euf
 
-if [ ! -x "/bin/emacs" ] ; then
-    exec /bin/emacs
+if [ ! -x /usr/bin/emacs ] ; then
+    exec /usr/bin/emacs
 fi
 
 #--eval='(setq user-emacs-directory "$DOTFILES/.emacs.d")'
@@ -19,7 +19,7 @@ fi
 USER_INIT_FILE="$USER_EMACS_DIRECTORY/init.el"
 
 CMD=(
-    "/bin/emacs"
+    /usr/bin/emacs
     "--no-init-file"
     "--load=$USER_INIT_FILE"
     "$@"

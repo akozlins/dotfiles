@@ -5,7 +5,7 @@ export LC_ALL=ja_JP.UTF-8
 
 export WINEARCH=win32
 
-WINE="/bin/firejail -- /bin/wine"
+WINE="firejail -- wine"
 
 set -- far "$@"
 source "$DOTFILES/bin/wine.sh"

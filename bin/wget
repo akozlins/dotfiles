@@ -4,6 +4,6 @@ set -euf
 XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 
 exec \
-/bin/wget \
+/usr/bin/wget \
     --hsts-file="$XDG_CACHE_HOME/.wget-hsts" \
     "$@"

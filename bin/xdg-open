@@ -11,4 +11,4 @@ if [ $# -ge 1 ] && [ -r "$1" ] ; then
 fi
 
 exec \
-/bin/xdg-open "$@"
+/usr/bin/xdg-open "$@"

@@ -8,4 +8,4 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 [ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 exec \
-pdflatex "$@"
+/usr/bin/pdflatex "$@"

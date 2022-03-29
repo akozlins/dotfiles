@@ -2,5 +2,5 @@
 set -euf
 
 exec \
-/bin/thunar "$@" \
+/usr/bin/thunar "$@" \
 > /dev/null 2>&1 &

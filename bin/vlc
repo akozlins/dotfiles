@@ -2,5 +2,5 @@
 set -euf
 
 exec \
-/bin/vlc "$@" \
+/usr/bin/vlc "$@" \
 > /dev/null 2>&1 &

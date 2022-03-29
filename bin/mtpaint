@@ -5,5 +5,5 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 [ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 exec \
-/bin/mtpaint "$@" \
+/usr/bin/mtpaint "$@" \
 > /dev/null 2>&1 &

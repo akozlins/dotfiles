@@ -4,7 +4,7 @@ set -euf
 export UNISON="$HOME/.config/unison"
 
 CMD=(
-    "/bin/unison-gtk2"
+    /usr/bin/unison-gtk2
     -logfile "$HOME/.cache/unison.log"
     "-watch=false"
     "$@"

@@ -9,7 +9,7 @@ export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 PROFILE="$XDG_DATA_HOME/firefox/default"
 
 CMD=(
-    "/bin/firefox"
+    /usr/bin/firefox
     --profile "$PROFILE"
     "$@"
 )

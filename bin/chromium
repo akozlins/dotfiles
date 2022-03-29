@@ -11,7 +11,7 @@ if [ ! -d "$USER_DATA_DIR" ] ; then
 fi
 
 CMD=(
-    "/bin/chromium"
+    /usr/bin/chromium
     "--user-data-dir=$USER_DATA_DIR"
     "--password-store=basic"
     # ...

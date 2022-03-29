@@ -11,7 +11,7 @@ export GTK_DEBUG=1
 export GTK_THEME=claws-mail
 
 CMD=(
-    "/bin/claws-mail"
+    /usr/bin/claws-mail
     --alternate-config-dir "$CLAWS_MAIL_DIR"
     "$@"
 )

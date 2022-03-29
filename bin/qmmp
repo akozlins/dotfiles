@@ -5,7 +5,7 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 [ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 CMD=(
-    "/bin/qmmp"
+    /usr/bin/qmmp
     "$@"
 )
 

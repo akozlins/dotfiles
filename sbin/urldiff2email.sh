@@ -17,10 +17,10 @@ cleanup() {
 trap cleanup EXIT
 
 while true ; do
-    if [ -x /bin/lynx ] ; then
-        /bin/lynx --dump "$URL" > "$NEW"
-    elif [ -x /bin/html2text ] ; then
-        curl "$URL" | /bin/html2text --decode-errors=ignore > "$NEW"
+    if command -v lynx &> /dev/null ; then
+        lynx --dump "$URL" > "$NEW"
+    elif command -v html2text &> /dev/null ; then
+        curl "$URL" | html2text --decode-errors=ignore > "$NEW"
     fi
 
     if [ -s "$OLD" ] ; then

@@ -2,6 +2,6 @@
 set -euf
 
 exec \
-/bin/gtkwave \
+/usr/bin/gtkwave \
     --rcfile="$DOTFILES/.gtkwaverc" \
     "$@"

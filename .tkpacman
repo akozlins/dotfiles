@@ -1,1 +1,1 @@
-general {browser /bin/xdg-open terminal {xterm -title %t -e %c} runasroot {%terminal(echo "%p" ; su --command="%p" ; read -p "%close")} tmpdir /tmp allerrors 0 fontincrement 0} geometry {main {800 600} text {600 400} import {600 400}} fileselection {lastdir /}
+general {browser /usr/bin/xdg-open terminal {xterm -title %t -e %c} runasroot {%terminal(echo "%p" ; su --command="%p" ; read -p "%close")} tmpdir /tmp allerrors 0 fontincrement 0} geometry {main {800 600} text {600 400} import {600 400}} fileselection {lastdir /}

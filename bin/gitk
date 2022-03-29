@@ -2,5 +2,5 @@
 set -euf
 
 exec \
-/bin/gitk "$@" \
+/usr/bin/gitk "$@" \
 > /dev/null 2>&1 &

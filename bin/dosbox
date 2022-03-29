@@ -7,4 +7,4 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 CONF="$XDG_CONFIG_HOME/dosbox/dosbox.conf"
 
 exec \
-/bin/dosbox -conf "$CONF" "$@"
+/usr/bin/dosbox -conf "$CONF" "$@"

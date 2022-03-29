@@ -2,5 +2,5 @@
 set -euf
 
 exec \
-/bin/qtcreator "$@" \
+/usr/bin/qtcreator "$@" \
 > /dev/null 2>&1 &

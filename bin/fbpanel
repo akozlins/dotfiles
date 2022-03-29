@@ -4,7 +4,7 @@ set -euf
 fbpanel="$HOME/.local/bin/fbpanel"
 
 if [ ! -x "$fbpanel" ] ; then
-    fbpanel=/bin/fbpanel
+    fbpanel=/usr/bin/fbpanel
 fi
 
 if locale -a | grep -q en_GB ; then

@@ -17,4 +17,4 @@ export WINEDEBUG=-all
 export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 
 exec \
-"${WINE:-/bin/wine}" "$@"
+"${WINE:-wine}" "$@"

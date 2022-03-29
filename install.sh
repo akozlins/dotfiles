@@ -113,4 +113,4 @@ done
 "$DOTFILES/.config/applications/init.sh"
 
 # ZSH
-[ -x /bin/make ] && /bin/make -C "$DOTFILES/opt" oh-my-zsh
+make -C "$DOTFILES/opt" oh-my-zsh

@@ -5,5 +5,5 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 export HOME="$DOTFILES"
 
 exec \
-/bin/thunderbird "$@" \
+/usr/bin/thunderbird "$@" \
 > /dev/null 2>&1 &

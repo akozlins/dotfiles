@@ -2,14 +2,8 @@
 set -euf
 
 CMD=(
-    "/bin/evince"
+    /usr/bin/evince
     "$@"
-)
-
-CMD1=(
-    "/bin/firejail"
-    --
-    "${CMD[@]}"
 )
 
 if [ $# -eq 1 ] && [ -f "$1" ] ; then
