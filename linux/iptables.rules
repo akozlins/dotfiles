@@ -3,6 +3,15 @@
 :FORWARD DROP [0:0]
 :OUTPUT ACCEPT [0:0]
 
+# port 1021/1023 -> block (5 min)
+-A INPUT -m recent --name list22 --rcheck --seconds 300 -j DROP
+-A INPUT -p tcp -m tcp --dport 22 -m limit --limit 1/s -j LOG --log-prefix "block: "
+-A INPUT -p tcp -m tcp --dport 22 -m recent --name list22 --set -j DROP
+-A INPUT -p tcp -m tcp --dport 1021 -m limit --limit 1/s -j LOG --log-prefix "block: "
+-A INPUT -p tcp -m tcp --dport 1021 -m recent --name list22 --set -j DROP
+-A INPUT -p tcp -m tcp --dport 1023 -m limit --limit 1/s -j LOG --log-prefix "block: "
+-A INPUT -p tcp -m tcp --dport 1023 -m recent --name list22 --set -j DROP
+
 # lxd
 -A FORWARD -i lxdbr0 -j ACCEPT
 -A FORWARD -o lxdbr0 -j ACCEPT
