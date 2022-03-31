@@ -26,7 +26,7 @@ links=(
     .arduino15
     .epspdf
     .java
-    .mozilla/firefox
+    .mozilla/firefox/default
     .pki
     .renpy
     .steam
