@@ -28,7 +28,7 @@
     "files.enableTrash": false,
     "files.eol": "\n",
     "files.exclude": {
-        "**/.cache": true
+        "**/.cache": true,
     },
     "telemetry.telemetryLevel": "off",
     "workbench.colorCustomizations": {

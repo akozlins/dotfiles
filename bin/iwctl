@@ -1,8 +1,6 @@
 #!/bin/bash
 set -euf
 
-PATH="$(command -p getconf PATH)"
-
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 [ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 

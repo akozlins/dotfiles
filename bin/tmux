@@ -1,6 +1,8 @@
 #!/bin/sh
 set -euf
 
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+
 exec \
 /usr/bin/tmux \
     -f "$XDG_CONFIG_HOME/tmux/tmux.conf" \
