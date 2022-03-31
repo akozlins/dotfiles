@@ -40,8 +40,9 @@ backup () {
 }
 
 update () {
+    cat - > "$RESOLV.new"
     chattr -i "$RESOLV"
-    cat - > "$RESOLV"
+    mv -- "$RESOLV.new" "$RESOLV"
     chattr +i "$RESOLV"
 }
 
@@ -110,6 +111,7 @@ while true ; do
     echo "G - Google (8.8.8.8, 8.8.4.4)"
     echo "O - OpenDNS (208.67.222.222, 208.67.220.220)"
     echo "C - Cloudflare (1.1.1.1, 1.0.0.1)"
+    echo "S - systemd-resolved"
     echo "q - quit"
     printf '\033[0m'
 
@@ -165,6 +167,11 @@ EOF
 nameserver 1.1.1.1
 nameserver 1.0.0.1
 EOF
+        continue
+        ;;
+    [S]* )
+#        chattr -i "$RESOLV"
+        ln -rsf /run/systemd/resolve/stub-resolv.conf "$RESOLV"
         continue
         ;;
     [v]* )
