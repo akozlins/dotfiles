@@ -19,7 +19,7 @@ CMD1=(
     "--netfilter=$FILTER"
     "--join-or-start=qbittorrent"
     --
-    "${CMD[@]"
+    "${CMD[@]}"
 )
 
 [ $# -gt 0 ] && exec "${CMD[@]}"

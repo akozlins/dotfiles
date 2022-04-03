@@ -21,6 +21,9 @@ while true ; do
         lynx --dump "$URL" > "$NEW"
     elif command -v html2text &> /dev/null ; then
         curl "$URL" | html2text --decode-errors=ignore > "$NEW"
+    else
+        >&2 echo "E [$0] TODO"
+        exit 1
     fi
 
     if [ -s "$OLD" ] ; then

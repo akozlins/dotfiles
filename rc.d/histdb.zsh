@@ -17,10 +17,6 @@ MY_ZSH_AUTOSUGGEST="$ZSH/custom/plugins/zsh-autosuggestions"
 if [ -e "$MY_ZSH_AUTOSUGGEST" ] ; then
     source "$MY_ZSH_AUTOSUGGEST/zsh-autosuggestions.zsh"
 
-    sql_escape () {
-        print -r -- ${${@//\'/\'\'}//$'\x00'}
-    }
-
     _zsh_autosuggest_strategy_histdb_top_here() {
         local query="select commands.argv from
 history left join commands on history.command_id = commands.rowid
