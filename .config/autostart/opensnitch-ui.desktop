@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=opensnitch-ui
+Exec=opensnitch-ui
+TryExec=opensnitch-ui
+Terminal=false

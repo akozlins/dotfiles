@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=devilspie
+Exec=devilspie2
+TryExec=devilspie2
+Terminal=false
