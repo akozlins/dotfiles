@@ -3,6 +3,8 @@ set -euf
 
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 export HOME="$DOTFILES"
+
+# Disable WebTalk
 #export HTTPS_PROXY=localhost
 
 VIVADO_CACHE="$XDG_CACHE_HOME/vivado"

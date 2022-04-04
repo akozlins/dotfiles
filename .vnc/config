@@ -1,5 +1,6 @@
 #
 
+session=openbox
 #securitytypes=none
 geometry=1280x1024
 # explicit ipv4 localhost address

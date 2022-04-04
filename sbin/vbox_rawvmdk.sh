@@ -3,6 +3,7 @@ set -euf
 
 exec \
 vboxmanage \
-internalcommands createrawvmdk \
--filename "$1" \
--rawdisk "$2"
+    internalcommands createrawvmdk \
+    -filename "$1" \
+    -rawdisk "$2" \
+    "$@"
