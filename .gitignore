@@ -17,6 +17,7 @@
 /.config/cef_user_data/
 /.steampath
 /.steampid
+/cookie
 
 .cache/
 

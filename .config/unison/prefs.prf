@@ -13,7 +13,6 @@ ignore = Name *~
 
 # dotfiles
 #path = .dotfiles
-path = .dotfiles/.config/unison
 
 # ssh
 ignore = Name .ssh/authorized_keys
