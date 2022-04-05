@@ -1,9 +1,0 @@
-#
-
-noblacklist ${HOME}/.cache/qBittorrent
-noblacklist ${HOME}/.config/qBittorrent
-noblacklist ${HOME}/.local/share/qBittorrent
-
-whitelist ${HOME}/.cache/qBittorrent
-whitelist ${HOME}/.config/qBittorrent
-whitelist ${HOME}/.local/share/qBittorrent
