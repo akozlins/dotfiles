@@ -106,3 +106,6 @@ user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 user_pref("browser.uidensity", 1);
 
 user_pref("signon.includeOtherSubdomainsInLookup", false);
+
+// always ask where to save files
+user_pref("browser.download.useDownloadDir", false);
