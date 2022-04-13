@@ -1,0 +1,14 @@
+
+font:
+  normal:
+    family: Iosevka Fixed Slab
+
+    style: Bold
+
+  size: 10.0
+
+  offset:
+    y: -6
+
+  glyph_offset:
+    y: -2

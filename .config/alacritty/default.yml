@@ -1,0 +1,13 @@
+#
+
+window:
+  dimensions:
+    columns: 110
+    lines: 35
+
+  padding:
+    x: 2
+    y: 2
+
+scrolling:
+  multiplier: 5

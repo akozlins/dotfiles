@@ -1,0 +1,5 @@
+#
+
+import:
+  - ~/.config/alacritty/default.yml
+  - ~/.config/alacritty/iosevka.yml
