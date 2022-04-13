@@ -2,4 +2,7 @@
 
 import:
   - ~/.config/alacritty/default.yml
-  - ~/.config/alacritty/iosevka.yml
+  - ~/.config/alacritty/fonts/iosevka.yml
+  - ~/.config/alacritty/themes/argonaut.yml
+  #- ~/.config/alacritty/themes/dracula.yml
+  - ~/.config/alacritty/inari.yml

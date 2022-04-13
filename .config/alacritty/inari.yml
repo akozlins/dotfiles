@@ -1,0 +1,8 @@
+
+window:
+  dimensions:
+    columns: 90
+    lines: 30
+
+font:
+  size: 7.0

@@ -9,5 +9,7 @@ window:
     x: 2
     y: 2
 
+  dynamic_padding: true
+
 scrolling:
   multiplier: 5
