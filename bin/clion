@@ -2,6 +2,7 @@
 set -euf
 
 export CLION_PROPERTIES="$XDG_CONFIG_HOME/JetBrains/CLion/properties"
+export CLION_VM_OPTIONS="$XDG_CONFIG_HOME/JetBrains/CLion/vmoptions"
 
 CMD=(
     /usr/bin/clion
