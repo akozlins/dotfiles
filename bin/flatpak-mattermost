@@ -2,4 +2,6 @@
 set -euf
 
 exec \
-flatpak-bg run com.mattermost.Desktop
+flatpak-bg run \
+    com.mattermost.Desktop \
+    "$@"

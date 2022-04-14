@@ -2,4 +2,6 @@
 set -euf
 
 exec \
-flatpak-bg run com.microsoft.Teams
+flatpak-bg run \
+    com.microsoft.Teams \
+    "$@"

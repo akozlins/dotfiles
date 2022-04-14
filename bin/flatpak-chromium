@@ -3,5 +3,5 @@ set -euf
 
 exec \
 flatpak-bg run \
-    com.skype.Client \
+    org.chromium.Chromium \
     "$@"
