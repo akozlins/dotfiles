@@ -3,3 +3,6 @@ Rint.Logon: $(HOME)/.config/root/rootlogon.c
 Rint.WelcomeLite: yes
 
 Rint.History: $(HOME)/.cache/.root_hist
+
+# use standard TBrowser instead of web ROOT file browser (RBrowser)
+Browser.Name: TRootBrowser

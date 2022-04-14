@@ -18,7 +18,7 @@ trap cleanup EXIT
 
 while true ; do
     if command -v lynx &> /dev/null ; then
-        lynx --dump "$URL" > "$NEW"
+        lynx --dump --nolist "$URL" > "$NEW"
     elif command -v html2text &> /dev/null ; then
         curl "$URL" | html2text --decode-errors=ignore > "$NEW"
     else

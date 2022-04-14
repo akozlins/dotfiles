@@ -6,7 +6,7 @@
             "inertia": 20.0,
             "input-gain": 0.0,
             "mode": "36dB/oct Highpass",
-            "output-gain": 0.0,
+            "output-gain": 10.0,
             "resonance": -3.0
         },
         "limiter": {
@@ -17,8 +17,8 @@
             "attack": 5.0,
             "dithering": "None",
             "external-sidechain": false,
-            "gain-boost": true,
-            "input-gain": 10.0,
+            "gain-boost": false,
+            "input-gain": 0.0,
             "lookahead": 5.0,
             "mode": "Herm Thin",
             "output-gain": 0.0,

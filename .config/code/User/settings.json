@@ -30,6 +30,7 @@
     "files.exclude": {
         "**/.cache": true,
     },
+    "files.trimTrailingWhitespace": true,
     "telemetry.telemetryLevel": "off",
     "workbench.colorCustomizations": {
         "tab.activeBorder": "#00CC00",
