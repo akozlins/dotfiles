@@ -30,6 +30,7 @@ links=(
     .pki
     .renpy
     .steam
+    .unison
     .var/app
     .vscode-oss
     .Xilinx

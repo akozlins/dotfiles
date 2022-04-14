@@ -1,7 +1,10 @@
 #!/bin/sh
 set -euf
 
-export UNISON="$HOME/.config/unison"
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+export UNISON="$XDG_DATA_HOME/unison"
 
 exec \
-/usr/bin/unison -logfile "$HOME/.cache/unison.log" "$@"
+/usr/bin/unison \
+    -logfile "$UNISON/unison.log" \
+    "$@"

@@ -1,0 +1,7 @@
+#
+
+addprefsto=prefs
+include prefs
+
+path = .dotfiles/.config/unison
+path = downloads
