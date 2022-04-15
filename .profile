@@ -113,6 +113,7 @@ export SQLITE_HISTORY="$XDG_CACHE_HOME/.sqlite_history"
 export STACK_ROOT="$XDG_CACHE_HOME/stack"
 #export UNISON="$XDG_CONFIG_HOME/unison"
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export WGETRC="$DOTFILES/.wgetrc"
 export XINITRC="$DOTFILES/.xinitrc"
 
