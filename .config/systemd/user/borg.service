@@ -2,7 +2,7 @@
 Description=borg
 
 [Service]
-Type=simple
+Type=oneshot
 ExecStart=/bin/sh -c %h/.config/systemd/user/borg.sh
 WorkingDirectory=%h/.config/borg
 

@@ -2,7 +2,7 @@
 Description=firefox-backup
 
 [Service]
-Type=simple
+Type=oneshot
 ExecStart=/bin/sh -c %h/.config/systemd/user/firefox-backup.sh
 WorkingDirectory=%h
 

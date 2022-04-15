@@ -2,7 +2,7 @@
 Description=BAT
 
 [Service]
-Type=simple
+Type=oneshot
 ExecStart=%h/.config/systemd/user/BAT.sh
 WorkingDirectory=%h
 
