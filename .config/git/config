@@ -7,6 +7,8 @@
 	autocrlf = input
 	editor = nano
 	whitespace = trailing-space,space-before-tab
+#	pager = delta
+#	pager = diffr | less -R
 
 [diff]
 	algorithm = histogram
@@ -20,6 +22,10 @@
 
 [init]
 	defaultBranch = master
+
+[interactive]
+#	diffFilter = delta --color-only
+#	diffFilter = diffr
 
 [merge]
 	conflictStyle = diff3

@@ -1,9 +1,15 @@
 #
 
-session=openbox
-#securitytypes=none
-geometry=1280x1024
-# explicit ipv4 localhost address
-interface=127.0.0.1
+#alwaysshared
+
+#geometry=1280x1024
+
 # disable http server (port 5800)
 #httpd=""
+
+# explicit ipv4 localhost address
+interface=127.0.0.1
+
+#securitytypes=none
+
+session=openbox

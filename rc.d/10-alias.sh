@@ -19,4 +19,4 @@ alias rg="rg --hidden"
 
 alias grep-nonascii="grep --line-number --color --perl-regexp --regexp='[^\\x00-\\x7F]'"
 alias rg-nonascii="rg --colors 'match:bg:red' --regexp '[^\\x00-\\x7F]'"
-alias rg-tws="rg --colors 'match:bg:red' '\\s+$'"
+alias rg-ws="rg --colors 'match:bg:red' '\\s+$'"

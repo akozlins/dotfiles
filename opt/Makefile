@@ -59,7 +59,7 @@ fbpanel :
 .PHONY : direnv
 direnv :
 	$(call clone_pull,https://github.com/direnv/direnv,$@)
-	$(MAKE) -C $@ DESTDIR=$(PREFIX) install
+	$(MAKE) $(MAKEFLAGS) -C $@ DESTDIR=$(PREFIX) install
 
 .PHONY : xss-lock
 xss-lock :
