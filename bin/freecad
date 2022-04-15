@@ -1,0 +1,11 @@
+#!/bin/bash
+set -euf
+
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
+
+export FREECAD_USER_HOME="$DOTFILES"
+#mkdir -p -- "$FREECAD_USER_HOME/.FreeCAD"
+
+exec \
+/usr/bin/freecad "$@"

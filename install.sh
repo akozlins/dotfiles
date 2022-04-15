@@ -25,6 +25,7 @@ links=(
     .android
     .arduino15
     .epspdf
+    .FreeCAD
     .java
     .mozilla/firefox/default
     .pki
