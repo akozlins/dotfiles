@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euf
+
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+
+CMD=(
+    /usr/bin/manaplus
+    --config-dir "$XDG_CONFIG_HOME/mana"
+    "$@"
+)
+
+[ $# -gt 0 ] && exec "${CMD[@]}"
+exec "${CMD[@]}" &> /dev/null &
