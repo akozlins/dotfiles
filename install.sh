@@ -6,6 +6,7 @@ echo "DOTFILES = '$DOTFILES'"
 unset CDPATH
 cd "$DOTFILES" || exit 1
 
+# make targets for links (mkdir $(readlink $link))
 links=(
     # base links
     .cache .local downloads
@@ -37,7 +38,7 @@ links=(
     .Xilinx
 )
 
-# make dirs for links
+# do mkdir for each link
 for link in "${links[@]}" ; do
     if [ ! -L "$link" ] ; then
         >&2 echo "E [$0] link '$link' does not exist"
@@ -47,6 +48,7 @@ for link in "${links[@]}" ; do
     mkdir -pv -- "$dir"
 done
 
+# make links for targets (ln $DOTFILES/target $HOME/target)
 targets=(
     bin
 

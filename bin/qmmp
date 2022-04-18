@@ -10,4 +10,4 @@ CMD=(
 )
 
 [ $# -gt 0 ] && exec "${CMD[@]}"
-exec "${CMD[@]}" &> /dev/null &
+"${CMD[@]}" &> /dev/null &

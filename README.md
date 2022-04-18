@@ -26,3 +26,6 @@ TODO (to remove):
 git clone https://github.com/akozlins/dotfiles ~/.dotfiles
 ~/.dotfiles/install.sh
 ```
+
+## TODO
+

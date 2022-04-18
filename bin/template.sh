@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euf
-#set -o errexit -o nounset
+#set -o errexit -o nounset -o noglob
 
 IFS="$(printf '\n\t')"
 unset CDPATH
@@ -12,5 +12,10 @@ export PATH
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 [ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
-exec \
-true "$@"
+CMD=(
+    sleep 1
+    "$@"
+)
+
+[ $# -ge 0 ] && exec "${CMD[@]}"
+"${CMD[@]}" &> /dev/null &

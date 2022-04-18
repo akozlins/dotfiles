@@ -1,5 +1,6 @@
 #!/bin/sh
 
+alias make='LC_ALL=C make'
 alias man="LC_ALL=C man"
 
 alias df='df -h'
@@ -11,7 +12,6 @@ alias rm='rm -v'
 
 alias ls='ls --color=auto --group-directories-first -h --file-type --time-style=long-iso'
 alias la='ls -lAF'
-alias make='LC_ALL=C make'
 
 alias ag="ag --hidden"
 alias fd="fd --hidden"
