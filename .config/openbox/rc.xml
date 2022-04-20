@@ -207,7 +207,7 @@
   <!-- Keybindings for running applications -->
   <keybind key="W-A-b">
     <action name="Execute">
-      <command>uxterm</command>
+      <command>sh -c '$DOTFILES/bin/terminal'</command>
     </action>
   </keybind>
   <keybind key="W-A-f">
