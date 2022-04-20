@@ -3,4 +3,6 @@
 set window-width 1600
 set window-height 1200
 
-set adjust-open "best-fit"
+set adjust-open "width"
+
+set scroll-step 150

@@ -4,7 +4,4 @@
     <option name="confirmOpenNewProject2" value="1" />
     <option name="showTipsOnStartup" value="false" />
   </component>
-  <component name="Registry">
-    <entry key="clang.parameter.info" value="true" />
-  </component>
 </application>
