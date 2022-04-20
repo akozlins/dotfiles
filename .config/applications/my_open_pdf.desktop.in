@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=my_open_pdf
 Icon=my_open_pdf
-Exec=xreader %f
+Exec=my_open_pdf %f
 Terminal=false
 Type=Application
