@@ -4,7 +4,7 @@ Description=firefox-backup
 [Service]
 Type=oneshot
 ExecStart=/bin/sh -c %h/.config/systemd/user/firefox-backup.sh
-WorkingDirectory=%h
+WorkingDirectory=%h/.config/systemd/user/firefox-backup.workdir
 
 [Install]
 WantedBy=default.target

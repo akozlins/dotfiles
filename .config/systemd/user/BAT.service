@@ -4,7 +4,7 @@ Description=BAT
 [Service]
 Type=oneshot
 ExecStart=%h/.config/systemd/user/BAT.sh
-WorkingDirectory=%h
+WorkingDirectory=%h/.config/systemd/user/BAT.workdir
 
 [Install]
 WantedBy=default.target
