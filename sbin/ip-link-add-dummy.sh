@@ -34,5 +34,6 @@ modprobe dummy
 ip link add "$MYNAME" type dummy
 
 if [ -n "${MYMAC:+x}" ] ; then
-    ifconfig "$MYNAME" hw ether "$MYMAC"
+#    ifconfig "$MYNAME" hw ether "$MYMAC"
+    ip link set dev "$MYNAME" address "$MYMAC"
 fi
