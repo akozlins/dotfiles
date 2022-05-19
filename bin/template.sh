@@ -12,6 +12,11 @@ export PATH
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 [ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
+#MALLOC="/usr/lib/libhardened_malloc.so"
+#if [ -e "$MALLOC" ] ; then
+#    export LD_PRELOAD="${LD_PRELOAD:+$LD_PRELOAD }$MALLOC"
+#fi
+
 CMD=(
     sleep 1
     "$@"
