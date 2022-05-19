@@ -1,5 +1,7 @@
 ;
 
+(setq gc-cons-threshold (* 32 1024 1024))
+
 (setq debug-on-error t)
 
 (setq user-init-file (or load-file-name (buffer-file-name)))
@@ -71,3 +73,5 @@
 (setq ivy-count-format "(%d/%d) ")
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+
+(setq gc-cons-threshold (* 1 1024 1024))
