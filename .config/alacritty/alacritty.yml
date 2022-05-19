@@ -5,4 +5,4 @@ import:
   - ~/.config/alacritty/fonts/iosevka.yml
   - ~/.config/alacritty/themes/argonaut.yml
   #- ~/.config/alacritty/themes/dracula.yml
-  - ~/.config/alacritty/hosts/inari.yml
+  - ~/.config/alacritty/hosts/default.yml

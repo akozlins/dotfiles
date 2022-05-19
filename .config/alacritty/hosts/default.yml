@@ -1,8 +1,8 @@
 
 window:
   dimensions:
-    columns: 90
+    columns: 100
     lines: 30
 
 font:
-  size: 7.0
+  size: 10.0
