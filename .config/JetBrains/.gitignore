@@ -12,6 +12,7 @@
 
 /*/bundled_plugins.txt
 /*/disabled_*.txt
+/*/early-access-registry.txt
 /*/*.db
 /*/*.key
 /*/*.license
@@ -22,8 +23,9 @@
 
 /*/options/actionSummary.xml
 /*/options/cachedDictionary.xml
-/*/options/colors.scheme.xml
 /*/options/Clang-Tidy.xml
+/*/options/colors.scheme.xml
+/*/options/console-font.xml
 /*/options/databaseDrivers.xml
 /*/options/debugger.xml
 /*/options/dimensions.xml
