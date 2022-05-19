@@ -16,8 +16,8 @@ CMD=(
     firejail
     "--private=$private"
     --
-    "${CMD[@]"
-}
+    "${CMD[@]}"
+)
 
 [ $# -gt 0 ] && exec "${CMD[@]}"
 exec "${CMD[@]}" &> /dev/null &
