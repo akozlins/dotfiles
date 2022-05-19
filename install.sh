@@ -13,6 +13,7 @@ links=(
     # .config
     .config/Element
     .config/far2l/history
+    .config/fontforge
     .config/kicad
     .config/LatticeSemi
     .config/libreoffice
