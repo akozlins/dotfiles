@@ -109,3 +109,6 @@ user_pref("signon.includeOtherSubdomainsInLookup", false);
 
 // always ask where to save files
 user_pref("browser.download.useDownloadDir", false);
+
+// always show scrollbar
+user_pref("widget.gtk.overlay-scrollbars.enabled", false);
