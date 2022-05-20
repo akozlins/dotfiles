@@ -18,6 +18,7 @@ links=(
     .config/kicad
     .config/LatticeSemi
     .config/libreoffice
+    .config/protonfixes
     .config/syncthing
     .config/tmux/plugins
     .config/tmux/resurrect
