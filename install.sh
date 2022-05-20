@@ -11,6 +11,7 @@ links=(
     # base links
     .cache .local downloads
     # .config
+    .config/cef_user_data
     .config/Element
     .config/far2l/history
     .config/fontforge
