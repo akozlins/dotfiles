@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euf
+
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+
+CMD=(
+    /usr/bin/electrum
+    --dir "$XDG_DATA_HOME/electrum"
+    "$@"
+)
+
+[ $# -ge 0 ] && exec "${CMD[@]}"
+"${CMD[@]}" &> /dev/null &
