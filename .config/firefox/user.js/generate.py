@@ -9,9 +9,9 @@ FIREFOX_HOME = os.path.normpath(os.path.dirname(os.path.realpath(__file__)) + "/
 
 parser = argparse.ArgumentParser()
 parser.add_argument("files", nargs="*", default=[
-    FIREFOX_HOME + "/ghacks-user.js/user.js",
-    FIREFOX_HOME + "/user.js/ghacks.js",
-    FIREFOX_HOME + "/user.js/my.js",
+    f"{FIREFOX_HOME}/ghacks-user.js/user.js",
+    f"{FIREFOX_HOME}/user.js/ghacks.js",
+    f"{FIREFOX_HOME}/user.js/my.js",
 ])
 args = parser.parse_args()
 
