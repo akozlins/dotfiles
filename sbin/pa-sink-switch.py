@@ -44,7 +44,8 @@ class LRU :
         if sink not in self.sinks : return
         print(f"subprocess: pactl set-default-sink {sink}")
         subprocess.check_output(f"pactl set-default-sink {sink}", shell=True)
-#        time.sleep(0.1)
+
+    def move_sink_input(self, sink) :
         print(f"subprocess: pactl list sink-inputs short")
         for line in subprocess.check_output(f"pactl list sink-inputs short", shell=True).decode("ascii").splitlines() :
             input = line.split("\t")
@@ -56,8 +57,13 @@ lru = LRU(f"{os.environ['HOME']}/.cache/pa-sink-switch-lru.yml")
 sink = lru.next()
 
 subprocess.check_output(f"dunstify 'sink = {sink}'", shell=True)
+time.sleep(1.0)
+lru.move_sink_input("easyeffects_sink")
 
 lru.set_default_sink(sink)
+
 lru.set_default_sink("easyeffects_sink")
+time.sleep(1.0)
+lru.move_sink_input("easyeffects_sink")
 
 lru.close()
