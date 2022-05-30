@@ -1,0 +1,27 @@
+#!/bin/bash
+set -euf
+
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+export HOME="$DOTFILES"
+
+# Disable WebTalk
+#export HTTPS_PROXY=localhost
+
+VIVADO_CACHE="$XDG_CACHE_HOME/vivado"
+mkdir -pv -- "$VIVADO_CACHE"
+
+if [ $# -eq 1 ] ; then
+    unset CDPATH
+    cd "$VIVADO_CACHE" || exit 1
+fi
+
+CMD=(
+    "$VIVADO_ROOTDIR/bin/vivado"
+    -jvm Xmx2048m
+    -nojournal -nolog
+    -tempDir "$VIVADO_CACHE"
+    "$@"
+)
+
+[ $# -gt 0 ] && exec "${CMD[@]}"
+exec "${CMD[@]}" &> /dev/null &
