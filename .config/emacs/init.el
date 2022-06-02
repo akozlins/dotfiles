@@ -34,6 +34,8 @@
     'undo-tree
     'helm
     'counsel
+    ; <https://github.com/jschaf/esup> - "Emacs Start Up Profiler" (usage: `M-x esup`)
+    'esup
 )
 
 (require 'use-package)

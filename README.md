@@ -28,4 +28,3 @@ git clone https://github.com/akozlins/dotfiles ~/.dotfiles
 ```
 
 ## TODO
-

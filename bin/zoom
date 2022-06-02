@@ -11,10 +11,18 @@ CMD=(
     "$@"
 )
 
+if false ; then
+    # fix xephyr (unrecognised device identifier: /dev/input/*)
+    unset XDG_SEAT
+    # fix xhost access
+    xhost "SI:localuser:$USER"
+fi
+
 CMD=(
     firejail
     "--private=$private"
-#    --x11=xephyr --xephyr-screen=1600x1000
+#    --x11=xephyr --xephyr-screen=2000x1200
+#    --x11=xorg
     --
     "${CMD[@]}"
 )
