@@ -57,13 +57,13 @@ lru = LRU(f"{os.environ['HOME']}/.cache/pa-sink-switch-lru.yml")
 sink = lru.next()
 
 subprocess.check_output(f"dunstify 'sink = {sink}'", shell=True)
-time.sleep(1.0)
+time.sleep(0.5)
 lru.move_sink_input("easyeffects_sink")
 
 lru.set_default_sink(sink)
 
 lru.set_default_sink("easyeffects_sink")
-time.sleep(1.0)
-lru.move_sink_input("easyeffects_sink")
+#time.sleep(1.0)
+#lru.move_sink_input("easyeffects_sink")
 
 lru.close()
