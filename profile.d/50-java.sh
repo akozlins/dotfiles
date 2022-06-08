@@ -23,3 +23,5 @@ export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Duser.home=$DOTFILES"
 #export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Djava.util.prefs.userRoot=$XDG_CACHE_HOME/java/.userPrefs"
 # enable OpenGL-based pipeline
 #export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Dsun.java2d.opengl=true"
+# disable IPv6
+export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Djava.net.preferIPv4Stack=true"
