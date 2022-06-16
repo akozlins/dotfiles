@@ -37,6 +37,7 @@ root :
 	cmake \
 	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local/root.cern.ch" \
 	    -DCMAKE_CXX_STANDARD=17 \
+	    -Dxrootd=OFF \
 	    -S $@ -B $@/cmake-build
 	$(MAKE) $(MAKEFLAGS) -C $@/cmake-build
 	#$(MAKE) -C $@/cmake-build install
