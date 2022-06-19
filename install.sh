@@ -120,4 +120,4 @@ done
 "$DOTFILES/.config/applications/init.sh"
 
 # ZSH
-make -C "$DOTFILES/opt" oh-my-zsh
+[ -x /usr/bin/zsh ] && make -C "$DOTFILES/opt" oh-my-zsh
