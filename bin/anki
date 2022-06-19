@@ -1,0 +1,15 @@
+#!/bin/bash
+set -euf
+
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+
+export DISABLE_QT5_COMPAT=1
+
+CMD=(
+    /usr/bin/anki
+    --base "$XDG_CONFIG_HOME/anki"
+    "$@"
+)
+
+[ $# -ge 0 ] && exec "${CMD[@]}"
+"${CMD[@]}" &> /dev/null &
