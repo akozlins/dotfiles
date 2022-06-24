@@ -112,3 +112,5 @@ user_pref("browser.download.useDownloadDir", false);
 
 // always show scrollbar
 user_pref("widget.gtk.overlay-scrollbars.enabled", false);
+
+user_pref("browser.tabs.allowTabDetach", false);
