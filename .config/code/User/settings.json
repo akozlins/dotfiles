@@ -1,5 +1,11 @@
 {
+    "clangd.arguments": [
+        "--compile-commands-dir=${workspaceFolder}/cmake-build"
+    ],
     "cmake.buildDirectory": "${workspaceFolder}/cmake-build",
+    "cmake.configureArgs": [
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=1"
+    ],
     "cmake.configureOnOpen": true,
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingDelete": "never",
@@ -38,6 +44,7 @@
         "tab.activeBorder": "#00CC00",
         "tab.unfocusedActiveBorder": "#000000"
     },
+    "window.zoomLevel": 1,
     "workbench.editor.enablePreview": false,
     "workbench.editor.tabSizing": "shrink",
     "workbench.enableExperiments": false,
