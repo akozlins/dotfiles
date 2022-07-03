@@ -1,0 +1,9 @@
+#
+
+*.d
+*.db
+*.gpg
+*.kbx
+*.key
+
+random_seed
