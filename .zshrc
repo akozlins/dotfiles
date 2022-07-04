@@ -27,10 +27,10 @@ DISABLE_AUTO_UPDATE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(
+    command-not-found
     docker
     docker-compose
     lxd
-    command-not-found
 )
 
 fpath+=("$DOTFILES/.config/zsh-completions")

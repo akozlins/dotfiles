@@ -18,7 +18,7 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 #fi
 
 CMD=(
-    sleep 1
+    /usr/bin/sleep 1
     "$@"
 )
 
