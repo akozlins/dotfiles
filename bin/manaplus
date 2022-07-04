@@ -2,10 +2,11 @@
 set -euf
 
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+MANAPLUS_CONFIG_DIR="${MANA_CONFIG_DIR:-$XDG_CONFIG_HOME/manaplus}"
 
 CMD=(
     /usr/bin/manaplus
-    --config-dir "$XDG_CONFIG_HOME/mana"
+    --config-dir "$MANAPLUS_CONFIG_DIR"
     "$@"
 )
 
