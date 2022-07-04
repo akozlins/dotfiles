@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euf
+
+export G_MESSAGES_DEBUG=easyeffects
+
+exec \
+/usr/bin/easyeffects \
+    "$@"
