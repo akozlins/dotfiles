@@ -1,8 +1,12 @@
 #!/bin/bash
 set -euf
 
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+QBITTORRENT_PROFILE="${QBITTORRENT_PROFILE:-$XDG_CONFIG_HOME/qBittorrent}"
+
 CMD=(
     /usr/bin/qbittorrent
+    "--profile=$QBITTORRENT_PROFILE"
     "$@"
 )
 
