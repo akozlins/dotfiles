@@ -1,0 +1,39 @@
+#
+
+# <https://github.com/wtfutil/wtf>
+
+wtf:
+#  grid:
+#    columns: [ 30, 30, 30 ]
+#    rows: [ 10, 10, 10 ]
+
+  mods:
+    uptime:
+      type: cmdrunner
+      cmd: "uptime"
+      args: [ "--" ]
+      enabled: true
+      position:
+        top: 0
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 30
+    ip:
+      type: ipinfo
+      enabled: true
+      position:
+        top: 0
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 120
+    resources:
+      type: resourceusage
+      enabled: true
+      position:
+        top: 2
+        left: 2
+        height: 1
+        width: 1
+      refreshInterval: 1
