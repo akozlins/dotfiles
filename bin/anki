@@ -3,11 +3,13 @@ set -euf
 
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
+ANKI_BASE="${ANKI_BASE:-$XDG_CONFIG_HOME/anki}"
+
 export DISABLE_QT5_COMPAT=1
 
 CMD=(
     /usr/bin/anki
-    --base "$XDG_CONFIG_HOME/anki"
+    --base "$ANKI_BASE"
     "$@"
 )
 
