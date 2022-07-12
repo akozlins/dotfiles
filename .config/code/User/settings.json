@@ -1,4 +1,5 @@
 {
+    "breadcrumbs.enabled": false,
     "clangd.arguments": [
         "--compile-commands-dir=${workspaceFolder}/cmake-build"
     ],
@@ -7,6 +8,7 @@
         "-DCMAKE_EXPORT_COMPILE_COMMANDS=1"
     ],
     "cmake.configureOnOpen": true,
+    "editor.accessibilitySupport": "off",
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingDelete": "never",
     "editor.autoClosingOvertype": "never",
@@ -22,6 +24,7 @@
     "editor.fontLigatures": false,
     "editor.fontSize": 16,
     "editor.hover.delay": 500,
+    "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.minimap.showSlider": "always",
     "editor.mouseWheelScrollSensitivity": 2,
     "editor.padding.bottom": 2,
@@ -39,11 +42,14 @@
         "**/.cache": true,
     },
     "files.trimTrailingWhitespace": true,
+    "search.useGlobalIgnoreFiles": true,
+    "search.useParentIgnoreFiles": true,
     "telemetry.telemetryLevel": "off",
     "workbench.colorCustomizations": {
         "tab.activeBorder": "#00CC00",
         "tab.unfocusedActiveBorder": "#000000"
     },
+    "window.title": "${rootPath}${separator}${activeEditorMedium}${dirty}",
     "window.zoomLevel": 1,
     "workbench.editor.enablePreview": false,
     "workbench.editor.tabSizing": "shrink",
