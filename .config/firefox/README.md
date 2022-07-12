@@ -10,6 +10,7 @@
 - Enhancer for YouTube
 - Containerise
 - Cookie Quick Manager
+- LocalCDN
 
 ## Links
 

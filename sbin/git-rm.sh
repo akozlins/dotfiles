@@ -3,11 +3,11 @@ set -euf
 
 # delete file from git repository
 
-file=$1
+path=$1
 shift
 
 exec \
 git filter-branch \
     --index-filter \
-    "git rm -rf --cached --ignore-unmatch -- $file" \
+    "git rm -rf --cached --ignore-unmatch -- $path" \
     "$@"

@@ -1,8 +1,9 @@
 #!/usr/bin/perl
+use strict;
 use warnings;
 
 if ( $#ARGV + 1 != 2 ) {
-    print "Usage $0 <password> <salt>\n";
+    print "Usage $0 <password> [salt]\n";
     exit;
 }
 
