@@ -14,7 +14,7 @@ case "$mime" in
         exec xdg-open "$1"
         ;;
     audio/*|video/*)
-        exec vlc "$1"
+        exec mpv "$1"
         ;;
     application/pdf)
 #        exec evince "$1"

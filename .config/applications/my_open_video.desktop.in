@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=my_open_video
+Icon=my_open_video
+Exec=mpv %f
+Terminal=false
+Type=Application

@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euf
+
+CMD=(
+    /usr/bin/mpv
+#    "--vo=gpu"
+#    "--hwdec=vaapi"
+#    "--video-sync=display-resample"
+    "$@"
+)
+
+[ $# -ge 0 ] && exec "${CMD[@]}"
+"${CMD[@]}" &> /dev/null &

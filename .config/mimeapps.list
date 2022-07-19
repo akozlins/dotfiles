@@ -9,12 +9,12 @@ image/jpeg=my_open_image.desktop;
 image/png=my_open_image.desktop;
 image/tiff=my_open_image.desktop;
 
-audio/mpeg=vlc.desktop;
-audio/x-wav=vlc.desktop;
-video/mp4=vlc.desktop;
-video/quicktime=vlc.desktop;
-video/x-matroska=vlc.desktop;
-video/x-m4v=vlc.desktop;
+audio/mpeg=my_open_video.desktop;
+audio/x-wav=my_open_video.desktop;
+video/mp4=my_open_video.desktop;
+video/quicktime=my_open_video.desktop;
+video/x-matroska=my_open_video.desktop;
+video/x-m4v=my_open_video.desktop;
 
 inode/x-empty=my_open_text.desktop;
 application/x-shellscript=my_open_text.desktop;
