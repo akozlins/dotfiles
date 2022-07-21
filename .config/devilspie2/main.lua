@@ -19,7 +19,7 @@ if ( wclass == "xreader" or wclass == "atril" or wclass == "zathura" ) then
     xywh(w*1/6, h*1/6, w*2/3, h*3/4)
 end
 
-if ( wclass == "baka-mplayer" or wclass == "mpv" ) then
+if ( wclass == "baka-mplayer" ) then
     local x, y, w, h = get_monitor_geometry()
     debug_print("set_window_size")
     xywh(0, 0, w*1/3, h*1/3)
