@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=my_open_video
 Icon=my_open_video
-Exec=mpv %f
+Exec=my_open_video %f
 Terminal=false
 Type=Application

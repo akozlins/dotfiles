@@ -1,0 +1,15 @@
+#!/bin/bash
+set -euf
+
+COMMANDS=(
+    nomacs
+    vimiv
+)
+
+for cmd in "${COMMANDS[@]}" ; do
+    if command -v "$cmd" &> /dev/null ; then
+        exec \
+        "$cmd" "$@"
+        break
+    fi
+done

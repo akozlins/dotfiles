@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=my_open_text
-Icon=my_open_text
-Exec=vimiv %f
+Name=my_open_image
+Icon=my_open_image
+Exec=my_open_image %f
 Terminal=false
 Type=Application
