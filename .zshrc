@@ -34,7 +34,7 @@ plugins=(
     lxd
 )
 
-fpath+=("$DOTFILES/.config/zsh-completions")
+fpath+=("$XDG_CONFIG_HOME/zsh-completions")
 
 source "$ZSH/oh-my-zsh.sh"
 gentoo_precmd() {

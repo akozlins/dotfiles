@@ -3,8 +3,8 @@ set -euf
 
 CMD=(
     /usr/bin/arduino
-#    --preferences-file "$DOTFILES/.config/arduino/preferences.txt"
-#    --pref "sketchbook.path=$DOTFILES/.local/share/arduino"
+#    --preferences-file "$XDG_CONFIG_HOME/arduino/preferences.txt"
+#    --pref "sketchbook.path=$XDG_DATA_HOME/arduino"
 #    --pref "update.check=false"
     "$@"
 )

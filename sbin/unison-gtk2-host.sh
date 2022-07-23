@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-export UNISON="$HOME/.local/share/unison"
+export UNISON="$XDG_DATA_HOME/unison"
 
 mkdir -p -- "$UNISON"
 cd -- "$UNISON" || exit 1
@@ -12,6 +12,6 @@ done
 exec \
 unison-gtk2 \
     "$HOME" "ssh://$1/$HOME" \
-    -servercmd "$HOME/bin/unison" \
+    -servercmd "$DOTFILES/unison" \
     -logfile "$UNISON/$1.log" \
     -source default.prf

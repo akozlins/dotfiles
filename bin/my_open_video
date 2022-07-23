@@ -2,7 +2,7 @@
 set -euf
 
 COMMANDS=(
-    celluloid
+#    celluloid
     mpv
     vlc
 )
