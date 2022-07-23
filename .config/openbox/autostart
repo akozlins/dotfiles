@@ -27,6 +27,6 @@ fi
 my_run 2s fbpanel
 my_run 4s conky
 
-if [ -f "$DOTFILES/private/.config/remind/default.rem" ] ; then
-    my_run 4s remind -z -k"dunstify remind:\ %s" "$DOTFILES/private/.config/remind/default.rem"
+if [ -f "$REMIND_FILENAME" ] ; then
+    my_run 4s remind -z -k"dunstify remind:\ %s" "$REMIND_FILENAME"
 fi
