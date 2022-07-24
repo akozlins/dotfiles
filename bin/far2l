@@ -1,13 +1,17 @@
 #!/bin/sh
 set -euf
 
-far2l="$HOME/.local/bin/far2l"
+FAR2L="$HOME/.local/bin/far2l"
 
-if [ ! -x "$far2l" ] ; then
-    >&2 echo "E [$0] '$far2l' not found"
+if [ ! -x "$FAR2L" ] ; then
+    >&2 echo "E [$0] '$FAR2L' not found"
     exit 1
 fi
 
-exec \
-"$far2l" "$@" \
-> /dev/null 2>&1 &
+CMD=(
+    "$FAR2L"
+    "$@"
+)
+
+[ $# -gt 0 ] && exec "${CMD[@]}"
+exec "${CMD[@]}" &> /dev/null &

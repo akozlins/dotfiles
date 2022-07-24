@@ -48,6 +48,9 @@
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/
 
+[user]
+#	signingkey = 0000000000000000
+
 [color "diff"]
 	meta = yellow
 	frag = magenta bold
