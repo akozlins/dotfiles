@@ -15,6 +15,7 @@ links=(
     .config/Element
     .config/far2l/history
     .config/fontforge
+    .config/GIMP
     .config/kicad
     .config/LatticeSemi
     .config/libreoffice
