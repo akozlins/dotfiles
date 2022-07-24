@@ -114,3 +114,5 @@ user_pref("browser.download.useDownloadDir", false);
 user_pref("widget.gtk.overlay-scrollbars.enabled", false);
 
 user_pref("browser.tabs.allowTabDetach", false);
+
+user_pref("accessibility.blockautorefresh", true);
