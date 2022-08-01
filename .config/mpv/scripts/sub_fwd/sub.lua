@@ -2,6 +2,8 @@
 
 local mp = require('mp')
 
+-- <https://github.com/Ajatt-Tools/sub-transition>
+
 local function get_sub_delay(i)
     local sub_delay = mp.get_property_native("sub-delay") or 0
     local sub_visibility = mp.get_property_bool("sub-visibility")
