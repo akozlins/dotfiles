@@ -7,6 +7,7 @@ local msg = require('mp.msg')
 local timer = require('timer')
 local sub = require('sub')
 
+local active = false
 local speed = 1.0
 
 local function info(message)
@@ -30,7 +31,7 @@ local function check()
 
     local sub_delay = sub.get_sub_delay(1)
 --    info("sub_delay = " .. (sub_delay or "nil"))
-    if not sub_delay then
+    if not active or not sub_delay then
         timers_reset()
         timers.on_sub(time_pos + 0.5, check)
 
@@ -77,6 +78,10 @@ local main = (function()
     local function on_file_loaded()
         info("on_file_load")
         if not ok then
+            mp.add_key_binding("shift+U", '', function()
+                active = not active
+                check()
+            end)
             mp.set_property("demuxer-readahead-secs", 120)
             mp.observe_property("sub-end", "number", check)
             ok = true
