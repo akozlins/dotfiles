@@ -1,3 +1,4 @@
+//
 
 // PREF: Set Firefox locale to en-US
 user_pref("general.useragent.locale", "en-US");
@@ -116,3 +117,6 @@ user_pref("widget.gtk.overlay-scrollbars.enabled", false);
 user_pref("browser.tabs.allowTabDetach", false);
 
 user_pref("accessibility.blockautorefresh", true);
+
+// enable logins csv import
+user_pref("signon.management.page.fileImport.enabled", true);
