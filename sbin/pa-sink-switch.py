@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os, subprocess, time, yaml
+import json, os, subprocess, time, yaml
 
 class LRU :
     file = None
@@ -57,10 +57,20 @@ lru = LRU(f"{os.environ['HOME']}/.cache/pa-sink-switch-lru.yml")
 sink = lru.next()
 
 subprocess.check_output(f"dunstify 'sink = {sink}'", shell=True)
-time.sleep(0.5)
 lru.move_sink_input("easyeffects_sink")
 
 lru.set_default_sink(sink)
+
+# load easyeffects output preset
+presets_dir = f"{os.environ['HOME']}/.config/easyeffects/autoload/output"
+for fname in os.listdir(presets_dir) :
+    if not fname.endswith(".json") : continue
+    preset = json.load(open(os.path.join(presets_dir, fname), "r", encoding = "utf-8"))
+    preset_device = preset["device"]
+    preset_name = preset["preset-name"]
+    if sink in preset_device or preset_device in sink :
+        print(f"subprocess: easyeffects -l '{preset_name}'")
+        subprocess.check_output(f"easyeffects -l '{preset_name}' || true", shell=True)
 
 #lru.set_default_sink("easyeffects_sink")
 time.sleep(0.5)
