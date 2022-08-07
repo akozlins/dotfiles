@@ -22,10 +22,10 @@ local function on_sub_end(_, sub_end)
         return
     end
 
-    time_sub_end = sub_end or 0
+    time_sub_end = (sub_end or 0) + 0.1
 
     if sub_delay then
-        time_sub_start = mp.get_property_number("time-pos") + sub_delay
+        time_sub_start = mp.get_property_number("time-pos") + sub_delay - 0.1
     end
 
     info("time_sub_end = " .. (time_sub_end or "nil"))
@@ -49,7 +49,7 @@ local function on_time_pos(_, time_pos)
 end
 
 mp.register_event("file-loaded", function()
-    mp.set_property("demuxer-readahead-secs", 120)
+    mp.set_property("demuxer-readahead-secs", 300)
 
     local active = false
 
