@@ -38,6 +38,7 @@
     "editor.unicodeHighlight.includeComments": true,
     "editor.unicodeHighlight.nonBasicASCII": true,
     "editor.wordWrap": "off",
+    "explorer.enableDragAndDrop": false,
     "files.autoSave": "onFocusChange",
     "files.enableTrash": false,
     "files.eol": "\n",
