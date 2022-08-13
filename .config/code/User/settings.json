@@ -38,7 +38,9 @@
     "editor.unicodeHighlight.includeComments": true,
     "editor.unicodeHighlight.nonBasicASCII": true,
     "editor.wordWrap": "off",
+    "explorer.autoReveal": "focusNoScroll",
     "explorer.enableDragAndDrop": false,
+    "explorer.excludeGitIgnore": true,
     "files.autoSave": "onFocusChange",
     "files.enableTrash": false,
     "files.eol": "\n",
@@ -46,6 +48,10 @@
         "**/.cache": true,
     },
     "files.trimTrailingWhitespace": true,
+    "scm.diffDecorationsGutterPattern": {
+        "modified": false
+    },
+    "scm.diffDecorationsIgnoreTrimWhitespace": "true",
     "search.useGlobalIgnoreFiles": true,
     "search.useParentIgnoreFiles": true,
     "telemetry.telemetryLevel": "off",
