@@ -2,9 +2,9 @@
 set -euf
 
 COMMANDS=(
+    evince
     zathura
     xreader
-    evince
 )
 
 for cmd in "${COMMANDS[@]}" ; do

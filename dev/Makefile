@@ -29,7 +29,7 @@ geant4 :
 	    -DGEANT4_USE_OPENGL_X11=ON \
 	    -S $@ -B $@/cmake-build
 	$(MAKE) $(MAKEFLAGS) -C $@/cmake-build
-	#$(MAKE) -C $@/cmake-build install
+	#$(MAKE) $(MAKEFLAGS) -C $@/cmake-build install
 
 .PHONY : root
 root :
@@ -40,4 +40,4 @@ root :
 	    -Dxrootd=OFF \
 	    -S $@ -B $@/cmake-build
 	$(MAKE) $(MAKEFLAGS) -C $@/cmake-build
-	#$(MAKE) -C $@/cmake-build install
+	#$(MAKE) $(MAKEFLAGS) -C $@/cmake-build install

@@ -7,6 +7,18 @@ import sys
 
 FIREFOX_HOME = os.path.normpath(os.path.dirname(os.path.realpath(__file__)) + "/..")
 
+prefs : dict = {}
+
+def user_pref(key, value) :
+    if ( key.startswith("_user.") ) :
+        return
+    if ( key not in prefs and value is None ) :
+        print(f"WARN: user_pref(\"{key}\", None -> {value})", file=sys.stderr)
+        return
+    if ( key in prefs ) :
+        print(f"INFO: user_pref(\"{key}\", {prefs[key]} -> {value})", file=sys.stderr)
+    prefs[key] = value
+
 parser = argparse.ArgumentParser()
 parser.add_argument("files", nargs="*", default=[
     f"{FIREFOX_HOME}/ghacks-user.js/user.js",
@@ -15,19 +27,8 @@ parser.add_argument("files", nargs="*", default=[
 ])
 args = parser.parse_args()
 
-prefs : dict = {}
-
 def read_prefs(user_js_fname : str) :
-    print(f"DEBUG: read_prefs(\"{user_js_fname}\")", file = sys.stderr)
-    def user_pref(key, value) :
-        if ( key.startswith("_user.") ) :
-            return
-        if ( key not in prefs and value is None ) :
-            print(f"WARN: user_pref(\"{key}\", None -> {value})", file = sys.stderr)
-            return
-        if ( key in prefs ) :
-            print(f"INFO: user_pref(\"{key}\", {prefs[key]} -> {value})", file = sys.stderr)
-        prefs[key] = value
+    print(f"DEBUG: read_prefs(\"{user_js_fname}\")", file=sys.stderr)
     with open(user_js_fname, encoding = "UTF-8") as user_js :
         # run gcc preprocessor (remove comments, etc.)
         output = subprocess.check_output("gcc -E -P -", stdin=user_js, shell=True)
