@@ -24,5 +24,5 @@ MY_XEPHYR_OPTS=(
 )
 
 exec \
-xinit "$DOTFILES/.xinitrc" i3 -- Xephyr :1 "${MY_XEPHYR_OPTS[@]}" \
+xinit "$DOTFILES/.xinitrc" i3 -- /usr/bin/Xephyr :1 "${MY_XEPHYR_OPTS[@]}" \
 2>&1 | ts %FT%T > "$HOME/.cache/xephyr-i3.log" &
