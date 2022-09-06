@@ -19,11 +19,11 @@ ghacks-user.js :
 	$(call clone_pull,https://github.com/arkenfox/user.js,$@)
 
 
-default : user.js css
-
 GENERATE := $(XDG_CONFIG_HOME)/firefox/user.js/generate.py
-
 PROFILE := $(DOTFILES)/.mozilla/firefox/default
+
+default : user.js css
+	rsync -auv ./default $(PROFILE)
 
 .PHONY : user.js
 user.js :
