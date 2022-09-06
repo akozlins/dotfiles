@@ -2,13 +2,16 @@
 set -euf
 
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
-[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
-
-STEAM_HOME="$HOME/.steam"
-
-mkdir -pv -- "$STEAM_HOME"
-
 CMD=(
+    env -i
+    "HOME=$DOTFILES"
+    "PATH=$(command -p getconf PATH)"
+    "DISPLAY=$DISPLAY"
+    "XAUTHORITY=$XAUTHORITY"
+
+    "STEAM_LINUX_RUNTIME_LOG=1"
+    "STEAM_LINUX_RUNTIME_VERBOSE=1"
+
     /usr/bin/steam
     "-console"
     "$@"
