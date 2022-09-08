@@ -120,3 +120,6 @@ user_pref("accessibility.blockautorefresh", true);
 
 // enable logins csv import
 user_pref("signon.management.page.fileImport.enabled", true);
+
+//
+user_pref("accessibility.blockautorefresh", true);
