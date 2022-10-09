@@ -13,11 +13,6 @@
 /.flexlmrc
 /.synplify_pro_history
 
-# steam
-/.steampath
-/.steampid
-/cookie
-
 .cache/
 
 # git

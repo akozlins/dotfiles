@@ -35,7 +35,6 @@ links=(
     .mozilla/firefox/default
     .pki
     .renpy
-    .steam
     .unison
     .var/app
     .vscode-oss

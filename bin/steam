@@ -1,14 +1,18 @@
 #!/bin/bash
 set -euf
 
-DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 CMD=(
     env -i
-    "HOME=$DOTFILES"
+    "HOME=$XDG_DATA_HOME/steam"
     "PATH=$(command -p getconf PATH)"
     "DISPLAY=$DISPLAY"
     "XAUTHORITY=$XAUTHORITY"
 
+    "G_MESSAGES_DEBUG=all"
+#    "PRESSURE_VESSEL_FILESYSTEMS_RW=/home"
+    "PRESSURE_VESSEL_VERBOSE=1"
+#    "PRESSURE_VESSEL_WRAP_GUI=1"
+#    "STEAM_COMPAT_FORCE_SESSIONS=1"
     "STEAM_LINUX_RUNTIME_LOG=1"
     "STEAM_LINUX_RUNTIME_VERBOSE=1"
 
@@ -17,5 +21,5 @@ CMD=(
     "$@"
 )
 
-[ $# -gt 0 ] && exec "${CMD[@]}"
-exec "${CMD[@]}" &> "$STEAM_HOME/steam.log" &
+[ $# -ge 1 ] && exec "${CMD[@]}"
+exec "${CMD[@]}" &> "$XDG_DATA_HOME/steam/$(date +%FT:%T).log" &
