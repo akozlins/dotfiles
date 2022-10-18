@@ -56,13 +56,10 @@ targets=(
     bin
 
     .config
-    .pki
     .var
 
     .bashrc .zshrc
     .profile
-
-    .rootrc
 )
 
 # create links that point to targets
