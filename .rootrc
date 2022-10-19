@@ -1,3 +1,4 @@
+#
 
 Rint.Logon: $(HOME)/.config/root/rootlogon.c
 Rint.WelcomeLite: yes

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -euf
 
 FAR2L="$HOME/.local/bin/far2l"
