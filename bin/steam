@@ -1,12 +1,15 @@
 #!/bin/bash
 set -euf
 
+STEAM_HOME=${STEAM_HOME:-$XDG_DATA_HOME/steam}
+
 CMD=(
     env -i
-    "HOME=$XDG_DATA_HOME/steam"
+    "HOME=$STEAM_HOME"
     "PATH=$(command -p getconf PATH)"
     "DISPLAY=$DISPLAY"
     "XAUTHORITY=$XAUTHORITY"
+    "XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR"
 
     "G_MESSAGES_DEBUG=all"
 #    "PRESSURE_VESSEL_FILESYSTEMS_RW=/home"
@@ -22,4 +25,4 @@ CMD=(
 )
 
 [ $# -ge 1 ] && exec "${CMD[@]}"
-exec "${CMD[@]}" &> "$XDG_DATA_HOME/steam/$(date +%FT:%T).log" &
+exec "${CMD[@]}" &> "$STEAM_HOME/$(date +%FT:%T).log" &
