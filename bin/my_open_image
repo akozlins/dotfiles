@@ -2,6 +2,7 @@
 set -euf
 
 COMMANDS=(
+    geeqie
     nomacs
     vimiv
 )

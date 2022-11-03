@@ -60,6 +60,9 @@ mp.register_event("file-loaded", function()
         if active then
             mp.observe_property("time-pos", "number", on_time_pos)
             mp.observe_property("sub-end", "number", on_sub_end)
+            mp.osd_message("sub_fwd is ON")
+        else
+            mp.osd_message("sub_fwd is OFF")
         end
     end)
 end)

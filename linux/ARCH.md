@@ -65,7 +65,7 @@ title arch
 linux /vmlinuz-linux-lts
 #initrd /intel-ucode.img
 initrd /initramfs-linux-lts.img
-options ip=:::::eth0:dhcp cryptdevice=UUID=$(lsblk --noheadings --inverse --output UUID /dev/mapper/root | sed --quiet 2p):root:allow-discards root=/dev/mapper/root rw
+options ip=:::::eth0:dhcp cryptdevice=UUID=$(lsblk --noheadings --inverse --output UUID /dev/mapper/root | sed --quiet 2p):root:allow-discards rd.luks.options=discard root=/dev/mapper/root rw
 EOF
 sed 's/block filesystems/keymap block encrypt filesystems/' -i /etc/mkinitcpio.conf
 mkinitcpio --allpresets
@@ -204,3 +204,4 @@ pacman -S --noconfirm pcmanfm gvfs
 
 - `dunst`
 - `usbguard ssh-audit earlyoom`
+- `wakeup-triggers`

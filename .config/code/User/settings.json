@@ -54,6 +54,8 @@
     "scm.diffDecorationsIgnoreTrimWhitespace": "true",
     "search.useGlobalIgnoreFiles": true,
     "search.useParentIgnoreFiles": true,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
     "telemetry.telemetryLevel": "off",
     "workbench.colorCustomizations": {
         "tab.activeBorder": "#00CC00",

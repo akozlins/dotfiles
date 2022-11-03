@@ -2,6 +2,7 @@
 set -euf
 
 STEAM_HOME=${STEAM_HOME:-$XDG_DATA_HOME/steam}
+mkdir -p "$STEAM_HOME
 
 CMD=(
     env -i
