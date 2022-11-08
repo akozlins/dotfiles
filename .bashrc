@@ -14,7 +14,7 @@ bind -f "$DOTFILES/.inputrc"
 
 
 
-#export HISTFILE="$HOME/.bash_history"
+export HISTFILE=$(readlink -f -- "$DOTFILES/.bash_history")
 export HISTFILESIZE=65536
 export HISTSIZE=4096
 export HISTCONTROL="ignoreboth:erasedups"

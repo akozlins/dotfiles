@@ -9,7 +9,7 @@ source "$HOME/.profile"
 
 
 
-#HISTFILE="$HOME/.zsh_history"
+HISTFILE=$(readlink -f -- "$DOTFILES/.zsh_history")
 HISTORY_IGNORE="(poweroff|reboot|reset|rm *|sudo rm *)"
 
 ZLE_REMOVE_SUFFIX_CHARS=""
