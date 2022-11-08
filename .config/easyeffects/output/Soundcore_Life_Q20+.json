@@ -1,7 +1,9 @@
 {
     "output": {
         "blocklist": [],
-        "equalizer": {
+        "equalizer#0": {
+            "balance": 0.0,
+            "bypass": false,
             "input-gain": -7.2,
             "left": {
                 "band0": {
@@ -107,7 +109,9 @@
             },
             "mode": "IIR",
             "num-bands": 10,
-            "output-gain": 0.0,
+            "output-gain": 5.0,
+            "pitch-left": 0.0,
+            "pitch-right": 0.0,
             "right": {
                 "band0": {
                     "frequency": 17.0,
@@ -212,7 +216,8 @@
             },
             "split-channels": false
         },
-        "filter": {
+        "filter#0": {
+            "bypass": false,
             "frequency": 100.0,
             "inertia": 20.0,
             "input-gain": 0.0,
@@ -220,12 +225,13 @@
             "output-gain": 0.0,
             "resonance": -3.0
         },
-        "limiter": {
+        "limiter#0": {
             "alr": false,
             "alr-attack": 5.0,
             "alr-knee": 0.0,
             "alr-release": 50.0,
             "attack": 5.0,
+            "bypass": false,
             "dithering": "None",
             "external-sidechain": false,
             "gain-boost": false,
@@ -240,9 +246,9 @@
             "threshold": -0.5
         },
         "plugins_order": [
-            "equalizer",
-            "filter",
-            "limiter"
+            "equalizer#0",
+            "filter#0",
+            "limiter#0"
         ]
     }
 }
