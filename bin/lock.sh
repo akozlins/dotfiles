@@ -1,7 +1,7 @@
 #!/bin/sh
 set -euf
 
-if command -v xsecurelock &> /dev/null ; then
+if command -v xsecurelock > /dev/null 2>&1 ; then
 #    export XSECURELOCK_BLANK_DPMS_STATE=standby
     export XSECURELOCK_BLANK_TIMEOUT=1
     export XSECURELOCK_DATETIME_FORMAT=%FT%T
@@ -17,7 +17,7 @@ if [ -n "$(pidof light-locker)" ] ; then
     exec light-locker-command -l
 fi
 
-if command -v xdg-screensaver &> /dev/null ; then
+if command -v xdg-screensaver > /dev/null 2>&1 ; then
     xdg-screensaver activate
 fi
 

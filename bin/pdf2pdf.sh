@@ -19,6 +19,6 @@ fi
 exec \
 gs \
 -sDEVICE=pdfwrite \
--dPDFSETTINGS=/prepress \
+-dPDFSETTINGS=/default \
 -dCompatibilityLevel=1.5 \
 -o "$output" "$input"

@@ -216,3 +216,6 @@ cat << EOF | pango-view --font="Nimbus Mono PS" /dev/stdin
 | efficient |
 EOF
 ```
+
+- find hard links: `find / -type f -links +1 -printf '%i %n %p\n'`
+- copy system: `rsync -avhPHAXx / /mnt/`

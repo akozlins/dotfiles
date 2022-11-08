@@ -13,5 +13,17 @@ set -euf
 
 # freq list
 tail -n 10000 /etc/unbound/unbound.log \
-| awk '{ n[$5] += 1; f[$5] += ($10==0); } END { for(k in n) print n[k],f[k],k }' \
+| awk '
+($3 == "info:") {
+    qname = $5
+    cached = $10
+    n[qname] += 1;
+    f[qname] += !cached;
+}
+END {
+    for(qname in n) {
+        print n[qname],f[qname],qname;
+    }
+}
+' \
 | sort -r -n | head -n 100 | column -t

@@ -12,6 +12,12 @@
 - Cookie Quick Manager
 - LocalCDN
 
+### `uBlock Origin`
+
+lists:
+
+filters:
+
 ## Links
 
 - <https://github.com/arkenfox/user.js/wiki/4.1-Extensions>
