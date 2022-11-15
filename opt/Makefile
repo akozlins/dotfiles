@@ -22,6 +22,8 @@ endef
 define cmake_make_install
 	# dependencies: cmake, pkg-config
 	cmake -S $(1) -B $(1)/cmake-build $(CMAKE_OPTS)
+	#cmake --build $(1)/cmake-build
+	#cmake --install $(1)/cmake-build
 	$(MAKE) $(MAKEFLAGS) -C $(1)/cmake-build
 	$(MAKE) -C $(1)/cmake-build install
 endef
@@ -33,6 +35,7 @@ oh-my-zsh :
 	$(call clone_pull,https://github.com/robbyrussell/oh-my-zsh,$@)
 
 far2l : CMAKE_OPTS += -DALIGN=0 -DAUTOWRAP=0 -DCALC=0 -DCOMPARE=0 -DDRAWLINE=0 -DEDITCASE=0 -DEDITORCOMP=0 -DFILECASE=0 -DINCSRCH=0 -DINSIDE=0 -DNETROCKS=0 -DSIMPLEINDENT=0
+#far2l : CMAKE_OPTS += -DDUSEWX=no
 .PHONY : far2l
 far2l :
 	$(call clone_pull,https://github.com/elfmz/far2l,far2l)

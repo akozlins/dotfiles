@@ -68,4 +68,7 @@
     "workbench.enableExperiments": false,
     "workbench.list.openMode": "doubleClick",
     "workbench.tree.expandMode": "doubleClick",
+    "[markdown]": {
+        "editor.wordWrap": "off",
+    },
 }

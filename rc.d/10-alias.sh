@@ -1,6 +1,6 @@
 #!/bin/sh
 
-alias make='LC_ALL=C make'
+alias make='LC_ALL=C nice make'
 alias man="LC_ALL=C man"
 
 alias df='df -h'

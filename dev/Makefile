@@ -23,6 +23,7 @@ geant4 :
 	$(call clone_pull,https://github.com/Geant4/geant4,$@)
 	# centos: expat-devel, libXmu-devel
 	cmake \
+	    -DCMAKE_BUILD_TYPE=Release \
 	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local/geant4.cern.ch" \
 	    -DGEANT4_INSTALL_DATA=ON \
 	    -DGEANT4_USE_QT=ON \
@@ -35,6 +36,7 @@ geant4 :
 root :
 	$(call clone_pull,https://github.com/root-project/root,$@)
 	cmake \
+	    -DCMAKE_BUILD_TYPE=Release \
 	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local/root.cern.ch" \
 	    -DCMAKE_CXX_STANDARD=17 \
 	    -DLLVM_CXX_STD=c++17 \
