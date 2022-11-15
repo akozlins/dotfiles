@@ -16,7 +16,18 @@
 
 lists:
 
+- Privacy: AdGuard URL Tracking Protection
+- Privacy: Block Outsider Intrusion into LAN
+- Annoyances: AdGuard, Fanboy's, uBlock filters
+- Custom: <https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt>
+
 filters:
+
+```
+github.com##.flash-banner.flash-warn.flash.js-stale-session-flash
+||alive.github.com^
+||github.com/_alive
+```
 
 ## Links
 
