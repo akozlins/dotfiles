@@ -10,6 +10,7 @@ FIREFOX_HOME = os.path.normpath(os.path.dirname(os.path.realpath(__file__)) + "/
 prefs : dict = {}
 
 def user_pref(key, value) :
+    # ignore `_user.` entries (e.g. `_user.js.parrot` from ghacks)
     if ( key.startswith("_user.") ) :
         return
     if ( key not in prefs and value is None ) :
@@ -20,11 +21,17 @@ def user_pref(key, value) :
     prefs[key] = value
 
 parser = argparse.ArgumentParser()
+# list of source user_pref files
 parser.add_argument("files", nargs="*", default=[
     f"{FIREFOX_HOME}/ghacks-user.js/user.js",
     f"{FIREFOX_HOME}/user.js/ghacks.js",
     f"{FIREFOX_HOME}/user.js/my.js",
 ])
+# handle `--pref <key> <value>` options
+class PrefAction(argparse.Action) :
+    def __call__(self, parser, namespace, values, option_string=None) :
+        user_pref(values[0], values[1])
+parser.add_argument("--pref", nargs=2, action=PrefAction)
 args = parser.parse_args()
 
 def read_prefs(user_js_fname : str) :
