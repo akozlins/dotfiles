@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# unset `G4*` envs
+unset MY_GEANT4 $(env | awk -F= '/^G4/ { if(i++) printf(" "); printf("%s", $1) }')
+
 for MY_GEANT4 in \
     "$HOME/.local/geant4.cern.ch" \
     "/opt/geant4" \
