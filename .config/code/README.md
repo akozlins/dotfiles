@@ -8,7 +8,7 @@
 
 - clangd
 - CMmake
-- CMmake-Tools
+- CMmake Tools
 - Cortex-Debug
 - Output Colorizer
 - V4P - VHDL for Professionals

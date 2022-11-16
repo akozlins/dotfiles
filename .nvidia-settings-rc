@@ -1,5 +1,5 @@
 #
-# Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
+# Configuration file for nvidia-settings - the NVIDIA Settings utility
 #
 
 # ConfigProperties:
@@ -8,7 +8,6 @@ RcFileLocale = C
 DisplayStatusBar = Yes
 SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No
-ShowQuitDialog = No
 UpdateRulesOnProfileNameChange = Yes
 Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 Timer = Thermal_Monitor_(GPU_0),Yes,1000

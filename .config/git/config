@@ -3,6 +3,15 @@
 [commit]
 #	gpgsign = true
 
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	func = magenta bold
+	old = red bold
+	new = green bold
+	commit = yellow bold
+	whitespace = red reverse
+
 [core]
 	autocrlf = input
 	editor = nano
@@ -50,12 +59,3 @@
 
 [user]
 #	signingkey = 0000000000000000
-
-[color "diff"]
-	meta = yellow
-	frag = magenta bold
-	func = magenta bold
-	old = red bold
-	new = green bold
-	commit = yellow bold
-	whitespace = red reverse
