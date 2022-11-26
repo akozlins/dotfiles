@@ -1,3 +1,4 @@
+//
 
 void rootlogon() {
     gSystem->Load("libCLHEP");

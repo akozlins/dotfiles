@@ -1,4 +1,13 @@
 #!/bin/bash
 set -euf
 
-zoom --url="$1"
+URL="$1"
+shift
+
+CMD=(
+    zoom
+    --url="$URL"
+)
+
+[ $# -gt 0 ] && exec "${CMD[@]}"
+exec "${CMD[@]}" &> /dev/null &
