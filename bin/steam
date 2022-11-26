@@ -4,7 +4,15 @@ set -euf
 STEAM_HOME=${STEAM_HOME:-$XDG_DATA_HOME/steam}
 mkdir -p -- "$STEAM_HOME"
 
-CMD=(
+CMD=()
+
+[ command -v -- bwrap &> /dev/null ] && CMD+=(
+    bwrap
+    --dev-bind / /
+    --tmpfs "$(readlink -f -- "$HOME/private")"
+)
+
+CMD+=(
     env -i
     "HOME=$STEAM_HOME"
     "PATH=$(command -p getconf PATH)"

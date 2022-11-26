@@ -9,7 +9,15 @@ if [ ! -f "$XDG_DATA_HOME/code/User/settings.json" ] ; then
     ln -s "$XDG_CONFIG_HOME/code/User/settings.json" "$XDG_DATA_HOME/code/User/settings.json"
 fi
 
-CMD=(
+CMD=()
+
+[ command -v -- bwrap &> /dev/null ] && CMD+=(
+    bwrap
+    --dev-bind / /
+    --tmpfs "$(readlink -f -- "$HOME/private")"
+)
+
+CMD+=(
     /usr/bin/code
     --user-data-dir "$XDG_DATA_HOME/code"
     --extensions-dir "$XDG_DATA_HOME/code/extensions"
