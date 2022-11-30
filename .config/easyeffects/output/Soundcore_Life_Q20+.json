@@ -1,6 +1,10 @@
 {
     "output": {
-        "blocklist": [],
+        "plugins_order": [
+            "equalizer#0",
+            "filter#0",
+            "limiter#0"
+        ],
         "equalizer#0": {
             "balance": 0.0,
             "bypass": false,
@@ -245,10 +249,6 @@
             "stereo-link": 100.0,
             "threshold": -0.5
         },
-        "plugins_order": [
-            "equalizer#0",
-            "filter#0",
-            "limiter#0"
-        ]
+        "blocklist": []
     }
 }
