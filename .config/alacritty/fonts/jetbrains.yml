@@ -1,9 +1,9 @@
 
 font:
   normal:
-    family: Iosevka Fixed Slab
+    family: JetBrains Mono NL
 
-    style: Bold
+    style: SemiBold
 
   size: 10.0
 

@@ -4,7 +4,9 @@ import:
   - ~/.config/alacritty/default.yml
 
   # font
+  #- ~/.config/alacritty/fonts/fixed.yml
   - ~/.config/alacritty/fonts/iosevka.yml
+  #- ~/.config/alacritty/fonts/jetbrains.yml
 
   # theme
   - ~/.config/alacritty/themes/argonaut.yml
