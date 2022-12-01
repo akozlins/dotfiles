@@ -1,7 +1,12 @@
 //
 
 void rootlogon() {
-    gSystem->Load("libCLHEP");
+    if(gSystem->Exec("ldconfig -p | grep -q libCLHEP") == 0) {
+        gSystem->Load("libCLHEP");
+    }
+    else {
+        fprintf(stderr, "E [rootlogon] ldconfig: libCLHEP not found\n");
+    }
 
     // <https://root.cern.ch/doc/master/classTAttText.html>
     int fontNumber = 4, // helvetica-medium-r-normal - "Arial"
