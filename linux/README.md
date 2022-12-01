@@ -27,13 +27,6 @@ xset fp default
 xset fp rehash
 ```
 
-## `/etc/systemd/journald.conf`
-
-```
-MaxLevelStore=notice
-MaxLevelSyslog=notice
-```
-
 ## `/etc/logrotate.d/...`
 
 ```
@@ -41,11 +34,6 @@ daily
 dateext
 minsize 1M
 rotate 4
-```
-
-## iptables
-
-```
 ```
 
 ## nginx
@@ -198,15 +186,6 @@ net.ipv4.tcp_slow_start_after_idle=0
 ## misc
 
 ```
-# hot unplug
-echo 1 | sudo tee /sys/block/$SDA/device/delete
-
-# dirmngr: use `--standard-resolver`
-gpg -vvv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys $ID
-
-# list packages by size
-expac "%n %m" -l'\n' -Q $(pacman -Qq) | sort -nk 2 | column -t
-
 cat << EOF | pango-view --font="Nimbus Mono PS" /dev/stdin
 | worksheet |
 | buffering |
@@ -217,5 +196,7 @@ cat << EOF | pango-view --font="Nimbus Mono PS" /dev/stdin
 EOF
 ```
 
+- hot unplug: `echo 1 | sudo tee /sys/block/$SDA/device/delete`
+- list packages by size: `expac "%n %m" -l'\n' -Q $(pacman -Qq) | sort -nk 2 | column -t`
 - find hard links: `find / -type f -links +1 -printf '%i %n %p\n'`
 - copy system: `rsync -avhPHAXx / /mnt/`
