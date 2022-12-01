@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<labwc_config>
+
+  <core>
+    <gap>10</gap>
+  </core>
+
+  <theme>
+    <name></name>
+    <cornerRadius>1</cornerRadius>
+    <font><name>sans</name><size>10</size></font>
+  </theme>
+
+  <keyboard>
+    <default />
+    <keybind key="W-r">
+      <action name="Execute"><command>rofi -show run</command></action>
+    </keybind>
+  </keyboard>
+
+  <snapping>
+    <range>0</range>
+    <topMaximize>no</topMaximize>
+  </snapping>
+
+  <resistance>
+    <screenEdgeStrength>32</screenEdgeStrength>
+  </resistance>
+
+</labwc_config>

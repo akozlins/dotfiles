@@ -1,0 +1,14 @@
+#
+
+XDG_CURRENT_DESKTOP=wlroots
+
+# set keyboard layout
+XKB_DEFAULT_LAYOUT=us,ru
+XKB_DEFAULT_OPTIONS=grp:rctrl_rshift_toggle
+
+#WLR_NO_HARDWARE_CURSORS=1
+
+#XCURSOR_THEME=breeze_cursors
+
+# Force firefox to use wayland backend
+MOZ_ENABLE_WAYLAND=1

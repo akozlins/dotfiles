@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu>
+
+<menu id="client-menu" label="ClientMenu">
+</menu>
+
+<menu id="root-menu" label="">
+  <item label="Web browser">
+    <action name="Execute"><command>firefox</command></action>
+  </item>
+  <item label="Terminal">
+    <action name="Execute"><command>alacritty</command></action>
+  </item>
+  <item label="Reconfigure">
+    <action name="Reconfigure"></action>
+  </item>
+  <item label="Exit">
+    <action name="Exit"></action>
+  </item>
+</menu>
+
+</openbox_menu>
