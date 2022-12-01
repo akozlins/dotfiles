@@ -1,0 +1,21 @@
+#!/bin/bash
+set -euf
+
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
+
+CMD=()
+
+# use readline wrapper
+[[ $# == 1 && $1 == "-s" ]] && command -v rlwrap &> /dev/null && CMD+=(
+    rlwrap
+    --history-filename "$XDG_CACHE_HOME/.quartus_sh_history"
+    --
+)
+
+CMD+=(
+    "$QUARTUS_ROOTDIR/bin/quartus_sh"
+    "$@"
+)
+
+exec "${CMD[@]}"
