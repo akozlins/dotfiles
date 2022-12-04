@@ -4,8 +4,15 @@ set -euf
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 export UNISON="$XDG_DATA_HOME/unison"
 
+for cmd in \
+    /usr/bin/unison-gtk2 \
+    /usr/bin/unison-gtk3 \
+; do
+    command -v "$cmd" &> /dev/null && break
+done
+
 exec \
-/usr/bin/unison-gtk2 \
+"$cmd" \
     -logfile "$UNISON/unison.log" \
     "-watch=false" \
     "$@"

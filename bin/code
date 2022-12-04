@@ -11,7 +11,7 @@ fi
 
 CMD=()
 
-[ command -v -- bwrap &> /dev/null ] && CMD+=(
+command -v -- bwrap &> /dev/null && CMD+=(
     bwrap
     --dev-bind / /
     --tmpfs "$(readlink -f -- "$HOME/private")"

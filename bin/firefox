@@ -16,7 +16,9 @@ if [ ! -d "$PROFILE" ] ; then
     "$XDG_CONFIG_HOME/firefox/user.js/generate.py" > "$PROFILE/user.js"
 fi
 
-CMD=(
+CMD=()
+
+CMD+=(
     /usr/bin/firefox
     --profile "$PROFILE"
     "$@"

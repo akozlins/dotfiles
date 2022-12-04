@@ -12,7 +12,7 @@ set -euf
 #cat /etc/unbound/unbound.log | awk '{ if($6=="A" && $10==0) print $1 " " $5 " " $9; }' | column -t
 
 # freq list
-tail -n 10000 /etc/unbound/unbound.log \
+tail -n 100000 /etc/unbound/unbound.log \
 | awk '
 ($3 == "info:") {
     qname = $5

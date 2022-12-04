@@ -16,9 +16,9 @@ fi
 PATTERNS="./user.patterns"
 PREFIX="$USER@{hostname}"
 LOG="./.cache/borg.log"
-if command -v &> /dev/null ; then
-    LOG="$(borg info --json | jq --raw-output '.cache.path')/borg.log"
-fi
+#if command -v jq &> /dev/null ; then
+#    LOG="$(borg info --json | jq --raw-output '.cache.path')/borg.log"
+#fi
 
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=no
 export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=no

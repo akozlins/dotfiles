@@ -31,5 +31,5 @@ fi
 
 if [ -d ".git" ] && [ "$COMMIT" -gt 0 ] ; then
     git commit --quiet --allow-empty-message --message="update" || true
-    git gc --quiet
+    git gc --quiet --auto
 fi

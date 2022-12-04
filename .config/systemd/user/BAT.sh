@@ -30,6 +30,6 @@ if [ -z "$OUT" ] ; then
 fi
 
 if ! diff -q "BAT.out~" <(echo "$OUT") ; then
-    printf "%s\n%s\n" "$(date -u --iso-8601=seconds)" "$OUT" >> "BAT.$(date +%Y).out"
+    printf "%s %s\n%s\n" "$(date -u --iso-8601=seconds)" "$(date +%s)" "$OUT" >> "BAT.$(date +%Y).out"
     echo "$OUT" > "BAT.out~"
 fi
