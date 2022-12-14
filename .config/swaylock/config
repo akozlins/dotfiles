@@ -1,0 +1,10 @@
+#
+
+# options
+ignore-empty-password
+
+# appearance
+show-keyboard-layout
+indicator-caps-lock
+color=000000
+#indicator-idle-visible
