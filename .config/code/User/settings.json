@@ -52,6 +52,7 @@
         "modified": false
     },
     "scm.diffDecorationsIgnoreTrimWhitespace": "true",
+    "search.followSymlinks": false,
     "search.useGlobalIgnoreFiles": true,
     "search.useParentIgnoreFiles": true,
     "telemetry.enableCrashReporter": false,
