@@ -1,0 +1,9 @@
+#!/bin/sh
+
+export ICEAUTHORITY="$HOME/.cache/.ICEauthority"
+
+for f in "$DOTFILES"/.config/xinitrc.d/?*.sh ; do
+    [ -f "$f" ] && . "$f"
+done
+
+. "/etc/xdg/xfce4/xinitrc"

@@ -1,1 +1,16 @@
 /**/
+
+.xfce4-panel button:checked {
+    color: #FFFFFF;
+    background-image: none;
+    background-color: #4080C0;
+/*    background-color: #80A0C0;*/
+}
+
+.xfce4-panel button {
+    border-radius: 1;
+}
+
+.xfce4-panel wnck-pager:selected {
+    background-color: lightblue;
+}
