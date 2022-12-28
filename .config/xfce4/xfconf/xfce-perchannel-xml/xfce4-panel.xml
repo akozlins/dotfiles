@@ -62,10 +62,6 @@
     <property name="plugin-7" type="string" value="separator"/>
     <property name="plugin-8" type="string" value="systray">
       <property name="square-icons" type="bool" value="false"/>
-      <property name="known-items" type="array">
-        <value type="string" value="opensnitch-ui"/>
-        <value type="string" value="blueman"/>
-      </property>
       <property name="icon-size" type="int" value="22"/>
       <property name="single-row" type="bool" value="false"/>
       <property name="symbolic-icons" type="bool" value="false"/>
@@ -80,6 +76,8 @@
     <property name="plugin-11" type="string" value="clock">
       <property name="mode" type="uint" value="2"/>
       <property name="tooltip-format" type="string" value="%F %T"/>
+      <property name="digital-layout" type="uint" value="3"/>
+      <property name="digital-time-font" type="string" value="Monospace Bold 10"/>
     </property>
     <property name="plugin-12" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
