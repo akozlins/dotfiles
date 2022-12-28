@@ -16,7 +16,7 @@ my_run() {
     ) &
 }
 
-my_run 1s xss-lock -l -- "$DOTFILES/bin/lock.sh"
+my_run 4s xss-lock -l -- "$DOTFILES/bin/lock.sh"
 
 if command -v xsecurelock &> /dev/null ; then
     true

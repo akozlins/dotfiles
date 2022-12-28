@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=xss-lock
+Exec=xss-lock -l -- lock.sh
+TryExec=xss-lock
+Terminal=false
