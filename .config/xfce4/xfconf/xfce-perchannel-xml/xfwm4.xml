@@ -59,10 +59,10 @@
     <property name="snap_to_windows" type="bool" value="true"/>
     <property name="snap_width" type="int" value="10"/>
     <property name="vblank_mode" type="string" value="auto"/>
-    <property name="theme" type="string" value="xfce_like_openbox"/>
+    <property name="theme" type="string" value="xfce_openbox"/>
     <property name="tile_on_move" type="bool" value="false"/>
     <property name="title_alignment" type="string" value="center"/>
-    <property name="title_font" type="string" value="DejaVu Sans Mono 10"/>
+    <property name="title_font" type="string" value="DejaVu Sans Mono Bold 9"/>
     <property name="title_horizontal_offset" type="int" value="0"/>
     <property name="titleless_maximize" type="bool" value="false"/>
     <property name="title_shadow_active" type="string" value="false"/>
