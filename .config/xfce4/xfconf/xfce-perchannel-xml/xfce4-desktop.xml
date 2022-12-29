@@ -7,13 +7,13 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="0"/>
+          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-shapes.svg"/>
           <property name="rgba1" type="array">
             <value type="double" value="0"/>
             <value type="double" value="0"/>
             <value type="double" value="0"/>
             <value type="double" value="1"/>
           </property>
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-shapes.svg"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
