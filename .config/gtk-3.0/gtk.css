@@ -8,7 +8,9 @@
 }
 
 .xfce4-panel button {
-    border-radius: 1;
+    border-radius: 1px;
+    font-weight: semibold;
+    font-size: 16px
 }
 
 .xfce4-panel wnck-pager:selected {
