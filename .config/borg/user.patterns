@@ -2,12 +2,12 @@
 
 #R /home/$USER
 
-- /home/*/.local
 - /home/*/downloads
 
-- /**/*~
-- /**/.cache
-- /**/gitk.cache
-- /**/cmake-build*
-- /**/core.[0-9]*
-- /**/node_modules
+- **/*~
+! **/.cache
+! **/.local
+- **/gitk.cache
+! **/cmake-build*
+- **/core.[0-9]*
+! **/node_modules

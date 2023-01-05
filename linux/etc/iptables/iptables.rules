@@ -12,8 +12,15 @@
 -A INPUT -p tcp -m tcp --dport 1023 -m limit --limit 1/s -j LOG --log-prefix "block: "
 -A INPUT -p tcp -m tcp --dport 1023 -m recent --name list22 --set -j DROP
 
+#-A FORWARD -m conntrack --ctstate INVALID -j DROP
+#-A FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+
 # lxd
--A FORWARD -i lxdbr0 -j ACCEPT
--A FORWARD -o lxdbr0 -j ACCEPT
+-A FORWARD -i lxdbr+ -j ACCEPT
+-A FORWARD -o lxdbr+ -j ACCEPT
+
+# tun
+-A FORWARD -i tun+ -j ACCEPT
+#-A FORWARD -o tun+ -j ACCEPT
 
 COMMIT

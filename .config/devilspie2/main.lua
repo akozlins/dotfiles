@@ -14,13 +14,11 @@ end
 
 if ( wclass == "atril" or wclass == "evince" or wclass == "xreader" or wclass == "zathura" ) then
     local x, y, w, h = get_monitor_geometry()
-    debug_print("set_window_size")
 --    set_window_size(w*2/3, h*2/3)
     xywh(w*1/6, h*1/8, w*2/3, h*3/4)
 end
 
 if ( wclass == "baka-mplayer" ) then
     local x, y, w, h = get_monitor_geometry()
-    debug_print("set_window_size")
     xywh(0, 0, w*1/3, h*1/3)
 end

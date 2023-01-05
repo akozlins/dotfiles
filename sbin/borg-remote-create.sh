@@ -27,6 +27,7 @@ dir="$(dirname -- "$(readlink -f -- "$0")")"
     --stats \
     --exclude-caches \
     --exclude-if-present .borgexclude --keep-exclude-tags \
+    --one-file-system \
     "${PATTERNS[@]}" \
     "ssh://$HOST/$REPO::$PREFIX-{utcnow:%Y%m%dT%H%M%S}"
 
@@ -34,6 +35,7 @@ dir="$(dirname -- "$(readlink -f -- "$0")")"
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=yes
 export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=yes
 
+# TODO: --prefix is deprecated -> use --glob-archives
 borg prune \
     --verbose \
     --list \
