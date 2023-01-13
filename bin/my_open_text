@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euf
+
+COMMANDS=(
+    gedit
+    geany
+)
+
+for cmd in "${COMMANDS[@]}" ; do
+    command -v "$cmd" &> /dev/null || continue
+    exec \
+    "$cmd" "$@"
+done

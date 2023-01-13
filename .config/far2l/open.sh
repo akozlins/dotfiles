@@ -6,7 +6,8 @@ mime=$(xdg-mime query filetype "$1")
 case "$mime" in
     text/*|application/json|inode/x-empty)
 #        exec gedit "$1"
-        exec xdg-open "$1"
+#        exec xdg-open "$1"
+        exec my_open_text "$1"
         ;;
     image/*)
 #        exec xdg-open "$1"
