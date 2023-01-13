@@ -1,11 +1,20 @@
 #!/bin/bash
 set -euf
 
+MPV_SOCK="$XDG_RUNTIME_DIR/mpv.sock"
+if [ -e "$MPV_SOCK" ] ; then
+    for file in "$@" ; do
+        file=$(readlink -f -- "$1")
+        [ -e "$file" ] || continue
+        echo "raw loadfile '$file'" | socat - "$MPV_SOCK" && exit 0
+    done
+    rm -- "$MPV_SOCK"
+fi
+
 CMD=(
     /usr/bin/mpv
-#    "--vo=gpu"
-#    "--hwdec=vaapi"
-#    "--video-sync=display-resample"
+    "--force-window"
+    "--input-ipc-server=$MPV_SOCK"
     "$@"
 )
 
