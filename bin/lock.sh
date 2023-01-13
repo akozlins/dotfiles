@@ -3,6 +3,7 @@ set -euf
 
 if command -v xsecurelock > /dev/null 2>&1 ; then
 #    export XSECURELOCK_BLANK_DPMS_STATE=standby
+    # -1 => disable X11 blanking
     export XSECURELOCK_BLANK_TIMEOUT=1
     export XSECURELOCK_DATETIME_FORMAT=%FT%T
     export XSECURELOCK_SHOW_DATETIME=1

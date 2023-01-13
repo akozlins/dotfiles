@@ -7,7 +7,8 @@ COMMANDS=(
 )
 
 for cmd in "${COMMANDS[@]}" ; do
-    command -v "$cmd" &> /dev/null || continue
-    exec \
-    "$cmd" "$@"
+    command -v "$cmd" &> /dev/null && break
 done
+
+exec \
+"$cmd" "$@"

@@ -7,12 +7,14 @@ export DOTFILES
 
 
 
+#export HOME="${HOME:-$(getent passwd $(id --user) | cut -d: -f6)}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 if [ ! -e "$XDG_CACHE_HOME" ] ; then
     mkdir -p -- "$XDG_CACHE_HOME"
 fi
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+#export XDG_RUNTIME_DIR="/run/user/$(id --user)"
 
 export MEDIA="/run/media/$USER"
 

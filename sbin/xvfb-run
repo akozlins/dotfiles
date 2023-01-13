@@ -3,7 +3,7 @@ set -euf
 
 DISPLAY=1
 while [ -e "/tmp/.X11-unix/X$DISPLAY" ] ; do
-DISPLAY=$((DISPLAY + 1))
+    DISPLAY=$((DISPLAY + 1))
 done
 export DISPLAY=":$DISPLAY"
 
@@ -12,7 +12,7 @@ if false ; then
     exit 0
 fi
 
-XAUTHORITY="$(mktemp .Xauthority.XXXXXXXX)"
+XAUTHORITY=$(mktemp "/tmp/.Xauthority.XXXXXXXX")
 trap "rm -- '$XAUTHORITY'" EXIT
 export XAUTHORITY
 

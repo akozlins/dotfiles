@@ -11,6 +11,11 @@ if command -v xprop &> /dev/null ; then
     MY_H=$(( (WORKAREA[4] - WORKAREA[2])*3/4 ))
 fi
 
+MY_DISPLAY=1
+while [ -e "/tmp/.X11-unix/X$MY_DISPLAY" ] ; do
+    MY_DISPLAY=$((MY_DISPLAY + 1))
+done
+
 MY_XEPHYR_OPTS=(
     # disable access control restrictions
     -ac
@@ -24,5 +29,5 @@ MY_XEPHYR_OPTS=(
 )
 
 exec \
-xinit "$DOTFILES/.xinitrc" i3 -- /usr/bin/Xephyr :1 "${MY_XEPHYR_OPTS[@]}" \
+xinit "$DOTFILES/.xinitrc" i3 -- /usr/bin/Xephyr ":$MY_DISPLAY" "${MY_XEPHYR_OPTS[@]}" \
 2>&1 | ts %FT%T > "$HOME/.cache/xephyr-i3.log" &
