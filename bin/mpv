@@ -6,7 +6,9 @@ if [ -e "$MPV_SOCK" ] ; then
     for file in "$@" ; do
         file=$(readlink -f -- "$1")
         [ -e "$file" ] || continue
-        echo "raw loadfile '$file'" | socat - "$MPV_SOCK" && exit 0
+        file=${file/\"/\\\"}
+#        echo "raw loadfile '$file'" | socat - "$MPV_SOCK" && exit 0
+        printf '{ "command" : [ "loadfile", "%s" ] }\n' "$file" | socat - "$MPV_SOCK" && exit 0
     done
     rm -- "$MPV_SOCK"
 fi

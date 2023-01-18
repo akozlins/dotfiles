@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euf
 
+# README:
+# - use `Ctrl+Shift` to lock/unlock mouse and keyboard
+
 unset XDG_SEAT
 
 MY_W=1000

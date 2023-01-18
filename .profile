@@ -98,7 +98,7 @@ export XINITRC="$DOTFILES/.xinitrc"
 
 export RANDFILE="$XDG_CONFIG_HOME/.rnd"
 
-#export XAUTHORITY="$XDG_RUNTIME_DIR/.Xauthority"
+#export XAUTHORITY="${XAUTHORITY:-$XDG_CACHE_HOME/.Xauthority}"
 
 # nvidia
 [ -e "$XDG_CACHE_HOME/.nv" ] || mkdir -p -- "$XDG_CACHE_HOME/.nv"

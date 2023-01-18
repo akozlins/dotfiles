@@ -26,7 +26,7 @@ default : user.js css
 	rsync -auv ./default $(PROFILE)
 
 .PHONY : user.js
-user.js :
+user.js : ghacks-user.js
 	$(GENERATE) | sort > "$(PROFILE)/user.js.new"
 	if [ -e "$(PROFILE)/user.js" ] && ! diff -- <(cat "$(PROFILE)/user.js" | sort) <(cat "$(PROFILE)/user.js.new" | sort) ; then \
 	    cp -v -- "$(PROFILE)/user.js" "$(PROFILE)/user.$$(date +%FT%T).js"; \
