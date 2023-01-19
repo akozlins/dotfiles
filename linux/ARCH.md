@@ -170,18 +170,18 @@ chmod -R go-rwx "$HOME/.ssh"
 
 # dotfiles
 sudo pacman -S --noconfirm git make
-git clone https://github.com/akozlins/dotfiles .dotfiles
-( cd .dotfiles && ./install.sh )
+git clone https://github.com/akozlins/dotfiles "$HOME/.dotfiles"
+( cd "$HOME/.dotfiles" && ./install.sh )
 
 sudo pacman -S --noconfirm cmake gcc
 
 # fbpanel
 sudo pacman -S --noconfirm pkgconf gdk-pixbuf-xlib
-( cd .dotfiles/opt && make fbpanel )
+( cd "$HOME/.dotfiles/opt" && make fbpanel )
 
 # far2l
 sudo pacman -S --noconfirm patch m4 uchardet wxgtk2 spdlog xerces-c
-( cd .dotfiles/opt && make far2l )
+( cd "$HOME/.dotfiles/opt" && make far2l )
 
 sudo pacman -S --noconfirm fakeroot
 git clone https://aur.archlinux.org/yay.git "$HOME/yay"
