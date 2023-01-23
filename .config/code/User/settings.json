@@ -41,6 +41,7 @@
     "explorer.autoReveal": "focusNoScroll",
     "explorer.enableDragAndDrop": false,
     "explorer.excludeGitIgnore": true,
+    "extensions.ignoreRecommendations": true,
     "files.autoSave": "onFocusChange",
     "files.enableTrash": false,
     "files.eol": "\n",
