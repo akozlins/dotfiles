@@ -98,17 +98,6 @@ umount /mnt
 qemu-nbd -d /dev/nbd0
 ```
 
-## docker
-
-- remove `systemd[1]: run-docker-runtime*.mount: Deactivated successfully.` entries in journal
-```
-mkdir -p -- /etc/systemd/system/run-docker-.mount.d/
-cat << EOF > /etc/systemd/system/run-docker-.mount.d/10-log.conf
-[Mount]
-LogLevelMax=notice
-EOF
-```
-
 ## kubernetes
 
 ```
@@ -168,19 +157,6 @@ kubectl taint nodes --all node-role.kubernetes.io/master-
 # https://github.com/flannel-io/flannel
 kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 kubectl get pods -A
-```
-
-## `/etc/sysctl.d/99-sysctl.conf`
-
-```
-#
-
-net.ipv4.ip_forward = 1
-net.ipv6.conf.all.forwarding = 1
-
-net.ipv4.conf.all.rp_filter = 1
-
-net.ipv4.tcp_slow_start_after_idle=0
 ```
 
 ## misc
