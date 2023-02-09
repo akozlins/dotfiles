@@ -5,6 +5,7 @@ Description=BAT
 Type=oneshot
 ExecStart=%h/.config/systemd/user/BAT.sh
 WorkingDirectory=%h/.config/systemd/user/BAT.workdir
+LogLevelMax=notice
 
 [Install]
 WantedBy=default.target

@@ -2,7 +2,7 @@
 set -eu
 
 source -- ./.env
-[ -d "$BORG_REPO" ] || exit 1
+[ -d "$BORG_REPO" ] || exit 0
 
 if true ; then
     TIME_LAST=$(date +%s -d "$(borg list --format='{time}' --last=1)")

@@ -5,6 +5,7 @@ Description=firefox-backup
 Type=oneshot
 ExecStart=/bin/sh -c %h/.config/systemd/user/firefox-backup.sh
 WorkingDirectory=%h/.config/systemd/user/firefox-backup.workdir
+LogLevelMax=notice
 
 [Install]
 WantedBy=default.target
