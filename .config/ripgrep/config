@@ -1,0 +1,6 @@
+#
+
+--glob=!.cache
+--glob=!.git
+--hidden
+
