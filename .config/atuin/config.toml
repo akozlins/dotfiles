@@ -1,0 +1,27 @@
+#
+
+#db_path = "~/.local/share/atuin/history.db"
+
+## where to store your encryption key, default is your system data directory
+#key_path = "~/.local/share/atuin/key"
+
+## where to store your auth session token, default is your system data directory
+#session_path = "~/.local/share/atuin/session"
+
+auto_sync = false
+
+update_check = false
+
+#sync_frequency = "1h"
+
+#sync_address = "https://api.atuin.sh"
+
+# values: prefix, fulltext, fuzzy
+#search_mode = "prefix"
+
+# values: global, host ,session, directory
+#filter_mode=global
+
+style = "compact"
+
+#exit_mode = "return-original"
