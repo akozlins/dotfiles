@@ -1,11 +1,12 @@
 {
     "breadcrumbs.enabled": false,
     "clangd.arguments": [
-        "--compile-commands-dir=${workspaceFolder}/cmake-build"
+        "--compile-commands-dir=${workspaceFolder}/cmake-build",
+        "--header-insertion=never",
     ],
     "cmake.buildDirectory": "${workspaceFolder}/cmake-build",
     "cmake.configureArgs": [
-        "-DCMAKE_EXPORT_COMPILE_COMMANDS=1"
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=1",
     ],
     "cmake.configureOnOpen": true,
     "editor.accessibilitySupport": "off",
@@ -50,7 +51,7 @@
     },
     "files.trimTrailingWhitespace": true,
     "scm.diffDecorationsGutterPattern": {
-        "modified": false
+        "modified": false,
     },
     "scm.diffDecorationsIgnoreTrimWhitespace": "true",
     "search.followSymlinks": false,
@@ -61,7 +62,7 @@
     "telemetry.telemetryLevel": "off",
     "workbench.colorCustomizations": {
         "tab.activeBorder": "#00CC00",
-        "tab.unfocusedActiveBorder": "#000000"
+        "tab.unfocusedActiveBorder": "#000000",
     },
     "window.title": "${rootPath}${separator}${activeEditorMedium}${dirty}",
     "window.zoomLevel": 1,
