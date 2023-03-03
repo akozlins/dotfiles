@@ -2,6 +2,7 @@
 set -euf
 
 export STUDIO_PROPERTIES="$XDG_CONFIG_HOME/JetBrains/AndroidStudio/properties"
+export STUDIO_VM_OPTIONS="$XDG_CONFIG_HOME/JetBrains/AndroidStudio/vmoptions"
 
 CMD=(
     /usr/bin/android-studio

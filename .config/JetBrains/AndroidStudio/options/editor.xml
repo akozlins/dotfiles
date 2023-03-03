@@ -1,4 +1,10 @@
 <application>
+  <component name="CodeInsightSettings">
+    <option name="SMART_BACKSPACE" value="0" />
+    <option name="AUTOINSERT_PAIR_BRACKET" value="false" />
+    <option name="AUTOINSERT_PAIR_QUOTE" value="false" />
+    <option name="REFORMAT_BLOCK_ON_RBRACE" value="false" />
+  </component>
   <component name="EditorSettings">
     <option name="IS_WHITESPACES_SHOWN" value="true" />
   </component>

@@ -1,0 +1,17 @@
+<keymap version="1" name="default" parent="Default for XWin">
+  <action id="Back">
+    <keyboard-shortcut first-keystroke="alt left" />
+  </action>
+  <action id="CloseContent">
+    <keyboard-shortcut first-keystroke="ctrl w" />
+  </action>
+  <action id="EditorSelectWord" />
+  <action id="Forward">
+    <keyboard-shortcut first-keystroke="alt right" />
+  </action>
+  <action id="NextTab" />
+  <action id="PreviousTab" />
+  <action id="SmartSelect" />
+  <action id="UpdateRunningApplication" />
+  <action id="UsageFiltering.WriteAccess" />
+</keymap>
