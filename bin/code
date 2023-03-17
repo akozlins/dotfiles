@@ -5,8 +5,9 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 [ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 if [ ! -f "$XDG_DATA_HOME/code/User/settings.json" ] ; then
-    mkdir -- "$XDG_DATA_HOME/code/User"
+    mkdir -p -- "$XDG_DATA_HOME/code/User"
     ln -s "$XDG_CONFIG_HOME/code/User/settings.json" "$XDG_DATA_HOME/code/User/settings.json"
+    ln -s "$XDG_CONFIG_HOME/code/User/keybindings.json" "$XDG_DATA_HOME/code/User/keybindings.json"
 fi
 
 CMD=()

@@ -48,10 +48,9 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 
 # android
-export ANDROID_PREFS_ROOT="$XDG_DATA_HOME/android"
-export ANDROID_SDK_ROOT="$XDG_DATA_HOME/android/sdk"
-[ -e "$ANDROID_SDK_ROOT" ] || mkdir -p -- "$ANDROID_SDK_ROOT"
-export ANDROID_EMULATOR_HOME="$ANDROID_PREFS_ROOT/emulator"
+export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
+export ANDROID_HOME="$ANDROID_USER_HOME/sdk"
+[ -e "$ANDROID_HOME" ] || mkdir -p -- "$ANDROID_HOME"
 
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
 
