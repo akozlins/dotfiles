@@ -3,7 +3,21 @@ set -ef
 
 export LM_LICENSE_FILE="$LATTICE_LICENSE_FILE"
 
-source "$LATTICE_DIAMOND_HOME/bin/lin64/diamond_env"
+bindir="$LATTICE_DIAMOND_HOME/bin/lin64"
+source "$bindir/diamond_env"
 
-exec \
-"$LATTICE_DIAMOND_HOME/bin/lin64/pnmainc" "$@"
+CMD=()
+
+# use readline wrapper
+command -v rlwrap &> /dev/null && CMD+=(
+    rlwrap
+    --history-filename "$XDG_CACHE_HOME/.lattice_pnmainc_history"
+    --
+)
+
+CMD+=(
+    "$LATTICE_DIAMOND_HOME/bin/lin64/pnmainc"
+    "$@"
+)
+
+exec "${CMD[@]}"
