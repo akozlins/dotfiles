@@ -12,5 +12,5 @@ cp -v -- mimeapps.list "$APPS_DIR/"
 find . -name "*.in" | while read -r fin ; do
     fout=$(basename -- "$fin" .in)
     echo "I [] envsubst > $APPS_DIR/$fout"
-    envsubst < "$fin" > "$APPS_DIR/$fout"
+    ./envsubst.sh < "$fin" > "$APPS_DIR/$fout"
 done
