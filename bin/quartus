@@ -4,7 +4,14 @@ set -euf
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 [ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
-CMD=(
+CMD=()
+
+command -v -- bwrap &> /dev/null && CMD+=(
+    bwrap
+    --dev-bind / /
+)
+
+CMD+=(
     "$QUARTUS_ROOTDIR/bin/quartus"
     "$@"
 )
