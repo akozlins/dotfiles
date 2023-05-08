@@ -1,0 +1,7 @@
+#!/bin/bash
+set -euf
+
+exec \
+"$QUARTUS_ROOTDIR/../modelsim_ase/bin/vsim" \
+    -nolog \
+    "$@"
