@@ -1,0 +1,46 @@
+diff --git a/trunk/PKGBUILD b/trunk/PKGBUILD
+index d13ff35..0982d29 100644
+--- a/trunk/PKGBUILD
++++ b/trunk/PKGBUILD
+@@ -37,6 +37,14 @@ sha256sums=('2b5847b6a63118b9efe5c85548363c81ffe096b66c3b3675e953e26342ae4031'
+             '7a9ce949579a3b02d4b91b6835c4fb45adc5f743007572fb0e28e6433e48f3a5')
+ validpgpkeys=('474E22316ABF4785A88C6E8EA2C794A986419D8A') # Tom Stellard <tstellar@redhat.com>
+ 
++# PGO: <https://www.llvm.org/docs/HowToBuildWithPGO.html>
++source+=(
++    https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-$pkgver.tar.gz
++)
++sha256sums+=(
++    'SKIP'
++)
++
+ # Utilizing LLVM_DISTRIBUTION_COMPONENTS to avoid
+ # installing static libraries; inspired by Gentoo
+ _get_distribution_components() {
+@@ -77,6 +85,10 @@ prepare() {
+   # Attempt to convert script to Python 3
+   2to3 -wn --no-diffs \
+     tools/extra/clang-include-fixer/find-all-symbols/tool/run-find-all-symbols.py
++
++  # PGO
++  cd -- "$srcdir/llvm-project-llvmorg-$pkgver/llvm"
++  "./utils/collect_and_build_with_pgo.py" --no-optimized-build
+ }
+ 
+ build() {
+@@ -104,6 +116,15 @@ build() {
+     -DLLVM_LINK_LLVM_DYLIB=ON
+     -DLLVM_MAIN_SRC_DIR="$srcdir/llvm-$pkgver.src"
+     -DSPHINX_WARNINGS_AS_ERRORS=OFF
++
++    # PGO
++    -DLLVM_PROFDATA_FILE="$srcdir/llvm-project-llvmorg-$pkgver/llvm/out/pgo_profile.prof"
++    -DCMAKE_C_COMPILER="$srcdir/llvm-project-llvmorg-$pkgver/llvm/out/stage1/bin/clang"
++    -DCMAKE_CXX_COMPILER="$srcdir/llvm-project-llvmorg-$pkgver/llvm/out/stage1/bin/clang++"
++    -DCMAKE_C_FLAGS=-Wno-backend-plugin
++    -DCMAKE_CXX_FLAGS=-Wno-backend-plugin
++    -DCLANG_TABLEGEN="$srcdir/llvm-project-llvmorg-$pkgver/llvm/out/stage1/bin/clang-tblgen"
++    -DLLVM_TABLEGEN="$srcdir/llvm-project-llvmorg-$pkgver/llvm/out/stage1/bin/llvm-tblgen"
+   )
+ 
+   cmake .. "${cmake_args[@]}"
