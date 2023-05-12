@@ -1,0 +1,26 @@
+#
+
+select = [ "ALL" ]
+
+line-length = 128
+
+ignore = [
+    "ARG002", # Unused method argument
+    "D100", # Missing docstring in public module
+    "D101", # Missing docstring in public class
+    "D102", # Missing docstring in public method
+    "D103", # Missing docstring in public function
+    "D107", # Missing docstring in `__init__`
+    "D211", # No blank lines allowed before class docstring
+    "D212", # Multi-line docstring summary should start at the first line
+    "ERA001", # Found commented-out code
+    "F541", # f-string without any placeholders
+    "INP001", # File `...` is part of an implicit namespace package. Add an `__init__.py`.
+    "Q000", # Single quotes found but double quotes preferred
+    "S102", # Use of `exec` detected
+    "S603", # `subprocess` call: check for execution of untrusted input
+    "SIM108", # Use ternary operator
+    "T201", # `print` found
+    "TRY002", # Create your own exception
+    "UP015", # Unnecessary open mode parameters
+]

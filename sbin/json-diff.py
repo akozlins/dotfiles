@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 
-from collections import OrderedDict
-
 import argparse
+import collections
 import json
+import pathlib
 
 parser = argparse.ArgumentParser()
 parser.add_argument("old", metavar="old.json", type=str)
 parser.add_argument("new", metavar="new.json", type=str)
 args = parser.parse_args()
 
-def diff(old, new) :
+def diff(old : dict, new : dict) -> dict :
     if old == new :
         return None
 
@@ -31,6 +31,6 @@ def diff(old, new) :
     return out
 
 print(json.dumps(diff(
-    json.load(open(args.old, "r", encoding = "utf-8"), object_pairs_hook = OrderedDict),
-    json.load(open(args.new, "r", encoding = "utf-8"), object_pairs_hook = OrderedDict),
+    json.load(pathlib.Path(args.old).open(mode="r", encoding = "utf-8"), object_pairs_hook=collections.OrderedDict),
+    json.load(pathlib.Path(args.new).open(mode="r", encoding = "utf-8"), object_pairs_hook=collections.OrderedDict),
 )))

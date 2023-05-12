@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import sys, json
+import json
+import sys
 
 session = json.load(sys.stdin)
 
@@ -8,7 +9,8 @@ windows = []
 for window in session["windows"] :
     tabs = []
     for tab in window["tabs"] :
-        if not tab["entries"] : continue
+        if not tab["entries"] :
+            continue
         entry = tab["entries"][-1]
         tabs.append({
             "entries" : [{
