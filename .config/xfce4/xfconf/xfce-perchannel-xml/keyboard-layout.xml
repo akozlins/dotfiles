@@ -4,7 +4,7 @@
   <property name="Default" type="empty">
     <property name="XkbDisable" type="bool" value="false"/>
     <property name="XkbOptions" type="empty">
-      <property name="Group" type="string" value="grp:ctrl_shift_toggle"/>
+      <property name="Group" type="string" value="grp:rctrl_rshift_toggle"/>
     </property>
     <property name="XkbLayout" type="string" value="us,ru"/>
     <property name="XkbVariant" type="string" value=","/>
