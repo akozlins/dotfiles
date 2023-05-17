@@ -12,6 +12,10 @@
     },
     {
         "key": "ctrl+q",
-        "command": "-workbench.action.quit"
+        "command": "-workbench.action.quit",
+    },
+    {
+        "key": "ctrl+alt+o",
+        "command": "workbench.files.action.showActiveFileInExplorer",
     },
 ]
