@@ -11,6 +11,7 @@
 - Containerise
 - Cookie Quick Manager
 - LocalCDN
+- Violentmonkey
 
 ### `uBlock Origin`
 

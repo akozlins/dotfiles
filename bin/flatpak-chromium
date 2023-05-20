@@ -4,4 +4,5 @@ set -euf
 exec \
 flatpak-bg run \
     org.chromium.Chromium \
+    "--disable-background-networking" \
     "$@"

@@ -6,9 +6,12 @@
 
 ## Extensions
 
+- clang-format
 - clangd
 - CMmake
 - CMmake Tools
 - Cortex-Debug
 - Output Colorizer
+- python
+- ruff
 - V4P - VHDL for Professionals

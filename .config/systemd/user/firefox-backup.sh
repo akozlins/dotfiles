@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-source ~/.profile
+source "$HOME/.profile"
 FIREFOX="$DOTFILES/.config/firefox"
 PROFILE="$DOTFILES/.mozilla/firefox/default"
 

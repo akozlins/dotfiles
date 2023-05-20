@@ -9,10 +9,10 @@ import time
 import yaml
 
 class LRU :
-    entries_path : pathlib.Path = None
+    entries_path : pathlib.Path
 
-    sinks = []
-    entries = []
+    sinks : list[str] = []
+    entries : list[str] = []
 
     def __init__(self : "LRU", file_name : str) -> None:
         self.entries_path = pathlib.Path(file_name)
@@ -22,7 +22,7 @@ class LRU :
         for line in subprocess.check_output([ "/usr/bin/pactl", "list", "short", "sinks" ]).decode("ascii").splitlines() :
             sink = line.split("\t")
             print(f"    - {sink[1]}")
-            sink[0] = int(sink[0])
+            #sink[0] = int(sink[0])
             self.sinks.append(sink[1])
 
         # load lru entries
@@ -38,7 +38,7 @@ class LRU :
     # select next sink and update lru entries
     def next_sink(self : "LRU") -> str :
         if not self.sinks :
-            return None
+            return ""
         while True :
             for sink in self.sinks :
                 if sink not in self.entries :

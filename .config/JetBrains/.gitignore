@@ -30,6 +30,7 @@
 /*/options/databaseDrivers.xml
 /*/options/debugger.xml
 /*/options/dimensions.xml
+/*/options/DontShowAgain*.xml
 /*/options/filetypes.xml
 /*/options/find.xml
 /*/options/jdk.table.xml

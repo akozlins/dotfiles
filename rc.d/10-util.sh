@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 my_stopwatch () {
     t1=$(date --utc +%s)
