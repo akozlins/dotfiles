@@ -1,0 +1,11 @@
+#
+
+-A exclude,always -F msgtype=SERVICE_START
+-A exclude,always -F msgtype=SERVICE_STOP
+-A exclude,always -F msgtype=BPF
+-A exclude,always -F exe=/usr/bin/sudo
+-A exclude,always -F msgtype=ANOM_PROMISCUOUS
+
+# verify and regenerate:
+# `augenrules --check`
+# `augenrules --load`
