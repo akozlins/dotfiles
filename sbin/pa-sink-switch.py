@@ -40,16 +40,15 @@ class LRU :
 
     # select next sink and update lru entries
     def next_sink(self : "LRU") -> str :
-        if not self.sinks :
-            return ""
         while True :
+            # find new entry (not in lru)
             for sink in self.sinks :
-                if sink not in self.entries :
-                    if sink == "easyeffects_sink" :
-                        continue
-                    self.entries.append(sink)
-                    return sink
-            # remove oldest entry
+                if sink in self.entries : continue
+                if sink == "easyeffects_sink" : continue
+                self.entries.append(sink)
+                return sink
+            if not self.entries : return ""
+            # remove old entry
             self.entries.pop(0)
 
     def set_default_sink(self : "LRU", sink : str) -> None :
