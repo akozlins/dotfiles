@@ -79,9 +79,18 @@ def main() -> None :
         preset = json.load(preset_path.open(mode="r", encoding="utf-8"))
         preset_device = preset["device"]
         preset_name = preset["preset-name"]
-        if sink in preset_device or preset_device in sink :
+        preset_match = preset.get("device_match")
+        print(f"try preset: name = {preset_name}, match = {preset_match}, device = {preset_device}")
+        if ( preset_match and pathlib.PurePath(sink).match(preset_match) ) or \
+           ( sink in preset_device or preset_device in sink ) :
             print(f"subprocess: /usr/bin/easyeffects -l '{preset_name}'")
             subprocess.check_output([ "/usr/bin/easyeffects", "-l", preset_name ])
+
+#    print(f"subprocess: /usr/bin/gsettings set com.github.wwmm.easyeffects.streamoutputs output-device {sink}")
+#    subprocess.check_output(f"/usr/bin/gsettings set com.github.wwmm.easyeffects.streamoutputs output-device {sink}")
+    print("subprocess: /usr/bin/pw-metadata 0 default.configured.audio.sink '{ \"name\": \"" + sink + "\" }'")
+#    subprocess.check_output("/usr/bin/pw-metadata 0 default.configured.audio.sink")
+    subprocess.check_output([ "/usr/bin/pw-metadata", "0", "default.configured.audio.sink", '{"name":"' + sink + '"}' ], shell=True)
 
     #lru.set_default_sink("easyeffects_sink")
     time.sleep(0.5)
