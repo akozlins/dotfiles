@@ -8,6 +8,10 @@ import time
 
 import yaml
 
+def shell(args : list) -> str :
+    print(f'subprocess: {args}')
+    return subprocess.check_output(args)
+
 class LRU :
     entries_path : pathlib.Path
 
@@ -18,8 +22,7 @@ class LRU :
         self.entries_path = pathlib.Path(file_name)
 
         # list available sinks
-        print(f"subprocess: /usr/bin/pactl list short sinks")
-        for line in subprocess.check_output([ "/usr/bin/pactl", "list", "short", "sinks" ]).decode("ascii").splitlines() :
+        for line in shell([ "/usr/bin/pactl", "list", "short", "sinks" ]).decode("ascii").splitlines() :
             sink = line.split("\t")
             print(f"    - {sink[1]}")
             #sink[0] = int(sink[0])
@@ -52,22 +55,19 @@ class LRU :
     def set_default_sink(self : "LRU", sink : str) -> None :
         if sink not in self.sinks :
             return
-        print(f"subprocess: /usr/bin/pactl set-default-sink {sink}")
-        subprocess.check_output([ "/usr/bin/pactl", "set-default-sink", sink ])
+        shell([ "/usr/bin/pactl", "set-default-sink", sink ])
 
     def move_sink_input(self : "LRU", sink : str) -> None :
-        print(f"subprocess: /usr/bin/pactl list sink-inputs short")
-        for line in subprocess.check_output([ "/usr/bin/pactl", "list", "sink-inputs", "short" ]).decode("ascii").splitlines() :
+        for line in shell([ "/usr/bin/pactl", "list", "sink-inputs", "short" ]).decode("ascii").splitlines() :
             stream_id = line.split("\t")
-            print(f"subprocess: /usr/bin/pactl move-sink-input {stream_id[0]} {sink}")
-            subprocess.check_output([ "/usr/bin/pactl", "move-sink-input", stream_id[0], sink ])
+            shell([ "/usr/bin/pactl", "move-sink-input", stream_id[0], sink ])
 
 def main() -> None :
     lru = LRU(f"{os.environ['HOME']}/.cache/pa-sink-switch-lru.yml")
 
     sink = lru.next_sink()
 
-    subprocess.check_output([ "/usr/bin/dunstify", f"'sink = {sink}'" ])
+    shell([ "/usr/bin/dunstify", f"I [main] 'sink = {sink}'" ])
     lru.move_sink_input("easyeffects_sink")
 
     lru.set_default_sink(sink)
@@ -83,14 +83,11 @@ def main() -> None :
         print(f"try preset: name = {preset_name}, match = {preset_match}, device = {preset_device}")
         if ( preset_match and pathlib.PurePath(sink).match(preset_match) ) or \
            ( sink in preset_device or preset_device in sink ) :
-            print(f"subprocess: /usr/bin/easyeffects -l '{preset_name}'")
-            subprocess.check_output([ "/usr/bin/easyeffects", "-l", preset_name ])
+            shell([ "/usr/bin/easyeffects", "-l", preset_name ])
 
-#    print(f"subprocess: /usr/bin/gsettings set com.github.wwmm.easyeffects.streamoutputs output-device {sink}")
-#    subprocess.check_output(f"/usr/bin/gsettings set com.github.wwmm.easyeffects.streamoutputs output-device {sink}")
-    print("subprocess: /usr/bin/pw-metadata 0 default.configured.audio.sink '{ \"name\": \"" + sink + "\" }'")
-#    subprocess.check_output("/usr/bin/pw-metadata 0 default.configured.audio.sink")
-    subprocess.check_output([ "/usr/bin/pw-metadata", "0", "default.configured.audio.sink", '{"name":"' + sink + '"}' ], shell=True)
+#    shell(f"/usr/bin/gsettings set com.github.wwmm.easyeffects.streamoutputs output-device {sink}")
+#    shell("/usr/bin/pw-metadata 0 default.configured.audio.sink")
+    shell([ "/usr/bin/pw-metadata", "0", "default.configured.audio.sink", f'{{"name":"{sink}"}}' ])
 
     #lru.set_default_sink("easyeffects_sink")
     time.sleep(0.5)
