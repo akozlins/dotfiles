@@ -6,7 +6,6 @@ import pathlib
 import subprocess
 import time
 
-import yaml
 
 def shell(args : list) -> str :
     print(f'subprocess: {args}')
@@ -16,7 +15,7 @@ class LRU :
     entries_path : pathlib.Path
 
     sinks : list[str] = []
-    entries : list[str] = []
+    entries : list = []
 
     def __init__(self : "LRU", file_name : str) -> None:
         self.entries_path = pathlib.Path(file_name)
@@ -31,12 +30,13 @@ class LRU :
         # load lru entries
         if self.entries_path.exists() :
             with self.entries_path.open(mode="r", encoding="utf-8") as file :
-                self.entries = yaml.safe_load(file)
+                self.entries = json.load(file)
 
     def close(self : "LRU") -> None:
-        # save lru entries
+        if not self.entries : return
+        # store lru entries
         with self.entries_path.open(mode="w", encoding="utf-8") as file :
-            yaml.dump(self.entries, file)
+            json.dump(self.entries, file)
 
     # select next sink and update lru entries
     def next_sink(self : "LRU") -> str :
@@ -53,8 +53,6 @@ class LRU :
             self.entries.pop(0)
 
     def set_default_sink(self : "LRU", sink : str) -> None :
-        if sink not in self.sinks :
-            return
         shell([ "/usr/bin/pactl", "set-default-sink", sink ])
 
     def move_sink_input(self : "LRU", sink : str) -> None :
@@ -63,19 +61,19 @@ class LRU :
             shell([ "/usr/bin/pactl", "move-sink-input", stream_id[0], sink ])
 
 def main() -> None :
-    lru = LRU(f"{os.environ['HOME']}/.cache/pa-sink-switch-lru.yml")
+    lru = LRU(f"{os.environ['HOME']}/.cache/pa-sink-switch-lru.json")
 
     sink = lru.next_sink()
 
     shell([ "/usr/bin/dunstify", f"I [main] 'sink = {sink}'" ])
+    if not sink : return
     lru.move_sink_input("easyeffects_sink")
 
     lru.set_default_sink(sink)
 
     # load easyeffects output preset
     for preset_path in pathlib.Path(f"{os.environ['HOME']}/.config/easyeffects/autoload/output").iterdir() :
-        if preset_path.suffix != ".json" :
-            continue
+        if preset_path.suffix != ".json" : continue
         preset = json.load(preset_path.open(mode="r", encoding="utf-8"))
         preset_device = preset["device"]
         preset_name = preset["preset-name"]
