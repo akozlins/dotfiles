@@ -18,5 +18,4 @@ index cafab16..86485c1 100644
 + 
 + 		if (request_width > 0 && request_height > 0) {
 +EOF
-+
  }

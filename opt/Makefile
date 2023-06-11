@@ -22,7 +22,7 @@ endef
 # generate cmake build system and do make/install
 define cmake_make_install
 	# dependencies: cmake, pkg-config
-	cmake -S $(1) -B $(1)/cmake-build $(CMAKE_OPTS)
+	cmake -S "$(1)" -B "$(1)/cmake-build" $(CMAKE_OPTS)
 	#cmake --build $(1)/cmake-build
 	#cmake --install $(1)/cmake-build
 	$(MAKE) $(MAKEFLAGS) -C $(1)/cmake-build

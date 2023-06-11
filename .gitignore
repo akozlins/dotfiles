@@ -1,5 +1,8 @@
 #
 
+*.cache
+*~
+
 /private
 
 /.mono/
@@ -12,8 +15,6 @@
 /.digilent_dvctbl.txt
 /.flexlmrc
 /.synplify_pro_history
-
-.cache/
 
 # git
 .git/

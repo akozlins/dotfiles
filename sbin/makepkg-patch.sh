@@ -14,8 +14,11 @@ git stash
 if [ -r "$XDG_CONFIG_HOME/makepkg/$PKG.patch" ] ; then
     git apply --verbose "$XDG_CONFIG_HOME/makepkg/$PKG.patch"
 fi
-if [ -d "$XDG_CONFIG_HOME/makepkg/$PKG" ] ; then
-    cp -arv -- "$XDG_CONFIG_HOME/makepkg/$PKG/*" .
-fi
 
-makepkg -s
+makepkg -s --nobuild
+[ -d "$XDG_CONFIG_HOME/makepkg/$PKG" ] && find "$XDG_CONFIG_HOME/makepkg/$PKG" -name '*.patch' | while read -r p ; do
+    patch --forward --strip=1 --input="$f"
+done
+makepkg --noextract -f
+
+makepkg --install

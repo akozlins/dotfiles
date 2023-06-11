@@ -64,7 +64,7 @@ def main() -> None :
 
     sink = lru.next_sink()
 
-    shell([ "/usr/bin/dunstify", f"I [main] 'sink = {sink}'" ])
+    shell([ "/usr/bin/dunstify", f"I [main] 'sink = {sink or 'none'}'" ])
     if not sink : return
     lru.move_sink_input("easyeffects_sink")
 

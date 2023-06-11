@@ -4,10 +4,9 @@
 
 - /home/*/downloads
 
-- **/*~
-! **/.cache
+! **/*.cache
 ! **/.local
-- **/gitk.cache
 ! **/cmake-build*
 - **/core.[0-9]*
 ! **/node_modules
+! **/*~

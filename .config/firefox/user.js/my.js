@@ -126,3 +126,5 @@ user_pref("accessibility.blockautorefresh", true);
 
 user_pref("browser.safebrowsing.malware.enabled", false);
 user_pref("browser.safebrowsing.phishing.enabled", false);
+
+user_pref("browser.vpn_promo.enabled", false);
