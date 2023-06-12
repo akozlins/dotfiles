@@ -42,7 +42,7 @@ borg prune \
     --keep-daily=6 \
     --keep-weekly=3 \
     --keep-monthly=-1 \
-    --prefix="$PREFIX-" \
+    --glob-archives="$PREFIX*" \
     2>&1 | tee -a "$LOG"
 
 sync
