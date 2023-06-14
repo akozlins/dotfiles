@@ -52,7 +52,7 @@
 	submoduleSummary = true
 
 [url "git@bitbucket.org:"]
-	pushInsteadOf = https://bitbucket.org/
+	insteadOf = https://bitbucket.org/
 
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/

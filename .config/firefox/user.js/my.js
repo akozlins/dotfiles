@@ -68,6 +68,7 @@ user_pref("permissions.default.geo", 2);
 
 user_pref("browser.startup.homepage", "about:blank");
 user_pref("browser.urlbar.suggest.openpage", false);
+user_pref("browser.urlbar.trimURLs", false);
 user_pref("media.av1.enabled", true);
 user_pref("mousewheel.with_control.action", 0);
 

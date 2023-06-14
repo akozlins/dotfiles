@@ -13,6 +13,7 @@ ignore = [
     "D107", # Missing docstring in `__init__`
     "D211", # No blank lines allowed before class docstring
     "D212", # Multi-line docstring summary should start at the first line
+    "E701", # Multiple statements on one line (colon)
     "ERA001", # Found commented-out code
     "F541", # f-string without any placeholders
     "INP001", # File `...` is part of an implicit namespace package. Add an `__init__.py`.

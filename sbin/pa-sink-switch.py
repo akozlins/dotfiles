@@ -66,7 +66,7 @@ def main() -> None :
 
     shell([ "/usr/bin/dunstify", f"I [main] 'sink = {sink or 'none'}'" ])
     if not sink : return
-    lru.move_sink_input("easyeffects_sink")
+#    lru.move_sink_input("easyeffects_sink")
 
     lru.set_default_sink(sink)
 
@@ -88,7 +88,7 @@ def main() -> None :
 
     #lru.set_default_sink("easyeffects_sink")
     time.sleep(0.5)
-    lru.move_sink_input("easyeffects_sink")
+#    lru.move_sink_input("easyeffects_sink")
 
     lru.close()
 

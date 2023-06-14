@@ -44,11 +44,16 @@ links=(
 # do mkdir for each link
 for link in "${links[@]}" ; do
     if [ ! -L "$link" ] ; then
-        >&2 echo "E [$0] link '$link' does not exist"
+        >&2 echo "E [$0] '$link' is not of link type"
         exit 1
     fi
-    dir=$(readlink -m -- "$link")
-    mkdir -pv -- "$dir"
+    target=$(readlink -m -- "$link")
+
+    # skip existing targets
+    [ -e "$target" ] && continue
+
+    # mkdir (assume target should be directory)
+    mkdir -pv -- "$target"
 done
 
 # make links for targets (ln $DOTFILES/target $HOME/target)
