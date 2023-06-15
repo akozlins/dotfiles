@@ -11,6 +11,7 @@
         "-DCMAKE_EXPORT_COMPILE_COMMANDS=1",
     ],
     "cmake.configureOnOpen": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "editor.accessibilitySupport": "off",
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingDelete": "never",
@@ -67,6 +68,7 @@
     "telemetry.enableTelemetry": false,
     "telemetry.telemetryLevel": "off",
     "update.mode": "none",
+    "update.showReleaseNotes": false,
     "window.newWindowDimensions": "inherit",
     "window.title": "${rootPath}${separator}${activeEditorMedium}${dirty}",
     "window.zoomLevel": 1,
@@ -86,6 +88,7 @@
     "workbench.list.openMode": "doubleClick",
     "workbench.startupEditor": "none",
     "workbench.tree.expandMode": "doubleClick",
+    "workbench.welcomePage.walkthroughs.openOnInstall": false,
     "[markdown]": {
         "editor.wordWrap": "off",
     },

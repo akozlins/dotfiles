@@ -4,6 +4,9 @@ cursor:
   style: Beam
   thickness: 0.2
 
+env:
+  TERM: xterm-256color
+
 selection:
   save_to_clipboard: true
   semantic_escape_chars: "\t \"'(),/:<>[]`{|}"

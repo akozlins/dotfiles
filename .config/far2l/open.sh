@@ -36,3 +36,5 @@ case "$mime" in
         exec zenity --error --title="$0" --text="unknown MIME type: '$mime'"
         ;;
 esac
+
+exit 1

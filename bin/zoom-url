@@ -9,5 +9,5 @@ CMD=(
     --url="$URL"
 )
 
-[ $# -gt 0 ] && exec "${CMD[@]}"
+[ $# -ge 0 ] && exec "${CMD[@]}"
 exec "${CMD[@]}" &> /dev/null &

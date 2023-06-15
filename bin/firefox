@@ -11,9 +11,10 @@ PROFILE="$XDG_DATA_HOME/firefox/default"
 
 # init profile
 if [ ! -d "$PROFILE" ] ; then
-    cp -r -- "$XDG_CONFIG_HOME/firefox/default" "$PROFILE"
+    mkdir -p -- "$(readlink -- "$PROFILE")"
+    cp -r -- "$XDG_CONFIG_HOME/firefox/default/." "$PROFILE/"
     git clone "https://github.com/Aris-t2/CustomCSSforFx" "$PROFILE/chrome/CustomCSSforFx"
-    "$XDG_CONFIG_HOME/firefox/user.js/generate.py" > "$PROFILE/user.js"
+    "$XDG_CONFIG_HOME/firefox/user.js/generate.py" | sort > "$PROFILE/user.js"
 fi
 
 CMD=()
