@@ -15,7 +15,7 @@
         "command": "-workbench.action.quit",
     },
     {
-        "key": "ctrl+alt+o",
+        "key": "ctrl+alt+e",
         "command": "workbench.files.action.showActiveFileInExplorer",
     },
 ]

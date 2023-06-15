@@ -2,8 +2,6 @@
 
 #R /home/$USER
 
-- /home/*/downloads
-
 ! **/*.cache
 ! **/.local
 ! **/cmake-build*

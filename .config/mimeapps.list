@@ -17,6 +17,7 @@ video/x-matroska=my_open_video.desktop;
 video/x-m4v=my_open_video.desktop;
 
 inode/x-empty=my_open_text.desktop;
+application/rss+xml=my_open_text.desktop;
 application/x-shellscript=my_open_text.desktop;
 application/x-theme=my_open_text.desktop;
 text/plain=my_open_text.desktop;

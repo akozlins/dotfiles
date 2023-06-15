@@ -107,6 +107,7 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME/.nv"
 for f in "$DOTFILES"/profile.d/?*.sh ; do
     [ -f "$f" ] && . "$f"
 done
+unset f
 
 # remove duplicates from PATH
 PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"

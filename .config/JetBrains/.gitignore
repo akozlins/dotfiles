@@ -34,10 +34,12 @@
 /*/options/filetypes.xml
 /*/options/find.xml
 /*/options/jdk.table.xml
+/*/options/ignored-suggested-plugins.xml
 /*/options/other.xml
 /*/options/path.macros.xml
 /*/options/pluginAdvertiser.xml
 /*/options/profilerRunConfigurations.xml
+/*/options/ProjectCreationInfoService.xml
 /*/options/recentProjects.xml
 /*/options/runner.layout.xml
 /*/options/stubIndex.xml

@@ -27,3 +27,8 @@ style = "compact"
 inline_height = 16
 
 #exit_mode = "return-original"
+
+history_filter = [
+   "^rm .*",
+   "^sudo rm .*",
+]
