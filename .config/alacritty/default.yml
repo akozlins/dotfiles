@@ -1,25 +1,23 @@
 #
 
+cursor:
+  style: Beam
+  thickness: 0.2
+
+selection:
+  save_to_clipboard: true
+  semantic_escape_chars: "\t \"'(),/:<>[]`{|}"
+
+scrolling:
+  multiplier: 5
+
 window:
   dimensions:
     columns: 110
     lines: 35
 
+  dynamic_padding: true
+
   padding:
     x: 2
     y: 2
-
-  dynamic_padding: true
-
-scrolling:
-  multiplier: 5
-
-selection:
-  semantic_escape_chars: "\t \"'(),/:<>[]`{|}"
-
-  save_to_clipboard: true
-
-cursor:
-  style: Beam
-
-  thickness: 0.2
