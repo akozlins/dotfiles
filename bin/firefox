@@ -17,13 +17,31 @@ if [ ! -d "$PROFILE" ] ; then
     "$XDG_CONFIG_HOME/firefox/user.js/generate.py" | sort > "$PROFILE/user.js"
 fi
 
-CMD=()
+PROFILE_RUNTIME="$XDG_DATA_HOME/firefox/default"
+if [[ ! "$PROFILE_RUNTIME" -ef "$PROFILE" ]] ; then
+    mkdir -p -- "$(readlink -- "$PROFILE_RUNTIME")"
+    rsync -av -- "$PROFILE/" "$PROFILE_RUNTIME/"
+    sync() {
+         echo "sync"
+         rsync -av -- "$PROFILE_RUNTIME/" "$PROFILE/"
+    }
+    ( while true ; do
+        for i in {1..100} ; do sleep 6 ; echo -n '.' ; done
+        sync
+    done ) &
+    PID=$!
+    cleanup() {
+        echo "cleanup"
+        kill $PID || true
+        sync
+    }
+    trap cleanup EXIT
+fi
 
-CMD+=(
+CMD=(
     /usr/bin/firefox
-    --profile "$PROFILE"
+    --profile "$PROFILE_RUNTIME"
     "$@"
 )
 
-[ $# -gt 0 ] && exec "${CMD[@]}"
-exec "${CMD[@]}" &> /dev/null &
+"${CMD[@]}"
