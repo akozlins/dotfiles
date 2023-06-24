@@ -12,14 +12,13 @@ FIREFOX_HOME = CONFIG_HOME.joinpath("firefox")
 prefs : dict[str, str] = {}
 
 def user_pref(key : str, value : str) -> None :
-    # ignore `_user.` entries (e.g. `_user.js.parrot` from ghacks)
-    if ( key.startswith("_user.") ) :
-        return
+    # ignore `_user.` entries
+    if ( key.startswith("_user.") ) : return
     if ( key not in prefs and value is None ) :
-        print(f'WARN: user_pref("{key}", None -> {value})', file=sys.stderr)
+        print(f'W [user_pref] {key} : None -> {value}', file=sys.stderr)
         return
     if ( key in prefs ) :
-        print(f'INFO: user_pref("{key}", {prefs[key]} -> {value})', file=sys.stderr)
+        print(f'I [user_pref] {key} : {prefs[key]} -> {value}', file=sys.stderr)
     prefs[key] = value
 
 parser = argparse.ArgumentParser()
@@ -29,16 +28,22 @@ parser.add_argument("files", nargs="*", default=[
     FIREFOX_HOME.joinpath("user.js/ghacks.js"),
     FIREFOX_HOME.joinpath("user.js/my.js"),
 ])
+# search (current) directory
+parser.add_argument("--home", default=FIREFOX_HOME)
 # handle `--pref <key> <value>` options
 class PrefAction(argparse.Action) :
     def __call__(self : "PrefAction", parser, namespace, values, option_string=None) -> None :
         user_pref(values[0], values[1])
 parser.add_argument("--pref", nargs=2, action=PrefAction)
-args = parser.parse_args()
+#args = parser.parse_args()
+args, unknown = parser.parse_known_args()
+# handle unknown args
+for arg in unknown :
+    print(f"W [_] unknown argumeng '{arg}'", file=sys.stderr)
 
-def read_prefs(user_js_path : pathlib.Path) -> None :
-    print(f'DEBUG: read_prefs("{user_js_path}")', file=sys.stderr)
-    with user_js_path.open(encoding = "UTF-8") as user_js :
+def read_prefs(path : pathlib.Path) -> None :
+    print(f'I [read_prefs] "{path}"', file=sys.stderr)
+    with path.open(encoding = "UTF-8") as user_js :
         # run gcc preprocessor (remove comments, etc.)
         output = subprocess.check_output([ "/usr/bin/env", "gcc", "-E", "-P", "-" ], stdin=user_js)
         exec(output, { "__builtins__" : None }, {
@@ -73,6 +78,6 @@ def emit_prefs() -> None:
         print(f'user_pref("{key}", {pref_value});')
 
 for file in args.files :
-    read_prefs(file)
+    read_prefs(pathlib.Path(file))
 
 emit_prefs()
