@@ -3,8 +3,12 @@ set -euf
 
 export LM_LICENSE_FILE="$LATTICE_LICENSE_FILE"
 
-DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
-[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
+XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+
+export HOME="$XDG_DATA_HOME/LatticeSemi"
+mkdir -p -- "$HOME" && cd -- "$HOME"
+[ -e ".config" ] || ln -s "$XDG_CONFIG_HOME"
 
 exec \
 "$LATTICE_DIAMOND_HOME/bin/lin64/diamond" "$@" \

@@ -10,12 +10,6 @@
 /.texlive/
 /.zcompdump*
 
-# altera, xilinx, lattice
-/.Synplicity/
-/.digilent_dvctbl.txt
-/.flexlmrc
-/.synplify_pro_history
-
 # git
 .git/
 *.orig
