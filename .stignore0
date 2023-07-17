@@ -1,21 +1,25 @@
 //
 
-.cache
-cmake-build*
-core.[0-9]*
-node_modules
 *~
+*.cache
+.local
+core.[0-9]*
 
-*.!qB
+build
+cmake-build
+cmake-build-*
+meson-build
+meson-build-*
+
+node_modules
+.gradle
+.venv
 
 // ...
+*.!qB
 .config/pulse/cookie
 .zcompdump*
 
-// home
-/.local
-
 // ssh
 .ssh/authorized_keys
-.ssh/known_hosts*
 .ssh/socket-*

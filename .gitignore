@@ -6,14 +6,9 @@
 /private
 
 /.mono/
-/.mtpaint
 /.texlive/
 /.zcompdump*
 
 # git
 .git/
 *.orig
-
-# code
-/.cortex-debug
-/.vhdl_ls.toml

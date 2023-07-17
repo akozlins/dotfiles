@@ -12,4 +12,3 @@ Host bitbucket.org
     User git
     IdentityFile ~/.ssh/id_bitbucket_org
     ControlMaster no
-    HostkeyAlgorithms +ssh-rsa

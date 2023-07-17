@@ -29,7 +29,7 @@
   V4p.Settings.Formatting.Vhdl.AutoAlignSnippets = True
   V4p.Settings.Basics.LicenseFile = 
   V4p.Settings.Basics.LogSeverity = Note
-  V4p.Settings.Basics.TopLevelEntity = 
+  V4p.Settings.Basics.TopLevelEntity = top
   V4p.Settings.HoverInfo.ShowLibraries = False
   V4p.Settings.HoverInfo.ShowLocation = False
   V4p.Settings.HoverInfo.ResolveStdTypes = False

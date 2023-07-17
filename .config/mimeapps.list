@@ -20,6 +20,7 @@ inode/x-empty=my_open_text.desktop;
 application/rss+xml=my_open_text.desktop;
 application/x-shellscript=my_open_text.desktop;
 application/x-theme=my_open_text.desktop;
+text/html=my_open_text.desktop;
 text/plain=my_open_text.desktop;
 text/xml=my_open_text.desktop;
 text/x-c=my_open_text.desktop;

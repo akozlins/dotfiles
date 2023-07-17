@@ -5,7 +5,7 @@ if [ -z "${ALTERAD_LICENSE_FILE:+x}" ] ; then
 fi
 
 # remove /opt/intelFPGA/* entries from PATH
-PATH=$(printf %s "$PATH" | awk -v RS=: '!/\/opt\/intelFPGA\// { if(n++) printf(":"); printf("%s", $0) }')
+PATH=$(printf %s "$PATH" | awk -v RS=: '!/\/opt\/intelFPGA/ { if(n++) printf(":"); printf("%s", $0) }')
 
 export QUARTUS_VERSION=20.1
 QUARTUS_ROOTDIR_PARENT="/opt/intelFPGA/$QUARTUS_VERSION"

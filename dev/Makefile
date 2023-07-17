@@ -28,7 +28,7 @@ geant4 :
 	    -DGEANT4_INSTALL_DATA=ON \
 	    -DGEANT4_USE_QT=ON \
 	    -DGEANT4_USE_OPENGL_X11=ON \
-	    -S $@ -B $@/cmake-build
+	    -S $@ -B $@/cmake-build -G Ninja
 	$(MAKE) $(MAKEFLAGS) -C $@/cmake-build
 	#$(MAKE) $(MAKEFLAGS) -C $@/cmake-build install
 
@@ -41,6 +41,6 @@ root :
 	    -DCMAKE_CXX_STANDARD=17 \
 	    -DLLVM_CXX_STD=c++17 \
 	    -Dxrootd=OFF \
-	    -S $@ -B $@/cmake-build
+	    -S $@ -B $@/cmake-build -G Ninja
 	$(MAKE) $(MAKEFLAGS) -C $@/cmake-build
 	#$(MAKE) $(MAKEFLAGS) -C $@/cmake-build install
