@@ -13,3 +13,5 @@ user_pref("privacy.firstparty.isolate", null);
 user_pref("privacy.resistFingerprinting", null);
 user_pref("privacy.resistFingerprinting.letterboxing", null);
 user_pref("network.cookie.lifetimePolicy", null);
+
+user_pref("geo.provider.network.url", "");

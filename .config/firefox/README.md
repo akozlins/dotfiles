@@ -4,13 +4,12 @@
 
 - uBlock Origin
     - <https://github.com/arkenfox/user.js/wiki/4.1-Extensions>
-        - import <https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt>
-        - enable `AdGuard URL Tracking Protection`
+    - enable `AdGuard URL Tracking Protection`
+    - <https://filterlists.com/lists/actually-legitimate-url-shortener-tool> by "Imre Kristoffer Eilertsen"
 - Absolute Enable Right Click & Copy
 - Enhancer for YouTube
 - Containerise
 - Cookie Quick Manager
-- LocalCDN
 - Violentmonkey
 
 ### `uBlock Origin`
