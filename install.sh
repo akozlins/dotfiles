@@ -6,40 +6,11 @@ echo "DOTFILES = '$DOTFILES'"
 unset CDPATH
 cd "$DOTFILES" || exit 1
 
-# make targets for links (mkdir $(readlink $link))
-links=(
-    # base links
-    .cache .local downloads
-    # .config
-    .config/cef_user_data
-    .config/Element
-    .config/far2l/history
-    .config/fontforge
-    .config/GIMP
-    .config/kicad
-    .config/LatticeSemi
-    .config/libreoffice
-    .config/protonfixes
-    .config/syncthing
-    .config/tmux/plugins
-    .config/tmux/resurrect
-    .config/unity3d
-    .config/vim/bundle
-    # ...
-    .altera.quartus
-    .android
-    .arduino15
-    .epspdf
-    .FreeCAD
-    .java
-    .mozilla/firefox/default
-    .pki
-    .renpy
-    .unison
-    .var/app
-    .vscode-oss
-    .Xilinx
-)
+# find all links
+links=()
+while IFS='' read -r line ; do
+    links+=("$line")
+done < <(find . -type l | awk '{ print length, $0 }' | sort -n | cut -d' ' -f2-)
 
 # do mkdir for each link
 for link in "${links[@]}" ; do
@@ -51,6 +22,15 @@ for link in "${links[@]}" ; do
 
     # skip existing targets
     [ -e "$target" ] && continue
+    # check git ignore
+    [ -n "$(git check-ignore -v "$link")" ] && continue
+    # skip file targets (*.*)
+    if [[ $(basename -- "$target") = *.* ]] ; then
+        >&2 echo "I [$0] skip file link: '$link' -> '$target'"
+        continue
+    fi
+    # skip ext (outside $HOME) targets
+    [[ $target = $HOME/* ]] || continue
 
     # mkdir (assume target should be directory)
     mkdir -pv -- "$target"
