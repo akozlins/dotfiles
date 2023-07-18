@@ -129,3 +129,4 @@ user_pref("browser.vpn_promo.enabled", false);
 
 user_pref("ui.prefersReducedMotion", 1);
 user_pref("image.animation_mode", "once");
+user_pref("extensions.quarantinedDomains.enabled", false);
