@@ -1,0 +1,24 @@
+#
+
+# <https://github.com/baskerville/sxhkd>
+
+super + alt + y
+	dunstify test
+
+XF86AudioLowerVolume
+	"$XDG_CONFIG_HOME/sxhkd/pactl-set-sink-volume.sh" -2%
+
+XF86AudioRaiseVolume
+	"$XDG_CONFIG_HOME/sxhkd/pactl-set-sink-volume.sh" +2%
+
+super + Up
+	xdotool keyup Up key --clearmodifiers Prior
+
+super + Down
+	xdotool keyup Down key --clearmodifiers Next
+
+super + Left
+	xdotool keyup Left key --clearmodifiers Home
+
+super + Right
+	xdotool keyup Right key --clearmodifiers End
