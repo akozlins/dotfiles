@@ -1,0 +1,20 @@
+#!/bin/bash
+set -euf
+
+CMD=()
+
+CMD+=(
+    bwrap
+    --dev-bind / /
+    --tmpfs "$(readlink -f -- "$HOME")"
+    --ro-bind "$(readlink -f -- "$ETHEREUM_KEYSTORE")" "$HOME/.ethereum/keystore"
+    --ro-bind "$(readlink -f -- "$XAUTHORITY")" "$HOME/.Xauthority"
+)
+
+CMD+=(
+    /usr/bin/etherwall
+    "$@"
+)
+
+[ $# -ge 0 ] && exec "${CMD[@]}"
+exec "${CMD[@]}" &> /dev/null &
