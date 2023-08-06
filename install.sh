@@ -99,7 +99,7 @@ for target in "${targets[@]}" ; do
 done
 
 # Media/MIME Types
-"$DOTFILES/.config/applications/init.sh"
+make -C "$DOTFILES/.config/applications"
 
 # ZSH
 [ -x /usr/bin/zsh ] && make -C "$DOTFILES/opt" oh-my-zsh
