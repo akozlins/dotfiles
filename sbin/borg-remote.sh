@@ -31,10 +31,10 @@ SOCAT_PID=$!
 
 cleanup() {
     rc=$?
-    kill "$SOCAT_PID" || true
+    /usr/bin/kill -s TERM --timeout 100 KILL -- "$SOCAT_PID" || true
     exit $rc
 }
-trap cleanup EXIT
+trap cleanup EXIT HUP INT TERM
 
 ssh "$HOST" -R "$PORT:localhost:$PORT" \
     BORG_RSH="'sh -c \"exec socat STDIO TCP4-CONNECT:localhost:$PORT\"'" \

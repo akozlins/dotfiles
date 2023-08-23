@@ -5,4 +5,4 @@ window=$(xdotool getwindowfocus)
 pid=$(xprop -id "$window" | grep PID)
 
 exec \
-kill -9 "$pid"
+/usr/bin/kill -s TERM --timeout 100 KILL -- "$pid"

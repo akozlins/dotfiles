@@ -11,6 +11,9 @@ XF86AudioLowerVolume
 XF86AudioRaiseVolume
 	"$XDG_CONFIG_HOME/sxhkd/pactl-set-sink-volume.sh" +2%
 
+super + alt + m
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
 super + Up
 	xdotool keyup Up key --clearmodifiers Prior
 

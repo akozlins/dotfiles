@@ -3,4 +3,8 @@ set -euf
 
 [ $# -gt 0 ] && exec /usr/bin/sxhkd "$@"
 
-echo $XDG_CONFIG_HOME/sxhkd/sxhkdrc | entr -nr /usr/bin/sxhkd -c /_
+command -v entr &> /dev/null || exec /usr/bin/sxhkd
+
+echo "$XDG_CONFIG_HOME/sxhkd/sxhkdrc" | \
+exec \
+entr -nr /usr/bin/sxhkd -c /_ -r "$XDG_CACHE_HOME/sxhkd.log"

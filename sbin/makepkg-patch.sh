@@ -8,7 +8,7 @@ cd -- "$XDG_CACHE_HOME/makepkg"
 
 #git clone --branch "packages/$PKG" --single-branch https://github.com/archlinux/svntogit-packages.git
 yay --getpkgbuild -- "$PKG"
-cd -- "$PKG"
+cd -- "$PKG/trunk"
 
 git stash
 if [ -r "$XDG_CONFIG_HOME/makepkg/$PKG.patch" ] ; then

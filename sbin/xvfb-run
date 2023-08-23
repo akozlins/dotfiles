@@ -23,12 +23,12 @@ Xvfb "$DISPLAY" -nolisten tcp -terminate &
 XVFBPID=$!
 cleanup() {
     rv=$?
-    kill -SIGTERM -- "$XVFBPID"
-    xauth remove "$DISPLAY"
-    rm -- "$XAUTHORITY"
+    /usr/bin/kill -s TERM --timeout 100 KILL -- "$XVFBPID" || true
+    xauth remove "$DISPLAY" || true
+    rm -- "$XAUTHORITY" || true
     exit $rv
 }
-trap cleanup EXIT
+trap cleanup EXIT HUP INT TERM
 sleep 1
 
 "$@"

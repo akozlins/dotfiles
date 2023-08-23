@@ -44,6 +44,9 @@
 [pull]
 	ff = only
 
+[push]
+	autoSetupRemote = true
+
 [stash]
 	showPatch = true
 

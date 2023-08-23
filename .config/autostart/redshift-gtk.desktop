@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=Redshift
+Name=redshift
 Icon=redshift
 Exec=redshift-gtk -l 50:8 -b 0.7:0.7
 TryExec=redshift-gtk

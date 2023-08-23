@@ -20,7 +20,7 @@ update_check = false
 #search_mode = "prefix"
 
 # values: global, host ,session, directory
-#filter_mode=global
+filter_mode = "directory"
 
 style = "compact"
 
