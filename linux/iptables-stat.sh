@@ -12,4 +12,7 @@ sudo iptables -nvL \
 ($1 != "0" && $3 == "DROP") {
     print $0
 }
+($1 != "0" && $3 == "REJECT") {
+    print $0
+}
 '
