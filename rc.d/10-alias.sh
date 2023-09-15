@@ -1,6 +1,5 @@
 #!/bin/sh
 
-alias make='LC_ALL=C nice make'
 alias man="LC_ALL=C man"
 
 alias df='df -h'
@@ -20,3 +19,6 @@ alias rg="rg --hidden"
 alias grep-nonascii="grep --line-number --color --perl-regexp --regexp='[^\\x00-\\x7F]'"
 alias rg-nonascii="rg --colors 'match:bg:red' --regexp '[^\\x00-\\x7F]'"
 alias rg-ws="rg --colors 'match:bg:red' '\\s+$'"
+
+alias make='LC_ALL=C nice ionice make -j$(nproc --ignore=1)'
+alias ninja='nice ionice ninja'
