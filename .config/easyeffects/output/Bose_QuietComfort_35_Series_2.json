@@ -1,11 +1,6 @@
 {
     "output": {
-        "plugins_order": [
-            "stereo_tools#0",
-            "equalizer#0",
-            "filter#0",
-            "limiter#0"
-        ],
+        "blocklist": [],
         "stereo_tools#0": {
             "balance-in": 0.0,
             "balance-out": 0.0,
@@ -243,13 +238,17 @@
             "split-channels": false
         },
         "filter#0": {
+            "balance": 0.0,
             "bypass": false,
             "frequency": 100.0,
-            "inertia": 20.0,
+            "gain": 0.0,
             "input-gain": 0.0,
-            "mode": "36dB/oct Highpass",
+            "mode": "RLC (BT)",
             "output-gain": 0.0,
-            "resonance": -3.0
+            "quality": 0.0,
+            "slope": "x1",
+            "type": "High-pass",
+            "width": 4.0
         },
         "limiter#0": {
             "alr": false,
@@ -271,6 +270,11 @@
             "stereo-link": 100.0,
             "threshold": -0.5
         },
-        "blocklist": []
+        "plugins_order": [
+            "stereo_tools#0",
+            "equalizer#0",
+            "filter#0",
+            "limiter#0"
+        ]
     }
 }
