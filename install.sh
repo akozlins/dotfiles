@@ -10,7 +10,7 @@ cd "$DOTFILES" || exit 1
 links=()
 while IFS='' read -r line ; do
     links+=("$line")
-done < <(find . -type l | awk '{ print length, $0 }' | sort -n | cut -d' ' -f2-)
+done < <(find . -xtype l | awk '{ print length, $0 }' | sort -n | cut -d' ' -f2-)
 
 # do mkdir for each link
 for link in "${links[@]}" ; do
@@ -57,8 +57,19 @@ for target in "${targets[@]}" ; do
         exit 1
     fi
 
+    link_dir=$(dirname -- "$link")
+
+    # skip
+    if [ -L "$link" ] ; then
+        if command -v realpath &> /dev/null ; then
+            [ "$(readlink -- "$link")" = "$(realpath --relative-to="$link_dir" "$target")" ] && continue
+        else
+            [ "$(readlink -- "$link")" = "$target" ] && continue
+        fi
+    fi
+
     # delete existing link
-    if [ -L "$link" ] && [ "$(readlink -f -- "$link")" = "$(readlink -f -- "$target")" ] ; then
+    if [ -L "$link" ] ; then
         >&2 echo "I [$0] link '$link -> $(readlink -- "$link")' exists"
         while true ; do
             read -r -p "Overwrite? [y,n,q,?] " sel
@@ -83,7 +94,6 @@ for target in "${targets[@]}" ; do
     fi
 
     # make destination directory
-    link_dir=$(dirname -- "$link")
     if [ ! -d "$link_dir" ] ; then
         mkdir -pv -- "$link_dir"
     fi
