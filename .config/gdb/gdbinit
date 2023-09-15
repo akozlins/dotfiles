@@ -1,0 +1,8 @@
+#
+
+set debuginfod enabled off
+
+# disable 'Quit anyway?'
+define hook-quit
+    set confirm off
+end
