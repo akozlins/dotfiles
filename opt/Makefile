@@ -82,3 +82,7 @@ easystroke :
 anorack :
 	$(call clone_pull,https://github.com/jwilk/anorack,$@)
 	$(MAKE) $(MAKEFLAGS) -C $@ PREFIX=$(PREFIX) install
+
+yay-bin :
+	$(call clone_pull,https://aur.archlinux.org/yay-bin,$@)
+	( cd yay-bin && makepkg -s && makepkg -i )

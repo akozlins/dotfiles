@@ -4,11 +4,12 @@ set -euf
 CMD=()
 
 CMD+=(
-    bwrap
+    /usr/bin/bwrap
     --dev-bind / /
     --tmpfs "$(readlink -f -- "$HOME")"
     --ro-bind "$(readlink -f -- "$ETHEREUM_KEYSTORE")" "$HOME/.ethereum/keystore"
     --ro-bind "$(readlink -f -- "$XAUTHORITY")" "$HOME/.Xauthority"
+    --
 )
 
 CMD+=(

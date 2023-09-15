@@ -6,6 +6,8 @@
 -A exclude,always -F exe=/usr/bin/sudo
 -A exclude,always -F msgtype=ANOM_PROMISCUOUS
 
+-A exclude,always -F msgtype=NETFILTER_CFG
+
 # verify and regenerate:
 # `augenrules --check`
 # `augenrules --load`

@@ -1,8 +1,9 @@
 #
 
-*.cache
-*.log
 *~
+*.cache
+.local
+*.log
 
 /private
 
