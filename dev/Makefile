@@ -26,11 +26,13 @@ geant4 :
 	    -DCMAKE_BUILD_TYPE=Release \
 	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local/geant4.cern.ch" \
 	    -DGEANT4_INSTALL_DATA=ON \
-	    -DGEANT4_USE_QT=ON \
+	    -DGEANT4_INSTALL_EXAMPLES=OFF \
 	    -DGEANT4_USE_OPENGL_X11=ON \
-	    -S $@ -B $@/cmake-build -G Ninja
-	$(MAKE) $(MAKEFLAGS) -C $@/cmake-build
-	#$(MAKE) $(MAKEFLAGS) -C $@/cmake-build install
+	    -DGEANT4_USE_QT=ON \
+	    -DGEANT4_USE_SYSTEM_CLHEP=ON \
+	    -G Ninja \
+	    -S $@ -B $@/cmake-build
+	cmake --build $@/cmake-build
 
 .PHONY : root
 root :
@@ -41,6 +43,18 @@ root :
 	    -DCMAKE_CXX_STANDARD=17 \
 	    -DLLVM_CXX_STD=c++17 \
 	    -Dxrootd=OFF \
-	    -S $@ -B $@/cmake-build -G Ninja
-	$(MAKE) $(MAKEFLAGS) -C $@/cmake-build
-	#$(MAKE) $(MAKEFLAGS) -C $@/cmake-build install
+	    -G Ninja \
+	    -S $@ -B $@/cmake-build
+	cmake --build $@/cmake-build
+
+.PHONY : clhep
+clhep :
+	$(call clone_pull,https://gitlab.cern.ch/CLHEP/CLHEP,$@)
+	cmake \
+	    -DCMAKE_BUILD_TYPE=Release \
+	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local/clhep.cern.ch" \
+	    -DCMAKE_CXX_STANDARD=17 \
+	    -G Ninja \
+	    -S $@ -B $(HOME)/.cache/CLHEP-cmake-build
+	cmake --build $(HOME)/.cache/CLHEP-cmake-build
+#	cmake --install $(HOME)/.cache/CLHEP-cmake-build
