@@ -1,7 +1,13 @@
 #!/bin/bash
 set -euf
 
-sudo iptables -nvL \
+# root
+if [ "$(id -u)" -ne 0 ] ; then
+    exec sudo "$0" "$@"
+fi
+
+exec \
+iptables -nvL \
 | awk '
 ($3 == "(policy" && "DROP" == $4 && $5 != "0") {
     print $0
