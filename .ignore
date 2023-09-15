@@ -1,3 +1,24 @@
 //
 
-.git
+*~
+*.cache
+.local
+core.[0-9]*
+
+build
+cmake-build
+cmake-build-*
+meson-build
+meson-build-*
+
+node_modules
+.gradle
+.venv
+
+// ...
+*.!qB
+.config/pulse/cookie
+.zcompdump*
+
+// ssh
+.ssh/socket-*
