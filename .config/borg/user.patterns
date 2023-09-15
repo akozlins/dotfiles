@@ -2,9 +2,13 @@
 
 #R /home/$USER
 
+! **/*~
 ! **/*.cache
 ! **/.local
-! **/cmake-build*
 - **/core.[0-9]*
+
+! **/build
+! **/cmake-build*
+! **/meson-build*
 ! **/node_modules
-! **/*~
+! **/.gradle

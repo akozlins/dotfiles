@@ -15,7 +15,7 @@ fi
 
 PATTERNS="./user.patterns"
 PREFIX="$USER@{hostname}"
-LOG="./.cache/borg.log"
+LOG="$BORG_REPO/borg.log"
 #if command -v jq &> /dev/null ; then
 #    LOG="$(borg info --json | jq --raw-output '.cache.path')/borg.log"
 #fi

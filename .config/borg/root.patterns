@@ -7,11 +7,16 @@ R /
 ! /sys
 ! /tmp
 
-! **/*.cache
-! **/cmake-build*
-- **/core.[0-9]*
-! **/node_modules
 ! **/*~
+! **/*.cache
+! **/.local
+- **/core.[0-9]*
+
+! **/build
+! **/cmake-build*
+! **/meson-build*
+! **/node_modules
+! **/.gradle
 
 - /boot/*.img
 + /boot
