@@ -1,13 +1,9 @@
 {
     "input": {
-        "plugins_order": [
-            "stereo_tools",
-            "filter",
-            "limiter"
-        ],
-        "stereo_tools": {
+        "stereo_tools#0": {
             "balance-in": 0.0,
             "balance-out": 0.0,
+            "bypass": false,
             "delay": 0.0,
             "input-gain": 0.0,
             "middle-level": 0.0,
@@ -25,20 +21,26 @@
             "stereo-base": 0.0,
             "stereo-phase": 0.0
         },
-        "filter": {
+        "filter#0": {
+            "balance": 0.0,
+            "bypass": false,
             "frequency": 200.0,
-            "inertia": 20.0,
+            "gain": 0.0,
             "input-gain": 0.0,
-            "mode": "36dB/oct Highpass",
+            "mode": "RLC (BT)",
             "output-gain": 10.0,
-            "resonance": -3.0
+            "quality": 0.0,
+            "slope": "x2",
+            "type": "High-pass",
+            "width": 4.0
         },
-        "limiter": {
+        "limiter#0": {
             "alr": false,
             "alr-attack": 5.0,
             "alr-knee": 0.0,
             "alr-release": 50.0,
             "attack": 5.0,
+            "bypass": false,
             "dithering": "None",
             "external-sidechain": false,
             "gain-boost": false,
@@ -52,6 +54,11 @@
             "stereo-link": 100.0,
             "threshold": 0.0
         },
+        "plugins_order": [
+            "stereo_tools#0",
+            "filter#0",
+            "limiter#0"
+        ],
         "blocklist": []
     }
 }

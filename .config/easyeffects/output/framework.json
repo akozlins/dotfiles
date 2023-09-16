@@ -1,6 +1,5 @@
 {
     "output": {
-        "blocklist": [],
         "stereo_tools#0": {
             "balance-in": 0.0,
             "balance-out": 0.0,
@@ -59,6 +58,7 @@
             "stereo_tools#0",
             "filter#0",
             "limiter#0"
-        ]
+        ],
+        "blocklist": []
     }
 }
