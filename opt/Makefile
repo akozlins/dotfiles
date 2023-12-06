@@ -7,7 +7,7 @@ SHELL := bash
 .SHELLFLAGS := -euf -c
 
 PREFIX := $(HOME)/.local
-CMAKE_OPTS := -DCMAKE_INSTALL_PREFIX=$(PREFIX) -DCMAKE_BUILD_TYPE=Release
+CMAKE_OPTS := -DCMAKE_INSTALL_PREFIX="$(PREFIX)" -DCMAKE_BUILD_TYPE=Release -G Ninja
 
 # clone git project and do stash/pull
 # $(1) - git url
@@ -23,10 +23,10 @@ endef
 define cmake_make_install
 	# dependencies: cmake, pkg-config
 	cmake -S "$(1)" -B "$(1)/cmake-build" $(CMAKE_OPTS)
-	#cmake --build $(1)/cmake-build
-	#cmake --install $(1)/cmake-build
-	$(MAKE) $(MAKEFLAGS) -C $(1)/cmake-build
-	$(MAKE) -C $(1)/cmake-build install
+	cmake --build $(1)/cmake-build -j
+	cmake --install $(1)/cmake-build
+	#$(MAKE) $(MAKEFLAGS) -C $(1)/cmake-build
+	#$(MAKE) -C $(1)/cmake-build install
 endef
 
 all :
