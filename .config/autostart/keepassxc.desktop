@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=keepassxc
+Exec=keepassxc
+TryExec=keepassxc
+Terminal=false
