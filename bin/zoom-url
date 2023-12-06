@@ -6,7 +6,7 @@ shift
 
 CMD=(
     zoom
-    --url="$URL"
+    "--url=$URL"
 )
 
 [ $# -ge 0 ] && exec "${CMD[@]}"

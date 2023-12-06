@@ -6,3 +6,9 @@ set debuginfod enabled off
 define hook-quit
     set confirm off
 end
+
+set pagination off
+set history save on
+set history filename ~/.cache/.gdb_history
+set history size 1024
+set history remove-duplicates 1

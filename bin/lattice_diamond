@@ -8,7 +8,7 @@ XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 export HOME="$XDG_DATA_HOME/LatticeSemi"
 mkdir -p -- "$HOME" && cd -- "$HOME"
-[ -e ".config" ] || ln -s "$XDG_CONFIG_HOME"
+[ -e ".config" ] || ln -snv -T "$XDG_CONFIG_HOME" .config
 
 exec \
 "$LATTICE_DIAMOND_HOME/bin/lin64/diamond" "$@" \

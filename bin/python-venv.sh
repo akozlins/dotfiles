@@ -1,7 +1,10 @@
 #!/bin/bash
 set -euf
 
-python -m venv "$XDG_CACHE_HOME/venv/$1"
-cd "$XDG_CACHE_HOME/venv/$1" || exit 1
+VENV="${MY_PYTHON_VENV}/$1"
 
+[ -f "$VENV/bin/activate" ] || python -m venv "$VENV"
+
+cd "$VENV" || exit 1
+#export HOME=$PWD
 bash -c "source ./bin/activate && bash"

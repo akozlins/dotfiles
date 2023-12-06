@@ -89,6 +89,7 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/startup"
 export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python/pycache"
 export SQLITE_HISTORY="$XDG_CACHE_HOME/.sqlite_history"
 export STACK_ROOT="$XDG_CACHE_HOME/stack"
+export STEAM_HOME="$XDG_DATA_HOME/steam"
 #export UNISON="$XDG_CONFIG_HOME/unison"
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"

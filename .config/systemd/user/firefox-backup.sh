@@ -3,7 +3,8 @@ set -eu
 
 source "$HOME/.profile"
 FIREFOX="$DOTFILES/.config/firefox"
-PROFILE="$DOTFILES/.mozilla/firefox/default"
+#PROFILE="$DOTFILES/.mozilla/firefox/default"
+PROFILE="$DOTFILES/.librewolf/default"
 
 COMMIT=0
 

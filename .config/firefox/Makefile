@@ -34,12 +34,13 @@ user.js : ghacks-user.js
 	    user.js/ghacks.js \
 	    user.js/my.js \
 	| sort > "$(PROFILE)/user.js.new"
-	if [ -e "$(PROFILE)/user.js" ] && ! diff -- <(cat "$(PROFILE)/user.js" | sort) <(cat "$(PROFILE)/user.js.new" | sort) ; then \
+	if [ -e "$(PROFILE)/user.js" ] && ! diff -u -- <(cat "$(PROFILE)/user.js" | sort) <(cat "$(PROFILE)/user.js.new" | sort) ; then \
 	    cp -v -- "$(PROFILE)/user.js" "$(PROFILE)/user.$$(date +%FT%T).js"; \
 	fi
 	mv -v -- "$(PROFILE)/user.js.new" "$(PROFILE)/user.js"
 
 .PHONY : css
 css :
+	# TODO: copy default/chrome
 	mkdir -p -- "$(PROFILE)/chrome"
 	$(call clone_pull,https://github.com/Aris-t2/CustomCSSforFx,$(PROFILE)/chrome/CustomCSSforFx)

@@ -1,7 +1,6 @@
 //
 {
     "audioCues.volume": 0,
-    "breadcrumbs.enabled": false,
     "clangd.arguments": [
         "--compile-commands-dir=${workspaceFolder}/cmake-build",
         "--header-insertion=never",

@@ -59,7 +59,7 @@ for target in "${targets[@]}" ; do
 
     link_dir=$(dirname -- "$link")
 
-    # skip
+    # skip same links
     if [ -L "$link" ] ; then
         if command -v realpath &> /dev/null ; then
             [ "$(readlink -- "$link")" = "$(realpath --relative-to="$link_dir" "$target")" ] && continue
