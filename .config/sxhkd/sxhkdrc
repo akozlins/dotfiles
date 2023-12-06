@@ -28,3 +28,7 @@ super + Right
 
 super + alt + t
 	sh -c 'rofi -e "$(xsel -b | trans -b)"'
+
+# show menu
+super + m
+	"$XDG_CONFIG_HOME/sxhkd/rofi-script.sh"
