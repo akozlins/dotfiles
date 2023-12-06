@@ -20,7 +20,8 @@ ghacks-user.js :
 
 
 GENERATE := $(XDG_CONFIG_HOME)/firefox/user.js/generate.py
-PROFILE := $(DOTFILES)/.mozilla/firefox/default
+#PROFILE := $(DOTFILES)/.mozilla/firefox/default
+PROFILE := $(DOTFILES)/.librewolf/default
 
 default : user.js css
 	rsync -auv ./default $(PROFILE)

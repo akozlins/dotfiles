@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=firefox
 Icon=firefox
-Exec=$DOTFILES/bin/firefox -- %u
+Exec=$DOTFILES/bin/librewolf -- %u
 Terminal=false
 Type=Application
