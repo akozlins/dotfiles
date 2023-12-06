@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "label": "git-add-p",
+            "type": "shell",
+            "command": "git add -p ${file}",
+            "group": "none",
+            "presentation": {
+                "panel": "new",
+                "focus": true,
+            },
+            "problemMatcher": [],
+        },
+    ],
+}
