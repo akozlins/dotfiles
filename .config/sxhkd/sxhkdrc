@@ -25,3 +25,6 @@ super + Left
 
 super + Right
 	xdotool keyup Right key --clearmodifiers End
+
+super + alt + t
+	sh -c 'rofi -e "$(xsel -b | trans -b)"'
