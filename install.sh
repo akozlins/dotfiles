@@ -113,3 +113,7 @@ make -C "$DOTFILES/.config/applications"
 
 # ZSH
 [ -x /usr/bin/zsh ] && make -C "$DOTFILES/opt" oh-my-zsh
+source .profile
+for f in "$DOTFILES"/install.d/?*.sh ; do
+    [ -f "$f" ] && source "$f"
+done
