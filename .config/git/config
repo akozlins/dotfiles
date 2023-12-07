@@ -1,10 +1,10 @@
 #
 
 [alias]
-	log-fzf = "! git log --pretty=format:'%h %s' --color=always | fzf --ansi | cut -d' ' -f1"
+	log-fzf = "! git log --pretty=format:'%h %s' --color=always | fzf --ansi --preview 'git show {1}' | cut -d' ' -f1"
 	rebase-fzf = "! xargs -ra <(git log-fzf) git rebase -i"
-	reset-fzf = "! xargs -ra <(git diff --staged --name-only | fzf --ansi) git reset --"
-	add-fzf = "! xargs -ra <(git diff --name-only | fzf --ansi) git add -p --"
+	reset-fzf = "! xargs -ra <(git diff --staged --name-only | fzf --ansi --preview 'git diff --cached -- {1}') git reset --"
+	add-fzf = "! xargs -ra <(git diff --name-only | fzf --ansi --preview 'git diff -- {1}') git add -p --"
 
 [commit]
 #	gpgsign = true
