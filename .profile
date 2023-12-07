@@ -114,5 +114,7 @@ unset f
 PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"
 if command -v awk 2>&1 > /dev/null ; then
     PATH=$(printf %s "$PATH" | awk -v RS=: '!a[$0]++ { if(n++) printf(":"); printf("%s", $0) }')
+    LD_LIBRARY_PATH=$(printf %s "$LD_LIBRARY_PATH" | awk -v RS=: '!a[$0]++ { if(n++) printf(":"); printf("%s", $0) }')
 fi
 export PATH
+export LD_LIBRARY_PATH
