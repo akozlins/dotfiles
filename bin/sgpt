@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euf
+
+VENV="$MY_PYTHON_VENV/openai"
+
+[ -f "$VENV/bin/activate" ] || python -m venv "$VENV"
+source "$VENV/bin/activate"
+
+exec \
+"$VENV/bin/sgpt" "$@"
