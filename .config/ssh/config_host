@@ -5,6 +5,7 @@ Host *
     ControlPath ~/.ssh/socket-%r@%h:%p
     ControlPersist 1h
     IdentitiesOnly yes
+    AddKeysToAgent confirm
 
 Match all
 
