@@ -1,0 +1,26 @@
+#
+
+[env]
+TERM = "xterm-256color"
+
+[window.dimensions]
+columns = 110
+lines = 35
+
+[window.padding]
+x = 2
+y = 2
+
+[window]
+dynamic_padding = true
+
+[scrolling]
+multiplier = 5
+
+[selection]
+semantic_escape_chars = "\t \"'(),/:<>[]`{|}"
+save_to_clipboard = true
+
+[cursor]
+style = "Beam"
+thickness = 0.2

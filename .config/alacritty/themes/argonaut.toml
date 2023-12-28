@@ -1,0 +1,19 @@
+#
+
+[colors.primary]
+background = "0x292C3E"
+foreground = "0xEBEBEB"
+
+[colors.cursor]
+text = "0xFF261E"
+cursor = "0xFF261E"
+
+[colors.normal]
+black = "0x0d0d0d"
+blue = "0x1BA6FA"
+cyan = "0x21DEEF"
+green = "0xA0E521"
+magenta = "0x8763B8"
+red = "0xFF301B"
+white = "0xEBEBEB"
+yellow = "0xFFC620"

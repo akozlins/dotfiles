@@ -1,0 +1,8 @@
+#
+
+[window.dimensions]
+columns = 100
+lines = 30
+
+[font]
+size = 10.0

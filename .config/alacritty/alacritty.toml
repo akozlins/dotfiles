@@ -1,0 +1,17 @@
+#
+
+import = [
+    "~/.config/alacritty/default.toml",
+
+    # font
+#    "~/.config/alacritty/fonts/fixed.toml",
+    "~/.config/alacritty/fonts/iosevka.toml",
+#    "~/.config/alacritty/fonts/jetbrains.toml",
+
+    # theme
+    "~/.config/alacritty/themes/argonaut.toml",
+#    "~/.config/alacritty/themes/dracula.toml",
+
+    # host
+    "~/.config/alacritty/hosts/default.toml",
+]
