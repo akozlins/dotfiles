@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euf
+
+TOPLEVEL=$(git rev-parse --show-toplevel)
+cd -- "$TOPLEVEL" || exit 1
+file=$(git ls-files | fzf --ansi --preview 'git diff -- {}')
+
+exec \
+gitk "$@" -- "$file"
