@@ -1,11 +1,18 @@
 #
 
 [alias]
+	# list all objects (blobs, etc.) and sort by size
+	# output: hash type size name
+	ls-blobs = "! git-ls-blobs.sh"
+	# fzf commit
 	log-fzf = "! git log --pretty=format:'%cs %h %s' --color=always | fzf --ansi --preview 'git show {2}' | cut -d' ' -f2"
 	# fzf commit and rebase
 	rebase-fzf = "! xargs -ra \
 		<(git log-fzf) \
 		git rebase -i"
+	pick-fzf = "! xargs -ra \
+		<(git log --pretty=format:'%cs %h %s' --color=always $(git for-each-ref --format='%(refname:short)' refs/remotes/) ^HEAD | fzf --ansi --preview 'git show {2}' | cut -d' ' -f2) \
+		git cherry-pick"
 	# `add -p` on changed files
 	add-fzf = "! xargs -ra \
 		<(git diff --name-only | fzf --ansi --preview 'git diff -- {}') \
@@ -14,6 +21,10 @@
 	reset-fzf = "! xargs -ra \
 		<(git diff --staged --name-only | fzf --ansi --preview 'git diff --cached -- {}') \
 		git reset -p --"
+	# `stash -p` on changed files
+	stash-fzf = "! xargs -ra \
+		<(git diff --name-only | fzf --ansi --preview 'git diff -- {}') \
+		git stash -p --"
 	#
 
 [commit]
