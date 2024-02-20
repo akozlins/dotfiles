@@ -22,3 +22,5 @@ alias rg-ws="rg --colors 'match:bg:red' '\\s+$'"
 
 alias make='LC_ALL=C nice ionice make -j$(nproc --ignore=1)'
 alias ninja='nice ionice ninja'
+
+alias lg='lazygit'

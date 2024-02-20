@@ -1,5 +1,5 @@
 system:
-  game_path: ~/games
+  game_path: ~/games/lutris
 wine:
   Desktop: true
   WineDesktop: 1600x900

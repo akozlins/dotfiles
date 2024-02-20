@@ -17,3 +17,7 @@ fingerprint=$(openssl x509 -fingerprint -sha256 -noout -in $BARRIER_SSL/Barrier.
 echo "v2:sha256:$fingerprint" > $BARRIER_SSL/Fingerprints/Local.txt
 barrier --enable-crypto
 ```
+
+## LibreOffice
+
+- `Tools | Options | Libreoffice | Security | Options | Block any links from documents ...`

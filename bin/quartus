@@ -6,11 +6,13 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
 CMD=()
 
-command -v -- bwrap &> /dev/null && CMD+=(
-    bwrap
-    --dev-bind / /
-    --tmpfs "$(readlink -f -- "$HOME/private")"
-)
+if command -v -- bwrap &> /dev/null ; then
+    CMD+=(
+        bwrap
+        --dev-bind / /
+        --tmpfs "$(readlink -f -- "$HOME/private")"
+    )
+fi
 
 CMD+=(
     "$QUARTUS_ROOTDIR/bin/quartus"

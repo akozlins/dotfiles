@@ -1,10 +1,20 @@
 #
 
 [alias]
-	log-fzf = "! git log --pretty=format:'%h %s' --color=always | fzf --ansi --preview 'git show {1}' | cut -d' ' -f1"
-	rebase-fzf = "! xargs -ra <(git log-fzf) git rebase -i"
-	reset-fzf = "! xargs -ra <(git diff --staged --name-only | fzf --ansi --preview 'git diff --cached -- {1}') git reset --"
-	add-fzf = "! xargs -ra <(git diff --name-only | fzf --ansi --preview 'git diff -- {1}') git add -p --"
+	log-fzf = "! git log --pretty=format:'%cs %h %s' --color=always | fzf --ansi --preview 'git show {2}' | cut -d' ' -f2"
+	# fzf commit and rebase
+	rebase-fzf = "! xargs -ra \
+		<(git log-fzf) \
+		git rebase -i"
+	# `add -p` on changed files
+	add-fzf = "! xargs -ra \
+		<(git diff --name-only | fzf --ansi --preview 'git diff -- {}') \
+		git add -p --"
+	# `reset -p` on staged files
+	reset-fzf = "! xargs -ra \
+		<(git diff --staged --name-only | fzf --ansi --preview 'git diff --cached -- {}') \
+		git reset -p --"
+	#
 
 [commit]
 #	gpgsign = true
@@ -22,6 +32,7 @@
 	autocrlf = input
 	editor = nano
 	whitespace = trailing-space,space-before-tab
+#	pager = cat
 #	pager = delta
 #	pager = diffr | less -R
 
@@ -45,6 +56,7 @@
 [merge]
 	conflictStyle = diff3
 #	conflictStyle = zdiff3
+	ff = false
 	tool = meld
 
 [pull]
@@ -52,6 +64,9 @@
 
 [push]
 	autoSetupRemote = true
+
+[rebase]
+	committer-date-is-author-date = true
 
 [stash]
 	showPatch = true
@@ -67,4 +82,6 @@
 	pushInsteadOf = https://github.com/
 
 [user]
-#	signingkey = 0000000000000000
+	#signingkey = 0000000000000000
+	#signingkey = ~/.ssh/git_sign.pub
+

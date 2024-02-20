@@ -5,3 +5,6 @@ customCommands:
     context: 'files'
     command: "git {{if .SelectedFile.HasUnstagedChanges}} add {{else}} reset {{end}} {{.SelectedFile.Name | quote}}"
     description: 'stage/unstage file'
+
+git:
+    autoFetch: false

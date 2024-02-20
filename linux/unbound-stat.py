@@ -7,17 +7,17 @@ import re
 domains = {}
 
 for line in pathlib.Path("/etc/unbound/unbound.log").open().readlines() :
-    info = re.findall('^\[([^ ]+)\] [^ ]+ [^ ]+ [^ ]+ ([^ ]+) [^ ]+ [^ ]+ ([^ ]+) [^ ]+ ([^ ]+) [^ ]+$', line)
+    info = re.findall('^\\[([^ ]+)\\] [^ ]+ [^ ]+ [^ ]+ ([^ ]+) [^ ]+ [^ ]+ ([^ ]+) [^ ]+ ([^ ]+) [^ ]+$', line)
     if not info : continue
     info = info[0]
 
-    time = datetime.fromtimestamp(int(info[0]))
+    time = datetime.fromtimestamp(int(info[0]), tz=timezone.utc)
     domain = info[1]
     status = info[2]
     cached = info[3]
 
-    if time < datetime.now() - timedelta(days=7) : continue
-    
+    if time < datetime.now(tz=timezone.utc) - timedelta(days=7) : continue
+
     key = ""
     items = domains
     for i in reversed(domain.split('.')) :
@@ -36,10 +36,10 @@ for line in pathlib.Path("/etc/unbound/unbound.log").open().readlines() :
         if status == "NXDOMAIN" : entry["NX"] = entry["NX"] + 1
         items = entry["items"]
 
-def print_d(items, level=0, n_min=0) :
+def print_d(items:dict , level:int=0, n_min:int=0) -> None :
     if not items : return
     if level > 2 : return
-    for t in reversed(sorted(items.items(), key=lambda item : item[1]["n"])) :
+    for t in sorted(items.items(), key=lambda item : item[1]["n"], reverse=True) :
         domain = t[0].ljust(32-2*level)
         n = t[1]["n"]
         c = n - t[1]["c"]

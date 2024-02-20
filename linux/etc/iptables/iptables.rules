@@ -18,6 +18,8 @@
 
 -A DOCKER-USER -m conntrack --ctstate INVALID -j DROP
 -A DOCKER-USER -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+#-A DOCKER-USER -p tcp -m conntrack --ctorigdstport 80 -j RETURN
+#-A DOCKER-USER -p tcp -m conntrack --ctorigdstport 443 -j RETURN
 
 # lxd / tun
 #-A FORWARD -i lxdbr+ -j ACCEPT
