@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euf
+
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
+
+exec \
+/usr/bin/eltclsh "$@"
