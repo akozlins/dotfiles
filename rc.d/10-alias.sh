@@ -12,6 +12,8 @@ alias rm='rm -v'
 alias ls='ls --color=auto --group-directories-first -h --file-type --time-style=long-iso'
 alias la='ls -lAF'
 
+alias reset='tput reset'
+
 alias ag="ag --hidden"
 alias fd="fd --hidden"
 alias rg="rg --hidden"
