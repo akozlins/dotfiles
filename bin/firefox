@@ -11,16 +11,24 @@ PROFILE="$XDG_DATA_HOME/firefox/default"
 
 # init profile
 if [ ! -d "$PROFILE" ] ; then
-    mkdir -p -- "$(readlink -- "$PROFILE")"
-    cp -r -- "$XDG_CONFIG_HOME/firefox/default/." "$PROFILE/"
-    git clone "https://github.com/Aris-t2/CustomCSSforFx" "$PROFILE/chrome/CustomCSSforFx"
-    "$XDG_CONFIG_HOME/firefox/user.js/generate.py" | sort > "$PROFILE/user.js"
+    make -C "$XDG_CONFIG_HOME/firefox" default
 fi
 
 CMD=()
 
+command -v -- bwrap &> /dev/null && CMD+=(
+    bwrap
+    --dev-bind / /
+    --tmpfs "$(readlink -f -- "$HOME/private")"
+)
+
+if command -v -- /usr/bin/librewolf ; then
+    CMD+=(/usr/bin/librewolf)
+else
+    CMD+=(/usr/bin/firefox)
+fi
+
 CMD+=(
-    /usr/bin/firefox
     --profile "$PROFILE"
     "$@"
 )

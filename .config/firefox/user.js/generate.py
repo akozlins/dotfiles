@@ -9,7 +9,7 @@ import sys
 CONFIG_HOME = pathlib.Path(os.getenv("XDG_CONFIG_HOME", pathlib.Path("~/.cache").expanduser()))
 FIREFOX_HOME = CONFIG_HOME.joinpath("firefox")
 
-prefs : dict[str, str] = {}
+prefs : dict = {}
 
 def user_pref(key : str, value : str) -> None :
     # ignore `_user.` entries
