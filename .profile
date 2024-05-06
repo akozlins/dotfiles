@@ -110,8 +110,9 @@ for f in "$DOTFILES"/profile.d/?*.sh ; do
 done
 unset f
 
-# remove duplicates from PATH
 PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"
+
+# remove duplicates from PATH
 if command -v awk 2>&1 > /dev/null ; then
     PATH=$(printf %s "$PATH" | awk -v RS=: '!a[$0]++ { if(n++) printf(":"); printf("%s", $0) }')
     LD_LIBRARY_PATH=$(printf %s "$LD_LIBRARY_PATH" | awk -v RS=: '!a[$0]++ { if(n++) printf(":"); printf("%s", $0) }')

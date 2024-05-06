@@ -26,6 +26,7 @@ for MY_ROOTSYS in \
         ROOTSYS="$MY_ROOTSYS"
 #        export ROOTSYS
         PATH="$ROOTSYS/bin:$PATH"
+        LD_LIBRARY_PATH="$ROOTSYS/lib:$LD_LIBRARY_PATH"
         break
     fi
 done
