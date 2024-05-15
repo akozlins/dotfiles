@@ -3,8 +3,9 @@ set -euf
 
 DEVICE="$1"
 
-while IFS='' read -r name ; do
-    id=$(xinput --list --id-only "$name")
+while IFS='' read -r id ; do
+    name=$(xinput --list --name-only "$id")
+    echo "$name" | grep -q -i "$1" || continue
     echo "id='$id', name='$name'"
 
     if [ $# -lt 2 ] ; then
@@ -17,4 +18,4 @@ while IFS='' read -r name ; do
 #        prop=$(echo "$prop" | awk '{ match($0, /\([0-9]+\)/); if(RSTART) print substr($0, RSTART+1, RLENGTH-2); }')
         echo "$prop"
     done < <(xinput list-props "$id" | grep -i "$PROP")
-done < <(xinput --list --name-only | grep -i "$DEVICE")
+done < <(xinput --list --id-only)
