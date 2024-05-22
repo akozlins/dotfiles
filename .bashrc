@@ -6,6 +6,7 @@ export MY_BASHRC_DATE="$MY_BASHRC_DATE:$(date +%s.%3N)"
 
 # shellcheck source=./.profile
 source "$HOME/.profile"
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
 #shellcheck source=./etc/bash.bashrc
 source "$DOTFILES/etc/bash.bashrc"
@@ -28,7 +29,7 @@ shopt -s histappend
 
 
 
-for f in "$DOTFILES"/rc.d/?*.sh ; do
+[ -d "$DOTFILES"/rc.d ] && for f in "$DOTFILES"/rc.d/?*.sh ; do
     [ -f "$f" ] && source "$f"
 done
 unset f
