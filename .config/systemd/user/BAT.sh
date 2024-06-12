@@ -23,7 +23,7 @@ for BAT in /sys/class/power_supply/BAT* ; do
         design=$(cat "$BAT/charge_full_design")
         OUT=$(printf "%s: %s, %s\n%s" "$NAME" "$status" "charge_now/full/design = $now/$full/$design" "$OUT")
     fi
-    [[ $((100*now/full)) < 25 ]] && dunstify "BAT: $((100*now/full))%"
+    [[ $((100*now/full)) -le 25 ]] && dunstify "BAT: $((100*now/full))%"
 done
 
 if [ -z "$OUT" ] ; then
