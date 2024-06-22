@@ -30,7 +30,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(
     command-not-found
-    docker
     docker-compose
     lxd
 )

@@ -82,6 +82,8 @@ Name=eth*
 DHCP=yes
 EOF
 systemctl enable systemd-networkd
+ln -sf ../run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+systemctl enable systemd-resolved.service
 
 # iptables & nftables
 cat > /etc/iptables/iptables.rules << EOF

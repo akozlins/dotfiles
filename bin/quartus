@@ -1,18 +1,20 @@
 #!/bin/bash
 set -euf
 
-DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
-[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
-
 CMD=()
 
-if command -v -- bwrap &> /dev/null ; then
-    CMD+=(
-        bwrap
-        --dev-bind / /
-        --tmpfs "$(readlink -f -- "$HOME/private")"
-    )
-fi
+command -v -- bwrap &> /dev/null && CMD+=(
+    bwrap
+    --dev-bind / /
+    --tmpfs "$(readlink -f -- "$HOME/private")"
+    --tmpfs "$HOME/.altera.quartus"
+    --die-with-parent
+    --new-session
+    --
+)
+
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
 CMD+=(
     "$QUARTUS_ROOTDIR/bin/quartus"

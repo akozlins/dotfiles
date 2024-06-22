@@ -10,5 +10,7 @@
 ! **/build
 ! **/cmake-build*
 ! **/meson-build*
+! **/quartus-build*
 ! **/node_modules
 ! **/.gradle
+! **/.npm

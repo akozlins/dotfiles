@@ -30,3 +30,5 @@ text/x-shellscript=my_open_text.desktop;
 
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
+
+inode/directory=pcmanfm.desktop;

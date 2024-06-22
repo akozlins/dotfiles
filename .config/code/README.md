@@ -17,4 +17,4 @@
 - V4P - VHDL for Professionals
 - Kotlin IDE
 - Gradle Tasks
-- GDB Debugger - Beyond
+- Native Debug, GDB Debugger - Beyond

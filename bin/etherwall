@@ -9,6 +9,8 @@ CMD+=(
     --tmpfs "$(readlink -f -- "$HOME")"
     --ro-bind "$(readlink -f -- "$ETHEREUM_KEYSTORE")" "$HOME/.ethereum/keystore"
     --ro-bind "$(readlink -f -- "$XAUTHORITY")" "$HOME/.Xauthority"
+    --die-with-parent
+    --new-session
     --
 )
 

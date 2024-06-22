@@ -1,16 +1,17 @@
 diff --git a/trunk/PKGBUILD b/trunk/PKGBUILD
 index cafab16..35fb7c6 100644
---- a/trunk/PKGBUILD
-+++ b/trunk/PKGBUILD
-@@ -4,3 +4,3 @@
+--- a/PKGBUILD
++++ b/PKGBUILD
+@@ -5,5 +5,4 @@
  pkgbase=evince
--pkgname=(evince evince-lib-docs)
-+pkgname=(evince)
- pkgver=44.1
+ pkgname=(
+   evince
+-  evince-lib-docs
+ )
 diff --git a/trunk/PKGBUILD b/trunk/PKGBUILD
 index cafab16..86485c1 100644
---- a/trunk/PKGBUILD
-+++ b/trunk/PKGBUILD
+--- a/PKGBUILD
++++ b/PKGBUILD
 @@ -48,3 +48,16 @@ pkgver() {
  prepare() {
    cd evince

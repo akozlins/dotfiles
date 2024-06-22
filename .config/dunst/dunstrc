@@ -1,7 +1,10 @@
 #
 
 [global]
-
 font = DejaVu Sans Mono 12
-
 width = 400
+
+#[ignore-connected]
+#summary="Soundcore *"
+#body="Connected *%"
+#format=""

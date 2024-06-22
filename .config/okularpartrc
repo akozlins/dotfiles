@@ -6,3 +6,6 @@ ObeyDRM=false
 
 [General]
 DisplayDocumentNameOrPath=Path
+
+[PageView]
+MouseMode=TextSelect

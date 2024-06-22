@@ -6,7 +6,9 @@ export LC_ALL=C
 
 # output: hash type size name
 
+OPTS=${1:---all}
+
 join \
     <(git cat-file --batch-all-objects --batch-check | sort) \
-    <(git rev-list --all --objects | sort) \
+    <(git rev-list --objects $OPTS | sort) \
     | sort -nk3
