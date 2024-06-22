@@ -1,0 +1,36 @@
+#!/bin/bash
+set -euf
+
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+
+PRIVATE="$XDG_DATA_HOME/zoom"
+mkdir -pv -- "$PRIVATE/.config/openbox"
+
+cat > "$PRIVATE/.config/openbox/autostart" << EOF
+/usr/bin/xterm &
+/usr/bin/zoom "$@" &
+EOF
+
+CMD=(
+    /usr/bin/openbox-session
+)
+
+if false ; then
+    # fix xephyr (unrecognised device identifier: /dev/input/*)
+    unset XDG_SEAT
+    # fix xhost access
+    xhost "SI:localuser:$USER"
+fi
+
+CMD=(
+    firejail
+    --noprofile
+    "--private=$PRIVATE"
+    --x11=xephyr --xephyr-screen=2000x1200
+#    --x11=xpra
+--
+    "${CMD[@]}"
+)
+
+[ $# -gt 0 ] && exec "${CMD[@]}"
+exec "${CMD[@]}" &> /dev/null &
