@@ -98,6 +98,22 @@ umount /mnt
 qemu-nbd -d /dev/nbd0
 ```
 
+## nfs
+
+```
+pacman -S nfs-utils perl-file-mimeinfo
+cat >> /etc/exports << EOF
+/nfs/exports 100.64.0.0/10(rw)
+EOF
+systemctl mask rpcbind.service rpcbind.socket nfs-server.service
+systemctl enable nfsv4-server
+cat >> /etc/fstab << EOF
+100.64.0.0:/nfs /nfs nfs _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=2,timeo=31,x-systemd.idle-timeout=1min 0 0
+EOF
+systemctl daemon-reload
+systemctl restart remote-fs.target
+```
+
 ## kubernetes
 
 ```
