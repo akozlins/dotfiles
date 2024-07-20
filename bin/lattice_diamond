@@ -10,6 +10,10 @@ export HOME="$XDG_DATA_HOME/LatticeSemi"
 mkdir -p -- "$HOME" && cd -- "$HOME"
 [ -e ".config" ] || ln -snv -T "$XDG_CONFIG_HOME" .config
 
-exec \
-"$LATTICE_DIAMOND_HOME/bin/lin64/diamond" "$@" \
-> /dev/null 2>&1 &
+CMD=(
+    "$LATTICE_DIAMOND_HOME/bin/lin64/diamond"
+    "$@"
+)
+
+[ $# -gt 0 ] && exec "${CMD[@]}"
+exec "${CMD[@]}" &> /dev/null &
