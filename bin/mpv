@@ -1,6 +1,10 @@
 #!/bin/bash
 set -euf
 
+#if [ ! -t 0 ] ; then
+#    exec &> "$XDG_CACHE_HOME/mpv.out"
+#fi
+
 MPV_SOCK="$XDG_RUNTIME_DIR/mpv.sock"
 if [ -e "$MPV_SOCK" ] ; then
     for file in "$@" ; do

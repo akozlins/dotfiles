@@ -36,8 +36,6 @@ minsize 1M
 rotate 4
 ```
 
-## nginx
-
 ## unbound
 
 ## bind

@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euf
 
+# NOTE: install `perl-file-mimeinfo`
+
 if [ $# -ge 1 ] && [ -r "$1" ] ; then
     mime=$(xdg-mime query filetype "$1")
     case "$mime" in

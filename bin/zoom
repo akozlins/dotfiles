@@ -5,6 +5,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 PRIVATE="$XDG_DATA_HOME/zoom"
 mkdir -pv -- "$PRIVATE"
+cp -- "$HOME/.Xauthority" "$PRIVATE/"
 
 CMD=(
     /usr/bin/zoom

@@ -95,6 +95,7 @@ export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export WGETRC="$DOTFILES/.wgetrc"
 export XINITRC="$DOTFILES/.xinitrc"
+export XPRA_SOCKET_DIR="$XDG_RUNTIME_DIR/xpra"
 
 export RANDFILE="$XDG_CONFIG_HOME/.rnd"
 
