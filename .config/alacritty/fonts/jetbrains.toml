@@ -1,0 +1,14 @@
+#
+
+[font.normal]
+family = "JetBrains Mono NL"
+style = "SemiBold"
+
+[font]
+size = 10.0
+
+[font.offset]
+y = -4
+
+[font.glyph_offset]
+y = -2

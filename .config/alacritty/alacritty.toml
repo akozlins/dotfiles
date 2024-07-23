@@ -5,7 +5,7 @@ import = [
 
     # font
 #    "~/.config/alacritty/fonts/fixed.toml",
-    "~/.config/alacritty/fonts/iosevka.toml",
+#    "~/.config/alacritty/fonts/iosevka.toml",
 #    "~/.config/alacritty/fonts/jetbrains.toml",
 
     # theme
