@@ -10,6 +10,9 @@ export HOME="$XDG_DATA_HOME/LatticeSemi"
 mkdir -p -- "$HOME" && cd -- "$HOME"
 [ -e ".config" ] || ln -snv -T "$XDG_CONFIG_HOME" .config
 
+#export PATH="$LATTICE_DIAMOND_HOME/bin/lin64:$LATTICE_DIAMOND_HOME/modeltech/bin:$PATH"
+#cd $LATTICE_DIAMOND_HOME/bin/lin64
+
 CMD=(
     "$LATTICE_DIAMOND_HOME/bin/lin64/diamond"
     "$@"
