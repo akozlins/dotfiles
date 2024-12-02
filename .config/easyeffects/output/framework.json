@@ -24,6 +24,7 @@
         "filter#0": {
             "balance": 0.0,
             "bypass": false,
+            "equal-mode": "IIR",
             "frequency": 800.0,
             "gain": 0.0,
             "input-gain": 0.0,

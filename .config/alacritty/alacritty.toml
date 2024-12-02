@@ -1,6 +1,6 @@
 #
 
-import = [
+general.import = [
     "~/.config/alacritty/default.toml",
 
     # font

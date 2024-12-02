@@ -4,6 +4,9 @@
 :OUTPUT ACCEPT [0:0]
 :DOCKER-USER - [0:0]
 
+-A FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+-A FORWARD -m conntrack --ctstate INVALID -j DROP
+
 # port 1021/1023 -> block (5 min)
 -A INPUT -m recent --name list22 --rcheck --seconds 300 -j DROP
 -A INPUT -p tcp -m tcp --dport 22 -m limit --limit 1/s -j LOG --log-prefix "block: "
@@ -12,9 +15,6 @@
 -A INPUT -p tcp -m tcp --dport 1021 -m recent --name list22 --set -j DROP
 -A INPUT -p tcp -m tcp --dport 1023 -m limit --limit 1/s -j LOG --log-prefix "block: "
 -A INPUT -p tcp -m tcp --dport 1023 -m recent --name list22 --set -j DROP
-
--A FORWARD -m conntrack --ctstate INVALID -j DROP
--A FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
 -A DOCKER-USER -m conntrack --ctstate INVALID -j DROP
 -A DOCKER-USER -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT

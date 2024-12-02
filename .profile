@@ -112,6 +112,7 @@ done
 unset f
 
 PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"
+LD_LIBRARY_PATH="${LD_LIBRARY_PATH:-}"
 
 # remove duplicates from PATH
 if command -v awk 2>&1 > /dev/null ; then

@@ -1,7 +1,7 @@
 #!/bin/sh
 set -euf
 
-git-ls-blobs.sh \
+git-ls-blobs.sh | \
 sort -nk3 --reverse | sort -k4 --stable --uniq | sort -nk3 \
 | while read -r commit type size path ; do
     [ "$type" = "blob" ] || continue

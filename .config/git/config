@@ -26,6 +26,7 @@
 		<(git diff --name-only | fzf --ansi --preview 'git diff -- {}') \
 		git stash -p --"
 	#
+	stash-diff = "! meld <(git stash show -p) <(git diff)"
 
 [commit]
 #	gpgsign = true
@@ -63,6 +64,9 @@
 [interactive]
 #	diffFilter = delta --color-only
 #	diffFilter = diffr
+
+[log]
+	date = iso
 
 [merge]
 	conflictStyle = diff3

@@ -114,6 +114,8 @@ user_pref("browser.download.useDownloadDir", false);
 
 // always show scrollbar
 user_pref("widget.gtk.overlay-scrollbars.enabled", false);
+// square scrollbar
+user_pref("widget.non-native-theme.scrollbar.style", 4)
 
 user_pref("browser.tabs.allowTabDetach", false);
 
@@ -132,4 +134,5 @@ user_pref("extensions.quarantinedDomains.enabled", false);
 
 user_pref("browser.translations.automaticallyPopup", false);
 
+// disable search from address bar
 user_pref("keyword.enabled", false);

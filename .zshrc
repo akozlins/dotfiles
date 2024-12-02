@@ -11,7 +11,7 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
 
 HISTFILE=$(readlink -f -- "$DOTFILES/.zsh_history")
-HISTORY_IGNORE="(poweroff|reboot|reset|rm *|sudo rm *)"
+HISTORY_IGNORE="(poweroff|reboot|reset|rm *|sudo rm *|git*reset*--hard*)"
 
 ZLE_REMOVE_SUFFIX_CHARS=""
 ZLE_SPACE_SUFFIX_CHARS=""

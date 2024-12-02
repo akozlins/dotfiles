@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euf
 
-VENV="${MY_PYTHON_VENV}/$1"
+VENV="${MY_PYTHON_VENV:-$XDG_CACHE_HOME/venv}/$1"
 
 [ -f "$VENV/bin/activate" ] || python -m venv "$VENV"
 

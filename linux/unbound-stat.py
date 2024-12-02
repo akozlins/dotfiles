@@ -16,7 +16,7 @@ for line in pathlib.Path("/etc/unbound/unbound.log").open().readlines() :
     status = info[2]
     cached = info[3]
 
-    if time < datetime.now(tz=timezone.utc) - timedelta(days=7) : continue
+    if time < datetime.now(tz=timezone.utc) - timedelta(days=30) : continue
 
     key = ""
     items = domains
@@ -44,7 +44,7 @@ def print_d(items:dict , level:int=0, n_min:int=0) -> None :
         n = t[1]["n"]
         c = n - t[1]["c"]
         NX = t[1]["NX"]
-        if n < n_min : continue
+        if NX == 0 and n < n_min : continue
         #if n == NX : continue
         for l in range(level) : print("  ", end="")
         print(f'+ {domain} {n:6} {c:6}', end="")

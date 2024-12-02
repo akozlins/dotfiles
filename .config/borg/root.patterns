@@ -15,16 +15,20 @@ R /
 ! **/build
 ! **/cmake-build*
 ! **/meson-build*
+! **/quartus-build*
 ! **/node_modules
 ! **/.gradle
+! **/.npm
 
 - /boot/*.img
 + /boot
+! /etc/ca-certificates/extracted
 + /etc
 ! /home/*/.m2
 + /home
 + /opt
 + /root
+! /var/lib/pacman
 ! /var/lib/docker
 + /var/lib
 + /var/log
