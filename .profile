@@ -14,7 +14,7 @@ if [ ! -e "$XDG_CACHE_HOME" ] ; then
 fi
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
-#export XDG_RUNTIME_DIR="/run/user/$(id --user)"
+#export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id --user)}"
 
 export MEDIA="/run/media/$USER"
 
@@ -117,7 +117,7 @@ LD_LIBRARY_PATH="${LD_LIBRARY_PATH:-}"
 # remove duplicates from PATH
 if command -v awk 2>&1 > /dev/null ; then
     PATH=$(printf %s "$PATH" | awk -v RS=: '!a[$0]++ { if(n++) printf(":"); printf("%s", $0) }')
-    LD_LIBRARY_PATH=$(printf %s "$LD_LIBRARY_PATH" | awk -v RS=: '!a[$0]++ { if(n++) printf(":"); printf("%s", $0) }')
+    LD_LIBRARY_PATH=$(printf %s "${LD_LIBRARY_PATH:-}" | awk -v RS=: '!a[$0]++ { if(n++) printf(":"); printf("%s", $0) }')
 fi
 export PATH
 export LD_LIBRARY_PATH

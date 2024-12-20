@@ -1,7 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=autocutsel
-Icon=autocutsel
 Exec=autocutsel -s PRIMARY
 TryExec=autocutsel
 Terminal=false

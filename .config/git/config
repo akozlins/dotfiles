@@ -27,7 +27,8 @@
 		git stash -p --"
 	#
 	add-re = "! git-add-re.sh"
-	stash-diff = "! meld <(git stash show -p) <(git diff)"
+	#
+	diff-stash = "! meld <(git diff) <(git stash show -p)"
 
 [commit]
 #	gpgsign = true

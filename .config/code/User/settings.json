@@ -1,6 +1,7 @@
 //
 {
     "breadcrumbs.enabled": false,
+    "breadcrumbs.icons": false,
     "clangd.arguments": [
         "--compile-commands-dir=${workspaceFolder}/cmake-build",
         "--header-insertion=never",
@@ -84,9 +85,9 @@
         "tab.unfocusedHoverBackground": "#606060",
         "tab.hoverBackground": "#606060",
         "tab.activeBackground": "#404040",
-        "scrollbarSlider.background": "#808080",
-        "scrollbarSlider.hoverBackground": "#A0A0A0",
-        "scrollbarSlider.activeBackground": "#A0A0A0",
+        "scrollbarSlider.background": "#80808080",
+        "scrollbarSlider.hoverBackground": "#A0A0A080",
+        "scrollbarSlider.activeBackground": "#A0A0A080",
     },
     "workbench.colorTheme": "Default Dark+",
     "workbench.editor.enablePreview": false,

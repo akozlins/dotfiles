@@ -12,7 +12,7 @@ if false ; then
     exit 0
 fi
 
-XAUTHORITY=$(mktemp "/tmp/.Xauthority.XXXXXXXX")
+XAUTHORITY=$(mktemp --tmpdir ".Xauthority.XXXXXXXX")
 trap "rm -- '$XAUTHORITY'" EXIT
 export XAUTHORITY
 

@@ -1,7 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=redshift
-Icon=redshift
 Exec=redshift-gtk -P -l 50:8 -b 0.7:0.7
 TryExec=redshift-gtk
 Terminal=false

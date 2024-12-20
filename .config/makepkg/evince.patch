@@ -12,20 +12,8 @@ diff --git a/trunk/PKGBUILD b/trunk/PKGBUILD
 index cafab16..86485c1 100644
 --- a/PKGBUILD
 +++ b/PKGBUILD
-@@ -48,3 +48,16 @@ pkgver() {
+@@ -48,3 +48,4 @@ pkgver() {
  prepare() {
    cd evince
-+  git apply --verbose << EOF
-+diff --git a/shell/ev-window.c b/shell/ev-window.c
-+index 4d8629cd..9be0d596 100644
-+@@ -1476,5 +1476,8 @@ setup_document_from_metadata (EvWindow *window)
-+ 			request_width = MIN (request_width, monitor_width);
-+ 			request_height = MIN (request_height, monitor_height);
-+ 		}
-++		// limit initial window size to 2/3 of monitor size
-++		request_width = monitor_width*2/3;
-++		request_height = monitor_height*2/3;
-+ 
-+ 		if (request_width > 0 && request_height > 0) {
-+EOF
++  git apply --verbose ~/.config/makepkg/evince-src.patch
  }

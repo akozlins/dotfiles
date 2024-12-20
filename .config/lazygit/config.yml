@@ -8,3 +8,4 @@ customCommands:
 
 git:
     autoFetch: false
+    overrideGpg: true
