@@ -1,0 +1,21 @@
+--- a/src/evince/shell/ev-window.c
++++ b/src/evince/shell/ev-window.c
+@@ -2484,9 +2484,9 @@ ev_window_open_document(...)
+ 
+-	setup_size_from_metadata (ev_window);
+-	setup_model_from_metadata (ev_window);
++	//setup_size_from_metadata (ev_window);
++	//setup_model_from_metadata (ev_window);
+ 
+ 	ev_document_model_set_document (priv->model, document);
+ 
+-	setup_document_from_metadata (ev_window);
+-	setup_view_from_metadata (ev_window);
++	//setup_document_from_metadata (ev_window);
++	//setup_view_from_metadata (ev_window);
+ 
+@@ -2503,3 +2503,3 @@ ev_window_open_document(...)
+ 
+-	switch (mode) {
++	if(0) switch (mode) {
+ 	case EV_WINDOW_MODE_FULLSCREEN:

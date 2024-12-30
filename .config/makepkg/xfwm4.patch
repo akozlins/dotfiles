@@ -1,5 +1,3 @@
-diff --git a/trunk/PKGBUILD b/trunk/PKGBUILD
-index 80c6e3a..e8ea369 100644
 --- a/trunk/PKGBUILD
 +++ b/trunk/PKGBUILD
 @@ -26,6 +26,7 @@ build() {

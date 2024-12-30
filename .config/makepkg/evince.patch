@@ -1,19 +1,47 @@
-diff --git a/trunk/PKGBUILD b/trunk/PKGBUILD
-index cafab16..35fb7c6 100644
 --- a/PKGBUILD
 +++ b/PKGBUILD
-@@ -5,5 +5,4 @@
+@@ -5,5 +5,5 @@
  pkgbase=evince
  pkgname=(
    evince
 -  evince-lib-docs
++#  evince-lib-docs
  )
-diff --git a/trunk/PKGBUILD b/trunk/PKGBUILD
-index cafab16..86485c1 100644
---- a/PKGBUILD
-+++ b/PKGBUILD
+@@ -44,11 +43,11 @@ depends=(
+ )
+ makedepends=(
+   appstream-glib
+-  gi-docgen
++#  gi-docgen
+   git
+   glib2-devel
+-  gobject-introspection
++#  gobject-introspection
+   meson
+   texlive-bin
+-  yelp-tools
++#  yelp-tools
+ )
 @@ -48,3 +48,4 @@ pkgver() {
  prepare() {
    cd evince
-+  git apply --verbose ~/.config/makepkg/evince-src.patch
++#  git apply --verbose ~/.config/makepkg/evince-src.patch
  }
+@@ -65,6 +65,8 @@ prepare() {
+ build() {
+   local meson_options=(
+     -D ps=enabled
++    -D gtk_doc=false
++    -D introspection=false
+   )
+
+   arch-meson evince build "${meson_options[@]}"
+@@ -92,7 +106,7 @@ package_evince() {
+ 
+   meson install -C build --destdir "$pkgdir"
+ 
+-  _pick lib-docs "$pkgdir"/usr/share/doc/lib*
++#  _pick lib-docs "$pkgdir"/usr/share/doc/lib*
+ }
+ 
+ package_evince-lib-docs() {

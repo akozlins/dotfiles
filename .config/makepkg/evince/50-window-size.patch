@@ -1,0 +1,20 @@
+--- a/src/evince/shell/ev-window.c b/shell/ev-window.c
++++ b/src/evince/shell/ev-window.c b/shell/ev-window.c
+@@ -1476,5 +1476,8 @@ setup_document_from_metadata (EvWindow *window)
+ 			request_width = MIN (request_width, monitor_width);
+ 			request_height = MIN (request_height, monitor_height);
+ 		}
++		// limit initial window size to 2/3 of monitor size
++		request_width = monitor_width*2/3;
++		request_height = monitor_height*2/3;
+ 
+ 		if (request_width > 0 && request_height > 0) {
+@@ -6299,7 +6299,7 @@ static const GActionEntry actions[] = {
+ 	{ "close", ev_window_cmd_file_close_window },
+ 	{ "scroll-forward", ev_window_cmd_scroll_forward },
+ 	{ "scroll-backwards", ev_window_cmd_scroll_backwards },
+-	{ "sizing-mode", NULL, "s", "'free'", ev_window_change_sizing_mode_action_state },
++	{ "sizing-mode", NULL, "s", "'fit-width'", ev_window_change_sizing_mode_action_state },
+ 	{ "zoom", ev_window_cmd_view_zoom, "d" },
+ 	{ "default-zoom", ev_window_cmd_set_default_zoom },
+ 	{ "escape", ev_window_cmd_escape },
