@@ -26,7 +26,7 @@
 		<(git diff --name-only | fzf --ansi --preview 'git diff -- {}') \
 		git stash -p --"
 	#
-	add-re = "! git-add-re.sh"
+	add-re = "! git-add-re.py"
 	#
 	diff-stash = "! meld <(git diff) <(git stash show -p)"
 
