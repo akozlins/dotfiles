@@ -29,6 +29,8 @@
 	add-re = "! git-add-re.py"
 	#
 	diff-stash = "! meld <(git diff) <(git stash show -p)"
+	#
+	moo = "! cowsay 'Have you mooed today?'"
 
 [commit]
 #	gpgsign = true

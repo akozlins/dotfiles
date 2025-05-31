@@ -116,8 +116,8 @@ LD_LIBRARY_PATH="${LD_LIBRARY_PATH:-}"
 
 # remove duplicates from PATH
 if command -v awk 2>&1 > /dev/null ; then
-    PATH=$(printf %s "$PATH" | awk -v RS=: '!a[$0]++ { if(n++) printf(":"); printf("%s", $0) }')
-    LD_LIBRARY_PATH=$(printf %s "${LD_LIBRARY_PATH:-}" | awk -v RS=: '!a[$0]++ { if(n++) printf(":"); printf("%s", $0) }')
+    PATH=$(echo "$PATH" | awk -v RS=: -v ORS= '$0&&!a[$0]++ { if(n++) print(":"); print }')
+    LD_LIBRARY_PATH=$(echo "$LD_LIBRARY_PATH" | awk -v RS=: -v ORS= '$0&&!a[$0]++ { if(n++) print(":"); print }')
 fi
 export PATH
 export LD_LIBRARY_PATH

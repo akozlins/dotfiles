@@ -3,7 +3,6 @@ set -eu
 
 source -- ./.env
 [ -d "$BORG_REPO" ] || exit 0
-unset SSH_AUTH_SOCK
 
 if true ; then
     TIME_LAST=$(date +%s -d "$(borg list --format='{time}' --last=1)")

@@ -23,7 +23,7 @@ done
 
 while
     PORT=$(hexdump -n 2 -e '/2 "%u"' /dev/urandom)
-    [ "$PORT" -lt 16384 ] || nc -z localhost "$PORT"
+    [ "$PORT" -lt 16384 ] || nc --wait=1 --zero localhost "$PORT"
 do continue ; done
 echo "PORT = $PORT"
 
@@ -32,9 +32,9 @@ RPORT=5900
 PASSWD=$(tr -dc a-zA-Z0-9 < /dev/urandom | head -c16)
 
 X11VNC_CMD=(
-    /bin/x11vnc
+    /usr/bin/x11vnc
     -passwd "$PASSWD"
-    -localhost -once -timeout 5
+    -localhost -once -timeout 15
     -display :0
     -noxdamage
     -cursor none
@@ -58,6 +58,6 @@ VNCVIEWER_CMD=(
     "localhost:$PORT"
 )
 
-nc -z localhost "$PORT"
+ss -tln "sport == :$PORT" | grep -q LISTEN
 sleep 2.5
 VNC_PASSWORD="$PASSWD" "${VNCVIEWER_CMD[@]}"

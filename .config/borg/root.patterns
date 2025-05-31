@@ -1,3 +1,5 @@
+#
+
 R /
 
 ! **/lost+found
@@ -19,6 +21,7 @@ R /
 ! **/node_modules
 ! **/.gradle
 ! **/.npm
+! **/.venv
 
 - /boot/*.img
 + /boot

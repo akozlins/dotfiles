@@ -38,7 +38,7 @@ geant4 :
 root :
 	$(call clone_pull,https://github.com/root-project/root,$@)
 	cmake \
-	    -DCMAKE_BUILD_TYPE=Release \
+	    -DCMAKE_BUILD_TYPE=RelWithDebInfo \
 	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local/root.cern.ch" \
 	    -DCMAKE_CXX_STANDARD=17 \
 	    -DLLVM_CXX_STD=c++17 \

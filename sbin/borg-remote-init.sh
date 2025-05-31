@@ -4,6 +4,7 @@ set -eu
 if [ $# -lt 2 ] ; then
     echo "Usage:"
     echo "  $0 <host> <repo>"
+    echo "  e.g. `$0 user@example.com $$BORG_REPO`"
     exit 1
 fi
 
