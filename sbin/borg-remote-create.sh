@@ -13,7 +13,9 @@ REPO=$2
 PATTERNS=()
 if [ $# -ge 3 ] ; then
     while IFS='' read -r line || [ -n "$line" ] ; do
-        [ -n "$line" ] && PATTERNS+=("--pattern='$line'")
+        [ -z "$line" ] && continue
+        [[ $line == "#"* ]] && continue
+        PATTERNS+=("--pattern='$line'")
     done < "$3"
 fi
 
