@@ -20,26 +20,8 @@ ZLE_SPACE_SUFFIX_CHARS=""
 
 ZDOTDIR="$DOTFILES"
 ZSH_COMPDUMP="${XDG_CACHE_HOME}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
-ZSH="$DOTFILES/opt/oh-my-zsh"
-
-ZSH_THEME="gentoo"
-
-DISABLE_AUTO_UPDATE="true"
-
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-plugins=(
-    command-not-found
-    docker-compose
-    lxd
-)
 
 fpath+=("$XDG_CONFIG_HOME/zsh-completions")
-
-source "$ZSH/oh-my-zsh.sh"
-gentoo_precmd() {
-    true
-}
 
 
 
@@ -66,11 +48,19 @@ setopt no_beep
 
 
 
+# ignore everything under and to the right of the cursor when completing
+bindkey "^i" expand-or-complete-prefix
+
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
 bindkey "\e[A" history-search-backward
 bindkey "\e[B" history-search-forward
 
 bindkey "^d" kill-whole-line
-bindkey "^i" expand-or-complete-prefix
+bindkey "^[[3~" delete-char
 
 
 
@@ -78,3 +68,9 @@ bindkey "^i" expand-or-complete-prefix
     [ -f "$f" ] && source "$f"
 done
 unset f
+
+# case-insensitive match only if no case-sensitive matches
+autoload -U compinit && compinit
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Za-z}'
+
+PROMPT='%(!.%B%F{red}.%B%F{green}%n)%f@%B%F{magenta}%m%f:%F{yellow}%(!.%1~.%~) %F{red}%(!.#.$)%k%b%f '
