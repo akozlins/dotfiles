@@ -79,4 +79,13 @@ unset f
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Za-z}'
 
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+export FZF_ALT_C_OPTS=--walker=dir
+export FZF_CTRL_T_OPTS=--walker=dir,file,hidden
+export FZF_COMPLETION_TRIGGER='**'
+export FZF_COMPLETION_OPTS='--walker-skip=.git,node_modules,.jj,.gradle,build,cmake-build,quartus-build'
+export FZF_COMPLETION_DIR_OPTS='--walker=dir'
+export FZF_COMPLETION_PATH_OPTS='--walker=file,dir,hidden'
+
 PROMPT='%(!.%B%F{red}.%B%F{green}%n)%f@%B%F{magenta}%m%f:%F{yellow}%(!.%1~.%~) %F{red}%(!.#.$)%k%b%f '
