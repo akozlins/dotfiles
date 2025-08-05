@@ -21,6 +21,10 @@
 #-A DOCKER-USER -p tcp -m conntrack --ctorigdstport 80 -j RETURN
 #-A DOCKER-USER -p tcp -m conntrack --ctorigdstport 443 -j RETURN
 
+-A DOCKER-USER -i br-traefik -o br-traefik -s 172.31.255.254 -d 172.31.255.0/24 -m conntrack --ctstate NEW -j ACCEPT
+-A DOCKER-USER -i br-traefik -o br-traefik -j LOG --log-prefix "br-traefik: "
+-A DOCKER-USER -i br-inet -o br-inet -j LOG --log-prefix "br-inet: "
+
 # lxd / tun
 #-A FORWARD -i lxdbr+ -j ACCEPT
 #-A FORWARD -o lxdbr+ -j ACCEPT

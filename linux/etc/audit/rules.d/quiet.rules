@@ -1,12 +1,12 @@
 #
 
--A exclude,always -F msgtype=SERVICE_START
--A exclude,always -F msgtype=SERVICE_STOP
--A exclude,always -F msgtype=BPF
--A exclude,always -F exe=/usr/bin/sudo
--A exclude,always -F msgtype=ANOM_PROMISCUOUS
+-a exclude,always -F msgtype=SERVICE_START
+-a exclude,always -F msgtype=SERVICE_STOP
+-a exclude,always -F msgtype=BPF
+-a exclude,always -F exe=/usr/bin/sudo
+-a exclude,always -F msgtype=ANOM_PROMISCUOUS
 
--A exclude,always -F msgtype=NETFILTER_CFG
+-a exclude,always -F msgtype=NETFILTER_CFG
 
 # verify and regenerate:
 # `augenrules --check`

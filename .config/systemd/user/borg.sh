@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eu
 
+unset SSH_AUTH_SOCK
+
 source -- ./.env
 [ -d "$BORG_REPO" ] || exit 0
 

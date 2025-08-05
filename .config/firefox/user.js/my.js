@@ -13,8 +13,18 @@ user_pref("browser.download.animateNotifications", false);
 
 user_pref("browser.fullscreen.animate", false);
 
+// 3 = divert new window to a new tab (default)
+// 2 = allow link to open a new window
+// 1 = force new window into same tab
 user_pref("browser.link.open_newwindow", 3);
+// -1 = apply the setting under (A) to external links (default)
+// 3 = open external links in a new tab in the last active windo
+// 2 = open external links in a new window
+// 1 = open external links in the last active tab replacing the current page
 user_pref("browser.link.open_newwindow.override.external", 3);
+// 0 = apply the setting under (A) to ALL new windows (even script windows with limited features)
+// 2 = apply the setting under (A) to normal windows, but NOT to script windows with features (default)
+// 1 = override the setting under (A) and always use new windows
 user_pref("browser.link.open_newwindow.restriction", 0);
 
 user_pref("browser.search.defaultenginename", "DuckDuckGo");

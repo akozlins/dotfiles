@@ -1,5 +1,9 @@
 //
 {
+    "accessibility.signals.clear": {
+        "sound": "off",
+        "announcement": "off" ,
+    },
     "breadcrumbs.enabled": false,
     "breadcrumbs.icons": false,
     "clangd.arguments": [
