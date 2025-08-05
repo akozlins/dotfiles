@@ -36,10 +36,14 @@ setopt no_auto_remove_slash
 setopt no_menu_complete
 
 # history
+setopt hist_find_no_dups
 setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
 setopt hist_lex_words
 setopt hist_reduce_blanks
 setopt hist_save_no_dups
+setopt hist_verify
 setopt no_share_history
 
 # job control
