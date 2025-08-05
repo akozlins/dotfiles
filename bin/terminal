@@ -2,6 +2,7 @@
 set -euf
 
 COMMANDS=(
+    kitty
     uxterm
     alacritty
     urxvt
