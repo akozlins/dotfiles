@@ -17,7 +17,7 @@ bind -f "$DOTFILES/.inputrc"
 
 export HISTFILE=$(readlink -f -- "$DOTFILES/.bash_history")
 export HISTFILESIZE=65536
-export HISTSIZE=4096
+export HISTSIZE=8192
 export HISTCONTROL="ignoreboth:erasedups"
 export HISTIGNORE="poweroff:reboot:reset:rm *:sudo rm *"
 
