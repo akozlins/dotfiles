@@ -1,0 +1,24 @@
+#!/bin/bash
+set -euf
+
+mkdir -p -- ~/.config/tribler
+
+CMD=()
+
+command -v -- bwrap &> /dev/null && CMD+=(
+    bwrap
+    --dev-bind / /
+    --bind $HOME/.local/share/tribler $HOME/.Tribler
+    --tmpfs "$(readlink -f -- "$HOME/private")"
+    #--tmpfs $HOME
+    --die-with-parent
+    --new-session
+    --
+)
+
+CMD+=(
+    /usr/bin/tribler
+    "$@"
+)
+
+exec "${CMD[@]}"
