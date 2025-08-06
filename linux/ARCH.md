@@ -67,7 +67,7 @@ linux /vmlinuz-linux-lts
 initrd /initramfs-linux-lts.img
 options ip=:::::eth0:dhcp cryptdevice=UUID=$(lsblk --noheadings --inverse --output UUID /dev/mapper/root | sed --quiet 2p):root:allow-discards rd.luks.options=discard root=/dev/mapper/root rw
 EOF
-sed 's/block filesystems/keymap block encrypt filesystems/' -i /etc/mkinitcpio.conf
+sed 's/block filesystems/block encrypt filesystems/' -i /etc/mkinitcpio.conf
 mkinitcpio --allpresets
 
 # network

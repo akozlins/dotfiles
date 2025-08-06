@@ -72,7 +72,7 @@ bindkey "^[[3~" delete-char
 
 # case-insensitive match only if no case-sensitive matches
 autoload -U compinit && compinit
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
@@ -85,7 +85,17 @@ export FZF_COMPLETION_PATH_OPTS='--walker=file,dir,hidden'
 
 PROMPT='%(!.%B%F{red}.%B%F{green}%n)%f@%B%F{magenta}%m%f:%F{yellow}%(!.%1~.%~) %F{red}%(!.#.$)%k%b%f '
 
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/.zcompcache"
 
+autoload -Uz bracketed-paste-magic
+zle -N bracketed-paste bracketed-paste-magic
+
+source <(dircolors)
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+zstyle ":completion:*" sort false
+zstyle ':completion:*' list-dirs-first true
 
 [ -d "$DOTFILES"/rc.d ] && for f in "$DOTFILES"/rc.d/?*.sh "$DOTFILES"/rc.d/?*.zsh ; do
     [ -f "$f" ] && source "$f"

@@ -37,6 +37,7 @@
 
 [commit]
 #	gpgsign = true
+	verbose = true
 
 [color "diff"]
 	meta = yellow
@@ -90,6 +91,9 @@
 [rebase]
 	committer-date-is-author-date = true
 
+[rerere]
+	enabled = true
+
 [stash]
 	showPatch = true
 
@@ -106,4 +110,3 @@
 [user]
 	#signingkey = 0000000000000000
 	#signingkey = ~/.ssh/git_sign.pub
-

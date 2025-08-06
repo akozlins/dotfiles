@@ -29,3 +29,5 @@ alias lg='lazygit'
 
 # find how to write symbol via compose key
 alias compose='fzf < /usr/share/X11/locale/en_US.UTF-8/Compose'
+
+#alias ssh='TERM=xterm-256color ssh'
