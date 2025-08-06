@@ -25,7 +25,7 @@ case "$NAME" in
         ;;
 esac
 
-PATH="/usr/lib/jvm/java-11-openjdk/jre/bin:$PATH"
+#PATH="/usr/lib/jvm/java-11-openjdk/jre/bin:$PATH"
 
 exec \
-"$XDG_DATA_HOME/HELI-X10/runHELI-X.sh" "$@"
+"$XDG_DATA_HOME/heli-x/runHELI-X.sh" "$@"

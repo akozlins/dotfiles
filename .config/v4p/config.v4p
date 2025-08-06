@@ -40,3 +40,6 @@
   V4p.Settings.Completion.ShowEnums = True
   V4p.Settings.StutterMode.Enabled = False
   V4p.Settings.StutterMode.HorizontalLineWidth = 100
+
+[excludes]
+**/*-build/** = true

@@ -32,6 +32,9 @@
 	#
 	moo = "! cowsay 'Have you mooed today?'"
 
+[branch]
+	sort = -committerdate
+
 [commit]
 #	gpgsign = true
 

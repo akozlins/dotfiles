@@ -22,21 +22,17 @@
 -  yelp-tools
 +#  yelp-tools
  )
-@@ -65,6 +65,8 @@ prepare() {
+@@ -65,4 +65,6 @@ prepare() {
  build() {
    local meson_options=(
      -D ps=enabled
 +    -D gtk_doc=false
 +    -D introspection=false
    )
-
-   arch-meson evince build "${meson_options[@]}"
-@@ -92,7 +106,7 @@ package_evince() {
+@@ -92,5 +106,5 @@ package_evince() {
  
    meson install -C build --destdir "$pkgdir"
  
 -  _pick lib-docs "$pkgdir"/usr/share/doc/lib*
 +#  _pick lib-docs "$pkgdir"/usr/share/doc/lib*
  }
- 
- package_evince-lib-docs() {

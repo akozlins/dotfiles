@@ -13,7 +13,7 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 HISTFILE=$(readlink -f -- "$DOTFILES/.zsh_history")
 SAVEHIST=8192
 HISTSIZE=8192
-HISTORY_IGNORE="(poweroff|reboot|reset|rm *|sudo rm *|git*reset*--hard*)"
+HISTORY_IGNORE="(poweroff|reboot|reset|rm *|sudo rm *|git*reset*--hard*|*far2l*)"
 
 ZLE_REMOVE_SUFFIX_CHARS=""
 ZLE_SPACE_SUFFIX_CHARS=""
@@ -70,11 +70,6 @@ bindkey "^[[3~" delete-char
 
 
 
-[ -d "$DOTFILES"/rc.d ] && for f in "$DOTFILES"/rc.d/?*.sh "$DOTFILES"/rc.d/?*.zsh ; do
-    [ -f "$f" ] && source "$f"
-done
-unset f
-
 # case-insensitive match only if no case-sensitive matches
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Za-z}'
@@ -89,3 +84,10 @@ export FZF_COMPLETION_DIR_OPTS='--walker=dir'
 export FZF_COMPLETION_PATH_OPTS='--walker=file,dir,hidden'
 
 PROMPT='%(!.%B%F{red}.%B%F{green}%n)%f@%B%F{magenta}%m%f:%F{yellow}%(!.%1~.%~) %F{red}%(!.#.$)%k%b%f '
+
+
+
+[ -d "$DOTFILES"/rc.d ] && for f in "$DOTFILES"/rc.d/?*.sh "$DOTFILES"/rc.d/?*.zsh ; do
+    [ -f "$f" ] && source "$f"
+done
+unset f

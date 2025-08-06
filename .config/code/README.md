@@ -6,15 +6,13 @@
 
 ## Extensions
 
-- clang-format
+- Clang-Format
 - clangd
-- CMmake
 - CMmake Tools
-- Cortex-Debug
+- CodeLLDB
+- Gradle For Java, Kotlin
 - Output Colorizer
-- python
-- ruff
-- V4P - VHDL for Professionals
-- Kotlin IDE
-- Gradle Tasks
-- Native Debug, GDB Debugger - Beyond
+- Python, Python Debugger
+- Ruff
+- VHDL for Professionals
+- Cortex-Debug

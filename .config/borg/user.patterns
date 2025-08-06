@@ -15,3 +15,5 @@
 ! **/.gradle
 ! **/.npm
 ! **/.venv
+! target/debug
+! target/release
