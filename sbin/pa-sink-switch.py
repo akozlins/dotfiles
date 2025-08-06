@@ -16,6 +16,7 @@ class LRU :
 
     sinks : list[str] = []
     entries : list = []
+    presets : list = []
 
     def __init__(self : "LRU", file_name : str) -> None:
         self.entries_path = pathlib.Path(file_name)

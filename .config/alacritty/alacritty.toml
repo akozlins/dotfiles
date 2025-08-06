@@ -6,7 +6,7 @@ general.import = [
     # font
 #    "~/.config/alacritty/fonts/fixed.toml",
 #    "~/.config/alacritty/fonts/iosevka.toml",
-#    "~/.config/alacritty/fonts/jetbrains.toml",
+    "~/.config/alacritty/fonts/jetbrains.toml",
 
     # theme
     "~/.config/alacritty/themes/argonaut.toml",

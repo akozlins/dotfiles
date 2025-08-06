@@ -1,7 +1,8 @@
 #!/bin/bash
 set -euf
 
-# root
+# docker group or root
+#[[ " $(id --groups --name) " =~ " docker " ]] || \
 if [ "$(id -u)" -ne 0 ] ; then
     exec sudo "$0" "$@"
 fi

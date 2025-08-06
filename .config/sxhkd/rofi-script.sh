@@ -23,6 +23,6 @@ sleep)
     dunstify ok
     ;;
 usbguard*)
-    rofi -e "$(usbguard list-devices --blocked)"
+    rofi -e "$(lxsudo sh -c "usbguard list-devices --blocked 2>&1")"
     ;;
 esac

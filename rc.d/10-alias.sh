@@ -26,3 +26,6 @@ alias make='LC_ALL=C nice ionice make -j$(nproc --ignore=1)'
 alias ninja='nice ionice ninja'
 
 alias lg='lazygit'
+
+# find how to write symbol via compose key
+alias compose='fzf < /usr/share/X11/locale/en_US.UTF-8/Compose'

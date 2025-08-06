@@ -1,5 +1,6 @@
 #
 
 /buildx
+/trust
 /.buildNodeID
 /.token_seed*
