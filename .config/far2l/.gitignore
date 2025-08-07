@@ -1,5 +1,4 @@
 #
 
-askpass.salt
-
+/askpass.salt
 /plugins/state.ini

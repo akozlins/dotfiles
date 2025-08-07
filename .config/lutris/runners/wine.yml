@@ -1,6 +1,7 @@
 system:
   game_path: ~/games/lutris
 wine:
+  Desktop: false
   WineDesktop: 1600x900
   dxvk: true
   overrides:

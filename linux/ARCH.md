@@ -175,19 +175,19 @@ sudo pacman -S --noconfirm git make
 git clone https://github.com/akozlins/dotfiles "$HOME/.dotfiles"
 ( cd "$HOME/.dotfiles" && ./install.sh )
 
-sudo pacman -S --noconfirm cmake gcc
+sudo pacman -S --noconfirm cmake gcc ninja
 
 # fbpanel
 sudo pacman -S --noconfirm pkgconf gdk-pixbuf-xlib
 ( cd "$HOME/.dotfiles/opt" && make fbpanel )
 
 # far2l
-sudo pacman -S --noconfirm patch m4 uchardet wxgtk2 spdlog xerces-c
+sudo pacman -S --noconfirm patch m4 uchardet wxwidgets-gtk3 spdlog xerces-c
 ( cd "$HOME/.dotfiles/opt" && make far2l )
 
-sudo pacman -S --noconfirm fakeroot
-git clone https://aur.archlinux.org/yay.git "$HOME/yay"
-( cd "$HOME/yay" && makepkg -s )
+sudo pacman -S --noconfirm debugedit fakeroot
+git clone https://aur.archlinux.org/yay-bin.git "$HOME/yay-bin"
+( cd "$HOME/yay-bin" && makepkg -s )
 ```
 
 ## packages
