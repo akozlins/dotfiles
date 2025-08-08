@@ -20,10 +20,15 @@ ZLE_SPACE_SUFFIX_CHARS=""
 
 
 
-ZDOTDIR="$DOTFILES"
-ZSH_COMPDUMP="${XDG_CACHE_HOME}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+PROMPT='%(!.%B%F{red}.%B%F{green}%n)%f@%B%F{magenta}%m%f:%F{yellow}%(!.%1~.%~) %F{red}%(!.#.$)%k%b%f '
+
+
 
 fpath+=("$XDG_CONFIG_HOME/zsh-completions")
+
+ZDOTDIR="$DOTFILES"
+ZSH_COMPDUMP="${XDG_CACHE_HOME}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+autoload -U compinit && compinit
 
 
 
@@ -62,28 +67,11 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
-bindkey "\e[A" history-search-backward
-bindkey "\e[B" history-search-forward
-
 bindkey "^d" kill-whole-line
 bindkey "^[[3~" delete-char
 
-
-
 # case-insensitive match only if no case-sensitive matches
-autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-export FZF_ALT_C_OPTS=--walker=dir
-export FZF_CTRL_T_OPTS=--walker=dir,file,hidden
-export FZF_COMPLETION_TRIGGER='**'
-export FZF_COMPLETION_OPTS='--walker-skip=.git,node_modules,.jj,.gradle,build,cmake-build,quartus-build'
-export FZF_COMPLETION_DIR_OPTS='--walker=dir'
-export FZF_COMPLETION_PATH_OPTS='--walker=file,dir,hidden'
-
-PROMPT='%(!.%B%F{red}.%B%F{green}%n)%f@%B%F{magenta}%m%f:%F{yellow}%(!.%1~.%~) %F{red}%(!.#.$)%k%b%f '
 
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/.zcompcache"
@@ -91,11 +79,31 @@ zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/.zcompcache"
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
 
-source <(dircolors)
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# move up or down within the the buffer
+# or search the history matching the the start of the current line
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "\e[A" up-line-or-beginning-search
+bindkey "\e[B" down-line-or-beginning-search
 
 zstyle ":completion:*" sort false
 zstyle ':completion:*' list-dirs-first true
+
+source <(dircolors)
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+if [ -f /usr/share/fzf/completion.zsh ] ; then
+    source /usr/share/fzf/completion.zsh
+    source /usr/share/fzf/key-bindings.zsh
+    FZF_COMPLETION_OPTS="--walker-skip=.git,node_modules,.jj,.gradle,build,cmake-build,quartus-build"
+    FZF_COMPLETION_DIR_OPTS="--walker=dir"
+    FZF_COMPLETION_PATH_OPTS="--walker=file,dir,hidden"
+    FZF_COMPLETION_TRIGGER='**'
+    FZF_ALT_C_OPTS="--walker=dir $FZF_COMPLETION_OPTS"
+    FZF_CTRL_T_OPTS="--walker=dir,file,hidden $FZF_COMPLETION_OPTS"
+fi
 
 [ -d "$DOTFILES"/rc.d ] && for f in "$DOTFILES"/rc.d/?*.sh "$DOTFILES"/rc.d/?*.zsh ; do
     [ -f "$f" ] && source "$f"
