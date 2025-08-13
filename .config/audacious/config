@@ -1,4 +1,19 @@
 
 [audacious]
+net_buffer_kb=1024
+output_buffer_size=10000
 repeat=TRUE
+resume_playback_on_startup=FALSE
 shuffle=TRUE
+
+[pipewire]
+volume_left=40
+volume_right=40
+
+[qtui]
+infoarea_show_art=FALSE
+infoarea_show_vis=FALSE
+infoarea_visible=FALSE
+player_width=640
+playlist_columns=playing title artist album length
+playlist_headers_bold=TRUE

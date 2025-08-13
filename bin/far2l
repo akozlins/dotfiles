@@ -10,7 +10,7 @@ fi
 
 CMD=(
     "$FAR2L"
-    --primary-selection
+    #--primary-selection
     "$@"
 )
 

@@ -71,7 +71,7 @@ bindkey "^d" kill-whole-line
 bindkey "^[[3~" delete-char
 
 # case-insensitive match only if no case-sensitive matches
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/.zcompcache"

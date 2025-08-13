@@ -28,6 +28,7 @@
 	#
 	add-re = "! git-add-re.py"
 	#
+	lazy = "! lazygit"
 	diff-stash = "! meld <(git diff) <(git stash show -p)"
 	#
 	moo = "! cowsay 'Have you mooed today?'"
@@ -60,6 +61,7 @@
 	algorithm = histogram
 	colorMoved = blocks
 	colorMovedWS = allow-indentation-change
+	renames = true
 	tool = meld
 
 [gc]
