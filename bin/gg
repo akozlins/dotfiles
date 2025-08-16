@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euf
+
+export WEBKIT_DISABLE_DMABUF_RENDERER=1
+
+CMD=(
+    gg
+    "$@"
+)
+
+DIR=$(dirname -- "$(readlink -f -- "$0")")
+PATH=$(printf %s "$PATH" | awk -v RS=: -v ORS= -v r="^$DIR" '!($0~r) { if(n++) print(":"); print }')
+export PATH
+
+[ $# -ge 1 ] && exec "${CMD[@]}"
+"${CMD[@]}" &> /dev/null &
