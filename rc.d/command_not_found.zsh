@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+if command -v -- pacman &> /dev/null ; then
 function command_not_found_handler {
     local purple='\e[1;35m' bright='\e[0;1m' green='\e[1;32m' reset='\e[0m'
     printf 'zsh: command not found: %s\n' "$1"
@@ -23,3 +24,4 @@ function command_not_found_handler {
     fi
     return 127
 }
+fi
