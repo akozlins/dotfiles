@@ -1,63 +1,106 @@
 #!/usr/bin/python3
 
+# ruff: noqa: S101
+
 import argparse
+import email
+import gzip
+import io
+import json
+import logging
+import re
+import sys
+import zipfile
+
+import defusedxml.ElementTree as ET
+
+logging.basicConfig(
+    format='%(levelname).1s [%(filename)s:%(lineno)d:%(funcName)s] %(message)s',
+    datefmt='%Y-%m-%dT%H:%M:%S', # %(asctime)s.%(msecs)03d
+    level=logging.INFO,
+    stream=sys.stdout,
+)
+logger = logging.getLogger(__name__)
 
 parser = argparse.ArgumentParser()
-parser.add_argument("filename", nargs="?", default="-")
+parser.add_argument('files', nargs='+', default='-')
 args = parser.parse_args()
 
-import email
-file = open(args.filename)
-message = email.message_from_file(file)
+def parse_dmarc(content: str) -> None :
+    records = ET.fromstring(content).findall('record')
+    assert(len(records) >= 1)
+    for record in records :
+        rows = record.findall('row')
+        assert(len(rows) >= 1)
+        for row in rows :
+            ip = row.findall('source_ip')[0].text
+            policy_evaluated = row.findall('policy_evaluated')
+            assert(len(policy_evaluated) == 1)
+            dkim = policy_evaluated[0].findall('dkim')
+            assert(len(dkim) == 1)
+            spf = policy_evaluated[0].findall('spf')
+            assert(len(spf) == 1)
+            if spf[0].text == 'pass' and dkim[0].text == 'pass' :
+                #logger.info('dmarc: OK')
+                continue
+            logger.info('dmarc: %s, spf/dkim = %s/%s ', ip, spf[0].text, dkim[0].text)
 
-def parse_dmarc(content_zip) :
-    import zipfile
-    zf = zipfile.ZipFile(content_zip, "r")
-
-    import xml.etree.ElementTree as ET
-    reports = []
-    for name in zf.namelist() :
-        reports.append(ET.fromstring(zf.read(name).decode("utf-8")))
-    assert(len(reports) == 1)
-
-    records = reports[0].findall("record")
-    assert(len(records) == 1)
-    rows = records[0].findall("row")
-    assert(len(rows) == 1)
-    policy_evaluated = rows[0].findall("policy_evaluated")
-    assert(len(policy_evaluated) == 1)
-    dkim = policy_evaluated[0].findall("dkim")
-    assert(len(dkim) == 1)
-    spf = policy_evaluated[0].findall("spf")
-    assert(len(spf) == 1)
-    print(dkim[0].text)
-    print(spf[0].text)
-
-import io
-if message.get_content_type() == "application/zip" :
-    parse_dmarc(io.BytesIO(message.get_payload(decode=True)))
-    exit(0)
-
-payloads = []
-#payloads = [ message ]
-if message.is_multipart() :
-    payloads = message.get_payload()
-
-content_gzip = []
-for payload in payloads :
-    if not payload.get_content_type().endswith("gzip") : continue
-    content_gzip.append(payload)
-assert(len(content_gzip) == 1)
-
-def parse_smtp(content_gzip) :
-    import gzip
-    content = gzip.decompress(content_gzip.get_payload(decode=True)).decode("utf-8")
-
-    import json
+def parse_smtp(content: str) -> None :
     report = json.loads(content)
+    assert len(report['policies']) >= 0
     for policy in report['policies'] :
-        print(policy['summary'])
-        assert(policy['summary']['total-failure-session-count'] == 0)
+        if policy['summary']['total-failure-session-count'] == 0 :
+            #logger.info('smtp: OK')
+            continue
+        logger.error('smtp: %s', policy['summary'])
 
-parse_smtp(content_gzip[0])
+def handle_payload(content: str, headers: dict[str, str]) -> None :
+    if re.search(r'dmarc', headers['from'], re.IGNORECASE) :
+        parse_dmarc(content)
+        return
 
+    if headers['file_name'].endswith('.json.gz') :
+        parse_smtp(content)
+        return
+
+    if headers['file_name'].endswith('.xml.gz') :
+        parse_dmarc(content)
+        return
+
+    logger.warning(headers)
+    print(content)
+
+for file_name in args.files :
+    #logger.info('file: %s', file_name)
+    with open(file_name) as file :
+        message = email.message_from_file(file)
+    #logger.info('from: %s', message['From'])
+
+    if not re.search('^postmaster@', message['To']) : continue
+
+    payloads = [ message ]
+    if message.is_multipart() :
+        payloads = message.get_payload()
+
+    for payload in payloads :
+        content_type = payload.get_content_type()
+        headers = {
+            'from' : message['From'],
+            'file_name' : payload.get_filename(),
+            'content_type' : content_type,
+        }
+
+        if content_type == 'application/zip' :
+            zf = zipfile.ZipFile(io.BytesIO(payload.get_payload(decode=True)), 'r')
+            for name in zf.namelist() :
+
+                handle_payload(zf.read(name).decode('utf-8'), headers )
+            continue
+        if re.search(r'^application/(tlsrpt\+)?gzip$', content_type) :
+            handle_payload(gzip.decompress(payload.get_payload(decode=True)).decode('utf-8'), headers)
+            continue
+
+        if re.search(r'^image/', content_type) : continue
+        if re.search(r'^message/', content_type) : continue
+        if re.search(r'^text/', content_type) : continue
+        logger.warning(headers)
