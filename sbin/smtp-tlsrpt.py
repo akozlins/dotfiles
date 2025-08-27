@@ -70,10 +70,12 @@ def parse_dmarc(content: str) -> None :
             assert(len(dkim) == 1)
             spf = policy_evaluated[0].findall('spf')
             assert(len(spf) == 1)
+            disposition = policy_evaluated[0].findall('disposition')
+            assert(len(disposition) == 1)
             if spf[0].text == 'pass' and dkim[0].text == 'pass' :
                 #logger.info('dmarc: OK')
                 continue
-            logger.warning('dmarc: %s, spf/dkim = %s/%s ', ip, spf[0].text, dkim[0].text)
+            logger.warning('dmarc: %s, spf/dkim = %s/%s -> %s', ip, spf[0].text, dkim[0].text, disposition[0].text)
 
 def parse_smtp(content: str) -> None :
     report = json.loads(content)

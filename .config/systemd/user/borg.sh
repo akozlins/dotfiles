@@ -3,7 +3,8 @@ set -eu
 
 unset SSH_AUTH_SOCK
 
-source -- ./.env
+cd ~/.config/borg
+source .env
 [ -d "$BORG_REPO" ] || exit 0
 
 if true ; then

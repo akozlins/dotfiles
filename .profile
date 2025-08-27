@@ -7,6 +7,9 @@ export DOTFILES
 
 
 
+# add sbin to PATH
+PATH="$PATH:/sbin:/usr/sbin"
+
 #export HOME="${HOME:-$(getent passwd $(id --user) | cut -d: -f6)}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 if [ ! -e "$XDG_CACHE_HOME" ] ; then

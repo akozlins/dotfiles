@@ -51,6 +51,7 @@
     "editor.parameterHints.cycle": true,
     "editor.renderWhitespace": "all",
     "editor.roundedSelection": false,
+    "editor.selectionClipboard": false,
     "editor.scrollbar.vertical": "visible",
     "editor.showFoldingControls": "always",
     "editor.stickyScroll.enabled": false,

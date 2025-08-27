@@ -14,12 +14,15 @@ def shell(args : list) -> str :
 class LRU :
     entries_path : pathlib.Path
 
-    sinks : list[str] = []
-    entries : list = []
-    presets : list = []
+    sinks : list[str]
+    entries : list
+    presets : list
 
-    def __init__(self : "LRU", file_name : str) -> None:
+    def __init__(self, file_name : str) -> None:
         self.entries_path = pathlib.Path(file_name)
+        self.sinks = []
+        self.entries = []
+        self.presets = []
 
         # list available sinks
         for line in shell([ "/usr/bin/pactl", "list", "short", "sinks" ]).decode("ascii").splitlines() :
@@ -33,14 +36,14 @@ class LRU :
             with self.entries_path.open(mode="r", encoding="utf-8") as file :
                 self.entries = json.load(file)
 
-    def close(self : "LRU") -> None:
+    def close(self) -> None:
         if not self.entries : return
         # store lru entries
         with self.entries_path.open(mode="w", encoding="utf-8") as file :
             json.dump(self.entries, file)
 
     # select next sink and update lru entries
-    def next_sink(self : "LRU") -> str :
+    def next_sink(self) -> str :
         while True :
             # find new entry (not in lru)
             for sink in self.sinks :
@@ -52,10 +55,10 @@ class LRU :
             # remove old entry
             self.entries.pop(0)
 
-    def set_default_sink(self : "LRU", sink : str) -> None :
+    def set_default_sink(self, sink : str) -> None :
         shell([ "/usr/bin/pactl", "set-default-sink", sink ])
 
-    def move_sink_input(self : "LRU", sink : str) -> None :
+    def move_sink_input(self, sink : str) -> None :
         for line in shell([ "/usr/bin/pactl", "list", "sink-inputs", "short" ]).decode("ascii").splitlines() :
             stream_id = line.split("\t")
             shell([ "/usr/bin/pactl", "move-sink-input", stream_id[0], sink ])
@@ -67,7 +70,7 @@ def main() -> None :
 
     shell([ "/usr/bin/dunstify", f"I [main] 'sink = {sink or 'none'}'" ])
     if not sink : return
-#    lru.move_sink_input("easyeffects_sink")
+    #lru.move_sink_input("easyeffects_sink")
 
     lru.set_default_sink(sink)
 
@@ -83,14 +86,14 @@ def main() -> None :
            ( sink in preset_device or preset_device in sink ) :
             shell([ "/usr/bin/easyeffects", "-l", preset_name ])
 
-#    shell(f"/usr/bin/gsettings set com.github.wwmm.easyeffects.streamoutputs output-device {sink}")
-#    shell("/usr/bin/pw-metadata 0 default.configured.audio.sink")
+    #shell(f"/usr/bin/gsettings set com.github.wwmm.easyeffects.streamoutputs output-device {sink}")
+    #shell("/usr/bin/pw-metadata 0 default.configured.audio.sink")
     shell([ "/usr/bin/pw-metadata", "0", "default.configured.audio.sink", f'{{"name":"{sink}"}}' ])
 
     #lru.set_default_sink("easyeffects_sink")
     time.sleep(0.5)
-#    lru.move_sink_input("easyeffects_sink")
+    #lru.move_sink_input("easyeffects_sink")
 
     lru.close()
 
-main()
+if __name__ == "__main__" : main()

@@ -92,11 +92,10 @@ zstyle ":completion:*" sort false
 zstyle ':completion:*' list-dirs-first true
 
 source <(dircolors)
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
 
-if [ -f /usr/share/fzf/completion.zsh ] ; then
-    source /usr/share/fzf/completion.zsh
-    source /usr/share/fzf/key-bindings.zsh
+if command -v fzf &> /dev/null ; then
+    source <(fzf --zsh)
     FZF_COMPLETION_OPTS="--walker-skip=.git,node_modules,.jj,.gradle,build,cmake-build,quartus-build"
     FZF_COMPLETION_DIR_OPTS="--walker=dir"
     FZF_COMPLETION_PATH_OPTS="--walker=file,dir,hidden"

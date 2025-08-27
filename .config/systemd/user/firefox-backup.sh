@@ -3,8 +3,7 @@ set -eu
 
 source "$HOME/.profile"
 FIREFOX="$DOTFILES/.config/firefox"
-#PROFILE="$DOTFILES/.mozilla/firefox/default"
-PROFILE="$DOTFILES/.librewolf/default"
+PROFILE="$DOTFILES/.mozilla/firefox/default"
 
 COMMIT=0
 
@@ -12,8 +11,9 @@ sessionstore="$PROFILE/sessionstore-backups/recovery.jsonlz4"
 if [ -r "$sessionstore" ] ; then
     OUT=$(jsonlz4.py -d "$sessionstore" - | "$FIREFOX/tabs.py" | jq .)
     if ! diff -q "sessionstore.json" <(echo "$OUT") > /dev/null ; then
+        echo "[firefox-backup] save sessionstore"
         echo "$OUT" > "sessionstore.json"
-#        jsonlz4.py -c "sessionstore.json" "sessionstore.jsonlz4"
+        #jsonlz4.py -c "sessionstore.json" "sessionstore.jsonlz4"
         [ -d ".git" ] && git add "sessionstore.json"
         COMMIT=1
     fi
@@ -23,8 +23,9 @@ bookmarks=$(find "$PROFILE/bookmarkbackups/" -name "*.jsonlz4" | sort -r | head 
 if [ -r "$bookmarks" ] ; then
     OUT=$(jsonlz4.py -d "$bookmarks" - | "$FIREFOX/bookmarks.py" | jq .)
     if ! diff -q "bookmarks.json" <(echo "$OUT") > /dev/null ; then
+        echo "[firefox-backup] save bookmarks"
         echo "$OUT" > "bookmarks.json"
-#        jsonlz4.py -c "bookmarks.json" "bookmarks.jsonlz4"
+        #jsonlz4.py -c "bookmarks.json" "bookmarks.jsonlz4"
         [ -d ".git" ] && git add "bookmarks.json"
         COMMIT=1
     fi
