@@ -1,9 +1,15 @@
-#!/usr/bin/python3
+#!/usr/bin/env -S uv run --script
+#
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [ "defusedxml" ]
+# ///
 
 # ruff: noqa: S101
 
 import argparse
 import email
+import email.parser
 import gzip
 import io
 import json
@@ -118,6 +124,7 @@ for file_name in args.files :
     #        logger.exception("can't open file")
     #        continue
     with pathlib.Path(file_name).open('rb') as file :
+        #message = email.parser.BytesHeaderParser().parse(file)
         message = email.message_from_binary_file(file)
 
     date = email.utils.parsedate_to_datetime(message['Date']).isoformat()
