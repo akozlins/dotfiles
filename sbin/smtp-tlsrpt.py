@@ -56,7 +56,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('files', nargs='+', default='-')
 args = parser.parse_args()
 
-def parse_dmarc(content: str) -> None :
+def parse_dmarc(content: str) -> int :
+    error = 0
     records = ElementTree.fromstring(content).findall('record')
     assert(len(records) >= 1)
     for record in records :
@@ -75,32 +76,37 @@ def parse_dmarc(content: str) -> None :
             if spf[0].text == 'pass' and dkim[0].text == 'pass' :
                 #logger.info('dmarc: OK')
                 continue
+            error = 1
             logger.warning('dmarc: %s, spf/dkim = %s/%s -> %s', ip, spf[0].text, dkim[0].text, disposition[0].text)
+    return error
 
-def parse_smtp(content: str) -> None :
+def parse_smtp(content: str) -> int :
+    error = 0
     report = json.loads(content)
     assert len(report['policies']) >= 0
     for policy in report['policies'] :
         if policy['summary']['total-failure-session-count'] == 0 :
             #logger.info('smtp: OK')
             continue
+        error = 1
         logger.warning('smtp: %s', policy['summary'])
+    return error
 
-def handle_payload(content: str, headers: dict[str, str]) -> None :
+def handle_payload(content: str, headers: dict[str, str]) -> int :
     if re.search(r'dmarc', headers['from'], re.IGNORECASE) :
-        parse_dmarc(content)
-        return
+        return parse_dmarc(content)
 
     if headers['file_name'].endswith('.json.gz') :
-        parse_smtp(content)
-        return
+        return parse_smtp(content)
 
     if headers['file_name'].endswith('.xml.gz') :
-        parse_dmarc(content)
-        return
+        return parse_dmarc(content)
 
     logger.error(headers)
     print(content)
+    return 1
+
+exit_code = 0
 
 prefix = os.path.commonprefix(args.files)
 for file_name in args.files :
@@ -121,15 +127,47 @@ for file_name in args.files :
     email_to = email.utils.parseaddr(message['To'])[1]
 
     # parse SPF/DKIM
+    spf = []
+    dkim = []
+    dmarc = []
     for auth in (message['Authentication-Results'] or '').split(';') :
-        if not re.search(r'^\s*(spf|dkim)=', auth, re.IGNORECASE) : continue
-        # ignore pass/none entries
-        if re.search(r'^\s*(spf|dkim)=pass', auth, re.IGNORECASE) : continue
+        #if not re.search(r'^\s*(spf|dkim)=', auth, re.IGNORECASE) : continue
+        # ignore none entries
         if re.search(r'^\s*(spf|dkim)=none', auth, re.IGNORECASE) : continue
+
+        if re.search(r'^\s*(spf)=pass', auth, re.IGNORECASE) :
+            spf.append('pass')
+            continue
+        if re.search(r'^\s*(dkim)=pass', auth, re.IGNORECASE) :
+            dkim.append('pass')
+            continue
+        if re.search(r'^\s*(dmarc)=pass', auth, re.IGNORECASE) :
+            dmarc.append('pass')
+            continue
+
         # ignore mailing lists
-        if re.search(r'^\s*(spf)=.* smtp\.(helo|mailfrom|pra)=.*@.*$', auth, re.IGNORECASE) : continue
-        if re.search(r'^\s*(dkim)=.* header\.\w+=.*@.*$', auth, re.IGNORECASE) : continue
-        logger.warning(auth.strip())
+        #if re.search(r'^\s*(spf)=.* smtp\.(helo|mailfrom|pra)=.*@.*$', auth, re.IGNORECASE) : continue
+        #if re.search(r'^\s*(dkim)=.* header\.\w+=.*@.*$', auth, re.IGNORECASE) : continue
+
+        if re.search(r'^\s*(spf)=', auth, re.IGNORECASE) :
+            spf.append(auth)
+            continue
+        if re.search(r'^\s*(dkim)=', auth, re.IGNORECASE) :
+            dkim.append(auth)
+            continue
+        if re.search(r'^\s*(dmarc)=', auth, re.IGNORECASE) :
+            dmarc.append(auth)
+            continue
+
+    if 'pass' not in dmarc :
+        for auth in dmarc :
+            logger.warning(auth.strip())
+        if 'pass' not in spf :
+            for auth in spf :
+                logger.warning(auth.strip())
+        if 'pass' not in dkim :
+            for auth in dkim :
+                logger.warning(auth.strip())
 
     if not re.search(r'^postmaster@', email_to) : continue
 
@@ -148,14 +186,15 @@ for file_name in args.files :
         if content_type == 'application/zip' :
             zf = zipfile.ZipFile(io.BytesIO(payload.get_payload(decode=True)), 'r')
             for name in zf.namelist() :
-
-                handle_payload(zf.read(name).decode('utf-8'), headers )
+                exit_code |= handle_payload(zf.read(name).decode('utf-8'), headers )
             continue
         if re.search(r'^application/(tlsrpt\+)?gzip$', content_type) :
-            handle_payload(gzip.decompress(payload.get_payload(decode=True)).decode('utf-8'), headers)
+            exit_code |= handle_payload(gzip.decompress(payload.get_payload(decode=True)).decode('utf-8'), headers)
             continue
 
         if re.search(r'^image/', content_type) : continue
         if re.search(r'^message/', content_type) : continue
         if re.search(r'^text/', content_type) : continue
         logger.error(headers)
+
+sys.exit(exit_code)
