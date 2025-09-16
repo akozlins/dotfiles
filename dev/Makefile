@@ -42,7 +42,7 @@ root :
 	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local/root.cern.ch" \
 	    -DCMAKE_CXX_STANDARD=17 \
 	    -DLLVM_CXX_STD=c++17 \
-	    -Dxrootd=OFF \
+	    -Ddavix=OFF -Dvdt=OFF -Dxrootd=OFF \
 	    -G Ninja \
 	    -S $@ -B $@/cmake-build
 	cmake --build $@/cmake-build
