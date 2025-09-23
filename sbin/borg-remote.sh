@@ -18,7 +18,7 @@ fi
 
 while
     PORT=$(hexdump -n 2 -e '/2 "%u"' /dev/urandom)
-    [ "$PORT" -lt 16384 ] || nc -z localhost "$PORT"
+    [ "$PORT" -lt 16384 ] || ss -tln "sport == :$PORT" | grep -q LISTEN
 do continue ; done
 
 date --iso-8601=seconds

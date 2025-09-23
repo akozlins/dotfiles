@@ -49,7 +49,7 @@ root :
 
 .PHONY : clhep
 clhep :
-	$(call clone_pull,https://gitlab.cern.ch/CLHEP/CLHEP,$@)
+	$(call clone_pull,https://gitlab.cern.ch/CLHEP/CLHEP.git,$@)
 	cmake \
 	    -DCMAKE_BUILD_TYPE=Release \
 	    -DCMAKE_INSTALL_PREFIX="$(HOME)/.local/clhep.cern.ch" \

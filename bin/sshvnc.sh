@@ -35,7 +35,7 @@ X11VNC_CMD=(
     /usr/bin/x11vnc
     -passwd "$PASSWD"
     -localhost -once -timeout 15
-    -display :0
+    -display :0 -rfbport "$RPORT"
     -noxdamage
     -cursor none
     -scale "$SCALE"
