@@ -62,13 +62,17 @@ setopt no_beep
 # ignore everything under and to the right of the cursor when completing
 bindkey "^i" expand-or-complete-prefix
 
+bindkey '\e[1~'     beginning-of-line   # console
+bindkey '\e[H'      beginning-of-line   # xterm
+bindkey '\e[4~'     end-of-line         # console
+bindkey '\e[F'      end-of-line         # xterm
+bindkey '\e[2~'     overwrite-mode      # console, xterm
+bindkey '\e[3~'     delete-char         # console, xterm
+
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
 
 bindkey "^d" kill-whole-line
-bindkey "^[[3~" delete-char
 
 # case-insensitive match only if no case-sensitive matches
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
