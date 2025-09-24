@@ -28,6 +28,7 @@ text/x-c=my_open_text.desktop;
 text/x-c++=my_open_text.desktop;
 text/x-java=my_open_text.desktop;
 text/x-shellscript=my_open_text.desktop;
+text/x-tex=my_open_text.desktop;
 
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;

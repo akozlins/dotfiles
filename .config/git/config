@@ -84,6 +84,9 @@
 	ff = false
 	tool = meld
 
+[mergetool "meld"]
+	#useAutoMerge = auto
+
 [pull]
 	ff = only
 

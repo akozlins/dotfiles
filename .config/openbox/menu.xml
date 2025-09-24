@@ -11,7 +11,7 @@
   </item>
   <item label="Manage Cups Printers">
     <action name="Execute">
-      <command>xdg-open http://localhost:631/</command>
+      <command>xdg-open http://127.0.0.1:631/</command>
       <startupnotify><enabled>no</enabled><icon>cups</icon></startupnotify>
     </action>
   </item>

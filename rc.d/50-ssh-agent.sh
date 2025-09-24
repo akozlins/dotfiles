@@ -1,6 +1,8 @@
 #
 
-if [ -z "$SSH_CONNECTION" ] && [ -r /usr/bin/systemctl ] ; then
+if [ -z "$SSH_CONNECTION" ] \
+&& [ -n "$DBUS_SESSION_BUS_ADDRESS" ] \
+&& [ -r /usr/bin/systemctl ] ; then
     /usr/bin/systemctl --user status ssh-agent.service &> /dev/null
     # check unit is active or try to start
     if [[ $? == 0 ]] || systemctl --user start ssh-agent.service ; then

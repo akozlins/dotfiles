@@ -23,7 +23,7 @@ done
 
 while
     PORT=$(hexdump -n 2 -e '/2 "%u"' /dev/urandom)
-    [ "$PORT" -lt 16384 ] || nc --wait=1 --zero localhost "$PORT"
+    [ "$PORT" -lt 16384 ] || ss -tln "sport == :$PORT" | grep -q LISTEN
 do continue ; done
 echo "PORT = $PORT"
 
@@ -33,16 +33,17 @@ PASSWD=$(tr -dc a-zA-Z0-9 < /dev/urandom | head -c16)
 
 X11VNC_CMD=(
     /usr/bin/x11vnc
+    -listen 127.0.0.1 -rfbport "$RPORT"
     -passwd "$PASSWD"
-    -localhost -once -timeout 15
-    -display :0 -rfbport "$RPORT"
+    -once -timeout 15
+    -display :0
     -noxdamage
     -cursor none
     -scale "$SCALE"
 #    -auth "$HOME/.Xauthority"
 )
 
-ARGS=(-L "$PORT:localhost:$RPORT" "$@")
+ARGS=(-L "$PORT:127.0.0.1:$RPORT" "$@")
 ssh -S none -f -o ExitOnForwardFailure=yes "${ARGS[@]}" -- "$(printf '%q ' "${X11VNC_CMD[@]}")"
 cleanup() {
     rv=$?
@@ -55,7 +56,7 @@ VNCVIEWER_CMD=(
     vncviewer
     "DotWhenNoCursor=1"
     #-Log "*:stdout:100"
-    "localhost:$PORT"
+    "127.0.0.1:$PORT"
 )
 
 ss -tln "sport == :$PORT" | grep -q LISTEN

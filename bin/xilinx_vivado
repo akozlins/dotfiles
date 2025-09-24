@@ -5,7 +5,7 @@ DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 export HOME="$DOTFILES"
 
 # Disable WebTalk
-#export HTTPS_PROXY=localhost
+#export HTTPS_PROXY=127.0.0.1
 
 VIVADO_CACHE="$XDG_CACHE_HOME/vivado"
 mkdir -pv -- "$VIVADO_CACHE"

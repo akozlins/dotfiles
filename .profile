@@ -102,16 +102,16 @@ export XPRA_SOCKET_DIR="$XDG_RUNTIME_DIR/xpra"
 
 export RANDFILE="$XDG_CONFIG_HOME/.rnd"
 
-#export XAUTHORITY="${XAUTHORITY:-$XDG_CACHE_HOME/.Xauthority}"
+export XAUTHORITY="${XAUTHORITY:-$XDG_CACHE_HOME/.Xauthority}"
 
 # nvidia
 [ -e "$XDG_CACHE_HOME/.nv" ] || mkdir -p -- "$XDG_CACHE_HOME/.nv"
 export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/.nv"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/.nv"
 
-for f in "$DOTFILES"/profile.d/?*.sh ; do
+while IFS='' read -r f ; do
     [ -f "$f" ] && . "$f"
-done
+done < <(find "$DOTFILES/profile.d/" -name '*.sh')
 unset f
 
 PATH="$DOTFILES/bin:$HOME/.local/bin:$PATH"

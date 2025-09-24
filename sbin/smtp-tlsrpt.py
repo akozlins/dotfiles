@@ -2,7 +2,7 @@
 #
 # /// script
 # requires-python = ">=3.12"
-# dependencies = [ "defusedxml" ]
+# dependencies = []
 # ///
 
 # ruff: noqa: S101
@@ -20,7 +20,7 @@ import re
 import sys
 import zipfile
 
-from defusedxml import ElementTree
+from xml.etree import ElementTree
 
 logging.basicConfig(
     #format='%(levelname).1s [%(filename)s:%(lineno)d:%(funcName)s] %(message)s',

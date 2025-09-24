@@ -11,18 +11,26 @@
         "--compile-commands-dir=${workspaceFolder}/cmake-build",
         "--header-insertion=never",
     ],
+    "cmake.automaticReconfigure": true,
     "cmake.buildDirectory": "${workspaceFolder}/cmake-build",
     "cmake.configureArgs": [
         "-DCMAKE_EXPORT_COMPILE_COMMANDS=1",
     ],
     "cmake.configureOnOpen": false,
+    "cmake.options.advanced": {
+        "cpack": {
+            "statusBarVisibility": "hidden"
+        },
+        "workflow": {
+            "statusBarVisibility": "hidden"
+        }
+    },
     "cmake.options.statusBarVisibility": "compact",
     "cmake.pinnedCommands": [
         "workbench.action.tasks.configureTaskRunner",
         "workbench.action.tasks.runTask"
     ],
     "cmake.showConfigureWithDebuggerNotification": false,
-    "cmake.showOptionsMovedNotification": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.accessibilitySupport": "off",
     "editor.autoClosingBrackets": "never",
@@ -65,6 +73,9 @@
     "explorer.excludeGitIgnore": true,
     "extensions.autoUpdate": false,
     "extensions.ignoreRecommendations": true,
+    "files.associations": {
+        "*.sdc": "tcl",
+    },
     "files.autoSave": "onFocusChange",
     "files.enableTrash": false,
     "files.eol": "\n",
@@ -122,13 +133,13 @@
     "workbench.tree.renderIndentGuides": "none",
     "workbench.tree.enableStickyScroll": false,
     "workbench.welcomePage.walkthroughs.openOnInstall": false,
-    "[markdown]": {
-        "editor.wordWrap": "off",
-    },
     "[c]": {
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
     },
     "[cpp]": {
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    },
+    "[markdown]": {
+        "editor.wordWrap": "off",
     },
 }

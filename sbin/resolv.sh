@@ -107,7 +107,7 @@ while true ; do
     echo "i - toggle immutable attribute"
     echo "b - backup"
     echo "r - restore"
-    echo "L - localhost (127.0.0.1)"
+    echo "L - 127.0.0.1"
     echo "G - Google (8.8.8.8, 8.8.4.4)"
     echo "O - OpenDNS (208.67.222.222, 208.67.220.220)"
     echo "C - Cloudflare (1.1.1.1, 1.0.0.1)"

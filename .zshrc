@@ -20,6 +20,7 @@ ZLE_SPACE_SUFFIX_CHARS=""
 
 
 
+# prompt: `user@host:~/path $ ` ~ `green@magenta:yellow $ `
 PROMPT='%(!.%B%F{red}.%B%F{green}%n)%f@%B%F{magenta}%m%f:%F{yellow}%(!.%1~.%~) %F{red}%(!.#.$)%k%b%f '
 
 
