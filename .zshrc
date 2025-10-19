@@ -100,6 +100,10 @@ source <(dircolors)
 zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
 
 if command -v fzf &> /dev/null ; then
+    # save current bindkeys
+    local bindkey_R="$(bindkey '^R' | cut -d' ' -f2-)"
+    [ -n "$bindkey_R" ] || bindkey_R="history-incremental-search-backward"
+
     source <(fzf --zsh)
     FZF_COMPLETION_OPTS="--walker-skip=.git,node_modules,.jj,.gradle,build,cmake-build,quartus-build"
     FZF_COMPLETION_DIR_OPTS="--walker=dir"
@@ -107,6 +111,9 @@ if command -v fzf &> /dev/null ; then
     FZF_COMPLETION_TRIGGER='**'
     FZF_ALT_C_OPTS="--walker=dir $FZF_COMPLETION_OPTS"
     FZF_CTRL_T_OPTS="--walker=dir,file,hidden $FZF_COMPLETION_OPTS"
+
+    # restore prev bindkeys
+    bindkey "^R" "$bindkey_R"
 fi
 
 [ -d "$DOTFILES"/rc.d ] && for f in "$DOTFILES"/rc.d/?*.sh "$DOTFILES"/rc.d/?*.zsh ; do
