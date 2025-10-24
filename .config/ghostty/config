@@ -1,0 +1,31 @@
+# <https://ghostty.org/docs/config/reference>
+
+font-family = JetBrains Mono FAR SemiBold
+font-feature = -calt, -liga, -dlig
+font-size = 12.0
+
+alpha-blending = native
+
+cursor-style = bar
+
+window-decoration = server
+
+window-padding-x = 0
+window-padding-y = 0
+window-height=30
+window-width=100
+
+window-step-resize = true
+
+copy-on-select = clipboard
+# https://github.com/zerebos/ghostty-config
+config-file = ?dracula+.conf
+
+app-notifications = no-clipboard-copy
+
+gtk-titlebar = false
+gtk-toolbar-style = flat
+gtk-wide-tabs = false
+gtk-custom-css = ./style.css
+
+auto-update = off
