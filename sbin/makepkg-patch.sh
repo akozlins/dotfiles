@@ -16,7 +16,7 @@ if [ -r "$XDG_CONFIG_HOME/makepkg/$PKG.patch" ] ; then
     git apply --verbose "$XDG_CONFIG_HOME/makepkg/$PKG.patch"
 fi
 
-makepkg -s --nobuild --cleanbuild
+makepkg -s --nobuild --cleanbuild --skippgpcheck
 find "$XDG_CONFIG_HOME/makepkg/$PKG" -name '*.patch' 2>/dev/null \
 | while read -r p ; do
     # TODO: use scripts instead of patches

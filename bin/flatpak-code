@@ -3,5 +3,5 @@ set -euf
 
 exec \
 flatpak-bg run \
-    com.skype.Client \
+    com.visualstudio.code \
     "$@"

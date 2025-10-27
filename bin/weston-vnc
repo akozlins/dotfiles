@@ -1,0 +1,12 @@
+#!/bin/bash
+set -euf
+
+# openssl genrsa -out tls.key 2048
+# openssl req -new -key tls.key -out tls.csr
+# openssl x509 -req -days 365 -signkey tls.key -in tls.csr -out tls.crt
+
+TLS=$PRIVATE/.config/weston
+
+weston \
+    --backend vnc --vnc-tls-cert "$TLS/tls.crt" --vnc-tls-key "$TLS/tls.key" \
+    --width=1024 --height=1024

@@ -1,0 +1,5 @@
+#!/bin/bash
+set -euf
+
+flatpak update -y
+flatpak uninstall --unused -y

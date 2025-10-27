@@ -19,7 +19,6 @@ import pathlib
 import re
 import sys
 import zipfile
-
 from xml.etree import ElementTree
 
 logging.basicConfig(

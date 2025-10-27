@@ -1,0 +1,21 @@
+#!/bin/bash
+set -euf
+
+private="$XDG_DATA_HOME/hakuneko"
+mkdir -pv -- "$private"
+
+CMD=(
+    /usr/bin/hakuneko-desktop
+    --no-sandbox
+    "$@"
+)
+
+CMD=(
+    firejail
+    "--private=$private"
+    --
+    "${CMD[@]}"
+)
+
+[ $# -gt 0 ] && exec "${CMD[@]}"
+exec "${CMD[@]}" &> /dev/null &

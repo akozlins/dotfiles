@@ -4,9 +4,10 @@ set -euf
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 [ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 
-CMD=(
-    /usr/bin/opera
-    -nomail -nomaillinks -nolirc
+CMD=()
+
+CMD+=(
+    /usr/bin/theia-electron
     "$@"
 )
 

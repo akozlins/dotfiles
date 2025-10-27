@@ -1,0 +1,3 @@
+#
+
+SUBSYSTEM=="leds", ACTION=="add", KERNEL=="asus::kbd_backlight", ATTR{brightness}="0"

@@ -3,4 +3,5 @@
 *.log
 *.pid
 /passwd
+/tigervnc.history
 /x509_known_hosts

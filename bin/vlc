@@ -1,6 +1,0 @@
-#!/bin/sh
-set -euf
-
-exec \
-/usr/bin/vlc "$@" \
-> /dev/null 2>&1 &

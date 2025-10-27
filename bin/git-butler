@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euf
+#set -o errexit -o nounset -o noglob
+
+export WEBKIT_DISABLE_DMABUF_RENDERER=1
+
+exec \
+/usr/bin/git-butler "$@" &>/dev/null &

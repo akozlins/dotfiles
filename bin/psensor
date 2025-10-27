@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euf
+
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+[ -d "$DOTFILES" ] && export HOME="$DOTFILES"
+
+CMD=(
+    /usr/bin/psensor
+    "$@"
+)
+
+[ $# -gt 0 ] && exec "${CMD[@]}"
+exec "${CMD[@]}" &> /dev/null &

@@ -190,3 +190,10 @@ EOF
 - list packages by size: `expac "%n %m" -l'\n' -Q $(pacman -Qq) | sort -nk 2 | column -t`
 - find hard links: `find / -type f -links +1 -printf '%i %n %p\n'`
 - copy system: `rsync -avhPHAXx / /mnt/`
+
+```
+zmodload zsh/zprof
+ZSH_PROFILING=start
+ZSH_PROFILING=stop
+zprof
+```
