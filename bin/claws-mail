@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euf
 
+source ~/.profile
 DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 [ -d "$DOTFILES" ] && export HOME="$DOTFILES"
 

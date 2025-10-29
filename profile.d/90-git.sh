@@ -5,7 +5,7 @@ if [ -z "${GIT_AUTHOR_NAME:+x}" ] ; then
 fi
 
 if [ -z "${GIT_AUTHOR_EMAIL:+x}" ] ; then
-    export GIT_AUTHOR_EMAIL="$EMAIL"
+    export GIT_AUTHOR_EMAIL="${EMAIL:-$USER@$HOST}"
 fi
 
 if [ -z "${GIT_COMMITTER_NAME:+x}" ] ; then

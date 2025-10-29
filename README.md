@@ -25,4 +25,9 @@ git clone https://github.com/akozlins/dotfiles ~/.dotfiles
 ~/.dotfiles/install.sh
 ```
 
+## Layout
+
+- `.local`, `.cache` and `$DOTFILES` have same parent directory
+- ...
+
 ## TODO

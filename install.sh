@@ -111,8 +111,7 @@ done
 # Media/MIME Types
 make -C "$DOTFILES/.config/applications"
 
-# ZSH
 source .profile
-for f in "$DOTFILES"/install.d/?*.sh ; do
+while IFS='' read -r f ; do
     [ -f "$f" ] && source "$f"
-done
+done < <(find "$DOTFILES/install.d/" -name '*.sh')

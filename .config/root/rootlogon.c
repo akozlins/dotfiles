@@ -3,6 +3,9 @@
 void rootlogon() {
     if(gSystem->Exec("ldconfig -p | grep -q libCLHEP") == 0) {
         gSystem->Load("libCLHEP");
+        gSystem->AddIncludePath(" -I/opt/clhep/include");
+        // `.include /opt/clhep/include`
+        // `#include <CLHEP/Random/RandBinomial.h>`
     }
     else {
         fprintf(stderr, "E [rootlogon] ldconfig: libCLHEP not found\n");

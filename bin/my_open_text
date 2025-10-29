@@ -2,7 +2,7 @@
 set -euf
 
 COMMANDS=(
-    gedit
+    #gedit
     geany
 )
 

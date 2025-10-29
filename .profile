@@ -17,7 +17,7 @@ if [ ! -e "$XDG_CACHE_HOME" ] ; then
 fi
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
-#export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id --user)}"
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id --user)}"
 
 export MEDIA="/run/media/$USER"
 
@@ -27,6 +27,9 @@ export MEDIA="/run/media/$USER"
 
 export EDITOR="nano -c"
 export BROWSER="firefox"
+
+# ...
+export TZ=":/etc/localtime"
 
 # display first page if several man pages are available
 export MAN_POSIXLY_CORRECT=1
@@ -83,6 +86,7 @@ export MYSQL_HISTFILE="$XDG_CACHE_HOME/.mysql_history"
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/.node_repl_history"
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch/config"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
+export OLLAMA_MODELS="$XDG_DATA_HOME/ollama/models"
 export OPERA_PERSONALDIR="$XDG_CONFIG_HOME/opera"
 export PARALLEL_HOME="$XDG_CONFIG_HOME/parallel"
 export PASSWORD_STORE_DIR="$XDG_CONFIG_HOME/password-store"
@@ -90,6 +94,7 @@ export PROXYCHAINS_CONF_FILE="$XDG_CONFIG_HOME/proxychains.conf"
 export PSQL_HISTORY="$XDG_CACHE_HOME/.psql_history"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/startup"
 export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python/pycache"
+export PYTHON_HISTORY="$XDG_CACHE_HOME/.python_history"
 export SQLITE_HISTORY="$XDG_CACHE_HOME/.sqlite_history"
 export STACK_ROOT="$XDG_CACHE_HOME/stack"
 export STEAM_HOME="$XDG_DATA_HOME/steam"

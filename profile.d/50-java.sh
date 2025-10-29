@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#mkdir -p -- "$(readlink -f -- "$DOTFILES/.java")"
+
 # Java Usage Tracker
 # https://docs.oracle.com/javacomponents/usage-tracker/overview/toc.htm
 # * disable last usage time tracking

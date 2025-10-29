@@ -31,3 +31,14 @@ alias lg='lazygit'
 alias compose='fzf < /usr/share/X11/locale/en_US.UTF-8/Compose'
 
 #alias ssh='TERM=xterm-256color ssh'
+
+
+
+gedit() { command gedit "$@" > /dev/null 2>&1 & }
+
+yt-dlp() {
+    command yt-dlp \
+    --format="bestvideo[height<=?1080][fps<=?60]+bestaudio/b" \
+    --output="%(upload_date)s_%(title)s_[%(id)s].%(ext)s" \
+    "$@"
+}

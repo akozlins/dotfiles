@@ -16,6 +16,7 @@ CMD+=(
 
 CMD+=(
     /usr/bin/etherwall
+    --rpc.enabledeprecatedpersonal
     "$@"
 )
 
