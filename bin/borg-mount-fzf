@@ -1,0 +1,22 @@
+#!/bin/bash
+set -euf
+
+if [ $# -ge 1 ] ; then
+    id="$1"
+else
+    id="$(borg list | tac | fzf --print0 | cut -d' ' -f1)"
+fi
+[ -n "$id" ] || exit
+
+MNT="/tmp/borg/$id"
+if mountpoint -q "$MNT" ; then
+    echo "E [$0] ..."
+    exit 1
+fi
+umask 077
+mkdir -p "$MNT"
+
+echo "mount ::$id -> $MNT"
+borg mount --verbose \
+    --numeric-ids -o ignore_permissions \
+    "::$id" "$MNT"

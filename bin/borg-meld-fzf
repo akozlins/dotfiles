@@ -1,0 +1,24 @@
+#!/bin/bash
+set -euf
+
+id="$(borg list | tac | fzf --print0 | cut -d' ' -f1)"
+[ -n "$id" ] || exit 1
+
+MNT="/tmp/borg/$id"
+if mountpoint -q "$MNT" ; then
+    echo "E [$0] ..."
+    exit 1
+fi
+umask 077
+mkdir -p "$MNT"
+
+echo "mount ::$id -> $MNT"
+borg mount --verbose \
+    --numeric-ids -o ignore_permissions \
+    "::$id" "$MNT"
+
+P=$(realpath "$1")
+
+echo "diff .local/mnt/$P" "$P"
+meld "$MNT/$P" "$P"
+umount "$MNT"
