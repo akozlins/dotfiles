@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
 
 <labwc_config>
+  <desktops number="4"/>
+  <margin top="0" bottom="0" left="0" right="0"/>
 
   <core>
-    <gap>10</gap>
+    <gap>0</gap>
   </core>
 
   <theme>
@@ -14,6 +16,8 @@
 
   <keyboard>
     <default />
+    <repeatRate>40</repeatRate>
+    <repeatDelay>200</repeatDelay>
     <keybind key="W-r">
       <action name="Execute"><command>rofi -show run</command></action>
     </keybind>
@@ -27,5 +31,10 @@
   <resistance>
     <screenEdgeStrength>32</screenEdgeStrength>
   </resistance>
+
+  <resize>
+    <popupShow>Always</popupShow>
+    <minimumArea>4</minimumArea>
+  </resize>
 
 </labwc_config>
