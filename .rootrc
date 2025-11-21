@@ -8,3 +8,11 @@ Rint.History: $(HOME)/.cache/.root_hist
 # use standard TBrowser instead of web ROOT file browser (RBrowser)
 Browser.Name: TRootBrowser
 Canvas.Name: TRootCanvas
+
+Gui.DefaultFont:    -*-dejavu sans-medium-r-*-*-18-*-*-*-*-*-iso8859-1
+Gui.MenuFont:       -*-dejavu sans-medium-r-*-*-18-*-*-*-*-*-iso8859-1
+Gui.MenuHiFont:     -*-dejavu sans-bold-r-*-*-18-*-*-*-*-*-iso8859-1
+Gui.DocFixedFont:   -*-dejavu sans-medium-r-*-*-18-*-*-*-*-*-iso8859-1
+Gui.DocPropFont:    -*-dejavu sans-medium-r-*-*-18-*-*-*-*-*-iso8859-1
+Gui.IconFont:       -*-dejavu sans mono-medium-r-*-*-18-*-*-*-*-*-iso8859-1
+Gui.StatusFont:     -*-dejavu sans mono-medium-r-*-*-18-*-*-*-*-*-iso8859-1
