@@ -6,7 +6,9 @@
     },
     "breadcrumbs.enabled": false,
     "breadcrumbs.icons": false,
+    "chat.agent.enabled": false,
     "chat.commandCenter.enabled": false,
+    "chat.disableAIFeatures": true,
     "clangd.arguments": [
         "--compile-commands-dir=${workspaceFolder}/cmake-build",
         "--header-insertion=never",
@@ -19,18 +21,21 @@
     "cmake.configureOnOpen": false,
     "cmake.options.advanced": {
         "cpack": {
-            "statusBarVisibility": "hidden"
+            "statusBarVisibility": "hidden",
         },
         "workflow": {
-            "statusBarVisibility": "hidden"
-        }
+            "statusBarVisibility": "hidden",
+        },
     },
     "cmake.options.statusBarVisibility": "compact",
     "cmake.pinnedCommands": [
         "workbench.action.tasks.configureTaskRunner",
-        "workbench.action.tasks.runTask"
+        "workbench.action.tasks.runTask",
     ],
     "cmake.showConfigureWithDebuggerNotification": false,
+    "cSpell.userWords": [
+        "nullptr",
+    ],
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.accessibilitySupport": "off",
     "editor.autoClosingBrackets": "never",
@@ -61,6 +66,7 @@
     "editor.roundedSelection": false,
     "editor.selectionClipboard": false,
     "editor.scrollbar.vertical": "visible",
+    "editor.scrollbar.verticalScrollbarSize": 12,
     "editor.showFoldingControls": "always",
     "editor.stickyScroll.enabled": false,
     "editor.stickyScroll.maxLineCount": 1,
@@ -87,6 +93,7 @@
     "git.openRepositoryInParentFolders": "never",
     "notebook.dragAndDropEnabled": false,
     "output.smartScroll.enabled": false,
+    "remote.SSH.useExecServer": false,
     "scm.diffDecorationsGutterPattern": {
         "modified": false,
     },
@@ -134,7 +141,7 @@
     "workbench.tree.enableStickyScroll": false,
     "workbench.welcomePage.walkthroughs.openOnInstall": false,
     "[c]": {
-        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
     },
     "[cpp]": {
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
