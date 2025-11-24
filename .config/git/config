@@ -80,7 +80,7 @@
 
 [merge]
 	conflictStyle = diff3
-#	conflictStyle = zdiff3
+	#conflictStyle = zdiff3
 	ff = false
 	tool = meld
 
@@ -97,6 +97,7 @@
 	committer-date-is-author-date = true
 
 [rerere]
+	#autoupdate = true
 	enabled = true
 
 [stash]

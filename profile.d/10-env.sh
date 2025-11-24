@@ -27,8 +27,8 @@ my_load_conf () {
 
 set -a # set export attribute for each variable assignment
 if false && [ -d "$XDG_CONFIG_HOME/environment.d" ] ; then
-    for conf in $(ls "$XDG_CONFIG_HOME/environment.d"/*.conf) ; do
+    while IFS='' read -r conf ; do
         . "$conf"
-    done
+    done < <(find "$XDG_CONFIG_HOME/environment.d/" -name '*.conf')
 fi
 set +a

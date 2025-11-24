@@ -15,3 +15,5 @@ fi
 if [ -z "${GIT_COMMITTER_EMAIL:+x}" ] ; then
     export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 fi
+
+export DFT_DISPLAY=inline

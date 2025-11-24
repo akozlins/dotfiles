@@ -96,7 +96,7 @@ bindkey "\e[B" down-line-or-beginning-search
 zstyle ":completion:*" sort false
 zstyle ':completion:*' list-dirs-first true
 
-source <(dircolors)
+source <(SHELL=${SHELL:-/bin/zsh} dircolors)
 zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
 
 if command -v fzf &> /dev/null ; then

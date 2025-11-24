@@ -1,14 +1,18 @@
 //
 
 void rootlogon() {
-    if(gSystem->Exec("ldconfig -p | grep -q libCLHEP") == 0) {
+    if(gSystem->Exec("ldconfig -p | grep -q libG4clhep") == 0) {
+        gSystem->Load("/opt/geant4/lib/libG4clhep");
+        gSystem->AddIncludePath(" -I/opt/geant4/include");
+    }
+    else if(gSystem->Exec("ldconfig -p | grep -q libCLHEP") == 0) {
         gSystem->Load("libCLHEP");
         gSystem->AddIncludePath(" -I/opt/clhep/include");
         // `.include /opt/clhep/include`
         // `#include <CLHEP/Random/RandBinomial.h>`
     }
     else {
-        fprintf(stderr, "E [rootlogon] ldconfig: libCLHEP not found\n");
+        fprintf(stderr, "E [rootlogon] ldconfig: lib(CLHEP|G4clhep) not found\n");
     }
 
     // <https://root.cern.ch/doc/master/classTAttText.html>

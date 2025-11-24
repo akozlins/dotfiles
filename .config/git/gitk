@@ -48,6 +48,8 @@ set tagbgcolor yellow
 set tagfgcolor black
 set tagoutlinecolor black
 set textfont {{DejaVu Sans Mono} 12}
+set theme default
+set themeloader {}
 set uicolor grey85
 set uifgcolor black
 set uifgdisabledcolor #999

@@ -54,8 +54,11 @@ trap cleanup EXIT
 
 VNCVIEWER_CMD=(
     vncviewer
-    "DotWhenNoCursor=1"
-    #-Log "*:stdout:100"
+    #"DotWhenNoCursor=1"
+    --AlwaysCursor=1 --CursorType=Dot
+    #--LowColorLevel=2 --AutoSelect=0
+    #--CompressLevel 9
+    #--Log="*:stdout:100"
     "127.0.0.1:$PORT"
 )
 

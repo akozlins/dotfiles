@@ -7,8 +7,8 @@ resume_playback_on_startup=FALSE
 shuffle=TRUE
 
 [pipewire]
-volume_left=20
-volume_right=20
+volume_left=35
+volume_right=35
 
 [qtui]
 column_widths=25,25,275,175,50,175,175,25,100,25,75,275,275,275,75,275,175,75
