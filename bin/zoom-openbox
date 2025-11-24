@@ -5,11 +5,10 @@ PRIVATE="$XDG_DATA_HOME/zoom"
 mkdir -pv -- "$PRIVATE/.config/openbox"
 
 cat > "$PRIVATE/.config/openbox/autostart" << EOF
-/usr/bin/xterm &
+fbpanel &
+terminal &
 /usr/bin/zoom "$@" &
 EOF
-
-cp -- "$HOME/.Xauthority" "$PRIVATE/"
 
 MY_W=1000
 MY_H=1000
@@ -34,17 +33,37 @@ MY_XEPHYR_OPTS=(
 )
 
 CMD=(
+    /usr/bin/xinit
+
+    # run openbox-session under bwrap
     /usr/bin/bwrap
-    --dev-bind / /
+    --dev /dev
+    --proc /proc
+    --tmpfs /tmp
+    --ro-bind /bin /bin
+    --ro-bind /etc /etc
+    --ro-bind /lib64 /lib64
+    --ro-bind /opt /opt
+    --ro-bind /usr /usr
+    --unshare-all
+    --share-net
+    --hostname bwrap-xephyr
     --die-with-parent
-    --new-session
+    --clearenv
+    --setenv DISPLAY ":$MY_DISPLAY"
+    #--bind "/tmp/.X11-unix/X$MY_DISPLAY" "/tmp/.X11-unix/X$MY_DISPLAY"
+
+    --setenv HOME "$HOME"
     --bind "$PRIVATE" "$HOME"
-    #--bind "$PRIVATE/Downloads" "$HOME/downloads"
+    --bind "$XDG_RUNTIME_DIR/pulse" "$XDG_RUNTIME_DIR/pulse"
+    #--bind "$XDG_RUNTIME_DIR/pipewire-0" "$XDG_RUNTIME_DIR/pipewire-0"
     --bind "$HOME/mu3e" "$HOME/mu3e"
-    --
-    /usr/bin/xinit /usr/bin/openbox-session -- /usr/bin/Xephyr ":$MY_DISPLAY"
+
+    openbox-session
+
+    # run Xephyr
+    -- /usr/bin/Xephyr ":$MY_DISPLAY"
     "${MY_XEPHYR_OPTS[@]}"
 )
 
-[ $# -gt 0 ] && exec "${CMD[@]}"
-exec "${CMD[@]}" &> ts %FT%T > "$HOME/.cache/xephyr.log" &
+exec "${CMD[@]}"
