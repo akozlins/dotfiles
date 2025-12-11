@@ -1,20 +1,28 @@
-#!/bin/env python3
+#!/usr/bin/env -S uv run --script
+#
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [ "pandas" ]
+# ///
 
 from datetime import datetime, timedelta, timezone
 import pathlib
 import re
 
+import pandas as pd
+
 domains = {}
 
-for line in pathlib.Path("/etc/unbound/unbound.log").open().readlines() :
-    info = re.findall('^\\[([^ ]+)\\] [^ ]+ [^ ]+ [^ ]+ ([^ ]+) [^ ]+ [^ ]+ ([^ ]+) [^ ]+ ([^ ]+) [^ ]+$', line)
-    if not info : continue
-    info = info[0]
+for line in pd.read_csv('./18993e.csv').itertuples() :
+    dt = datetime.strptime(line.timestamp, "%Y-%m-%dT%H:%M:%S.%fZ").replace(tzinfo=timezone.utc)
+    info = [ 0, line.domain, line.status, 0 ]
+#for line in pathlib.Path("/etc/unbound/unbound.log").open().readlines() :
+#    info = re.findall('^\\[([^ ]+)\\] [^ ]+ [^ ]+ [^ ]+ ([^ ]+) [^ ]+ [^ ]+ ([^ ]+) [^ ]+ ([^ ]+) [^ ]+$', line)
+#    if not info : continue
+#    info = info[0]
+#    dt = datetime.fromtimestamp(int(info[0]), tz=timezone.utc)
 
-    time = datetime.fromtimestamp(int(info[0]), tz=timezone.utc)
-    domain = info[1]
-    status = info[2]
-    cached = info[3]
+    time, domain, status, cached = dt, info[1], info[2], info[3]
 
     if time < datetime.now(tz=timezone.utc) - timedelta(days=30) : continue
 
@@ -40,7 +48,7 @@ def print_d(items:dict , level:int=0, n_min:int=0) -> None :
     if not items : return
     if level > 2 : return
     for t in sorted(items.items(), key=lambda item : item[1]["n"], reverse=True) :
-        domain = t[0].ljust(32-2*level)
+        domain = t[0].ljust(50-2*level)
         n = t[1]["n"]
         c = n - t[1]["c"]
         NX = t[1]["NX"]
