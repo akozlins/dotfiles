@@ -99,7 +99,7 @@ zstyle ':completion:*' list-dirs-first true
 source <(SHELL=${SHELL:-/bin/zsh} dircolors)
 zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
 
-if command -v fzf &> /dev/null ; then
+if command -v fzf &> /dev/null && [[ "$(fzf --version)" > "0.48" ]] ; then
     # save current bindkeys
     local bindkey_R="$(bindkey '^R' | cut -d' ' -f2-)"
     [ -n "$bindkey_R" ] || bindkey_R="history-incremental-search-backward"
